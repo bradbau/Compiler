@@ -1,16 +1,24 @@
-%{
-    #include<stdio.h>
-    #include<unistd.h>
-    #include"lex.yy.c"//#include "grammartree.cpp"
-    #include "grammartree.h"
-    void yyerror(const char* fmt, ...);
-%}
 
 %error-verbose
 %locations
+%{
+    #include<stdio.h>
+    #include<unistd.h>
+    //#include"lex.yy.cc"
+    #include "grammartree.cpp"
+    #include "grammartree.h"
+    extern int yylineno; //共用
+    extern char *yytext;
+    extern FILE *yyin;
+    int yylex();
+    void yyerror(const char* fmt, ...);
+%}
+
 
 %union {
-    ASTTree *ast_Tree;
+    int i;
+    struct Grammartree *grammartree;
+    class ASTTree *ast_Tree;
 }
 
 
@@ -47,8 +55,8 @@
 %nonassoc KEYELSE 
 
 %%
-CompUnit: CompUnit Decl{ ASTTree *asttree = new ASTTree("CompUnit", 2, $1, $2);$$ = asttree; asttree->TraverseGrammerTree(0);}
-         | CompUnit FuncDef { ASTTree *asttree = new ASTTree("CompUnit", 2, $1, $2);$$ = asttree; asttree->TraverseGrammerTree(0);}
+CompUnit: CompUnit Decl{ ASTTree *asttree = new ASTTree();asttree->CreateGrammarTree("CompUnit", 2, $1, $2);$$ = asttree; asttree->TraverseGrammerTree(0);}
+         | CompUnit FuncDef { ASTTree *asttree = new ASTTree();asttree->CreateGrammarTree("CompUnit", 2, $1, $2);$$ = asttree; asttree->TraverseGrammerTree(0);}
          | Decl{ ASTTree *asttree = new ASTTree("CompUnit", 1, $1);$$ = asttree; asttree->TraverseGrammerTree(0);}
          | FuncDef{ ASTTree *asttree = new ASTTree("CompUnit", 1, $1);$$ = asttree; asttree->TraverseGrammerTree(0);}
          ;
