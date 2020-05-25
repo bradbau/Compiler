@@ -1,0 +1,2299 @@
+Terminals unused in grammar
+
+   SPDOT
+
+
+语法
+
+    0 $accept: CompUnit $end
+
+    1 CompUnit: CompUnit Decl
+    2         | CompUnit FuncDef
+    3         | Decl
+    4         | FuncDef
+
+    5 Decl: ConstDecl
+    6     | VarDecl
+
+    7 ConstDecl: KEYCONST TYPEINTEGER ConstDef ConstDefs SPSEMICOLON
+
+    8 ConstDefs: %empty
+    9          | ConstDefs SPCOMMA ConstDef
+
+   10 ConstDef: IDENTIFIER ArrayDef OPASSIGN ConstInitVal
+
+   11 ArrayDef: %empty
+   12         | ArrayDef OPLEFTBRACKET ConstExp OPRIGHTBRACKET
+
+   13 ConstInitVal: ConstExp
+   14             | SPLEFTBRACE SPRIGHTBRACE
+   15             | SPLEFTBRACE ConstInitVal ConstInitValList SPRIGHTBRACE
+
+   16 ConstInitValList: %empty
+   17                 | ConstInitValList SPCOMMA ConstInitVal
+
+   18 VarDecl: TYPEINTEGER VarDef VarDefs SPSEMICOLON
+
+   19 VarDef: IDENTIFIER ArrayDef
+   20       | IDENTIFIER ArrayDef OPASSIGN InitVal
+
+   21 VarDefs: %empty
+   22        | VarDefs SPCOMMA VarDef
+
+   23 InitVal: Exp
+   24        | SPLEFTBRACE SPRIGHTBRACE
+   25        | SPLEFTBRACE InitVal InitVals SPRIGHTBRACE
+
+   26 InitVals: %empty
+   27         | InitVals SPCOMMA InitVal
+
+   28 FuncDef: TYPEVOID IDENTIFIER OPLEFTPRNT OPRIGHTPRNT Block
+   29        | TYPEINTEGER IDENTIFIER OPLEFTPRNT OPRIGHTPRNT Block
+   30        | TYPEVOID IDENTIFIER OPLEFTPRNT FuncFParams OPRIGHTPRNT Block
+   31        | TYPEINTEGER IDENTIFIER OPLEFTPRNT FuncFParams OPRIGHTPRNT Block
+
+   32 FuncFParam: TYPEINTEGER IDENTIFIER
+   33           | TYPEINTEGER IDENTIFIER OPLEFTBRACKET OPRIGHTBRACKET ArrayExps
+
+   34 FuncFParams: FuncFParam
+   35            | FuncFParams SPCOMMA FuncFParam
+
+   36 ArrayExps: %empty
+   37          | ArrayExps OPLEFTBRACKET Exp OPRIGHTBRACKET
+
+   38 Block: SPLEFTBRACE BlockItems SPRIGHTBRACE
+
+   39 BlockItems: %empty
+   40           | BlockItems BlockItem
+
+   41 BlockItem: Decl
+   42          | Stmt
+
+   43 Stmt: LVal OPASSIGN Exp SPSEMICOLON
+   44     | SPSEMICOLON
+   45     | Exp SPSEMICOLON
+   46     | Block
+   47     | KEYIF OPLEFTPRNT Cond OPRIGHTPRNT Stmt
+   48     | KEYIF OPLEFTPRNT Cond OPRIGHTPRNT Stmt KEYELSE Stmt
+   49     | KEYWHILE OPLEFTPRNT Cond OPRIGHTPRNT Stmt
+   50     | KEYBREAK SPSEMICOLON
+   51     | KEYCONTINUE SPSEMICOLON
+   52     | KEYRETURN SPSEMICOLON
+   53     | KEYRETURN Exp SPSEMICOLON
+
+   54 Exp: AddExp
+
+   55 Cond: LOrExp
+
+   56 LVal: IDENTIFIER ArrayExps
+
+   57 PrimaryExp: OPLEFTPRNT Exp OPRIGHTPRNT
+   58           | LVal
+   59           | Number
+
+   60 Number: IntConst
+
+   61 IntConst: CONSTANTOCT
+   62         | CONSTANTINTD
+   63         | CONSTANTINTH
+
+   64 UnaryExp: PrimaryExp
+   65         | IDENTIFIER OPLEFTPRNT OPRIGHTPRNT
+   66         | IDENTIFIER OPLEFTPRNT FuncRParams OPRIGHTPRNT
+   67         | UnaryOp UnaryExp
+
+   68 UnaryOp: OPPLUS
+   69        | OPMINUS
+   70        | OPNOT
+
+   71 FuncRParams: Exp Exps
+
+   72 Exps: %empty
+   73     | Exps SPCOMMA Exp
+
+   74 MulExp: UnaryExp
+   75       | MulExp OPMULTIPLY UnaryExp
+   76       | MulExp OPDIVIDE UnaryExp
+   77       | MulExp OPMOD UnaryExp
+
+   78 AddExp: MulExp
+   79       | AddExp OPPLUS MulExp
+   80       | AddExp OPMINUS MulExp
+
+   81 RelExp: AddExp
+   82       | RelExp OPLIGHT AddExp
+   83       | RelExp OPGREAT AddExp
+   84       | RelExp OPGREATEQ AddExp
+   85       | RelExp OPLIGHTEQ AddExp
+
+   86 EqExp: RelExp
+   87      | EqExp OPEQUAL RelExp
+   88      | EqExp OPNOTEQUAL RelExp
+
+   89 LAndExp: EqExp
+   90        | LAndExp OPAND EqExp
+
+   91 LOrExp: LAndExp
+   92       | LOrExp OPOR LAndExp
+
+   93 ConstExp: AddExp
+
+
+Terminals, with rules where they appear
+
+$end (0) 0
+error (256)
+SPSEMICOLON (258) 7 18 43 44 45 50 51 52 53
+SPCOMMA (259) 9 17 22 27 35 73
+SPDOT (260)
+SPLEFTBRACE (261) 14 15 24 25 38
+SPRIGHTBRACE (262) 14 15 24 25 38
+OPLEFTPRNT (263) 28 29 30 31 47 48 49 57 65 66
+OPRIGHTPRNT (264) 28 29 30 31 47 48 49 57 65 66
+OPLEFTBRACKET (265) 12 33 37
+OPRIGHTBRACKET (266) 12 33 37
+OPPLUS (267) 68 79
+OPMINUS (268) 69 80
+OPMULTIPLY (269) 75
+OPDIVIDE (270) 76
+OPMOD (271) 77
+OPASSIGN (272) 10 20 43
+OPAND (273) 90
+OPOR (274) 92
+OPNOT (275) 70
+OPEQUAL (276) 87
+OPNOTEQUAL (277) 88
+OPGREAT (278) 83
+OPLIGHT (279) 82
+OPGREATEQ (280) 84
+OPLIGHTEQ (281) 85
+TYPEVOID (282) 28 30
+TYPEINTEGER (283) 7 18 29 31 32 33
+KEYCONST (284) 7
+KEYIF (285) 47 48
+KEYELSE (286) 48
+KEYWHILE (287) 49
+KEYBREAK (288) 50
+KEYCONTINUE (289) 51
+KEYRETURN (290) 52 53
+CONSTANTINTD (291) 62
+CONSTANTINTH (292) 63
+CONSTANTOCT (293) 61
+IDENTIFIER (294) 10 19 20 28 29 30 31 32 33 56 65 66
+
+
+Nonterminals, with rules where they appear
+
+$accept (40)
+    左： 0
+CompUnit (41)
+    左： 1 2 3 4, 右： 0 1 2
+Decl (42)
+    左： 5 6, 右： 1 3 41
+ConstDecl (43)
+    左： 7, 右： 5
+ConstDefs (44)
+    左： 8 9, 右： 7 9
+ConstDef (45)
+    左： 10, 右： 7 9
+ArrayDef (46)
+    左： 11 12, 右： 10 12 19 20
+ConstInitVal (47)
+    左： 13 14 15, 右： 10 15 17
+ConstInitValList (48)
+    左： 16 17, 右： 15 17
+VarDecl (49)
+    左： 18, 右： 6
+VarDef (50)
+    左： 19 20, 右： 18 22
+VarDefs (51)
+    左： 21 22, 右： 18 22
+InitVal (52)
+    左： 23 24 25, 右： 20 25 27
+InitVals (53)
+    左： 26 27, 右： 25 27
+FuncDef (54)
+    左： 28 29 30 31, 右： 2 4
+FuncFParam (55)
+    左： 32 33, 右： 34 35
+FuncFParams (56)
+    左： 34 35, 右： 30 31 35
+ArrayExps (57)
+    左： 36 37, 右： 33 37 56
+Block (58)
+    左： 38, 右： 28 29 30 31 46
+BlockItems (59)
+    左： 39 40, 右： 38 40
+BlockItem (60)
+    左： 41 42, 右： 40
+Stmt (61)
+    左： 43 44 45 46 47 48 49 50 51 52 53, 右： 42 47 48 49
+Exp (62)
+    左： 54, 右： 23 37 43 45 53 57 71 73
+Cond (63)
+    左： 55, 右： 47 48 49
+LVal (64)
+    左： 56, 右： 43 58
+PrimaryExp (65)
+    左： 57 58 59, 右： 64
+Number (66)
+    左： 60, 右： 59
+IntConst (67)
+    左： 61 62 63, 右： 60
+UnaryExp (68)
+    左： 64 65 66 67, 右： 67 74 75 76 77
+UnaryOp (69)
+    左： 68 69 70, 右： 67
+FuncRParams (70)
+    左： 71, 右： 66
+Exps (71)
+    左： 72 73, 右： 71 73
+MulExp (72)
+    左： 74 75 76 77, 右： 75 76 77 78 79 80
+AddExp (73)
+    左： 78 79 80, 右： 54 79 80 81 82 83 84 85 93
+RelExp (74)
+    左： 81 82 83 84 85, 右： 82 83 84 85 86 87 88
+EqExp (75)
+    左： 86 87 88, 右： 87 88 89 90
+LAndExp (76)
+    左： 89 90, 右： 90 91 92
+LOrExp (77)
+    左： 91 92, 右： 55 92
+ConstExp (78)
+    左： 93, 右： 12 13
+
+
+State 0
+
+    0 $accept: . CompUnit $end
+
+    TYPEVOID     shift, and go to state 1
+    TYPEINTEGER  shift, and go to state 2
+    KEYCONST     shift, and go to state 3
+
+    CompUnit   转到状态 4
+    Decl       转到状态 5
+    ConstDecl  转到状态 6
+    VarDecl    转到状态 7
+    FuncDef    转到状态 8
+
+
+State 1
+
+   28 FuncDef: TYPEVOID . IDENTIFIER OPLEFTPRNT OPRIGHTPRNT Block
+   30        | TYPEVOID . IDENTIFIER OPLEFTPRNT FuncFParams OPRIGHTPRNT Block
+
+    IDENTIFIER  shift, and go to state 9
+
+
+State 2
+
+   18 VarDecl: TYPEINTEGER . VarDef VarDefs SPSEMICOLON
+   29 FuncDef: TYPEINTEGER . IDENTIFIER OPLEFTPRNT OPRIGHTPRNT Block
+   31        | TYPEINTEGER . IDENTIFIER OPLEFTPRNT FuncFParams OPRIGHTPRNT Block
+
+    IDENTIFIER  shift, and go to state 10
+
+    VarDef  转到状态 11
+
+
+State 3
+
+    7 ConstDecl: KEYCONST . TYPEINTEGER ConstDef ConstDefs SPSEMICOLON
+
+    TYPEINTEGER  shift, and go to state 12
+
+
+State 4
+
+    0 $accept: CompUnit . $end
+    1 CompUnit: CompUnit . Decl
+    2         | CompUnit . FuncDef
+
+    $end         shift, and go to state 13
+    TYPEVOID     shift, and go to state 1
+    TYPEINTEGER  shift, and go to state 2
+    KEYCONST     shift, and go to state 3
+
+    Decl       转到状态 14
+    ConstDecl  转到状态 6
+    VarDecl    转到状态 7
+    FuncDef    转到状态 15
+
+
+State 5
+
+    3 CompUnit: Decl .
+
+    $default  reduce using rule 3 (CompUnit)
+
+
+State 6
+
+    5 Decl: ConstDecl .
+
+    $default  reduce using rule 5 (Decl)
+
+
+State 7
+
+    6 Decl: VarDecl .
+
+    $default  reduce using rule 6 (Decl)
+
+
+State 8
+
+    4 CompUnit: FuncDef .
+
+    $default  reduce using rule 4 (CompUnit)
+
+
+State 9
+
+   28 FuncDef: TYPEVOID IDENTIFIER . OPLEFTPRNT OPRIGHTPRNT Block
+   30        | TYPEVOID IDENTIFIER . OPLEFTPRNT FuncFParams OPRIGHTPRNT Block
+
+    OPLEFTPRNT  shift, and go to state 16
+
+
+State 10
+
+   19 VarDef: IDENTIFIER . ArrayDef
+   20       | IDENTIFIER . ArrayDef OPASSIGN InitVal
+   29 FuncDef: TYPEINTEGER IDENTIFIER . OPLEFTPRNT OPRIGHTPRNT Block
+   31        | TYPEINTEGER IDENTIFIER . OPLEFTPRNT FuncFParams OPRIGHTPRNT Block
+
+    OPLEFTPRNT  shift, and go to state 17
+
+    $default  reduce using rule 11 (ArrayDef)
+
+    ArrayDef  转到状态 18
+
+
+State 11
+
+   18 VarDecl: TYPEINTEGER VarDef . VarDefs SPSEMICOLON
+
+    $default  reduce using rule 21 (VarDefs)
+
+    VarDefs  转到状态 19
+
+
+State 12
+
+    7 ConstDecl: KEYCONST TYPEINTEGER . ConstDef ConstDefs SPSEMICOLON
+
+    IDENTIFIER  shift, and go to state 20
+
+    ConstDef  转到状态 21
+
+
+State 13
+
+    0 $accept: CompUnit $end .
+
+    $default  接受
+
+
+State 14
+
+    1 CompUnit: CompUnit Decl .
+
+    $default  reduce using rule 1 (CompUnit)
+
+
+State 15
+
+    2 CompUnit: CompUnit FuncDef .
+
+    $default  reduce using rule 2 (CompUnit)
+
+
+State 16
+
+   28 FuncDef: TYPEVOID IDENTIFIER OPLEFTPRNT . OPRIGHTPRNT Block
+   30        | TYPEVOID IDENTIFIER OPLEFTPRNT . FuncFParams OPRIGHTPRNT Block
+
+    OPRIGHTPRNT  shift, and go to state 22
+    TYPEINTEGER  shift, and go to state 23
+
+    FuncFParam   转到状态 24
+    FuncFParams  转到状态 25
+
+
+State 17
+
+   29 FuncDef: TYPEINTEGER IDENTIFIER OPLEFTPRNT . OPRIGHTPRNT Block
+   31        | TYPEINTEGER IDENTIFIER OPLEFTPRNT . FuncFParams OPRIGHTPRNT Block
+
+    OPRIGHTPRNT  shift, and go to state 26
+    TYPEINTEGER  shift, and go to state 23
+
+    FuncFParam   转到状态 24
+    FuncFParams  转到状态 27
+
+
+State 18
+
+   12 ArrayDef: ArrayDef . OPLEFTBRACKET ConstExp OPRIGHTBRACKET
+   19 VarDef: IDENTIFIER ArrayDef .
+   20       | IDENTIFIER ArrayDef . OPASSIGN InitVal
+
+    OPLEFTBRACKET  shift, and go to state 28
+    OPASSIGN       shift, and go to state 29
+
+    $default  reduce using rule 19 (VarDef)
+
+
+State 19
+
+   18 VarDecl: TYPEINTEGER VarDef VarDefs . SPSEMICOLON
+   22 VarDefs: VarDefs . SPCOMMA VarDef
+
+    SPSEMICOLON  shift, and go to state 30
+    SPCOMMA      shift, and go to state 31
+
+
+State 20
+
+   10 ConstDef: IDENTIFIER . ArrayDef OPASSIGN ConstInitVal
+
+    $default  reduce using rule 11 (ArrayDef)
+
+    ArrayDef  转到状态 32
+
+
+State 21
+
+    7 ConstDecl: KEYCONST TYPEINTEGER ConstDef . ConstDefs SPSEMICOLON
+
+    $default  reduce using rule 8 (ConstDefs)
+
+    ConstDefs  转到状态 33
+
+
+State 22
+
+   28 FuncDef: TYPEVOID IDENTIFIER OPLEFTPRNT OPRIGHTPRNT . Block
+
+    SPLEFTBRACE  shift, and go to state 34
+
+    Block  转到状态 35
+
+
+State 23
+
+   32 FuncFParam: TYPEINTEGER . IDENTIFIER
+   33           | TYPEINTEGER . IDENTIFIER OPLEFTBRACKET OPRIGHTBRACKET ArrayExps
+
+    IDENTIFIER  shift, and go to state 36
+
+
+State 24
+
+   34 FuncFParams: FuncFParam .
+
+    $default  reduce using rule 34 (FuncFParams)
+
+
+State 25
+
+   30 FuncDef: TYPEVOID IDENTIFIER OPLEFTPRNT FuncFParams . OPRIGHTPRNT Block
+   35 FuncFParams: FuncFParams . SPCOMMA FuncFParam
+
+    SPCOMMA      shift, and go to state 37
+    OPRIGHTPRNT  shift, and go to state 38
+
+
+State 26
+
+   29 FuncDef: TYPEINTEGER IDENTIFIER OPLEFTPRNT OPRIGHTPRNT . Block
+
+    SPLEFTBRACE  shift, and go to state 34
+
+    Block  转到状态 39
+
+
+State 27
+
+   31 FuncDef: TYPEINTEGER IDENTIFIER OPLEFTPRNT FuncFParams . OPRIGHTPRNT Block
+   35 FuncFParams: FuncFParams . SPCOMMA FuncFParam
+
+    SPCOMMA      shift, and go to state 37
+    OPRIGHTPRNT  shift, and go to state 40
+
+
+State 28
+
+   12 ArrayDef: ArrayDef OPLEFTBRACKET . ConstExp OPRIGHTBRACKET
+
+    OPLEFTPRNT    shift, and go to state 41
+    OPPLUS        shift, and go to state 42
+    OPMINUS       shift, and go to state 43
+    OPNOT         shift, and go to state 44
+    CONSTANTINTD  shift, and go to state 45
+    CONSTANTINTH  shift, and go to state 46
+    CONSTANTOCT   shift, and go to state 47
+    IDENTIFIER    shift, and go to state 48
+
+    LVal        转到状态 49
+    PrimaryExp  转到状态 50
+    Number      转到状态 51
+    IntConst    转到状态 52
+    UnaryExp    转到状态 53
+    UnaryOp     转到状态 54
+    MulExp      转到状态 55
+    AddExp      转到状态 56
+    ConstExp    转到状态 57
+
+
+State 29
+
+   20 VarDef: IDENTIFIER ArrayDef OPASSIGN . InitVal
+
+    SPLEFTBRACE   shift, and go to state 58
+    OPLEFTPRNT    shift, and go to state 41
+    OPPLUS        shift, and go to state 42
+    OPMINUS       shift, and go to state 43
+    OPNOT         shift, and go to state 44
+    CONSTANTINTD  shift, and go to state 45
+    CONSTANTINTH  shift, and go to state 46
+    CONSTANTOCT   shift, and go to state 47
+    IDENTIFIER    shift, and go to state 48
+
+    InitVal     转到状态 59
+    Exp         转到状态 60
+    LVal        转到状态 49
+    PrimaryExp  转到状态 50
+    Number      转到状态 51
+    IntConst    转到状态 52
+    UnaryExp    转到状态 53
+    UnaryOp     转到状态 54
+    MulExp      转到状态 55
+    AddExp      转到状态 61
+
+
+State 30
+
+   18 VarDecl: TYPEINTEGER VarDef VarDefs SPSEMICOLON .
+
+    $default  reduce using rule 18 (VarDecl)
+
+
+State 31
+
+   22 VarDefs: VarDefs SPCOMMA . VarDef
+
+    IDENTIFIER  shift, and go to state 62
+
+    VarDef  转到状态 63
+
+
+State 32
+
+   10 ConstDef: IDENTIFIER ArrayDef . OPASSIGN ConstInitVal
+   12 ArrayDef: ArrayDef . OPLEFTBRACKET ConstExp OPRIGHTBRACKET
+
+    OPLEFTBRACKET  shift, and go to state 28
+    OPASSIGN       shift, and go to state 64
+
+
+State 33
+
+    7 ConstDecl: KEYCONST TYPEINTEGER ConstDef ConstDefs . SPSEMICOLON
+    9 ConstDefs: ConstDefs . SPCOMMA ConstDef
+
+    SPSEMICOLON  shift, and go to state 65
+    SPCOMMA      shift, and go to state 66
+
+
+State 34
+
+   38 Block: SPLEFTBRACE . BlockItems SPRIGHTBRACE
+
+    $default  reduce using rule 39 (BlockItems)
+
+    BlockItems  转到状态 67
+
+
+State 35
+
+   28 FuncDef: TYPEVOID IDENTIFIER OPLEFTPRNT OPRIGHTPRNT Block .
+
+    $default  reduce using rule 28 (FuncDef)
+
+
+State 36
+
+   32 FuncFParam: TYPEINTEGER IDENTIFIER .
+   33           | TYPEINTEGER IDENTIFIER . OPLEFTBRACKET OPRIGHTBRACKET ArrayExps
+
+    OPLEFTBRACKET  shift, and go to state 68
+
+    $default  reduce using rule 32 (FuncFParam)
+
+
+State 37
+
+   35 FuncFParams: FuncFParams SPCOMMA . FuncFParam
+
+    TYPEINTEGER  shift, and go to state 23
+
+    FuncFParam  转到状态 69
+
+
+State 38
+
+   30 FuncDef: TYPEVOID IDENTIFIER OPLEFTPRNT FuncFParams OPRIGHTPRNT . Block
+
+    SPLEFTBRACE  shift, and go to state 34
+
+    Block  转到状态 70
+
+
+State 39
+
+   29 FuncDef: TYPEINTEGER IDENTIFIER OPLEFTPRNT OPRIGHTPRNT Block .
+
+    $default  reduce using rule 29 (FuncDef)
+
+
+State 40
+
+   31 FuncDef: TYPEINTEGER IDENTIFIER OPLEFTPRNT FuncFParams OPRIGHTPRNT . Block
+
+    SPLEFTBRACE  shift, and go to state 34
+
+    Block  转到状态 71
+
+
+State 41
+
+   57 PrimaryExp: OPLEFTPRNT . Exp OPRIGHTPRNT
+
+    OPLEFTPRNT    shift, and go to state 41
+    OPPLUS        shift, and go to state 42
+    OPMINUS       shift, and go to state 43
+    OPNOT         shift, and go to state 44
+    CONSTANTINTD  shift, and go to state 45
+    CONSTANTINTH  shift, and go to state 46
+    CONSTANTOCT   shift, and go to state 47
+    IDENTIFIER    shift, and go to state 48
+
+    Exp         转到状态 72
+    LVal        转到状态 49
+    PrimaryExp  转到状态 50
+    Number      转到状态 51
+    IntConst    转到状态 52
+    UnaryExp    转到状态 53
+    UnaryOp     转到状态 54
+    MulExp      转到状态 55
+    AddExp      转到状态 61
+
+
+State 42
+
+   68 UnaryOp: OPPLUS .
+
+    $default  reduce using rule 68 (UnaryOp)
+
+
+State 43
+
+   69 UnaryOp: OPMINUS .
+
+    $default  reduce using rule 69 (UnaryOp)
+
+
+State 44
+
+   70 UnaryOp: OPNOT .
+
+    $default  reduce using rule 70 (UnaryOp)
+
+
+State 45
+
+   62 IntConst: CONSTANTINTD .
+
+    $default  reduce using rule 62 (IntConst)
+
+
+State 46
+
+   63 IntConst: CONSTANTINTH .
+
+    $default  reduce using rule 63 (IntConst)
+
+
+State 47
+
+   61 IntConst: CONSTANTOCT .
+
+    $default  reduce using rule 61 (IntConst)
+
+
+State 48
+
+   56 LVal: IDENTIFIER . ArrayExps
+   65 UnaryExp: IDENTIFIER . OPLEFTPRNT OPRIGHTPRNT
+   66         | IDENTIFIER . OPLEFTPRNT FuncRParams OPRIGHTPRNT
+
+    OPLEFTPRNT  shift, and go to state 73
+
+    $default  reduce using rule 36 (ArrayExps)
+
+    ArrayExps  转到状态 74
+
+
+State 49
+
+   58 PrimaryExp: LVal .
+
+    $default  reduce using rule 58 (PrimaryExp)
+
+
+State 50
+
+   64 UnaryExp: PrimaryExp .
+
+    $default  reduce using rule 64 (UnaryExp)
+
+
+State 51
+
+   59 PrimaryExp: Number .
+
+    $default  reduce using rule 59 (PrimaryExp)
+
+
+State 52
+
+   60 Number: IntConst .
+
+    $default  reduce using rule 60 (Number)
+
+
+State 53
+
+   74 MulExp: UnaryExp .
+
+    $default  reduce using rule 74 (MulExp)
+
+
+State 54
+
+   67 UnaryExp: UnaryOp . UnaryExp
+
+    OPLEFTPRNT    shift, and go to state 41
+    OPPLUS        shift, and go to state 42
+    OPMINUS       shift, and go to state 43
+    OPNOT         shift, and go to state 44
+    CONSTANTINTD  shift, and go to state 45
+    CONSTANTINTH  shift, and go to state 46
+    CONSTANTOCT   shift, and go to state 47
+    IDENTIFIER    shift, and go to state 48
+
+    LVal        转到状态 49
+    PrimaryExp  转到状态 50
+    Number      转到状态 51
+    IntConst    转到状态 52
+    UnaryExp    转到状态 75
+    UnaryOp     转到状态 54
+
+
+State 55
+
+   75 MulExp: MulExp . OPMULTIPLY UnaryExp
+   76       | MulExp . OPDIVIDE UnaryExp
+   77       | MulExp . OPMOD UnaryExp
+   78 AddExp: MulExp .
+
+    OPMULTIPLY  shift, and go to state 76
+    OPDIVIDE    shift, and go to state 77
+    OPMOD       shift, and go to state 78
+
+    $default  reduce using rule 78 (AddExp)
+
+
+State 56
+
+   79 AddExp: AddExp . OPPLUS MulExp
+   80       | AddExp . OPMINUS MulExp
+   93 ConstExp: AddExp .
+
+    OPPLUS   shift, and go to state 79
+    OPMINUS  shift, and go to state 80
+
+    $default  reduce using rule 93 (ConstExp)
+
+
+State 57
+
+   12 ArrayDef: ArrayDef OPLEFTBRACKET ConstExp . OPRIGHTBRACKET
+
+    OPRIGHTBRACKET  shift, and go to state 81
+
+
+State 58
+
+   24 InitVal: SPLEFTBRACE . SPRIGHTBRACE
+   25        | SPLEFTBRACE . InitVal InitVals SPRIGHTBRACE
+
+    SPLEFTBRACE   shift, and go to state 58
+    SPRIGHTBRACE  shift, and go to state 82
+    OPLEFTPRNT    shift, and go to state 41
+    OPPLUS        shift, and go to state 42
+    OPMINUS       shift, and go to state 43
+    OPNOT         shift, and go to state 44
+    CONSTANTINTD  shift, and go to state 45
+    CONSTANTINTH  shift, and go to state 46
+    CONSTANTOCT   shift, and go to state 47
+    IDENTIFIER    shift, and go to state 48
+
+    InitVal     转到状态 83
+    Exp         转到状态 60
+    LVal        转到状态 49
+    PrimaryExp  转到状态 50
+    Number      转到状态 51
+    IntConst    转到状态 52
+    UnaryExp    转到状态 53
+    UnaryOp     转到状态 54
+    MulExp      转到状态 55
+    AddExp      转到状态 61
+
+
+State 59
+
+   20 VarDef: IDENTIFIER ArrayDef OPASSIGN InitVal .
+
+    $default  reduce using rule 20 (VarDef)
+
+
+State 60
+
+   23 InitVal: Exp .
+
+    $default  reduce using rule 23 (InitVal)
+
+
+State 61
+
+   54 Exp: AddExp .
+   79 AddExp: AddExp . OPPLUS MulExp
+   80       | AddExp . OPMINUS MulExp
+
+    OPPLUS   shift, and go to state 79
+    OPMINUS  shift, and go to state 80
+
+    $default  reduce using rule 54 (Exp)
+
+
+State 62
+
+   19 VarDef: IDENTIFIER . ArrayDef
+   20       | IDENTIFIER . ArrayDef OPASSIGN InitVal
+
+    $default  reduce using rule 11 (ArrayDef)
+
+    ArrayDef  转到状态 18
+
+
+State 63
+
+   22 VarDefs: VarDefs SPCOMMA VarDef .
+
+    $default  reduce using rule 22 (VarDefs)
+
+
+State 64
+
+   10 ConstDef: IDENTIFIER ArrayDef OPASSIGN . ConstInitVal
+
+    SPLEFTBRACE   shift, and go to state 84
+    OPLEFTPRNT    shift, and go to state 41
+    OPPLUS        shift, and go to state 42
+    OPMINUS       shift, and go to state 43
+    OPNOT         shift, and go to state 44
+    CONSTANTINTD  shift, and go to state 45
+    CONSTANTINTH  shift, and go to state 46
+    CONSTANTOCT   shift, and go to state 47
+    IDENTIFIER    shift, and go to state 48
+
+    ConstInitVal  转到状态 85
+    LVal          转到状态 49
+    PrimaryExp    转到状态 50
+    Number        转到状态 51
+    IntConst      转到状态 52
+    UnaryExp      转到状态 53
+    UnaryOp       转到状态 54
+    MulExp        转到状态 55
+    AddExp        转到状态 56
+    ConstExp      转到状态 86
+
+
+State 65
+
+    7 ConstDecl: KEYCONST TYPEINTEGER ConstDef ConstDefs SPSEMICOLON .
+
+    $default  reduce using rule 7 (ConstDecl)
+
+
+State 66
+
+    9 ConstDefs: ConstDefs SPCOMMA . ConstDef
+
+    IDENTIFIER  shift, and go to state 20
+
+    ConstDef  转到状态 87
+
+
+State 67
+
+   38 Block: SPLEFTBRACE BlockItems . SPRIGHTBRACE
+   40 BlockItems: BlockItems . BlockItem
+
+    SPSEMICOLON   shift, and go to state 88
+    SPLEFTBRACE   shift, and go to state 34
+    SPRIGHTBRACE  shift, and go to state 89
+    OPLEFTPRNT    shift, and go to state 41
+    OPPLUS        shift, and go to state 42
+    OPMINUS       shift, and go to state 43
+    OPNOT         shift, and go to state 44
+    TYPEINTEGER   shift, and go to state 90
+    KEYCONST      shift, and go to state 3
+    KEYIF         shift, and go to state 91
+    KEYWHILE      shift, and go to state 92
+    KEYBREAK      shift, and go to state 93
+    KEYCONTINUE   shift, and go to state 94
+    KEYRETURN     shift, and go to state 95
+    CONSTANTINTD  shift, and go to state 45
+    CONSTANTINTH  shift, and go to state 46
+    CONSTANTOCT   shift, and go to state 47
+    IDENTIFIER    shift, and go to state 48
+
+    Decl        转到状态 96
+    ConstDecl   转到状态 6
+    VarDecl     转到状态 7
+    Block       转到状态 97
+    BlockItem   转到状态 98
+    Stmt        转到状态 99
+    Exp         转到状态 100
+    LVal        转到状态 101
+    PrimaryExp  转到状态 50
+    Number      转到状态 51
+    IntConst    转到状态 52
+    UnaryExp    转到状态 53
+    UnaryOp     转到状态 54
+    MulExp      转到状态 55
+    AddExp      转到状态 61
+
+
+State 68
+
+   33 FuncFParam: TYPEINTEGER IDENTIFIER OPLEFTBRACKET . OPRIGHTBRACKET ArrayExps
+
+    OPRIGHTBRACKET  shift, and go to state 102
+
+
+State 69
+
+   35 FuncFParams: FuncFParams SPCOMMA FuncFParam .
+
+    $default  reduce using rule 35 (FuncFParams)
+
+
+State 70
+
+   30 FuncDef: TYPEVOID IDENTIFIER OPLEFTPRNT FuncFParams OPRIGHTPRNT Block .
+
+    $default  reduce using rule 30 (FuncDef)
+
+
+State 71
+
+   31 FuncDef: TYPEINTEGER IDENTIFIER OPLEFTPRNT FuncFParams OPRIGHTPRNT Block .
+
+    $default  reduce using rule 31 (FuncDef)
+
+
+State 72
+
+   57 PrimaryExp: OPLEFTPRNT Exp . OPRIGHTPRNT
+
+    OPRIGHTPRNT  shift, and go to state 103
+
+
+State 73
+
+   65 UnaryExp: IDENTIFIER OPLEFTPRNT . OPRIGHTPRNT
+   66         | IDENTIFIER OPLEFTPRNT . FuncRParams OPRIGHTPRNT
+
+    OPLEFTPRNT    shift, and go to state 41
+    OPRIGHTPRNT   shift, and go to state 104
+    OPPLUS        shift, and go to state 42
+    OPMINUS       shift, and go to state 43
+    OPNOT         shift, and go to state 44
+    CONSTANTINTD  shift, and go to state 45
+    CONSTANTINTH  shift, and go to state 46
+    CONSTANTOCT   shift, and go to state 47
+    IDENTIFIER    shift, and go to state 48
+
+    Exp          转到状态 105
+    LVal         转到状态 49
+    PrimaryExp   转到状态 50
+    Number       转到状态 51
+    IntConst     转到状态 52
+    UnaryExp     转到状态 53
+    UnaryOp      转到状态 54
+    FuncRParams  转到状态 106
+    MulExp       转到状态 55
+    AddExp       转到状态 61
+
+
+State 74
+
+   37 ArrayExps: ArrayExps . OPLEFTBRACKET Exp OPRIGHTBRACKET
+   56 LVal: IDENTIFIER ArrayExps .
+
+    OPLEFTBRACKET  shift, and go to state 107
+
+    $default  reduce using rule 56 (LVal)
+
+
+State 75
+
+   67 UnaryExp: UnaryOp UnaryExp .
+
+    $default  reduce using rule 67 (UnaryExp)
+
+
+State 76
+
+   75 MulExp: MulExp OPMULTIPLY . UnaryExp
+
+    OPLEFTPRNT    shift, and go to state 41
+    OPPLUS        shift, and go to state 42
+    OPMINUS       shift, and go to state 43
+    OPNOT         shift, and go to state 44
+    CONSTANTINTD  shift, and go to state 45
+    CONSTANTINTH  shift, and go to state 46
+    CONSTANTOCT   shift, and go to state 47
+    IDENTIFIER    shift, and go to state 48
+
+    LVal        转到状态 49
+    PrimaryExp  转到状态 50
+    Number      转到状态 51
+    IntConst    转到状态 52
+    UnaryExp    转到状态 108
+    UnaryOp     转到状态 54
+
+
+State 77
+
+   76 MulExp: MulExp OPDIVIDE . UnaryExp
+
+    OPLEFTPRNT    shift, and go to state 41
+    OPPLUS        shift, and go to state 42
+    OPMINUS       shift, and go to state 43
+    OPNOT         shift, and go to state 44
+    CONSTANTINTD  shift, and go to state 45
+    CONSTANTINTH  shift, and go to state 46
+    CONSTANTOCT   shift, and go to state 47
+    IDENTIFIER    shift, and go to state 48
+
+    LVal        转到状态 49
+    PrimaryExp  转到状态 50
+    Number      转到状态 51
+    IntConst    转到状态 52
+    UnaryExp    转到状态 109
+    UnaryOp     转到状态 54
+
+
+State 78
+
+   77 MulExp: MulExp OPMOD . UnaryExp
+
+    OPLEFTPRNT    shift, and go to state 41
+    OPPLUS        shift, and go to state 42
+    OPMINUS       shift, and go to state 43
+    OPNOT         shift, and go to state 44
+    CONSTANTINTD  shift, and go to state 45
+    CONSTANTINTH  shift, and go to state 46
+    CONSTANTOCT   shift, and go to state 47
+    IDENTIFIER    shift, and go to state 48
+
+    LVal        转到状态 49
+    PrimaryExp  转到状态 50
+    Number      转到状态 51
+    IntConst    转到状态 52
+    UnaryExp    转到状态 110
+    UnaryOp     转到状态 54
+
+
+State 79
+
+   79 AddExp: AddExp OPPLUS . MulExp
+
+    OPLEFTPRNT    shift, and go to state 41
+    OPPLUS        shift, and go to state 42
+    OPMINUS       shift, and go to state 43
+    OPNOT         shift, and go to state 44
+    CONSTANTINTD  shift, and go to state 45
+    CONSTANTINTH  shift, and go to state 46
+    CONSTANTOCT   shift, and go to state 47
+    IDENTIFIER    shift, and go to state 48
+
+    LVal        转到状态 49
+    PrimaryExp  转到状态 50
+    Number      转到状态 51
+    IntConst    转到状态 52
+    UnaryExp    转到状态 53
+    UnaryOp     转到状态 54
+    MulExp      转到状态 111
+
+
+State 80
+
+   80 AddExp: AddExp OPMINUS . MulExp
+
+    OPLEFTPRNT    shift, and go to state 41
+    OPPLUS        shift, and go to state 42
+    OPMINUS       shift, and go to state 43
+    OPNOT         shift, and go to state 44
+    CONSTANTINTD  shift, and go to state 45
+    CONSTANTINTH  shift, and go to state 46
+    CONSTANTOCT   shift, and go to state 47
+    IDENTIFIER    shift, and go to state 48
+
+    LVal        转到状态 49
+    PrimaryExp  转到状态 50
+    Number      转到状态 51
+    IntConst    转到状态 52
+    UnaryExp    转到状态 53
+    UnaryOp     转到状态 54
+    MulExp      转到状态 112
+
+
+State 81
+
+   12 ArrayDef: ArrayDef OPLEFTBRACKET ConstExp OPRIGHTBRACKET .
+
+    $default  reduce using rule 12 (ArrayDef)
+
+
+State 82
+
+   24 InitVal: SPLEFTBRACE SPRIGHTBRACE .
+
+    $default  reduce using rule 24 (InitVal)
+
+
+State 83
+
+   25 InitVal: SPLEFTBRACE InitVal . InitVals SPRIGHTBRACE
+
+    $default  reduce using rule 26 (InitVals)
+
+    InitVals  转到状态 113
+
+
+State 84
+
+   14 ConstInitVal: SPLEFTBRACE . SPRIGHTBRACE
+   15             | SPLEFTBRACE . ConstInitVal ConstInitValList SPRIGHTBRACE
+
+    SPLEFTBRACE   shift, and go to state 84
+    SPRIGHTBRACE  shift, and go to state 114
+    OPLEFTPRNT    shift, and go to state 41
+    OPPLUS        shift, and go to state 42
+    OPMINUS       shift, and go to state 43
+    OPNOT         shift, and go to state 44
+    CONSTANTINTD  shift, and go to state 45
+    CONSTANTINTH  shift, and go to state 46
+    CONSTANTOCT   shift, and go to state 47
+    IDENTIFIER    shift, and go to state 48
+
+    ConstInitVal  转到状态 115
+    LVal          转到状态 49
+    PrimaryExp    转到状态 50
+    Number        转到状态 51
+    IntConst      转到状态 52
+    UnaryExp      转到状态 53
+    UnaryOp       转到状态 54
+    MulExp        转到状态 55
+    AddExp        转到状态 56
+    ConstExp      转到状态 86
+
+
+State 85
+
+   10 ConstDef: IDENTIFIER ArrayDef OPASSIGN ConstInitVal .
+
+    $default  reduce using rule 10 (ConstDef)
+
+
+State 86
+
+   13 ConstInitVal: ConstExp .
+
+    $default  reduce using rule 13 (ConstInitVal)
+
+
+State 87
+
+    9 ConstDefs: ConstDefs SPCOMMA ConstDef .
+
+    $default  reduce using rule 9 (ConstDefs)
+
+
+State 88
+
+   44 Stmt: SPSEMICOLON .
+
+    $default  reduce using rule 44 (Stmt)
+
+
+State 89
+
+   38 Block: SPLEFTBRACE BlockItems SPRIGHTBRACE .
+
+    $default  reduce using rule 38 (Block)
+
+
+State 90
+
+   18 VarDecl: TYPEINTEGER . VarDef VarDefs SPSEMICOLON
+
+    IDENTIFIER  shift, and go to state 62
+
+    VarDef  转到状态 11
+
+
+State 91
+
+   47 Stmt: KEYIF . OPLEFTPRNT Cond OPRIGHTPRNT Stmt
+   48     | KEYIF . OPLEFTPRNT Cond OPRIGHTPRNT Stmt KEYELSE Stmt
+
+    OPLEFTPRNT  shift, and go to state 116
+
+
+State 92
+
+   49 Stmt: KEYWHILE . OPLEFTPRNT Cond OPRIGHTPRNT Stmt
+
+    OPLEFTPRNT  shift, and go to state 117
+
+
+State 93
+
+   50 Stmt: KEYBREAK . SPSEMICOLON
+
+    SPSEMICOLON  shift, and go to state 118
+
+
+State 94
+
+   51 Stmt: KEYCONTINUE . SPSEMICOLON
+
+    SPSEMICOLON  shift, and go to state 119
+
+
+State 95
+
+   52 Stmt: KEYRETURN . SPSEMICOLON
+   53     | KEYRETURN . Exp SPSEMICOLON
+
+    SPSEMICOLON   shift, and go to state 120
+    OPLEFTPRNT    shift, and go to state 41
+    OPPLUS        shift, and go to state 42
+    OPMINUS       shift, and go to state 43
+    OPNOT         shift, and go to state 44
+    CONSTANTINTD  shift, and go to state 45
+    CONSTANTINTH  shift, and go to state 46
+    CONSTANTOCT   shift, and go to state 47
+    IDENTIFIER    shift, and go to state 48
+
+    Exp         转到状态 121
+    LVal        转到状态 49
+    PrimaryExp  转到状态 50
+    Number      转到状态 51
+    IntConst    转到状态 52
+    UnaryExp    转到状态 53
+    UnaryOp     转到状态 54
+    MulExp      转到状态 55
+    AddExp      转到状态 61
+
+
+State 96
+
+   41 BlockItem: Decl .
+
+    $default  reduce using rule 41 (BlockItem)
+
+
+State 97
+
+   46 Stmt: Block .
+
+    $default  reduce using rule 46 (Stmt)
+
+
+State 98
+
+   40 BlockItems: BlockItems BlockItem .
+
+    $default  reduce using rule 40 (BlockItems)
+
+
+State 99
+
+   42 BlockItem: Stmt .
+
+    $default  reduce using rule 42 (BlockItem)
+
+
+State 100
+
+   45 Stmt: Exp . SPSEMICOLON
+
+    SPSEMICOLON  shift, and go to state 122
+
+
+State 101
+
+   43 Stmt: LVal . OPASSIGN Exp SPSEMICOLON
+   58 PrimaryExp: LVal .
+
+    OPASSIGN  shift, and go to state 123
+
+    $default  reduce using rule 58 (PrimaryExp)
+
+
+State 102
+
+   33 FuncFParam: TYPEINTEGER IDENTIFIER OPLEFTBRACKET OPRIGHTBRACKET . ArrayExps
+
+    $default  reduce using rule 36 (ArrayExps)
+
+    ArrayExps  转到状态 124
+
+
+State 103
+
+   57 PrimaryExp: OPLEFTPRNT Exp OPRIGHTPRNT .
+
+    $default  reduce using rule 57 (PrimaryExp)
+
+
+State 104
+
+   65 UnaryExp: IDENTIFIER OPLEFTPRNT OPRIGHTPRNT .
+
+    $default  reduce using rule 65 (UnaryExp)
+
+
+State 105
+
+   71 FuncRParams: Exp . Exps
+
+    $default  reduce using rule 72 (Exps)
+
+    Exps  转到状态 125
+
+
+State 106
+
+   66 UnaryExp: IDENTIFIER OPLEFTPRNT FuncRParams . OPRIGHTPRNT
+
+    OPRIGHTPRNT  shift, and go to state 126
+
+
+State 107
+
+   37 ArrayExps: ArrayExps OPLEFTBRACKET . Exp OPRIGHTBRACKET
+
+    OPLEFTPRNT    shift, and go to state 41
+    OPPLUS        shift, and go to state 42
+    OPMINUS       shift, and go to state 43
+    OPNOT         shift, and go to state 44
+    CONSTANTINTD  shift, and go to state 45
+    CONSTANTINTH  shift, and go to state 46
+    CONSTANTOCT   shift, and go to state 47
+    IDENTIFIER    shift, and go to state 48
+
+    Exp         转到状态 127
+    LVal        转到状态 49
+    PrimaryExp  转到状态 50
+    Number      转到状态 51
+    IntConst    转到状态 52
+    UnaryExp    转到状态 53
+    UnaryOp     转到状态 54
+    MulExp      转到状态 55
+    AddExp      转到状态 61
+
+
+State 108
+
+   75 MulExp: MulExp OPMULTIPLY UnaryExp .
+
+    $default  reduce using rule 75 (MulExp)
+
+
+State 109
+
+   76 MulExp: MulExp OPDIVIDE UnaryExp .
+
+    $default  reduce using rule 76 (MulExp)
+
+
+State 110
+
+   77 MulExp: MulExp OPMOD UnaryExp .
+
+    $default  reduce using rule 77 (MulExp)
+
+
+State 111
+
+   75 MulExp: MulExp . OPMULTIPLY UnaryExp
+   76       | MulExp . OPDIVIDE UnaryExp
+   77       | MulExp . OPMOD UnaryExp
+   79 AddExp: AddExp OPPLUS MulExp .
+
+    OPMULTIPLY  shift, and go to state 76
+    OPDIVIDE    shift, and go to state 77
+    OPMOD       shift, and go to state 78
+
+    $default  reduce using rule 79 (AddExp)
+
+
+State 112
+
+   75 MulExp: MulExp . OPMULTIPLY UnaryExp
+   76       | MulExp . OPDIVIDE UnaryExp
+   77       | MulExp . OPMOD UnaryExp
+   80 AddExp: AddExp OPMINUS MulExp .
+
+    OPMULTIPLY  shift, and go to state 76
+    OPDIVIDE    shift, and go to state 77
+    OPMOD       shift, and go to state 78
+
+    $default  reduce using rule 80 (AddExp)
+
+
+State 113
+
+   25 InitVal: SPLEFTBRACE InitVal InitVals . SPRIGHTBRACE
+   27 InitVals: InitVals . SPCOMMA InitVal
+
+    SPCOMMA       shift, and go to state 128
+    SPRIGHTBRACE  shift, and go to state 129
+
+
+State 114
+
+   14 ConstInitVal: SPLEFTBRACE SPRIGHTBRACE .
+
+    $default  reduce using rule 14 (ConstInitVal)
+
+
+State 115
+
+   15 ConstInitVal: SPLEFTBRACE ConstInitVal . ConstInitValList SPRIGHTBRACE
+
+    $default  reduce using rule 16 (ConstInitValList)
+
+    ConstInitValList  转到状态 130
+
+
+State 116
+
+   47 Stmt: KEYIF OPLEFTPRNT . Cond OPRIGHTPRNT Stmt
+   48     | KEYIF OPLEFTPRNT . Cond OPRIGHTPRNT Stmt KEYELSE Stmt
+
+    OPLEFTPRNT    shift, and go to state 41
+    OPPLUS        shift, and go to state 42
+    OPMINUS       shift, and go to state 43
+    OPNOT         shift, and go to state 44
+    CONSTANTINTD  shift, and go to state 45
+    CONSTANTINTH  shift, and go to state 46
+    CONSTANTOCT   shift, and go to state 47
+    IDENTIFIER    shift, and go to state 48
+
+    Cond        转到状态 131
+    LVal        转到状态 49
+    PrimaryExp  转到状态 50
+    Number      转到状态 51
+    IntConst    转到状态 52
+    UnaryExp    转到状态 53
+    UnaryOp     转到状态 54
+    MulExp      转到状态 55
+    AddExp      转到状态 132
+    RelExp      转到状态 133
+    EqExp       转到状态 134
+    LAndExp     转到状态 135
+    LOrExp      转到状态 136
+
+
+State 117
+
+   49 Stmt: KEYWHILE OPLEFTPRNT . Cond OPRIGHTPRNT Stmt
+
+    OPLEFTPRNT    shift, and go to state 41
+    OPPLUS        shift, and go to state 42
+    OPMINUS       shift, and go to state 43
+    OPNOT         shift, and go to state 44
+    CONSTANTINTD  shift, and go to state 45
+    CONSTANTINTH  shift, and go to state 46
+    CONSTANTOCT   shift, and go to state 47
+    IDENTIFIER    shift, and go to state 48
+
+    Cond        转到状态 137
+    LVal        转到状态 49
+    PrimaryExp  转到状态 50
+    Number      转到状态 51
+    IntConst    转到状态 52
+    UnaryExp    转到状态 53
+    UnaryOp     转到状态 54
+    MulExp      转到状态 55
+    AddExp      转到状态 132
+    RelExp      转到状态 133
+    EqExp       转到状态 134
+    LAndExp     转到状态 135
+    LOrExp      转到状态 136
+
+
+State 118
+
+   50 Stmt: KEYBREAK SPSEMICOLON .
+
+    $default  reduce using rule 50 (Stmt)
+
+
+State 119
+
+   51 Stmt: KEYCONTINUE SPSEMICOLON .
+
+    $default  reduce using rule 51 (Stmt)
+
+
+State 120
+
+   52 Stmt: KEYRETURN SPSEMICOLON .
+
+    $default  reduce using rule 52 (Stmt)
+
+
+State 121
+
+   53 Stmt: KEYRETURN Exp . SPSEMICOLON
+
+    SPSEMICOLON  shift, and go to state 138
+
+
+State 122
+
+   45 Stmt: Exp SPSEMICOLON .
+
+    $default  reduce using rule 45 (Stmt)
+
+
+State 123
+
+   43 Stmt: LVal OPASSIGN . Exp SPSEMICOLON
+
+    OPLEFTPRNT    shift, and go to state 41
+    OPPLUS        shift, and go to state 42
+    OPMINUS       shift, and go to state 43
+    OPNOT         shift, and go to state 44
+    CONSTANTINTD  shift, and go to state 45
+    CONSTANTINTH  shift, and go to state 46
+    CONSTANTOCT   shift, and go to state 47
+    IDENTIFIER    shift, and go to state 48
+
+    Exp         转到状态 139
+    LVal        转到状态 49
+    PrimaryExp  转到状态 50
+    Number      转到状态 51
+    IntConst    转到状态 52
+    UnaryExp    转到状态 53
+    UnaryOp     转到状态 54
+    MulExp      转到状态 55
+    AddExp      转到状态 61
+
+
+State 124
+
+   33 FuncFParam: TYPEINTEGER IDENTIFIER OPLEFTBRACKET OPRIGHTBRACKET ArrayExps .
+   37 ArrayExps: ArrayExps . OPLEFTBRACKET Exp OPRIGHTBRACKET
+
+    OPLEFTBRACKET  shift, and go to state 107
+
+    $default  reduce using rule 33 (FuncFParam)
+
+
+State 125
+
+   71 FuncRParams: Exp Exps .
+   73 Exps: Exps . SPCOMMA Exp
+
+    SPCOMMA  shift, and go to state 140
+
+    $default  reduce using rule 71 (FuncRParams)
+
+
+State 126
+
+   66 UnaryExp: IDENTIFIER OPLEFTPRNT FuncRParams OPRIGHTPRNT .
+
+    $default  reduce using rule 66 (UnaryExp)
+
+
+State 127
+
+   37 ArrayExps: ArrayExps OPLEFTBRACKET Exp . OPRIGHTBRACKET
+
+    OPRIGHTBRACKET  shift, and go to state 141
+
+
+State 128
+
+   27 InitVals: InitVals SPCOMMA . InitVal
+
+    SPLEFTBRACE   shift, and go to state 58
+    OPLEFTPRNT    shift, and go to state 41
+    OPPLUS        shift, and go to state 42
+    OPMINUS       shift, and go to state 43
+    OPNOT         shift, and go to state 44
+    CONSTANTINTD  shift, and go to state 45
+    CONSTANTINTH  shift, and go to state 46
+    CONSTANTOCT   shift, and go to state 47
+    IDENTIFIER    shift, and go to state 48
+
+    InitVal     转到状态 142
+    Exp         转到状态 60
+    LVal        转到状态 49
+    PrimaryExp  转到状态 50
+    Number      转到状态 51
+    IntConst    转到状态 52
+    UnaryExp    转到状态 53
+    UnaryOp     转到状态 54
+    MulExp      转到状态 55
+    AddExp      转到状态 61
+
+
+State 129
+
+   25 InitVal: SPLEFTBRACE InitVal InitVals SPRIGHTBRACE .
+
+    $default  reduce using rule 25 (InitVal)
+
+
+State 130
+
+   15 ConstInitVal: SPLEFTBRACE ConstInitVal ConstInitValList . SPRIGHTBRACE
+   17 ConstInitValList: ConstInitValList . SPCOMMA ConstInitVal
+
+    SPCOMMA       shift, and go to state 143
+    SPRIGHTBRACE  shift, and go to state 144
+
+
+State 131
+
+   47 Stmt: KEYIF OPLEFTPRNT Cond . OPRIGHTPRNT Stmt
+   48     | KEYIF OPLEFTPRNT Cond . OPRIGHTPRNT Stmt KEYELSE Stmt
+
+    OPRIGHTPRNT  shift, and go to state 145
+
+
+State 132
+
+   79 AddExp: AddExp . OPPLUS MulExp
+   80       | AddExp . OPMINUS MulExp
+   81 RelExp: AddExp .
+
+    OPPLUS   shift, and go to state 79
+    OPMINUS  shift, and go to state 80
+
+    $default  reduce using rule 81 (RelExp)
+
+
+State 133
+
+   82 RelExp: RelExp . OPLIGHT AddExp
+   83       | RelExp . OPGREAT AddExp
+   84       | RelExp . OPGREATEQ AddExp
+   85       | RelExp . OPLIGHTEQ AddExp
+   86 EqExp: RelExp .
+
+    OPGREAT    shift, and go to state 146
+    OPLIGHT    shift, and go to state 147
+    OPGREATEQ  shift, and go to state 148
+    OPLIGHTEQ  shift, and go to state 149
+
+    $default  reduce using rule 86 (EqExp)
+
+
+State 134
+
+   87 EqExp: EqExp . OPEQUAL RelExp
+   88      | EqExp . OPNOTEQUAL RelExp
+   89 LAndExp: EqExp .
+
+    OPEQUAL     shift, and go to state 150
+    OPNOTEQUAL  shift, and go to state 151
+
+    $default  reduce using rule 89 (LAndExp)
+
+
+State 135
+
+   90 LAndExp: LAndExp . OPAND EqExp
+   91 LOrExp: LAndExp .
+
+    OPAND  shift, and go to state 152
+
+    $default  reduce using rule 91 (LOrExp)
+
+
+State 136
+
+   55 Cond: LOrExp .
+   92 LOrExp: LOrExp . OPOR LAndExp
+
+    OPOR  shift, and go to state 153
+
+    $default  reduce using rule 55 (Cond)
+
+
+State 137
+
+   49 Stmt: KEYWHILE OPLEFTPRNT Cond . OPRIGHTPRNT Stmt
+
+    OPRIGHTPRNT  shift, and go to state 154
+
+
+State 138
+
+   53 Stmt: KEYRETURN Exp SPSEMICOLON .
+
+    $default  reduce using rule 53 (Stmt)
+
+
+State 139
+
+   43 Stmt: LVal OPASSIGN Exp . SPSEMICOLON
+
+    SPSEMICOLON  shift, and go to state 155
+
+
+State 140
+
+   73 Exps: Exps SPCOMMA . Exp
+
+    OPLEFTPRNT    shift, and go to state 41
+    OPPLUS        shift, and go to state 42
+    OPMINUS       shift, and go to state 43
+    OPNOT         shift, and go to state 44
+    CONSTANTINTD  shift, and go to state 45
+    CONSTANTINTH  shift, and go to state 46
+    CONSTANTOCT   shift, and go to state 47
+    IDENTIFIER    shift, and go to state 48
+
+    Exp         转到状态 156
+    LVal        转到状态 49
+    PrimaryExp  转到状态 50
+    Number      转到状态 51
+    IntConst    转到状态 52
+    UnaryExp    转到状态 53
+    UnaryOp     转到状态 54
+    MulExp      转到状态 55
+    AddExp      转到状态 61
+
+
+State 141
+
+   37 ArrayExps: ArrayExps OPLEFTBRACKET Exp OPRIGHTBRACKET .
+
+    $default  reduce using rule 37 (ArrayExps)
+
+
+State 142
+
+   27 InitVals: InitVals SPCOMMA InitVal .
+
+    $default  reduce using rule 27 (InitVals)
+
+
+State 143
+
+   17 ConstInitValList: ConstInitValList SPCOMMA . ConstInitVal
+
+    SPLEFTBRACE   shift, and go to state 84
+    OPLEFTPRNT    shift, and go to state 41
+    OPPLUS        shift, and go to state 42
+    OPMINUS       shift, and go to state 43
+    OPNOT         shift, and go to state 44
+    CONSTANTINTD  shift, and go to state 45
+    CONSTANTINTH  shift, and go to state 46
+    CONSTANTOCT   shift, and go to state 47
+    IDENTIFIER    shift, and go to state 48
+
+    ConstInitVal  转到状态 157
+    LVal          转到状态 49
+    PrimaryExp    转到状态 50
+    Number        转到状态 51
+    IntConst      转到状态 52
+    UnaryExp      转到状态 53
+    UnaryOp       转到状态 54
+    MulExp        转到状态 55
+    AddExp        转到状态 56
+    ConstExp      转到状态 86
+
+
+State 144
+
+   15 ConstInitVal: SPLEFTBRACE ConstInitVal ConstInitValList SPRIGHTBRACE .
+
+    $default  reduce using rule 15 (ConstInitVal)
+
+
+State 145
+
+   47 Stmt: KEYIF OPLEFTPRNT Cond OPRIGHTPRNT . Stmt
+   48     | KEYIF OPLEFTPRNT Cond OPRIGHTPRNT . Stmt KEYELSE Stmt
+
+    SPSEMICOLON   shift, and go to state 88
+    SPLEFTBRACE   shift, and go to state 34
+    OPLEFTPRNT    shift, and go to state 41
+    OPPLUS        shift, and go to state 42
+    OPMINUS       shift, and go to state 43
+    OPNOT         shift, and go to state 44
+    KEYIF         shift, and go to state 91
+    KEYWHILE      shift, and go to state 92
+    KEYBREAK      shift, and go to state 93
+    KEYCONTINUE   shift, and go to state 94
+    KEYRETURN     shift, and go to state 95
+    CONSTANTINTD  shift, and go to state 45
+    CONSTANTINTH  shift, and go to state 46
+    CONSTANTOCT   shift, and go to state 47
+    IDENTIFIER    shift, and go to state 48
+
+    Block       转到状态 97
+    Stmt        转到状态 158
+    Exp         转到状态 100
+    LVal        转到状态 101
+    PrimaryExp  转到状态 50
+    Number      转到状态 51
+    IntConst    转到状态 52
+    UnaryExp    转到状态 53
+    UnaryOp     转到状态 54
+    MulExp      转到状态 55
+    AddExp      转到状态 61
+
+
+State 146
+
+   83 RelExp: RelExp OPGREAT . AddExp
+
+    OPLEFTPRNT    shift, and go to state 41
+    OPPLUS        shift, and go to state 42
+    OPMINUS       shift, and go to state 43
+    OPNOT         shift, and go to state 44
+    CONSTANTINTD  shift, and go to state 45
+    CONSTANTINTH  shift, and go to state 46
+    CONSTANTOCT   shift, and go to state 47
+    IDENTIFIER    shift, and go to state 48
+
+    LVal        转到状态 49
+    PrimaryExp  转到状态 50
+    Number      转到状态 51
+    IntConst    转到状态 52
+    UnaryExp    转到状态 53
+    UnaryOp     转到状态 54
+    MulExp      转到状态 55
+    AddExp      转到状态 159
+
+
+State 147
+
+   82 RelExp: RelExp OPLIGHT . AddExp
+
+    OPLEFTPRNT    shift, and go to state 41
+    OPPLUS        shift, and go to state 42
+    OPMINUS       shift, and go to state 43
+    OPNOT         shift, and go to state 44
+    CONSTANTINTD  shift, and go to state 45
+    CONSTANTINTH  shift, and go to state 46
+    CONSTANTOCT   shift, and go to state 47
+    IDENTIFIER    shift, and go to state 48
+
+    LVal        转到状态 49
+    PrimaryExp  转到状态 50
+    Number      转到状态 51
+    IntConst    转到状态 52
+    UnaryExp    转到状态 53
+    UnaryOp     转到状态 54
+    MulExp      转到状态 55
+    AddExp      转到状态 160
+
+
+State 148
+
+   84 RelExp: RelExp OPGREATEQ . AddExp
+
+    OPLEFTPRNT    shift, and go to state 41
+    OPPLUS        shift, and go to state 42
+    OPMINUS       shift, and go to state 43
+    OPNOT         shift, and go to state 44
+    CONSTANTINTD  shift, and go to state 45
+    CONSTANTINTH  shift, and go to state 46
+    CONSTANTOCT   shift, and go to state 47
+    IDENTIFIER    shift, and go to state 48
+
+    LVal        转到状态 49
+    PrimaryExp  转到状态 50
+    Number      转到状态 51
+    IntConst    转到状态 52
+    UnaryExp    转到状态 53
+    UnaryOp     转到状态 54
+    MulExp      转到状态 55
+    AddExp      转到状态 161
+
+
+State 149
+
+   85 RelExp: RelExp OPLIGHTEQ . AddExp
+
+    OPLEFTPRNT    shift, and go to state 41
+    OPPLUS        shift, and go to state 42
+    OPMINUS       shift, and go to state 43
+    OPNOT         shift, and go to state 44
+    CONSTANTINTD  shift, and go to state 45
+    CONSTANTINTH  shift, and go to state 46
+    CONSTANTOCT   shift, and go to state 47
+    IDENTIFIER    shift, and go to state 48
+
+    LVal        转到状态 49
+    PrimaryExp  转到状态 50
+    Number      转到状态 51
+    IntConst    转到状态 52
+    UnaryExp    转到状态 53
+    UnaryOp     转到状态 54
+    MulExp      转到状态 55
+    AddExp      转到状态 162
+
+
+State 150
+
+   87 EqExp: EqExp OPEQUAL . RelExp
+
+    OPLEFTPRNT    shift, and go to state 41
+    OPPLUS        shift, and go to state 42
+    OPMINUS       shift, and go to state 43
+    OPNOT         shift, and go to state 44
+    CONSTANTINTD  shift, and go to state 45
+    CONSTANTINTH  shift, and go to state 46
+    CONSTANTOCT   shift, and go to state 47
+    IDENTIFIER    shift, and go to state 48
+
+    LVal        转到状态 49
+    PrimaryExp  转到状态 50
+    Number      转到状态 51
+    IntConst    转到状态 52
+    UnaryExp    转到状态 53
+    UnaryOp     转到状态 54
+    MulExp      转到状态 55
+    AddExp      转到状态 132
+    RelExp      转到状态 163
+
+
+State 151
+
+   88 EqExp: EqExp OPNOTEQUAL . RelExp
+
+    OPLEFTPRNT    shift, and go to state 41
+    OPPLUS        shift, and go to state 42
+    OPMINUS       shift, and go to state 43
+    OPNOT         shift, and go to state 44
+    CONSTANTINTD  shift, and go to state 45
+    CONSTANTINTH  shift, and go to state 46
+    CONSTANTOCT   shift, and go to state 47
+    IDENTIFIER    shift, and go to state 48
+
+    LVal        转到状态 49
+    PrimaryExp  转到状态 50
+    Number      转到状态 51
+    IntConst    转到状态 52
+    UnaryExp    转到状态 53
+    UnaryOp     转到状态 54
+    MulExp      转到状态 55
+    AddExp      转到状态 132
+    RelExp      转到状态 164
+
+
+State 152
+
+   90 LAndExp: LAndExp OPAND . EqExp
+
+    OPLEFTPRNT    shift, and go to state 41
+    OPPLUS        shift, and go to state 42
+    OPMINUS       shift, and go to state 43
+    OPNOT         shift, and go to state 44
+    CONSTANTINTD  shift, and go to state 45
+    CONSTANTINTH  shift, and go to state 46
+    CONSTANTOCT   shift, and go to state 47
+    IDENTIFIER    shift, and go to state 48
+
+    LVal        转到状态 49
+    PrimaryExp  转到状态 50
+    Number      转到状态 51
+    IntConst    转到状态 52
+    UnaryExp    转到状态 53
+    UnaryOp     转到状态 54
+    MulExp      转到状态 55
+    AddExp      转到状态 132
+    RelExp      转到状态 133
+    EqExp       转到状态 165
+
+
+State 153
+
+   92 LOrExp: LOrExp OPOR . LAndExp
+
+    OPLEFTPRNT    shift, and go to state 41
+    OPPLUS        shift, and go to state 42
+    OPMINUS       shift, and go to state 43
+    OPNOT         shift, and go to state 44
+    CONSTANTINTD  shift, and go to state 45
+    CONSTANTINTH  shift, and go to state 46
+    CONSTANTOCT   shift, and go to state 47
+    IDENTIFIER    shift, and go to state 48
+
+    LVal        转到状态 49
+    PrimaryExp  转到状态 50
+    Number      转到状态 51
+    IntConst    转到状态 52
+    UnaryExp    转到状态 53
+    UnaryOp     转到状态 54
+    MulExp      转到状态 55
+    AddExp      转到状态 132
+    RelExp      转到状态 133
+    EqExp       转到状态 134
+    LAndExp     转到状态 166
+
+
+State 154
+
+   49 Stmt: KEYWHILE OPLEFTPRNT Cond OPRIGHTPRNT . Stmt
+
+    SPSEMICOLON   shift, and go to state 88
+    SPLEFTBRACE   shift, and go to state 34
+    OPLEFTPRNT    shift, and go to state 41
+    OPPLUS        shift, and go to state 42
+    OPMINUS       shift, and go to state 43
+    OPNOT         shift, and go to state 44
+    KEYIF         shift, and go to state 91
+    KEYWHILE      shift, and go to state 92
+    KEYBREAK      shift, and go to state 93
+    KEYCONTINUE   shift, and go to state 94
+    KEYRETURN     shift, and go to state 95
+    CONSTANTINTD  shift, and go to state 45
+    CONSTANTINTH  shift, and go to state 46
+    CONSTANTOCT   shift, and go to state 47
+    IDENTIFIER    shift, and go to state 48
+
+    Block       转到状态 97
+    Stmt        转到状态 167
+    Exp         转到状态 100
+    LVal        转到状态 101
+    PrimaryExp  转到状态 50
+    Number      转到状态 51
+    IntConst    转到状态 52
+    UnaryExp    转到状态 53
+    UnaryOp     转到状态 54
+    MulExp      转到状态 55
+    AddExp      转到状态 61
+
+
+State 155
+
+   43 Stmt: LVal OPASSIGN Exp SPSEMICOLON .
+
+    $default  reduce using rule 43 (Stmt)
+
+
+State 156
+
+   73 Exps: Exps SPCOMMA Exp .
+
+    $default  reduce using rule 73 (Exps)
+
+
+State 157
+
+   17 ConstInitValList: ConstInitValList SPCOMMA ConstInitVal .
+
+    $default  reduce using rule 17 (ConstInitValList)
+
+
+State 158
+
+   47 Stmt: KEYIF OPLEFTPRNT Cond OPRIGHTPRNT Stmt .
+   48     | KEYIF OPLEFTPRNT Cond OPRIGHTPRNT Stmt . KEYELSE Stmt
+
+    KEYELSE  shift, and go to state 168
+
+    $default  reduce using rule 47 (Stmt)
+
+
+State 159
+
+   79 AddExp: AddExp . OPPLUS MulExp
+   80       | AddExp . OPMINUS MulExp
+   83 RelExp: RelExp OPGREAT AddExp .
+
+    OPPLUS   shift, and go to state 79
+    OPMINUS  shift, and go to state 80
+
+    $default  reduce using rule 83 (RelExp)
+
+
+State 160
+
+   79 AddExp: AddExp . OPPLUS MulExp
+   80       | AddExp . OPMINUS MulExp
+   82 RelExp: RelExp OPLIGHT AddExp .
+
+    OPPLUS   shift, and go to state 79
+    OPMINUS  shift, and go to state 80
+
+    $default  reduce using rule 82 (RelExp)
+
+
+State 161
+
+   79 AddExp: AddExp . OPPLUS MulExp
+   80       | AddExp . OPMINUS MulExp
+   84 RelExp: RelExp OPGREATEQ AddExp .
+
+    OPPLUS   shift, and go to state 79
+    OPMINUS  shift, and go to state 80
+
+    $default  reduce using rule 84 (RelExp)
+
+
+State 162
+
+   79 AddExp: AddExp . OPPLUS MulExp
+   80       | AddExp . OPMINUS MulExp
+   85 RelExp: RelExp OPLIGHTEQ AddExp .
+
+    OPPLUS   shift, and go to state 79
+    OPMINUS  shift, and go to state 80
+
+    $default  reduce using rule 85 (RelExp)
+
+
+State 163
+
+   82 RelExp: RelExp . OPLIGHT AddExp
+   83       | RelExp . OPGREAT AddExp
+   84       | RelExp . OPGREATEQ AddExp
+   85       | RelExp . OPLIGHTEQ AddExp
+   87 EqExp: EqExp OPEQUAL RelExp .
+
+    OPGREAT    shift, and go to state 146
+    OPLIGHT    shift, and go to state 147
+    OPGREATEQ  shift, and go to state 148
+    OPLIGHTEQ  shift, and go to state 149
+
+    $default  reduce using rule 87 (EqExp)
+
+
+State 164
+
+   82 RelExp: RelExp . OPLIGHT AddExp
+   83       | RelExp . OPGREAT AddExp
+   84       | RelExp . OPGREATEQ AddExp
+   85       | RelExp . OPLIGHTEQ AddExp
+   88 EqExp: EqExp OPNOTEQUAL RelExp .
+
+    OPGREAT    shift, and go to state 146
+    OPLIGHT    shift, and go to state 147
+    OPGREATEQ  shift, and go to state 148
+    OPLIGHTEQ  shift, and go to state 149
+
+    $default  reduce using rule 88 (EqExp)
+
+
+State 165
+
+   87 EqExp: EqExp . OPEQUAL RelExp
+   88      | EqExp . OPNOTEQUAL RelExp
+   90 LAndExp: LAndExp OPAND EqExp .
+
+    OPEQUAL     shift, and go to state 150
+    OPNOTEQUAL  shift, and go to state 151
+
+    $default  reduce using rule 90 (LAndExp)
+
+
+State 166
+
+   90 LAndExp: LAndExp . OPAND EqExp
+   92 LOrExp: LOrExp OPOR LAndExp .
+
+    OPAND  shift, and go to state 152
+
+    $default  reduce using rule 92 (LOrExp)
+
+
+State 167
+
+   49 Stmt: KEYWHILE OPLEFTPRNT Cond OPRIGHTPRNT Stmt .
+
+    $default  reduce using rule 49 (Stmt)
+
+
+State 168
+
+   48 Stmt: KEYIF OPLEFTPRNT Cond OPRIGHTPRNT Stmt KEYELSE . Stmt
+
+    SPSEMICOLON   shift, and go to state 88
+    SPLEFTBRACE   shift, and go to state 34
+    OPLEFTPRNT    shift, and go to state 41
+    OPPLUS        shift, and go to state 42
+    OPMINUS       shift, and go to state 43
+    OPNOT         shift, and go to state 44
+    KEYIF         shift, and go to state 91
+    KEYWHILE      shift, and go to state 92
+    KEYBREAK      shift, and go to state 93
+    KEYCONTINUE   shift, and go to state 94
+    KEYRETURN     shift, and go to state 95
+    CONSTANTINTD  shift, and go to state 45
+    CONSTANTINTH  shift, and go to state 46
+    CONSTANTOCT   shift, and go to state 47
+    IDENTIFIER    shift, and go to state 48
+
+    Block       转到状态 97
+    Stmt        转到状态 169
+    Exp         转到状态 100
+    LVal        转到状态 101
+    PrimaryExp  转到状态 50
+    Number      转到状态 51
+    IntConst    转到状态 52
+    UnaryExp    转到状态 53
+    UnaryOp     转到状态 54
+    MulExp      转到状态 55
+    AddExp      转到状态 61
+
+
+State 169
+
+   48 Stmt: KEYIF OPLEFTPRNT Cond OPRIGHTPRNT Stmt KEYELSE Stmt .
+
+    $default  reduce using rule 48 (Stmt)

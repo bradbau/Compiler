@@ -1,6 +1,9 @@
 %{
     #include<stdio.h>
     #include<stdlib.h>
+    #include "SysY.tab.h"
+    #include "grammartree.cpp"
+    #include "grammartree.h"
 
     int yycolumn = 1;    
     #define YY_USER_ACTION \
@@ -8,8 +11,12 @@
       yylloc.first_column = yycolumn; \
       yylloc.last_column = yycolumn + yyleng - 1; \
       yycolumn += yyleng;
+    typedef union {
+	      ASTTree *ast_Tree;
+	  } YYLVAL;
+    #define YYSTYPE YYLVAL
 %}
-
+%option c++
 %option yylineno
 
 SPSEMICOLON     ";"
@@ -25,7 +32,7 @@ OPPLUS          "+"
 OPMINUS         "-"
 OPMULTIPLY      "*"
 OPDIVIDE        "/"
-OPMOD           "%"   //new
+OPMOD           "%"   
 OPASSIGN        "="
 OPAND           "&&"
 OPOR            "||"
@@ -38,15 +45,14 @@ OPGREATEQ       ">="
 OPLIGHTEQ       "<="
 TYPEVOID        "void"
 TYPEINTEGER     "int"
-KEYCONST        "const"  //new
+KEYCONST        "const"  
 KEYIF           "if"
 KEYELSE         "else"
 KEYWHILE        "while"
 KEYBREAK        "break"
-KEYCONTINUE     "continue" //new
+KEYCONTINUE     "continue" 
 KEYRETURN       "return"
-CONSTANTNULL    "null"
-CONSTANTOCT     [+-]?0[0-7]*      //new
+CONSTANTOCT     [+-]?0[0-7]*      
 CONSTANTINTD    [+-]?[1-9][0-9]*
 CONSTANTINTH    [+-]?0[xX][0-9a-fA-F]+
 IDENTIFIER      [a-zA-Z][a-zA-Z0-9]* 
@@ -58,45 +64,43 @@ WRONGIDENTIFIER [0-9_][a-zA-Z0-9_]*
 AERROR          .
 
 %%
-{SPSEMICOLON} { yylval.grammar_tree = CreateGrammarTree("SPSEMICOLON", 0, yylineno, yylloc.first_column); return SPSEMICOLON; }
-{SPCOMMA} { yylval.grammar_tree = CreateGrammarTree("SPCOMMA", 0, yylineno, yylloc.first_column); return SPCOMMA; }
-{SPDOT} { yylval.grammar_tree = CreateGrammarTree("SPDOT", 0, yylineno, yylloc.first_column); return SPDOT; }
-{SPLEFTBRACE} { yylval.grammar_tree = CreateGrammarTree("SPLEFTBRACE", 0, yylineno, yylloc.first_column); return SPLEFTBRACE; }
-{SPRIGHTBRACE} { yylval.grammar_tree = CreateGrammarTree("SPRIGHTBRACE", 0, yylineno, yylloc.first_column); return SPRIGHTBRACE; }
-{OPLEFTPRNT} { yylval.grammar_tree = CreateGrammarTree("OPLEFTPRNT", 0, yylineno, yylloc.first_column); return OPLEFTPRNT; }
-{OPRIGHTPRNT} { yylval.grammar_tree = CreateGrammarTree("OPRIGHTPRNT", 0, yylineno, yylloc.first_column); return OPRIGHTPRNT; }
-{OPLEFTBRACKET} { yylval.grammar_tree = CreateGrammarTree("OPLEFTBRACKET", 0, yylineno, yylloc.first_column); return OPLEFTBRACKET; }
-{OPRIGHTBRACKET} { yylval.grammar_tree = CreateGrammarTree("OPRIGHTBRACKET", 0, yylineno, yylloc.first_column); return OPRIGHTBRACKET; }
-{OPPLUS} { yylval.grammar_tree = CreateGrammarTree("OPPLUS", 0, yylineno, yylloc.first_column); return OPPLUS; }
-{OPMINUS} { yylval.grammar_tree = CreateGrammarTree("OPMINUS", 0, yylineno, yylloc.first_column); return OPMINUS; }
-{OPMULTIPLY} { yylval.grammar_tree = CreateGrammarTree("OPMULTIPLY", 0, yylineno, yylloc.first_column); return OPMULTIPLY; }
-{OPDIVIDE} { yylval.grammar_tree = CreateGrammarTree("OPDIVIDE", 0, yylineno, yylloc.first_column); return OPDIVIDE; }
-{OPMOD} {  return OPMOD; }
-{OPASSIGN} { yylval.grammar_tree = CreateGrammarTree("OPASSIGN", 0, yylineno, yylloc.first_column); return OPASSIGN; }
-{OPAND} { yylval.grammar_tree = CreateGrammarTree("OPAND", 0, yylineno, yylloc.first_column); return OPAND; }
-{OPOR} { yylval.grammar_tree = CreateGrammarTree("OPOR", 0, yylineno, yylloc.first_column); return OPOR; }
-{OPNOT} { yylval.grammar_tree = CreateGrammarTree("OPNOT", 0, yylineno, yylloc.first_column); return OPNOT; }
-{OPEQUAL} { yylval.grammar_tree = CreateGrammarTree("OPEQUAL", 0, yylineno, yylloc.first_column); return OPEQUAL; }
-{OPNOTEQUAL} { yylval.grammar_tree = CreateGrammarTree("OPNOTEQUAL", 0, yylineno, yylloc.first_column); return OPNOTEQUAL; }
-{OPGREAT} { yylval.grammar_tree = CreateGrammarTree("OPGREAT", 0, yylineno, yylloc.first_column); return OPGREAT; }
-{OPLIGHT} { yylval.grammar_tree = CreateGrammarTree("OPLIGHT", 0, yylineno, yylloc.first_column); return OPLIGHT; }
-{OPGREATEQ} { yylval.grammar_tree = CreateGrammarTree("OPGREATEQ", 0, yylineno, yylloc.first_column); return OPGREATEQ; }
-{OPLIGHTEQ} { yylval.grammar_tree = CreateGrammarTree("OPLIGHTEQ", 0, yylineno, yylloc.first_column); return OPLIGHTEQ; }
-{TYPEVOID} { yylval.grammar_tree = CreateGrammarTree("TYPEVOID", 0, yylineno, yylloc.first_column); return TYPEVOID; }
-{TYPEINTEGER} { yylval.grammar_tree = CreateGrammarTree("TYPEINTEGER", 0, yylineno, yylloc.first_column); return TYPEINTEGER; }
-{KEYIF} { yylval.grammar_tree = CreateGrammarTree("KEYIF", 0, yylineno, yylloc.first_column); return KEYIF; }
-{KEYELSE} { yylval.grammar_tree = CreateGrammarTree("KEYELSE", 0, yylineno, yylloc.first_column); return KEYELSE; }
-{KEYFOR} { yylval.grammar_tree = CreateGrammarTree("KEYFOR", 0, yylineno, yylloc.first_column); return KEYFOR; }
-{KEYWHILE} { yylval.grammar_tree = CreateGrammarTree("KEYWHILE", 0, yylineno, yylloc.first_column); return KEYWHILE; }
-{KEYBREAK} { yylval.grammar_tree = CreateGrammarTree("KEYBREAK", 0, yylineno, yylloc.first_column); return KEYBREAK; }
-{KEYCONTINUE} {  return KEYCONTINUE ; }
-{KEYCONST} {  return KEYCONST ; }
-{KEYRETURN} { yylval.grammar_tree = CreateGrammarTree("KEYRETURN", 0, yylineno, yylloc.first_column); return KEYRETURN; }
-{CONSTANTNULL} { yylval.grammar_tree = CreateGrammarTree("CONSTANTNULL", 0, yylineno, yylloc.first_column); return CONSTANTNULL; }
-{CONSTANTINTD} { yylval.grammar_tree = CreateGrammarTree("CONSTANTINTD", 0, yylineno, yylloc.first_column); return CONSTANTINTD; }
-{CONSTANTINTH} { yylval.grammar_tree = CreateGrammarTree("CONSTANTINTH", 0, yylineno, yylloc.first_column); return CONSTANTINTH; }
-{CONSTANTOCT} {  return CONSTANTOCT ; }
-{IDENTIFIER} { yylval.grammar_tree = CreateGrammarTree("IDENTIFIER", 0, yylineno, yylloc.first_column); return IDENTIFIER; }
+{SPSEMICOLON} { ASTTree *asttree = new ASTTree("SPSEMICOLON", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return SPSEMICOLON; }
+{SPCOMMA} { ASTTree *asttree = new ASTTree("SPCOMMA", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return SPCOMMA; }
+{SPDOT} { ASTTree *asttree = new ASTTree("SPDOT", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return SPDOT; }
+{SPLEFTBRACE} { ASTTree *asttree = new ASTTree("SPLEFTBRACE", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return SPLEFTBRACE; }
+{SPRIGHTBRACE} { ASTTree *asttree = new ASTTree("SPRIGHTBRACE", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return SPRIGHTBRACE; }
+{OPLEFTPRNT} { ASTTree *asttree = new ASTTree("OPLEFTPRNT", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return OPLEFTPRNT; }
+{OPRIGHTPRNT} { ASTTree* asttree = new ASTTree("OPRIGHTPRNT", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return OPRIGHTPRNT; }
+{OPLEFTBRACKET} { ASTTree *asttree = new ASTTree("OPLEFTBRACKET", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return OPLEFTBRACKET; }
+{OPRIGHTBRACKET} { ASTTree *asttree = new ASTTree("OPRIGHTBRACKET", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return OPRIGHTBRACKET; }
+{OPPLUS} { ASTTree *asttree = new ASTTree("OPPLUS", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return OPPLUS; }
+{OPMINUS} { ASTTree *asttree = new ASTTree("OPMINUS", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return OPMINUS; }
+{OPMULTIPLY} { ASTTree *asttree = new ASTTree("OPMULTIPLY", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return OPMULTIPLY; }
+{OPDIVIDE} { ASTTree *asttree = new ASTTree("OPDIVIDE", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return OPDIVIDE; }
+{OPMOD} {  ASTTree *asttree = new ASTTree("OPMOD", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return OPMOD; }
+{OPASSIGN} { ASTTree *asttree = new ASTTree("OPASSIGN", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return OPASSIGN; }
+{OPAND} { ASTTree *asttree = new ASTTree("OPAND", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return OPAND; }
+{OPOR} { ASTTree *asttree = new ASTTree("OPOR", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return OPOR; }
+{OPNOT} { ASTTree *asttree = new ASTTree("OPNOT", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return OPNOT; }
+{OPEQUAL} { ASTTree *asttree = new ASTTree("OPEQUAL", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return OPEQUAL; }
+{OPNOTEQUAL} { ASTTree *asttree = new ASTTree("OPNOTEQUAL", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return OPNOTEQUAL; }
+{OPGREAT} { ASTTree *asttree = new ASTTree("OPGREAT", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return OPGREAT; }
+{OPLIGHT} { ASTTree *asttree = new ASTTree("OPLIGHT", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return OPLIGHT; }
+{OPGREATEQ} { ASTTree *asttree = new ASTTree("OPGREATEQ", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return OPGREATEQ; }
+{OPLIGHTEQ} { ASTTree *asttree = new ASTTree("OPLIGHTEQ", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return OPLIGHTEQ; }
+{TYPEVOID} { ASTTree *asttree = new ASTTree("TYPEVOID", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return TYPEVOID; }
+{TYPEINTEGER} { ASTTree *asttree = new ASTTree("TYPEINTEGER", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return TYPEINTEGER; }
+{KEYIF} { ASTTree *asttree = new ASTTree("KEYIF", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return KEYIF; }
+{KEYELSE} { ASTTree *asttree = new ASTTree("KEYELSE", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return KEYELSE; }
+{KEYWHILE} { ASTTree *asttree = new ASTTree("KEYWHILE", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return KEYWHILE; }
+{KEYBREAK} { ASTTree *asttree = new ASTTree("KEYBREAK", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return KEYBREAK; }
+{KEYCONTINUE} {  ASTTree *asttree = new ASTTree("KEYCONTINUE", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree;return KEYCONTINUE ; }
+{KEYCONST} {  ASTTree *asttree = new ASTTree("KEYCONST", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree;return KEYCONST ; }
+{KEYRETURN} { ASTTree *asttree = new ASTTree("KEYRETURN", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return KEYRETURN; }
+{CONSTANTINTD} { ASTTree *asttree = new ASTTree("CONSTANTINTD", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return CONSTANTINTD; }
+{CONSTANTINTH} { ASTTree *asttree = new ASTTree("CONSTANTINTH", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return CONSTANTINTH; }
+{CONSTANTOCT} {  ASTTree *asttree = new ASTTree("CONSTANTOCT", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree;return CONSTANTOCT ; }
+{IDENTIFIER} { ASTTree *asttree = new ASTTree("IDENTIFIER", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return IDENTIFIER; }
 {COMMENT} {}
 {SPACE} {}
 {EOL} { yycolumn = 1; }
@@ -104,3 +108,8 @@ AERROR          .
 {WRONGIDENTIFIER} { printf("Lexical Error at Line %d column %d: Wrong format of identifier.\n", yylineno, yylloc.first_column); exit(-1); }
 {AERROR} { printf("Lexical Error at Line %d column %d: Mysterious characters \"%s\".\n", yylineno, yylloc.first_column, yytext); exit(-1); }
 %%
+
+int yywrap()
+{
+return 1;
+}
