@@ -16,6 +16,17 @@ extern FILE* yyin;
 extern int yylineno;
 extern int yyparse();
 
+typedef struct Grammartree
+{
+  int line;       // the number of its line
+    int column;
+    char* name;     // the name of this grammar unit
+    int int_value;  //只可能为int类型
+    string id;/* data */
+}Grammartree;
+
+
+
 class ASTTree{
   protected:
     int line;       // the number of its line
