@@ -1,19 +1,29 @@
 
 %error-verbose
 %locations
-%{
-    #include<stdio.h>
-    #include<unistd.h>
-    //#include"lex.yy.cc"
-    #include "grammartree.cpp"
-    #include "grammartree.h"
-    extern int yylineno; //共用
-    extern char *yytext;
-    extern FILE *yyin;
-    int yylex();
-    void yyerror(const char* fmt, ...);
-%}
 
+%{
+    //#include<stdio.h>
+    //#include<unistd.h>
+    #include <iostream>
+    //#include"lex.yy.cc"
+    //#include "grammartree.cpp"
+    #include "grammartree.h"
+    using namespace std;
+    extern "C"
+    {
+    //int yyparse();
+    int yylineno; //共用
+    int yylex();
+    FILE *yyin;
+    char *yytext;
+    int yydebug;
+    int yywrap(void);
+    void yyerror(const char* fmt, ...);
+    }
+    
+    
+%}
 
 %union {
     int i;
@@ -55,8 +65,8 @@
 %nonassoc KEYELSE 
 
 %%
-CompUnit: CompUnit Decl{ ASTTree *asttree = new ASTTree();asttree->CreateGrammarTree("CompUnit", 2, $1, $2);$$ = asttree; asttree->TraverseGrammerTree(0);}
-         | CompUnit FuncDef { ASTTree *asttree = new ASTTree();asttree->CreateGrammarTree("CompUnit", 2, $1, $2);$$ = asttree; asttree->TraverseGrammerTree(0);}
+CompUnit: CompUnit Decl{ ASTTree *asttree = new ASTTree("CompUnit", 2, $1, $2);$$ = asttree; asttree->TraverseGrammerTree(0);}
+         | CompUnit FuncDef { ASTTree *asttree = new ASTTree("CompUnit", 2, $1, $2);$$ = asttree; asttree->TraverseGrammerTree(0);}
          | Decl{ ASTTree *asttree = new ASTTree("CompUnit", 1, $1);$$ = asttree; asttree->TraverseGrammerTree(0);}
          | FuncDef{ ASTTree *asttree = new ASTTree("CompUnit", 1, $1);$$ = asttree; asttree->TraverseGrammerTree(0);}
          ;
@@ -237,6 +247,16 @@ ConstExp: AddExp { ASTTree *asttree = new ASTTree("ConstExp", 1, $1);$$ = asttre
 
 #include<stdarg.h>
 
+
+int main(int argc, char *argv[]){
+        //extern int yyparse(void);
+        //extern int yylex(void);
+	yyin=fopen(argv[1],"r");
+	if (!yyin) return -1;
+	yylineno=1;
+	yyparse();
+	return 0;
+}
 void yyerror(const char* fmt, ...)
 {
     va_list ap;
@@ -245,4 +265,3 @@ void yyerror(const char* fmt, ...)
     vfprintf(stderr, fmt, ap);
     fprintf(stderr, ".\n");
 }
-

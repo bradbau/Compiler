@@ -6,15 +6,17 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<stdarg.h>
+#include <iostream>
 #include<string>
+#include "SysY.tab.h"
 using namespace std;
-//#include<iostream>
 //#include"hashtable.h"
-
-extern char* yytext;
-extern FILE* yyin;
+    
+//int yylex();
+//extern char* yytext;
+/*extern FILE* yyin;
 extern int yylineno;
-extern int yyparse();
+extern int yyparse();*/
 
 typedef struct Grammartree
 {
@@ -22,7 +24,7 @@ typedef struct Grammartree
     int column;
     char* name;     // the name of this grammar unit
     int int_value;  //只可能为int类型
-    string id;/* data */
+    char* id;/* data */
 }Grammartree;
 
 
@@ -33,7 +35,7 @@ class ASTTree{
     int column;
     char* name;     // the name of this grammar unit
     int int_value;  //只可能为int类型
-    string id;
+    char* id;
     //ScopeItem si;//目前没想明白有什么用
 
 
@@ -41,10 +43,10 @@ class ASTTree{
     ASTTree *rchild;
   
   public:
-    ASTTree();
+    ASTTree(){};
     ASTTree(char* name, int num, ...);
     //创建当前语法树，赋给gt
-    void CreateGrammarTree(char* name, int num, ...);
+    //void CreateGrammarTree(char* name, int num, ...);
     //遍历当前语法树
     void TraverseGrammerTree(int level);
 

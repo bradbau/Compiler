@@ -1,7 +1,9 @@
 #include "grammartree.h"
 #include <cstring>
-#include<iostream>
+#include <iostream>
 using namespace std;
+extern char* yytext;
+
 ASTTree::ASTTree(char* name, int num, ...) {
     int i;
     char* cache;
@@ -52,7 +54,7 @@ ASTTree::ASTTree(char* name, int num, ...) {
     }
 
 }
-void ASTTree::CreateGrammarTree(char* name, int num, ...) {
+/*void ASTTree::CreateGrammarTree(char* name, int num, ...) {
     int i;
     char* cache;
     va_list variables;       
@@ -101,7 +103,7 @@ void ASTTree::CreateGrammarTree(char* name, int num, ...) {
         
     }
 
-}
+}*/
 
 void ASTTree::TraverseGrammerTree(int level)
 {

@@ -1,7 +1,7 @@
 parser: SysY.l SysY.y grammartree.h
 	flex SysY.l        
 	bison -d -v SysY.y
-	g++ grammartree.cpp SysY.tab.c -lfl -ly -o parser
+	g++ -o parser   SysY.tab.c lex.yy.cc grammartree.cpp  -lfl -ly 
 
 .PHONY: clean
 clean:

@@ -90,11 +90,13 @@ extern int yydebug;
 
 union YYSTYPE
 {
-#line 12 "SysY.Y" /* yacc.c:1909  */
+#line 28 "SysY.y" /* yacc.c:1909  */
 
-    ASTTree *ast_Tree;
+    int i;
+    struct Grammartree *grammartree;
+    class ASTTree *ast_Tree;
 
-#line 98 "SysY.tab.H" /* yacc.c:1909  */
+#line 100 "SysY.tab.h" /* yacc.c:1909  */
 };
 
 typedef union YYSTYPE YYSTYPE;
