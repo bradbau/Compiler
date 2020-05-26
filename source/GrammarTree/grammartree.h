@@ -39,8 +39,8 @@ class ASTTree{
     //ScopeItem si;//目前没想明白有什么用
 
 
-    ASTTree *lchild;
-    ASTTree *rchild;
+    ASTTree *lchild=NULL;
+    ASTTree *rchild=NULL;
   
   public:
     ASTTree(){};
