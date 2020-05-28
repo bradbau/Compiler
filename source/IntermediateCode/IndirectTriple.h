@@ -46,6 +46,9 @@ private:
 
 public:
 //公有方法，就是对外的接口
+    IndirectTriple(int seq,TACOperatorType optype, IndirectTripleOprtand firstOp,IndirectTripleOprtand secondOp);
+    int getSeq();//返回本语句的序号
+    
 
 
 
