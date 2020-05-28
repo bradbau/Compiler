@@ -3,7 +3,7 @@ Terminals unused in grammar
    SPDOT
 
 
-语法
+Grammar
 
     0 $accept: Compiler $end
 
@@ -187,85 +187,85 @@ IDENTIFIER (294) 11 20 21 29 30 31 32 33 34 57 66 67
 Nonterminals, with rules where they appear
 
 $accept (40)
-    左： 0
+    on left: 0
 Compiler (41)
-    左： 1, 右： 0
+    on left: 1, on right: 0
 CompUnit (42)
-    左： 2 3 4 5, 右： 1 2 3
+    on left: 2 3 4 5, on right: 1 2 3
 Decl (43)
-    左： 6 7, 右： 2 4 42
+    on left: 6 7, on right: 2 4 42
 ConstDecl (44)
-    左： 8, 右： 6
+    on left: 8, on right: 6
 ConstDefs (45)
-    左： 9 10, 右： 8 10
+    on left: 9 10, on right: 8 10
 ConstDef (46)
-    左： 11, 右： 8 10
+    on left: 11, on right: 8 10
 ArrayDef (47)
-    左： 12 13, 右： 11 13 20 21
+    on left: 12 13, on right: 11 13 20 21
 ConstInitVal (48)
-    左： 14 15 16, 右： 11 16 18
+    on left: 14 15 16, on right: 11 16 18
 ConstInitValList (49)
-    左： 17 18, 右： 16 18
+    on left: 17 18, on right: 16 18
 VarDecl (50)
-    左： 19, 右： 7
+    on left: 19, on right: 7
 VarDef (51)
-    左： 20 21, 右： 19 23
+    on left: 20 21, on right: 19 23
 VarDefs (52)
-    左： 22 23, 右： 19 23
+    on left: 22 23, on right: 19 23
 InitVal (53)
-    左： 24 25 26, 右： 21 26 28
+    on left: 24 25 26, on right: 21 26 28
 InitVals (54)
-    左： 27 28, 右： 26 28
+    on left: 27 28, on right: 26 28
 FuncDef (55)
-    左： 29 30 31 32, 右： 3 5
+    on left: 29 30 31 32, on right: 3 5
 FuncFParam (56)
-    左： 33 34, 右： 35 36
+    on left: 33 34, on right: 35 36
 FuncFParams (57)
-    左： 35 36, 右： 31 32 36
+    on left: 35 36, on right: 31 32 36
 ArrayExps (58)
-    左： 37 38, 右： 34 38 57
+    on left: 37 38, on right: 34 38 57
 Block (59)
-    左： 39, 右： 29 30 31 32 47
+    on left: 39, on right: 29 30 31 32 47
 BlockItems (60)
-    左： 40 41, 右： 39 41
+    on left: 40 41, on right: 39 41
 BlockItem (61)
-    左： 42 43, 右： 41
+    on left: 42 43, on right: 41
 Stmt (62)
-    左： 44 45 46 47 48 49 50 51 52 53 54, 右： 43 48 49 50
+    on left: 44 45 46 47 48 49 50 51 52 53 54, on right: 43 48 49 50
 Exp (63)
-    左： 55, 右： 24 38 44 46 54 58 72 74
+    on left: 55, on right: 24 38 44 46 54 58 72 74
 Cond (64)
-    左： 56, 右： 48 49 50
+    on left: 56, on right: 48 49 50
 LVal (65)
-    左： 57, 右： 44 59
+    on left: 57, on right: 44 59
 PrimaryExp (66)
-    左： 58 59 60, 右： 65
+    on left: 58 59 60, on right: 65
 Number (67)
-    左： 61, 右： 60
+    on left: 61, on right: 60
 IntConst (68)
-    左： 62 63 64, 右： 61
+    on left: 62 63 64, on right: 61
 UnaryExp (69)
-    左： 65 66 67 68, 右： 68 75 76 77 78
+    on left: 65 66 67 68, on right: 68 75 76 77 78
 UnaryOp (70)
-    左： 69 70 71, 右： 68
+    on left: 69 70 71, on right: 68
 FuncRParams (71)
-    左： 72, 右： 67
+    on left: 72, on right: 67
 Exps (72)
-    左： 73 74, 右： 72 74
+    on left: 73 74, on right: 72 74
 MulExp (73)
-    左： 75 76 77 78, 右： 76 77 78 79 80 81
+    on left: 75 76 77 78, on right: 76 77 78 79 80 81
 AddExp (74)
-    左： 79 80 81, 右： 55 80 81 82 83 84 85 86 94
+    on left: 79 80 81, on right: 55 80 81 82 83 84 85 86 94
 RelExp (75)
-    左： 82 83 84 85 86, 右： 83 84 85 86 87 88 89
+    on left: 82 83 84 85 86, on right: 83 84 85 86 87 88 89
 EqExp (76)
-    左： 87 88 89, 右： 88 89 90 91
+    on left: 87 88 89, on right: 88 89 90 91
 LAndExp (77)
-    左： 90 91, 右： 91 92 93
+    on left: 90 91, on right: 91 92 93
 LOrExp (78)
-    左： 92 93, 右： 56 93
+    on left: 92 93, on right: 56 93
 ConstExp (79)
-    左： 94, 右： 13 14
+    on left: 94, on right: 13 14
 
 
 State 0
@@ -276,12 +276,12 @@ State 0
     TYPEINTEGER  shift, and go to state 2
     KEYCONST     shift, and go to state 3
 
-    Compiler   转到状态 4
-    CompUnit   转到状态 5
-    Decl       转到状态 6
-    ConstDecl  转到状态 7
-    VarDecl    转到状态 8
-    FuncDef    转到状态 9
+    Compiler   go to state 4
+    CompUnit   go to state 5
+    Decl       go to state 6
+    ConstDecl  go to state 7
+    VarDecl    go to state 8
+    FuncDef    go to state 9
 
 
 State 1
@@ -300,7 +300,7 @@ State 2
 
     IDENTIFIER  shift, and go to state 11
 
-    VarDef  转到状态 12
+    VarDef  go to state 12
 
 
 State 3
@@ -329,10 +329,10 @@ State 5
 
     $default  reduce using rule 1 (Compiler)
 
-    Decl       转到状态 15
-    ConstDecl  转到状态 7
-    VarDecl    转到状态 8
-    FuncDef    转到状态 16
+    Decl       go to state 15
+    ConstDecl  go to state 7
+    VarDecl    go to state 8
+    FuncDef    go to state 16
 
 
 State 6
@@ -382,7 +382,7 @@ State 11
 
     $default  reduce using rule 12 (ArrayDef)
 
-    ArrayDef  转到状态 19
+    ArrayDef  go to state 19
 
 
 State 12
@@ -391,7 +391,7 @@ State 12
 
     $default  reduce using rule 22 (VarDefs)
 
-    VarDefs  转到状态 20
+    VarDefs  go to state 20
 
 
 State 13
@@ -400,14 +400,14 @@ State 13
 
     IDENTIFIER  shift, and go to state 21
 
-    ConstDef  转到状态 22
+    ConstDef  go to state 22
 
 
 State 14
 
     0 $accept: Compiler $end .
 
-    $default  接受
+    $default  accept
 
 
 State 15
@@ -432,8 +432,8 @@ State 17
     OPRIGHTPRNT  shift, and go to state 23
     TYPEINTEGER  shift, and go to state 24
 
-    FuncFParam   转到状态 25
-    FuncFParams  转到状态 26
+    FuncFParam   go to state 25
+    FuncFParams  go to state 26
 
 
 State 18
@@ -444,8 +444,8 @@ State 18
     OPRIGHTPRNT  shift, and go to state 27
     TYPEINTEGER  shift, and go to state 24
 
-    FuncFParam   转到状态 25
-    FuncFParams  转到状态 28
+    FuncFParam   go to state 25
+    FuncFParams  go to state 28
 
 
 State 19
@@ -475,7 +475,7 @@ State 21
 
     $default  reduce using rule 12 (ArrayDef)
 
-    ArrayDef  转到状态 33
+    ArrayDef  go to state 33
 
 
 State 22
@@ -484,7 +484,7 @@ State 22
 
     $default  reduce using rule 9 (ConstDefs)
 
-    ConstDefs  转到状态 34
+    ConstDefs  go to state 34
 
 
 State 23
@@ -493,7 +493,7 @@ State 23
 
     SPLEFTBRACE  shift, and go to state 35
 
-    Block  转到状态 36
+    Block  go to state 36
 
 
 State 24
@@ -526,7 +526,7 @@ State 27
 
     SPLEFTBRACE  shift, and go to state 35
 
-    Block  转到状态 40
+    Block  go to state 40
 
 
 State 28
@@ -551,15 +551,15 @@ State 29
     CONSTANTOCT   shift, and go to state 48
     IDENTIFIER    shift, and go to state 49
 
-    LVal        转到状态 50
-    PrimaryExp  转到状态 51
-    Number      转到状态 52
-    IntConst    转到状态 53
-    UnaryExp    转到状态 54
-    UnaryOp     转到状态 55
-    MulExp      转到状态 56
-    AddExp      转到状态 57
-    ConstExp    转到状态 58
+    LVal        go to state 50
+    PrimaryExp  go to state 51
+    Number      go to state 52
+    IntConst    go to state 53
+    UnaryExp    go to state 54
+    UnaryOp     go to state 55
+    MulExp      go to state 56
+    AddExp      go to state 57
+    ConstExp    go to state 58
 
 
 State 30
@@ -576,16 +576,16 @@ State 30
     CONSTANTOCT   shift, and go to state 48
     IDENTIFIER    shift, and go to state 49
 
-    InitVal     转到状态 60
-    Exp         转到状态 61
-    LVal        转到状态 50
-    PrimaryExp  转到状态 51
-    Number      转到状态 52
-    IntConst    转到状态 53
-    UnaryExp    转到状态 54
-    UnaryOp     转到状态 55
-    MulExp      转到状态 56
-    AddExp      转到状态 62
+    InitVal     go to state 60
+    Exp         go to state 61
+    LVal        go to state 50
+    PrimaryExp  go to state 51
+    Number      go to state 52
+    IntConst    go to state 53
+    UnaryExp    go to state 54
+    UnaryOp     go to state 55
+    MulExp      go to state 56
+    AddExp      go to state 62
 
 
 State 31
@@ -601,7 +601,7 @@ State 32
 
     IDENTIFIER  shift, and go to state 63
 
-    VarDef  转到状态 64
+    VarDef  go to state 64
 
 
 State 33
@@ -628,7 +628,7 @@ State 35
 
     $default  reduce using rule 40 (BlockItems)
 
-    BlockItems  转到状态 68
+    BlockItems  go to state 68
 
 
 State 36
@@ -654,7 +654,7 @@ State 38
 
     TYPEINTEGER  shift, and go to state 24
 
-    FuncFParam  转到状态 70
+    FuncFParam  go to state 70
 
 
 State 39
@@ -663,7 +663,7 @@ State 39
 
     SPLEFTBRACE  shift, and go to state 35
 
-    Block  转到状态 71
+    Block  go to state 71
 
 
 State 40
@@ -679,7 +679,7 @@ State 41
 
     SPLEFTBRACE  shift, and go to state 35
 
-    Block  转到状态 72
+    Block  go to state 72
 
 
 State 42
@@ -695,15 +695,15 @@ State 42
     CONSTANTOCT   shift, and go to state 48
     IDENTIFIER    shift, and go to state 49
 
-    Exp         转到状态 73
-    LVal        转到状态 50
-    PrimaryExp  转到状态 51
-    Number      转到状态 52
-    IntConst    转到状态 53
-    UnaryExp    转到状态 54
-    UnaryOp     转到状态 55
-    MulExp      转到状态 56
-    AddExp      转到状态 62
+    Exp         go to state 73
+    LVal        go to state 50
+    PrimaryExp  go to state 51
+    Number      go to state 52
+    IntConst    go to state 53
+    UnaryExp    go to state 54
+    UnaryOp     go to state 55
+    MulExp      go to state 56
+    AddExp      go to state 62
 
 
 State 43
@@ -758,7 +758,7 @@ State 49
 
     $default  reduce using rule 37 (ArrayExps)
 
-    ArrayExps  转到状态 75
+    ArrayExps  go to state 75
 
 
 State 50
@@ -809,12 +809,12 @@ State 55
     CONSTANTOCT   shift, and go to state 48
     IDENTIFIER    shift, and go to state 49
 
-    LVal        转到状态 50
-    PrimaryExp  转到状态 51
-    Number      转到状态 52
-    IntConst    转到状态 53
-    UnaryExp    转到状态 76
-    UnaryOp     转到状态 55
+    LVal        go to state 50
+    PrimaryExp  go to state 51
+    Number      go to state 52
+    IntConst    go to state 53
+    UnaryExp    go to state 76
+    UnaryOp     go to state 55
 
 
 State 56
@@ -866,16 +866,16 @@ State 59
     CONSTANTOCT   shift, and go to state 48
     IDENTIFIER    shift, and go to state 49
 
-    InitVal     转到状态 84
-    Exp         转到状态 61
-    LVal        转到状态 50
-    PrimaryExp  转到状态 51
-    Number      转到状态 52
-    IntConst    转到状态 53
-    UnaryExp    转到状态 54
-    UnaryOp     转到状态 55
-    MulExp      转到状态 56
-    AddExp      转到状态 62
+    InitVal     go to state 84
+    Exp         go to state 61
+    LVal        go to state 50
+    PrimaryExp  go to state 51
+    Number      go to state 52
+    IntConst    go to state 53
+    UnaryExp    go to state 54
+    UnaryOp     go to state 55
+    MulExp      go to state 56
+    AddExp      go to state 62
 
 
 State 60
@@ -911,7 +911,7 @@ State 63
 
     $default  reduce using rule 12 (ArrayDef)
 
-    ArrayDef  转到状态 19
+    ArrayDef  go to state 19
 
 
 State 64
@@ -935,16 +935,16 @@ State 65
     CONSTANTOCT   shift, and go to state 48
     IDENTIFIER    shift, and go to state 49
 
-    ConstInitVal  转到状态 86
-    LVal          转到状态 50
-    PrimaryExp    转到状态 51
-    Number        转到状态 52
-    IntConst      转到状态 53
-    UnaryExp      转到状态 54
-    UnaryOp       转到状态 55
-    MulExp        转到状态 56
-    AddExp        转到状态 57
-    ConstExp      转到状态 87
+    ConstInitVal  go to state 86
+    LVal          go to state 50
+    PrimaryExp    go to state 51
+    Number        go to state 52
+    IntConst      go to state 53
+    UnaryExp      go to state 54
+    UnaryOp       go to state 55
+    MulExp        go to state 56
+    AddExp        go to state 57
+    ConstExp      go to state 87
 
 
 State 66
@@ -960,7 +960,7 @@ State 67
 
     IDENTIFIER  shift, and go to state 21
 
-    ConstDef  转到状态 88
+    ConstDef  go to state 88
 
 
 State 68
@@ -987,21 +987,21 @@ State 68
     CONSTANTOCT   shift, and go to state 48
     IDENTIFIER    shift, and go to state 49
 
-    Decl        转到状态 97
-    ConstDecl   转到状态 7
-    VarDecl     转到状态 8
-    Block       转到状态 98
-    BlockItem   转到状态 99
-    Stmt        转到状态 100
-    Exp         转到状态 101
-    LVal        转到状态 102
-    PrimaryExp  转到状态 51
-    Number      转到状态 52
-    IntConst    转到状态 53
-    UnaryExp    转到状态 54
-    UnaryOp     转到状态 55
-    MulExp      转到状态 56
-    AddExp      转到状态 62
+    Decl        go to state 97
+    ConstDecl   go to state 7
+    VarDecl     go to state 8
+    Block       go to state 98
+    BlockItem   go to state 99
+    Stmt        go to state 100
+    Exp         go to state 101
+    LVal        go to state 102
+    PrimaryExp  go to state 51
+    Number      go to state 52
+    IntConst    go to state 53
+    UnaryExp    go to state 54
+    UnaryOp     go to state 55
+    MulExp      go to state 56
+    AddExp      go to state 62
 
 
 State 69
@@ -1054,16 +1054,16 @@ State 74
     CONSTANTOCT   shift, and go to state 48
     IDENTIFIER    shift, and go to state 49
 
-    Exp          转到状态 106
-    LVal         转到状态 50
-    PrimaryExp   转到状态 51
-    Number       转到状态 52
-    IntConst     转到状态 53
-    UnaryExp     转到状态 54
-    UnaryOp      转到状态 55
-    FuncRParams  转到状态 107
-    MulExp       转到状态 56
-    AddExp       转到状态 62
+    Exp          go to state 106
+    LVal         go to state 50
+    PrimaryExp   go to state 51
+    Number       go to state 52
+    IntConst     go to state 53
+    UnaryExp     go to state 54
+    UnaryOp      go to state 55
+    FuncRParams  go to state 107
+    MulExp       go to state 56
+    AddExp       go to state 62
 
 
 State 75
@@ -1096,12 +1096,12 @@ State 77
     CONSTANTOCT   shift, and go to state 48
     IDENTIFIER    shift, and go to state 49
 
-    LVal        转到状态 50
-    PrimaryExp  转到状态 51
-    Number      转到状态 52
-    IntConst    转到状态 53
-    UnaryExp    转到状态 109
-    UnaryOp     转到状态 55
+    LVal        go to state 50
+    PrimaryExp  go to state 51
+    Number      go to state 52
+    IntConst    go to state 53
+    UnaryExp    go to state 109
+    UnaryOp     go to state 55
 
 
 State 78
@@ -1117,12 +1117,12 @@ State 78
     CONSTANTOCT   shift, and go to state 48
     IDENTIFIER    shift, and go to state 49
 
-    LVal        转到状态 50
-    PrimaryExp  转到状态 51
-    Number      转到状态 52
-    IntConst    转到状态 53
-    UnaryExp    转到状态 110
-    UnaryOp     转到状态 55
+    LVal        go to state 50
+    PrimaryExp  go to state 51
+    Number      go to state 52
+    IntConst    go to state 53
+    UnaryExp    go to state 110
+    UnaryOp     go to state 55
 
 
 State 79
@@ -1138,12 +1138,12 @@ State 79
     CONSTANTOCT   shift, and go to state 48
     IDENTIFIER    shift, and go to state 49
 
-    LVal        转到状态 50
-    PrimaryExp  转到状态 51
-    Number      转到状态 52
-    IntConst    转到状态 53
-    UnaryExp    转到状态 111
-    UnaryOp     转到状态 55
+    LVal        go to state 50
+    PrimaryExp  go to state 51
+    Number      go to state 52
+    IntConst    go to state 53
+    UnaryExp    go to state 111
+    UnaryOp     go to state 55
 
 
 State 80
@@ -1159,13 +1159,13 @@ State 80
     CONSTANTOCT   shift, and go to state 48
     IDENTIFIER    shift, and go to state 49
 
-    LVal        转到状态 50
-    PrimaryExp  转到状态 51
-    Number      转到状态 52
-    IntConst    转到状态 53
-    UnaryExp    转到状态 54
-    UnaryOp     转到状态 55
-    MulExp      转到状态 112
+    LVal        go to state 50
+    PrimaryExp  go to state 51
+    Number      go to state 52
+    IntConst    go to state 53
+    UnaryExp    go to state 54
+    UnaryOp     go to state 55
+    MulExp      go to state 112
 
 
 State 81
@@ -1181,13 +1181,13 @@ State 81
     CONSTANTOCT   shift, and go to state 48
     IDENTIFIER    shift, and go to state 49
 
-    LVal        转到状态 50
-    PrimaryExp  转到状态 51
-    Number      转到状态 52
-    IntConst    转到状态 53
-    UnaryExp    转到状态 54
-    UnaryOp     转到状态 55
-    MulExp      转到状态 113
+    LVal        go to state 50
+    PrimaryExp  go to state 51
+    Number      go to state 52
+    IntConst    go to state 53
+    UnaryExp    go to state 54
+    UnaryOp     go to state 55
+    MulExp      go to state 113
 
 
 State 82
@@ -1210,7 +1210,7 @@ State 84
 
     $default  reduce using rule 27 (InitVals)
 
-    InitVals  转到状态 114
+    InitVals  go to state 114
 
 
 State 85
@@ -1229,16 +1229,16 @@ State 85
     CONSTANTOCT   shift, and go to state 48
     IDENTIFIER    shift, and go to state 49
 
-    ConstInitVal  转到状态 116
-    LVal          转到状态 50
-    PrimaryExp    转到状态 51
-    Number        转到状态 52
-    IntConst      转到状态 53
-    UnaryExp      转到状态 54
-    UnaryOp       转到状态 55
-    MulExp        转到状态 56
-    AddExp        转到状态 57
-    ConstExp      转到状态 87
+    ConstInitVal  go to state 116
+    LVal          go to state 50
+    PrimaryExp    go to state 51
+    Number        go to state 52
+    IntConst      go to state 53
+    UnaryExp      go to state 54
+    UnaryOp       go to state 55
+    MulExp        go to state 56
+    AddExp        go to state 57
+    ConstExp      go to state 87
 
 
 State 86
@@ -1282,7 +1282,7 @@ State 91
 
     IDENTIFIER  shift, and go to state 63
 
-    VarDef  转到状态 12
+    VarDef  go to state 12
 
 
 State 92
@@ -1329,15 +1329,15 @@ State 96
     CONSTANTOCT   shift, and go to state 48
     IDENTIFIER    shift, and go to state 49
 
-    Exp         转到状态 122
-    LVal        转到状态 50
-    PrimaryExp  转到状态 51
-    Number      转到状态 52
-    IntConst    转到状态 53
-    UnaryExp    转到状态 54
-    UnaryOp     转到状态 55
-    MulExp      转到状态 56
-    AddExp      转到状态 62
+    Exp         go to state 122
+    LVal        go to state 50
+    PrimaryExp  go to state 51
+    Number      go to state 52
+    IntConst    go to state 53
+    UnaryExp    go to state 54
+    UnaryOp     go to state 55
+    MulExp      go to state 56
+    AddExp      go to state 62
 
 
 State 97
@@ -1391,7 +1391,7 @@ State 103
 
     $default  reduce using rule 37 (ArrayExps)
 
-    ArrayExps  转到状态 125
+    ArrayExps  go to state 125
 
 
 State 104
@@ -1414,7 +1414,7 @@ State 106
 
     $default  reduce using rule 73 (Exps)
 
-    Exps  转到状态 126
+    Exps  go to state 126
 
 
 State 107
@@ -1437,15 +1437,15 @@ State 108
     CONSTANTOCT   shift, and go to state 48
     IDENTIFIER    shift, and go to state 49
 
-    Exp         转到状态 128
-    LVal        转到状态 50
-    PrimaryExp  转到状态 51
-    Number      转到状态 52
-    IntConst    转到状态 53
-    UnaryExp    转到状态 54
-    UnaryOp     转到状态 55
-    MulExp      转到状态 56
-    AddExp      转到状态 62
+    Exp         go to state 128
+    LVal        go to state 50
+    PrimaryExp  go to state 51
+    Number      go to state 52
+    IntConst    go to state 53
+    UnaryExp    go to state 54
+    UnaryOp     go to state 55
+    MulExp      go to state 56
+    AddExp      go to state 62
 
 
 State 109
@@ -1519,7 +1519,7 @@ State 116
 
     $default  reduce using rule 17 (ConstInitValList)
 
-    ConstInitValList  转到状态 131
+    ConstInitValList  go to state 131
 
 
 State 117
@@ -1536,19 +1536,19 @@ State 117
     CONSTANTOCT   shift, and go to state 48
     IDENTIFIER    shift, and go to state 49
 
-    Cond        转到状态 132
-    LVal        转到状态 50
-    PrimaryExp  转到状态 51
-    Number      转到状态 52
-    IntConst    转到状态 53
-    UnaryExp    转到状态 54
-    UnaryOp     转到状态 55
-    MulExp      转到状态 56
-    AddExp      转到状态 133
-    RelExp      转到状态 134
-    EqExp       转到状态 135
-    LAndExp     转到状态 136
-    LOrExp      转到状态 137
+    Cond        go to state 132
+    LVal        go to state 50
+    PrimaryExp  go to state 51
+    Number      go to state 52
+    IntConst    go to state 53
+    UnaryExp    go to state 54
+    UnaryOp     go to state 55
+    MulExp      go to state 56
+    AddExp      go to state 133
+    RelExp      go to state 134
+    EqExp       go to state 135
+    LAndExp     go to state 136
+    LOrExp      go to state 137
 
 
 State 118
@@ -1564,19 +1564,19 @@ State 118
     CONSTANTOCT   shift, and go to state 48
     IDENTIFIER    shift, and go to state 49
 
-    Cond        转到状态 138
-    LVal        转到状态 50
-    PrimaryExp  转到状态 51
-    Number      转到状态 52
-    IntConst    转到状态 53
-    UnaryExp    转到状态 54
-    UnaryOp     转到状态 55
-    MulExp      转到状态 56
-    AddExp      转到状态 133
-    RelExp      转到状态 134
-    EqExp       转到状态 135
-    LAndExp     转到状态 136
-    LOrExp      转到状态 137
+    Cond        go to state 138
+    LVal        go to state 50
+    PrimaryExp  go to state 51
+    Number      go to state 52
+    IntConst    go to state 53
+    UnaryExp    go to state 54
+    UnaryOp     go to state 55
+    MulExp      go to state 56
+    AddExp      go to state 133
+    RelExp      go to state 134
+    EqExp       go to state 135
+    LAndExp     go to state 136
+    LOrExp      go to state 137
 
 
 State 119
@@ -1627,15 +1627,15 @@ State 124
     CONSTANTOCT   shift, and go to state 48
     IDENTIFIER    shift, and go to state 49
 
-    Exp         转到状态 140
-    LVal        转到状态 50
-    PrimaryExp  转到状态 51
-    Number      转到状态 52
-    IntConst    转到状态 53
-    UnaryExp    转到状态 54
-    UnaryOp     转到状态 55
-    MulExp      转到状态 56
-    AddExp      转到状态 62
+    Exp         go to state 140
+    LVal        go to state 50
+    PrimaryExp  go to state 51
+    Number      go to state 52
+    IntConst    go to state 53
+    UnaryExp    go to state 54
+    UnaryOp     go to state 55
+    MulExp      go to state 56
+    AddExp      go to state 62
 
 
 State 125
@@ -1686,16 +1686,16 @@ State 129
     CONSTANTOCT   shift, and go to state 48
     IDENTIFIER    shift, and go to state 49
 
-    InitVal     转到状态 143
-    Exp         转到状态 61
-    LVal        转到状态 50
-    PrimaryExp  转到状态 51
-    Number      转到状态 52
-    IntConst    转到状态 53
-    UnaryExp    转到状态 54
-    UnaryOp     转到状态 55
-    MulExp      转到状态 56
-    AddExp      转到状态 62
+    InitVal     go to state 143
+    Exp         go to state 61
+    LVal        go to state 50
+    PrimaryExp  go to state 51
+    Number      go to state 52
+    IntConst    go to state 53
+    UnaryExp    go to state 54
+    UnaryOp     go to state 55
+    MulExp      go to state 56
+    AddExp      go to state 62
 
 
 State 130
@@ -1816,15 +1816,15 @@ State 141
     CONSTANTOCT   shift, and go to state 48
     IDENTIFIER    shift, and go to state 49
 
-    Exp         转到状态 157
-    LVal        转到状态 50
-    PrimaryExp  转到状态 51
-    Number      转到状态 52
-    IntConst    转到状态 53
-    UnaryExp    转到状态 54
-    UnaryOp     转到状态 55
-    MulExp      转到状态 56
-    AddExp      转到状态 62
+    Exp         go to state 157
+    LVal        go to state 50
+    PrimaryExp  go to state 51
+    Number      go to state 52
+    IntConst    go to state 53
+    UnaryExp    go to state 54
+    UnaryOp     go to state 55
+    MulExp      go to state 56
+    AddExp      go to state 62
 
 
 State 142
@@ -1855,16 +1855,16 @@ State 144
     CONSTANTOCT   shift, and go to state 48
     IDENTIFIER    shift, and go to state 49
 
-    ConstInitVal  转到状态 158
-    LVal          转到状态 50
-    PrimaryExp    转到状态 51
-    Number        转到状态 52
-    IntConst      转到状态 53
-    UnaryExp      转到状态 54
-    UnaryOp       转到状态 55
-    MulExp        转到状态 56
-    AddExp        转到状态 57
-    ConstExp      转到状态 87
+    ConstInitVal  go to state 158
+    LVal          go to state 50
+    PrimaryExp    go to state 51
+    Number        go to state 52
+    IntConst      go to state 53
+    UnaryExp      go to state 54
+    UnaryOp       go to state 55
+    MulExp        go to state 56
+    AddExp        go to state 57
+    ConstExp      go to state 87
 
 
 State 145
@@ -1895,17 +1895,17 @@ State 146
     CONSTANTOCT   shift, and go to state 48
     IDENTIFIER    shift, and go to state 49
 
-    Block       转到状态 98
-    Stmt        转到状态 159
-    Exp         转到状态 101
-    LVal        转到状态 102
-    PrimaryExp  转到状态 51
-    Number      转到状态 52
-    IntConst    转到状态 53
-    UnaryExp    转到状态 54
-    UnaryOp     转到状态 55
-    MulExp      转到状态 56
-    AddExp      转到状态 62
+    Block       go to state 98
+    Stmt        go to state 159
+    Exp         go to state 101
+    LVal        go to state 102
+    PrimaryExp  go to state 51
+    Number      go to state 52
+    IntConst    go to state 53
+    UnaryExp    go to state 54
+    UnaryOp     go to state 55
+    MulExp      go to state 56
+    AddExp      go to state 62
 
 
 State 147
@@ -1921,14 +1921,14 @@ State 147
     CONSTANTOCT   shift, and go to state 48
     IDENTIFIER    shift, and go to state 49
 
-    LVal        转到状态 50
-    PrimaryExp  转到状态 51
-    Number      转到状态 52
-    IntConst    转到状态 53
-    UnaryExp    转到状态 54
-    UnaryOp     转到状态 55
-    MulExp      转到状态 56
-    AddExp      转到状态 160
+    LVal        go to state 50
+    PrimaryExp  go to state 51
+    Number      go to state 52
+    IntConst    go to state 53
+    UnaryExp    go to state 54
+    UnaryOp     go to state 55
+    MulExp      go to state 56
+    AddExp      go to state 160
 
 
 State 148
@@ -1944,14 +1944,14 @@ State 148
     CONSTANTOCT   shift, and go to state 48
     IDENTIFIER    shift, and go to state 49
 
-    LVal        转到状态 50
-    PrimaryExp  转到状态 51
-    Number      转到状态 52
-    IntConst    转到状态 53
-    UnaryExp    转到状态 54
-    UnaryOp     转到状态 55
-    MulExp      转到状态 56
-    AddExp      转到状态 161
+    LVal        go to state 50
+    PrimaryExp  go to state 51
+    Number      go to state 52
+    IntConst    go to state 53
+    UnaryExp    go to state 54
+    UnaryOp     go to state 55
+    MulExp      go to state 56
+    AddExp      go to state 161
 
 
 State 149
@@ -1967,14 +1967,14 @@ State 149
     CONSTANTOCT   shift, and go to state 48
     IDENTIFIER    shift, and go to state 49
 
-    LVal        转到状态 50
-    PrimaryExp  转到状态 51
-    Number      转到状态 52
-    IntConst    转到状态 53
-    UnaryExp    转到状态 54
-    UnaryOp     转到状态 55
-    MulExp      转到状态 56
-    AddExp      转到状态 162
+    LVal        go to state 50
+    PrimaryExp  go to state 51
+    Number      go to state 52
+    IntConst    go to state 53
+    UnaryExp    go to state 54
+    UnaryOp     go to state 55
+    MulExp      go to state 56
+    AddExp      go to state 162
 
 
 State 150
@@ -1990,14 +1990,14 @@ State 150
     CONSTANTOCT   shift, and go to state 48
     IDENTIFIER    shift, and go to state 49
 
-    LVal        转到状态 50
-    PrimaryExp  转到状态 51
-    Number      转到状态 52
-    IntConst    转到状态 53
-    UnaryExp    转到状态 54
-    UnaryOp     转到状态 55
-    MulExp      转到状态 56
-    AddExp      转到状态 163
+    LVal        go to state 50
+    PrimaryExp  go to state 51
+    Number      go to state 52
+    IntConst    go to state 53
+    UnaryExp    go to state 54
+    UnaryOp     go to state 55
+    MulExp      go to state 56
+    AddExp      go to state 163
 
 
 State 151
@@ -2013,15 +2013,15 @@ State 151
     CONSTANTOCT   shift, and go to state 48
     IDENTIFIER    shift, and go to state 49
 
-    LVal        转到状态 50
-    PrimaryExp  转到状态 51
-    Number      转到状态 52
-    IntConst    转到状态 53
-    UnaryExp    转到状态 54
-    UnaryOp     转到状态 55
-    MulExp      转到状态 56
-    AddExp      转到状态 133
-    RelExp      转到状态 164
+    LVal        go to state 50
+    PrimaryExp  go to state 51
+    Number      go to state 52
+    IntConst    go to state 53
+    UnaryExp    go to state 54
+    UnaryOp     go to state 55
+    MulExp      go to state 56
+    AddExp      go to state 133
+    RelExp      go to state 164
 
 
 State 152
@@ -2037,15 +2037,15 @@ State 152
     CONSTANTOCT   shift, and go to state 48
     IDENTIFIER    shift, and go to state 49
 
-    LVal        转到状态 50
-    PrimaryExp  转到状态 51
-    Number      转到状态 52
-    IntConst    转到状态 53
-    UnaryExp    转到状态 54
-    UnaryOp     转到状态 55
-    MulExp      转到状态 56
-    AddExp      转到状态 133
-    RelExp      转到状态 165
+    LVal        go to state 50
+    PrimaryExp  go to state 51
+    Number      go to state 52
+    IntConst    go to state 53
+    UnaryExp    go to state 54
+    UnaryOp     go to state 55
+    MulExp      go to state 56
+    AddExp      go to state 133
+    RelExp      go to state 165
 
 
 State 153
@@ -2061,16 +2061,16 @@ State 153
     CONSTANTOCT   shift, and go to state 48
     IDENTIFIER    shift, and go to state 49
 
-    LVal        转到状态 50
-    PrimaryExp  转到状态 51
-    Number      转到状态 52
-    IntConst    转到状态 53
-    UnaryExp    转到状态 54
-    UnaryOp     转到状态 55
-    MulExp      转到状态 56
-    AddExp      转到状态 133
-    RelExp      转到状态 134
-    EqExp       转到状态 166
+    LVal        go to state 50
+    PrimaryExp  go to state 51
+    Number      go to state 52
+    IntConst    go to state 53
+    UnaryExp    go to state 54
+    UnaryOp     go to state 55
+    MulExp      go to state 56
+    AddExp      go to state 133
+    RelExp      go to state 134
+    EqExp       go to state 166
 
 
 State 154
@@ -2086,17 +2086,17 @@ State 154
     CONSTANTOCT   shift, and go to state 48
     IDENTIFIER    shift, and go to state 49
 
-    LVal        转到状态 50
-    PrimaryExp  转到状态 51
-    Number      转到状态 52
-    IntConst    转到状态 53
-    UnaryExp    转到状态 54
-    UnaryOp     转到状态 55
-    MulExp      转到状态 56
-    AddExp      转到状态 133
-    RelExp      转到状态 134
-    EqExp       转到状态 135
-    LAndExp     转到状态 167
+    LVal        go to state 50
+    PrimaryExp  go to state 51
+    Number      go to state 52
+    IntConst    go to state 53
+    UnaryExp    go to state 54
+    UnaryOp     go to state 55
+    MulExp      go to state 56
+    AddExp      go to state 133
+    RelExp      go to state 134
+    EqExp       go to state 135
+    LAndExp     go to state 167
 
 
 State 155
@@ -2119,17 +2119,17 @@ State 155
     CONSTANTOCT   shift, and go to state 48
     IDENTIFIER    shift, and go to state 49
 
-    Block       转到状态 98
-    Stmt        转到状态 168
-    Exp         转到状态 101
-    LVal        转到状态 102
-    PrimaryExp  转到状态 51
-    Number      转到状态 52
-    IntConst    转到状态 53
-    UnaryExp    转到状态 54
-    UnaryOp     转到状态 55
-    MulExp      转到状态 56
-    AddExp      转到状态 62
+    Block       go to state 98
+    Stmt        go to state 168
+    Exp         go to state 101
+    LVal        go to state 102
+    PrimaryExp  go to state 51
+    Number      go to state 52
+    IntConst    go to state 53
+    UnaryExp    go to state 54
+    UnaryOp     go to state 55
+    MulExp      go to state 56
+    AddExp      go to state 62
 
 
 State 156
@@ -2292,17 +2292,17 @@ State 169
     CONSTANTOCT   shift, and go to state 48
     IDENTIFIER    shift, and go to state 49
 
-    Block       转到状态 98
-    Stmt        转到状态 170
-    Exp         转到状态 101
-    LVal        转到状态 102
-    PrimaryExp  转到状态 51
-    Number      转到状态 52
-    IntConst    转到状态 53
-    UnaryExp    转到状态 54
-    UnaryOp     转到状态 55
-    MulExp      转到状态 56
-    AddExp      转到状态 62
+    Block       go to state 98
+    Stmt        go to state 170
+    Exp         go to state 101
+    LVal        go to state 102
+    PrimaryExp  go to state 51
+    Number      go to state 52
+    IntConst    go to state 53
+    UnaryExp    go to state 54
+    UnaryOp     go to state 55
+    MulExp      go to state 56
+    AddExp      go to state 62
 
 
 State 170
