@@ -1,23 +1,30 @@
+
 %{
-    #include<stdio.h>
-    #include<stdlib.h>
+    //#include<stdio.h>
+    //#include<stdlib.h>
+    #include <iostream>
     #include "SysY.tab.h"
-    #include "grammartree.cpp"
+    //#include "grammartree.cpp"
     #include "grammartree.h"
 
-    int yycolumn = 1;    
+    int yycolumn = 1; 
+
     #define YY_USER_ACTION \
       yylloc.first_line = yylloc.last_line = yylineno; \
       yylloc.first_column = yycolumn; \
       yylloc.last_column = yycolumn + yyleng - 1; \
       yycolumn += yyleng;
     typedef union {
-	      ASTTree *ast_Tree;
+        int i;
+	      struct Grammartree *grammartree;
+        class ASTTree *ast_Tree;
 	  } YYLVAL;
     #define YYSTYPE YYLVAL
 %}
-%option c++
+%x COMMENT
 %option yylineno
+%option noyywrap
+
 
 SPSEMICOLON     ";"
 SPCOMMA         ","
@@ -52,18 +59,23 @@ KEYWHILE        "while"
 KEYBREAK        "break"
 KEYCONTINUE     "continue" 
 KEYRETURN       "return"
-CONSTANTOCT     [+-]?0[0-7]*      
-CONSTANTINTD    [+-]?[1-9][0-9]*
-CONSTANTINTH    [+-]?0[xX][0-9a-fA-F]+
+CONSTANTOCT     0[0-7]*      
+CONSTANTINTD    [1-9][0-9]*
+CONSTANTINTH    0[xX][0-9a-fA-F]+
 IDENTIFIER      [a-zA-Z][a-zA-Z0-9]* 
-COMMENT         (\/\/.*)|(\/\*((\*[^\/]?)|[^\*]*)*\*\/)
 SPACE           " "|\t
 EOL             \n
 WRONGSTRING     \"[^\"\n]*$
 WRONGIDENTIFIER [0-9_][a-zA-Z0-9_]* 
 AERROR          .
-
+/*COMMENT         (\/\/[^\n]*)|(\/\*((\*[^\/]?)|[^\*]*)*\*\/)*/
+/*{COMMENT} {printf("%s: %d: Unterminated comment\n", yytext, yylineno);return 0;}*/
 %%
+\/\*		{BEGIN(COMMENT);}
+<COMMENT>\*\/ {BEGIN(INITIAL);}
+<COMMENT>([^*]|\n)+|.
+<COMMENT><<EOF>>	{printf("%s: %d: Unterminated comment\n", yytext, yylineno);return 0;}
+"//".*\n
 {SPSEMICOLON} { ASTTree *asttree = new ASTTree("SPSEMICOLON", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return SPSEMICOLON; }
 {SPCOMMA} { ASTTree *asttree = new ASTTree("SPCOMMA", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return SPCOMMA; }
 {SPDOT} { ASTTree *asttree = new ASTTree("SPDOT", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return SPDOT; }
@@ -101,15 +113,15 @@ AERROR          .
 {CONSTANTINTH} { ASTTree *asttree = new ASTTree("CONSTANTINTH", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return CONSTANTINTH; }
 {CONSTANTOCT} {  ASTTree *asttree = new ASTTree("CONSTANTOCT", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree;return CONSTANTOCT ; }
 {IDENTIFIER} { ASTTree *asttree = new ASTTree("IDENTIFIER", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return IDENTIFIER; }
-{COMMENT} {}
+
 {SPACE} {}
 {EOL} { yycolumn = 1; }
 {WRONGSTRING} { printf("Lexical lrror at Line %d column %d: Missing \"\"\".\n", yylineno, yylloc.last_column); exit(-1); }
 {WRONGIDENTIFIER} { printf("Lexical Error at Line %d column %d: Wrong format of identifier.\n", yylineno, yylloc.first_column); exit(-1); }
 {AERROR} { printf("Lexical Error at Line %d column %d: Mysterious characters \"%s\".\n", yylineno, yylloc.first_column, yytext); exit(-1); }
 %%
-
+/*
 int yywrap()
 {
-return 1;
-}
+  return 1;
+}*/

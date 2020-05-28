@@ -1,12 +1,16 @@
 #include "grammartree.h"
 #include <cstring>
-#include<iostream>
+#include <iostream>
 using namespace std;
+extern char* yytext;
+
 ASTTree::ASTTree(char* name, int num, ...) {
+    //printf("gouzao !!!\n");
     int i;
     char* cache;
     va_list variables;       
     ASTTree *tmp = new ASTTree();
+    //strcpy(this->name,name);
     this->name = name;
     //this->si = null;
     va_start(variables, num);           // Init the variable parameter list
@@ -22,8 +26,8 @@ ASTTree::ASTTree(char* name, int num, ...) {
             tmp = tmp->rchild;
         }
         // Modify the line number when reduce using rule "Stmt->SimpleStmt" and SimpleStmt is Epsilon
-        if (!strcmp(this->lchild->name, "SimpleStmt") && this->lchild->line == -1)
-            this->line = this->lchild->rchild->line;
+        //if (!strcmp(this->lchild->name, "SimpleStmt") && this->lchild->line == -1)
+          //  this->line = this->lchild->rchild->line;
     }
     else
     {   // This grammar unit is terminal or void rule
@@ -32,6 +36,7 @@ ASTTree::ASTTree(char* name, int num, ...) {
             this->column = va_arg(variables, int);
         if (!strcmp(this->name, "IDENTIFIER"))
         {
+            //printf("%s\n",yytext);
             cache = (char *)malloc(sizeof(char) * strlen(yytext));
             strcpy(cache, yytext);
             this->id = cache;
@@ -48,16 +53,15 @@ ASTTree::ASTTree(char* name, int num, ...) {
         {
             this->int_value = strtol(yytext, NULL, 8);
         }
-        
+         //printf("name:%s\n",this->name);
     }
 
 }
-
 void ASTTree::TraverseGrammerTree(int level)
 {
     int i;
-    if (!this)
-    {
+    
+        //printf("tra!\n");
         for (i = 0; i < level; i++)
             printf("  ");
         if (this->line != -1)
@@ -70,14 +74,20 @@ void ASTTree::TraverseGrammerTree(int level)
                 printf(": %d\n", this->int_value);
             else if (!strcmp(this->name, "CONSTANTOCT"))
                 printf(": %d\n", this->int_value);
+            else if (!strcmp(this->name, "IDENTIFIER"))
+                printf(": %s\n", this->id);
             else
                 printf(" (%d)\n", this->line);
         }
         else
             printf("%s (Epsilon)\n", this->name);
-        this->lchild->TraverseGrammerTree( level + 1);
-        this->rchild->TraverseGrammerTree(level);
-    }
+        //printf("leftc\n");
+        if(this->lchild)
+            this->lchild->TraverseGrammerTree( level + 1);
+        //printf("rightc\n");
+        if(this->rchild)
+           this->rchild->TraverseGrammerTree(level);
+    
 }
 
 ASTTree* ASTTree::GetASTTree(){
