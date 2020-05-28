@@ -4,6 +4,17 @@
 #include"TACCode.h"
 using namespace std;
 
+typedef enum {R0, R1,R2, R3,R4,R5,R6,  // 这一部分是通用寄存器
+      R7, // syscall 
+    R8,R9,R10
+    ,R11 //帧指针 frame pointer
+    ,R12 //Intra Procedural Call
+    ,R13 //Stack Pointer
+    ,R14//Link Register
+    ,R15//Program Counter
+    ,CPSR//Current Program Status Register 
+    } Register;
+
 typedef struct RegDepictorEntry
 {
         int filled;         // Imply if the register is allocated
@@ -19,10 +30,7 @@ int AllocateLocal(LocalScope localvariable, int offset);
 
 class Arms {
   private:
-    typedef enum {zero, at, v0, v1, a0, a1, a2, a3,
-			t0, t1, t2, t3, t4, t5, t6, t7,
-			s0, s1, s2, s3, s4, s5, s6, s7,
-			t8, t9, k0, k1, gp, sp, fp, ra, NumRegs } Register;
+    
     Register lastUsed;
 
     typedef enum { ForRead, ForWrite } Reason;
