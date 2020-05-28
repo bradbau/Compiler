@@ -332,6 +332,7 @@ void yyfree (void *  );
 #define YY_AT_BOL() (YY_CURRENT_BUFFER_LVALUE->yy_at_bol)
 
 /* Begin user sect3 */
+#define YY_SKIP_YYWRAP
 
 typedef unsigned char YY_CHAR;
 
@@ -339,6 +340,8 @@ typedef unsigned char YY_CHAR;
 #define YY_INTERACTIVE
 
 #include <FlexLexer.h>
+
+int yyFlexLexer::yywrap() { return 1; }
 
 /* Done after the current pattern has been matched and before the
  * corresponding action - sets up yytext.
@@ -518,24 +521,45 @@ static yyconst flex_int32_t yy_rule_can_match_eol[45] =
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 #line 1 "SysY.l"
-#line 2 "SysY.l"
-    #include<stdio.h>
-    #include<stdlib.h>
+#line 3 "SysY.l"
+    //#include<stdio.h>
+    //#include<stdlib.h>
+    #include <iostream>
     #include "SysY.tab.h"
-    #include "grammartree.cpp"
+    //#include "grammartree.cpp"
     #include "grammartree.h"
+  
+    //FILE *yyin;
+    //char *yytext;
+    //int yylex();
+    //%option c++
+    int yycolumn = 1; 
+    //int yylineno;  
+    /*extern "C"
+    {
+    //int yyparse();
+    int yylineno; //共用
+    int yylex(void);
+    FILE *yyin;
+    char *yytext;
+    //int yydebug;
+    int yywrap(void);
+    void yyerror(const char* fmt, ...);
+    }*/
+   
 
-    int yycolumn = 1;    
     #define YY_USER_ACTION \
       yylloc.first_line = yylloc.last_line = yylineno; \
       yylloc.first_column = yycolumn; \
       yylloc.last_column = yycolumn + yyleng - 1; \
       yycolumn += yyleng;
     typedef union {
-	      ASTTree *ast_Tree;
+        int i;
+	      struct Grammartree *grammartree;
+        class ASTTree *ast_Tree;
 	  } YYLVAL;
     #define YYSTYPE YYLVAL
-#line 539 "lex.yy.cc"
+#line 563 "lex.yy.cc"
 
 #define INITIAL 0
 
@@ -667,9 +691,9 @@ YY_DECL
 		}
 
 	{
-#line 66 "SysY.l"
+#line 90 "SysY.l"
 
-#line 673 "lex.yy.cc"
+#line 697 "lex.yy.cc"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -738,204 +762,204 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 67 "SysY.l"
+#line 91 "SysY.l"
 { ASTTree *asttree = new ASTTree("SPSEMICOLON", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return SPSEMICOLON; }
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 68 "SysY.l"
+#line 92 "SysY.l"
 { ASTTree *asttree = new ASTTree("SPCOMMA", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return SPCOMMA; }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 69 "SysY.l"
+#line 93 "SysY.l"
 { ASTTree *asttree = new ASTTree("SPDOT", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return SPDOT; }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 70 "SysY.l"
+#line 94 "SysY.l"
 { ASTTree *asttree = new ASTTree("SPLEFTBRACE", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return SPLEFTBRACE; }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 71 "SysY.l"
+#line 95 "SysY.l"
 { ASTTree *asttree = new ASTTree("SPRIGHTBRACE", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return SPRIGHTBRACE; }
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 72 "SysY.l"
+#line 96 "SysY.l"
 { ASTTree *asttree = new ASTTree("OPLEFTPRNT", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return OPLEFTPRNT; }
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 73 "SysY.l"
+#line 97 "SysY.l"
 { ASTTree* asttree = new ASTTree("OPRIGHTPRNT", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return OPRIGHTPRNT; }
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 74 "SysY.l"
+#line 98 "SysY.l"
 { ASTTree *asttree = new ASTTree("OPLEFTBRACKET", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return OPLEFTBRACKET; }
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 75 "SysY.l"
+#line 99 "SysY.l"
 { ASTTree *asttree = new ASTTree("OPRIGHTBRACKET", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return OPRIGHTBRACKET; }
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 76 "SysY.l"
+#line 100 "SysY.l"
 { ASTTree *asttree = new ASTTree("OPPLUS", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return OPPLUS; }
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 77 "SysY.l"
+#line 101 "SysY.l"
 { ASTTree *asttree = new ASTTree("OPMINUS", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return OPMINUS; }
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 78 "SysY.l"
+#line 102 "SysY.l"
 { ASTTree *asttree = new ASTTree("OPMULTIPLY", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return OPMULTIPLY; }
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 79 "SysY.l"
+#line 103 "SysY.l"
 { ASTTree *asttree = new ASTTree("OPDIVIDE", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return OPDIVIDE; }
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 80 "SysY.l"
+#line 104 "SysY.l"
 {  ASTTree *asttree = new ASTTree("OPMOD", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return OPMOD; }
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 81 "SysY.l"
+#line 105 "SysY.l"
 { ASTTree *asttree = new ASTTree("OPASSIGN", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return OPASSIGN; }
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 82 "SysY.l"
+#line 106 "SysY.l"
 { ASTTree *asttree = new ASTTree("OPAND", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return OPAND; }
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 83 "SysY.l"
+#line 107 "SysY.l"
 { ASTTree *asttree = new ASTTree("OPOR", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return OPOR; }
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 84 "SysY.l"
+#line 108 "SysY.l"
 { ASTTree *asttree = new ASTTree("OPNOT", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return OPNOT; }
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 85 "SysY.l"
+#line 109 "SysY.l"
 { ASTTree *asttree = new ASTTree("OPEQUAL", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return OPEQUAL; }
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 86 "SysY.l"
+#line 110 "SysY.l"
 { ASTTree *asttree = new ASTTree("OPNOTEQUAL", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return OPNOTEQUAL; }
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 87 "SysY.l"
+#line 111 "SysY.l"
 { ASTTree *asttree = new ASTTree("OPGREAT", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return OPGREAT; }
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 88 "SysY.l"
+#line 112 "SysY.l"
 { ASTTree *asttree = new ASTTree("OPLIGHT", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return OPLIGHT; }
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 89 "SysY.l"
+#line 113 "SysY.l"
 { ASTTree *asttree = new ASTTree("OPGREATEQ", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return OPGREATEQ; }
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 90 "SysY.l"
+#line 114 "SysY.l"
 { ASTTree *asttree = new ASTTree("OPLIGHTEQ", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return OPLIGHTEQ; }
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 91 "SysY.l"
+#line 115 "SysY.l"
 { ASTTree *asttree = new ASTTree("TYPEVOID", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return TYPEVOID; }
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 92 "SysY.l"
+#line 116 "SysY.l"
 { ASTTree *asttree = new ASTTree("TYPEINTEGER", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return TYPEINTEGER; }
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
-#line 93 "SysY.l"
+#line 117 "SysY.l"
 { ASTTree *asttree = new ASTTree("KEYIF", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return KEYIF; }
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
-#line 94 "SysY.l"
+#line 118 "SysY.l"
 { ASTTree *asttree = new ASTTree("KEYELSE", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return KEYELSE; }
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 95 "SysY.l"
+#line 119 "SysY.l"
 { ASTTree *asttree = new ASTTree("KEYWHILE", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return KEYWHILE; }
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 96 "SysY.l"
+#line 120 "SysY.l"
 { ASTTree *asttree = new ASTTree("KEYBREAK", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return KEYBREAK; }
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
-#line 97 "SysY.l"
+#line 121 "SysY.l"
 {  ASTTree *asttree = new ASTTree("KEYCONTINUE", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree;return KEYCONTINUE ; }
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
-#line 98 "SysY.l"
+#line 122 "SysY.l"
 {  ASTTree *asttree = new ASTTree("KEYCONST", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree;return KEYCONST ; }
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
-#line 99 "SysY.l"
+#line 123 "SysY.l"
 { ASTTree *asttree = new ASTTree("KEYRETURN", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return KEYRETURN; }
 	YY_BREAK
 case 34:
 YY_RULE_SETUP
-#line 100 "SysY.l"
+#line 124 "SysY.l"
 { ASTTree *asttree = new ASTTree("CONSTANTINTD", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return CONSTANTINTD; }
 	YY_BREAK
 case 35:
 YY_RULE_SETUP
-#line 101 "SysY.l"
+#line 125 "SysY.l"
 { ASTTree *asttree = new ASTTree("CONSTANTINTH", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return CONSTANTINTH; }
 	YY_BREAK
 case 36:
 YY_RULE_SETUP
-#line 102 "SysY.l"
+#line 126 "SysY.l"
 {  ASTTree *asttree = new ASTTree("CONSTANTOCT", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree;return CONSTANTOCT ; }
 	YY_BREAK
 case 37:
 YY_RULE_SETUP
-#line 103 "SysY.l"
+#line 127 "SysY.l"
 { ASTTree *asttree = new ASTTree("IDENTIFIER", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return IDENTIFIER; }
 	YY_BREAK
 case 38:
 /* rule 38 can match eol */
 YY_RULE_SETUP
-#line 104 "SysY.l"
+#line 128 "SysY.l"
 {}
 	YY_BREAK
 case 39:
 YY_RULE_SETUP
-#line 105 "SysY.l"
+#line 129 "SysY.l"
 {}
 	YY_BREAK
 case 40:
 /* rule 40 can match eol */
 YY_RULE_SETUP
-#line 106 "SysY.l"
+#line 130 "SysY.l"
 { yycolumn = 1; }
 	YY_BREAK
 case 41:
@@ -943,25 +967,25 @@ case 41:
 (yy_c_buf_p) = yy_cp -= 1;
 YY_DO_BEFORE_ACTION; /* set up yytext again */
 YY_RULE_SETUP
-#line 107 "SysY.l"
+#line 131 "SysY.l"
 { printf("Lexical lrror at Line %d column %d: Missing \"\"\".\n", yylineno, yylloc.last_column); exit(-1); }
 	YY_BREAK
 case 42:
 YY_RULE_SETUP
-#line 108 "SysY.l"
+#line 132 "SysY.l"
 { printf("Lexical Error at Line %d column %d: Wrong format of identifier.\n", yylineno, yylloc.first_column); exit(-1); }
 	YY_BREAK
 case 43:
 YY_RULE_SETUP
-#line 109 "SysY.l"
+#line 133 "SysY.l"
 { printf("Lexical Error at Line %d column %d: Mysterious characters \"%s\".\n", yylineno, yylloc.first_column, yytext); exit(-1); }
 	YY_BREAK
 case 44:
 YY_RULE_SETUP
-#line 110 "SysY.l"
+#line 134 "SysY.l"
 ECHO;
 	YY_BREAK
-#line 965 "lex.yy.cc"
+#line 989 "lex.yy.cc"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1925,12 +1949,12 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 110 "SysY.l"
+#line 134 "SysY.l"
 
 
-
+/*
 int yywrap()
 {
-return 1;
-}
+  return 1;
+}*/
 

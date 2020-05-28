@@ -1,21 +1,39 @@
-%{
-    #include<stdio.h>
-    #include<unistd.h>
-    #include"lex.yy.c"//#include "grammartree.cpp"
-    #include "grammartree.h"
-    void yyerror(const char* fmt, ...);
-%}
 
 %error-verbose
 %locations
 
+%{
+    //#include<stdio.h>
+    //#include<unistd.h>
+    #include <iostream>
+    //#include"lex.yy.cc"
+    //#include "grammartree.cpp"
+    #include "grammartree.h"
+    using namespace std;
+    //extern "C"
+    
+    //int yyparse();
+    extern int yylineno; //共用
+    extern int yylex();
+    extern FILE *yyin;
+    extern char *yytext;
+    extern int yydebug;
+    extern int yywrap(void);
+    void yyerror(const char* fmt, ...);
+    
+    
+    
+%}
+
 %union {
-    ASTTree *ast_Tree;
+    int i;
+    struct Grammartree *grammartree;
+    class ASTTree *ast_Tree;
 }
 
 
 
-%type <ast_Tree> CompUnit Decl ConstDecl VarDecl ConstDef ConstDefs ArrayDef ConstInitVal ConstInitValList
+%type <ast_Tree> Compiler CompUnit Decl ConstDecl VarDecl ConstDef ConstDefs ArrayDef ConstInitVal ConstInitValList
 %type <ast_Tree> VarDef VarDefs InitVal InitVals FuncDef FuncFParams FuncFParam ArrayExps 
 %type <ast_Tree> Block BlockItems BlockItem Stmt Exp Exps Cond LVal PrimaryExp Number IntConst UnaryExp UnaryOp 
 %type <ast_Tree> FuncRParams MulExp AddExp RelExp EqExp LAndExp LOrExp ConstExp
@@ -31,26 +49,27 @@
 %token <ast_Tree> CONSTANTINTD CONSTANTINTH CONSTANTOCT
 %token <ast_Tree> IDENTIFIER
 
-%right OPASSIGN
-%left OPOR
-%left OPAND
-%left OPLIGHT OPLIGHTEQ OPGREAT OPGREATEQ OPEQUAL OPNOTEQUAL
-%left OPPLUS OPMINUS
-%left OPMULTIPLY OPDIVIDE OPMOD
-%right OPNOT
-%left SPDOT
-%left OPRIGHTBRACKET
-%right OPLEFTBRACKET
-%left OPRIGHTPRNT
-%right OPLEFTPRNT
+%right OPASSIGN 
+%left OPOR 
+%left OPAND 
+%left OPEQUAL OPNOTEQUAL 
+%left OPLIGHT OPLIGHTEQ OPGREAT OPGREATEQ 
+%left OPPLUS OPMINUS 
+%left OPMULTIPLY OPDIVIDE OPMOD 
+%right OPNOT 
+%left OPRIGHTBRACKET OPLEFTBRACKET OPRIGHTPRNT OPLEFTPRNT SPDOT
+
+
 
 %nonassoc KEYELSE 
 
 %%
-CompUnit: CompUnit Decl{ ASTTree *asttree = new ASTTree("CompUnit", 2, $1, $2);$$ = asttree; asttree->TraverseGrammerTree(0);}
-         | CompUnit FuncDef { ASTTree *asttree = new ASTTree("CompUnit", 2, $1, $2);$$ = asttree; asttree->TraverseGrammerTree(0);}
-         | Decl{ ASTTree *asttree = new ASTTree("CompUnit", 1, $1);$$ = asttree; asttree->TraverseGrammerTree(0);}
-         | FuncDef{ ASTTree *asttree = new ASTTree("CompUnit", 1, $1);$$ = asttree; asttree->TraverseGrammerTree(0);}
+Compiler: CompUnit { ASTTree *asttree = new ASTTree("Compiler", 1, $1);$$ = asttree; asttree->TraverseGrammerTree(0);printf("!!!\n");}
+        ;
+CompUnit: CompUnit Decl{ ASTTree *asttree = new ASTTree("CompUnit", 2, $1, $2);$$ = asttree;}
+         | CompUnit FuncDef { ASTTree *asttree = new ASTTree("CompUnit", 2, $1, $2);$$ = asttree; }
+         | Decl{ ASTTree *asttree = new ASTTree("CompUnit", 1, $1);$$ = asttree;}
+         | FuncDef{ ASTTree *asttree = new ASTTree("CompUnit", 1, $1);$$ = asttree; }
          ;
 /*声明*/
 Decl:  ConstDecl { ASTTree *asttree = new ASTTree("Decl", 1, $1);$$ = asttree; }
@@ -165,7 +184,8 @@ PrimaryExp: OPLEFTPRNT Exp OPRIGHTPRNT { ASTTree *asttree = new ASTTree("Primary
           | Number{ ASTTree *asttree = new ASTTree("PrimaryExp", 1, $1);$$ = asttree; }
           ;
 /*数值*/ 
-Number: IntConst;
+Number: IntConst{ ASTTree *asttree = new ASTTree("Number", 1, $1);$$ = asttree; }
+      ;
 /*还有完善！！！！！！！！！！！！！！！*/
 IntConst: CONSTANTOCT { ASTTree *asttree = new ASTTree("IntConst", 1, $1);$$ = asttree; }
           |CONSTANTINTD  { ASTTree *asttree = new ASTTree("IntConst", 1, $1);$$ = asttree; } 
@@ -229,6 +249,16 @@ ConstExp: AddExp { ASTTree *asttree = new ASTTree("ConstExp", 1, $1);$$ = asttre
 
 #include<stdarg.h>
 
+
+int main(int argc, char *argv[]){
+        //extern int yyparse(void);
+        //extern int yylex(void);
+	yyin=fopen(argv[1],"r");
+	if (!yyin) return -1;
+	yylineno=1;
+	yyparse();
+	return 0;
+}
 void yyerror(const char* fmt, ...)
 {
     va_list ap;
@@ -237,4 +267,3 @@ void yyerror(const char* fmt, ...)
     vfprintf(stderr, fmt, ap);
     fprintf(stderr, ".\n");
 }
-
