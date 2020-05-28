@@ -2,14 +2,18 @@
 #include<malloc.h>
 #include<stdarg.h>
 #include "stack.h"
+#include <iostream>
+#include <vector>
+
+using namespace std;
 
 typedef enum TACOperandKind
 {
-    VARIABLE,
-    ADDRESSS,
-    INTEGERCONST,
-    FUNCTION,
-    LABEL
+    VARIABLE,       //变量
+    ADDRESSS,       //地址
+    INTEGERCONST,   //常数
+    FUNCTION,       //函数定义
+    LABEL           //标号定义
 } TACOperandKind;
 
 typedef struct TACOperand
@@ -17,10 +21,11 @@ typedef struct TACOperand
     TACOperandKind kind;
     union
     {
-        int intvalue;
-        int labelvalue;
-        Scope variable;
-        Scope function;
+        int intvalue;       //常量值
+        int labelvalue;     //标号
+        int seq;            //三元式序号
+        Scope variable;     //变量
+        Scope function;     //函数
     };
 } TACOperand;
 
@@ -50,10 +55,10 @@ typedef enum TACOpKind
 
 typedef struct TAC
 {
-    TACOpKind opkind;
-    TACOperand dest;
-    TACOperand firstsrc;
-    TACOperand secondsrc;
+    int seq;                //三元式序号（先放着看看有没有用，没用再删掉）
+    TACOpKind opkind;       //运算符
+    TACOperand firstsrc;    //第一操作数
+    TACOperand secondsrc;   //第二操作数
 } TAC;
 
 typedef struct TACCode
@@ -64,7 +69,7 @@ typedef struct TACCode
     struct TACCode* next;
 } TACCode;
 
-typedef unsigned int Label;
+typedef unsigned int Label; //标号值
 
 class TACCodeItem{
     private:
@@ -82,3 +87,6 @@ class TACCodeItem{
         void DisplayTACCode(TACCode* entrance);
 
 }
+
+vector <int> code_table;        //定义间接码表（动态数组）
+vector <TACOperand> TAC_table;  //定义三元式表（动态数组）
