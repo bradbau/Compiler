@@ -33,7 +33,7 @@
 
 
 
-%type <ast_Tree> Compiler CompUnit Decl ConstDecl VarDecl ConstDef ConstDefs ArrayDef ConstInitVal ConstInitValList
+%type <ast_Tree> Compiler CompUnits CompUnit Decl ConstDecl VarDecl ConstDef ConstDefs ArrayDef ConstInitVal ConstInitValList
 %type <ast_Tree> VarDef VarDefs InitVal InitVals FuncDef FuncFParams FuncFParam ArrayExps 
 %type <ast_Tree> Block BlockItems BlockItem Stmt Exp Exps Cond LVal PrimaryExp Number IntConst UnaryExp UnaryOp 
 %type <ast_Tree> FuncRParams MulExp AddExp RelExp EqExp LAndExp LOrExp ConstExp
@@ -49,27 +49,27 @@
 %token <ast_Tree> CONSTANTINTD CONSTANTINTH CONSTANTOCT
 %token <ast_Tree> IDENTIFIER
 
-%right OPASSIGN 
+
 %left OPOR 
 %left OPAND 
 %left OPEQUAL OPNOTEQUAL 
+%right OPASSIGN 
 %left OPLIGHT OPLIGHTEQ OPGREAT OPGREATEQ 
 %left OPPLUS OPMINUS 
 %left OPMULTIPLY OPDIVIDE OPMOD 
 %right OPNOT 
 %left OPRIGHTBRACKET OPLEFTBRACKET OPRIGHTPRNT OPLEFTPRNT SPDOT
 
-
-
 %nonassoc KEYELSE 
 
 %%
-Compiler: CompUnit { ASTTree *asttree = new ASTTree("Compiler", 1, $1);$$ = asttree; asttree->TraverseGrammerTree(0);printf("!!!\n");}
+Compiler: CompUnits { ASTTree *asttree = new ASTTree("Compiler", 1, $1);$$ = asttree; asttree->TraverseGrammerTree(0);printf("!!!1\n");}
         ;
-CompUnit: CompUnit Decl{ ASTTree *asttree = new ASTTree("CompUnit", 2, $1, $2);$$ = asttree;}
-         | CompUnit FuncDef { ASTTree *asttree = new ASTTree("CompUnit", 2, $1, $2);$$ = asttree; }
-         | Decl{ ASTTree *asttree = new ASTTree("CompUnit", 1, $1);$$ = asttree;}
-         | FuncDef{ ASTTree *asttree = new ASTTree("CompUnit", 1, $1);$$ = asttree; }
+CompUnits:{ ASTTree *asttree = new ASTTree("CompUnit",0, -1);$$ = asttree;}
+         | CompUnit CompUnits{ ASTTree *asttree = new ASTTree("CompUnits", 2, $1,$2);$$ = asttree; }
+         ;
+CompUnit: Decl{ ASTTree *asttree = new ASTTree("CompUnit", 1, $1);$$ = asttree;}
+         | FuncDef { ASTTree *asttree = new ASTTree("CompUnit", 1, $1);$$ = asttree; }
          ;
 /*声明*/
 Decl:  ConstDecl { ASTTree *asttree = new ASTTree("Decl", 1, $1);$$ = asttree; }
@@ -147,7 +147,7 @@ Block:SPLEFTBRACE BlockItems SPRIGHTBRACE{ ASTTree *asttree = new ASTTree("Block
       ;
 /*语句块列表*/
 BlockItems:{ ASTTree *asttree = new ASTTree("BlockItems", 0, -1);$$ = asttree; } 
-           |BlockItems BlockItem { ASTTree *asttree = new ASTTree("BlockItems", 2, $1,$2);$$ = asttree; }
+           | BlockItems BlockItem { ASTTree *asttree = new ASTTree("BlockItems", 2, $1,$2);$$ = asttree; }
            ;
 /*语句块项*/ 
 BlockItem:Decl { ASTTree *asttree = new ASTTree("BlockItem", 1, $1);$$ = asttree; }
