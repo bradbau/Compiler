@@ -78,10 +78,19 @@ extern int yydebug;
     KEYBREAK = 288,
     KEYCONTINUE = 289,
     KEYRETURN = 290,
-    CONSTANTINTD = 291,
-    CONSTANTINTH = 292,
-    CONSTANTOCT = 293,
-    IDENTIFIER = 294
+    KEYGETINT = 291,
+    KEYGETCHAR = 292,
+    KEYGETARRAY = 293,
+    KEYPUTINT = 294,
+    KEYPUTCHAR = 295,
+    KEYPUTARRAY = 296,
+    KEYPUTF = 297,
+    KEYSTOPTIME = 298,
+    KEYSTARTTIME = 299,
+    CONSTANTINTD = 300,
+    CONSTANTINTH = 301,
+    CONSTANTOCT = 302,
+    IDENTIFIER = 303
   };
 #endif
 
@@ -92,11 +101,10 @@ union YYSTYPE
 {
 #line 28 "SysY.y" /* yacc.c:1909  */
 
-    int i;
-    struct Grammartree *grammartree;
+
     class ASTTree *ast_Tree;
 
-#line 100 "SysY.tab.h" /* yacc.c:1909  */
+#line 108 "SysY.tab.h" /* yacc.c:1909  */
 };
 
 typedef union YYSTYPE YYSTYPE;

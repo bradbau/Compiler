@@ -26,8 +26,7 @@
 %}
 
 %union {
-    int i;
-    struct Grammartree *grammartree;
+
     class ASTTree *ast_Tree;
 }
 
@@ -45,7 +44,8 @@
 %token <ast_Tree> OPEQUAL OPNOTEQUAL OPGREAT OPLIGHT OPGREATEQ OPLIGHTEQ
 %token <ast_Tree> TYPEVOID TYPEINTEGER KEYCONST
 %token <ast_Tree> KEYIF KEYELSE KEYWHILE KEYBREAK KEYCONTINUE
-%token <ast_Tree> KEYRETURN 
+%token <ast_Tree> KEYRETURN KEYGETINT KEYGETCHAR KEYGETARRAY KEYPUTINT KEYPUTCHAR KEYPUTARRAY KEYPUTF
+%token <ast_Tree> KEYSTOPTIME KEYSTARTTIME
 %token <ast_Tree> CONSTANTINTD CONSTANTINTH CONSTANTOCT
 %token <ast_Tree> IDENTIFIER
 
@@ -63,7 +63,8 @@
 %nonassoc KEYELSE 
 
 %%
-Compiler: CompUnits { ASTTree *asttree = new ASTTree("Compiler", 1, $1);$$ = asttree; asttree->TraverseGrammerTree(0);printf("!!!1\n");}
+/*add new*/
+Compiler: CompUnits { ASTTree *asttree = new ASTTree("Compiler", 1, $1);$$ = asttree; asttree->TraverseGrammerTree(0);}
         ;
 CompUnits:{ ASTTree *asttree = new ASTTree("CompUnit",0, -1);$$ = asttree;}
          | CompUnit CompUnits{ ASTTree *asttree = new ASTTree("CompUnits", 2, $1,$2);$$ = asttree; }
@@ -147,7 +148,7 @@ Block:SPLEFTBRACE BlockItems SPRIGHTBRACE{ ASTTree *asttree = new ASTTree("Block
       ;
 /*语句块列表*/
 BlockItems:{ ASTTree *asttree = new ASTTree("BlockItems", 0, -1);$$ = asttree; } 
-           | BlockItems BlockItem { ASTTree *asttree = new ASTTree("BlockItems", 2, $1,$2);$$ = asttree; }
+           | BlockItem BlockItems  { ASTTree *asttree = new ASTTree("BlockItems", 2, $1,$2);$$ = asttree; }
            ;
 /*语句块项*/ 
 BlockItem:Decl { ASTTree *asttree = new ASTTree("BlockItem", 1, $1);$$ = asttree; }

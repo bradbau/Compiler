@@ -15,8 +15,6 @@
       yylloc.last_column = yycolumn + yyleng - 1; \
       yycolumn += yyleng;
     typedef union {
-        int i;
-	      struct Grammartree *grammartree;
         class ASTTree *ast_Tree;
 	  } YYLVAL;
     #define YYSTYPE YYLVAL
@@ -59,6 +57,15 @@ KEYWHILE        "while"
 KEYBREAK        "break"
 KEYCONTINUE     "continue" 
 KEYRETURN       "return"
+KEYGETINT       "getint"
+KEYGETCHAR      "getchar"
+KEYGETARRAY     "getarray"
+KEYPUTINT       "putint"
+KEYPUTCHAR      "putchar"
+KEYPUTARRAY     "putarray"
+KEYPUTF         "putf"
+KEYSTARTTIME    "starttime"
+KEYSTOPTIME     "stoptime"
 CONSTANTOCT     0[0-7]*      
 CONSTANTINTD    [1-9][0-9]*
 CONSTANTINTH    0[xX][0-9a-fA-F]+
@@ -68,15 +75,14 @@ EOL             \n
 WRONGSTRING     \"[^\"\n]*$
 WRONGIDENTIFIER [0-9_][a-zA-Z0-9_]* 
 AERROR          .
-/*COMMENT         (\/\/[^\n]*)|(\/\*((\*[^\/]?)|[^\*]*)*\*\/)*/
-/*{COMMENT} {printf("%s: %d: Unterminated comment\n", yytext, yylineno);return 0;}*/
+
 %%
 \/\*		{BEGIN(COMMENT);}
 <COMMENT>\*\/ {BEGIN(INITIAL);}
 <COMMENT>([^*]|\n)+|.
 <COMMENT><<EOF>>	{printf("%s: %d: Unterminated comment\n", yytext, yylineno);return 0;}
 "//".*\n
-{SPSEMICOLON} { ASTTree *asttree = new ASTTree("SPSEMICOLON", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return SPSEMICOLON; }
+{SPSEMICOLON} {ASTTree *asttree = new ASTTree("SPSEMICOLON", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return SPSEMICOLON; }
 {SPCOMMA} { ASTTree *asttree = new ASTTree("SPCOMMA", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return SPCOMMA; }
 {SPDOT} { ASTTree *asttree = new ASTTree("SPDOT", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return SPDOT; }
 {SPLEFTBRACE} { ASTTree *asttree = new ASTTree("SPLEFTBRACE", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return SPLEFTBRACE; }
@@ -108,6 +114,15 @@ AERROR          .
 {KEYBREAK} { ASTTree *asttree = new ASTTree("KEYBREAK", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return KEYBREAK; }
 {KEYCONTINUE} {  ASTTree *asttree = new ASTTree("KEYCONTINUE", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree;return KEYCONTINUE ; }
 {KEYCONST} {  ASTTree *asttree = new ASTTree("KEYCONST", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree;return KEYCONST ; }
+{KEYGETINT}  {ASTTree *asttree = new ASTTree("KEYGETINT", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return KEYGETINT; }    
+{KEYGETCHAR}    { ASTTree *asttree = new ASTTree("KEYGETCHAR", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return KEYGETCHAR; }
+{KEYGETARRAY}   { ASTTree *asttree = new ASTTree("KEYGETARRAY", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return KEYGETARRAY; }
+{KEYPUTINT}      { ASTTree *asttree = new ASTTree("KEYPUTINT", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return KEYPUTINT; }
+{KEYPUTCHAR}     { ASTTree *asttree = new ASTTree("KEYPUTCHAR", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return KEYPUTCHAR; }
+{KEYPUTARRAY}    { ASTTree *asttree = new ASTTree("KEYPUTARRAY", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return KEYPUTARRAY; }
+{KEYPUTF}         { ASTTree *asttree = new ASTTree("KEYPUTF", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return KEYPUTF; }
+{KEYSTARTTIME}    { ASTTree *asttree = new ASTTree("KEYSTARTTIME", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return KEYSTARTTIME; }
+{KEYSTOPTIME}     { ASTTree *asttree = new ASTTree("SPSEMICOLON", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return SPSEMICOLON; }
 {KEYRETURN} { ASTTree *asttree = new ASTTree("KEYRETURN", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return KEYRETURN; }
 {CONSTANTINTD} { ASTTree *asttree = new ASTTree("CONSTANTINTD", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return CONSTANTINTD; }
 {CONSTANTINTH} { ASTTree *asttree = new ASTTree("CONSTANTINTH", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return CONSTANTINTH; }
