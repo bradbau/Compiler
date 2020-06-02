@@ -1,4 +1,4 @@
-
+/* utf-8 */
 #ifndef GRAMMARTREE_H
 #define GRAMMARTREE_H
 
@@ -9,6 +9,7 @@
 #include <iostream>
 #include<string>
 #include "SysY.tab.h"
+#include "hashtable.h"
 using namespace std;
 //#include"hashtable.h"
     
@@ -25,12 +26,9 @@ class ASTTree{
     char* name;     // the name of this grammar unit
     int int_value;  //只可能为int类型
     char* id;
-    //ScopeItem si;//目前没想明白有什么用
-
-
+    ScopeItem si;
     ASTTree *lchild=NULL;
     ASTTree *rchild=NULL;
-  
   public:
     ASTTree(){};
     ASTTree(char* name, int num, ...);

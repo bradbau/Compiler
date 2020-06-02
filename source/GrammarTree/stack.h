@@ -30,7 +30,7 @@ typedef struct ScopeStack
 
 typedef struct ExprType
 {
-    DecafCategory category;
+    SysYCategory category;
     char* type;
 } ExprType;
 
