@@ -1,4 +1,4 @@
-
+/* utf-8 */
 %error-verbose
 %locations
 
@@ -84,10 +84,6 @@ ConstDecl: KEYCONST TYPEINTEGER ConstDef ConstDefs SPSEMICOLON{ ASTTree *asttree
 ConstDefs: { ASTTree *asttree = new ASTTree("ConstDefs", 0, -1);$$ = asttree; }
           | ConstDefs SPCOMMA ConstDef { ASTTree *asttree = new ASTTree("ConstDefs", 3, $1, $2,$3);$$ = asttree; }
           ;
-
-/*基本类型*/ 
-/*BType: TYPEINTEGER;*/
-
 /*常数定义*/ 
 ConstDef: IDENTIFIER ArrayDef OPASSIGN ConstInitVal{ ASTTree *asttree = new ASTTree("ConstDef", 4, $1, $2,$3,$4);$$ = asttree; }
          ;
