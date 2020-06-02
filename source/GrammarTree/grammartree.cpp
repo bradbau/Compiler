@@ -4,7 +4,7 @@
 using namespace std;
 extern char* yytext;
 
-ASTTree::ASTTree(char* name, int num, ...) {
+ASTTree::ASTTree(char * name, int num, ...) {
     //printf("gouzao !!!\n");
     int i;
     char* cache;
