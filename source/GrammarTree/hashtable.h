@@ -31,7 +31,7 @@ class ScopeItem{
     string type; //for example: int void
     SysYCategory category; //for example: Variable Function
     Hashtable *depictor;
-    Hashtable *selfptr; //point to the hashtable which this item belongs to
+    Hashtable *self_hashtable; //point to the hashtable which this item belongs to
     int offset;
     int reg;
   public:
@@ -51,16 +51,18 @@ class ScopeItem{
 class Hashtable{
   private: 
      //哈希表，具体类型自定
-     hash_map<int,ScopeItem> hmap;
+     hash_map<string, ScopeItem> hmap;
   public: 
      Hashtable() {}
      //返回有多少表项
      int NumEntries();
      //加入一个表项
-     void Enter(int key, ScopeItem si);
+     void Enter(string key, ScopeItem *si);
      //移除一个表项
-     void Remove(int key, ScopeItem si);
+     void Remove(string key, ScopeItem *si);
      //展示此表
      void Display();
 
 };
+
+ScopeItem* addIntoHashTable(ScopeType stype, ScopeItem* pre_si, string name, SysYCategory category, string type, Hashtable* depictor);

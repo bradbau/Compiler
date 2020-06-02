@@ -8,6 +8,18 @@ void ScopeItem::ScopeItem(ScopeType stype, string name, string type, SysYCategor
     this->category = category;
 }
 
+void ScopeItem::setDepictor(Hashtable *depictor){
+    this->depictor = depictor;
+}
+    
+void ScopeItem::setOffset(int offset){
+    this->offset = offset;
+}
+    
+void ScopeItem::setReg(int reg){
+    this->reg = reg;
+}
+
 ScopeType ScopeItem::getStype(){
     return this->stype;
 }
@@ -36,14 +48,9 @@ int ScopeItem::getReg(){
     return this->reg;
 }
 
-void ScopeItem::setDepictor(Hashtable *depictor){
-    this->depictor = depictor;
-}
-    
-void ScopeItem::setOffset(int offset){
-    this->offset = offset;
-}
-    
-void ScopeItem::setReg(int reg){
-    this->reg = reg;
+ScopeItem* addIntoHashTable(ScopeType stype, ScopeItem* pre_si, string name, SysYCategory category, string type, Hashtable* depictor){
+    ScopeItem si = new ScopeItem(stype, name, type, category);
+    si.setDepictor(depictor);
+    pre_si->self_hashtable->Enter(name, &si);
+    return &si;
 }
