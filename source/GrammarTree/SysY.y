@@ -9,6 +9,7 @@
     //#include"lex.yy.cc"
     //#include "grammartree.cpp"
     #include "grammartree.h"
+    #include "SymbolTable.h"
     using namespace std;
     //extern "C"
     
@@ -26,7 +27,6 @@
 %}
 
 %union {
-
     class ASTTree *ast_Tree;
 }
 
@@ -64,13 +64,28 @@
 
 %%
 /*add new*/
-Compiler: CompUnits { ASTTree *asttree = new ASTTree("Compiler", 1, $1);$$ = asttree; asttree->TraverseGrammerTree(0);}
+Compiler: CompUnits { ASTTree *asttree = new ASTTree("Compiler", 1, $1);
+                $$ = asttree;
+                $$->si = $1->si;
+                //asttree->TraverseGrammerTree(0);
+                }
         ;
-CompUnits:{ ASTTree *asttree = new ASTTree("CompUnit",0, -1);$$ = asttree;}
-         | CompUnit CompUnits{ ASTTree *asttree = new ASTTree("CompUnits", 2, $1,$2);$$ = asttree; }
+CompUnits:{ ASTTree *asttree = new ASTTree("CompUnit",0, -1);
+                $$ = asttree;
+                $$->si = NULL;
+                }
+         | CompUnit CompUnits{ ASTTree *asttree = new ASTTree("CompUnits", 2, $1,$2);
+                        $$ = asttree; 
+                        $$->si = mergeGlobalScope($1->si, $2->si);
+                        }
          ;
-CompUnit: Decl{ ASTTree *asttree = new ASTTree("CompUnit", 1, $1);$$ = asttree;}
-         | FuncDef { ASTTree *asttree = new ASTTree("CompUnit", 1, $1);$$ = asttree; }
+CompUnit: Decl{ ASTTree *asttree = new ASTTree("CompUnit", 1, $1);
+                $$ = asttree;
+                }
+         | FuncDef { ASTTree *asttree = new ASTTree("CompUnit", 1, $1);
+                        $$ = asttree; 
+                        $$->si = $1->si;
+                        }
          ;
 /*声明*/
 Decl:  ConstDecl { ASTTree *asttree = new ASTTree("Decl", 1, $1);$$ = asttree; }
@@ -120,20 +135,44 @@ InitVals: { ASTTree *asttree = new ASTTree("InitVals", 0, -1);$$ = asttree; }
         | InitVals SPCOMMA InitVal{ ASTTree *asttree = new ASTTree("InitVals", 3, $1,$2,$3);$$ = asttree; }
         ;
 
+/* 修改：去掉了FuncDef中无参的匹配规则，在FuncFParam中增加空规则 */
 /*函数定义*/ 
-FuncDef:TYPEVOID IDENTIFIER OPLEFTPRNT OPRIGHTPRNT Block{ ASTTree *asttree = new ASTTree("FuncDef", 5, $1,$2,$3,$4,$5);$$ = asttree; }
-        |TYPEINTEGER IDENTIFIER OPLEFTPRNT OPRIGHTPRNT Block{ ASTTree *asttree = new ASTTree("FuncDef", 5, $1,$2,$3,$4,$5);$$ = asttree; }
-        |TYPEVOID IDENTIFIER OPLEFTPRNT FuncFParams OPRIGHTPRNT Block{ ASTTree *asttree = new ASTTree("FuncDef", 6, $1,$2,$3,$4,$5,$6);$$ = asttree; }
-        |TYPEINTEGER IDENTIFIER OPLEFTPRNT FuncFParams OPRIGHTPRNT Block{ ASTTree *asttree = new ASTTree("FuncDef", 6, $1,$2,$3,$4,$5,$6);$$ = asttree; }
+FuncDef:TYPEVOID IDENTIFIER OPLEFTPRNT FuncFParams OPRIGHTPRNT Block{ ASTTree *asttree = new ASTTree("FuncDef", 6, $1,$2,$3,$4,$5,$6);
+                $$ = asttree; 
+                $4->si->depictor = $6->si;
+                $$->si = addIntoScope(Global, $$->si, $2->id, Function, $1->name, $4->si);
+                }
+        |TYPEINTEGER IDENTIFIER OPLEFTPRNT FuncFParams OPRIGHTPRNT Block{ ASTTree *asttree = new ASTTree("FuncDef", 6, $1,$2,$3,$4,$5,$6);
+                $$ = asttree; 
+                $4->si->depictor = $6->si;
+                $$->si = addIntoScope(Global, $$->si, $2->id, Function, $1->name, $4->si);
+                }
         ;
 
+/* 注意：涉及到数组的暂时先不管 */
 /*函数形参*/ 
-FuncFParam: TYPEINTEGER IDENTIFIER{ ASTTree *asttree = new ASTTree("FuncFParam", 2, $1,$2);$$ = asttree; }
-          | TYPEINTEGER IDENTIFIER OPLEFTBRACKET OPRIGHTBRACKET ArrayExps{ ASTTree *asttree = new ASTTree("FuncFParam", 5, $1,$2,$3,$4,$5);$$ = asttree; }
+FuncFParam: TYPEINTEGER IDENTIFIER{ ASTTree *asttree = new ASTTree("FuncFParam", 2, $1,$2);
+                $$ = asttree; 
+                $$->si = addIntoScope(Formal, $$->si, $2->id, Variable, $1->name, NULL);
+                }
+          | TYPEINTEGER IDENTIFIER OPLEFTBRACKET OPRIGHTBRACKET ArrayExps{ ASTTree *asttree = new ASTTree("FuncFParam", 5, $1,$2,$3,$4,$5);
+                $$ = asttree; 
+                
+                }
+          | {ASTTree *asttree = new ASTTree("FuncFParam", 0, -1);
+                $$ = asttree;
+                $$->si = addIntoScope(Formal, NULL, NULL, Variable, NULL, NULL);
+                }
           ;
 /*函数形参表*/ 
-FuncFParams: FuncFParam { ASTTree *asttree = new ASTTree("FuncFParams", 1, $1);$$ = asttree; }
-            | FuncFParams SPCOMMA FuncFParam{ ASTTree *asttree = new ASTTree("FuncFParams", 3, $1,$2,$3);$$ = asttree; }
+FuncFParams: FuncFParam { ASTTree *asttree = new ASTTree("FuncFParams", 1, $1);
+                $$ = asttree; 
+                $$->si = $$->si;
+                }
+            | FuncFParams SPCOMMA FuncFParam{ ASTTree *asttree = new ASTTree("FuncFParams", 3, $1,$2,$3);
+                        $$ = asttree; 
+                        $$->si = mergeFormalScope($3->si, $1->si);
+                        }
             ;
 /*数组维度*/
 ArrayExps:{ ASTTree *asttree = new ASTTree("ArrayExps", 0, -1);$$ = asttree; }
