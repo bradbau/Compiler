@@ -16,8 +16,6 @@
     extern int yywrap(void);
     void yyerror(const char* fmt, ...);
     
-    
-    
 %}
 
 %union {
@@ -32,15 +30,15 @@
 %type <ast_Tree> Block BlockItems BlockItem Stmt Exp Exps Cond LVal Number  
 %type <ast_Tree> FuncRParams RelExp EqExp VarDec
 
-%token <ast_Tree> SPSEMICOLON SPCOMMA SPDOT SPLEFTBRACE SPRIGHTBRACE
-%token <ast_Tree> OPLEFTPRNT OPRIGHTPRNT OPLEFTBRACKET OPRIGHTBRACKET
-%token <ast_Tree> OPPLUS OPMINUS OPMULTIPLY OPDIVIDE OPMOD OPASSIGN
-%token <ast_Tree> OPAND OPOR OPNOT
-%token <ast_Tree> OPEQUAL OPNOTEQUAL OPGREAT OPLIGHT OPGREATEQ OPLIGHTEQ
-%token <ast_Tree> TYPEVOID TYPEINTEGER KEYCONST
-%token <ast_Tree> KEYIF KEYELSE KEYWHILE KEYBREAK KEYCONTINUE
-%token <ast_Tree> KEYRETURN KEYGETINT KEYGETCHAR KEYGETARRAY KEYPUTINT KEYPUTCHAR KEYPUTARRAY KEYPUTF
-%token <ast_Tree> KEYSTOPTIME KEYSTARTTIME
+%token SPSEMICOLON SPCOMMA SPDOT SPLEFTBRACE SPRIGHTBRACE
+%token OPLEFTPRNT OPRIGHTPRNT OPLEFTBRACKET OPRIGHTBRACKET
+%token OPPLUS OPMINUS OPMULTIPLY OPDIVIDE OPMOD OPASSIGN
+%token OPAND OPOR OPNOT
+%token OPEQUAL OPNOTEQUAL OPGREAT OPLIGHT OPGREATEQ OPLIGHTEQ
+%token TYPEVOID TYPEINTEGER KEYCONST
+%token KEYIF KEYELSE KEYWHILE KEYBREAK KEYCONTINUE
+%token KEYRETURN KEYGETINT KEYGETCHAR KEYGETARRAY KEYPUTINT KEYPUTCHAR KEYPUTARRAY KEYPUTF
+%token KEYSTOPTIME KEYSTARTTIME
 %token <ast_Tree> CONSTANTINTD CONSTANTINTH CONSTANTOCT
 %token <ast_Tree> IDENTIFIER
 
@@ -66,23 +64,25 @@ CompUnits:{ $$ = NULL;}
          ;
 /*组成，常量、变量声明或函数定义*/
 CompUnit: Decl {$$=$1;} 
-         | TYPEVOID IDENTIFIER OPLEFTPRNT FuncFParams OPRIGHTPRNT Block{ ASTTree *asttree = new ASTTree("FuncDef", 2, yylineno, $4,$6);$$ = asttree; $$->SetFuncType($1->GetNodeTypeName());$$->SetID($2->GetID());}
-         | TYPEINTEGER IDENTIFIER OPLEFTPRNT FuncFParams OPRIGHTPRNT Block{ ASTTree *asttree = new ASTTree("FuncDef", 2, yylineno, $4,$6);$$ = asttree; $$->SetFuncType($1->GetNodeTypeName());$$->SetID($2->GetID()); }
-        ;
+         | TYPEVOID IDENTIFIER OPLEFTPRNT FuncFParams OPRIGHTPRNT Block{ printf("funcdef1\n");ASTTree *asttree = new ASTTree("FuncDef", 2, yylineno, $4,$6);$$ = asttree; $$->SetFuncType("void");$$->SetID($2->GetID());}
+         | TYPEVOID IDENTIFIER OPLEFTPRNT OPRIGHTPRNT Block{ printf("funcdef1\n");ASTTree *asttree = new ASTTree("FuncDef", 1, yylineno, $5);$$ = asttree; $$->SetFuncType("void");$$->SetID($2->GetID());}
+         | TYPEINTEGER IDENTIFIER OPLEFTPRNT FuncFParams OPRIGHTPRNT Block{printf("funcdef2\n"); ASTTree *asttree = new ASTTree("FuncDef", 2, yylineno,$4, $6);$$ = asttree; $$->SetFuncType("int");$$->SetID($2->GetID()); }
+         | TYPEINTEGER IDENTIFIER OPLEFTPRNT OPRIGHTPRNT Block{printf("funcdef2\n"); ASTTree *asttree = new ASTTree("FuncDef", 1, yylineno, $5);$$ = asttree; $$->SetFuncType("int");$$->SetID($2->GetID()); }
+         ;
 /*声明*/
 Decl: KEYCONST TYPEINTEGER ConstDef ConstDefs SPSEMICOLON{ ASTTree *asttree = new ASTTree("ConstDecl", 2, yylineno, $3,$4);$$ = asttree; }
      | TYPEINTEGER VarDef VarDefs SPSEMICOLON{ ASTTree *asttree = new ASTTree("VarDecl", 2, yylineno, $2,$3);$$ = asttree; }
      ;
 /*常量列表，自行添加的*/
 ConstDefs: { $$ = NULL;}
-          | ConstDefs SPCOMMA ConstDef { ASTTree *asttree = new ASTTree("ConstDefs", 2, yylineno, $1, $3);$$ = asttree; }
+          |  SPCOMMA ConstDef ConstDefs { ASTTree *asttree = new ASTTree("ConstDefs", 2, yylineno, $2, $3);$$ = asttree; }
           ;
 
 /*常数定义*/ 
 ConstDef: VarDec OPASSIGN InitVal{ ASTTree *asttree = new ASTTree("ConstOpassign", 2, yylineno, $1, $3);$$ = asttree; }
          ;
 /*常量/变量名称，由一个ID组成,包括数组*/
-VarDec:  IDENTIFIER          {$$=$1;}   //ID结点，标识符符号串存放结点的type_id
+VarDec:   IDENTIFIER          {$$ = $1;}   //ID结点，标识符符号串存放结点的type_id
          | VarDec OPLEFTBRACKET Exp OPRIGHTBRACKET {ASTTree *asttree = new ASTTree("ArrayDec", 1, yylineno, $1);$$ = asttree;$$->SetIntValue($3->GetIntValue());}     //数组,数组名存放在$$->type_id
          ;
 
@@ -93,16 +93,16 @@ InitVal: Exp { ASTTree *asttree = new ASTTree("ConstInitVal", 1, yylineno, $1);$
              ;
 /*常量初值列表中间用量，自己添加的*/
 InitValList:{ $$ = NULL;}
-           |InitValList SPCOMMA InitVal{ ASTTree *asttree = new ASTTree("ConstInitValList", 2, yylineno, $1,$3);$$ = asttree; }
+           |SPCOMMA InitVal InitValList { ASTTree *asttree = new ASTTree("ConstInitValList", 2, yylineno, $2,$3);$$ = asttree; }
            ;
 
 /*变量定义*/
-VarDef: VarDec{$$=$1;}
+VarDef: VarDec{$$ = $1;}  
        | VarDec OPASSIGN InitVal{ ASTTree *asttree = new ASTTree("VarOPassign", 2, yylineno, $1,$3);$$ = asttree; }
        ;
 /*变量声明列表，自行添加*/
 VarDefs:{ $$ = NULL;}
-       | VarDefs SPCOMMA VarDef{ ASTTree *asttree = new ASTTree("VarDefs", 2, yylineno, $1,$3);$$ = asttree; }
+        | SPCOMMA VarDef  VarDefs{ printf("VarDefs\n");ASTTree *asttree = new ASTTree("VarDefs", 2, yylineno, $2,$3);$$ = asttree; }
        ;
 
 /*函数形参*/ 
@@ -110,13 +110,12 @@ FuncFParam: TYPEINTEGER IDENTIFIER{ ASTTree *asttree = new ASTTree("FuncFParam",
           | TYPEINTEGER IDENTIFIER OPLEFTBRACKET OPRIGHTBRACKET ArrayExps{ ASTTree *asttree = new ASTTree("FuncFParam", 1, yylineno, $5);$$ = asttree;$$->SetFuncPType("array");$$->SetID($2->GetID()); }
           ;
 /*函数形参表*/ 
-FuncFParams:{ $$ = NULL;}
-            | FuncFParam { ASTTree *asttree = new ASTTree("FuncFParam", 1, yylineno, $1);$$ = asttree; }
-            | FuncFParams SPCOMMA FuncFParam{ ASTTree *asttree = new ASTTree("FuncFParams", 2, yylineno, $1,$3);$$ = asttree; }
+FuncFParams: FuncFParam { $$ = $1; }
+            | FuncFParam SPCOMMA FuncFParams{ ASTTree *asttree = new ASTTree("FuncFParams", 2, yylineno, $1,$3);$$ = asttree; }
             ;
 /*数组维度*/
 ArrayExps:{ $$ = NULL;}
-         |ArrayExps OPLEFTBRACKET Exp OPRIGHTBRACKET{ ASTTree *asttree = new ASTTree("ArrayExps", 2, yylineno, $1,$3);$$ = asttree; }
+         | OPLEFTBRACKET Exp OPRIGHTBRACKET ArrayExps{ ASTTree *asttree = new ASTTree("ArrayExps", 2, yylineno, $2,$4);$$ = asttree; }
          ;
 /*语句块*/ 
 Block:SPLEFTBRACE BlockItems SPRIGHTBRACE{ ASTTree *asttree = new ASTTree("Block", 1, yylineno, $2);$$ = asttree; }
@@ -131,11 +130,11 @@ BlockItem:Decl { $$ = $1; }
          ;
 
 /*左值表达式*/ 
-LVal: IDENTIFIER ArrayExps { ASTTree *asttree = new ASTTree("LVal", 2, yylineno, $1,$2);$$ = asttree; }
+LVal: IDENTIFIER ArrayExps { printf("Lval\n");ASTTree *asttree = new ASTTree("LVal", 2, yylineno, $1,$2);$$ = asttree; }
       ;
 /*语句*/ 
-Stmt: LVal OPASSIGN Exp SPSEMICOLON { ASTTree *asttree = new ASTTree("Lval_Opassign_Stmt",2, yylineno, $1,$3);$$ = asttree; }
-      | SPSEMICOLON { $$ = $1; }
+Stmt: LVal OPASSIGN Exp SPSEMICOLON { printf("stmt1\n");ASTTree *asttree = new ASTTree("Lval_Opassign_Stmt",2, yylineno, $1,$3);$$ = asttree; }
+      | SPSEMICOLON { ASTTree *asttree = new ASTTree("Empty_Stmt",0, yylineno);$$ = asttree; }
       | Exp SPSEMICOLON {ASTTree *asttree = new ASTTree("Exp_Stmt", 1, yylineno, $1);$$ = asttree;  }
       | Block { ASTTree *asttree = new ASTTree("Block_Stmt", 1, yylineno, $1);$$ = asttree; }
       | KEYIF OPLEFTPRNT Cond OPRIGHTPRNT Stmt { ASTTree *asttree = new ASTTree("IF_Stmt", 2, yylineno, $3,$5);$$ = asttree; }
@@ -176,20 +175,20 @@ FuncRParams: Exp Exps{ ASTTree *asttree = new ASTTree("FuncRParams", 2, yylineno
            ;
 /*表达式*/ 
 /*注：SysY 表达式是 int 型表达式*/
-Exp: OPLEFTPRNT Exp OPRIGHTPRNT { ASTTree *asttree = new ASTTree("PrimaryExp", 3, yylineno, $1,$2,$3);$$ = asttree; }
-   | LVal { ASTTree *asttree = new ASTTree("PrimaryExp", 1, yylineno, $1);$$ = asttree; }
-   | Number{ ASTTree *asttree = new ASTTree("PrimaryExp", 1, yylineno, $1);$$ = asttree; }
-   | IDENTIFIER OPLEFTPRNT OPRIGHTPRNT { ASTTree *asttree = new ASTTree("UnaryExp", 3, yylineno, $1,$2,$3);$$ = asttree; }
-   | IDENTIFIER OPLEFTPRNT FuncRParams OPRIGHTPRNT { ASTTree *asttree = new ASTTree("UnaryExp", 4, yylineno, $1,$2,$3,$4);$$ = asttree; }
-   | OPPLUS Exp { ASTTree *asttree = new ASTTree("UnaryExp", 2, yylineno, $1,$2);$$ = asttree; }
-   | OPMINUS Exp { ASTTree *asttree = new ASTTree("UnaryExp", 2, yylineno, $1,$2);$$ = asttree; }
-   | OPNOT Exp { ASTTree *asttree = new ASTTree("UnaryExp", 2, yylineno, $1,$2);$$ = asttree; }
-   | Exp OPMULTIPLY Exp { ASTTree *asttree = new ASTTree("MulExp", 3, yylineno, $1,$2,$3);$$ = asttree; }
-   | Exp OPDIVIDE Exp { ASTTree *asttree = new ASTTree("MulExp", 3, yylineno, $1,$2,$3);$$ = asttree; }
-   | Exp OPMOD Exp { ASTTree *asttree = new ASTTree("MulExp", 3, yylineno, $1,$2,$3);$$ = asttree; }
-   | Exp OPPLUS Exp { ASTTree *asttree = new ASTTree("AddExp", 3, yylineno, $1,$2,$3);$$ = asttree; }
-   | Exp OPMINUS Exp { ASTTree *asttree = new ASTTree("AddExp", 3, yylineno, $1,$2,$3);$$ = asttree; }
-    ;
+Exp: OPLEFTPRNT Exp OPRIGHTPRNT { ASTTree *asttree = new ASTTree("(Exp)", 1, yylineno,$2);$$ = asttree; }
+   | LVal { ASTTree *asttree = new ASTTree("LVal_EXP", 1, yylineno, $1);$$ = asttree; }
+   | Number{ $$ = $1; }
+   | IDENTIFIER OPLEFTPRNT OPRIGHTPRNT { ASTTree *asttree = new ASTTree("funcall", 1, yylineno, $1);$$ = asttree; }
+   | IDENTIFIER OPLEFTPRNT FuncRParams OPRIGHTPRNT { ASTTree *asttree = new ASTTree("funcall", 2, yylineno, $1,$3);$$ = asttree; }
+   | OPPLUS Exp { ASTTree *asttree = new ASTTree("OPPLUS_Exp", 1, yylineno, $2);$$ = asttree; }
+   | OPMINUS Exp { ASTTree *asttree = new ASTTree("OPMINUS_Exp", 1, yylineno, $2);$$ = asttree; }
+   | OPNOT Exp { ASTTree *asttree = new ASTTree("OPNOT_Exp", 1, yylineno, $2);$$ = asttree; }
+   | Exp OPMULTIPLY Exp { ASTTree *asttree = new ASTTree("MulExp", 2, yylineno, $1,$3);$$ = asttree; }
+   | Exp OPDIVIDE Exp { ASTTree *asttree = new ASTTree("DIVIDEExp", 2, yylineno, $1,$3);$$ = asttree; }
+   | Exp OPMOD Exp { ASTTree *asttree = new ASTTree("MODExp", 2, yylineno, $1,$3);$$ = asttree; }
+   | Exp OPPLUS Exp { ASTTree *asttree = new ASTTree("PLUSExp", 2, yylineno, $1,$3);$$ = asttree; }
+   | Exp OPMINUS Exp { ASTTree *asttree = new ASTTree("MINUSExp", 2, yylineno, $1,$3);$$ = asttree; }
+   ;
 
 /*表达式表*/
 Exps:{ $$ = NULL;}
