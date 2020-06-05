@@ -99,7 +99,7 @@ extern int yydebug;
 
 union YYSTYPE
 {
-#line 28 "SysY.y" /* yacc.c:1909  */
+#line 21 "SysY.y" /* yacc.c:1909  */
 
 
     class ASTTree *ast_Tree;

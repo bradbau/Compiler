@@ -82,52 +82,52 @@ AERROR          .
 <COMMENT>([^*]|\n)+|.
 <COMMENT><<EOF>>	{printf("%s: %d: Unterminated comment\n", yytext, yylineno);return 0;}
 "//".*\n
-{SPSEMICOLON} {return SPSEMICOLON; }
-{SPCOMMA} { return SPCOMMA; }
-{SPDOT} {  return SPDOT; }
-{SPLEFTBRACE} {return SPLEFTBRACE; }
-{SPRIGHTBRACE} { return SPRIGHTBRACE; }
-{OPLEFTPRNT} { return OPLEFTPRNT; }
-{OPRIGHTPRNT} {  return OPRIGHTPRNT; }
-{OPLEFTBRACKET} {  return OPLEFTBRACKET; }
-{OPRIGHTBRACKET} { return OPRIGHTBRACKET; }
-{OPPLUS} { return OPPLUS; }
-{OPMINUS} {  return OPMINUS; }
-{OPMULTIPLY} { return OPMULTIPLY; }
-{OPDIVIDE} { return OPDIVIDE; }
-{OPMOD} {   return OPMOD; }
-{OPASSIGN} {  return OPASSIGN; }
-{OPAND} {  return OPAND; }
-{OPOR} {  return OPOR; }
-{OPNOT} { return OPNOT; }
-{OPEQUAL} { return OPEQUAL; }
-{OPNOTEQUAL} {  return OPNOTEQUAL; }
-{OPGREAT} {  return OPGREAT; }
-{OPLIGHT} { return OPLIGHT; }
-{OPGREATEQ} {  return OPGREATEQ; }
-{OPLIGHTEQ} { return OPLIGHTEQ; }
-{TYPEVOID} { return TYPEVOID; }
-{TYPEINTEGER} {return TYPEINTEGER; }
-{KEYIF} { return KEYIF; }
-{KEYELSE} {  return KEYELSE; }
-{KEYWHILE} { return KEYWHILE; }
-{KEYBREAK} { return KEYBREAK; }
-{KEYCONTINUE} {return KEYCONTINUE ; }
-{KEYCONST} {  return KEYCONST ; }
-{KEYGETINT}  { return KEYGETINT; }    
-{KEYGETCHAR}    { return KEYGETCHAR; }
-{KEYGETARRAY}   {  return KEYGETARRAY; }
-{KEYPUTINT}      { return KEYPUTINT; }
-{KEYPUTCHAR}     {return KEYPUTCHAR; }
-{KEYPUTARRAY}    { return KEYPUTARRAY; }
-{KEYPUTF}         { return KEYPUTF; }
-{KEYSTARTTIME}    {  return KEYSTARTTIME; }
-{KEYSTOPTIME}     { return SPSEMICOLON; }
-{KEYRETURN} {return KEYRETURN; }
-{CONSTANTINTD} { ASTTree *asttree = new ASTTree("CONSTANTINTD", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return CONSTANTINTD; }
-{CONSTANTINTH} { ASTTree *asttree = new ASTTree("CONSTANTINTH", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return CONSTANTINTH; }
-{CONSTANTOCT} {  ASTTree *asttree = new ASTTree("CONSTANTOCT", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree;return CONSTANTOCT ; }
-{IDENTIFIER} { ASTTree *asttree = new ASTTree("IDENTIFIER", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return IDENTIFIER; }
+{SPSEMICOLON} {printf("<;>\n");return SPSEMICOLON; }
+{SPCOMMA} { printf("<,>\n");return SPCOMMA; }
+{SPDOT} {  printf("<.>\n");return SPDOT; }
+{SPLEFTBRACE} {printf("<{>\n");return SPLEFTBRACE; }
+{SPRIGHTBRACE} { printf("<}>\n");return SPRIGHTBRACE; }
+{OPLEFTPRNT} { printf("<(>\n");return OPLEFTPRNT; }
+{OPRIGHTPRNT} {  printf("<)>\n");return OPRIGHTPRNT; }
+{OPLEFTBRACKET} {  printf("<[>\n");return OPLEFTBRACKET; }
+{OPRIGHTBRACKET} { printf("<]>\n");return OPRIGHTBRACKET; }
+{OPPLUS} { printf("<+>\n");return OPPLUS; }
+{OPMINUS} {  printf("<->\n");return OPMINUS; }
+{OPMULTIPLY} { printf("<*>\n");return OPMULTIPLY; }
+{OPDIVIDE} { printf("</>\n");return OPDIVIDE; }
+{OPMOD} {   printf("<%>\n");return OPMOD; }
+{OPASSIGN} {  printf("<=>\n");return OPASSIGN; }
+{OPAND} {  printf("<&&>\n");return OPAND; }
+{OPOR} {  printf("<||>\n");return OPOR; }
+{OPNOT} { printf("<!>\n");return OPNOT; }
+{OPEQUAL} { printf("<==>\n");return OPEQUAL; }
+{OPNOTEQUAL} {  printf("<!=>\n");return OPNOTEQUAL; }
+{OPGREAT} {  printf("<>>\n");return OPGREAT; }
+{OPLIGHT} { printf("<<>\n");return OPLIGHT; }
+{OPGREATEQ} {  printf("<>=>\n");return OPGREATEQ; }
+{OPLIGHTEQ} { printf("<<=>\n");return OPLIGHTEQ; }
+{TYPEVOID} { printf("<void>\n");return TYPEVOID; }
+{TYPEINTEGER} {printf("<int>\n");return TYPEINTEGER; }
+{KEYIF} { printf("<if>\n");return KEYIF; }
+{KEYELSE} {  printf("<else>\n");return KEYELSE; }
+{KEYWHILE} { printf("<while>\n");return KEYWHILE; }
+{KEYBREAK} { printf("<break>\n");return KEYBREAK; }
+{KEYCONTINUE} {printf("<continue>\n");return KEYCONTINUE ; }
+{KEYCONST} {  printf("<const>\n");return KEYCONST ; }
+{KEYGETINT}  { printf("<getint>\n");return KEYGETINT; }    
+{KEYGETCHAR}    { printf("<getchar>\n");return KEYGETCHAR; }
+{KEYGETARRAY}   {  printf("<getarray>\n");return KEYGETARRAY; }
+{KEYPUTINT}      { printf("<putint>\n");return KEYPUTINT; }
+{KEYPUTCHAR}     {printf("<putchar>\n");return KEYPUTCHAR; }
+{KEYPUTARRAY}    { printf("<putarray>\n");return KEYPUTARRAY; }
+{KEYPUTF}         { printf("<putf>\n");return KEYPUTF; }
+{KEYSTARTTIME}    {  printf("<starttime>\n");return KEYSTARTTIME; }
+{KEYSTOPTIME}     { printf("<stoptime>\n");return SPSEMICOLON; }
+{KEYRETURN} {printf("<return>\n");return KEYRETURN; }
+{CONSTANTINTD} { printf("<intd>\n");ASTTree *asttree = new ASTTree("CONSTANTINTD", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return CONSTANTINTD; }
+{CONSTANTINTH} { printf("<inth>\n");ASTTree *asttree = new ASTTree("CONSTANTINTH", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return CONSTANTINTH; }
+{CONSTANTOCT} {  printf("<into>\n");ASTTree *asttree = new ASTTree("CONSTANTOCT", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree;return CONSTANTOCT ; }
+{IDENTIFIER} { printf("<id,%s>\n",yytext);ASTTree *asttree = new ASTTree("IDENTIFIER", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return IDENTIFIER; }
 
 {SPACE} {}
 {EOL} { yycolumn = 1; }

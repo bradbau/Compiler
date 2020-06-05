@@ -4,36 +4,43 @@
 using namespace std;
 extern char* yytext;
 
-ASTTree::ASTTree(char* name, int num, int pos...) {
+ASTTree::ASTTree(char* name, int num, int pos ,...) {
     //printf("gouzao !!!\n");
     int i;
     char* cache;
     va_list variables;       
-    ASTTree *tmp = new ASTTree();
-    //strcpy(this->name,name);
+    ASTTree *tmp;
+    //printf("~~~\n");
+    //printf("~~~~~~\n");
+    //printf("%s",name);
+    char* tmpcache = (char *)malloc(sizeof(char) * strlen(name));
+    strcpy(tmpcache, yytext);
     this->name = name;
     //this->si = null;
-    va_start(variables, num);           // Init the variable parameter list
+    //printf("%s",this->name);
+    va_start(variables, pos);           // Init the variable parameter list
     if (num > 0)
     {
         tmp = va_arg(variables, ASTTree*);
         this->lchild = tmp;
         this->line = tmp->line;      // Current grammar unit's line number is equal to its left child's
-        this->column = tmp->column;      // Current grammar unit's line number is equal to its left child's
+        //this->column = tmp->column;      // Current grammar unit's line number is equal to its left child's
         for (i = 0; i < num - 1; i++)
         {                               // Brothers
             tmp->rchild = va_arg(variables, ASTTree*);
             tmp = tmp->rchild;
         }
-        // Modify the line number when reduce using rule "Stmt->SimpleStmt" and SimpleStmt is Epsilon
-        //if (!strcmp(this->lchild->name, "SimpleStmt") && this->lchild->line == -1)
-          //  this->line = this->lchild->rchild->line;
+        
     }
     else
     {   // This grammar unit is terminal or void rule
         this->line = pos;
-        if (this->line != -1)
+        if (this->line != -1){
+            //printf("get coloum\n");
             this->column = va_arg(variables, int);
+            //printf("%d",this->column);
+        }
+            
         if (!strcmp(this->name, "IDENTIFIER"))
         {
             //printf("%s\n",yytext);
@@ -55,6 +62,7 @@ ASTTree::ASTTree(char* name, int num, int pos...) {
         }
          //printf("name:%s\n",this->name);
     }
+    va_end(variables);
 
 }
 ASTTree::ASTTree(){}
@@ -62,9 +70,9 @@ void ASTTree::TraverseGrammerTree(int level)
 {
     int i;
     
-        //printf("tra!\n");
-        //for (i = 0; i < level; i++)
-          //  printf(" ");
+        //printf("%s",this->name);//printf("tra!\n");
+        for (i = 0; i < level; i++)
+            printf(" ");
         if (this->line != -1)
         {
           for (i = 0; i < level; i++)
