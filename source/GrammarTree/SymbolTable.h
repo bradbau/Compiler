@@ -9,7 +9,7 @@ typedef enum SysYCategory
     Variable,
     Function,
     Block,
-    Const,
+    ConstVariable,
     Array,
 } SysYCategory;
 
@@ -64,6 +64,4 @@ struct ScopeItem{
 // };
 
 ScopeItem* addIntoScope(ScopeType stype, ScopeItem* pre_si, string name, SysYCategory category, string type, ScopeItem* depictor);
-ScopeItem* mergeGlobalScope(ScopeItem *s1, ScopeItem *s2);
-ScopeItem* mergeLocalScope(ScopeItem *s1, ScopeItem *s2);
-ScopeItem* mergeFormalScope(ScopeItem *s1, ScopeItem *s2);
+ScopeItem* mergeScope(ScopeItem *s1, ScopeItem *s2);

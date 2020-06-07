@@ -9,7 +9,7 @@
 #include <iostream>
 #include<string>
 #include "SysY.tab.h"
-#include "hashtable.h"
+#include "SymbolTable.h"
 using namespace std;
 //#include"hashtable.h"
     
@@ -26,7 +26,7 @@ class ASTTree{
     char* name;     // the name of this grammar unit
     int int_value;  //只可能为int类型
     char* id;
-    ScopeItem *si;
+    ScopeItem *si = NULL;
     ASTTree *lchild=NULL;
     ASTTree *rchild=NULL;
   public:

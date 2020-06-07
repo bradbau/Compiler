@@ -59,31 +59,7 @@ ScopeItem* addIntoScope(ScopeType stype, ScopeItem* pre_si, string name, SysYCat
     return si;
 }
 
-ScopeItem* mergeGlobalScope(ScopeItem * s1, ScopeItem *s2){
-    ScopeItem *temp = s1;
-    if(!s1){
-        return s2;
-    }
-    while(temp->next){
-        temp = temp->next;
-    }
-    temp->next = s2;
-    return s1;
-}
-
-ScopeItem* mergeLocalScope(ScopeItem * s1, ScopeItem *s2){
-    ScopeItem *temp = s1;
-    if(!s1){
-        return s2;
-    }
-    while(temp->next){
-        temp = temp->next;
-    }
-    temp->next = s2;
-    return s1;
-}
-
-ScopeItem* mergeFormalScope(ScopeItem * s1, ScopeItem *s2){
+ScopeItem* mergeScope(ScopeItem * s1, ScopeItem *s2){
     ScopeItem *temp = s1;
     if(!s1){
         return s2;

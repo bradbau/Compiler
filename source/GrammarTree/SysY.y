@@ -76,11 +76,12 @@ CompUnits:{ ASTTree *asttree = new ASTTree("CompUnit",0, -1);
                 }
          | CompUnit CompUnits{ ASTTree *asttree = new ASTTree("CompUnits", 2, $1,$2);
                         $$ = asttree; 
-                        $$->si = mergeGlobalScope($1->si, $2->si);
+                        $$->si = mergeScope($1->si, $2->si);
                         }
          ;
 CompUnit: Decl{ ASTTree *asttree = new ASTTree("CompUnit", 1, $1);
                 $$ = asttree;
+                $$->si = $1->si;
                 }
          | FuncDef { ASTTree *asttree = new ASTTree("CompUnit", 1, $1);
                         $$ = asttree; 
@@ -88,21 +89,40 @@ CompUnit: Decl{ ASTTree *asttree = new ASTTree("CompUnit", 1, $1);
                         }
          ;
 /*声明*/
-Decl:  ConstDecl { ASTTree *asttree = new ASTTree("Decl", 1, $1);$$ = asttree; }
-      | VarDecl{ ASTTree *asttree = new ASTTree("Decl", 1, $1);$$ = asttree; }
+Decl:  ConstDecl { ASTTree *asttree = new ASTTree("Decl", 1, $1);
+                $$ = asttree;
+                $$->si = $1->si;
+                }
+      | VarDecl{ ASTTree *asttree = new ASTTree("Decl", 1, $1);
+                $$ = asttree; 
+                $$->si = $1->si;
+                }
       ;
 
 /*常量声明*/ 
-ConstDecl: KEYCONST TYPEINTEGER ConstDef ConstDefs SPSEMICOLON{ ASTTree *asttree = new ASTTree("ConstDecl", 5, $1, $2,$3,$4,$5);$$ = asttree; }
+ConstDecl: KEYCONST TYPEINTEGER ConstDef ConstDefs SPSEMICOLON{ ASTTree *asttree = new ASTTree("ConstDecl", 5, $1, $2,$3,$4,$5);
+                $$ = asttree; 
+                $$->si = mergeScope($3->si, $4->si);
+                }
           ;
 /*常量列表，自行添加的*/
-ConstDefs: { ASTTree *asttree = new ASTTree("ConstDefs", 0, -1);$$ = asttree; }
-          | ConstDefs SPCOMMA ConstDef { ASTTree *asttree = new ASTTree("ConstDefs", 3, $1, $2,$3);$$ = asttree; }
+ConstDefs: { ASTTree *asttree = new ASTTree("ConstDefs", 0, -1);
+                $$ = asttree; 
+                $$->si = NULL;
+                }
+          | ConstDefs SPCOMMA ConstDef { ASTTree *asttree = new ASTTree("ConstDefs", 3, $1, $2,$3);
+                $$ = asttree; 
+                $$->si = mergeScope($3->si, $1->si);
+                }
           ;
 /*常数定义*/ 
-ConstDef: IDENTIFIER ArrayDef OPASSIGN ConstInitVal{ ASTTree *asttree = new ASTTree("ConstDef", 4, $1, $2,$3,$4);$$ = asttree; }
+ConstDef: IDENTIFIER ArrayDef OPASSIGN ConstInitVal{ ASTTree *asttree = new ASTTree("ConstDef", 4, $1, $2,$3,$4);
+                $$ = asttree; 
+                $$->si = addIntoScope(Local, $$->si, $1->id, ConstVariable, "TYPEINTEGER", NULL);
+                }
          ;
-ArrayDef:{ ASTTree *asttree = new ASTTree("ArrayDef", 0, -1);$$ = asttree; }
+ArrayDef: {ASTTree *asttree = new ASTTree("ArrayDef", 0, -1);
+                $$ = asttree; } 
         | ArrayDef OPLEFTBRACKET ConstExp OPRIGHTBRACKET{ ASTTree *asttree = new ASTTree("ArrayDef", 4, $1, $2,$3,$4);$$ = asttree; }
         ;
 /*常量初值*/ 
@@ -116,14 +136,29 @@ ConstInitValList:{ ASTTree *asttree = new ASTTree("ConstInitValList", 0, -1);$$ 
                 ;
 
 /*变量声明*/ 
-VarDecl: TYPEINTEGER VarDef VarDefs SPSEMICOLON{ ASTTree *asttree = new ASTTree("VarDecl", 4, $1,$2,$3,$4);$$ = asttree; }
+VarDecl: TYPEINTEGER VarDef VarDefs SPSEMICOLON{ ASTTree *asttree = new ASTTree("VarDecl", 4, $1,$2,$3,$4);
+                $$ = asttree; 
+                $$->si = mergeScope($2->si, $3->si);
+                }
         ;
 /*变量定义*/
-VarDef:IDENTIFIER ArrayDef{ ASTTree *asttree = new ASTTree("VarDef", 2, $1,$2);$$ = asttree; }
-       | IDENTIFIER ArrayDef OPASSIGN InitVal{ ASTTree *asttree = new ASTTree("VarDef", 4, $1,$2,$3,$4);$$ = asttree; }
+VarDef:  IDENTIFIER ArrayDef{ ASTTree *asttree = new ASTTree("VarDef", 2, $1,$2);
+                $$ = asttree; 
+                $$->si = addIntoScope(Local, $$->si, $1->id, Variable, "TYPEINTEGER", NULL);
+                }
+        | IDENTIFIER ArrayDef OPASSIGN InitVal{ ASTTree *asttree = new ASTTree("VarDef", 4, $1,$2,$3,$4);
+                $$ = asttree; 
+                $$->si = addIntoScope(Local, $$->si, $1->id, Variable, "TYPEINTEGER", NULL);
+                }
 /*变量声明列表，自行添加*/
-VarDefs:{ ASTTree *asttree = new ASTTree("VarDefs", 0, -1);$$ = asttree; }
-       | VarDefs SPCOMMA VarDef{ ASTTree *asttree = new ASTTree("VarDefs", 3, $1,$2,$3);$$ = asttree; }
+VarDefs:{ ASTTree *asttree = new ASTTree("VarDefs", 0, -1);
+                $$ = asttree; 
+                $$->si = NULL;
+                }
+       | VarDefs SPCOMMA VarDef{ ASTTree *asttree = new ASTTree("VarDefs", 3, $1,$2,$3);
+                $$ = asttree; 
+                $$->si = mergeScope($3->si, $1->si);
+                }
        ;
 /*变量初值*/ 
 InitVal: Exp { ASTTree *asttree = new ASTTree("InitVal", 1, $1);$$ = asttree; }
@@ -171,7 +206,7 @@ FuncFParams: FuncFParam { ASTTree *asttree = new ASTTree("FuncFParams", 1, $1);
                 }
             | FuncFParams SPCOMMA FuncFParam{ ASTTree *asttree = new ASTTree("FuncFParams", 3, $1,$2,$3);
                         $$ = asttree; 
-                        $$->si = mergeFormalScope($3->si, $1->si);
+                        $$->si = mergeScope($3->si, $1->si);
                         }
             ;
 /*数组维度*/
@@ -179,14 +214,23 @@ ArrayExps:{ ASTTree *asttree = new ASTTree("ArrayExps", 0, -1);$$ = asttree; }
          |ArrayExps OPLEFTBRACKET Exp OPRIGHTBRACKET{ ASTTree *asttree = new ASTTree("ArrayExps", 4, $1,$2,$3,$4);$$ = asttree; }
          ;
 /*语句块*/ 
-Block:SPLEFTBRACE BlockItems SPRIGHTBRACE{ ASTTree *asttree = new ASTTree("Block", 3, $1,$2,$3);$$ = asttree; }
+Block:SPLEFTBRACE BlockItems SPRIGHTBRACE{ ASTTree *asttree = new ASTTree("Block", 3, $1,$2,$3);
+                $$ = asttree; 
+                $$->si = $2->si;
+                }
       ;
 /*语句块列表*/
-BlockItems:{ ASTTree *asttree = new ASTTree("BlockItems", 0, -1);$$ = asttree; } 
-           | BlockItem BlockItems  { ASTTree *asttree = new ASTTree("BlockItems", 2, $1,$2);$$ = asttree; }
+BlockItems:{ ASTTree *asttree = new ASTTree("BlockItems", 0, -1);$$ = asttree; $$->si = NULL} 
+           | BlockItem BlockItems  { ASTTree *asttree = new ASTTree("BlockItems", 2, $1,$2);
+                $$ = asttree; 
+                $$->si = mergeScope($1->si, $2->si);
+                }
            ;
 /*语句块项*/ 
-BlockItem:Decl { ASTTree *asttree = new ASTTree("BlockItem", 1, $1);$$ = asttree; }
+BlockItem:Decl { ASTTree *asttree = new ASTTree("BlockItem", 1, $1);
+                $$ = asttree; 
+                $$->si = $1->si;
+                }
          | Stmt { ASTTree *asttree = new ASTTree("BlockItem", 1, $1);$$ = asttree; }
          ;
 /*语句*/ 
