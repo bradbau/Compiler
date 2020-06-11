@@ -1,4 +1,5 @@
 /* utf-8 */
+
 #include "SymbolTable.h"
 
 // void ScopeItem::ScopeItem(ScopeType stype, string name, string type, SysYCategory category){

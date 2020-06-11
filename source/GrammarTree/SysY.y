@@ -8,7 +8,7 @@
     #include <iostream>
     //#include"lex.yy.cc"
     //#include "grammartree.cpp"
-    #include "grammartree.h"
+    #include "AST.h"
     #include "SymbolTable.h"
     using namespace std;
     //extern "C"
@@ -29,20 +29,20 @@
 
 
 
-%type <ast_Tree> Compiler CompUnits CompUnit Decl ConstDecl VarDecl ConstDef ConstDefs ArrayDef ConstInitVal ConstInitValList
-%type <ast_Tree> VarDef VarDefs InitVal InitVals FuncDef FuncFParams FuncFParam ArrayExps 
-%type <ast_Tree> Block BlockItems BlockItem Stmt Exp Exps Cond LVal PrimaryExp Number IntConst UnaryExp UnaryOp 
-%type <ast_Tree> FuncRParams MulExp AddExp RelExp EqExp LAndExp LOrExp ConstExp
+%type <ast_Tree> Compiler CompUnits CompUnit Decl ConstDef ConstDefs   
+%type <ast_Tree> VarDef VarDefs InitVal InitValList FuncFParams FuncFParam ArrayExps 
+%type <ast_Tree> Block BlockItems BlockItem Stmt Exp Exps Cond LVal Number  
+%type <ast_Tree> FuncRParams RelExp EqExp VarDec
 
-%token <ast_Tree> SPSEMICOLON SPCOMMA SPDOT SPLEFTBRACE SPRIGHTBRACE
-%token <ast_Tree> OPLEFTPRNT OPRIGHTPRNT OPLEFTBRACKET OPRIGHTBRACKET
-%token <ast_Tree> OPPLUS OPMINUS OPMULTIPLY OPDIVIDE OPMOD OPASSIGN
-%token <ast_Tree> OPAND OPOR OPNOT
-%token <ast_Tree> OPEQUAL OPNOTEQUAL OPGREAT OPLIGHT OPGREATEQ OPLIGHTEQ
-%token <ast_Tree> TYPEVOID TYPEINTEGER KEYCONST
-%token <ast_Tree> KEYIF KEYELSE KEYWHILE KEYBREAK KEYCONTINUE
-%token <ast_Tree> KEYRETURN KEYGETINT KEYGETCHAR KEYGETARRAY KEYPUTINT KEYPUTCHAR KEYPUTARRAY KEYPUTF
-%token <ast_Tree> KEYSTOPTIME KEYSTARTTIME
+%token SPSEMICOLON SPCOMMA SPDOT SPLEFTBRACE SPRIGHTBRACE
+%token OPLEFTPRNT OPRIGHTPRNT OPLEFTBRACKET OPRIGHTBRACKET
+%token OPPLUS OPMINUS OPMULTIPLY OPDIVIDE OPMOD OPASSIGN
+%token OPAND OPOR OPNOT
+%token OPEQUAL OPNOTEQUAL OPGREAT OPLIGHT OPGREATEQ OPLIGHTEQ
+%token TYPEVOID TYPEINTEGER KEYCONST
+%token KEYIF KEYELSE KEYWHILE KEYBREAK KEYCONTINUE
+%token KEYRETURN KEYGETINT KEYGETCHAR KEYGETARRAY KEYPUTINT KEYPUTCHAR KEYPUTARRAY KEYPUTF
+%token KEYSTOPTIME KEYSTARTTIME
 %token <ast_Tree> CONSTANTINTD CONSTANTINTH CONSTANTOCT
 %token <ast_Tree> IDENTIFIER
 
@@ -57,12 +57,12 @@
 %right OPNOT 
 %left OPRIGHTBRACKET OPLEFTBRACKET OPRIGHTPRNT OPLEFTPRNT SPDOT
 
-%nonassoc KEYELSE 
+%nonassoc KEYELSE
 
 %%
 /*add new*/
 Compiler: CompUnits {  ASTTree *asttree = new ASTTree("Compiler", 1, yylineno, $1);$$ = asttree;
-                //$1->TraverseGrammerTree(0);}
+                $1->TraverseGrammerTree(0);}
         ;
 CompUnits:{ $$ = NULL;}
          | CompUnit CompUnits{ ASTTree *asttree = new ASTTree("CompUnits", 2, yylineno, $1,$2);
@@ -118,7 +118,7 @@ FuncFParam: TYPEINTEGER IDENTIFIER{ ASTTree *asttree = new ASTTree("FuncFParam",
                 $$ = asttree; 
                 $$->SetID($2->GetID());
                 $$->SetFuncPType("int");
-                $$->si = addIntoScope(Formal, $$->si, $2->id, Variable, "int", NULL);
+                $$->si = addIntoScope(Formal, $$->si, $2->GetID(), Variable, "int", NULL);
                 }
           | TYPEINTEGER IDENTIFIER OPLEFTBRACKET OPRIGHTBRACKET ArrayExps{ 
                 ASTTree *asttree = new ASTTree("FuncFParam", 1, yylineno, $5);
@@ -146,7 +146,7 @@ Decl:  KEYCONST TYPEINTEGER ConstDef ConstDefs SPSEMICOLON{ ASTTree *asttree = n
                 $$ = asttree; 
                 $$->si = mergeScope($3->si, $4->si);
                 }
-      | TYPEINTEGER VarDef VarDefs SPSEMICOLON{ ASTTree *asttree = new ASTTree("VarDecl", 2, $2,$3);
+      | TYPEINTEGER VarDef VarDefs SPSEMICOLON{ ASTTree *asttree = new ASTTree("VarDecl", 2, yylineno, $2,$3);
                 $$ = asttree; 
                 $$->si = mergeScope($2->si, $3->si);
                 }
@@ -154,7 +154,7 @@ Decl:  KEYCONST TYPEINTEGER ConstDef ConstDefs SPSEMICOLON{ ASTTree *asttree = n
 
 /*常量列表，自行添加的*/
 ConstDefs: { $$ = NULL;}
-          | SPCOMMA ConstDef ConstDefs{ ASTTree *asttree = new ASTTree("ConstDefs", 2, $2,$3);
+          | SPCOMMA ConstDef ConstDefs{ ASTTree *asttree = new ASTTree("ConstDefs", 2, yylineno, $2,$3);
                 $$ = asttree; 
                 $$->si = mergeScope($2->si, $3->si);
                 }
@@ -169,12 +169,12 @@ ConstDef: VarDec OPASSIGN InitVal{ ASTTree *asttree = new ASTTree("ConstOpassign
 
 //VarDec节点是Decl节点的孙子节点，而Decl极可能出现在CompUnit中也可能出现在Block中，所以定义的变量极有可能是Local也有可能是Global。但是我们在VarDec处不好进行区分。我们可以先统一定义成Local，最后再CompUnit处将其再改为Global
 VarDec:   IDENTIFIER {$$ = $1;
-                $$->si = addIntoScope(Local, $$->si, $1->id, Variable, "TYPEINTEGER", NULL);
+                $$->si = addIntoScope(Local, $$->si, $1->GetID(), Variable, "TYPEINTEGER", NULL);
                 }   //ID结点，标识符符号串存放结点的type_id
          | VarDec OPLEFTBRACKET Exp OPRIGHTBRACKET {ASTTree *asttree = new ASTTree("ArrayDec", 1, yylineno, $1);
                 $$ = asttree;
                 $$->SetIntValue($3->GetIntValue());
-                $$->si = addIntoScope(Local, $$->si, $1->id, Array, "TYPEINTEGER", NULL);
+                $$->si = addIntoScope(Local, $$->si, $1->GetID(), Array, "TYPEINTEGER", NULL);
                 }     //数组,数组名存放在$$->type_id
          ;
 
@@ -209,7 +209,7 @@ VarDef: VarDec{$$ = $1;}
 
 /*变量声明列表，自行添加*/
 VarDefs:{ $$ = NULL;}
-       | SPCOMMA VarDef VarDefs{ ASTTree *asttree = new ASTTree("VarDefs", 2,$2,$3);
+       | SPCOMMA VarDef VarDefs{ ASTTree *asttree = new ASTTree("VarDefs", 2,yylineno,$2,$3);
                 $$ = asttree; 
                 $$->si = mergeScope($2->si, $3->si);
                 }
@@ -221,14 +221,14 @@ ArrayExps:{ $$ = NULL;}
          ;
 
 /*语句块*/ 
-Block:SPLEFTBRACE BlockItems SPRIGHTBRACE{ ASTTree *asttree = new ASTTree("Block", 1, $2);
+Block:SPLEFTBRACE BlockItems SPRIGHTBRACE{ ASTTree *asttree = new ASTTree("Block", 1,yylineno, $2);
                 $$ = asttree; 
                 $$->si = $2->si;
                 }
       ;
 /*语句块列表*/
 BlockItems:{ $$ = NULL} 
-           | BlockItem BlockItems  { ASTTree *asttree = new ASTTree("BlockItems", 2, $1,$2);
+           | BlockItem BlockItems  { ASTTree *asttree = new ASTTree("BlockItems", 2, yylineno, $1,$2);
                 $$ = asttree; 
                 $$->si = mergeScope($1->si, $2->si);
                 }

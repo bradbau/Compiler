@@ -1,33 +1,39 @@
+/* utf-8 */
+
+#ifndef AST_H
+#define AST_H
+
 #include<stdio.h>
 #include<stdlib.h>
 #include<stdarg.h>
-#include<string.h>
+#include<string>
 #include "SymbolTable.h"
 
-extern char* yytext;
+extern char* yytext; 
 extern FILE* yyin;
 extern int yylineno;
 extern int yyparse();
 
 class ASTTree{
-  protected:
+  private:
 
     int int_value;  //只可能为int类型
     int num;                      //计数器，可以用来统计形参个数
     int line;       // the number of its line
     int column;
-    char* name;     // the name of this AST unit
-    char* id;
-    char* functype; //函数返回类型
-    char* funcptype;//形参类型
-    ScopeItem *si;
+    string name;     // the name of this AST unit
+    string id;
+    string functype; //函数返回类型
+    string funcptype;//形参类型
+    
 
     ASTTree *lchild;
     ASTTree *rchild;
   
   public:
+    ScopeItem *si;  //  符号表指针
     ASTTree();
-    ASTTree(char *name,int num,int pos,...);
+    ASTTree(string name,int num,int pos,...);
    
     //遍历当前语法树
     void TraverseGrammerTree(int level);
@@ -40,15 +46,15 @@ class ASTTree{
 
     void SetRightChild(ASTTree *RightAst);
 
-    void SetFuncType(char* type);
+    void SetFuncType(string type);
 
-    void SetFuncPType(char* ptype);
+    void SetFuncPType(string ptype);
 
-    void SetID(char* idname);
+    void SetID(string idname);
 
-    char* GetNodeTypeName();
+    string GetNodeTypeName();
 
-    char* GetID();
+    string GetID();
 
     void SetIntValue(int value);
 
@@ -60,3 +66,5 @@ class ASTTree{
     
     void Emit() ;
 };
+
+#endif

@@ -1,3 +1,8 @@
+/* utf-8 */
+
+#ifndef SYMBOLTABLE_H
+#define SYMBOLTABLE_H
+
 #include <string>
 #include<stdio.h>
 #include<stdlib.h>
@@ -65,3 +70,5 @@ struct ScopeItem{
 
 ScopeItem* addIntoScope(ScopeType stype, ScopeItem* pre_si, string name, SysYCategory category, string type, ScopeItem* depictor);
 ScopeItem* mergeScope(ScopeItem *s1, ScopeItem *s2);
+
+#endif
