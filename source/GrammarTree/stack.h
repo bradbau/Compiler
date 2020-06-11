@@ -39,7 +39,7 @@ class Stack{
        ScopeStack* ss;
     public:
        //void InitScopeStack(ScopeStack* stack);的实现
-       ScopeStack();
+       Stack();
        
        void DestroyScopeStack();
        int ScopeStackLength();
