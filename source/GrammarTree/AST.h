@@ -8,6 +8,7 @@
 #include<stdarg.h>
 #include<string>
 #include "SymbolTable.h"
+using namespace std;
 
 extern char* yytext; 
 extern FILE* yyin;

@@ -12,6 +12,7 @@ ASTTree::ASTTree(string name, int num, int pos ,...) {
     char* cache;
     va_list variables;       
     ASTTree *tmp;
+    this->si = NULL;
     //printf("~~~\n");
     //printf("~~~~~~\n");
     //printf("%s",name);
