@@ -1,12 +1,11 @@
 /* utf-8 */
-
 #ifndef SYMBOLTABLE_H
 #define SYMBOLTABLE_H
 
 #include <string>
 #include<stdio.h>
 #include<stdlib.h>
-#include "AST.h"
+
 using namespace std;
 
 typedef enum SysYCategory
@@ -16,6 +15,7 @@ typedef enum SysYCategory
     Block,
     ConstVariable,
     Array,
+    NOParam
 } SysYCategory;
 
 typedef enum ScopeType
@@ -26,19 +26,21 @@ typedef enum ScopeType
 } ScopeType;
 
 // Define scope 
-struct ScopeItem{
+typedef struct ScopeItem{
     ScopeType stype;
     string name;
-    string type; //for example: int void
+    string type; //for example: TYPEINTEGER
     SysYCategory category; //for example: Variable Function
-    ScopeItem *depictor;
-    ScopeItem *next;
+    struct ScopeItem *depictor;
+    struct ScopeItem *next;
     int offset;
     int reg;
-};
+}ScopeItem;
 
 ScopeItem* addIntoScope(ScopeType stype, ScopeItem* pre_si, string name, SysYCategory category, string type, ScopeItem* depictor);
-//ScopeItem* mergeScope(ScopeItem *s1, ScopeItem *s2);
-ScopeItem* mergeScope(ASTTree *t1, ASTTree *t2);
+ScopeItem* mergeScope(ScopeItem* t1, ScopeItem* t2);
+void displayGlobal(ScopeItem* t);
+void displayFormal(ScopeItem* t, string tablename);
+void displayLocal(ScopeItem* t, string tablename);
 
 #endif

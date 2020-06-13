@@ -59,12 +59,21 @@ Compiler: CompUnits {
                   cout << "Compiler";
                   ASTTree *asttree = new ASTTree("Compiler", 1, yylineno, $1);
                   $$ = asttree;
-                $1->TraverseGrammerTree(0);}
+                  //打印AST
+                $1->TraverseGrammerTree(0);
+                // 打印符号表
+                displayGlobal($1->si);
+                }
         ;
 CompUnits:{ cout << "CompUnits"; $$ = NULL;}
          | CompUnit CompUnits{  cout << "CompUnits"; ASTTree *asttree = new ASTTree("CompUnits", 2, yylineno, $1,$2);
                         $$ = asttree; 
-                        $$->si = mergeScope($1, $2);
+                        //merge
+                        if($2 == NULL){
+                              $$->si = $1->si;
+                        }else{
+                              $$->si = mergeScope($1->si, $2->si);
+                        }
                         }
          ;
 CompUnit: Decl{  cout << "CompUnit"; $$ = $1;
@@ -81,13 +90,29 @@ CompUnit: Decl{  cout << "CompUnit"; $$ = $1;
                 $$->SetID($2->GetID());
                 $4->si->depictor = $6->si;
                 $$->si = addIntoScope(Global, $$->si, $2->GetID(), Function, "void", $4->si);
+                //将Block的Local域添加到Formal域中
+                if($4 != NULL){
+                      ScopeItem* temp = $4->si;
+                      while(temp){
+                            temp->depictor = $6->si;
+                            temp = temp->next;
+                      }
+                }
                 }
         |TYPEINTEGER IDENTIFIER OPLEFTPRNT FuncFParams OPRIGHTPRNT Block{  cout << "CompUnit"; ASTTree *asttree = new ASTTree("FuncDef", 2, yylineno, $4,$6);
                 $$ = asttree; 
-                $$->SetFuncType("int");
+                $$->SetFuncType("TYPEINTEGER");
                 $$->SetID($2->GetID());
                 $4->si->depictor = $6->si;
-                $$->si = addIntoScope(Global, $$->si, $2->GetID(), Function, "int", $4->si);
+                $$->si = addIntoScope(Global, $$->si, $2->GetID(), Function, "TYPEINTEGER", $4->si);
+                //将Block的Local域添加到Formal域中
+                if($4 != NULL){
+                      ScopeItem* temp = $4->si;
+                      while(temp){
+                            temp->depictor = $6->si;
+                            temp = temp->next;
+                      }
+                }
                 }
          ;
 
@@ -96,8 +121,8 @@ CompUnit: Decl{  cout << "CompUnit"; $$ = $1;
 FuncFParam: TYPEINTEGER IDENTIFIER{  cout << "FuncFParam"; ASTTree *asttree = new ASTTree("FuncFParam", 0, yylineno);
                 $$ = asttree; 
                 $$->SetID($2->GetID());
-                $$->SetFuncPType("int");
-                $$->si = addIntoScope(Formal, $$->si, $2->GetID(), Variable, "int", NULL);
+                $$->SetFuncPType("TYPEINTEGER");
+                $$->si = addIntoScope(Formal, $$->si, $2->GetID(), Variable, "TYPEINTEGER", NULL);
                 }
           | TYPEINTEGER IDENTIFIER OPLEFTBRACKET OPRIGHTBRACKET ArrayExps{ 
                 cout << "FuncFParam";
@@ -112,24 +137,39 @@ FuncFParam: TYPEINTEGER IDENTIFIER{  cout << "FuncFParam"; ASTTree *asttree = ne
 FuncFParams: FuncFParam {  cout << "FuncFParams"; $$ = $1;}
             | FuncFParam SPCOMMA FuncFParams{  cout << "FuncFParams"; ASTTree *asttree = new ASTTree("FuncFParams", 2, yylineno, $1, $3);
                         $$ = asttree; 
-                        $$->si = mergeScope($1, $3);
+                        //merge
+                        if($3->si == NULL){
+                              $$->si = $1->si;
+                        }else{
+                              $$->si = mergeScope($1->si, $3->si);
+                        }
                         }
             | { cout << "FuncFParams";
                   ASTTree *asttree = new ASTTree("FuncFParam", 0, yylineno);
                 $$ = asttree;
-                $$->SetID(NULL);
-                $$->si = addIntoScope(Formal, NULL, NULL, Variable, NULL, NULL);
+                $$->SetID(" ");
+                $$->si = addIntoScope(Formal, NULL, " ", NOParam, " ", NULL);
                 }
             ;
             
 /*声明*/
 Decl:  KEYCONST TYPEINTEGER ConstDef ConstDefs SPSEMICOLON{  cout << "Decl"; ASTTree *asttree = new ASTTree("ConstDecl", 2, yylineno, $3, $4);
                 $$ = asttree; 
-                $$->si = mergeScope($3, $4);
+                //merge
+                if($4 == NULL){
+                      $$->si = $3->si;
+                }else{
+                      $$->si = mergeScope($3->si, $4->si);
+                }
                 }
       | TYPEINTEGER VarDef VarDefs SPSEMICOLON{ cout << "Decl";  ASTTree *asttree = new ASTTree("VarDecl", 2, yylineno, $2,$3);
                 $$ = asttree; 
-                //$$->si = mergeScope($2, $3);
+                //merge
+                  if($3 == NULL){
+                        $$->si = $2->si;
+                  }else{
+                        $$->si = mergeScope($2->si, $3->si);
+                  }
                 }
       ;
 
@@ -137,7 +177,12 @@ Decl:  KEYCONST TYPEINTEGER ConstDef ConstDefs SPSEMICOLON{  cout << "Decl"; AST
 ConstDefs: {  cout << "ConstDefs"; $$ = NULL;}
           | SPCOMMA ConstDef ConstDefs{  cout << "ConstDefs"; ASTTree *asttree = new ASTTree("ConstDefs", 2, yylineno, $2,$3);
                 $$ = asttree; 
-                $$->si = mergeScope($2, $3);
+                //merge
+                if($3 == NULL){
+                      $$->si = $2->si;
+                }else{
+                      $$->si = mergeScope($2->si, $3->si);
+                }
                 }
           ;
 
@@ -150,12 +195,13 @@ ConstDef: VarDec OPASSIGN InitVal{  cout << "ConstDef"; ASTTree *asttree = new A
 
 //VarDec节点是Decl节点的孙子节点，而Decl极可能出现在CompUnit中也可能出现在Block中，所以定义的变量极有可能是Local也有可能是Global。但是我们在VarDec处不好进行区分。我们可以先统一定义成Local，最后再CompUnit处将其再改为Global
 VarDec:   IDENTIFIER { cout << "VarDec"; $$ = $1;
-                //$$->si = addIntoScope(Local, $$->si, $1->GetID(), Variable, "TYPEINTEGER", NULL);
+                $$->si = addIntoScope(Local, $$->si, $1->GetID(), Variable, "TYPEINTEGER", NULL);
                 }   //ID结点，标识符符号串存放结点的type_id
          | VarDec OPLEFTBRACKET Exp OPRIGHTBRACKET { cout << "VarDec"; ASTTree *asttree = new ASTTree("ArrayDec", 1, yylineno, $1);
                 $$ = asttree;
                 $$->SetIntValue($3->GetIntValue());
-                //$$->si = addIntoScope(Local, $$->si, $1->GetID(), Array, "TYPEINTEGER", NULL);
+                $$->SetID($1->GetID());
+                $$->si = addIntoScope(Local, $$->si, $1->GetID(), Array, "TYPEINTEGER", NULL);
                 }     //数组,数组名存放在$$->type_id
          ;
 
@@ -163,15 +209,20 @@ VarDec:   IDENTIFIER { cout << "VarDec"; $$ = $1;
 VarDef: VarDec{ cout << "VarDef"; $$ = $1;}  
        | VarDec OPASSIGN InitVal{  cout << "VarDef"; ASTTree *asttree = new ASTTree("VarOPassign", 2, yylineno, $1,$3);
                 $$ = asttree; 
-                //$$->si = $1->si;               
+                $$->si = $1->si;               
                 }
        ;
 
 /*变量声明列表，自行添加*/
 VarDefs:{  cout << "VarDefs"; $$ = NULL;}
        | SPCOMMA VarDef VarDefs{  cout << "VarDefs"; ASTTree *asttree = new ASTTree("VarDefs", 2,yylineno,$2,$3);
-                $$ = asttree; 
-                //$$->si = mergeScope($2, $3);
+                $$ = asttree;
+                //merge
+                  if($3 == NULL){
+                        $$->si = $2->si;
+                  }else{
+                        $$->si = mergeScope($2->si, $3->si);
+                  }
                 }
        ;
 
@@ -201,7 +252,11 @@ Block:SPLEFTBRACE BlockItems SPRIGHTBRACE{  cout << "Block"; ASTTree *asttree = 
 BlockItems:{  cout << "BlockItems"; $$ = NULL;} 
            | BlockItem BlockItems  {  cout << "BlockItems"; ASTTree *asttree = new ASTTree("BlockItems", 2, yylineno, $1,$2);
                 $$ = asttree; 
-                $$->si = mergeScope($1, $2);
+                if($2 == NULL){
+                      $$->si = $1->si;
+                }else{
+                      $$->si = mergeScope($1->si, $2->si);
+                }
                 }
            ;
 /*语句块项*/ 
@@ -220,11 +275,24 @@ Stmt: LVal OPASSIGN Exp SPSEMICOLON { printf("stmt1\n");ASTTree *asttree = new A
       | Block {  cout << "Stmt"; ASTTree *asttree = new ASTTree("Block_Stmt", 1, yylineno, $1);
                 $$ = asttree; 
                 //内嵌域符号表
-                $$->si = addIntoScope(Local, $$->si, NULL, Block, NULL, $1->si);
+                $$->si = addIntoScope(Local, $$->si, " ", Block, "BLOCKStmt", $1->si);
                 }
-      | KEYIF OPLEFTPRNT Cond OPRIGHTPRNT Stmt {  cout << "Stmt"; ASTTree *asttree = new ASTTree("IF_Stmt", 2, yylineno, $3,$5);$$ = asttree; $$->si = $5->si;}
-      | KEYIF OPLEFTPRNT Cond OPRIGHTPRNT Stmt KEYELSE Stmt { cout << "Stmt";  ASTTree *asttree = new ASTTree("IF_ELSE_Stmt", 3, yylineno,$3,$5,$7);$$ = asttree; $$->si = mergeScope($5, $7);}
-      | KEYWHILE OPLEFTPRNT Cond OPRIGHTPRNT Stmt {  cout << "Stmt"; ASTTree *asttree = new ASTTree("While_Stmt", 2, yylineno, $3,$5);$$ = asttree; $$->si = $5->si;}
+      | KEYIF OPLEFTPRNT Cond OPRIGHTPRNT Stmt {  cout << "Stmt"; ASTTree *asttree = new ASTTree("IF_Stmt", 2, yylineno, $3,$5);
+            $$ = asttree; 
+            $$->si = $5->si;
+            }
+      | KEYIF OPLEFTPRNT Cond OPRIGHTPRNT Stmt KEYELSE Stmt { cout << "Stmt";  ASTTree *asttree = new ASTTree("IF_ELSE_Stmt", 3, yylineno,$3,$5,$7);
+            $$ = asttree;
+            if($7 == NULL){
+                  $$->si = $5->si;
+            }else{
+                  $$->si = mergeScope($5->si, $7->si);
+            }
+            }
+      | KEYWHILE OPLEFTPRNT Cond OPRIGHTPRNT Stmt {  cout << "Stmt"; ASTTree *asttree = new ASTTree("While_Stmt", 2, yylineno, $3,$5);
+            $$ = asttree; 
+            $$->si = $5->si;
+            }
       | KEYBREAK SPSEMICOLON {  cout << "Stmt"; ASTTree *asttree = new ASTTree("Break_Stmt", 0,yylineno);$$ = asttree; }
       | KEYCONTINUE SPSEMICOLON { cout << "Stmt";  ASTTree *asttree = new ASTTree("Continue_Stmt", 0,yylineno);$$ = asttree; }
       | KEYRETURN  SPSEMICOLON {  cout << "Stmt"; ASTTree *asttree = new ASTTree("Return_Stmt", 0,yylineno);$$ = asttree; }

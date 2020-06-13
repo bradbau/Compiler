@@ -505,14 +505,14 @@ static const yytype_uint8 yytranslate[] =
   /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_uint16 yyrline[] =
 {
-       0,    58,    58,    64,    65,    70,    78,    85,    96,   102,
-     112,   113,   117,   126,   130,   137,   138,   145,   152,   155,
-     163,   164,   171,   172,   179,   180,   181,   185,   186,   190,
-     191,   195,   201,   202,   208,   209,   213,   217,   218,   219,
-     220,   225,   226,   227,   228,   229,   230,   231,   235,   236,
-     237,   241,   242,   243,   244,   245,   249,   250,   251,   255,
-     256,   257,   261,   266,   267,   268,   269,   270,   271,   272,
-     273,   274,   275,   276,   277,   278,   282,   283
+       0,    58,    58,    68,    69,    79,    87,   102,   121,   127,
+     137,   138,   147,   156,   165,   177,   178,   190,   197,   200,
+     209,   210,   217,   218,   230,   231,   232,   236,   237,   241,
+     242,   246,   252,   253,   263,   264,   268,   272,   273,   274,
+     275,   280,   284,   292,   296,   297,   298,   299,   303,   304,
+     305,   309,   310,   311,   312,   313,   317,   318,   319,   323,
+     324,   325,   329,   334,   335,   336,   337,   338,   339,   340,
+     341,   342,   343,   344,   345,   346,   350,   351
 };
 #endif
 
@@ -1503,27 +1503,36 @@ yyreduce:
                   cout << "Compiler";
                   ASTTree *asttree = new ASTTree("Compiler", 1, yylineno, (yyvsp[0].ast_Tree));
                   (yyval.ast_Tree) = asttree;
-                (yyvsp[0].ast_Tree)->TraverseGrammerTree(0);}
-#line 1508 "SysY.tab.c" /* yacc.c:1646  */
+                  //打印AST
+                (yyvsp[0].ast_Tree)->TraverseGrammerTree(0);
+                // 打印符号表
+                displayGlobal((yyvsp[0].ast_Tree)->si);
+                }
+#line 1512 "SysY.tab.c" /* yacc.c:1646  */
     break;
 
   case 3:
-#line 64 "SysY.y" /* yacc.c:1646  */
+#line 68 "SysY.y" /* yacc.c:1646  */
     { cout << "CompUnits"; (yyval.ast_Tree) = NULL;}
-#line 1514 "SysY.tab.c" /* yacc.c:1646  */
+#line 1518 "SysY.tab.c" /* yacc.c:1646  */
     break;
 
   case 4:
-#line 65 "SysY.y" /* yacc.c:1646  */
+#line 69 "SysY.y" /* yacc.c:1646  */
     {  cout << "CompUnits"; ASTTree *asttree = new ASTTree("CompUnits", 2, yylineno, (yyvsp[-1].ast_Tree),(yyvsp[0].ast_Tree));
                         (yyval.ast_Tree) = asttree; 
-                        (yyval.ast_Tree)->si = mergeScope((yyvsp[-1].ast_Tree), (yyvsp[0].ast_Tree));
+                        //merge
+                        if((yyvsp[0].ast_Tree) == NULL){
+                              (yyval.ast_Tree)->si = (yyvsp[-1].ast_Tree)->si;
+                        }else{
+                              (yyval.ast_Tree)->si = mergeScope((yyvsp[-1].ast_Tree)->si, (yyvsp[0].ast_Tree)->si);
                         }
-#line 1523 "SysY.tab.c" /* yacc.c:1646  */
+                        }
+#line 1532 "SysY.tab.c" /* yacc.c:1646  */
     break;
 
   case 5:
-#line 70 "SysY.y" /* yacc.c:1646  */
+#line 79 "SysY.y" /* yacc.c:1646  */
     {  cout << "CompUnit"; (yyval.ast_Tree) = (yyvsp[0].ast_Tree);
                 //Decl的孙子节点VarDec将所有变量均定义成Local了，此处要手动将其改为Glocal
                 ScopeItem *temp = (yyval.ast_Tree)->si;
@@ -1532,46 +1541,62 @@ yyreduce:
                         temp = temp->next;
                 }
                 }
-#line 1536 "SysY.tab.c" /* yacc.c:1646  */
+#line 1545 "SysY.tab.c" /* yacc.c:1646  */
     break;
 
   case 6:
-#line 78 "SysY.y" /* yacc.c:1646  */
+#line 87 "SysY.y" /* yacc.c:1646  */
     { cout << "CompUnit";  ASTTree *asttree = new ASTTree("FuncDef", 2, yylineno, (yyvsp[-2].ast_Tree), (yyvsp[0].ast_Tree));
                 (yyval.ast_Tree) = asttree; 
                 (yyval.ast_Tree)->SetFuncType("void");
                 (yyval.ast_Tree)->SetID((yyvsp[-4].ast_Tree)->GetID());
                 (yyvsp[-2].ast_Tree)->si->depictor = (yyvsp[0].ast_Tree)->si;
                 (yyval.ast_Tree)->si = addIntoScope(Global, (yyval.ast_Tree)->si, (yyvsp[-4].ast_Tree)->GetID(), Function, "void", (yyvsp[-2].ast_Tree)->si);
+                //将Block的Local域添加到Formal域中
+                if((yyvsp[-2].ast_Tree) != NULL){
+                      ScopeItem* temp = (yyvsp[-2].ast_Tree)->si;
+                      while(temp){
+                            temp->depictor = (yyvsp[0].ast_Tree)->si;
+                            temp = temp->next;
+                      }
                 }
-#line 1548 "SysY.tab.c" /* yacc.c:1646  */
+                }
+#line 1565 "SysY.tab.c" /* yacc.c:1646  */
     break;
 
   case 7:
-#line 85 "SysY.y" /* yacc.c:1646  */
+#line 102 "SysY.y" /* yacc.c:1646  */
     {  cout << "CompUnit"; ASTTree *asttree = new ASTTree("FuncDef", 2, yylineno, (yyvsp[-2].ast_Tree),(yyvsp[0].ast_Tree));
                 (yyval.ast_Tree) = asttree; 
-                (yyval.ast_Tree)->SetFuncType("int");
+                (yyval.ast_Tree)->SetFuncType("TYPEINTEGER");
                 (yyval.ast_Tree)->SetID((yyvsp[-4].ast_Tree)->GetID());
                 (yyvsp[-2].ast_Tree)->si->depictor = (yyvsp[0].ast_Tree)->si;
-                (yyval.ast_Tree)->si = addIntoScope(Global, (yyval.ast_Tree)->si, (yyvsp[-4].ast_Tree)->GetID(), Function, "int", (yyvsp[-2].ast_Tree)->si);
+                (yyval.ast_Tree)->si = addIntoScope(Global, (yyval.ast_Tree)->si, (yyvsp[-4].ast_Tree)->GetID(), Function, "TYPEINTEGER", (yyvsp[-2].ast_Tree)->si);
+                //将Block的Local域添加到Formal域中
+                if((yyvsp[-2].ast_Tree) != NULL){
+                      ScopeItem* temp = (yyvsp[-2].ast_Tree)->si;
+                      while(temp){
+                            temp->depictor = (yyvsp[0].ast_Tree)->si;
+                            temp = temp->next;
+                      }
                 }
-#line 1560 "SysY.tab.c" /* yacc.c:1646  */
+                }
+#line 1585 "SysY.tab.c" /* yacc.c:1646  */
     break;
 
   case 8:
-#line 96 "SysY.y" /* yacc.c:1646  */
+#line 121 "SysY.y" /* yacc.c:1646  */
     {  cout << "FuncFParam"; ASTTree *asttree = new ASTTree("FuncFParam", 0, yylineno);
                 (yyval.ast_Tree) = asttree; 
                 (yyval.ast_Tree)->SetID((yyvsp[0].ast_Tree)->GetID());
-                (yyval.ast_Tree)->SetFuncPType("int");
-                (yyval.ast_Tree)->si = addIntoScope(Formal, (yyval.ast_Tree)->si, (yyvsp[0].ast_Tree)->GetID(), Variable, "int", NULL);
+                (yyval.ast_Tree)->SetFuncPType("TYPEINTEGER");
+                (yyval.ast_Tree)->si = addIntoScope(Formal, (yyval.ast_Tree)->si, (yyvsp[0].ast_Tree)->GetID(), Variable, "TYPEINTEGER", NULL);
                 }
-#line 1571 "SysY.tab.c" /* yacc.c:1646  */
+#line 1596 "SysY.tab.c" /* yacc.c:1646  */
     break;
 
   case 9:
-#line 102 "SysY.y" /* yacc.c:1646  */
+#line 127 "SysY.y" /* yacc.c:1646  */
     { 
                 cout << "FuncFParam";
                 ASTTree *asttree = new ASTTree("FuncFParam", 1, yylineno, (yyvsp[0].ast_Tree));
@@ -1579,461 +1604,504 @@ yyreduce:
                 (yyval.ast_Tree)->SetFuncPType("array");
                 (yyval.ast_Tree)->SetID((yyvsp[-3].ast_Tree)->GetID()); 
                 }
-#line 1583 "SysY.tab.c" /* yacc.c:1646  */
+#line 1608 "SysY.tab.c" /* yacc.c:1646  */
     break;
 
   case 10:
-#line 112 "SysY.y" /* yacc.c:1646  */
+#line 137 "SysY.y" /* yacc.c:1646  */
     {  cout << "FuncFParams"; (yyval.ast_Tree) = (yyvsp[0].ast_Tree);}
-#line 1589 "SysY.tab.c" /* yacc.c:1646  */
+#line 1614 "SysY.tab.c" /* yacc.c:1646  */
     break;
 
   case 11:
-#line 113 "SysY.y" /* yacc.c:1646  */
+#line 138 "SysY.y" /* yacc.c:1646  */
     {  cout << "FuncFParams"; ASTTree *asttree = new ASTTree("FuncFParams", 2, yylineno, (yyvsp[-2].ast_Tree), (yyvsp[0].ast_Tree));
                         (yyval.ast_Tree) = asttree; 
-                        (yyval.ast_Tree)->si = mergeScope((yyvsp[-2].ast_Tree), (yyvsp[0].ast_Tree));
+                        //merge
+                        if((yyvsp[0].ast_Tree)->si == NULL){
+                              (yyval.ast_Tree)->si = (yyvsp[-2].ast_Tree)->si;
+                        }else{
+                              (yyval.ast_Tree)->si = mergeScope((yyvsp[-2].ast_Tree)->si, (yyvsp[0].ast_Tree)->si);
                         }
-#line 1598 "SysY.tab.c" /* yacc.c:1646  */
+                        }
+#line 1628 "SysY.tab.c" /* yacc.c:1646  */
     break;
 
   case 12:
-#line 117 "SysY.y" /* yacc.c:1646  */
+#line 147 "SysY.y" /* yacc.c:1646  */
     { cout << "FuncFParams";
                   ASTTree *asttree = new ASTTree("FuncFParam", 0, yylineno);
                 (yyval.ast_Tree) = asttree;
-                (yyval.ast_Tree)->SetID(NULL);
-                (yyval.ast_Tree)->si = addIntoScope(Formal, NULL, NULL, Variable, NULL, NULL);
+                (yyval.ast_Tree)->SetID(" ");
+                (yyval.ast_Tree)->si = addIntoScope(Formal, NULL, " ", NOParam, " ", NULL);
                 }
-#line 1609 "SysY.tab.c" /* yacc.c:1646  */
+#line 1639 "SysY.tab.c" /* yacc.c:1646  */
     break;
 
   case 13:
-#line 126 "SysY.y" /* yacc.c:1646  */
+#line 156 "SysY.y" /* yacc.c:1646  */
     {  cout << "Decl"; ASTTree *asttree = new ASTTree("ConstDecl", 2, yylineno, (yyvsp[-2].ast_Tree), (yyvsp[-1].ast_Tree));
                 (yyval.ast_Tree) = asttree; 
-                (yyval.ast_Tree)->si = mergeScope((yyvsp[-2].ast_Tree), (yyvsp[-1].ast_Tree));
+                //merge
+                if((yyvsp[-1].ast_Tree) == NULL){
+                      (yyval.ast_Tree)->si = (yyvsp[-2].ast_Tree)->si;
+                }else{
+                      (yyval.ast_Tree)->si = mergeScope((yyvsp[-2].ast_Tree)->si, (yyvsp[-1].ast_Tree)->si);
                 }
-#line 1618 "SysY.tab.c" /* yacc.c:1646  */
+                }
+#line 1653 "SysY.tab.c" /* yacc.c:1646  */
     break;
 
   case 14:
-#line 130 "SysY.y" /* yacc.c:1646  */
+#line 165 "SysY.y" /* yacc.c:1646  */
     { cout << "Decl";  ASTTree *asttree = new ASTTree("VarDecl", 2, yylineno, (yyvsp[-2].ast_Tree),(yyvsp[-1].ast_Tree));
                 (yyval.ast_Tree) = asttree; 
-                //$$->si = mergeScope($2, $3);
+                //merge
+                  if((yyvsp[-1].ast_Tree) == NULL){
+                        (yyval.ast_Tree)->si = (yyvsp[-2].ast_Tree)->si;
+                  }else{
+                        (yyval.ast_Tree)->si = mergeScope((yyvsp[-2].ast_Tree)->si, (yyvsp[-1].ast_Tree)->si);
+                  }
                 }
-#line 1627 "SysY.tab.c" /* yacc.c:1646  */
+#line 1667 "SysY.tab.c" /* yacc.c:1646  */
     break;
 
   case 15:
-#line 137 "SysY.y" /* yacc.c:1646  */
+#line 177 "SysY.y" /* yacc.c:1646  */
     {  cout << "ConstDefs"; (yyval.ast_Tree) = NULL;}
-#line 1633 "SysY.tab.c" /* yacc.c:1646  */
+#line 1673 "SysY.tab.c" /* yacc.c:1646  */
     break;
 
   case 16:
-#line 138 "SysY.y" /* yacc.c:1646  */
+#line 178 "SysY.y" /* yacc.c:1646  */
     {  cout << "ConstDefs"; ASTTree *asttree = new ASTTree("ConstDefs", 2, yylineno, (yyvsp[-1].ast_Tree),(yyvsp[0].ast_Tree));
                 (yyval.ast_Tree) = asttree; 
-                (yyval.ast_Tree)->si = mergeScope((yyvsp[-1].ast_Tree), (yyvsp[0].ast_Tree));
+                //merge
+                if((yyvsp[0].ast_Tree) == NULL){
+                      (yyval.ast_Tree)->si = (yyvsp[-1].ast_Tree)->si;
+                }else{
+                      (yyval.ast_Tree)->si = mergeScope((yyvsp[-1].ast_Tree)->si, (yyvsp[0].ast_Tree)->si);
                 }
-#line 1642 "SysY.tab.c" /* yacc.c:1646  */
+                }
+#line 1687 "SysY.tab.c" /* yacc.c:1646  */
     break;
 
   case 17:
-#line 145 "SysY.y" /* yacc.c:1646  */
+#line 190 "SysY.y" /* yacc.c:1646  */
     {  cout << "ConstDef"; ASTTree *asttree = new ASTTree("ConstOpassign", 2, yylineno, (yyvsp[-2].ast_Tree), (yyvsp[0].ast_Tree));
                 (yyval.ast_Tree) = asttree;
                 (yyval.ast_Tree)->si = (yyvsp[-2].ast_Tree)->si;
                 }
-#line 1651 "SysY.tab.c" /* yacc.c:1646  */
+#line 1696 "SysY.tab.c" /* yacc.c:1646  */
     break;
 
   case 18:
-#line 152 "SysY.y" /* yacc.c:1646  */
+#line 197 "SysY.y" /* yacc.c:1646  */
     { cout << "VarDec"; (yyval.ast_Tree) = (yyvsp[0].ast_Tree);
-                //$$->si = addIntoScope(Local, $$->si, $1->GetID(), Variable, "TYPEINTEGER", NULL);
+                (yyval.ast_Tree)->si = addIntoScope(Local, (yyval.ast_Tree)->si, (yyvsp[0].ast_Tree)->GetID(), Variable, "TYPEINTEGER", NULL);
                 }
-#line 1659 "SysY.tab.c" /* yacc.c:1646  */
+#line 1704 "SysY.tab.c" /* yacc.c:1646  */
     break;
 
   case 19:
-#line 155 "SysY.y" /* yacc.c:1646  */
+#line 200 "SysY.y" /* yacc.c:1646  */
     { cout << "VarDec"; ASTTree *asttree = new ASTTree("ArrayDec", 1, yylineno, (yyvsp[-3].ast_Tree));
                 (yyval.ast_Tree) = asttree;
                 (yyval.ast_Tree)->SetIntValue((yyvsp[-1].ast_Tree)->GetIntValue());
-                //$$->si = addIntoScope(Local, $$->si, $1->GetID(), Array, "TYPEINTEGER", NULL);
+                (yyval.ast_Tree)->SetID((yyvsp[-3].ast_Tree)->GetID());
+                (yyval.ast_Tree)->si = addIntoScope(Local, (yyval.ast_Tree)->si, (yyvsp[-3].ast_Tree)->GetID(), Array, "TYPEINTEGER", NULL);
                 }
-#line 1669 "SysY.tab.c" /* yacc.c:1646  */
+#line 1715 "SysY.tab.c" /* yacc.c:1646  */
     break;
 
   case 20:
-#line 163 "SysY.y" /* yacc.c:1646  */
+#line 209 "SysY.y" /* yacc.c:1646  */
     { cout << "VarDef"; (yyval.ast_Tree) = (yyvsp[0].ast_Tree);}
-#line 1675 "SysY.tab.c" /* yacc.c:1646  */
+#line 1721 "SysY.tab.c" /* yacc.c:1646  */
     break;
 
   case 21:
-#line 164 "SysY.y" /* yacc.c:1646  */
+#line 210 "SysY.y" /* yacc.c:1646  */
     {  cout << "VarDef"; ASTTree *asttree = new ASTTree("VarOPassign", 2, yylineno, (yyvsp[-2].ast_Tree),(yyvsp[0].ast_Tree));
                 (yyval.ast_Tree) = asttree; 
-                //$$->si = $1->si;               
+                (yyval.ast_Tree)->si = (yyvsp[-2].ast_Tree)->si;               
                 }
-#line 1684 "SysY.tab.c" /* yacc.c:1646  */
+#line 1730 "SysY.tab.c" /* yacc.c:1646  */
     break;
 
   case 22:
-#line 171 "SysY.y" /* yacc.c:1646  */
+#line 217 "SysY.y" /* yacc.c:1646  */
     {  cout << "VarDefs"; (yyval.ast_Tree) = NULL;}
-#line 1690 "SysY.tab.c" /* yacc.c:1646  */
+#line 1736 "SysY.tab.c" /* yacc.c:1646  */
     break;
 
   case 23:
-#line 172 "SysY.y" /* yacc.c:1646  */
+#line 218 "SysY.y" /* yacc.c:1646  */
     {  cout << "VarDefs"; ASTTree *asttree = new ASTTree("VarDefs", 2,yylineno,(yyvsp[-1].ast_Tree),(yyvsp[0].ast_Tree));
-                (yyval.ast_Tree) = asttree; 
-                //$$->si = mergeScope($2, $3);
-                }
-#line 1699 "SysY.tab.c" /* yacc.c:1646  */
-    break;
-
-  case 24:
-#line 179 "SysY.y" /* yacc.c:1646  */
-    { cout << "InitVal";  ASTTree *asttree = new ASTTree("ConstInitVal", 1, yylineno, (yyvsp[0].ast_Tree));(yyval.ast_Tree) = asttree; }
-#line 1705 "SysY.tab.c" /* yacc.c:1646  */
-    break;
-
-  case 25:
-#line 180 "SysY.y" /* yacc.c:1646  */
-    {  cout << "InitVal"; ASTTree *asttree = new ASTTree("ConstInitVal", 0, yylineno);(yyval.ast_Tree) = asttree; }
-#line 1711 "SysY.tab.c" /* yacc.c:1646  */
-    break;
-
-  case 26:
-#line 181 "SysY.y" /* yacc.c:1646  */
-    { cout << "InitVal";  ASTTree *asttree = new ASTTree("ConstInitVal", 2, yylineno,  (yyvsp[-2].ast_Tree),(yyvsp[-1].ast_Tree));(yyval.ast_Tree) = asttree; }
-#line 1717 "SysY.tab.c" /* yacc.c:1646  */
-    break;
-
-  case 27:
-#line 185 "SysY.y" /* yacc.c:1646  */
-    {  cout << "InitValList"; (yyval.ast_Tree) = NULL;}
-#line 1723 "SysY.tab.c" /* yacc.c:1646  */
-    break;
-
-  case 28:
-#line 186 "SysY.y" /* yacc.c:1646  */
-    { cout << "InitValList";  ASTTree *asttree = new ASTTree("ConstInitValList", 2, yylineno, (yyvsp[-1].ast_Tree),(yyvsp[0].ast_Tree));(yyval.ast_Tree) = asttree; }
-#line 1729 "SysY.tab.c" /* yacc.c:1646  */
-    break;
-
-  case 29:
-#line 190 "SysY.y" /* yacc.c:1646  */
-    { cout << "ArrayExps";  (yyval.ast_Tree) = NULL;}
-#line 1735 "SysY.tab.c" /* yacc.c:1646  */
-    break;
-
-  case 30:
-#line 191 "SysY.y" /* yacc.c:1646  */
-    { cout << "ArrayExps";  ASTTree *asttree = new ASTTree("ArrayExps", 2, yylineno, (yyvsp[-2].ast_Tree),(yyvsp[0].ast_Tree));(yyval.ast_Tree) = asttree; }
-#line 1741 "SysY.tab.c" /* yacc.c:1646  */
-    break;
-
-  case 31:
-#line 195 "SysY.y" /* yacc.c:1646  */
-    {  cout << "Block"; ASTTree *asttree = new ASTTree("Block", 1,yylineno, (yyvsp[-1].ast_Tree));
-                (yyval.ast_Tree) = asttree; 
-                (yyval.ast_Tree)->si = (yyvsp[-1].ast_Tree)->si;
+                (yyval.ast_Tree) = asttree;
+                //merge
+                  if((yyvsp[0].ast_Tree) == NULL){
+                        (yyval.ast_Tree)->si = (yyvsp[-1].ast_Tree)->si;
+                  }else{
+                        (yyval.ast_Tree)->si = mergeScope((yyvsp[-1].ast_Tree)->si, (yyvsp[0].ast_Tree)->si);
+                  }
                 }
 #line 1750 "SysY.tab.c" /* yacc.c:1646  */
     break;
 
-  case 32:
-#line 201 "SysY.y" /* yacc.c:1646  */
-    {  cout << "BlockItems"; (yyval.ast_Tree) = NULL;}
+  case 24:
+#line 230 "SysY.y" /* yacc.c:1646  */
+    { cout << "InitVal";  ASTTree *asttree = new ASTTree("ConstInitVal", 1, yylineno, (yyvsp[0].ast_Tree));(yyval.ast_Tree) = asttree; }
 #line 1756 "SysY.tab.c" /* yacc.c:1646  */
     break;
 
-  case 33:
-#line 202 "SysY.y" /* yacc.c:1646  */
-    {  cout << "BlockItems"; ASTTree *asttree = new ASTTree("BlockItems", 2, yylineno, (yyvsp[-1].ast_Tree),(yyvsp[0].ast_Tree));
+  case 25:
+#line 231 "SysY.y" /* yacc.c:1646  */
+    {  cout << "InitVal"; ASTTree *asttree = new ASTTree("ConstInitVal", 0, yylineno);(yyval.ast_Tree) = asttree; }
+#line 1762 "SysY.tab.c" /* yacc.c:1646  */
+    break;
+
+  case 26:
+#line 232 "SysY.y" /* yacc.c:1646  */
+    { cout << "InitVal";  ASTTree *asttree = new ASTTree("ConstInitVal", 2, yylineno,  (yyvsp[-2].ast_Tree),(yyvsp[-1].ast_Tree));(yyval.ast_Tree) = asttree; }
+#line 1768 "SysY.tab.c" /* yacc.c:1646  */
+    break;
+
+  case 27:
+#line 236 "SysY.y" /* yacc.c:1646  */
+    {  cout << "InitValList"; (yyval.ast_Tree) = NULL;}
+#line 1774 "SysY.tab.c" /* yacc.c:1646  */
+    break;
+
+  case 28:
+#line 237 "SysY.y" /* yacc.c:1646  */
+    { cout << "InitValList";  ASTTree *asttree = new ASTTree("ConstInitValList", 2, yylineno, (yyvsp[-1].ast_Tree),(yyvsp[0].ast_Tree));(yyval.ast_Tree) = asttree; }
+#line 1780 "SysY.tab.c" /* yacc.c:1646  */
+    break;
+
+  case 29:
+#line 241 "SysY.y" /* yacc.c:1646  */
+    { cout << "ArrayExps";  (yyval.ast_Tree) = NULL;}
+#line 1786 "SysY.tab.c" /* yacc.c:1646  */
+    break;
+
+  case 30:
+#line 242 "SysY.y" /* yacc.c:1646  */
+    { cout << "ArrayExps";  ASTTree *asttree = new ASTTree("ArrayExps", 2, yylineno, (yyvsp[-2].ast_Tree),(yyvsp[0].ast_Tree));(yyval.ast_Tree) = asttree; }
+#line 1792 "SysY.tab.c" /* yacc.c:1646  */
+    break;
+
+  case 31:
+#line 246 "SysY.y" /* yacc.c:1646  */
+    {  cout << "Block"; ASTTree *asttree = new ASTTree("Block", 1,yylineno, (yyvsp[-1].ast_Tree));
                 (yyval.ast_Tree) = asttree; 
-                (yyval.ast_Tree)->si = mergeScope((yyvsp[-1].ast_Tree), (yyvsp[0].ast_Tree));
+                (yyval.ast_Tree)->si = (yyvsp[-1].ast_Tree)->si;
                 }
-#line 1765 "SysY.tab.c" /* yacc.c:1646  */
-    break;
-
-  case 34:
-#line 208 "SysY.y" /* yacc.c:1646  */
-    { cout << "BlockItem"; (yyval.ast_Tree) = (yyvsp[0].ast_Tree);}
-#line 1771 "SysY.tab.c" /* yacc.c:1646  */
-    break;
-
-  case 35:
-#line 209 "SysY.y" /* yacc.c:1646  */
-    { cout << "BlockItem"; (yyval.ast_Tree) = (yyvsp[0].ast_Tree); }
-#line 1777 "SysY.tab.c" /* yacc.c:1646  */
-    break;
-
-  case 36:
-#line 213 "SysY.y" /* yacc.c:1646  */
-    {  printf("Lval\n");ASTTree *asttree = new ASTTree("LVal", 2, yylineno, (yyvsp[-1].ast_Tree),(yyvsp[0].ast_Tree));(yyval.ast_Tree) = asttree; }
-#line 1783 "SysY.tab.c" /* yacc.c:1646  */
-    break;
-
-  case 37:
-#line 217 "SysY.y" /* yacc.c:1646  */
-    { printf("stmt1\n");ASTTree *asttree = new ASTTree("Lval_Opassign_Stmt",2, yylineno, (yyvsp[-3].ast_Tree),(yyvsp[-1].ast_Tree));(yyval.ast_Tree) = asttree; }
-#line 1789 "SysY.tab.c" /* yacc.c:1646  */
-    break;
-
-  case 38:
-#line 218 "SysY.y" /* yacc.c:1646  */
-    { cout << "Stmt";  ASTTree *asttree = new ASTTree("Empty_Stmt",0, yylineno);(yyval.ast_Tree) = asttree; }
-#line 1795 "SysY.tab.c" /* yacc.c:1646  */
-    break;
-
-  case 39:
-#line 219 "SysY.y" /* yacc.c:1646  */
-    { cout << "Stmt"; ASTTree *asttree = new ASTTree("Exp_Stmt", 1, yylineno, (yyvsp[-1].ast_Tree));(yyval.ast_Tree) = asttree;  }
 #line 1801 "SysY.tab.c" /* yacc.c:1646  */
     break;
 
+  case 32:
+#line 252 "SysY.y" /* yacc.c:1646  */
+    {  cout << "BlockItems"; (yyval.ast_Tree) = NULL;}
+#line 1807 "SysY.tab.c" /* yacc.c:1646  */
+    break;
+
+  case 33:
+#line 253 "SysY.y" /* yacc.c:1646  */
+    {  cout << "BlockItems"; ASTTree *asttree = new ASTTree("BlockItems", 2, yylineno, (yyvsp[-1].ast_Tree),(yyvsp[0].ast_Tree));
+                (yyval.ast_Tree) = asttree; 
+                if((yyvsp[0].ast_Tree) == NULL){
+                      (yyval.ast_Tree)->si = (yyvsp[-1].ast_Tree)->si;
+                }else{
+                      (yyval.ast_Tree)->si = mergeScope((yyvsp[-1].ast_Tree)->si, (yyvsp[0].ast_Tree)->si);
+                }
+                }
+#line 1820 "SysY.tab.c" /* yacc.c:1646  */
+    break;
+
+  case 34:
+#line 263 "SysY.y" /* yacc.c:1646  */
+    { cout << "BlockItem"; (yyval.ast_Tree) = (yyvsp[0].ast_Tree);}
+#line 1826 "SysY.tab.c" /* yacc.c:1646  */
+    break;
+
+  case 35:
+#line 264 "SysY.y" /* yacc.c:1646  */
+    { cout << "BlockItem"; (yyval.ast_Tree) = (yyvsp[0].ast_Tree); }
+#line 1832 "SysY.tab.c" /* yacc.c:1646  */
+    break;
+
+  case 36:
+#line 268 "SysY.y" /* yacc.c:1646  */
+    {  printf("Lval\n");ASTTree *asttree = new ASTTree("LVal", 2, yylineno, (yyvsp[-1].ast_Tree),(yyvsp[0].ast_Tree));(yyval.ast_Tree) = asttree; }
+#line 1838 "SysY.tab.c" /* yacc.c:1646  */
+    break;
+
+  case 37:
+#line 272 "SysY.y" /* yacc.c:1646  */
+    { printf("stmt1\n");ASTTree *asttree = new ASTTree("Lval_Opassign_Stmt",2, yylineno, (yyvsp[-3].ast_Tree),(yyvsp[-1].ast_Tree));(yyval.ast_Tree) = asttree; }
+#line 1844 "SysY.tab.c" /* yacc.c:1646  */
+    break;
+
+  case 38:
+#line 273 "SysY.y" /* yacc.c:1646  */
+    { cout << "Stmt";  ASTTree *asttree = new ASTTree("Empty_Stmt",0, yylineno);(yyval.ast_Tree) = asttree; }
+#line 1850 "SysY.tab.c" /* yacc.c:1646  */
+    break;
+
+  case 39:
+#line 274 "SysY.y" /* yacc.c:1646  */
+    { cout << "Stmt"; ASTTree *asttree = new ASTTree("Exp_Stmt", 1, yylineno, (yyvsp[-1].ast_Tree));(yyval.ast_Tree) = asttree;  }
+#line 1856 "SysY.tab.c" /* yacc.c:1646  */
+    break;
+
   case 40:
-#line 220 "SysY.y" /* yacc.c:1646  */
+#line 275 "SysY.y" /* yacc.c:1646  */
     {  cout << "Stmt"; ASTTree *asttree = new ASTTree("Block_Stmt", 1, yylineno, (yyvsp[0].ast_Tree));
                 (yyval.ast_Tree) = asttree; 
                 //内嵌域符号表
-                (yyval.ast_Tree)->si = addIntoScope(Local, (yyval.ast_Tree)->si, NULL, Block, NULL, (yyvsp[0].ast_Tree)->si);
+                (yyval.ast_Tree)->si = addIntoScope(Local, (yyval.ast_Tree)->si, " ", Block, "BLOCKStmt", (yyvsp[0].ast_Tree)->si);
                 }
-#line 1811 "SysY.tab.c" /* yacc.c:1646  */
+#line 1866 "SysY.tab.c" /* yacc.c:1646  */
     break;
 
   case 41:
-#line 225 "SysY.y" /* yacc.c:1646  */
-    {  cout << "Stmt"; ASTTree *asttree = new ASTTree("IF_Stmt", 2, yylineno, (yyvsp[-2].ast_Tree),(yyvsp[0].ast_Tree));(yyval.ast_Tree) = asttree; (yyval.ast_Tree)->si = (yyvsp[0].ast_Tree)->si;}
-#line 1817 "SysY.tab.c" /* yacc.c:1646  */
+#line 280 "SysY.y" /* yacc.c:1646  */
+    {  cout << "Stmt"; ASTTree *asttree = new ASTTree("IF_Stmt", 2, yylineno, (yyvsp[-2].ast_Tree),(yyvsp[0].ast_Tree));
+            (yyval.ast_Tree) = asttree; 
+            (yyval.ast_Tree)->si = (yyvsp[0].ast_Tree)->si;
+            }
+#line 1875 "SysY.tab.c" /* yacc.c:1646  */
     break;
 
   case 42:
-#line 226 "SysY.y" /* yacc.c:1646  */
-    { cout << "Stmt";  ASTTree *asttree = new ASTTree("IF_ELSE_Stmt", 3, yylineno,(yyvsp[-4].ast_Tree),(yyvsp[-2].ast_Tree),(yyvsp[0].ast_Tree));(yyval.ast_Tree) = asttree; (yyval.ast_Tree)->si = mergeScope((yyvsp[-2].ast_Tree), (yyvsp[0].ast_Tree));}
-#line 1823 "SysY.tab.c" /* yacc.c:1646  */
+#line 284 "SysY.y" /* yacc.c:1646  */
+    { cout << "Stmt";  ASTTree *asttree = new ASTTree("IF_ELSE_Stmt", 3, yylineno,(yyvsp[-4].ast_Tree),(yyvsp[-2].ast_Tree),(yyvsp[0].ast_Tree));
+            (yyval.ast_Tree) = asttree;
+            if((yyvsp[0].ast_Tree) == NULL){
+                  (yyval.ast_Tree)->si = (yyvsp[-2].ast_Tree)->si;
+            }else{
+                  (yyval.ast_Tree)->si = mergeScope((yyvsp[-2].ast_Tree)->si, (yyvsp[0].ast_Tree)->si);
+            }
+            }
+#line 1888 "SysY.tab.c" /* yacc.c:1646  */
     break;
 
   case 43:
-#line 227 "SysY.y" /* yacc.c:1646  */
-    {  cout << "Stmt"; ASTTree *asttree = new ASTTree("While_Stmt", 2, yylineno, (yyvsp[-2].ast_Tree),(yyvsp[0].ast_Tree));(yyval.ast_Tree) = asttree; (yyval.ast_Tree)->si = (yyvsp[0].ast_Tree)->si;}
-#line 1829 "SysY.tab.c" /* yacc.c:1646  */
+#line 292 "SysY.y" /* yacc.c:1646  */
+    {  cout << "Stmt"; ASTTree *asttree = new ASTTree("While_Stmt", 2, yylineno, (yyvsp[-2].ast_Tree),(yyvsp[0].ast_Tree));
+            (yyval.ast_Tree) = asttree; 
+            (yyval.ast_Tree)->si = (yyvsp[0].ast_Tree)->si;
+            }
+#line 1897 "SysY.tab.c" /* yacc.c:1646  */
     break;
 
   case 44:
-#line 228 "SysY.y" /* yacc.c:1646  */
+#line 296 "SysY.y" /* yacc.c:1646  */
     {  cout << "Stmt"; ASTTree *asttree = new ASTTree("Break_Stmt", 0,yylineno);(yyval.ast_Tree) = asttree; }
-#line 1835 "SysY.tab.c" /* yacc.c:1646  */
+#line 1903 "SysY.tab.c" /* yacc.c:1646  */
     break;
 
   case 45:
-#line 229 "SysY.y" /* yacc.c:1646  */
+#line 297 "SysY.y" /* yacc.c:1646  */
     { cout << "Stmt";  ASTTree *asttree = new ASTTree("Continue_Stmt", 0,yylineno);(yyval.ast_Tree) = asttree; }
-#line 1841 "SysY.tab.c" /* yacc.c:1646  */
+#line 1909 "SysY.tab.c" /* yacc.c:1646  */
     break;
 
   case 46:
-#line 230 "SysY.y" /* yacc.c:1646  */
+#line 298 "SysY.y" /* yacc.c:1646  */
     {  cout << "Stmt"; ASTTree *asttree = new ASTTree("Return_Stmt", 0,yylineno);(yyval.ast_Tree) = asttree; }
-#line 1847 "SysY.tab.c" /* yacc.c:1646  */
+#line 1915 "SysY.tab.c" /* yacc.c:1646  */
     break;
 
   case 47:
-#line 231 "SysY.y" /* yacc.c:1646  */
+#line 299 "SysY.y" /* yacc.c:1646  */
     {  cout << "Stmt"; ASTTree *asttree = new ASTTree("Return_Stmt", 1, yylineno, (yyvsp[-1].ast_Tree));(yyval.ast_Tree) = asttree; }
-#line 1853 "SysY.tab.c" /* yacc.c:1646  */
+#line 1921 "SysY.tab.c" /* yacc.c:1646  */
     break;
 
   case 48:
-#line 235 "SysY.y" /* yacc.c:1646  */
+#line 303 "SysY.y" /* yacc.c:1646  */
     {  cout << "Cond"; ASTTree *asttree = new ASTTree("Cond", 1, yylineno, (yyvsp[0].ast_Tree));(yyval.ast_Tree) = asttree; }
-#line 1859 "SysY.tab.c" /* yacc.c:1646  */
+#line 1927 "SysY.tab.c" /* yacc.c:1646  */
     break;
 
   case 49:
-#line 236 "SysY.y" /* yacc.c:1646  */
+#line 304 "SysY.y" /* yacc.c:1646  */
     {  cout << "Cond"; ASTTree *asttree = new ASTTree("Cond_And", 2, yylineno, (yyvsp[-2].ast_Tree),(yyvsp[0].ast_Tree));(yyval.ast_Tree) = asttree; }
-#line 1865 "SysY.tab.c" /* yacc.c:1646  */
+#line 1933 "SysY.tab.c" /* yacc.c:1646  */
     break;
 
   case 50:
-#line 237 "SysY.y" /* yacc.c:1646  */
+#line 305 "SysY.y" /* yacc.c:1646  */
     {  cout << "Cond"; ASTTree *asttree = new ASTTree("Cond_Or", 2, yylineno, (yyvsp[-2].ast_Tree),(yyvsp[0].ast_Tree));(yyval.ast_Tree) = asttree; }
-#line 1871 "SysY.tab.c" /* yacc.c:1646  */
+#line 1939 "SysY.tab.c" /* yacc.c:1646  */
     break;
 
   case 51:
-#line 241 "SysY.y" /* yacc.c:1646  */
+#line 309 "SysY.y" /* yacc.c:1646  */
     { (yyval.ast_Tree)=(yyvsp[0].ast_Tree); }
-#line 1877 "SysY.tab.c" /* yacc.c:1646  */
+#line 1945 "SysY.tab.c" /* yacc.c:1646  */
     break;
 
   case 52:
-#line 242 "SysY.y" /* yacc.c:1646  */
+#line 310 "SysY.y" /* yacc.c:1646  */
     { ASTTree *asttree = new ASTTree("OPLIGHT", 2, yylineno, (yyvsp[-2].ast_Tree),(yyvsp[0].ast_Tree));(yyval.ast_Tree) = asttree; }
-#line 1883 "SysY.tab.c" /* yacc.c:1646  */
+#line 1951 "SysY.tab.c" /* yacc.c:1646  */
     break;
 
   case 53:
-#line 243 "SysY.y" /* yacc.c:1646  */
+#line 311 "SysY.y" /* yacc.c:1646  */
     { ASTTree *asttree = new ASTTree("OPGREAT", 2, yylineno, (yyvsp[-2].ast_Tree),(yyvsp[0].ast_Tree));(yyval.ast_Tree) = asttree; }
-#line 1889 "SysY.tab.c" /* yacc.c:1646  */
+#line 1957 "SysY.tab.c" /* yacc.c:1646  */
     break;
 
   case 54:
-#line 244 "SysY.y" /* yacc.c:1646  */
+#line 312 "SysY.y" /* yacc.c:1646  */
     { ASTTree *asttree = new ASTTree("OPGREATEQ", 2, yylineno, (yyvsp[-2].ast_Tree),(yyvsp[0].ast_Tree));(yyval.ast_Tree) = asttree; }
-#line 1895 "SysY.tab.c" /* yacc.c:1646  */
+#line 1963 "SysY.tab.c" /* yacc.c:1646  */
     break;
 
   case 55:
-#line 245 "SysY.y" /* yacc.c:1646  */
+#line 313 "SysY.y" /* yacc.c:1646  */
     { ASTTree *asttree = new ASTTree("OPLIGHTEQ", 2, yylineno, (yyvsp[-2].ast_Tree),(yyvsp[0].ast_Tree));(yyval.ast_Tree) = asttree; }
-#line 1901 "SysY.tab.c" /* yacc.c:1646  */
+#line 1969 "SysY.tab.c" /* yacc.c:1646  */
     break;
 
   case 56:
-#line 249 "SysY.y" /* yacc.c:1646  */
+#line 317 "SysY.y" /* yacc.c:1646  */
     { (yyval.ast_Tree)=(yyvsp[0].ast_Tree); }
-#line 1907 "SysY.tab.c" /* yacc.c:1646  */
+#line 1975 "SysY.tab.c" /* yacc.c:1646  */
     break;
 
   case 57:
-#line 250 "SysY.y" /* yacc.c:1646  */
+#line 318 "SysY.y" /* yacc.c:1646  */
     { ASTTree *asttree = new ASTTree("OPEQUAL", 2, yylineno, (yyvsp[-2].ast_Tree),(yyvsp[0].ast_Tree));(yyval.ast_Tree) = asttree; }
-#line 1913 "SysY.tab.c" /* yacc.c:1646  */
+#line 1981 "SysY.tab.c" /* yacc.c:1646  */
     break;
 
   case 58:
-#line 251 "SysY.y" /* yacc.c:1646  */
+#line 319 "SysY.y" /* yacc.c:1646  */
     { ASTTree *asttree = new ASTTree("OPNOTEQUAL", 2, yylineno, (yyvsp[-2].ast_Tree),(yyvsp[0].ast_Tree));(yyval.ast_Tree) = asttree; }
-#line 1919 "SysY.tab.c" /* yacc.c:1646  */
+#line 1987 "SysY.tab.c" /* yacc.c:1646  */
     break;
 
   case 59:
-#line 255 "SysY.y" /* yacc.c:1646  */
+#line 323 "SysY.y" /* yacc.c:1646  */
     { ASTTree *asttree = new ASTTree("IntConst", 1, yylineno, (yyvsp[0].ast_Tree));(yyval.ast_Tree) = asttree; }
-#line 1925 "SysY.tab.c" /* yacc.c:1646  */
+#line 1993 "SysY.tab.c" /* yacc.c:1646  */
     break;
 
   case 60:
-#line 256 "SysY.y" /* yacc.c:1646  */
+#line 324 "SysY.y" /* yacc.c:1646  */
     { ASTTree *asttree = new ASTTree("IntConst", 1, yylineno, (yyvsp[0].ast_Tree));(yyval.ast_Tree) = asttree; }
-#line 1931 "SysY.tab.c" /* yacc.c:1646  */
+#line 1999 "SysY.tab.c" /* yacc.c:1646  */
     break;
 
   case 61:
-#line 257 "SysY.y" /* yacc.c:1646  */
+#line 325 "SysY.y" /* yacc.c:1646  */
     { ASTTree *asttree = new ASTTree("IntConst", 1, yylineno, (yyvsp[0].ast_Tree));(yyval.ast_Tree) = asttree; }
-#line 1937 "SysY.tab.c" /* yacc.c:1646  */
+#line 2005 "SysY.tab.c" /* yacc.c:1646  */
     break;
 
   case 62:
-#line 261 "SysY.y" /* yacc.c:1646  */
+#line 329 "SysY.y" /* yacc.c:1646  */
     { ASTTree *asttree = new ASTTree("FuncRParams", 2, yylineno, (yyvsp[-1].ast_Tree),(yyvsp[0].ast_Tree));(yyval.ast_Tree) = asttree; }
-#line 1943 "SysY.tab.c" /* yacc.c:1646  */
+#line 2011 "SysY.tab.c" /* yacc.c:1646  */
     break;
 
   case 63:
-#line 266 "SysY.y" /* yacc.c:1646  */
+#line 334 "SysY.y" /* yacc.c:1646  */
     { ASTTree *asttree = new ASTTree("(Exp)", 1, yylineno,(yyvsp[-1].ast_Tree));(yyval.ast_Tree) = asttree; }
-#line 1949 "SysY.tab.c" /* yacc.c:1646  */
+#line 2017 "SysY.tab.c" /* yacc.c:1646  */
     break;
 
   case 64:
-#line 267 "SysY.y" /* yacc.c:1646  */
+#line 335 "SysY.y" /* yacc.c:1646  */
     { ASTTree *asttree = new ASTTree("LVal_EXP", 1, yylineno, (yyvsp[0].ast_Tree));(yyval.ast_Tree) = asttree; }
-#line 1955 "SysY.tab.c" /* yacc.c:1646  */
+#line 2023 "SysY.tab.c" /* yacc.c:1646  */
     break;
 
   case 65:
-#line 268 "SysY.y" /* yacc.c:1646  */
+#line 336 "SysY.y" /* yacc.c:1646  */
     { (yyval.ast_Tree) = (yyvsp[0].ast_Tree); }
-#line 1961 "SysY.tab.c" /* yacc.c:1646  */
+#line 2029 "SysY.tab.c" /* yacc.c:1646  */
     break;
 
   case 66:
-#line 269 "SysY.y" /* yacc.c:1646  */
+#line 337 "SysY.y" /* yacc.c:1646  */
     { ASTTree *asttree = new ASTTree("funcall", 1, yylineno, (yyvsp[-2].ast_Tree));(yyval.ast_Tree) = asttree; }
-#line 1967 "SysY.tab.c" /* yacc.c:1646  */
+#line 2035 "SysY.tab.c" /* yacc.c:1646  */
     break;
 
   case 67:
-#line 270 "SysY.y" /* yacc.c:1646  */
+#line 338 "SysY.y" /* yacc.c:1646  */
     { ASTTree *asttree = new ASTTree("funcall", 2, yylineno, (yyvsp[-3].ast_Tree),(yyvsp[-1].ast_Tree));(yyval.ast_Tree) = asttree; }
-#line 1973 "SysY.tab.c" /* yacc.c:1646  */
+#line 2041 "SysY.tab.c" /* yacc.c:1646  */
     break;
 
   case 68:
-#line 271 "SysY.y" /* yacc.c:1646  */
+#line 339 "SysY.y" /* yacc.c:1646  */
     { ASTTree *asttree = new ASTTree("OPPLUS_Exp", 1, yylineno, (yyvsp[0].ast_Tree));(yyval.ast_Tree) = asttree; }
-#line 1979 "SysY.tab.c" /* yacc.c:1646  */
+#line 2047 "SysY.tab.c" /* yacc.c:1646  */
     break;
 
   case 69:
-#line 272 "SysY.y" /* yacc.c:1646  */
+#line 340 "SysY.y" /* yacc.c:1646  */
     { ASTTree *asttree = new ASTTree("OPMINUS_Exp", 1, yylineno, (yyvsp[0].ast_Tree));(yyval.ast_Tree) = asttree; }
-#line 1985 "SysY.tab.c" /* yacc.c:1646  */
+#line 2053 "SysY.tab.c" /* yacc.c:1646  */
     break;
 
   case 70:
-#line 273 "SysY.y" /* yacc.c:1646  */
+#line 341 "SysY.y" /* yacc.c:1646  */
     { ASTTree *asttree = new ASTTree("OPNOT_Exp", 1, yylineno, (yyvsp[0].ast_Tree));(yyval.ast_Tree) = asttree; }
-#line 1991 "SysY.tab.c" /* yacc.c:1646  */
+#line 2059 "SysY.tab.c" /* yacc.c:1646  */
     break;
 
   case 71:
-#line 274 "SysY.y" /* yacc.c:1646  */
+#line 342 "SysY.y" /* yacc.c:1646  */
     { ASTTree *asttree = new ASTTree("MulExp", 2, yylineno, (yyvsp[-2].ast_Tree),(yyvsp[0].ast_Tree));(yyval.ast_Tree) = asttree; }
-#line 1997 "SysY.tab.c" /* yacc.c:1646  */
+#line 2065 "SysY.tab.c" /* yacc.c:1646  */
     break;
 
   case 72:
-#line 275 "SysY.y" /* yacc.c:1646  */
+#line 343 "SysY.y" /* yacc.c:1646  */
     { ASTTree *asttree = new ASTTree("DIVIDEExp", 2, yylineno, (yyvsp[-2].ast_Tree),(yyvsp[0].ast_Tree));(yyval.ast_Tree) = asttree; }
-#line 2003 "SysY.tab.c" /* yacc.c:1646  */
+#line 2071 "SysY.tab.c" /* yacc.c:1646  */
     break;
 
   case 73:
-#line 276 "SysY.y" /* yacc.c:1646  */
+#line 344 "SysY.y" /* yacc.c:1646  */
     { ASTTree *asttree = new ASTTree("MODExp", 2, yylineno, (yyvsp[-2].ast_Tree),(yyvsp[0].ast_Tree));(yyval.ast_Tree) = asttree; }
-#line 2009 "SysY.tab.c" /* yacc.c:1646  */
+#line 2077 "SysY.tab.c" /* yacc.c:1646  */
     break;
 
   case 74:
-#line 277 "SysY.y" /* yacc.c:1646  */
+#line 345 "SysY.y" /* yacc.c:1646  */
     { ASTTree *asttree = new ASTTree("PLUSExp", 2, yylineno, (yyvsp[-2].ast_Tree),(yyvsp[0].ast_Tree));(yyval.ast_Tree) = asttree; }
-#line 2015 "SysY.tab.c" /* yacc.c:1646  */
+#line 2083 "SysY.tab.c" /* yacc.c:1646  */
     break;
 
   case 75:
-#line 278 "SysY.y" /* yacc.c:1646  */
+#line 346 "SysY.y" /* yacc.c:1646  */
     { ASTTree *asttree = new ASTTree("MINUSExp", 2, yylineno, (yyvsp[-2].ast_Tree),(yyvsp[0].ast_Tree));(yyval.ast_Tree) = asttree; }
-#line 2021 "SysY.tab.c" /* yacc.c:1646  */
+#line 2089 "SysY.tab.c" /* yacc.c:1646  */
     break;
 
   case 76:
-#line 282 "SysY.y" /* yacc.c:1646  */
+#line 350 "SysY.y" /* yacc.c:1646  */
     { (yyval.ast_Tree) = NULL;}
-#line 2027 "SysY.tab.c" /* yacc.c:1646  */
+#line 2095 "SysY.tab.c" /* yacc.c:1646  */
     break;
 
   case 77:
-#line 283 "SysY.y" /* yacc.c:1646  */
+#line 351 "SysY.y" /* yacc.c:1646  */
     { ASTTree *asttree = new ASTTree("Exps", 2, yylineno, (yyvsp[-2].ast_Tree),(yyvsp[0].ast_Tree));(yyval.ast_Tree) = asttree; }
-#line 2033 "SysY.tab.c" /* yacc.c:1646  */
+#line 2101 "SysY.tab.c" /* yacc.c:1646  */
     break;
 
 
-#line 2037 "SysY.tab.c" /* yacc.c:1646  */
+#line 2105 "SysY.tab.c" /* yacc.c:1646  */
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires
@@ -2268,7 +2336,7 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 286 "SysY.y" /* yacc.c:1906  */
+#line 354 "SysY.y" /* yacc.c:1906  */
 
 
 #include<stdarg.h>

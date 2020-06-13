@@ -89,7 +89,7 @@ void ASTTree::TraverseGrammerTree(int level)
             else if (this->name == "CONSTANTOCT")
                 printf(": %d\n", this->int_value);
             else if (this->name == "IDENTIFIER")
-                cout << this->id;
+                cout << " " << this->id;
             else
                 printf(" (%d)\n", this->line);
         }

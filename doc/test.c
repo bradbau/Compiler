@@ -3,6 +3,7 @@ int a,b,c;
 
 //斐波那契
 int fibo(int a) {
+    int n = 0;
     if (a==1 || a==2) 
         return 1;
     return fibo(a+1)+fibo(a);
@@ -67,6 +68,7 @@ int main(){
 
     while (i<=m)
 	{
+        int x = 0;
 	    n=fibo(i);
 	    write(n);
 	    i=i+1;
