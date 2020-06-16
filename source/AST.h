@@ -28,6 +28,7 @@ class ASTTree{
     char* id;
     char* functype; //函数返回类型
     char* funcptype;//形参类型
+    char* formatstring;
     //ScopeItem si;//目前没想明白有什么用
 
 
@@ -62,6 +63,8 @@ class ASTTree{
     void SetIntValue(int value);
 
     int GetIntValue();
+
+    char* GetString();
 
     ASTTree * GetASTTree();
     //

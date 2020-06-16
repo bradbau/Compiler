@@ -39,7 +39,7 @@
 %token KEYIF KEYELSE KEYWHILE KEYBREAK KEYCONTINUE
 %token KEYRETURN KEYGETINT KEYGETCHAR KEYGETARRAY KEYPUTINT KEYPUTCHAR KEYPUTARRAY KEYPUTF
 %token KEYSTOPTIME KEYSTARTTIME
-%token <ast_Tree> CONSTANTINTD CONSTANTINTH CONSTANTOCT
+%token <ast_Tree> CONSTANTINTD CONSTANTINTH CONSTANTOCT STRING
 %token <ast_Tree> IDENTIFIER
 
 
@@ -165,18 +165,19 @@ EqExp: RelExp { $$=$1; }
       ;
 
 /*数值*/ 
-Number:   CONSTANTOCT { ASTTree *asttree = new ASTTree("IntConst", 1, yylineno, $1);$$ = asttree; }
-        | CONSTANTINTD  { ASTTree *asttree = new ASTTree("IntConst", 1, yylineno, $1);$$ = asttree; } 
-        | CONSTANTINTH { ASTTree *asttree = new ASTTree("IntConst", 1, yylineno, $1);$$ = asttree; }
+Number:   CONSTANTOCT { ASTTree *asttree = new ASTTree("IntConst", 1, yylineno, $1);$$ = asttree; $$->SetIntValue($1->GetIntValue());printf("IntConst:%d\n",$$->GetIntValue());}
+        | CONSTANTINTD  { ASTTree *asttree = new ASTTree("IntConst", 1, yylineno, $1);$$ = asttree;$$->SetIntValue($1->GetIntValue()); printf("IntConst:%d\n",$$->GetIntValue());} 
+        | CONSTANTINTH { ASTTree *asttree = new ASTTree("IntConst", 1, yylineno, $1);$$ = asttree;$$->SetIntValue($1->GetIntValue());printf("IntConst:%d\n",$$->GetIntValue()); }
         ; 
 /*函数实参表*/ 
 FuncRParams: Exp Exps{ ASTTree *asttree = new ASTTree("FuncRParams", 2, yylineno, $1,$2);$$ = asttree; }
            ;
 /*表达式*/ 
 /*注：SysY 表达式是 int 型表达式*/
-Exp: OPLEFTPRNT Exp OPRIGHTPRNT { ASTTree *asttree = new ASTTree("(Exp)", 1, yylineno,$2);$$ = asttree; }
+Exp: OPLEFTPRNT Exp OPRIGHTPRNT { ASTTree *asttree = new ASTTree("(Exp)", 1, yylineno,$2);$$ = asttree;$$->SetIntValue($2->GetIntValue()); }
    | LVal { ASTTree *asttree = new ASTTree("LVal_EXP", 1, yylineno, $1);$$ = asttree; }
-   | Number{ $$ = $1; }
+   | STRING {$$=$1;printf("ExpString:%s\n",$$->GetString());}
+   | Number{ $$ = $1;printf("ExpNumber:%d\n",$$->GetIntValue()); }
    | IDENTIFIER OPLEFTPRNT OPRIGHTPRNT { ASTTree *asttree = new ASTTree("funcall", 1, yylineno, $1);$$ = asttree; }
    | IDENTIFIER OPLEFTPRNT FuncRParams OPRIGHTPRNT { ASTTree *asttree = new ASTTree("funcall", 2, yylineno, $1,$3);$$ = asttree; }
    | OPPLUS Exp { ASTTree *asttree = new ASTTree("OPPLUS_Exp", 1, yylineno, $2);$$ = asttree; }
@@ -191,7 +192,7 @@ Exp: OPLEFTPRNT Exp OPRIGHTPRNT { ASTTree *asttree = new ASTTree("(Exp)", 1, yyl
 
 /*表达式表*/
 Exps:{ $$ = NULL;}
-     |Exps SPCOMMA Exp{ ASTTree *asttree = new ASTTree("Exps", 2, yylineno, $1,$3);$$ = asttree; }
+     |SPCOMMA Exp Exps{ ASTTree *asttree = new ASTTree("Exps", 2, yylineno, $2,$3);$$ = asttree; }
      ;
 
 

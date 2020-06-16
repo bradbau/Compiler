@@ -5,4 +5,4 @@ parser: SysY.l SysY.y AST.h
 
 .PHONY: clean
 clean:
-	rm parser SysY.tab.c SysY.tab.h lex.yy.cc lex.yy.c
+	rm parser SysY.tab.c SysY.tab.h lex.yy.c

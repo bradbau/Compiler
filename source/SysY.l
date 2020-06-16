@@ -57,20 +57,12 @@ KEYWHILE        "while"
 KEYBREAK        "break"
 KEYCONTINUE     "continue" 
 KEYRETURN       "return"
-KEYGETINT       "getint"
-KEYGETCHAR      "getchar"
-KEYGETARRAY     "getarray"
-KEYPUTINT       "putint"
-KEYPUTCHAR      "putchar"
-KEYPUTARRAY     "putarray"
-KEYPUTF         "putf"
-KEYSTARTTIME    "starttime"
-KEYSTOPTIME     "stoptime"
 CONSTANTOCT     0[0-7]*      
 CONSTANTINTD    [1-9][0-9]*
 CONSTANTINTH    0[xX][0-9a-fA-F]+
 IDENTIFIER      [a-zA-Z][a-zA-Z0-9]* 
 SPACE           " "|\t
+STRING          \".*?\"
 EOL             \n
 WRONGSTRING     \"[^\"\n]*$
 WRONGIDENTIFIER [0-9_][a-zA-Z0-9_]* 
@@ -114,19 +106,12 @@ AERROR          .
 {KEYBREAK} { printf("<break>\n");return KEYBREAK; }
 {KEYCONTINUE} {printf("<continue>\n");return KEYCONTINUE ; }
 {KEYCONST} {  printf("<const>\n");return KEYCONST ; }
-{KEYGETINT}  { printf("<getint>\n");return KEYGETINT; }    
-{KEYGETCHAR}    { printf("<getchar>\n");return KEYGETCHAR; }
-{KEYGETARRAY}   {  printf("<getarray>\n");return KEYGETARRAY; }
-{KEYPUTINT}      { printf("<putint>\n");return KEYPUTINT; }
-{KEYPUTCHAR}     {printf("<putchar>\n");return KEYPUTCHAR; }
-{KEYPUTARRAY}    { printf("<putarray>\n");return KEYPUTARRAY; }
-{KEYPUTF}         { printf("<putf>\n");return KEYPUTF; }
-{KEYSTARTTIME}    {  printf("<starttime>\n");return KEYSTARTTIME; }
-{KEYSTOPTIME}     { printf("<stoptime>\n");return SPSEMICOLON; }
+
 {KEYRETURN} {printf("<return>\n");return KEYRETURN; }
-{CONSTANTINTD} { printf("<intd>\n");ASTTree *asttree = new ASTTree("CONSTANTINTD", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return CONSTANTINTD; }
-{CONSTANTINTH} { printf("<inth>\n");ASTTree *asttree = new ASTTree("CONSTANTINTH", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return CONSTANTINTH; }
-{CONSTANTOCT} {  printf("<into>\n");ASTTree *asttree = new ASTTree("CONSTANTOCT", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree;return CONSTANTOCT ; }
+{STRING} {printf("<string,%s>\n",yytext);ASTTree *asttree = new ASTTree("STRING", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return STRING; }
+{CONSTANTINTD} { printf("<intd,%s>\n",yytext);ASTTree *asttree = new ASTTree("CONSTANTINTD", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return CONSTANTINTD; }
+{CONSTANTINTH} { printf("<inth,%s>\n",yytext);ASTTree *asttree = new ASTTree("CONSTANTINTH", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return CONSTANTINTH; }
+{CONSTANTOCT} {  printf("<into,%s>\n",yytext);ASTTree *asttree = new ASTTree("CONSTANTOCT", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree;return CONSTANTOCT ; }
 {IDENTIFIER} { printf("<id,%s>\n",yytext);ASTTree *asttree = new ASTTree("IDENTIFIER", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return IDENTIFIER; }
 
 {SPACE} {}

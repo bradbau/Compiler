@@ -50,6 +50,7 @@ ASTTree::ASTTree(char* name, int num, int pos ,...) {
         }
         else  if (!strcmp(this->name, "CONSTANTINTD"))
         {
+            //printf("%d\n",yytext)
             this->int_value = atoi(yytext);
         }
         else  if (!strcmp(this->name, "CONSTANTINTH"))
@@ -60,6 +61,13 @@ ASTTree::ASTTree(char* name, int num, int pos ,...) {
         {
             this->int_value = strtol(yytext, NULL, 8);
         }
+        else  if (!strcmp(this->name, "STRING"))
+        {
+            cache = (char *)malloc(sizeof(char) * strlen(yytext));
+            strcpy(cache, yytext);
+            this->formatstring = cache;
+        }
+        else{}
          //printf("name:%s\n",this->name);
     }
     va_end(variables);
@@ -87,6 +95,10 @@ void ASTTree::TraverseGrammerTree(int level)
                 printf(": %d\n", this->int_value);
             else if (!strcmp(this->name, "IDENTIFIER"))
                 printf(": %s\n", this->id);
+            else if(!strcmp(this->name, "ArrayDec"))
+                printf(": demmision=%d\n",this->GetIntValue());
+            else if(!strcmp(this->name, "STRING"))
+                printf(": %s\n",this->GetString());
             else
                 printf(" (%d)\n", this->line);
         }
@@ -147,4 +159,8 @@ int ASTTree::GetIntValue(){
 
 void ASTTree::SetFuncPType(char* ptype){
     this->funcptype = ptype;
+};
+
+char* ASTTree::GetString(){
+    return this->formatstring;
 };
