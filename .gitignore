@@ -28,7 +28,16 @@
 
 # Executables
 *.exe
-*.out
 *.app
+
+
+# 编译器中间代码
+*.tab.c
+*.tab.h
+*.output
+*.temp
+parser
+.yy.cc
+.yy.c
 
 
