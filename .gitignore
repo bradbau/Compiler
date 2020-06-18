@@ -37,7 +37,7 @@
 *.output
 *.temp
 parser
-.yy.cc
-.yy.c
+*.yy.cc
+*.yy.c
 
 
