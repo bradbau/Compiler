@@ -62,10 +62,12 @@ void ASTTree::TraverseGrammerTree(int level)
     int i;
     
         //printf("tra!\n");
-        for (i = 0; i < level; i++)
-            printf("  ");
+        //for (i = 0; i < level; i++)
+          //  printf(" ");
         if (this->line != -1)
         {
+          for (i = 0; i < level; i++)
+            printf(" ");
             // Not void rule
             printf("%s", this->name);
            if (!strcmp(this->name, "CONSTANTINTD"))
@@ -79,8 +81,9 @@ void ASTTree::TraverseGrammerTree(int level)
             else
                 printf(" (%d)\n", this->line);
         }
-        else
-            printf("%s (Epsilon)\n", this->name);
+        else 
+            ;
+            //printf("%s (Epsilon)\n", this->name);
         //printf("leftc\n");
         if(this->lchild)
             this->lchild->TraverseGrammerTree( level + 1);
