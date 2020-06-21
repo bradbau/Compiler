@@ -64,8 +64,8 @@ CompUnits:{ $$ = NULL;}
          ;
 /*组成，常量、变量声明或函数定义*/
 CompUnit: Decl {$$=$1;} 
-         | TYPEVOID IDENTIFIER OPLEFTPRNT FuncFParams OPRIGHTPRNT Block{ printf("funcdef1\n");ASTTree *asttree = new ASTTree("FuncDef", 2, yylineno, $4,$6);$$ = asttree; $$->SetFuncType("void");$$->SetID($2->GetID());}
-         | TYPEINTEGER IDENTIFIER OPLEFTPRNT FuncFParams OPRIGHTPRNT Block{printf("funcdef2\n"); ASTTree *asttree = new ASTTree("FuncDef", 2, yylineno,$4, $6);$$ = asttree; $$->SetFuncType("int");$$->SetID($2->GetID()); }
+         | TYPEVOID IDENTIFIER OPLEFTPRNT FuncFParams OPRIGHTPRNT Block{ printf("funcdef1\n");ASTTree *asttree = new ASTTree("voidFuncDef", 2, yylineno, $4,$6);$$ = asttree; $$->SetFuncType("void");$$->SetID($2->GetID());}
+         | TYPEINTEGER IDENTIFIER OPLEFTPRNT FuncFParams OPRIGHTPRNT Block{printf("funcdef2\n"); ASTTree *asttree = new ASTTree("intFuncDef", 2, yylineno,$4, $6);$$ = asttree; $$->SetFuncType("int");$$->SetID($2->GetID()); }
          ;
 /*声明*/
 Decl: KEYCONST TYPEINTEGER ConstDef ConstDefs SPSEMICOLON{ ASTTree *asttree = new ASTTree("ConstDecl", 2, yylineno, $3,$4);$$ = asttree; }
@@ -105,15 +105,15 @@ VarDefs:{ $$ = NULL;}
 
 /*函数形参*/ 
 FuncFParam: TYPEINTEGER IDENTIFIER{ ASTTree *asttree = new ASTTree("FuncFParam", 0, yylineno);$$ = asttree;$$->SetFuncPType("int");$$->SetID($2->GetID()); }
-          | TYPEINTEGER IDENTIFIER OPLEFTBRACKET OPRIGHTBRACKET ArrayExps{ ASTTree *asttree = new ASTTree("FuncFParam", 1, yylineno, $5);$$ = asttree;$$->SetFuncPType("array");$$->SetID($2->GetID()); }
+          | TYPEINTEGER IDENTIFIER OPLEFTBRACKET OPRIGHTBRACKET ArrayExps{ printf("array\n");ASTTree *asttree = new ASTTree("FuncFParam", 1, yylineno, $5);$$ = asttree;printf("array2\n");$$->SetFuncPType("array");printf("array3\n");$$->SetID($2->GetID()); }
           ;
 /*函数形参表*/ 
 FuncFParams:{ printf("kong\n");ASTTree *asttree = new ASTTree("FuncFParams", 0, yylineno);$$ = asttree;}
-            | FuncFParam { $$ = $1; }
+            | FuncFParam {printf("fp\n");ASTTree *asttree = new ASTTree("FuncFParams", 1, yylineno, $1);$$ = asttree; }
             | FuncFParam SPCOMMA FuncFParams{ ASTTree *asttree = new ASTTree("FuncFParams", 2, yylineno, $1,$3);$$ = asttree; }
             ;
 /*数组维度*/
-ArrayExps:{ $$ = NULL;}
+ArrayExps:{  ASTTree *asttree = new ASTTree("ArrayExps", 0, yylineno);$$ = asttree;}
          | OPLEFTBRACKET Exp OPRIGHTBRACKET ArrayExps{ ASTTree *asttree = new ASTTree("ArrayExps", 2, yylineno, $2,$4);$$ = asttree; }
          ;
 /*语句块*/ 

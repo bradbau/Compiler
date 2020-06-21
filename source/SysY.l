@@ -60,7 +60,7 @@ KEYRETURN       "return"
 CONSTANTOCT     0[0-7]*      
 CONSTANTINTD    [1-9][0-9]*
 CONSTANTINTH    0[xX][0-9a-fA-F]+
-IDENTIFIER      [a-zA-Z][a-zA-Z0-9]* 
+IDENTIFIER      [a-zA-Z][a-zA-Z0-9_]* 
 SPACE           " "|\t
 STRING          \".*?\"
 EOL             \n

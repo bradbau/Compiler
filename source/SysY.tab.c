@@ -1530,13 +1530,13 @@ yyreduce:
 
   case 6:
 #line 67 "SysY.y" /* yacc.c:1646  */
-    { printf("funcdef1\n");ASTTree *asttree = new ASTTree("FuncDef", 2, yylineno, (yyvsp[-2].ast_Tree),(yyvsp[0].ast_Tree));(yyval.ast_Tree) = asttree; (yyval.ast_Tree)->SetFuncType("void");(yyval.ast_Tree)->SetID((yyvsp[-4].ast_Tree)->GetID());}
+    { printf("funcdef1\n");ASTTree *asttree = new ASTTree("voidFuncDef", 2, yylineno, (yyvsp[-2].ast_Tree),(yyvsp[0].ast_Tree));(yyval.ast_Tree) = asttree; (yyval.ast_Tree)->SetFuncType("void");(yyval.ast_Tree)->SetID((yyvsp[-4].ast_Tree)->GetID());}
 #line 1535 "SysY.tab.c" /* yacc.c:1646  */
     break;
 
   case 7:
 #line 68 "SysY.y" /* yacc.c:1646  */
-    {printf("funcdef2\n"); ASTTree *asttree = new ASTTree("FuncDef", 2, yylineno,(yyvsp[-2].ast_Tree), (yyvsp[0].ast_Tree));(yyval.ast_Tree) = asttree; (yyval.ast_Tree)->SetFuncType("int");(yyval.ast_Tree)->SetID((yyvsp[-4].ast_Tree)->GetID()); }
+    {printf("funcdef2\n"); ASTTree *asttree = new ASTTree("intFuncDef", 2, yylineno,(yyvsp[-2].ast_Tree), (yyvsp[0].ast_Tree));(yyval.ast_Tree) = asttree; (yyval.ast_Tree)->SetFuncType("int");(yyval.ast_Tree)->SetID((yyvsp[-4].ast_Tree)->GetID()); }
 #line 1541 "SysY.tab.c" /* yacc.c:1646  */
     break;
 
@@ -1644,7 +1644,7 @@ yyreduce:
 
   case 25:
 #line 108 "SysY.y" /* yacc.c:1646  */
-    { ASTTree *asttree = new ASTTree("FuncFParam", 1, yylineno, (yyvsp[0].ast_Tree));(yyval.ast_Tree) = asttree;(yyval.ast_Tree)->SetFuncPType("array");(yyval.ast_Tree)->SetID((yyvsp[-3].ast_Tree)->GetID()); }
+    { printf("array\n");ASTTree *asttree = new ASTTree("FuncFParam", 1, yylineno, (yyvsp[0].ast_Tree));(yyval.ast_Tree) = asttree;printf("array2\n");(yyval.ast_Tree)->SetFuncPType("array");printf("array3\n");(yyval.ast_Tree)->SetID((yyvsp[-3].ast_Tree)->GetID()); }
 #line 1649 "SysY.tab.c" /* yacc.c:1646  */
     break;
 
@@ -1656,7 +1656,7 @@ yyreduce:
 
   case 27:
 #line 112 "SysY.y" /* yacc.c:1646  */
-    { (yyval.ast_Tree) = (yyvsp[0].ast_Tree); }
+    {printf("fp\n");ASTTree *asttree = new ASTTree("FuncFParams", 1, yylineno, (yyvsp[0].ast_Tree));(yyval.ast_Tree) = asttree; }
 #line 1661 "SysY.tab.c" /* yacc.c:1646  */
     break;
 
@@ -1668,7 +1668,7 @@ yyreduce:
 
   case 29:
 #line 116 "SysY.y" /* yacc.c:1646  */
-    { (yyval.ast_Tree) = NULL;}
+    {  ASTTree *asttree = new ASTTree("ArrayExps", 0, yylineno);(yyval.ast_Tree) = asttree;}
 #line 1673 "SysY.tab.c" /* yacc.c:1646  */
     break;
 
