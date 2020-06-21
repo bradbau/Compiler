@@ -23,7 +23,7 @@ class fourOperand{
 
 
     public:
-        int GetValue();//获取三元式操作数的值,通过switch操作判断Type数据域然后返回内部值
+        int GetValue();//获取四元式操作数的值,通过switch操作判断Type数据域然后返回内部值
 
 }
 

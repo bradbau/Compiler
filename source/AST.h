@@ -8,14 +8,16 @@
 #include<stdarg.h>
 #include<string>
 #include "SymbolTable.h"
+using namespace std;
 
 extern char* yytext; 
 extern FILE* yyin;
 extern int yylineno;
 extern int yyparse();
 
+
 class ASTTree{
-  public:
+  private:
 
     int int_value;  //只可能为int类型
     int num;                      //计数器，可以用来统计形参个数

@@ -1,4 +1,4 @@
-#include"IndirectTripleOperand1.h"
+#include"IndirectTripleOperand.h"
 
 /*
 本模块描述四元式的一个语句

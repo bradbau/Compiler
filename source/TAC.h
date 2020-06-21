@@ -8,8 +8,8 @@
 #include <vector>
 #include <stack>
 
-#include "IndirectTripleOperand1.h"
-#include "IndirectTriple1.h"
+#include "IndirectTripleOperand.h"
+#include "IndirectTriple.h"
 
 class TAC :
 {
