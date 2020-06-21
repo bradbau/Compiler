@@ -970,7 +970,7 @@ YY_RULE_SETUP
 case 18:
 YY_RULE_SETUP
 #line 90 "SysY.l"
-{   printf("<%>\n");return OPMOD; }
+{   printf("<%%>\n");return OPMOD; }
 	YY_BREAK
 case 19:
 YY_RULE_SETUP

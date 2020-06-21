@@ -87,7 +87,7 @@ AERROR          .
 {OPMINUS} {  printf("<->\n");return OPMINUS; }
 {OPMULTIPLY} { printf("<*>\n");return OPMULTIPLY; }
 {OPDIVIDE} { printf("</>\n");return OPDIVIDE; }
-{OPMOD} {   printf("<%>\n");return OPMOD; }
+{OPMOD} {   printf("<%%>\n");return OPMOD; }
 {OPASSIGN} {  printf("<=>\n");return OPASSIGN; }
 {OPAND} {  printf("<&&>\n");return OPAND; }
 {OPOR} {  printf("<||>\n");return OPOR; }

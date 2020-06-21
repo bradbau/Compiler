@@ -1884,7 +1884,7 @@ yyreduce:
 
   case 65:
 #line 179 "SysY.y" /* yacc.c:1646  */
-    {(yyval.ast_Tree)=(yyvsp[0].ast_Tree);printf("ExpString:%s\n",(yyval.ast_Tree)->GetString());}
+    {(yyval.ast_Tree)=(yyvsp[0].ast_Tree);printf("ExpString:%s\n",(yyval.ast_Tree)->GetString().c_str());}
 #line 1889 "SysY.tab.c" /* yacc.c:1646  */
     break;
 
