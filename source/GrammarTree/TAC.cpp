@@ -1,10 +1,3 @@
-/*************************************************************************
-    > File Name: IntermediateCode.c
-    > Author: GuanyuLi
-    > Mail: guanyuli@hustunique.com
-    > Created Time: Fri 02 Dec 2016 08:27:00 AM CST
- ************************************************************************/
-
 #include "TAC.h"
 #include "SymbolTable.h"
 #include "stack.h"
@@ -89,9 +82,9 @@ TAC::TranslateStmt(ASTTree* tree, ScopeItem scopeItem, ScopeStack* stack, Label 
         Label label2 = label_num++;
         ASTTree* cond = tree->lchild;
         ASTTree* stmt = tree->lchild->rchild;
-        scopeItem.depictor = GetStackTop(stack)->depictor;
+        scopeItem = GetStackTop(stack);
         TACCode* code1 = TranslateCondition(cond, scopeItem, stack, label1, label2);
-        scopeItem.depictor = GetStackTop(stack)->depictor;
+        scopeItem = GetStackTop(stack);
         TACCode* code2 = TranslateStmt(stmt, scopeItem, stack);
         TACCode* code3 = (TACCode*)malloc(sizeof(TACCode));
         TACCode* code4 = (TACCode*)malloc(sizeof(TACCode));
@@ -106,7 +99,7 @@ TAC::TranslateStmt(ASTTree* tree, ScopeItem scopeItem, ScopeStack* stack, Label 
         code4->line = tree->lchild->line;
         code4->prev = code4;
         Label label3 = label_num++;
-        scopeItem.depictor = GetStackTop(stack)->depictor;
+        scopeItem = GetStackTop(stack);
         TACCode* code5 = TranslateStmt(stmt->rchild, scopeItem, stack);
         TACCode* code6 = (TACCode*)malloc(sizeof(TACCode));
         TACCode* code7 = (TACCode*)malloc(sizeof(TACCode));
@@ -129,10 +122,10 @@ TAC::TranslateStmt(ASTTree* tree, ScopeItem scopeItem, ScopeStack* stack, Label 
         ASTTree* cond = tree->lchild;
         ASTTree* stmt = tree->lchild->rchild;
         TACCode* code1 = (TACCode*)malloc(sizeof(TACCode));
-        scopeItem.depictor = GetStackTop(stack)->depictor;
+        scopeItem = GetStackTop(stack);
         TACCode* code2 = TranslateCondition(cond, scopeItem, stack, label2, label3);
         TACCode* code3 = (TACCode*)malloc(sizeof(TACCode));
-        scopeItem.depictor = GetStackTop(stack)->depictor;
+        scopeItem = GetStackTop(stack);
         TACCode* code4 = TranslateStmt(stmt, scopeItem, stack, label1, label3);
         TACCode* code5 = (TACCode*)malloc(sizeof(TACCode));
         TACCode* code6 = (TACCode*)malloc(sizeof(TACCode));
@@ -179,16 +172,15 @@ TAC::TranslateStmt(ASTTree* tree, ScopeItem scopeItem, ScopeStack* stack, Label 
         TACCode* code1;
         TACCode* code2 = (TACCode*)malloc(sizeof(TACCode));
         sprintf(cache, "_t%d", temp_num++);
-        new_temp = AddTempIntoSymtable(scopeItem.localscope, cache, Variable,
-            GetExprType(expr, stack)->type, NULL, stack, scopeItem);
-        scopeItem.depictor = GetStackTop(stack)->depictor;
+        new_temp = addIntoScope(Local, tree->si, cache, Variable, "temp" , NULL);
+        scopeItem = GetStackTop(stack);
         code1 = TranslateExp(expr, new_temp, stack, new_temp);
         code2->code.opkind = RETURN;
         code2->code.dest.kind = VARIABLE;
         code2->code.dest.variable = new_temp;
         code2->line = tree->lchild->line;
         code2->prev = code2;
-        return MergeTACCode(2, code1, code2);
+        return MergeTACItem(2, code1, code2);
     }
 }
 
@@ -200,14 +192,13 @@ TAC::TranslateExps(ASTTree* tree, ScopeItem scopeItem, ScopeStack* stack)
     else
     {
         string cache;
-        scopeItem new_temp;
+        ScopeItem new_temp;
         TACCode* code1, * code2;
         sprintf(cache, "_t%d", temp_num++);
-        new_temp = AddTempIntoSymtable(scopeItem.depictor, cache, Variable,
-            GetExprType(tree->lchild->rchild, stack)->type, NULL, stack, scopeItem);
-        scopeItem.depictor = GetStackTop(stack)->depictor;
+        new_temp = addIntoScope(tree->si->stype, tree->si, cache, Variable, "temp", NULL);
+        scopeItem = GetStackTop(stack);
         code1 = TranslateExps(tree->lchild, new_temp, stack);
-        scopeItem.depictor = GetStackTop(stack)->depictor;
+        scopeItem = GetStackTop(stack);
         code2 = TranslateExp(tree->lchild->rchild, new_temp, stack, new_temp);
         return MergeTACItem(2, code1, code2);
     }
@@ -233,7 +224,7 @@ TAC::TranslateExp(ASTTree* tree, ScopeItem scopeItem, ScopeStack* stack, Scope p
         tmp->code.dest.kind = VARIABLE;
         tmp->code.dest.variable = place;
         tmp->code.firstsrc.kind = VARIABLE;
-        tmp->code.firstsrc.variable = TraverseScopeStack(*stack, tree->lchild->lchild->GetID());
+        tmp->code.firstsrc.variable = tree->si;
         tmp->line = tree->lchild->line;
         tmp->prev = tmp;
         return tmp;
@@ -241,13 +232,13 @@ TAC::TranslateExp(ASTTree* tree, ScopeItem scopeItem, ScopeStack* stack, Scope p
     else if (tree->name == "funcall")
     {
         Scope variable;
-        Scope function = TraverseScopeStack(*stack, tree->lchild->lchild->GetID());
-        Scope origin = GetStackTop(stack)->depictor;
+        Scope function = TraverseScopeStack(*stack, tree->lchild->GetID());
+        Scope origin = GetStackTop(stack);
         ASTTree* actuals = tree->lchild->rchild;
-        scopeItem.depictor = origin;
-        scopeItem.depictor = GetStackTop(stack)->depictor;
+        scopeItem = origin;
+        scopeItem = GetStackTop(stack);
         TACCode* code1 = TranslateArgs(actuals, scopeItem, stack);
-        LocalScope current = GetStackTop(stack)->depictor;
+        ScopeItem current = GetStackTop(stack);
         TACCode* code2 = NULL;
         TACCode* code3 = NULL;
         TACCode* tmp = NULL;
@@ -292,8 +283,7 @@ TAC::TranslateExp(ASTTree* tree, ScopeItem scopeItem, ScopeStack* stack, Scope p
         Scope new_temp;
         TACCode* tmp;
         sprintf(cache, "_t%d", temp_num++);
-        new_temp = AddTempIntoSymtable(scopeItem.localscope, cache, Variable,
-            GetExprType(tree->lchild->rchild, stack)->type, NULL, stack, scopeItem);
+        new_temp = addIntoScope(tree->si->stype, tree->si, cache, Variable, "temp", NULL);
         tmp = (TACCode*)malloc(sizeof(TACCode));
         tmp->code.opkind = ADD;
         tmp->code.dest.kind = VARIABLE;
@@ -304,16 +294,15 @@ TAC::TranslateExp(ASTTree* tree, ScopeItem scopeItem, ScopeStack* stack, Scope p
         tmp->code.secondsrc.variable = new_temp;
         tmp->line = tree->lchild->line;
         tmp->prev = tmp;
-        scopeItem.localscope = GetStackTop(stack)->localscope;
-        return MergeTACItem(2, TranslateExp(tree->lchild->rchild, new_temp, stack, new_temp), tmp);
+        scopeItem = GetStackTop(stack);
+        return MergeTACItem(2, TranslateExp(tree->lchild, new_temp, stack, new_temp), tmp);
     }
     else if (tree->name == "OPMINUS_Exp") {
         string cache;
         Scope new_temp;
         TACCode* tmp;
         sprintf(cache, "_t%d", temp_num++);
-        new_temp = AddTempIntoSymtable(scopeItem.localscope, cache, Variable,
-            GetExprType(tree->lchild->rchild, stack)->type, NULL, stack, scopeItem);
+        new_temp = addIntoScope(tree->si->stype, tree->si, cache, Variable, "temp", NULL);
         tmp = (TACCode*)malloc(sizeof(TACCode));
         tmp->code.opkind = SUB;
         tmp->code.dest.kind = VARIABLE;
@@ -324,8 +313,8 @@ TAC::TranslateExp(ASTTree* tree, ScopeItem scopeItem, ScopeStack* stack, Scope p
         tmp->code.secondsrc.variable = new_temp;
         tmp->line = tree->lchild->line;
         tmp->prev = tmp;
-        scopeItem.localscope = GetStackTop(stack)->localscope;
-        return MergeTACItem(2, TranslateExp(tree->lchild->rchild, new_temp, stack, new_temp), tmp);
+        scopeItem = GetStackTop(stack);
+        return MergeTACItem(2, TranslateExp(tree->lchild, new_temp, stack, new_temp), tmp);
     }
     else if (tree->name == "OPNOT_Exp"){
         Label label1 = label_num++;
@@ -342,7 +331,7 @@ TAC::TranslateExp(ASTTree* tree, ScopeItem scopeItem, ScopeStack* stack, Scope p
         code0->code.firstsrc.intvalue = 0;
         code0->line = tree->lchild->line;
         code0->prev = code0;
-        scopeItem.localscope = GetStackTop(stack)->localscope;
+        scopeItem = GetStackTop(stack);
         code1 = TranslateCondition(tree, scopeItem, stack, label1, label2);
         code2->code.opkind = LABELDF;
         code2->code.dest.kind = LABEL;
@@ -366,17 +355,17 @@ TAC::TranslateExp(ASTTree* tree, ScopeItem scopeItem, ScopeStack* stack, Scope p
     else if (tree->name == "MulExp" || tree->name == "DIVIDEExp"
     || tree->name == "PLUSExp" || tree->name == "MINUSExp"
     || tree->name == "MODExp") {
-        char cache1[8], cache2[8];
+        string cache1, cache2;
         Scope new_temp1, new_temp2;
         TACCode* code1, * code2, * code3;
         sprintf(cache1, "_t%d", temp_num++);
         sprintf(cache2, "_t%d", temp_num++);
-        new_temp1 = AddTempIntoSymtable(scopeItem.localscope, cache1, Variable, GetExprType(tree->lchild, stack)->type, NULL, stack, scopeItem);
-        new_temp2 = AddTempIntoSymtable(new_temp1.localscope, cache2, Variable, GetExprType(tree->lchild->rchild->rchild, stack)->type, NULL, stack, scopeItem);
-        scopeItem.localscope = GetStackTop(stack)->localscope;
-        code1 = TranslateExpr(tree->lchild, new_temp2, stack, new_temp1);
-        scopeItem.localscope = GetStackTop(stack)->localscope;
-        code2 = TranslateExpr(tree->lchild->rchild->rchild, new_temp2, stack, new_temp2);
+        new_temp1 = addIntoScope(tree->lchild->si->stype, tree->lchild->si, cache1, Variable, "temp", NULL);
+        new_temp1 = addIntoScope(tree->lchild->rchild->si->stype, tree->lchild->rchild->si, cache2, Variable, "temp", NULL);
+        scopeItem = GetStackTop(stack);
+        code1 = TranslateExp(tree->lchild, new_temp2, stack, new_temp1);
+        scopeItem = GetStackTop(stack);
+        code2 = TranslateExp(tree->lchild->rchild, new_temp2, stack, new_temp2);
         code3 = (TACCode*)malloc(sizeof(TACCode));
         if (tree->name == "PLUSExp")
             code3->code.opkind = ADD;
@@ -401,11 +390,10 @@ TAC::TranslateExp(ASTTree* tree, ScopeItem scopeItem, ScopeStack* stack, Scope p
     else if (tree->name == "(Exp)")
     {
         string cache;
-        scopeItem new_temp;
+        ScopeItem new_temp;
         TACCode* tmp;
         sprintf(cache, "_t%d", temp_num++);
-        new_temp = AddTempIntoSymtable(scopeItem.localscope, cache, Variable,
-            GetExprType(tree->lchild->rchild, stack)->type, NULL, stack, scopeItem);
+        new_temp = addIntoScope(tree->lchild->si->stype, tree->lchild->si, cache, Variable, "temp", NULL);
         tmp = (TACCode*)malloc(sizeof(TACCode));
         tmp->code.opkind = ASSIGN;
         tmp->code.dest.kind = VARIABLE;
@@ -414,8 +402,8 @@ TAC::TranslateExp(ASTTree* tree, ScopeItem scopeItem, ScopeStack* stack, Scope p
         tmp->code.firstsrc.variable = new_temp;
         tmp->line = tree->line;
         tmp->prev = tmp;
-        scopeItem.localscope = GetStackTop(stack)->localscope;
-        return MergeTACItem(2, TranslateExp(tree->lchild->rchild, new_temp, stack, new_temp), tmp);
+        scopeItem = GetStackTop(stack);
+        return MergeTACItem(2, TranslateExp(tree->lchild, new_temp, stack, new_temp), tmp);
     }
     return NULL;
 }
@@ -426,7 +414,7 @@ TAC::TranslateArgs(ASTTree* tree, ScopeItem scopeItem, ScopeStack* stack)
         return NULL;
     else
     {
-        scopeItem.localscope = GetStackTop(stack)->localscope;
+        scopeItem = GetStackTop(stack);
         return TranslateExps(tree->lchild, scopeItem, stack);
     }
 }
@@ -436,9 +424,9 @@ TAC::TranslateCondition(ASTTree* tree, ScopeItem scopeItem, ScopeStack* stack, u
     if (tree->name=="Cond_And")
     {
         Label label = label_num++;
-        scopeItem.localscope = GetStackTop(stack)->localscope;
+        scopeItem = GetStackTop(stack);
         TACCode* code1 = TranslateCondition(tree->lchild, scopeItem, stack, label, label_false);
-        scopeItem.localscope = GetStackTop(stack)->localscope;
+        scopeItem = GetStackTop(stack);
         TACCode* code2 = TranslateCondition(tree->lchild->rchild->rchild, scopeItem, stack, label_true, label_false);
         TACCode* code3 = (TACCode*)malloc(sizeof(TACCode));
         code3->code.opkind = LABELDF;
@@ -451,9 +439,9 @@ TAC::TranslateCondition(ASTTree* tree, ScopeItem scopeItem, ScopeStack* stack, u
     else if (tree->name=="Cond_Or")
     {
         Label label = label_num++;
-        scopeItem.localscope = GetStackTop(stack)->localscope;
+        scopeItem = GetStackTop(stack);
         TACCode* code1 = TranslateCondition(tree->lchild, scopeItem, stack, label_true, label);
-        scopeItem.localscope = GetStackTop(stack)->localscope;
+        scopeItem = GetStackTop(stack);
         TACCode* code2 = TranslateCondition(tree->lchild->rchild->rchild, scopeItem, stack, label_true, label_false);
         TACCode* code3 = (TACCode*)malloc(sizeof(TACCode));
         code3->code.opkind = LABELDF;
@@ -470,11 +458,11 @@ TAC::TranslateCondition(ASTTree* tree, ScopeItem scopeItem, ScopeStack* stack, u
         TACCode* code1, * code2, * code3, * code4;
         sprintf(cache1, "_t%d", temp_num++);
         sprintf(cache2, "_t%d", temp_num++);
-        new_temp1 = AddTempIntoSymtable(scopeItem.localscope, cache1, Variable, GetExprType(tree->lchild, stack)->type, NULL, stack, scopeItem);
-        new_temp2 = AddTempIntoSymtable(new_temp1.localscope, cache2, Variable, GetExprType(tree->lchild->rchild->rchild, stack)->type, NULL, stack, scopeItem);
-        scopeItem.localscope = GetStackTop(stack)->localscope;
+        new_temp1 = addIntoScope(tree->lchild->si->stype, tree->lchild->si, cache, Variable, "temp", NULL);
+        new_temp2 = addIntoScope(tree->lchild->rchild->rchild->si->stype, tree->lchild->rchild->rchild->si, cache, Variable, "temp", NULL);
+        scopeItem = GetStackTop(stack);
         code1 = TranslateExp(tree->lchild, new_temp2, stack, new_temp1);
-        scopeItem.localscope = GetStackTop(stack)->localscope;
+        scopeItem = GetStackTop(stack);
         code2 = TranslateExp(tree->lchild->rchild->rchild, new_temp2, stack, new_temp2);
         code3 = (TACCode*)malloc(sizeof(TACCode));
         code3->code.dest.kind = LABEL;
@@ -538,12 +526,8 @@ TAC:: TAC(ASTTree* tree, ScopeItem scopeItem, ScopeStack* stack)
         formalcode = TAC(tree->lchild, scopeItem, stack);                    //形参四元式
         bodycode = TAC(tree->lchild->rchild, scopeItem, stack);              //函数体四元式
         //作用域栈操作部分
-        scopeItem.stype = Formal;
-        scopeItem.depictor = tree->si->depictor;
-        PushScopeStack(stack, scopeItem);
-        scopeItem.stype = Local;
-        scopeItem.depictor = tree->si->depictor->depictor;
-        PushScopeStack(stack, scopeItem);
+        PushScopeStack(stack, tree->lchild->si);
+        PushScopeStack(stack, tree->lchild->rchild->si);
         return MergeTACItem(3, tmp, formalcode, bodycode);  //合并四元式
     }
     else if (tree->name == "FuncFParams") {
@@ -562,7 +546,7 @@ TAC:: TAC(ASTTree* tree, ScopeItem scopeItem, ScopeStack* stack)
         TACCode* tmp = (TACCode*)malloc(sizeof(TACCode));
         tmp->code.opkind = PARAM;
         tmp->code.dest.kind = VARIABLE;
-        tmp->code.dest.variable = TraverseScopeStack(*stack, tree->GetID());
+        tmp->code.dest.variable = tree->si;
         tmp->line = tree->line;
         tmp->prev = tmp;
         if (tree->lchild) {
@@ -624,11 +608,9 @@ TAC:: TAC(ASTTree* tree, ScopeItem scopeItem, ScopeStack* stack)
     else if (tree->name == "Block") {
         int flag = 0;
         // Judge if this block is function body
-        if (tree->localscope != GetStackTop(stack)->localscope) {
+        if (tree->si != GetStackTop(stack)) {
             flag = 1;
-            scopeItem.stype = Local;
-            scopeItem.depictor = tree->si->depictor;
-            PushScopeStack(stack, scopeItem);
+            PushScopeStack(stack, tree->si);
         }
         TACCode* BlockItems = (TACCode*)malloc(sizeof(TACCode));
         BlockItems = TAC(tree->lchild, scopeItem, stack);
@@ -639,8 +621,7 @@ TAC:: TAC(ASTTree* tree, ScopeItem scopeItem, ScopeStack* stack)
         return BlockItems;
     }
     else if (tree->name == "Lval_Opassign_Stmt") {
-        scopeItem.depictor = GetStackTop(stack)->depictor;
-        return TranslateExp(tree->lchild->rchild, scopeItem, stack, TraverseScopeStack(*stack, tree->lchild->GetID()));
+        return TranslateExp(tree->lchild->rchild, tree->lchild->rchild->si, stack, tree->lchild->si);
     }
     else if (tree->name == "Empty_Stmt") {
         return NULL;
@@ -797,41 +778,6 @@ void DisplayTACCode(TACCode* entrance)
         tmp = tmp->next;
         line += 1;
     }
-}
-
-Scope AddTempIntoSymtable(LocalScope local_symtable, char* name, DecafCategory category, char* type, LocalScope embededscope, ScopeStack* stack, Scope scopeItem)
-{
-    FormalScope formalscope;
-    LocalScope localscope;
-    Scope tmp;
-    LocalScope new_temp = AddIntoLocal(local_symtable, name, category, type, embededscope);
-    PopScopeStack(stack, &tmp);
-    if (GetStackTop(stack)->type == ScopeFormal)
-    {
-        formalscope = GetStackTop(stack)->formalscope;
-        while (formalscope)
-        {
-            formalscope->functionscope = new_temp;
-            formalscope = formalscope->next;
-        }
-    }
-    else if (GetStackTop(stack)->type == ScopeLocal)
-    {
-        localscope = GetStackTop(stack)->localscope;
-        while (localscope)
-        {
-            if (localscope->category == Block && localscope->embededscope == local_symtable)
-            {
-                localscope->embededscope = new_temp;
-                break;
-            }
-            localscope = localscope->next;
-        }
-    }
-    tmp.type = ScopeLocal;
-    tmp.localscope = new_temp;
-    PushScopeStack(stack, tmp);
-    return tmp;
 }
 
 int main(int argc, char** argv)

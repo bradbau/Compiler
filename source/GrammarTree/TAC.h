@@ -22,6 +22,12 @@ public:
         struct TACCode* next;
     } TACCode;
 
+    typedef struct basic_block {
+        TACCode* begin;
+        TACCode* end;
+        vector <TACCode*> next;
+    } basic_block;
+
     TAC(ASTTree* tree, ScopeItem scopeItem, ScopeStack* stack) {};// 初始化一个TAC，也就是创建语法树对应的三地址码序列
     MergeTACItem(int num, ...);
     TranslateExp(ASTTree* tree, ScopeItem scopeItem, ScopeStack* stack, Scope place);
@@ -30,6 +36,7 @@ public:
     TranslateExps(ASTTree* tree, ScopeItem scopeItem, ScopeStack* stack);
     TranslateStmt(ASTTree* tree, ScopeItem scopeItem, ScopeStack* stack);
     TranslateInitVal(ASTTree* tree, ScopeItem scopeItem, ScopeStack* stack, Scope place);
+    DivideBlock(TACCode codelist);
     //void DisplayTACItem(TACItem* entrance);
 
     //以下是对外接口
