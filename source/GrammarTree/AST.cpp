@@ -1,10 +1,12 @@
+#ifndef AST_H
+#define AST_H
 #include "AST.h"
 #include <cstring>
 #include<iostream>
 using namespace std;
 extern char* yytext;
 
-ASTTree::ASTTree(char* name, int num, int pos ,...) {
+ASTTree::ASTTree(string name, int num, int pos ,...) {
     //printf("gouzao !!!\n");
     int i;
     char* cache;
@@ -13,8 +15,8 @@ ASTTree::ASTTree(char* name, int num, int pos ,...) {
     //printf("~~~\n");
     //printf("~~~~~~\n");
     //printf("%s",name);
-    char* tmpcache = (char *)malloc(sizeof(char) * strlen(name));
-    strcpy(tmpcache, yytext);
+    //string tmpcache = (char *)malloc(sizeof(char) * strlen(name));
+    //strcpy(tmpcache, yytext);
     this->name = name;
     //this->si = null;
     //printf("%s",this->name);
@@ -41,25 +43,33 @@ ASTTree::ASTTree(char* name, int num, int pos ,...) {
             //printf("%d",this->column);
         }
             
-        if (!strcmp(this->name, "IDENTIFIER"))
+        if (this->name=="IDENTIFIER")
         {
             //printf("%s\n",yytext);
             cache = (char *)malloc(sizeof(char) * strlen(yytext));
             strcpy(cache, yytext);
             this->id = cache;
         }
-        else  if (!strcmp(this->name, "CONSTANTINTD"))
+        else  if (this->name=="CONSTANTINTD")
         {
+            //printf("%d\n",yytext)
             this->int_value = atoi(yytext);
         }
-        else  if (!strcmp(this->name, "CONSTANTINTH"))
+        else  if (this->name=="CONSTANTINTH")
         {
             this->int_value = strtol(yytext, NULL, 16);
         }
-        else  if (!strcmp(this->name, "CONSTANOCT"))
+        else  if (this->name=="CONSTANOCT")
         {
             this->int_value = strtol(yytext, NULL, 8);
         }
+        else  if (this->name=="STRING")
+        {
+            cache = (char *)malloc(sizeof(char) * strlen(yytext));
+            strcpy(cache, yytext);
+            this->formatstring = cache;
+        }
+        else{}
          //printf("name:%s\n",this->name);
     }
     va_end(variables);
@@ -78,15 +88,19 @@ void ASTTree::TraverseGrammerTree(int level)
           for (i = 0; i < level; i++)
             printf(" ");
             // Not void rule
-            printf("%s", this->name);
-           if (!strcmp(this->name, "CONSTANTINTD"))
+            printf("%s", this->name.c_str());
+           if (this->name=="CONSTANTINTD")
                 printf(": %d\n", this->int_value);
-            else if (!strcmp(this->name, "CONSTANTINTH"))
+            else if (this->name=="CONSTANTINTH")
                 printf(": %d\n", this->int_value);
-            else if (!strcmp(this->name, "CONSTANTOCT"))
+            else if (this->name=="CONSTANTOCT")
                 printf(": %d\n", this->int_value);
-            else if (!strcmp(this->name, "IDENTIFIER"))
-                printf(": %s\n", this->id);
+            else if (this->name=="IDENTIFIER")
+                printf(": %s\n", this->id.c_str());
+            else if(this->name=="ArrayDec")
+                printf(": demmision=%d\n",this->GetIntValue());
+            else if(this->name=="STRING")
+                printf(": %s\n",this->GetString().c_str());
             else
                 printf(" (%d)\n", this->line);
         }
@@ -122,18 +136,18 @@ void ASTTree::SetRightChild(ASTTree *RightAst){
     this->rchild = RightAst;
 };
 
-void ASTTree::SetFuncType(char* type){
+void ASTTree::SetFuncType(string type){
     this->functype = type;
 };
 
-void ASTTree::SetID(char* idname){
+void ASTTree::SetID(string idname){
     this->id = idname;
 };
 
-char* ASTTree::GetNodeTypeName(){
+string ASTTree::GetNodeTypeName(){
     return this->name;
 };
-char* ASTTree::GetID(){
+string ASTTree::GetID(){
     return this->id;
 };
 
@@ -145,6 +159,12 @@ int ASTTree::GetIntValue(){
     return this->int_value;
 };
 
-void ASTTree::SetFuncPType(char* ptype){
+void ASTTree::SetFuncPType(string ptype){
     this->funcptype = ptype;
 };
+
+string ASTTree::GetString(){
+    return this->formatstring;
+};
+
+#endif

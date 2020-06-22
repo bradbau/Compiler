@@ -1,9 +1,10 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<stdarg.h>
-#include<string.h>
+#include<string>
 //#include<iostream>
 //#include"hashtable.h"
+using namespace std;
 
 extern char* yytext;
 extern FILE* yyin;
@@ -24,10 +25,11 @@ class ASTTree{
     int num;                      //计数器，可以用来统计形参个数
     int line;       // the number of its line
     int column;
-    char* name;     // the name of this AST unit
-    char* id;
-    char* functype; //函数返回类型
-    char* funcptype;//形参类型
+    string name;     // the name of this AST unit
+    string id;
+    string functype; //函数返回类型
+    string funcptype;//形参类型
+    string formatstring;
     //ScopeItem si;//目前没想明白有什么用
 
 
@@ -36,7 +38,7 @@ class ASTTree{
   
   public:
     ASTTree();
-    ASTTree(char *name,int num,int pos,...);
+    ASTTree(string name,int num,int pos,...);
    
     //遍历当前语法树
     void TraverseGrammerTree(int level);
@@ -49,19 +51,21 @@ class ASTTree{
 
     void SetRightChild(ASTTree *RightAst);
 
-    void SetFuncType(char* type);
+    void SetFuncType(string type);
 
-    void SetFuncPType(char* ptype);
+    void SetFuncPType(string ptype);
 
-    void SetID(char* idname);
+    void SetID(string idname);
 
-    char* GetNodeTypeName();
+    string GetNodeTypeName();
 
-    char* GetID();
+    string GetID();
 
     void SetIntValue(int value);
 
     int GetIntValue();
+
+    string GetString();
 
     ASTTree * GetASTTree();
     //
