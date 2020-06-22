@@ -90,7 +90,8 @@ extern int yydebug;
     CONSTANTINTD = 300,
     CONSTANTINTH = 301,
     CONSTANTOCT = 302,
-    IDENTIFIER = 303
+    STRING = 303,
+    IDENTIFIER = 304
   };
 #endif
 
@@ -103,7 +104,7 @@ union YYSTYPE
 
     class ASTTree *ast_Tree;
 
-#line 107 "SysY.tab.h" /* yacc.c:1909  */
+#line 108 "SysY.tab.h" /* yacc.c:1909  */
 };
 
 typedef union YYSTYPE YYSTYPE;

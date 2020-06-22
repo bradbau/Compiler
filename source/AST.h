@@ -20,14 +20,17 @@ class ASTTree{
   private:
 
     int int_value;  //只可能为int类型
-    int num;                      //计数器，可以用来统计形参个数
+    int num;        //计数器，可以用来统计形参个数
     int line;       // the number of its line
     int column;
     string name;     // the name of this AST unit
     string id;
     string functype; //函数返回类型
     string funcptype;//形参类型
-    
+
+    //merge dev-cjw(begin)
+    string formatstring;
+    //merge dev-cjw(end)
 
     ASTTree *lchild;
     ASTTree *rchild;
@@ -62,8 +65,12 @@ class ASTTree{
 
     int GetIntValue();
 
+    //merge dev-cjw(begin)
+    string GetString();
+    //merge dev-cjw(end)
+
     ASTTree * GetASTTree();
-    //
+    
     void Check() ;
     
     void Emit() ;
