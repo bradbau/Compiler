@@ -6,6 +6,7 @@
     #include <iostream>
     #include "AST.h"
     #include "SymbolTable.h"
+    #include "stack.h"
     using namespace std;
 
     extern int yylineno; //共用
