@@ -211,7 +211,7 @@ TACCode* TAC::TranslateExp(ASTTree* tree, ScopeItem scopeItem, ScopeStack* stack
         tmp->code.dest.Type = VARIABLE;
         tmp->code.dest.variable = place;
         tmp->code.firstOp.Type = INTEGERCONST;
-        tmp->code.firstOp.value = tree->int_value;
+        tmp->code.firstOp.value = tree->lchild->int_value;
         tmp->line = tree->line;
         tmp->prev = tmp;
         return tmp;
@@ -502,9 +502,9 @@ TACCode* TAC:: BuildTAC(ASTTree* tree, ScopeItem scopeItem, ScopeStack* stack)
         return NULL;
     if (tree->name == "Compiler")
     {
-        printf("呵呵呵\n");
+        cout << "123";
         PushScopeStack(stack, scopeItem);
-        printf("Complier没错\n");
+        cout << "456";
         return BuildTAC(tree->lchild, scopeItem, stack);
     }
     else if (tree->name == "CompUnits") {
@@ -562,13 +562,14 @@ TACCode* TAC:: BuildTAC(ASTTree* tree, ScopeItem scopeItem, ScopeStack* stack)
         return MergeTACItem(2, BuildTAC(tree->lchild, scopeItem, stack), BuildTAC(tree->lchild->rchild, scopeItem, stack));
     }
     else if (tree->name == "VarDecl") {
+        cout << "789";
         return MergeTACItem(2, BuildTAC(tree->lchild, scopeItem, stack), BuildTAC(tree->lchild->rchild, scopeItem, stack));
     }
     else if (tree->name == "ConstDefs") {
         return MergeTACItem(2, BuildTAC(tree->lchild, scopeItem, stack), BuildTAC(tree->lchild->rchild, scopeItem, stack));
     }
     else if (tree->name == "VarDefs") {
-        printf("VarDefs没错\n");
+        cout << "101112";
         return MergeTACItem(2, BuildTAC(tree->lchild, scopeItem, stack), BuildTAC(tree->lchild->rchild, scopeItem, stack));
     }
     else if (tree->name == "ConstOpassign") {
@@ -577,9 +578,10 @@ TACCode* TAC:: BuildTAC(ASTTree* tree, ScopeItem scopeItem, ScopeStack* stack)
     }
     else if (tree->name == "VarOPassign") {
         //没考虑数组
-        return TranslateInitVal(tree->lchild->rchild, scopeItem, stack, *TraverseScopeStack(stack, tree->lchild->GetID()));
+        return MergeTACItem(2, BuildTAC(tree->lchild, scopeItem, stack), TranslateInitVal(tree->lchild->rchild, scopeItem, stack, *TraverseScopeStack(stack, tree->lchild->GetID())));
     }
-    else if (tree->name == "IDENTIFIER") {
+    else if (tree->name == "IDENTIFIER") {      //ok
+        cout << "131415";
         TACCode* tmp = (TACCode*)malloc(sizeof(TACCode));
         tmp->code.optype = PARAM;
         tmp->code.dest.Type = VARIABLE;
@@ -661,11 +663,11 @@ void DisplayTACCode(TACCode* entrance)
         if (tmp->code.optype == ASSIGN)
         {
             // Notice: no matter variable is in which scopeItem, the scopeItem entry always has "name" attribute
-            printf("%3d  (at line %3d)\t%s := ", line, tmp->line, tmp->code.dest.variable.depictor->name);
+            printf("%3d  (at line %3d)\t%s := ", line, tmp->line, tmp->code.dest.variable.name.c_str());
             if (tmp->code.firstOp.Type == VARIABLE)
-                printf("%s\n", tmp->code.firstOp.variable.depictor->name.c_str());
+                printf("%s\n", tmp->code.firstOp.variable.name.c_str());
             else if (tmp->code.firstOp.Type == ADDRESSS)
-                printf("*%s\n", tmp->code.firstOp.variable.depictor->name.c_str());
+                printf("*%s\n", tmp->code.firstOp.variable.name.c_str());
             else if (tmp->code.firstOp.Type == INTEGERCONST)
                 printf("#%d\n", tmp->code.firstOp.value);
         }
@@ -703,8 +705,10 @@ void DisplayTACCode(TACCode* entrance)
         }
         else if (tmp->code.optype == FUNCTIONDF)
             printf("\n%3d  (at line %3d)\tFUNCTION %s :\n", line, tmp->line, tmp->code.dest.function.depictor->name.c_str());
-        else if (tmp->code.optype == PARAM)
-            printf("%3d  (at line %3d)\tPARAM %s\n", line, tmp->line, tmp->code.dest.variable.depictor->name.c_str());
+        else if (tmp->code.optype == PARAM) {
+            printf("%3d  (at line %3d)\tPARAM %s\n", line, tmp->line, tmp->code.dest.variable.name.c_str());
+        }
+            
         else if (tmp->code.optype == LABELDF)
         {
             sprintf(cache, "label%d", tmp->code.dest.labelvalue);

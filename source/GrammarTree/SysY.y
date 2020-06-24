@@ -70,11 +70,8 @@ Compiler: CompUnits {
                 TAC* tac = new TAC();
                 ScopeItem scopeItem;
                 TACCode* entrance;
-                if($$->si)
-                    entrance = tac->BuildTAC($$ , scopeItem , stack);
-                else
-                    entrance = tac->BuildTAC($$ , *($$->si) , stack);
-                DisplayTACCode(entrance);
+                entrance = tac->BuildTAC($$ , *($$->si) , stack);
+                //DisplayTACCode(entrance);
                 }
         ;
 CompUnits:{ cout << "CompUnits"; $$ = NULL;}

@@ -2,14 +2,15 @@
 
 #include "AST.h"
 #include <cstring>
-#include<iostream>
+#include <string>
+#include <iostream>
+#include <string.h>
 using namespace std;
 extern char* yytext;
 
 ASTTree::ASTTree(string name, int num, int pos ,...) {
     //printf("gouzao !!!\n");
     int i;
-    char* cache;
     va_list variables;       
     ASTTree *tmp;
     this->si = NULL;
@@ -47,8 +48,7 @@ ASTTree::ASTTree(string name, int num, int pos ,...) {
         if (this->name == "IDENTIFIER")
         {
             //printf("%s\n",yytext);
-            cache = (char *)malloc(sizeof(char) * strlen(yytext));
-            strcpy(cache, yytext);
+            string cache(yytext);
             this->id = cache;
         }
         else  if (this->name == "CONSTANTINTD")

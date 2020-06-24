@@ -1,10 +1,15 @@
 #include "stack.h"
 #include <stdlib.h>
+#include <iostream>
 using namespace std;
 
 ScopeStack* Stack(){
     ScopeStack* stack;
+    stack= (ScopeStack*)malloc(sizeof(ScopeStack));
     stack->base = (ScopeItem*)malloc(STACK_INIT_SIZE * sizeof(ScopeItem));
+    if (stack->base == NULL) {
+        cout << "empty";
+    }
     stack->top = stack->base;
     stack->stacksize = STACK_INIT_SIZE;
     stack->length = 0;
