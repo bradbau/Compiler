@@ -151,3 +151,19 @@ int ASTTree::GetIntValue(){
 void ASTTree::SetFuncPType(string ptype){
     this->funcptype = ptype;
 };
+
+void Si(ASTTree* tree) {
+    if (tree == NULL) {
+        return;
+    }/*
+    if (tree->lchild) {
+        if (tree->lchild->si == NULL) {
+            tree->lchild->si = tree->si;
+        }
+    }
+    if (tree->rchild) {
+        if (tree->rchild->si == NULL) {
+            tree->rchild->si = tree->si;
+        }
+    }*/
+};

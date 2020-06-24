@@ -6,43 +6,47 @@
 #include<stdarg.h>
 #include <iostream>
 #include <vector>
-#include <stack>
 
 #include "IndirectTripleOperand.h"
 #include "IndirectTriple.h"
+#include "AST.h"
+#include "stack.h"
 
-class TAC :
+typedef unsigned int Label;
+
+typedef struct TACCode
 {
+    int line;
+    four code;
+    struct TACCode* prev;
+    struct TACCode* next;
+} TACCode;
+
+typedef struct basic_block {
+    TACCode* begin;
+    TACCode* end;
+    vector <TACCode*> next;
+} basic_block;
+
+class TAC{
 public:
-    typedef struct TACCode
-    {
-        int line;
-        four code;
-        struct TACCode* prev;
-        struct TACCode* next;
-    } TACCode;
-
-    typedef struct basic_block {
-        TACCode* begin;
-        TACCode* end;
-        vector <TACCode*> next;
-    } basic_block;
-
-    TAC(ASTTree* tree, ScopeItem scopeItem, ScopeStack* stack) {};// 初始化一个TAC，也就是创建语法树对应的三地址码序列
-    MergeTACItem(int num, ...);
-    TranslateExp(ASTTree* tree, ScopeItem scopeItem, ScopeStack* stack, Scope place);
-    TranslateCondition(ASTTree* tree, ScopeItem scopeItem, ScopeStack* stack, unsigned int label_true, unsigned int label_false);
-    TranslateArgs(ASTTree* tree, ScopeItem scopeItem, ScopeStack* stack);
-    TranslateExps(ASTTree* tree, ScopeItem scopeItem, ScopeStack* stack);
-    TranslateStmt(ASTTree* tree, ScopeItem scopeItem, ScopeStack* stack);
-    TranslateInitVal(ASTTree* tree, ScopeItem scopeItem, ScopeStack* stack, Scope place);
-    DivideBlock(TACCode codelist);
+    TAC() {};
+    TACCode* BuildTAC(ASTTree* tree, ScopeItem scopeItem, ScopeStack* stack);// 初始化一个TAC，也就是创建语法树对应的三地址码序列
+    TACCode* MergeTACItem(int num, ...);
+    TACCode* TranslateExp(ASTTree* tree, ScopeItem scopeItem, ScopeStack* stack, ScopeItem place);
+    TACCode* TranslateCondition(ASTTree* tree, ScopeItem scopeItem, ScopeStack* stack, unsigned int label_true, unsigned int label_false);
+    TACCode* TranslateArgs(ASTTree* tree, ScopeItem scopeItem, ScopeStack* stack);
+    TACCode* TranslateExps(ASTTree* tree, ScopeItem scopeItem, ScopeStack* stack);
+    TACCode* TranslateStmt(ASTTree* tree, ScopeItem scopeItem, ScopeStack* stack, Label continuevalue, Label breakvalue);
+    TACCode* TranslateInitVal(ASTTree* tree, ScopeItem scopeItem, ScopeStack* stack, ScopeItem place);
+    TACCode* DivideBlock(TACCode codelist);
+    ScopeStack* stack;
     //void DisplayTACItem(TACItem* entrance);
 
     //以下是对外接口
 
     //IndirectTriple nextLine();//在生成汇编时返回下一行
     //int LineNumber();//代码总行数
-}
-
+};
+void DisplayTACCode(TACCode* entrance);
 #endif

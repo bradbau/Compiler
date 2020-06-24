@@ -1,3 +1,6 @@
+#ifndef STACK_H
+#define STACK_H
+
 #include<stdio.h>
 #include"SymbolTable.h"
 #include <string>
@@ -19,11 +22,11 @@ typedef enum ScopeType
 */
 
 /*
-typedef struct Scope
+typedef struct ScopeItem
 {
     ScopeType type;
     ScopeItem si;
-} Scope;
+} ScopeItem;
 */
 
 typedef struct ScopeStack
@@ -40,20 +43,12 @@ typedef struct ExprType
     char* type;
 } ExprType;
 
-class Stack{
-    private:
-       ScopeStack* stack;
-    public:
-       Stack();
-       void DestroyScopeStack();
-       int ScopeStackLength();
-       void PushScopeStack(ScopeItem scope);
-       void PopScopeStack(ScopeItem* si);
-       ScopeItem* GetStackTop();
-       ScopeItem* TraverseScopeStack(string name);
-      /*ExprType* GetExprType(GrammarTree tree);*/
-      //void SameNameTrial(ClassScope classscope, GrammarTree tree);
-      /*Traverse the grammar tree and operate the scope stack at the same time to do trial*/
-      //void ScopeTrial(GrammarTree tree, Scope scope);
-};
+ScopeStack* Stack();
+void DestroyScopeStack(ScopeStack* stack);
+int ScopeStackLength(ScopeStack* stack);
+void PushScopeStack(ScopeStack* stack, ScopeItem scope);
+void PopScopeStack(ScopeStack* stack, ScopeItem* si);
+ScopeItem* GetStackTopp(ScopeStack* stack);
+ScopeItem* TraverseScopeStack(ScopeStack* stack, string name);
 
+#endif

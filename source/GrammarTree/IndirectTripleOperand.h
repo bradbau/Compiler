@@ -1,3 +1,9 @@
+#ifndef INDIRECTTRIPLEOPERAND_H
+#define INDIRECTTRIPLEOPERAND_H
+
+
+#include "SymbolTable.h"
+
 enum TACOperandType  // 操作数类型
 {
     VARIABLE,       //变量
@@ -9,21 +15,22 @@ enum TACOperandType  // 操作数类型
 
 
 
-class fourOperand{
+class fourOperand {
 
-    private://私有数据成员
-        TACOperandType Type; //本操作符的成员
-        union
-        {
-            int value;       //整形值，可以用于保存
-            int labelvalue;
-            Scope variable;     //
-            Scope function;     //
-        };
+public://公有数据成员
+    TACOperandType Type; //本操作符的成员
+    union
+    {
+        int value;       //整形值，可以用于保存
+        int labelvalue;
+        ScopeItem variable;     //
+        ScopeItem function;     //
+    };
 
 
-    public:
-        int GetValue();//获取四元式操作数的值,通过switch操作判断Type数据域然后返回内部值
+public:
+    int GetValue();//获取四元式操作数的值,通过switch操作判断Type数据域然后返回内部值
 
-}
+};
 
+#endif

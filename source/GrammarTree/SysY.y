@@ -7,6 +7,7 @@
     #include "AST.h"
     #include "SymbolTable.h"
     #include "stack.h"
+    #include "TAC.h"
     using namespace std;
 
     extern int yylineno; //共用
@@ -63,7 +64,17 @@ Compiler: CompUnits {
                   //打印AST
                 $1->TraverseGrammerTree(0);
                 // 打印符号表
+                $$->si = $1->si;
                 displayGlobal($1->si);
+                ScopeStack* stack = Stack();
+                TAC* tac = new TAC();
+                ScopeItem scopeItem;
+                TACCode* entrance;
+                if($$->si)
+                    entrance = tac->BuildTAC($$ , scopeItem , stack);
+                else
+                    entrance = tac->BuildTAC($$ , *($$->si) , stack);
+                DisplayTACCode(entrance);
                 }
         ;
 CompUnits:{ cout << "CompUnits"; $$ = NULL;}

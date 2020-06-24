@@ -2,15 +2,16 @@
 #include <stdlib.h>
 using namespace std;
 
-Stack::Stack(){
+ScopeStack* Stack(){
+    ScopeStack* stack;
     stack->base = (ScopeItem*)malloc(STACK_INIT_SIZE * sizeof(ScopeItem));
     stack->top = stack->base;
     stack->stacksize = STACK_INIT_SIZE;
     stack->length = 0;
-    return;
+    return stack;
 }
 
-void Stack::DestroyScopeStack(){
+void DestroyScopeStack(ScopeStack* stack){
     if(stack->base){
         free(stack->base);
     }
@@ -19,11 +20,11 @@ void Stack::DestroyScopeStack(){
     return;
 }
 
-int Stack::ScopeStackLength(){
+int ScopeStackLength(ScopeStack* stack){
     return stack->length;
 }
 
-void Stack::PushScopeStack(ScopeItem si){
+void PushScopeStack(ScopeStack* stack, ScopeItem si){
     //当一开始开辟的栈空间满了之后，需要对空间进行扩展
     if(stack->length >= stack->stacksize){
         stack->base = (ScopeItem*)realloc(stack->base, (stack->stacksize + STACKINCREMENT) * sizeof(ScopeItem));
@@ -36,19 +37,19 @@ void Stack::PushScopeStack(ScopeItem si){
     return;
 }
 
-void Stack::PopScopeStack(ScopeItem* si){
+void PopScopeStack(ScopeStack* stack, ScopeItem* si){
     stack->top --;
     *si = *stack->top;
     stack->length --;
     return;
 }
 
-ScopeItem* Stack::GetStackTop(){
+ScopeItem* GetStackTopp(ScopeStack* stack){
     return stack->top - 1;
 }
 
 //在符号表中查找指定名字的符号，如果找到了，返回对应Scopetem的指针，若没找到返回空
-ScopeItem* Stack::TraverseScopeStack(string name){
+ScopeItem* TraverseScopeStack(ScopeStack* stack, string name){
     ScopeItem* temp = stack->top;
     ScopeItem* result;
     if(temp == stack->base){
@@ -66,6 +67,5 @@ ScopeItem* Stack::TraverseScopeStack(string name){
             result = result->next;
         }
     }
-    result = NULL;
     return result;
 }
