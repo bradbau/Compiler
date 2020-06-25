@@ -130,6 +130,7 @@ FuncFParam: TYPEINTEGER IDENTIFIER{ASTTree *asttree = new ASTTree("FuncFParam", 
                 $$ = asttree;
                 $$->SetFuncPType("array");
                 $$->SetID($2->GetID()); 
+                $$->si = addIntoScope(Formal, $$->si, $2->GetID(), Array, "TYPEINTEGER", NULL);
                 }
           
           ;
@@ -243,9 +244,13 @@ ArrayExps:{ ASTTree *asttree = new ASTTree("ArrayExps", 0, yylineno);$$ = asttre
 
 /*语句块*/ 
 Block:SPLEFTBRACE BlockItems SPRIGHTBRACE{ ASTTree *asttree = new ASTTree("Block", 1,yylineno, $2);
-                $$ = asttree; 
-                $$->si = $2->si;
+                $$ = asttree;
+                if($2 == NULL){
+                      $$->si = NULL;
+                } else{
+                      $$->si = $2->si;
                 }
+      }
       ;
 /*语句块列表*/
 BlockItems:{ $$ = NULL;} 

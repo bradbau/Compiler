@@ -9,6 +9,10 @@ int fibo(int a) {
     return fibo(a+1)+fibo(a);
 }
 
+int block_is_empty(){
+
+}
+
 int test(int x,int y)
 {   int a,b;  //注释1
  /*  注释2

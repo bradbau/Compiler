@@ -18,13 +18,14 @@ ASTTree::ASTTree(string name, int num, int pos ,...) {
     {
         tmp = va_arg(variables, ASTTree*);
         this->lchild = tmp;
-        this->line = tmp->line;      // Current grammar unit's line number is equal to its left child's
-        for (i = 0; i < num - 1; i++)
-        {                            // Brothers
-            tmp->rchild = va_arg(variables, ASTTree*);
-            tmp = tmp->rchild;
+        if(tmp != NULL){
+            this->line = tmp->line;      // Current grammar unit's line number is equal to its left child's
+            for (i = 0; i < num - 1; i++)
+            {                            // Brothers
+                tmp->rchild = va_arg(variables, ASTTree*);
+                tmp = tmp->rchild;
+            }
         }
-        
     }
     else
     {   // This grammar unit is terminal or void rule
