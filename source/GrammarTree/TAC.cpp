@@ -1,4 +1,4 @@
-#include "TAC.h"
+ï»¿#include "TAC.h"
 #include "SymbolTable.h"
 #include "stack.h"
 #include "AST.h"
@@ -37,15 +37,15 @@ TACCode* TAC:: MergeTACItem(int num, ...)
     return entrance;
 }
 
-TACCode* TAC::TranslateInitVal(ASTTree* tree, ScopeItem scopeItem, ScopeStack* stack, ScopeItem place) {
+TACCode* TAC::TranslateInitVal(ASTTree* tree, ScopeItem scopeItem, ScopeStack* stack, ScopeItem place) { 
     if (!tree->lchild) {
-        return NULL;    //²»ÖªµÀ¶Ô²»¶Ô
+        return NULL;    //ä¸çŸ¥é“å¯¹ä¸å¯¹
     }
-    else if (!tree->lchild->rchild) {
+    else if (!tree->lchild->rchild) {  //ok
         return TranslateExp(tree->lchild, scopeItem, stack, place);
     }
     else {
-        //Êý×é¸³Öµ
+        //æ•°ç»„èµ‹å€¼
     }
 }
 
@@ -204,11 +204,12 @@ TACCode* TAC::TranslateExps(ASTTree* tree, ScopeItem scopeItem, ScopeStack* stac
 
 TACCode* TAC::TranslateExp(ASTTree* tree, ScopeItem scopeItem, ScopeStack* stack, ScopeItem place)
 {
-    if (tree->name=="IntConst")
+    if (tree->name=="IntConst")   //ok
     {
         TACCode* tmp = (TACCode*)malloc(sizeof(TACCode));
         tmp->code.optype = ASSIGN;
         tmp->code.dest.Type = VARIABLE;
+        tmp->code = new four();
         tmp->code.dest.variable = place;
         tmp->code.firstOp.Type = INTEGERCONST;
         tmp->code.firstOp.value = tree->lchild->int_value;
@@ -453,46 +454,60 @@ TACCode* TAC::TranslateCondition(ASTTree* tree, ScopeItem scopeItem, ScopeStack*
     else
     {
         string cache1, cache2;
-        ScopeItem new_temp1, new_temp2;
+        ScopeItem new_temp1, new_temp2, top;
         TACCode* code1, * code2, * code3, * code4;
-        cache1 = "_t" + to_string(temp_num++);
-        cache2 = "_t" + to_string(temp_num++);
-        new_temp1 = *addIntoScope(tree->lchild->si->stype, tree->lchild->si, cache1, Variable, "temp", NULL);
-        new_temp2 = *addIntoScope(tree->lchild->rchild->rchild->si->stype, tree->lchild->rchild->rchild->si, cache2, Variable, "temp", NULL);
-        scopeItem = *GetStackTopp(stack);
-        code1 = TranslateExp(tree->lchild, new_temp2, stack, new_temp1);
-        scopeItem = *GetStackTopp(stack);
-        code2 = TranslateExp(tree->lchild->rchild->rchild, new_temp2, stack, new_temp2);
-        code3 = (TACCode*)malloc(sizeof(TACCode));
-        code3->code.dest.Type = LABEL;
-        code3->code.dest.labelvalue = label_true;
-        code3->code.firstOp.Type = VARIABLE;
-        code3->code.firstOp.variable = new_temp1;
-        code3->code.secondOp.Type = VARIABLE;
-        code3->code.secondOp.variable = new_temp2;
-        code3->line = tree->lchild->rchild->line;
-        code3->prev = code3;
-        if (tree->lchild->name == "OPLIGHT")
-            code3->code.optype = IFLTGOTO;
-        else if (tree->lchild->name== "OPLIGHTEQ")
-            code3->code.optype = IFLEGOTO;
-        else if (tree->lchild->name == "OPGREAT")
-            code3->code.optype = IFGTGOTO;
-        else if (tree->lchild->name == "OPGREATEQ")
-            code3->code.optype = IFGEGOTO;
-        else if (tree->lchild->name == "OPEQUAL")
-            code3->code.optype = IFEQGOTO;
-        else if (tree->lchild->name == "OPNOTEQUAL")
-            code3->code.optype = IFNEQGOTO;
-        else
-            code3= TranslateExp(tree->lchild, new_temp2, stack, new_temp2);
-        code4 = (TACCode*)malloc(sizeof(TACCode));
-        code4->code.optype = GOTO;
-        code4->code.dest.Type = LABEL;
-        code4->code.dest.labelvalue = label_false;
-        code4->line = tree->line;
-        code4->prev = code4;
-        return MergeTACItem(4, code1, code2, code3, code4);
+        if (tree->lchild->name == "OPLIGHT" || tree->lchild->name == "OPGREAT" || tree->lchild->name == "OPGREATEQ" ||
+            tree->lchild->name == "OPLIGHTEQ" || tree->lchild->name == "OPEQUAL" || tree->lchild->name == "OPNOTEQUAL") {
+            cache1 = "_t" + to_string(temp_num++);
+            cache2 = "_t" + to_string(temp_num++);
+            ScopeItem* first = GetStackTopp(stack);
+            new_temp1 = *addIntoScope(first->stype, first, cache1, Variable, "temp", NULL);
+            PopScopeStack(stack, &top);
+            new_temp2 = *addIntoScope(first->stype, &new_temp1, cache2, Variable, "temp", NULL);
+            PushScopeStack(stack, new_temp2);     //æŠŠnew_temp2ä½œä¸ºæ ˆé¡¶
+            scopeItem = *GetStackTopp(stack);
+            code1 = TranslateExp(tree->lchild, new_temp2, stack, new_temp1);
+            scopeItem = *GetStackTopp(stack);
+            code2 = TranslateExp(tree->lchild->rchild->rchild, new_temp2, stack, new_temp2);
+            code3 = (TACCode*)malloc(sizeof(TACCode));
+            code3->code.dest.Type = LABEL;
+            code3->code.dest.labelvalue = label_true;
+            code3->code.firstOp.Type = VARIABLE;
+            code3->code.firstOp.variable = new_temp1;
+            code3->code.secondOp.Type = VARIABLE;
+            code3->code.secondOp.variable = new_temp2;
+            code3->line = tree->lchild->rchild->line;
+            code3->prev = code3;
+            if (tree->lchild->name == "OPLIGHT")
+                code3->code.optype = IFLTGOTO;
+            else if (tree->lchild->name == "OPLIGHTEQ")
+                code3->code.optype = IFLEGOTO;
+            else if (tree->lchild->name == "OPGREAT")
+                code3->code.optype = IFGTGOTO;
+            else if (tree->lchild->name == "OPGREATEQ")
+                code3->code.optype = IFGEGOTO;
+            else if (tree->lchild->name == "OPEQUAL")
+                code3->code.optype = IFEQGOTO;
+            else if (tree->lchild->name == "OPNOTEQUAL")
+                code3->code.optype = IFNEQGOTO;
+            else
+                code3 = TranslateExp(tree->lchild, new_temp2, stack, new_temp2);
+            code4 = (TACCode*)malloc(sizeof(TACCode));
+            code4->code.optype = GOTO;
+            code4->code.dest.Type = LABEL;
+            code4->code.dest.labelvalue = label_false;
+            code4->line = tree->line;
+            code4->prev = code4;
+            return MergeTACItem(4, code1, code2, code3, code4);
+        }
+        else {
+            ScopeItem new_temp3, top2;
+            string cache3;
+            new_temp3 = *addIntoScope(scopeItem.stype, &scopeItem, cache3, Variable, "temp", NULL);
+            PopScopeStack(stack, &top2);
+            PushScopeStack(stack, new_temp3);     //æŠŠnew_temp3ä½œä¸ºæ ˆé¡¶
+            return TranslateExp(tree->lchild, new_temp3, stack, new_temp3);
+        }
     }
 }
 
@@ -518,18 +533,20 @@ TACCode* TAC:: BuildTAC(ASTTree* tree, ScopeItem scopeItem, ScopeStack* stack)
         TACCode* tmp = (TACCode*)malloc(sizeof(TACCode));
         TACCode* formalcode = NULL;
         TACCode* bodycode = NULL;
-        //Éú³ÉËÄÔªÊ½²¿·Ö
+        //ç”Ÿæˆå››å…ƒå¼éƒ¨åˆ†
         tmp->code.optype = FUNCTIONDF;
         tmp->code.dest.Type = FUNCTION;
-        tmp->code.dest.function = *TraverseScopeStack(stack, tree->GetID()); //¸ù¾ÝIDÕÒµ½¶ÔÓ¦µÄ×÷ÓÃÓò
+        tmp->code.dest.function = *TraverseScopeStack(stack, tree->GetID()); //æ ¹æ®IDæ‰¾åˆ°å¯¹åº”çš„ä½œç”¨åŸŸ
         tmp->line = tree->line;
         tmp->prev = tmp;
-        formalcode = BuildTAC(tree->lchild, scopeItem, stack);                    //ÐÎ²ÎËÄÔªÊ½
-        bodycode = BuildTAC(tree->lchild->rchild, scopeItem, stack);              //º¯ÊýÌåËÄÔªÊ½
-        //×÷ÓÃÓòÕ»²Ù×÷²¿·Ö
-        PushScopeStack(stack, *tree->lchild->si);
-        PushScopeStack(stack, *tree->lchild->rchild->si);
-        return MergeTACItem(3, tmp, formalcode, bodycode);  //ºÏ²¢ËÄÔªÊ½
+        formalcode = BuildTAC(tree->lchild, scopeItem, stack);                    //å½¢å‚å››å…ƒå¼
+        bodycode = BuildTAC(tree->lchild->rchild, scopeItem, stack);              //å‡½æ•°ä½“å››å…ƒå¼
+        //ä½œç”¨åŸŸæ ˆæ“ä½œéƒ¨åˆ†
+        if(tree->lchild->si)
+            PushScopeStack(stack, *tree->lchild->si);
+        if(tree->lchild->rchild->si)
+            PushScopeStack(stack, *tree->lchild->rchild->si);
+        return MergeTACItem(3, tmp, formalcode, bodycode);  //åˆå¹¶å››å…ƒå¼
     }
     else if (tree->name == "FuncFParams") {
         if (tree->lchild == NULL) {
@@ -539,11 +556,11 @@ TACCode* TAC:: BuildTAC(ASTTree* tree, ScopeItem scopeItem, ScopeStack* stack)
             return BuildTAC(tree->lchild, scopeItem, stack);
         }
         else {
-            return MergeTACItem(2, TranslateExp(tree->lchild, scopeItem, stack, *TraverseScopeStack(stack, tree->lchild->GetID())), TranslateExps(tree->lchild->rchild, scopeItem, stack));
+            return MergeTACItem(2, BuildTAC(tree->lchild, scopeItem, stack), BuildTAC(tree->lchild->rchild, scopeItem, stack));
         }
     }
-    else if (tree->name == "FuncFParam") {
-        //ÔÝÊ±Ã»¹ÜÊý×é
+    else if (tree->name == "FuncFParam") { //ok
+        //æš‚æ—¶æ²¡ç®¡æ•°ç»„
         TACCode* tmp = (TACCode*)malloc(sizeof(TACCode));
         tmp->code.optype = PARAM;
         tmp->code.dest.Type = VARIABLE;
@@ -552,7 +569,7 @@ TACCode* TAC:: BuildTAC(ASTTree* tree, ScopeItem scopeItem, ScopeStack* stack)
         tmp->prev = tmp;
         if (tree->lchild) {
             return MergeTACItem(2, tmp, BuildTAC(tree->lchild, scopeItem, stack));
-            //Êý×é²Ù×÷ÏÈÕâÑùÐ´£¬²»ÖªµÀÐÐ²»ÐÐ
+            //æ•°ç»„æ“ä½œå…ˆè¿™æ ·å†™ï¼Œä¸çŸ¥é“è¡Œä¸è¡Œ
         }
         else {
             return tmp;
@@ -561,23 +578,23 @@ TACCode* TAC:: BuildTAC(ASTTree* tree, ScopeItem scopeItem, ScopeStack* stack)
     else if (tree->name == "ConstDecl") {
         return MergeTACItem(2, BuildTAC(tree->lchild, scopeItem, stack), BuildTAC(tree->lchild->rchild, scopeItem, stack));
     }
-    else if (tree->name == "VarDecl") {
+    else if (tree->name == "VarDecl") {//ok
         cout << "789";
         return MergeTACItem(2, BuildTAC(tree->lchild, scopeItem, stack), BuildTAC(tree->lchild->rchild, scopeItem, stack));
     }
     else if (tree->name == "ConstDefs") {
         return MergeTACItem(2, BuildTAC(tree->lchild, scopeItem, stack), BuildTAC(tree->lchild->rchild, scopeItem, stack));
     }
-    else if (tree->name == "VarDefs") {
+    else if (tree->name == "VarDefs") {//ok
         cout << "101112";
         return MergeTACItem(2, BuildTAC(tree->lchild, scopeItem, stack), BuildTAC(tree->lchild->rchild, scopeItem, stack));
     }
     else if (tree->name == "ConstOpassign") {
-        //Ã»¿¼ÂÇÊý×é
+        //æ²¡è€ƒè™‘æ•°ç»„
         return TranslateInitVal(tree->lchild->rchild, scopeItem, stack, *TraverseScopeStack(stack, tree->lchild->GetID()));
     }
-    else if (tree->name == "VarOPassign") {
-        //Ã»¿¼ÂÇÊý×é
+    else if (tree->name == "VarOPassign") {     //ok
+        //æ²¡è€ƒè™‘æ•°ç»„
         return MergeTACItem(2, BuildTAC(tree->lchild, scopeItem, stack), TranslateInitVal(tree->lchild->rchild, scopeItem, stack, *TraverseScopeStack(stack, tree->lchild->GetID())));
     }
     else if (tree->name == "IDENTIFIER") {      //ok
@@ -594,17 +611,17 @@ TACCode* TAC:: BuildTAC(ASTTree* tree, ScopeItem scopeItem, ScopeStack* stack)
         return MergeTACItem(2, TranslateExp(tree->lchild, scopeItem, stack, *TraverseScopeStack(stack, tree->lchild->GetID())), TranslateExps(tree->lchild->rchild, scopeItem, stack));
     }
     else if (tree->name == "ArrayDec") {
-        //Êý×éÃ»Ð´
+        //æ•°ç»„æ²¡å†™
     }
     else if (tree->name == "ArrayExps") {
-        //Êý×éÃ»Ð´
+        //æ•°ç»„æ²¡å†™
     }
     else if (tree->name == "BlockItems") {
         return MergeTACItem(2, BuildTAC(tree->lchild, scopeItem, stack), BuildTAC(tree->lchild->rchild, scopeItem, stack));
     }
     else if (tree->name == "Exp_Stmt") {
         scopeItem = *GetStackTopp(stack);
-        return TranslateExp(tree->lchild, scopeItem, stack, scopeItem);//ÕâÀï²»ÖªµÀµÚËÄ¸ö²ÎÊý»á²»»á³öÎÊÌâ
+        return TranslateExp(tree->lchild, scopeItem, stack, scopeItem);//è¿™é‡Œä¸çŸ¥é“ç¬¬å››ä¸ªå‚æ•°ä¼šä¸ä¼šå‡ºé—®é¢˜
     }
     else if (tree->name == "Block_Stmt") {
         return BuildTAC(tree->lchild, scopeItem, stack);
@@ -612,7 +629,7 @@ TACCode* TAC:: BuildTAC(ASTTree* tree, ScopeItem scopeItem, ScopeStack* stack)
     else if (tree->name == "Block") {
         int flag = 0;
         // Judge if this block is function body
-        if (tree->si != GetStackTopp(stack)) {
+        if (tree->si != NULL && tree->si != GetStackTopp(stack)) {
             flag = 1;
             PushScopeStack(stack, *tree->si);
         }
@@ -631,6 +648,7 @@ TACCode* TAC:: BuildTAC(ASTTree* tree, ScopeItem scopeItem, ScopeStack* stack)
         return NULL;
     }
     else if (tree->name == "IF_Stmt") {
+        cout << "pigpigpig" << endl;
         return TranslateStmt(tree, scopeItem, stack, -1, -1);
     }
     else if (tree->name == "IF_ELSE_Stmt") {
@@ -674,11 +692,11 @@ void DisplayTACCode(TACCode* entrance)
         else if (tmp->code.optype == ADD | tmp->code.optype == SUB | tmp->code.optype == MUL | tmp->code.optype == DIV)
         {
             // Notice: no matter variable  is in which scopeItem, the scopeItem entry always has "name" attribute
-            printf("%3d  (at line %3d)\t%s := ", line, tmp->line, tmp->code.dest.variable.depictor->name.c_str());
+            printf("%3d  (at line %3d)\t%s := ", line, tmp->line, tmp->code.dest.variable.name.c_str());
             if (tmp->code.firstOp.Type == VARIABLE)
-                printf("%s ", tmp->code.firstOp.variable.depictor->name.c_str());
+                printf("%s ", tmp->code.firstOp.variable.name.c_str());
             else if (tmp->code.firstOp.Type == ADDRESSS)
-                printf("*%s ", tmp->code.firstOp.variable.depictor->name.c_str());
+                printf("*%s ", tmp->code.firstOp.variable.name.c_str());
             else if (tmp->code.firstOp.Type == INTEGERCONST)
                 printf("#%d ", tmp->code.firstOp.value);
             switch (tmp->code.optype)
@@ -704,7 +722,7 @@ void DisplayTACCode(TACCode* entrance)
                 printf("#%d\n", tmp->code.secondOp.value);
         }
         else if (tmp->code.optype == FUNCTIONDF)
-            printf("\n%3d  (at line %3d)\tFUNCTION %s :\n", line, tmp->line, tmp->code.dest.function.depictor->name.c_str());
+            printf("\n%3d  (at line %3d)\tFUNCTION %s :\n", line, tmp->line, tmp->code.dest.function.name.c_str());
         else if (tmp->code.optype == PARAM) {
             printf("%3d  (at line %3d)\tPARAM %s\n", line, tmp->line, tmp->code.dest.variable.name.c_str());
         }
@@ -718,38 +736,38 @@ void DisplayTACCode(TACCode* entrance)
         {
             sprintf(cache, "label%d", tmp->code.dest.labelvalue);
             printf("%3d  (at line %3d)\tIF %s < %s GOTO %s\n",
-                line, tmp->line, tmp->code.firstOp.variable.depictor->name.c_str(), tmp->code.secondOp.variable.depictor->name.c_str(), cache);
+                line, tmp->line, tmp->code.firstOp.variable.name.c_str(), tmp->code.secondOp.variable.name.c_str(), cache);
         }
         else if (tmp->code.optype == IFLEGOTO)
         {
             sprintf(cache, "label%d", tmp->code.dest.labelvalue);
             printf("%3d\nIF %s <= %s GOTO %s\n",
-                line, tmp->line, tmp->code.firstOp.variable.depictor->name.c_str(), tmp->code.secondOp.variable.depictor->name.c_str(), cache);
+                line, tmp->line, tmp->code.firstOp.variable.name.c_str(), tmp->code.secondOp.variable.name.c_str(), cache);
         }
         else if (tmp->code.optype == IFGTGOTO)
         {
             sprintf(cache, "label%d", tmp->code.dest.labelvalue);
             printf("%3d  (at line %3d)\tIF %s > %s GOTO %s\n",
-                line, tmp->line, tmp->code.firstOp.variable.depictor->name.c_str(), tmp->code.secondOp.variable.depictor->name.c_str(), cache);
+                line, tmp->line, tmp->code.firstOp.variable.name.c_str(), tmp->code.secondOp.variable.name.c_str(), cache);
         }
         else if (tmp->code.optype == IFGEGOTO)
         {
             sprintf(cache, "label%d", tmp->code.dest.labelvalue);
             printf("%3d  (at line %3d)\tIF %s >= %s GOTO %s\n",
-                line, tmp->line, tmp->code.firstOp.variable.depictor->name.c_str(), tmp->code.secondOp.variable.depictor->name.c_str(), cache);
+                line, tmp->line, tmp->code.firstOp.variable.name.c_str(), tmp->code.secondOp.variable.name.c_str(), cache);
         }
         else if (tmp->code.optype == IFEQGOTO)
         {
             sprintf(cache, "label%d", tmp->code.dest.labelvalue);
             printf("%3d  (at line %3d)\tIF %s = %s GOTO %s\n",
-                line, tmp->line, tmp->code.firstOp.variable.depictor->name.c_str(), tmp->code.secondOp.variable.depictor->name.c_str(), cache);
+                line, tmp->line, tmp->code.firstOp.variable.name.c_str(), tmp->code.secondOp.variable.name.c_str(), cache);
         }
         else if (tmp->code.optype == IFNEQGOTO)
         {
             sprintf(cache, "label%d", tmp->code.dest.labelvalue);
-            printf("%3d  (at line %3d)\tIF %s != ", line, tmp->line, tmp->code.firstOp.variable.depictor->name.c_str());
+            printf("%3d  (at line %3d)\tIF %s != ", line, tmp->line, tmp->code.firstOp.variable.name.c_str());
             if (tmp->code.secondOp.Type == VARIABLE)
-                printf("%s ", tmp->code.secondOp.variable.depictor->name.c_str());
+                printf("%s ", tmp->code.secondOp.variable.name.c_str());
             else if (tmp->code.secondOp.Type == INTEGERCONST)
                 printf("%d ", tmp->code.secondOp.value);
             printf("GOTO %s\n", cache);
@@ -761,19 +779,19 @@ void DisplayTACCode(TACCode* entrance)
         }
         else if (tmp->code.optype == RETURN)
         {
-            printf("%3d  (at line %3d)\tRETURN %s\n", line, tmp->line, tmp->code.dest.variable.depictor->name.c_str());
+            printf("%3d  (at line %3d)\tRETURN %s\n", line, tmp->line, tmp->code.dest.variable.name.c_str());
         }
         else if (tmp->code.optype == ARG)
         {
-            printf("%3d  (at line %3d)\tARG %s\n", line, tmp->line, tmp->code.dest.variable.depictor->name.c_str());
+            printf("%3d  (at line %3d)\tARG %s\n", line, tmp->line, tmp->code.dest.variable.name.c_str());
         }
         else if (tmp->code.optype == CALLASSIGN)
         {
-            printf("%3d  (at line %3d)\t%s := CALL %s\n", line, tmp->line, tmp->code.dest.variable.depictor->name.c_str(), tmp->code.firstOp.function.depictor->name.c_str());
+            printf("%3d  (at line %3d)\t%s := CALL %s\n", line, tmp->line, tmp->code.dest.variable.name.c_str(), tmp->code.firstOp.function.name.c_str());
         }
         else if (tmp->code.optype == CALL)
         {
-            printf("%3d  (at line %3d)\tCALL %s\n", line, tmp->line, tmp->code.dest.function.depictor->name.c_str());
+            printf("%3d  (at line %3d)\tCALL %s\n", line, tmp->line, tmp->code.dest.function.name.c_str());
         }
         tmp = tmp->next;
         line += 1;

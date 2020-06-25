@@ -18,6 +18,8 @@ enum TACOperandType  // 操作数类型
 class fourOperand {
 
 public://公有数据成员
+    fourOperand() {
+    };
     TACOperandType Type; //本操作符的成员
     union
     {

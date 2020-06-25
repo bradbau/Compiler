@@ -254,7 +254,12 @@ ArrayExps:{ cout << "ArrayExps";  $$ = NULL;}
 /*语句块*/ 
 Block:SPLEFTBRACE BlockItems SPRIGHTBRACE{  cout << "Block"; ASTTree *asttree = new ASTTree("Block", 1,yylineno, $2);
                 $$ = asttree; 
-                $$->si = $2->si;
+                if($2 == NULL){
+                    $$ -> si = NULL;
+                }
+                else{
+                     $$->si = $2->si;
+                }
                 }
       ;
 /*语句块列表*/

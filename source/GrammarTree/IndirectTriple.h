@@ -44,7 +44,11 @@ public:
     fourOperand dest;
     fourOperand firstOp;    //
     fourOperand secondOp;   //
-
+    four() {
+        this.dest = new fourOperand();
+        this.firstOp = new fourOperand();
+        this.secondOp = new fourOperand();
+    };
 
 
     //公有方法，就是对外的接口
