@@ -25,7 +25,7 @@ typedef struct TACCode
 typedef struct basic_block {
     TACCode* begin;
     TACCode* end;
-    vector <TACCode*> next;
+    vector <basic_block*> next;
 } basic_block;
 
 class TAC{
@@ -39,7 +39,8 @@ public:
     TACCode* TranslateExps(ASTTree* tree, ScopeItem scopeItem, ScopeStack* stack);
     TACCode* TranslateStmt(ASTTree* tree, ScopeItem scopeItem, ScopeStack* stack, Label continuevalue, Label breakvalue);
     TACCode* TranslateInitVal(ASTTree* tree, ScopeItem scopeItem, ScopeStack* stack, ScopeItem place);
-    TACCode* DivideBlock(TACCode codelist);
+    basic_block* TAC::DivideBlock(TACCode* entrance);
+    basic_block* TAC::SearchBlock(basic_block* head, Label label);
     ScopeStack* stack;
     //void DisplayTACItem(TACItem* entrance);
 
