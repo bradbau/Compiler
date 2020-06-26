@@ -12,11 +12,12 @@
 
 
 typedef struct RegDepictorEntry
+//寄存器描述符，用于描述15个寄存器的状态
 {
-        int filled;         // Imply if the register is allocated
-        int used;           // Tag for LRU algorithm
-        Scope variable;     // The variable in register if there is
-    
+      int filled;         // 是否使用
+      int used;           // Tag for LRU algorithm
+      Scope variable;     // 存储的变量对象
+      
 } RegDepictorEntry;
 
 

@@ -5,6 +5,7 @@
 
 
 class ARMInstruction{
+    //所有指令的基类
 
 public:
 
@@ -68,11 +69,12 @@ private:
 public:
 
 
+
     virtual String toString()=0; //本类型为抽象类
 
 }
 
-class CalculateInstruction: public ARMInstruction
+class CalculateInstruction: public ARMInstruction// 计算类型的指令
 {
 public:
     void CalculateInstruction();// 产生一个计算指令
@@ -90,7 +92,7 @@ public:
 
 }
 
-class MemoryInstruction: public ARMInstruction
+class MemoryInstruction: public ARMInstruction//内存相关指令
 {
 
 public:
