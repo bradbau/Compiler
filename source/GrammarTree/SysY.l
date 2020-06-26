@@ -1,11 +1,9 @@
+/* utf-8 */
 
 %{
-    //#include<stdio.h>
-    //#include<stdlib.h>
     #include <iostream>
     #include "SysY.tab.h"
-    //#include "grammartree.cpp"
-    #include "grammartree.h"
+    #include "AST.h"
 
     int yycolumn = 1; 
 
@@ -15,8 +13,6 @@
       yylloc.last_column = yycolumn + yyleng - 1; \
       yycolumn += yyleng;
     typedef union {
-        int i;
-	      struct Grammartree *grammartree;
         class ASTTree *ast_Tree;
 	  } YYLVAL;
     #define YYSTYPE YYLVAL
@@ -59,6 +55,15 @@ KEYWHILE        "while"
 KEYBREAK        "break"
 KEYCONTINUE     "continue" 
 KEYRETURN       "return"
+KEYGETINT       "getint"
+KEYGETCHAR      "getchar"
+KEYGETARRAY     "getarray"
+KEYPUTINT       "putint"
+KEYPUTCHAR      "putchar"
+KEYPUTARRAY     "putarray"
+KEYPUTF         "putf"
+KEYSTARTTIME    "starttime"
+KEYSTOPTIME     "stoptime"
 CONSTANTOCT     0[0-7]*      
 CONSTANTINTD    [1-9][0-9]*
 CONSTANTINTH    0[xX][0-9a-fA-F]+
@@ -68,51 +73,59 @@ EOL             \n
 WRONGSTRING     \"[^\"\n]*$
 WRONGIDENTIFIER [0-9_][a-zA-Z0-9_]* 
 AERROR          .
-/*COMMENT         (\/\/[^\n]*)|(\/\*((\*[^\/]?)|[^\*]*)*\*\/)*/
-/*{COMMENT} {printf("%s: %d: Unterminated comment\n", yytext, yylineno);return 0;}*/
+
 %%
 \/\*		{BEGIN(COMMENT);}
 <COMMENT>\*\/ {BEGIN(INITIAL);}
 <COMMENT>([^*]|\n)+|.
 <COMMENT><<EOF>>	{printf("%s: %d: Unterminated comment\n", yytext, yylineno);return 0;}
 "//".*\n
-{SPSEMICOLON} { ASTTree *asttree = new ASTTree("SPSEMICOLON", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return SPSEMICOLON; }
-{SPCOMMA} { ASTTree *asttree = new ASTTree("SPCOMMA", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return SPCOMMA; }
-{SPDOT} { ASTTree *asttree = new ASTTree("SPDOT", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return SPDOT; }
-{SPLEFTBRACE} { ASTTree *asttree = new ASTTree("SPLEFTBRACE", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return SPLEFTBRACE; }
-{SPRIGHTBRACE} { ASTTree *asttree = new ASTTree("SPRIGHTBRACE", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return SPRIGHTBRACE; }
-{OPLEFTPRNT} { ASTTree *asttree = new ASTTree("OPLEFTPRNT", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return OPLEFTPRNT; }
-{OPRIGHTPRNT} { ASTTree* asttree = new ASTTree("OPRIGHTPRNT", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return OPRIGHTPRNT; }
-{OPLEFTBRACKET} { ASTTree *asttree = new ASTTree("OPLEFTBRACKET", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return OPLEFTBRACKET; }
-{OPRIGHTBRACKET} { ASTTree *asttree = new ASTTree("OPRIGHTBRACKET", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return OPRIGHTBRACKET; }
-{OPPLUS} { ASTTree *asttree = new ASTTree("OPPLUS", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return OPPLUS; }
-{OPMINUS} { ASTTree *asttree = new ASTTree("OPMINUS", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return OPMINUS; }
-{OPMULTIPLY} { ASTTree *asttree = new ASTTree("OPMULTIPLY", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return OPMULTIPLY; }
-{OPDIVIDE} { ASTTree *asttree = new ASTTree("OPDIVIDE", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return OPDIVIDE; }
-{OPMOD} {  ASTTree *asttree = new ASTTree("OPMOD", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return OPMOD; }
-{OPASSIGN} { ASTTree *asttree = new ASTTree("OPASSIGN", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return OPASSIGN; }
-{OPAND} { ASTTree *asttree = new ASTTree("OPAND", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return OPAND; }
-{OPOR} { ASTTree *asttree = new ASTTree("OPOR", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return OPOR; }
-{OPNOT} { ASTTree *asttree = new ASTTree("OPNOT", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return OPNOT; }
-{OPEQUAL} { ASTTree *asttree = new ASTTree("OPEQUAL", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return OPEQUAL; }
-{OPNOTEQUAL} { ASTTree *asttree = new ASTTree("OPNOTEQUAL", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return OPNOTEQUAL; }
-{OPGREAT} { ASTTree *asttree = new ASTTree("OPGREAT", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return OPGREAT; }
-{OPLIGHT} { ASTTree *asttree = new ASTTree("OPLIGHT", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return OPLIGHT; }
-{OPGREATEQ} { ASTTree *asttree = new ASTTree("OPGREATEQ", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return OPGREATEQ; }
-{OPLIGHTEQ} { ASTTree *asttree = new ASTTree("OPLIGHTEQ", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return OPLIGHTEQ; }
-{TYPEVOID} { ASTTree *asttree = new ASTTree("TYPEVOID", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return TYPEVOID; }
-{TYPEINTEGER} { ASTTree *asttree = new ASTTree("TYPEINTEGER", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return TYPEINTEGER; }
-{KEYIF} { ASTTree *asttree = new ASTTree("KEYIF", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return KEYIF; }
-{KEYELSE} { ASTTree *asttree = new ASTTree("KEYELSE", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return KEYELSE; }
-{KEYWHILE} { ASTTree *asttree = new ASTTree("KEYWHILE", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return KEYWHILE; }
-{KEYBREAK} { ASTTree *asttree = new ASTTree("KEYBREAK", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return KEYBREAK; }
-{KEYCONTINUE} {  ASTTree *asttree = new ASTTree("KEYCONTINUE", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree;return KEYCONTINUE ; }
-{KEYCONST} {  ASTTree *asttree = new ASTTree("KEYCONST", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree;return KEYCONST ; }
-{KEYRETURN} { ASTTree *asttree = new ASTTree("KEYRETURN", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return KEYRETURN; }
-{CONSTANTINTD} { ASTTree *asttree = new ASTTree("CONSTANTINTD", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return CONSTANTINTD; }
-{CONSTANTINTH} { ASTTree *asttree = new ASTTree("CONSTANTINTH", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return CONSTANTINTH; }
-{CONSTANTOCT} {  ASTTree *asttree = new ASTTree("CONSTANTOCT", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree;return CONSTANTOCT ; }
-{IDENTIFIER} { ASTTree *asttree = new ASTTree("IDENTIFIER", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return IDENTIFIER; }
+{SPSEMICOLON} {printf("<;>\n");return SPSEMICOLON; }
+{SPCOMMA} { printf("<,>\n");return SPCOMMA; }
+{SPDOT} {  printf("<.>\n");return SPDOT; }
+{SPLEFTBRACE} {printf("<{>\n");return SPLEFTBRACE; }
+{SPRIGHTBRACE} { printf("<}>\n");return SPRIGHTBRACE; }
+{OPLEFTPRNT} { printf("<(>\n");return OPLEFTPRNT; }
+{OPRIGHTPRNT} {  printf("<)>\n");return OPRIGHTPRNT; }
+{OPLEFTBRACKET} {  printf("<[>\n");return OPLEFTBRACKET; }
+{OPRIGHTBRACKET} { printf("<]>\n");return OPRIGHTBRACKET; }
+{OPPLUS} { printf("<+>\n");return OPPLUS; }
+{OPMINUS} {  printf("<->\n");return OPMINUS; }
+{OPMULTIPLY} { printf("<*>\n");return OPMULTIPLY; }
+{OPDIVIDE} { printf("</>\n");return OPDIVIDE; }
+{OPMOD} {   printf("<%%>\n");return OPMOD; }
+{OPASSIGN} {  printf("<=>\n");return OPASSIGN; }
+{OPAND} {  printf("<&&>\n");return OPAND; }
+{OPOR} {  printf("<||>\n");return OPOR; }
+{OPNOT} { printf("<!>\n");return OPNOT; }
+{OPEQUAL} { printf("<==>\n");return OPEQUAL; }
+{OPNOTEQUAL} {  printf("<!=>\n");return OPNOTEQUAL; }
+{OPGREAT} {  printf("<>>\n");return OPGREAT; }
+{OPLIGHT} { printf("<<>\n");return OPLIGHT; }
+{OPGREATEQ} {  printf("<>=>\n");return OPGREATEQ; }
+{OPLIGHTEQ} { printf("<<=>\n");return OPLIGHTEQ; }
+{TYPEVOID} { printf("<void>\n");return TYPEVOID; }
+{TYPEINTEGER} {printf("<int>\n");return TYPEINTEGER; }
+{KEYIF} { printf("<if>\n");return KEYIF; }
+{KEYELSE} {  printf("<else>\n");return KEYELSE; }
+{KEYWHILE} { printf("<while>\n");return KEYWHILE; }
+{KEYBREAK} { printf("<break>\n");return KEYBREAK; }
+{KEYCONTINUE} {printf("<continue>\n");return KEYCONTINUE ; }
+{KEYCONST} {  printf("<const>\n");return KEYCONST ; }
+{KEYGETINT}  { printf("<getint>\n");return KEYGETINT; }    
+{KEYGETCHAR}    { printf("<getchar>\n");return KEYGETCHAR; }
+{KEYGETARRAY}   {  printf("<getarray>\n");return KEYGETARRAY; }
+{KEYPUTINT}      { printf("<putint>\n");return KEYPUTINT; }
+{KEYPUTCHAR}     {printf("<putchar>\n");return KEYPUTCHAR; }
+{KEYPUTARRAY}    { printf("<putarray>\n");return KEYPUTARRAY; }
+{KEYPUTF}         { printf("<putf>\n");return KEYPUTF; }
+{KEYSTARTTIME}    {  printf("<starttime>\n");return KEYSTARTTIME; }
+{KEYSTOPTIME}     { printf("<stoptime>\n");return SPSEMICOLON; }
+{KEYRETURN} {printf("<return>\n");return KEYRETURN; }
+{CONSTANTINTD} { printf("<intd>\n");ASTTree *asttree = new ASTTree("CONSTANTINTD", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return CONSTANTINTD; }
+{CONSTANTINTH} { printf("<inth>\n");ASTTree *asttree = new ASTTree("CONSTANTINTH", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return CONSTANTINTH; }
+{CONSTANTOCT} {  printf("<into>\n");ASTTree *asttree = new ASTTree("CONSTANTOCT", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree;return CONSTANTOCT ; }
+{IDENTIFIER} { printf("<id,%s>\n",yytext);ASTTree *asttree = new ASTTree("IDENTIFIER", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return IDENTIFIER; }
 
 {SPACE} {}
 {EOL} { yycolumn = 1; }

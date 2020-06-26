@@ -1,5 +1,9 @@
+#ifndef STACK_H
+#define STACK_H
+
 #include<stdio.h>
-#include"hashtable.h"
+#include"SymbolTable.h"
+#include <string>
 using namespace std;
 
 #define STACK_INIT_SIZE 100
@@ -7,6 +11,7 @@ using namespace std;
 
 extern int smerror;
 
+/*
 typedef enum ScopeType
 {
     ScopeLocal,
@@ -14,43 +19,36 @@ typedef enum ScopeType
     ScopeGlobal,
     ScopeNone
 } ScopeType;
+*/
 
-typedef struct Scope
+/*
+typedef struct ScopeItem
 {
     ScopeType type;
     ScopeItem si;
-} Scope;
+} ScopeItem;
+*/
 
 typedef struct ScopeStack
 {
-    Scope* base;
-    Scope* top;
-    int stacksize;
+    ScopeItem* base;
+    ScopeItem* top;
+    int stacksize;//栈最大的大小
+    int length;//栈中目前元素个数
 } ScopeStack;
 
 typedef struct ExprType
 {
-    DecafCategory category;
+    SysYCategory category;
     char* type;
 } ExprType;
 
-class Stack{
-    private:
-       ScopeStack* ss;
-    public:
-       //void InitScopeStack(ScopeStack* stack);的实现
-       ScopeStack();
-       
-       void DestroyScopeStack();
-       int ScopeStackLength();
-       void PushScopeStack(Scope scope);
-       void PopScopeStack();
-       Scope* GetStackTop();
-       Scope TraverseScopeStack(char* name);
+ScopeStack* Stack();
+void DestroyScopeStack(ScopeStack* stack);
+int ScopeStackLength(ScopeStack* stack);
+void PushScopeStack(ScopeStack* stack, ScopeItem scope);
+void PopScopeStack(ScopeStack* stack, ScopeItem* si);
+ScopeItem* GetStackTopp(ScopeStack* stack);
+ScopeItem* TraverseScopeStack(ScopeStack* stack, string name);
 
-      ExprType* GetExprType(GrammarTree tree);
-      void SameNameTrial(ClassScope classscope, GrammarTree tree);
-      /*Traverse the grammar tree and operate the scope stack at the same time to do trial*/
-      void ScopeTrial(GrammarTree tree, Scope scope);
-}
-
+#endif
