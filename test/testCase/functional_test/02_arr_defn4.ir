@@ -1,0 +1,312 @@
+--(end of buffer or a NUL)
+--accepting rule at line 108 ("int")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("main")
+--accepting rule at line 88 ("(")
+--accepting rule at line 89 (")")
+--accepting rule at line 86 ("{")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 108 ("int")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("a")
+--accepting rule at line 90 ("[")
+--accepting rule at line 125 ("4")
+--accepting rule at line 91 ("]")
+--accepting rule at line 90 ("[")
+--accepting rule at line 125 ("2")
+--accepting rule at line 91 ("]")
+--accepting rule at line 97 ("=")
+--accepting rule at line 86 ("{")
+--accepting rule at line 125 ("1")
+--accepting rule at line 84 (",")
+--accepting rule at line 125 ("2")
+--accepting rule at line 84 (",")
+--accepting rule at line 125 ("3")
+--accepting rule at line 84 (",")
+--accepting rule at line 125 ("4")
+--accepting rule at line 84 (",")
+--accepting rule at line 125 ("5")
+--accepting rule at line 84 (",")
+--accepting rule at line 125 ("6")
+--accepting rule at line 84 (",")
+--accepting rule at line 125 ("7")
+--accepting rule at line 84 (",")
+--accepting rule at line 125 ("8")
+--accepting rule at line 87 ("}")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 108 ("int")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("b")
+--accepting rule at line 90 ("[")
+--accepting rule at line 125 ("4")
+--accepting rule at line 91 ("]")
+--accepting rule at line 90 ("[")
+--accepting rule at line 125 ("2")
+--accepting rule at line 91 ("]")
+--accepting rule at line 97 ("=")
+--accepting rule at line 86 ("{")
+--accepting rule at line 86 ("{")
+--accepting rule at line 128 ("a")
+--accepting rule at line 90 ("[")
+--accepting rule at line 127 ("0")
+--accepting rule at line 91 ("]")
+--accepting rule at line 90 ("[")
+--accepting rule at line 127 ("0")
+--accepting rule at line 91 ("]")
+--accepting rule at line 84 (",")
+<int>
+<id,main>
+<(>
+<)>
+FuncFParams<{>
+<int>
+<id,a>
+VarDec<[>
+<intd>
+<]>
+VarDec<[>
+<intd>
+<]>
+VarDec<=>
+<{>
+<intd>
+<,>
+InitVal<intd>
+<,>
+InitVal<intd>
+<,>
+InitVal<intd>
+<,>
+InitVal<intd>
+<,>
+InitVal<intd>
+<,>
+InitVal<intd>
+<,>
+InitVal<intd>
+<}>
+InitValInitValListInitValListInitValListInitValListInitValListInitValListInitValListInitValListInitValVarDef<;>
+VarDefsDeclBlockItem<int>
+<id,b>
+VarDec<[>
+<intd>
+<]>
+VarDec<[>
+<intd>
+<]>
+VarDec<=>
+<{>
+<{>
+<id,a>
+<[>
+<into>
+<]>
+<[>
+<into>
+<]>
+<,>
+ArrayExpsArrayExpsArr--accepting rule at line 128 ("a")
+--accepting rule at line 90 ("[")
+--accepting rule at line 127 ("0")
+--accepting rule at line 91 ("]")
+--accepting rule at line 90 ("[")
+--accepting rule at line 125 ("1")
+--accepting rule at line 91 ("]")
+--accepting rule at line 87 ("}")
+--accepting rule at line 84 (",")
+--accepting rule at line 86 ("{")
+--accepting rule at line 125 ("3")
+--accepting rule at line 84 (",")
+--accepting rule at line 125 ("4")
+--accepting rule at line 87 ("}")
+--accepting rule at line 84 (",")
+--accepting rule at line 86 ("{")
+--accepting rule at line 125 ("5")
+--accepting rule at line 84 (",")
+--accepting rule at line 125 ("6")
+--accepting rule at line 87 ("}")
+--accepting rule at line 84 (",")
+--accepting rule at line 86 ("{")
+--accepting rule at line 125 ("7")
+--accepting rule at line 84 (",")
+--accepting rule at line 125 ("8")
+--accepting rule at line 87 ("}")
+--accepting rule at line 87 ("}")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 124 ("return")
+--accepting rule at line 130 (" ")
+--accepting rule at line 127 ("0")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 87 ("}")
+ayExpsLval
+InitVal<id,a>
+<[>
+<into>
+<]>
+<[>
+<intd>
+<]>
+<}>
+ArrayExpsArrayExpsArrayExpsLval
+InitValInitValListInitValListInitVal<,>
+<{>
+<intd>
+<,>
+InitVal<intd>
+<}>
+InitValInitValListInitValListInitVal<,>
+<{>
+<intd>
+<,>
+InitVal<intd>
+<}>
+InitValInitValListInitValListInitVal<,>
+<{>
+<intd>
+<,>
+InitVal<intd>
+<}>
+InitValInitValListInitValListInitVal<}>
+InitValListInitValListInitValListInitValListInitValVarDef<;>
+VarDefsDeclBlockItem<return>
+<into>
+<;>
+StmtBlockItem<}>
+BlockItemsBlockItemsBlockItemsBlockItemsBloc--(end of buffer or a NUL)
+--EOF (start condition 0)
+kCompUnitCompUnitsCompUnitsCompilerCompUnits (1)
+  FuncDef (1)
+    FuncFParam (1)
+    Block (2)
+      BlockItems (2)
+        VarDecl (2)
+          VarOPassign (2)
+            ArrayDec (2)
+              ArrayDec (2)
+                IDENTIFIER a            ConstInitVal (2)
+              ConstInitVal (2)
+                IntConst (2)
+                  CONSTANTINTD: 1
+              ConstInitValList (2)
+                ConstInitVal (2)
+                  IntConst (2)
+                    CONSTANTINTD: 2
+                ConstInitValList (2)
+                  ConstInitVal (2)
+                    IntConst (2)
+                      CONSTANTINTD: 3
+                  ConstInitValList (2)
+                    ConstInitVal (2)
+                      IntConst (2)
+                        CONSTANTINTD: 4
+                    ConstInitValList (2)
+                      ConstInitVal (2)
+                        IntConst (2)
+                          CONSTANTINTD: 5
+                      ConstInitValList (2)
+                        ConstInitVal (2)
+                          IntConst (2)
+                            CONSTANTINTD: 6
+                        ConstInitValList (2)
+                          ConstInitVal (2)
+                            IntConst (2)
+                              CONSTANTINTD: 7
+                          ConstInitValList (2)
+                            ConstInitVal (2)
+                              IntConst (2)
+                                CONSTANTINTD: 8
+        BlockItems (3)
+          VarDecl (3)
+            VarOPassign (3)
+              ArrayDec (3)
+                ArrayDec (3)
+                  IDENTIFIER b              ConstInitVal (3)
+                ConstInitVal (3)
+                  ConstInitVal (3)
+                    LVal_EXP (3)
+                      LVal (3)
+                        IDENTIFIER a                        ArrayExps (3)
+                          IntConst (3)
+                            CONSTANTOCT: 0
+                          ArrayExps (3)
+                            IntConst (3)
+                              CONSTANTOCT: 0
+                  ConstInitValList (3)
+                    ConstInitVal (3)
+                      LVal_EXP (3)
+                        LVal (3)
+                          IDENTIFIER a                          ArrayExps (3)
+                            IntConst (3)
+                              CONSTANTOCT: 0
+                            ArrayExps (3)
+                              IntConst (3)
+                                CONSTANTINTD: 1
+                ConstInitValList (3)
+                  ConstInitVal (3)
+                    ConstInitVal (3)
+                      IntConst (3)
+                        CONSTANTINTD: 3
+                    ConstInitValList (3)
+                      ConstInitVal (3)
+                        IntConst (3)
+                          CONSTANTINTD: 4
+                  ConstInitValList (3)
+                    ConstInitVal (3)
+                      ConstInitVal (3)
+                        IntConst (3)
+                          CONSTANTINTD: 5
+                      ConstInitValList (3)
+                        ConstInitVal (3)
+                          IntConst (3)
+                            CONSTANTINTD: 6
+                    ConstInitValList (3)
+                      ConstInitVal (3)
+                        ConstInitVal (3)
+                          IntConst (3)
+                            CONSTANTINTD: 7
+                        ConstInitValList (3)
+                          ConstInitVal (3)
+                            IntConst (3)
+                              CONSTANTINTD: 8
+          BlockItems (4)
+            Return_Stmt (4)
+              IntConst (4)
+                CONSTANTOCT: 0
+
+
+===========================================================
+Global
+ID             category       type           depictor
+               
+main           Function       TYPEINTEGER    NOT NULL       
+===========================================================
+Formal:main
+ID             category       type           depictor
+              
+               NOParam                       NOT NULL       
+===========================================================
+Local:main
+ID             category       type           depictor
+              
+a              Array          TYPEINTEGER    NULL           
+b              Array          TYPEINTEGER    NULL           
+Segmentation fault (core dumped)

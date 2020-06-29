@@ -1,0 +1,83 @@
+--(end of buffer or a NUL)
+--accepting rule at line 108 ("int")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("main")
+--accepting rule at line 88 ("(")
+--accepting rule at line 89 (")")
+--accepting rule at line 86 ("{")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 82 ("//this is a single line comment
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 82 ("//int a;
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 82 ("//a=5;
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 124 ("return")
+--accepting rule at line 130 (" ")
+--accepting rule at line 127 ("0")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 87 ("}")
+--(end of buffer or a NUL)
+--EOF (start condition 0)
+<int>
+<id,main>
+<(>
+<)>
+FuncFParams<{>
+<return>
+<into>
+<;>
+StmtBlockItem<}>
+BlockItemsBlockItemsBlockCompUnitCompUnitsCompUnitsCompilerCompUnits (1)
+  FuncDef (1)
+    FuncFParam (1)
+    Block (5)
+      BlockItems (5)
+        Return_Stmt (5)
+          IntConst (5)
+            CONSTANTOCT: 0
+
+
+===========================================================
+Global
+ID             category       type           depictor
+               
+main           Function       TYPEINTEGER    NOT NULL       
+===========================================================
+Formal:main
+ID             category       type           depictor
+              
+               NOParam                       NULL           
+===========================================================
+Local:main
+ID             category       type           depictor
+              
+123456
+~~~~TAC~~~~~
+ No  Source Position	TACCode
+_______________________________________
+  0  (at line   0)	CALL main
+
+  1  (at line   1)	FUNCTION main :
+  2  (at line   1)	PARAM  
+  3  (at line   5)	_t0 := #0
+  4  (at line   5)	RETURN _t0

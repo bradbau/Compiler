@@ -1,0 +1,317 @@
+--(end of buffer or a NUL)
+--accepting rule at line 82 ("// test if-if-else
+")
+--accepting rule at line 108 ("int")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("ififElse")
+--accepting rule at line 88 ("(")
+--accepting rule at line 89 (")")
+--accepting rule at line 130 (" ")
+--accepting rule at line 86 ("{")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 108 ("int")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("a")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("a")
+--accepting rule at line 130 (" ")
+--accepting rule at line 97 ("=")
+--accepting rule at line 130 (" ")
+--accepting rule at line 125 ("5")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 108 ("int")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("b")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("b")
+--accepting rule at line 130 (" ")
+--accepting rule at line 97 ("=")
+--accepting rule at line 130 (" ")
+--accepting rule at line 125 ("10")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 109 ("if")
+--accepting rule at line 88 ("(")
+--accepting rule at line 128 ("a")
+--accepting rule at line 130 (" ")
+--accepting rule at line 101 ("==")
+--accepting rule at line 130 (" ")
+--accepting rule at line 125 ("5")
+--accepting rule at line 89 (")")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 109 ("if")
+--accepting rule at line 130 (" ")
+--accepting rule at line 88 ("(")
+--accepting rule at line 128 ("b")
+--accepting rule at line 130 (" ")
+--accepting rule at line 101 ("==")
+--accepting rule at line 130 (" ")
+--accepting rule at line 125 ("10")
+--accepting rule at line 89 (")")
+--accepting rule at line 130 (" ")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("a")
+--accepting rule at line 130 (" ")
+--accepting rule at line 97 ("=")
+--accepting rule at line 130 (" ")
+--accepting rule at line 125 ("25")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 110 ("else")
+--accepting rule at line 130 (" ")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("a")
+--accepting rule at line 130 (" ")
+--accepting rule at line 97 ("=")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("a")
+--accepting rule at line 130 (" ")
+--accepting rule at line 92 ("+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 125 ("15")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 124 ("return")
+--accepting rule at line 130 (" ")
+--accepting rule at line 88 ("(")
+--accepting rule at line 128 ("a")
+--accepting rule at line 89 (")")
+<int>
+<id,ififElse>
+<(>
+<)>
+FuncFParams<{>
+<int>
+<id,a>
+VarDec<;>
+VarDefVarDefsDeclBlockItem<id,a>
+<=>
+ArrayExpsLval
+<intd>
+<;>
+stmt1
+BlockItem<int>
+<id,b>
+VarDec<;>
+VarDefVarDefsDeclBlockItem<id,b>
+<=>
+ArrayExpsLval
+<intd>
+<;>
+stmt1
+BlockItem<if>
+<(>
+<id,a>
+<==>
+ArrayExpsLval
+<intd>
+<)>
+Cond<if>
+<(>
+<id,b>
+<==>
+ArrayExpsLval
+<intd>
+<)>
+Cond<id,a>
+<=>
+ArrayExpsLval
+<intd>
+<;>
+stmt1
+<else>
+<id,a>
+<=>
+ArrayExpsLval
+<id,a>
+<+>
+ArrayExpsLval
+<intd>
+<;>
+stmt1
+Stmt<return>
+StmtBlockItem<(>
+<id,a>
+<)>
+ArrayExpsLva--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 87 ("}")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 108 ("int")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("main")
+--accepting rule at line 88 ("(")
+--accepting rule at line 89 (")")
+--accepting rule at line 86 ("{")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 124 ("return")
+--accepting rule at line 130 (" ")
+--accepting rule at line 88 ("(")
+--accepting rule at line 128 ("ififElse")
+--accepting rule at line 88 ("(")
+--accepting rule at line 89 (")")
+--accepting rule at line 89 (")")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 87 ("}")
+--accepting rule at line 131 ("
+")
+--(end of buffer or a NUL)
+--EOF (start condition 0)
+l
+<;>
+StmtBlockItem<}>
+BlockItemsBlockItemsBlockItemsBlockItemsBlockItemsBlockItemsBlockItemsBlockCompUnit<int>
+<id,main>
+<(>
+<)>
+FuncFParams<{>
+<return>
+<(>
+<id,ififElse>
+<(>
+<)>
+<)>
+<;>
+StmtBlockItem<}>
+BlockItemsBlockItemsBlockCompUnitCompUnitsCompUnitsCompUnitsCompilerCompUnits (2)
+  FuncDef (2)
+    FuncFParam (2)
+    Block (3)
+      BlockItems (3)
+        VarDecl (3)
+          IDENTIFIER a        BlockItems (4)
+          Lval_Opassign_Stmt (4)
+            LVal (4)
+              IDENTIFIER a            IntConst (4)
+              CONSTANTINTD: 5
+          BlockItems (5)
+            VarDecl (5)
+              IDENTIFIER b            BlockItems (6)
+              Lval_Opassign_Stmt (6)
+                LVal (6)
+                  IDENTIFIER b                IntConst (6)
+                  CONSTANTINTD: 10
+              BlockItems (7)
+                IF_Stmt (7)
+                  Cond (7)
+                    OPEQUAL (7)
+                      LVal_EXP (7)
+                        LVal (7)
+                          IDENTIFIER a                      IntConst (7)
+                        CONSTANTINTD: 5
+                  IF_ELSE_Stmt (8)
+                    Cond (8)
+                      OPEQUAL (8)
+                        LVal_EXP (8)
+                          LVal (8)
+                            IDENTIFIER b                        IntConst (8)
+                          CONSTANTINTD: 10
+                    Lval_Opassign_Stmt (9)
+                      LVal (9)
+                        IDENTIFIER a                      IntConst (9)
+                        CONSTANTINTD: 25
+                    Lval_Opassign_Stmt (11)
+                      LVal (11)
+                        IDENTIFIER a                      PLUSExp (11)
+                        LVal_EXP (11)
+                          LVal (11)
+                            IDENTIFIER a                        IntConst (11)
+                          CONSTANTINTD: 15
+                BlockItems (13)
+                  Return_Stmt (13)
+                    (Exp) (13)
+                      LVal_EXP (13)
+                        LVal (13)
+                          IDENTIFIER a  CompUnits (16)
+    FuncDef (16)
+      FuncFParam (16)
+      Block (17)
+        BlockItems (17)
+          Return_Stmt (17)
+            (Exp) (17)
+              funcall (17)
+                IDENTIFIER ififElse
+
+===========================================================
+Global
+ID             category       type           depictor
+               
+ififElse       Function       TYPEINTEGER    NOT NULL       
+main           Function       TYPEINTEGER    NOT NULL       
+===========================================================
+Formal:ififElse
+ID             category       type           depictor
+              
+               NOParam                       NOT NULL       
+===========================================================
+Local:ififElse
+ID             category       type           depictor
+              
+a              Variable       TYPEINTEGER    NULL           
+b              Variable       TYPEINTEGER    NULL           
+===========================================================
+Formal:main
+ID             category       type           depictor
+              
+               NOParam                       NULL           
+Segmentation fault (core dumped)

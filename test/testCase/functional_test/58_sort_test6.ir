@@ -1,0 +1,19 @@
+--(end of buffer or a NUL)
+--accepting rule at line 108 ("int")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("n")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 108 ("int")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("counting")
+--accepting rule at line 133 ("_sort")
+<int>
+<id,n>
+<;>
+VarDecVarDefVarDefsDeclCompUnit<int>
+<id,counting>
+Lexical Error at Line 3 column 13: Wrong format of identifier.

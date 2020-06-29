@@ -1,0 +1,134 @@
+--(end of buffer or a NUL)
+--accepting rule at line 108 ("int")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("defn")
+--accepting rule at line 88 ("(")
+--accepting rule at line 89 (")")
+--accepting rule at line 86 ("{")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 124 ("return")
+--accepting rule at line 130 (" ")
+--accepting rule at line 125 ("4")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 87 ("}")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 108 ("int")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("main")
+--accepting rule at line 88 ("(")
+--accepting rule at line 89 (")")
+--accepting rule at line 86 ("{")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 108 ("int")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("a")
+--accepting rule at line 97 ("=")
+--accepting rule at line 128 ("defn")
+--accepting rule at line 88 ("(")
+--accepting rule at line 89 (")")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 124 ("return")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("a")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 87 ("}")
+--(end of buffer or a NUL)
+--EOF (start condition 0)
+<int>
+<id,defn>
+<(>
+<)>
+FuncFParams<{>
+<return>
+<intd>
+<;>
+StmtBlockItem<}>
+BlockItemsBlockItemsBlockCompUnit<int>
+<id,main>
+<(>
+<)>
+FuncFParams<{>
+<int>
+<id,a>
+VarDec<=>
+<id,defn>
+<(>
+<)>
+<;>
+InitValVarDefVarDefsDeclBlockItem<return>
+<id,a>
+<;>
+ArrayExpsLval
+StmtBlockItem<}>
+BlockItemsBlockItemsBlockItemsBlockCompUnitCompUnitsCompUnitsCompUnitsCompilerCompUnits (1)
+  FuncDef (1)
+    FuncFParam (1)
+    Block (2)
+      BlockItems (2)
+        Return_Stmt (2)
+          IntConst (2)
+            CONSTANTINTD: 4
+  CompUnits (5)
+    FuncDef (5)
+      FuncFParam (5)
+      Block (6)
+        BlockItems (6)
+          VarDecl (6)
+            VarOPassign (6)
+              IDENTIFIER a              ConstInitVal (6)
+                funcall (6)
+                  IDENTIFIER defn          BlockItems (7)
+            Return_Stmt (7)
+              LVal_EXP (7)
+                LVal (7)
+                  IDENTIFIER a
+
+===========================================================
+Global
+ID             category       type           depictor
+               
+defn           Function       TYPEINTEGER    NOT NULL       
+main           Function       TYPEINTEGER    NOT NULL       
+===========================================================
+Formal:defn
+ID             category       type           depictor
+              
+               NOParam                       NULL           
+===========================================================
+Local:defn
+ID             category       type           depictor
+              
+===========================================================
+Formal:main
+ID             category       type           depictor
+              
+               NOParam                       NOT NULL       
+===========================================================
+Local:main
+ID             category       type           depictor
+              
+a              Variable       TYPEINTEGER    NULL           
+Segmentation fault (core dumped)

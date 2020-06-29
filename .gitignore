@@ -32,3 +32,9 @@
 *.app
 
 
+*.tab.c
+*.tab.h
+compiler
+*.yy.c
+
+

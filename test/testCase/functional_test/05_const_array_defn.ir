@@ -1,0 +1,131 @@
+--(end of buffer or a NUL)
+--accepting rule at line 114 ("const")
+--accepting rule at line 130 (" ")
+--accepting rule at line 108 ("int")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("a")
+--accepting rule at line 90 ("[")
+--accepting rule at line 125 ("5")
+--accepting rule at line 91 ("]")
+--accepting rule at line 97 ("=")
+--accepting rule at line 86 ("{")
+--accepting rule at line 127 ("0")
+--accepting rule at line 84 (",")
+--accepting rule at line 125 ("1")
+--accepting rule at line 84 (",")
+--accepting rule at line 125 ("2")
+--accepting rule at line 84 (",")
+--accepting rule at line 125 ("3")
+--accepting rule at line 84 (",")
+--accepting rule at line 125 ("4")
+--accepting rule at line 87 ("}")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 108 ("int")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("main")
+--accepting rule at line 88 ("(")
+--accepting rule at line 89 (")")
+--accepting rule at line 86 ("{")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 124 ("return")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("a")
+--accepting rule at line 90 ("[")
+--accepting rule at line 125 ("4")
+--accepting rule at line 91 ("]")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 87 ("}")
+--(end of buffer or a NUL)
+--EOF (start condition 0)
+<const>
+<int>
+<id,a>
+VarDec<[>
+<intd>
+<]>
+VarDec<=>
+<{>
+<into>
+<,>
+InitVal<intd>
+<,>
+InitVal<intd>
+<,>
+InitVal<intd>
+<,>
+InitVal<intd>
+<}>
+InitValInitValListInitValListInitValListInitValListInitValListInitValConstDef<;>
+ConstDefsDeclCompUnit<int>
+<id,main>
+<(>
+<)>
+FuncFParams<{>
+<return>
+<id,a>
+<[>
+<intd>
+<]>
+<;>
+ArrayExpsArrayExpsLval
+StmtBlockItem<}>
+BlockItemsBlockItemsBlockCompUnitCompUnitsCompUnitsCompUnitsCompilerCompUnits (1)
+  ConstDecl (1)
+    ConstOpassign (1)
+      ArrayDec (1)
+        IDENTIFIER a      ConstInitVal (1)
+        ConstInitVal (1)
+          IntConst (1)
+            CONSTANTOCT: 0
+        ConstInitValList (1)
+          ConstInitVal (1)
+            IntConst (1)
+              CONSTANTINTD: 1
+          ConstInitValList (1)
+            ConstInitVal (1)
+              IntConst (1)
+                CONSTANTINTD: 2
+            ConstInitValList (1)
+              ConstInitVal (1)
+                IntConst (1)
+                  CONSTANTINTD: 3
+              ConstInitValList (1)
+                ConstInitVal (1)
+                  IntConst (1)
+                    CONSTANTINTD: 4
+  CompUnits (3)
+    FuncDef (3)
+      FuncFParam (3)
+      Block (4)
+        BlockItems (4)
+          Return_Stmt (4)
+            LVal_EXP (4)
+              LVal (4)
+                IDENTIFIER a                ArrayExps (4)
+                  IntConst (4)
+                    CONSTANTINTD: 4
+
+
+===========================================================
+Global
+ID             category       type           depictor
+               
+a              Array          TYPEINTEGER    NULL           
+main           Function       TYPEINTEGER    NOT NULL       
+===========================================================
+Formal:main
+ID             category       type           depictor
+              
+               NOParam                       NULL           
+Segmentation fault (core dumped)
