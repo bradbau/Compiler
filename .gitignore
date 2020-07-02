@@ -36,5 +36,5 @@
 *.tab.h
 compiler
 *.yy.c
-
+.output
 
