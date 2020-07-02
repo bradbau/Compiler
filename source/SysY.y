@@ -10,7 +10,8 @@
     #include "./IntermediateCode/TAC.h"
     #include "AST.h"
 
-    using namespace std;
+    using std::string;
+    using std::cout;
 
     extern int yylineno; //共用
     extern int yylex();
@@ -350,6 +351,7 @@ FuncRParams: Exp Exps{ ASTTree *asttree = new ASTTree("FuncRParams", 2, yylineno
 /*注：SysY 表达式是 int 型表达式*/
 Exp: OPLEFTPRNT Exp OPRIGHTPRNT { ASTTree *asttree = new ASTTree("(Exp)", 1, yylineno,$2);$$ = asttree; }
    | LVal { ASTTree *asttree = new ASTTree("LVal_EXP", 1, yylineno, $1);$$ = asttree; }
+   | STRING {$$=$1;printf("ExpString:%s\n",$$->GetString().c_str());}
    | Number{ $$ = $1; }
    | IDENTIFIER OPLEFTPRNT OPRIGHTPRNT { ASTTree *asttree = new ASTTree("funcall", 1, yylineno, $1);$$ = asttree; }
    | IDENTIFIER OPLEFTPRNT FuncRParams OPRIGHTPRNT { ASTTree *asttree = new ASTTree("funcall", 2, yylineno, $1,$3);$$ = asttree; }
