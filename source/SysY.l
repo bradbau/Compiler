@@ -55,24 +55,16 @@ KEYWHILE        "while"
 KEYBREAK        "break"
 KEYCONTINUE     "continue" 
 KEYRETURN       "return"
-KEYGETINT       "getint"
-KEYGETCHAR      "getchar"
-KEYGETARRAY     "getarray"
-KEYPUTINT       "putint"
-KEYPUTCHAR      "putchar"
-KEYPUTARRAY     "putarray"
-KEYPUTF         "putf"
-KEYSTARTTIME    "starttime"
-KEYSTOPTIME     "stoptime"
 CONSTANTOCT     0[0-7]*      
 CONSTANTINTD    [1-9][0-9]*
 CONSTANTINTH    0[xX][0-9a-fA-F]+
-IDENTIFIER      [a-zA-Z][a-zA-Z0-9]* 
+IDENTIFIER      [a-zA-Z][a-zA-Z0-9_]* 
 SPACE           " "|\t
 EOL             \n
 WRONGSTRING     \"[^\"\n]*$
 WRONGIDENTIFIER [0-9_][a-zA-Z0-9_]* 
 AERROR          .
+STRING          \".*?\"
 
 %%
 \/\*		{BEGIN(COMMENT);}

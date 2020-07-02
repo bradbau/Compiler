@@ -20,3 +20,8 @@
 master： 稳定可运行分支
 dev：当前开发测试分支
 ***（自己的名字）：个人开发分支
+## 编译
+进入source文件夹，运行make，然后可执行文件Compiler会出现在source目录下。
+具体规则见makefile文件
+## 测试
+进入testScript文件夹，运行CompilerBatchTest.sh，可执行文件Compiler会读取所有testCase下后缀.sy的文件，并输出分析结果到.ir(中间代码文件)
