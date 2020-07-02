@@ -726,4 +726,7 @@ Formal:main
 ID             category       type           depictor
               
                NOParam                       NULL           
-Segmentation fault (core dumped)
+===========================================================
+Local:main
+ID             category       type           depictor
+              

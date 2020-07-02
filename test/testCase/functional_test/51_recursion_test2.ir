@@ -341,4 +341,3 @@ Local:main
 ID             category       type           depictor
               
 tmp            Variable       TYPEINTEGER    NULL           
-Segmentation fault (core dumped)

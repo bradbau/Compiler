@@ -309,4 +309,3 @@ ID             category       type           depictor
               
 a              Array          TYPEINTEGER    NULL           
 b              Array          TYPEINTEGER    NULL           
-Segmentation fault (core dumped)

@@ -71,8 +71,10 @@ Compiler: CompUnits {
                 ScopeStack* stack = Stack();
 
                 ScopeItem scopeItem;
-                TACCode* entrance = BuildTAC($$ , *($$->si) , stack);
-                DisplayTACCode(entrance);
+                unsigned int temp_num = 0;
+                unsigned int label_num = 0;
+                //TACCode* entrance = BuildTAC($$ , $$->si , stack, temp_num, label_num);
+                //DisplayTACCode(entrance);
                 }
         ;
 CompUnits:{ cout << "CompUnits"; $$ = NULL;}

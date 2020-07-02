@@ -276,4 +276,3 @@ Local:main
 ID             category       type           depictor
               
 n              Variable       TYPEINTEGER    NULL           
-Segmentation fault (core dumped)

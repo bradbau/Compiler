@@ -33,14 +33,14 @@ typedef struct basic_block {
 */
 
 
-    TACCode* BuildTAC(ASTTree* tree, ScopeItem scopeItem, ScopeStack* stack);// ��ʼ��һ��TAC��Ҳ���Ǵ����﷨����Ӧ������ַ������
+    TACCode* BuildTAC(ASTTree* tree, ScopeItem* scopeItem, ScopeStack* stack, unsigned int &temp_num, unsigned int &label_num);
     TACCode* MergeTACItem(int num, ...);
-    TACCode* TranslateExp(ASTTree* tree, ScopeItem scopeItem, ScopeStack* stack, ScopeItem place);
-    TACCode* TranslateCondition(ASTTree* tree, ScopeItem scopeItem, ScopeStack* stack, unsigned int label_true, unsigned int label_false);
-    TACCode* TranslateArgs(ASTTree* tree, ScopeItem scopeItem, ScopeStack* stack);
-    TACCode* TranslateExps(ASTTree* tree, ScopeItem scopeItem, ScopeStack* stack);
-    TACCode* TranslateStmt(ASTTree* tree, ScopeItem scopeItem, ScopeStack* stack, Label continuevalue, Label breakvalue);
-    TACCode* TranslateInitVal(ASTTree* tree, ScopeItem scopeItem, ScopeStack* stack, ScopeItem place);
+    TACCode* TranslateExp(ASTTree* tree, ScopeItem* scopeItem, ScopeStack* stack, ScopeItem* place, unsigned int &temp_num, unsigned int &label_num);
+    TACCode* TranslateCondition(ASTTree* tree, ScopeItem*scopeItem, ScopeStack* stack, unsigned int label_true, unsigned int label_false, unsigned int &temp_num, unsigned int &label_num);
+    TACCode* TranslateArgs(ASTTree* tree, ScopeItem* scopeItem, ScopeStack* stack, unsigned int &temp_num, unsigned int &label_num);
+    TACCode* TranslateExps(ASTTree* tree, ScopeItem* scopeItem, ScopeStack* stack, unsigned int &temp_num, unsigned int &label_num);
+    TACCode* TranslateStmt(ASTTree* tree, ScopeItem* scopeItem, ScopeStack* stack, Label continuevalue, Label breakvalue, unsigned int &temp_num, unsigned int &label_num);
+    TACCode* TranslateInitVal(ASTTree* tree, ScopeItem *scopeItem, ScopeStack* stack, ScopeItem* place, unsigned int &temp_num, unsigned int &label_num);
 
     void DisplayTACCode(TACCode* entrance);
 #endif

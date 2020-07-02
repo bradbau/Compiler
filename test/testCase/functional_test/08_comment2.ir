@@ -70,13 +70,3 @@ ID             category       type           depictor
 Local:main
 ID             category       type           depictor
               
-123456
-~~~~TAC~~~~~
- No  Source Position	TACCode
-_______________________________________
-  0  (at line   0)	CALL main
-
-  1  (at line   1)	FUNCTION main :
-  2  (at line   1)	PARAM  
-  3  (at line   9)	_t0 := #0
-  4  (at line   9)	RETURN _t0

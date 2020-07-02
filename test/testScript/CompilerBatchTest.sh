@@ -38,7 +38,7 @@ apply() {
     done
 }
 
-root_dir="/home/max/CompilerDesignCom/Compiler/test/testCase/functional_test"
+root_dir="/home/max/CompilerDesignCom/Compiler/test/testCase"
 
 
 #CompileAndDump $root_dir"/functional_test" "00_arr_defn2.c"

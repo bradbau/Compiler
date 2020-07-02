@@ -249,4 +249,3 @@ Local:block
 ID             category       type           depictor
               
                Block          BLOCKStmt      NULL           
-Segmentation fault (core dumped)

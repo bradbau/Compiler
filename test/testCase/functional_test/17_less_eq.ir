@@ -288,4 +288,3 @@ ID             category       type           depictor
               
 i              Variable       TYPEINTEGER    NULL           
                Block          BLOCKStmt      NULL           
-Segmentation fault (core dumped)

@@ -13,7 +13,13 @@ typedef enum
     LABEL           //我们的label应该是用于标记间接三元式的在数组中的位置，用来作为取三元式值的索引
 } TACOperandType;  // 操作数类型;
 
-
+typedef union
+    {
+        int value;       //整形值，可以用于保存
+        int labelvalue;
+        ScopeItem* variable;     //
+        ScopeItem* function;     //
+} TACOperandData;
 
 
 
@@ -47,13 +53,7 @@ QuadrupleOperand::QuadrupleOperand(TACOperandType Type, ScopeItem item);
 
 typedef struct {
     TACOperandType Type; //本操作符的成员
-    union
-    {
-        int value;       //整形值，可以用于保存
-        int labelvalue;
-        ScopeItem variable;     //
-        ScopeItem function;     //
-    };
+    TACOperandData Data; //操作符数据
 
 }QuadrupleOperand;
 #endif

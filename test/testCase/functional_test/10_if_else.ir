@@ -151,4 +151,3 @@ ID             category       type           depictor
               
                Block          BLOCKStmt      NULL           
                Block          BLOCKStmt      NULL           
-Segmentation fault (core dumped)

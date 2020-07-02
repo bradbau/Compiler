@@ -137,5 +137,3 @@ Local:main
 ID             category       type           depictor
               
                Block          BLOCKStmt      NULL           
-123456pigpigpig
-Segmentation fault (core dumped)

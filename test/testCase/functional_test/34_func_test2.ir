@@ -692,4 +692,3 @@ ID             category       type           depictor
 a              Variable       TYPEINTEGER    NULL           
 b              Variable       TYPEINTEGER    NULL           
 c              Variable       TYPEINTEGER    NULL           
-Segmentation fault (core dumped)
