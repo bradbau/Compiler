@@ -1,0 +1,222 @@
+--(end of buffer or a NUL)
+--accepting rule at line 108 ("int")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("n")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 108 ("int")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("f")
+--accepting rule at line 88 ("(")
+--accepting rule at line 108 ("int")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("x")
+--accepting rule at line 89 (")")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 86 ("{")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 ("	")
+--accepting rule at line 109 ("if")
+--accepting rule at line 88 ("(")
+--accepting rule at line 128 ("x")
+--accepting rule at line 101 ("==")
+--accepting rule at line 125 ("1")
+--accepting rule at line 89 (")")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 ("	")
+--accepting rule at line 130 ("	")
+--accepting rule at line 124 ("return")
+--accepting rule at line 130 (" ")
+--accepting rule at line 125 ("1")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 ("	")
+--accepting rule at line 109 ("if")
+--accepting rule at line 88 ("(")
+--accepting rule at line 128 ("x")
+--accepting rule at line 101 ("==")
+--accepting rule at line 125 ("2")
+--accepting rule at line 89 (")")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 ("	")
+--accepting rule at line 130 ("	")
+--accepting rule at line 124 ("return")
+--accepting rule at line 130 (" ")
+--accepting rule at line 125 ("1")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 ("	")
+--accepting rule at line 108 ("int")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("a")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 ("	")
+--accepting rule at line 108 ("int")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("b")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 ("	")
+--accepting rule at line 128 ("a")
+--accepting rule at line 97 ("=")
+--accepting rule at line 128 ("x")
+--accepting rule at line 93 ("-")
+--accepting rule at line 125 ("1")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 ("	")
+--accepting rule at line 128 ("b")
+--accepting rule at line 97 ("=")
+--accepting rule at line 128 ("x")
+--accepting rule at line 93 ("-")
+--accepting rule at line 125 ("2")
+--accepting rule at line 83 (";")
+<int>
+<id,n>
+<;>
+VarDecVarDefVarDefsDeclCompUnit<int>
+<id,f>
+<(>
+<int>
+<id,x>
+<)>
+FuncFParamFuncFParams<{>
+<if>
+<(>
+<id,x>
+<==>
+ArrayExpsLval
+<intd>
+<)>
+Cond<return>
+<intd>
+<;>
+Stmt<if>
+StmtBlockItem<(>
+<id,x>
+<==>
+ArrayExpsLval
+<intd>
+<)>
+Cond<return>
+<intd>
+<;>
+Stmt<int>
+StmtBlockItem<id,a>
+VarDec<;>
+VarDefVarDefsDeclBlockItem<int>
+<id,b>
+VarDec<;>
+VarDefVarDefsDeclBlockItem<id,a>
+<=>
+ArrayExpsLval
+<id,x>
+<->
+ArrayExpsLval
+<intd>
+<;>
+stmt1
+BlockItem<id,b>
+<=>
+ArrayExpsLval
+<id,x>
+<->
+ArrayExpsLval
+<intd>
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 ("	")
+--accepting rule at line 108 ("int")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("c")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 ("	")
+--accepting rule at line 128 ("c")
+--accepting rule at line 130 (" ")
+--accepting rule at line 97 ("=")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("f")
+--accepting rule at line 88 ("(")
+--accepting rule at line 128 ("a")
+--accepting rule at line 89 (")")
+--accepting rule at line 92 ("+")
+--accepting rule at line 128 ("f")
+--accepting rule at line 88 ("(")
+--accepting rule at line 128 ("b")
+--accepting rule at line 89 (")")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 ("	")
+--accepting rule at line 124 ("return")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("c")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 87 ("}")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 108 ("int")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("main")
+--accepting rule at line 88 ("(")
+--accepting rule at line 89 (")")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 86 ("{")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 ("	")
+--accepting rule at line 128 ("n")
+--accepting rule at line 97 ("=")
+--accepting rule at line 115 ("getint")
+Error type B at Line 18 Column 4: syntax error, unexpected KEYGETINT.
+<;>
+stmt1
+BlockItem<int>
+<id,c>
+VarDec<;>
+VarDefVarDefsDeclBlockItem<id,c>
+<=>
+ArrayExpsLval
+<id,f>
+<(>
+<id,a>
+<)>
+ArrayExpsLval
+<+>
+<id,f>
+<(>
+<id,b>
+<)>
+ArrayExpsLval
+<;>
+stmt1
+BlockItem<return>
+<id,c>
+<;>
+ArrayExpsLval
+StmtBlockItem<}>
+BlockItemsBlockItemsBlockItemsBlockItemsBlockItemsBlockItemsBlockItemsBlockItemsBlockItemsBlockItemsBlockCompUnit<int>
+<id,main>
+<(>
+<)>
+FuncFParams<{>
+<id,n>
+<=>
+ArrayExpsLval
+<getint>

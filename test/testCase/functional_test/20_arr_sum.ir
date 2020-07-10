@@ -1,0 +1,46 @@
+--(end of buffer or a NUL)
+--accepting rule at line 108 ("int")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("a")
+--accepting rule at line 90 ("[")
+--accepting rule at line 125 ("5")
+--accepting rule at line 91 ("]")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 108 ("int")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("main")
+--accepting rule at line 88 ("(")
+--accepting rule at line 89 (")")
+--accepting rule at line 86 ("{")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 ("	")
+--accepting rule at line 128 ("a")
+--accepting rule at line 90 ("[")
+--accepting rule at line 127 ("0")
+--accepting rule at line 91 ("]")
+--accepting rule at line 130 (" ")
+--accepting rule at line 97 ("=")
+--accepting rule at line 130 (" ")
+--accepting rule at line 115 ("getint")
+Error type B at Line 3 Column 9: syntax error, unexpected KEYGETINT.
+<int>
+<id,a>
+<[>
+VarDec<intd>
+<]>
+VarDec<;>
+VarDefVarDefsDeclCompUnit<int>
+<id,main>
+<(>
+<)>
+FuncFParams<{>
+<id,a>
+<[>
+<into>
+<]>
+<=>
+ArrayExpsArrayExpsLval
+<getint>

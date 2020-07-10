@@ -1,0 +1,1426 @@
+--(end of buffer or a NUL)
+--accepting rule at line 108 ("int")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("set")
+--accepting rule at line 88 ("(")
+--accepting rule at line 108 ("int")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("a")
+--accepting rule at line 90 ("[")
+--accepting rule at line 91 ("]")
+--accepting rule at line 84 (",")
+--accepting rule at line 130 (" ")
+--accepting rule at line 108 ("int")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("pos")
+--accepting rule at line 84 (",")
+--accepting rule at line 130 (" ")
+--accepting rule at line 108 ("int")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("d")
+--accepting rule at line 89 (")")
+--accepting rule at line 86 ("{")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 114 ("const")
+--accepting rule at line 130 (" ")
+--accepting rule at line 108 ("int")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("bitcount")
+--accepting rule at line 130 (" ")
+--accepting rule at line 97 ("=")
+--accepting rule at line 130 (" ")
+--accepting rule at line 125 ("30")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 108 ("int")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("x")
+--accepting rule at line 90 ("[")
+--accepting rule at line 128 ("bitcount")
+--accepting rule at line 130 (" ")
+--accepting rule at line 92 ("+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 125 ("1")
+--accepting rule at line 91 ("]")
+--accepting rule at line 130 (" ")
+--accepting rule at line 97 ("=")
+--accepting rule at line 130 (" ")
+--accepting rule at line 86 ("{")
+--accepting rule at line 87 ("}")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("x")
+--accepting rule at line 90 ("[")
+--accepting rule at line 127 ("0")
+--accepting rule at line 91 ("]")
+--accepting rule at line 130 (" ")
+--accepting rule at line 97 ("=")
+--accepting rule at line 130 (" ")
+--accepting rule at line 125 ("1")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("x")
+--accepting rule at line 90 ("[")
+--accepting rule at line 125 ("1")
+--accepting rule at line 91 ("]")
+--accepting rule at line 130 (" ")
+--accepting rule at line 97 ("=")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("x")
+--accepting rule at line 90 ("[")
+--accepting rule at line 127 ("0")
+--accepting rule at line 91 ("]")
+--accepting rule at line 130 (" ")
+--accepting rule at line 94 ("*")
+<int>
+<id,set>
+<(>
+<int>
+<id,a>
+<[>
+<]>
+<,>
+ArrayExpsFuncFParam<int>
+<id,pos>
+<,>
+FuncFParam<int>
+<id,d>
+<)>
+FuncFParamFuncFParamsFuncFParamsFuncFParams<{>
+<const>
+<int>
+<id,bitcount>
+VarDec<=>
+<intd>
+<;>
+InitValConstDefConstDefsDeclBlockItem<int>
+<id,x>
+VarDec<[>
+<id,bitcount>
+<+>
+ArrayExpsLval
+<intd>
+<]>
+VarDec<=>
+<{>
+<}>
+InitValVarDef<;>
+VarDefsDeclBlockItem<id,x>
+<[>
+<into>
+<]>
+<=>
+ArrayExpsArrayExpsLval
+<intd>
+<;>
+stmt1
+BlockItem<id,x>
+<[>
+<intd>
+<]>
+<=>
+ArrayExpsArrayExpsLval
+<id,x>
+<[>
+<into>
+<]>
+<*>--accepting rule at line 130 (" ")
+--accepting rule at line 125 ("2")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("x")
+--accepting rule at line 90 ("[")
+--accepting rule at line 125 ("2")
+--accepting rule at line 91 ("]")
+--accepting rule at line 130 (" ")
+--accepting rule at line 97 ("=")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("x")
+--accepting rule at line 90 ("[")
+--accepting rule at line 125 ("1")
+--accepting rule at line 91 ("]")
+--accepting rule at line 130 (" ")
+--accepting rule at line 94 ("*")
+--accepting rule at line 130 (" ")
+--accepting rule at line 125 ("2")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("x")
+--accepting rule at line 90 ("[")
+--accepting rule at line 125 ("3")
+--accepting rule at line 91 ("]")
+--accepting rule at line 130 (" ")
+--accepting rule at line 97 ("=")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("x")
+--accepting rule at line 90 ("[")
+--accepting rule at line 125 ("2")
+--accepting rule at line 91 ("]")
+--accepting rule at line 130 (" ")
+--accepting rule at line 94 ("*")
+--accepting rule at line 130 (" ")
+--accepting rule at line 125 ("2")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("x")
+--accepting rule at line 90 ("[")
+--accepting rule at line 125 ("4")
+--accepting rule at line 91 ("]")
+--accepting rule at line 130 (" ")
+--accepting rule at line 97 ("=")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("x")
+--accepting rule at line 90 ("[")
+--accepting rule at line 125 ("3")
+--accepting rule at line 91 ("]")
+--accepting rule at line 130 (" ")
+--accepting rule at line 94 ("*")
+--accepting rule at line 130 (" ")
+--accepting rule at line 125 ("2")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("x")
+--accepting rule at line 90 ("[")
+--accepting rule at line 125 ("5")
+--accepting rule at line 91 ("]")
+--accepting rule at line 130 (" ")
+--accepting rule at line 97 ("=")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("x")
+--accepting rule at line 90 ("[")
+--accepting rule at line 125 ("4")
+--accepting rule at line 91 ("]")
+--accepting rule at line 130 (" ")
+--accepting rule at line 94 ("*")
+
+ArrayExpsArrayExpsLval
+<intd>
+<;>
+stmt1
+BlockItem<id,x>
+<[>
+<intd>
+<]>
+<=>
+ArrayExpsArrayExpsLval
+<id,x>
+<[>
+<intd>
+<]>
+<*>
+ArrayExpsArrayExpsLval
+<intd>
+<;>
+stmt1
+BlockItem<id,x>
+<[>
+<intd>
+<]>
+<=>
+ArrayExpsArrayExpsLval
+<id,x>
+<[>
+<intd>
+<]>
+<*>
+ArrayExpsArrayExpsLval
+<intd>
+<;>
+stmt1
+BlockItem<id,x>
+<[>
+<intd>
+<]>
+<=>
+ArrayExpsArrayExpsLval
+<id,x>
+<[>
+<intd>
+<]>
+<*>
+ArrayExpsArrayExpsLval
+<intd>
+<;>
+stmt1
+BlockItem<id,x>
+<[>
+<intd>
+<]>
+<=>
+ArrayExpsArrayExpsLval
+<id,x>
+<[>
+<intd>
+<]>
+<*>
+ArrayExpsArrayE--accepting rule at line 130 (" ")
+--accepting rule at line 125 ("2")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("x")
+--accepting rule at line 90 ("[")
+--accepting rule at line 125 ("6")
+--accepting rule at line 91 ("]")
+--accepting rule at line 130 (" ")
+--accepting rule at line 97 ("=")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("x")
+--accepting rule at line 90 ("[")
+--accepting rule at line 125 ("5")
+--accepting rule at line 91 ("]")
+--accepting rule at line 130 (" ")
+--accepting rule at line 94 ("*")
+--accepting rule at line 130 (" ")
+--accepting rule at line 125 ("2")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("x")
+--accepting rule at line 90 ("[")
+--accepting rule at line 125 ("7")
+--accepting rule at line 91 ("]")
+--accepting rule at line 130 (" ")
+--accepting rule at line 97 ("=")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("x")
+--accepting rule at line 90 ("[")
+--accepting rule at line 125 ("6")
+--accepting rule at line 91 ("]")
+--accepting rule at line 130 (" ")
+--accepting rule at line 94 ("*")
+--accepting rule at line 130 (" ")
+--accepting rule at line 125 ("2")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("x")
+--accepting rule at line 90 ("[")
+--accepting rule at line 125 ("8")
+--accepting rule at line 91 ("]")
+--accepting rule at line 130 (" ")
+--accepting rule at line 97 ("=")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("x")
+--accepting rule at line 90 ("[")
+--accepting rule at line 125 ("7")
+--accepting rule at line 91 ("]")
+--accepting rule at line 130 (" ")
+--accepting rule at line 94 ("*")
+--accepting rule at line 130 (" ")
+--accepting rule at line 125 ("2")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("x")
+--accepting rule at line 90 ("[")
+--accepting rule at line 125 ("9")
+--accepting rule at line 91 ("]")
+--accepting rule at line 130 (" ")
+--accepting rule at line 97 ("=")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("x")
+--accepting rule at line 90 ("[")
+--accepting rule at line 125 ("8")
+--accepting rule at line 91 ("]")
+--accepting rule at line 130 (" ")
+--accepting rule at line 94 ("*")
+--accepting rule at line 130 (" ")
+--accepting rule at line 125 ("2")
+--accepting rule at line 83 (";")
+xpsLval
+<intd>
+<;>
+stmt1
+BlockItem<id,x>
+<[>
+<intd>
+<]>
+<=>
+ArrayExpsArrayExpsLval
+<id,x>
+<[>
+<intd>
+<]>
+<*>
+ArrayExpsArrayExpsLval
+<intd>
+<;>
+stmt1
+BlockItem<id,x>
+<[>
+<intd>
+<]>
+<=>
+ArrayExpsArrayExpsLval
+<id,x>
+<[>
+<intd>
+<]>
+<*>
+ArrayExpsArrayExpsLval
+<intd>
+<;>
+stmt1
+BlockItem<id,x>
+<[>
+<intd>
+<]>
+<=>
+ArrayExpsArrayExpsLval
+<id,x>
+<[>
+<intd>
+<]>
+<*>
+ArrayExpsArrayExpsLval
+<intd>
+<;>
+stmt1
+BlockItem<id,x>
+<[>
+<intd>
+<]>
+<=>
+ArrayExpsArrayExpsLval
+<id,x>
+<[>
+<intd>
+<]>
+<*>
+ArrayExpsArrayExpsLval
+<intd>
+<--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("x")
+--accepting rule at line 90 ("[")
+--accepting rule at line 125 ("10")
+--accepting rule at line 91 ("]")
+--accepting rule at line 130 (" ")
+--accepting rule at line 97 ("=")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("x")
+--accepting rule at line 90 ("[")
+--accepting rule at line 125 ("9")
+--accepting rule at line 91 ("]")
+--accepting rule at line 130 (" ")
+--accepting rule at line 94 ("*")
+--accepting rule at line 130 (" ")
+--accepting rule at line 125 ("2")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 108 ("int")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("i")
+--accepting rule at line 130 (" ")
+--accepting rule at line 97 ("=")
+--accepting rule at line 130 (" ")
+--accepting rule at line 125 ("10")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 111 ("while")
+--accepting rule at line 130 (" ")
+--accepting rule at line 88 ("(")
+--accepting rule at line 128 ("i")
+--accepting rule at line 130 (" ")
+--accepting rule at line 104 ("<")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("bitcount")
+--accepting rule at line 89 (")")
+--accepting rule at line 86 ("{")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("i")
+--accepting rule at line 130 (" ")
+--accepting rule at line 97 ("=")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("i")
+--accepting rule at line 130 (" ")
+--accepting rule at line 92 ("+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 125 ("1")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("x")
+--accepting rule at line 90 ("[")
+--accepting rule at line 128 ("i")
+--accepting rule at line 91 ("]")
+--accepting rule at line 130 (" ")
+--accepting rule at line 97 ("=")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("x")
+--accepting rule at line 90 ("[")
+--accepting rule at line 128 ("i")
+--accepting rule at line 130 (" ")
+--accepting rule at line 93 ("-")
+--accepting rule at line 130 (" ")
+--accepting rule at line 125 ("1")
+--accepting rule at line 91 ("]")
+--accepting rule at line 130 (" ")
+--accepting rule at line 94 ("*")
+--accepting rule at line 130 (" ")
+--accepting rule at line 125 ("2")
+--accepting rule at line 83 (";")
+;>
+stmt1
+BlockItem<id,x>
+<[>
+<intd>
+<]>
+<=>
+ArrayExpsArrayExpsLval
+<id,x>
+<[>
+<intd>
+<]>
+<*>
+ArrayExpsArrayExpsLval
+<intd>
+<;>
+stmt1
+BlockItem<int>
+<id,i>
+VarDec<=>
+<intd>
+<;>
+InitValVarDefVarDefsDeclBlockItem<while>
+<(>
+<id,i>
+<<>
+ArrayExpsLval
+<id,bitcount>
+<)>
+ArrayExpsLval
+Cond<{>
+<id,i>
+<=>
+ArrayExpsLval
+<id,i>
+<+>
+ArrayExpsLval
+<intd>
+<;>
+stmt1
+BlockItem<id,x>
+<[>
+<id,i>
+<]>
+ArrayExpsLval
+<=>
+ArrayExpsArrayExpsLval
+<id,x>
+<[>
+<id,i>
+<->
+ArrayExpsLval
+<intd>
+<]>
+<*>
+ArrayExpsArrayExpsLval
+<intd>
+<;>
+st--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 87 ("}")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 108 ("int")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("v")
+--accepting rule at line 130 (" ")
+--accepting rule at line 97 ("=")
+--accepting rule at line 130 (" ")
+--accepting rule at line 127 ("0")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 109 ("if")
+--accepting rule at line 130 (" ")
+--accepting rule at line 88 ("(")
+--accepting rule at line 128 ("pos")
+--accepting rule at line 130 (" ")
+--accepting rule at line 95 ("/")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("bitcount")
+--accepting rule at line 130 (" ")
+--accepting rule at line 105 (">=")
+--accepting rule at line 130 (" ")
+--accepting rule at line 125 ("10000")
+--accepting rule at line 89 (")")
+--accepting rule at line 130 (" ")
+--accepting rule at line 124 ("return")
+--accepting rule at line 130 (" ")
+--accepting rule at line 127 ("0")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 109 ("if")
+--accepting rule at line 130 (" ")
+--accepting rule at line 88 ("(")
+--accepting rule at line 128 ("a")
+--accepting rule at line 90 ("[")
+--accepting rule at line 128 ("pos")
+--accepting rule at line 130 (" ")
+--accepting rule at line 95 ("/")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("bitcount")
+--accepting rule at line 91 ("]")
+--accepting rule at line 130 (" ")
+--accepting rule at line 95 ("/")
+--accepting rule at line 130 (" ")
+--accepting rule at line 88 ("(")
+--accepting rule at line 128 ("x")
+--accepting rule at line 90 ("[")
+--accepting rule at line 128 ("pos")
+--accepting rule at line 130 (" ")
+--accepting rule at line 96 ("%")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("bitcount")
+--accepting rule at line 91 ("]")
+--accepting rule at line 89 (")")
+--accepting rule at line 130 (" ")
+--accepting rule at line 96 ("%")
+--accepting rule at line 130 (" ")
+--accepting rule at line 125 ("2")
+--accepting rule at line 130 (" ")
+--accepting rule at line 102 ("!=")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("d")
+--accepting rule at line 89 (")")
+--accepting rule at line 86 ("{")
+mt1
+BlockItem<}>
+BlockItemsBlockItemsBlockItemsBlockStmtStmtBlockItem<int>
+<id,v>
+VarDec<=>
+<into>
+<;>
+InitValVarDefVarDefsDeclBlockItem<if>
+<(>
+<id,pos>
+</>
+ArrayExpsLval
+<id,bitcount>
+<>=>
+ArrayExpsLval
+<intd>
+<)>
+Cond<return>
+<into>
+<;>
+Stmt<if>
+StmtBlockItem<(>
+<id,a>
+<[>
+<id,pos>
+</>
+ArrayExpsLval
+<id,bitcount>
+<]>
+ArrayExpsLval
+</>
+ArrayExpsArrayExpsLval
+<(>
+<id,x>
+<[>
+<id,pos>
+<%>
+ArrayExpsLval
+<id,bitcount>
+<]>
+ArrayExpsLval
+<)>
+ArrayExpsArrayExpsLval
+<%>
+<intd>
+<!=>
+<id,d>
+<)>
+ArrayExpsLval
+Cond<{>--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 109 ("if")
+--accepting rule at line 130 (" ")
+--accepting rule at line 88 ("(")
+--accepting rule at line 128 ("a")
+--accepting rule at line 90 ("[")
+--accepting rule at line 128 ("pos")
+--accepting rule at line 130 (" ")
+--accepting rule at line 95 ("/")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("bitcount")
+--accepting rule at line 91 ("]")
+--accepting rule at line 130 (" ")
+--accepting rule at line 95 ("/")
+--accepting rule at line 130 (" ")
+--accepting rule at line 88 ("(")
+--accepting rule at line 128 ("x")
+--accepting rule at line 90 ("[")
+--accepting rule at line 128 ("pos")
+--accepting rule at line 130 (" ")
+--accepting rule at line 96 ("%")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("bitcount")
+--accepting rule at line 91 ("]")
+--accepting rule at line 89 (")")
+--accepting rule at line 130 (" ")
+--accepting rule at line 96 ("%")
+--accepting rule at line 130 (" ")
+--accepting rule at line 125 ("2")
+--accepting rule at line 130 (" ")
+--accepting rule at line 101 ("==")
+--accepting rule at line 130 (" ")
+--accepting rule at line 127 ("0")
+--accepting rule at line 89 (")")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 109 ("if")
+--accepting rule at line 130 (" ")
+--accepting rule at line 88 ("(")
+--accepting rule at line 128 ("d")
+--accepting rule at line 130 (" ")
+--accepting rule at line 101 ("==")
+--accepting rule at line 130 (" ")
+--accepting rule at line 125 ("1")
+--accepting rule at line 89 (")")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("v")
+--accepting rule at line 130 (" ")
+--accepting rule at line 97 ("=")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("x")
+--accepting rule at line 90 ("[")
+--accepting rule at line 128 ("pos")
+--accepting rule at line 130 (" ")
+--accepting rule at line 96 ("%")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("bitcount")
+--accepting rule at line 91 ("]")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 109 ("if")
+--accepting rule at line 130 (" ")
+--accepting rule at line 88 ("(")
+--accepting rule at line 128 ("a")
+--accepting rule at line 90 ("[")
+--accepting rule at line 128 ("pos")
+--accepting rule at line 130 (" ")
+--accepting rule at line 95 ("/")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("bitcount")
+--accepting rule at line 91 ("]")
+
+<if>
+<(>
+<id,a>
+<[>
+<id,pos>
+</>
+ArrayExpsLval
+<id,bitcount>
+<]>
+ArrayExpsLval
+</>
+ArrayExpsArrayExpsLval
+<(>
+<id,x>
+<[>
+<id,pos>
+<%>
+ArrayExpsLval
+<id,bitcount>
+<]>
+ArrayExpsLval
+<)>
+ArrayExpsArrayExpsLval
+<%>
+<intd>
+<==>
+<into>
+<)>
+Cond<if>
+<(>
+<id,d>
+<==>
+ArrayExpsLval
+<intd>
+<)>
+Cond<id,v>
+<=>
+ArrayExpsLval
+<id,x>
+<[>
+<id,pos>
+<%>
+ArrayExpsLval
+<id,bitcount>
+<]>
+ArrayExpsLval
+<;>
+ArrayExpsArrayExpsLval
+stmt1
+<if>
+StmtStmtBlockItem<(>
+<id,a>
+<[>
+<id,pos>
+</>
+ArrayExpsLval
+<id,bitcount>
+<]>
+ArrayExpsLval--accepting rule at line 130 (" ")
+--accepting rule at line 95 ("/")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("x")
+--accepting rule at line 90 ("[")
+--accepting rule at line 128 ("pos")
+--accepting rule at line 130 (" ")
+--accepting rule at line 96 ("%")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("bitcount")
+--accepting rule at line 91 ("]")
+--accepting rule at line 130 (" ")
+--accepting rule at line 96 ("%")
+--accepting rule at line 130 (" ")
+--accepting rule at line 125 ("2")
+--accepting rule at line 130 (" ")
+--accepting rule at line 101 ("==")
+--accepting rule at line 130 (" ")
+--accepting rule at line 125 ("1")
+--accepting rule at line 89 (")")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 109 ("if")
+--accepting rule at line 130 (" ")
+--accepting rule at line 88 ("(")
+--accepting rule at line 128 ("d")
+--accepting rule at line 130 (" ")
+--accepting rule at line 101 ("==")
+--accepting rule at line 130 (" ")
+--accepting rule at line 127 ("0")
+--accepting rule at line 89 (")")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("v")
+--accepting rule at line 130 (" ")
+--accepting rule at line 97 ("=")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("v")
+--accepting rule at line 130 (" ")
+--accepting rule at line 93 ("-")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("x")
+--accepting rule at line 90 ("[")
+--accepting rule at line 128 ("pos")
+--accepting rule at line 130 (" ")
+--accepting rule at line 96 ("%")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("bitcount")
+--accepting rule at line 91 ("]")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 87 ("}")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("a")
+--accepting rule at line 90 ("[")
+--accepting rule at line 128 ("pos")
+--accepting rule at line 130 (" ")
+--accepting rule at line 95 ("/")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("bitcount")
+--accepting rule at line 91 ("]")
+--accepting rule at line 130 (" ")
+--accepting rule at line 97 ("=")
+
+</>
+ArrayExpsArrayExpsLval
+<id,x>
+<[>
+<id,pos>
+<%>
+ArrayExpsLval
+<id,bitcount>
+<]>
+ArrayExpsLval
+<%>
+ArrayExpsArrayExpsLval
+<intd>
+<==>
+<intd>
+<)>
+Cond<if>
+<(>
+<id,d>
+<==>
+ArrayExpsLval
+<into>
+<)>
+Cond<id,v>
+<=>
+ArrayExpsLval
+<id,v>
+<->
+ArrayExpsLval
+<id,x>
+<[>
+<id,pos>
+<%>
+ArrayExpsLval
+<id,bitcount>
+<]>
+ArrayExpsLval
+<;>
+ArrayExpsArrayExpsLval
+stmt1
+<}>
+StmtStmtBlockItemBlockItemsBlockItemsBlockItemsBlockStmt<id,a>
+StmtBlockItem<[>
+<id,pos>
+</>
+ArrayExpsLval
+<id,bitcount>
+<]>
+ArrayExpsLval
+<=>
+ArrayExpsA--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("a")
+--accepting rule at line 90 ("[")
+--accepting rule at line 128 ("pos")
+--accepting rule at line 130 (" ")
+--accepting rule at line 95 ("/")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("bitcount")
+--accepting rule at line 91 ("]")
+--accepting rule at line 130 (" ")
+--accepting rule at line 92 ("+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("v")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 124 ("return")
+--accepting rule at line 130 (" ")
+--accepting rule at line 127 ("0")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 87 ("}")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 108 ("int")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("seed")
+--accepting rule at line 90 ("[")
+--accepting rule at line 125 ("3")
+--accepting rule at line 91 ("]")
+--accepting rule at line 130 (" ")
+--accepting rule at line 97 ("=")
+--accepting rule at line 130 (" ")
+--accepting rule at line 86 ("{")
+--accepting rule at line 125 ("19971231")
+--accepting rule at line 84 (",")
+--accepting rule at line 130 (" ")
+--accepting rule at line 125 ("19981013")
+--accepting rule at line 84 (",")
+--accepting rule at line 130 (" ")
+--accepting rule at line 125 ("1000000000")
+--accepting rule at line 130 (" ")
+--accepting rule at line 92 ("+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 125 ("7")
+rrayExpsLval
+<id,a>
+<[>
+<id,pos>
+</>
+ArrayExpsLval
+<id,bitcount>
+<]>
+ArrayExpsLval
+<+>
+ArrayExpsArrayExpsLval
+<id,v>
+<;>
+ArrayExpsLval
+stmt1
+BlockItem<return>
+<into>
+<;>
+StmtBlockItem<}>
+BlockItemsBlockItemsBlockItemsBlockItemsBlockItemsBlockItemsBlockItemsBlockItemsBlockItemsBlockItemsBlockItemsBlockItemsBlockItemsBlockItemsBlockItemsBlockItemsBlockItemsBlockItemsBlockItemsBlockItemsBlockItemsBlockCompUnit<int>
+<id,seed>
+<[>
+VarDec<intd>
+<]>
+VarDec<=>
+<{>
+<intd>
+<,>
+InitVal<intd>
+<,>
+InitVal<intd>
+<+>
+<int--accepting rule at line 87 ("}")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 108 ("int")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("staticvalue")
+--accepting rule at line 130 (" ")
+--accepting rule at line 97 ("=")
+--accepting rule at line 130 (" ")
+--accepting rule at line 127 ("0")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 108 ("int")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("rand")
+--accepting rule at line 88 ("(")
+--accepting rule at line 89 (")")
+--accepting rule at line 86 ("{")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("staticvalue")
+--accepting rule at line 130 (" ")
+--accepting rule at line 97 ("=")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("staticvalue")
+--accepting rule at line 130 (" ")
+--accepting rule at line 94 ("*")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("seed")
+--accepting rule at line 90 ("[")
+--accepting rule at line 127 ("0")
+--accepting rule at line 91 ("]")
+--accepting rule at line 130 (" ")
+--accepting rule at line 92 ("+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("seed")
+--accepting rule at line 90 ("[")
+--accepting rule at line 125 ("1")
+--accepting rule at line 91 ("]")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("staticvalue")
+--accepting rule at line 130 (" ")
+--accepting rule at line 97 ("=")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("staticvalue")
+--accepting rule at line 130 (" ")
+--accepting rule at line 96 ("%")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("seed")
+--accepting rule at line 90 ("[")
+--accepting rule at line 125 ("2")
+--accepting rule at line 91 ("]")
+--accepting rule at line 83 (";")
+d>
+<}>
+InitValInitValListInitValListInitValListInitValVarDef<;>
+VarDefsDeclCompUnit<int>
+<id,staticvalue>
+<=>
+VarDec<into>
+<;>
+InitValVarDefVarDefsDeclCompUnit<int>
+<id,rand>
+<(>
+<)>
+FuncFParams<{>
+<id,staticvalue>
+<=>
+ArrayExpsLval
+<id,staticvalue>
+<*>
+ArrayExpsLval
+<id,seed>
+<[>
+<into>
+<]>
+<+>
+ArrayExpsArrayExpsLval
+<id,seed>
+<[>
+<intd>
+<]>
+<;>
+ArrayExpsArrayExpsLval
+stmt1
+BlockItem<id,staticvalue>
+<=>
+ArrayExpsLval
+<id,staticvalue>
+<%>
+ArrayExpsLval
+<id,seed>
+<[>
+<intd>
+<]>
+<;>
+ArrayExpsArrayExpsLval
+stm--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 109 ("if")
+--accepting rule at line 130 (" ")
+--accepting rule at line 88 ("(")
+--accepting rule at line 128 ("staticvalue")
+--accepting rule at line 130 (" ")
+--accepting rule at line 104 ("<")
+--accepting rule at line 130 (" ")
+--accepting rule at line 127 ("0")
+--accepting rule at line 89 (")")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("staticvalue")
+--accepting rule at line 130 (" ")
+--accepting rule at line 97 ("=")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("seed")
+--accepting rule at line 90 ("[")
+--accepting rule at line 125 ("2")
+--accepting rule at line 91 ("]")
+--accepting rule at line 130 (" ")
+--accepting rule at line 92 ("+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("staticvalue")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 124 ("return")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("staticvalue")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 87 ("}")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 108 ("int")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("a")
+--accepting rule at line 90 ("[")
+--accepting rule at line 125 ("10000")
+--accepting rule at line 91 ("]")
+--accepting rule at line 130 (" ")
+--accepting rule at line 97 ("=")
+--accepting rule at line 130 (" ")
+--accepting rule at line 86 ("{")
+--accepting rule at line 87 ("}")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 108 ("int")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("main")
+--accepting rule at line 88 ("(")
+--accepting rule at line 89 (")")
+--accepting rule at line 86 ("{")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 108 ("int")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("n")
+--accepting rule at line 130 (" ")
+--accepting rule at line 97 ("=")
+--accepting rule at line 130 (" ")
+--accepting rule at line 115 ("getint")
+Error type B at Line 54 Column 13: syntax error, unexpected KEYGETINT.
+t1
+BlockItem<if>
+<(>
+<id,staticvalue>
+<<>
+ArrayExpsLval
+<into>
+<)>
+Cond<id,staticvalue>
+<=>
+ArrayExpsLval
+<id,seed>
+<[>
+<intd>
+<]>
+<+>
+ArrayExpsArrayExpsLval
+<id,staticvalue>
+<;>
+ArrayExpsLval
+stmt1
+<return>
+StmtBlockItem<id,staticvalue>
+<;>
+ArrayExpsLval
+StmtBlockItem<}>
+BlockItemsBlockItemsBlockItemsBlockItemsBlockItemsBlockCompUnit<int>
+<id,a>
+<[>
+VarDec<intd>
+<]>
+VarDec<=>
+<{>
+<}>
+InitValVarDef<;>
+VarDefsDeclCompUnit<int>
+<id,main>
+<(>
+<)>
+FuncFParams<{>
+<int>
+<id,n>
+VarDec<=>
+<getint>

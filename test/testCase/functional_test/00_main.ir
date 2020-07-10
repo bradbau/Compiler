@@ -1,0 +1,54 @@
+--(end of buffer or a NUL)
+--accepting rule at line 108 ("int")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("main")
+--accepting rule at line 88 ("(")
+--accepting rule at line 89 (")")
+--accepting rule at line 86 ("{")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 ("	")
+--accepting rule at line 124 ("return")
+--accepting rule at line 130 (" ")
+--accepting rule at line 127 ("0")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 87 ("}")
+--accepting rule at line 131 ("
+")
+--(end of buffer or a NUL)
+--EOF (start condition 0)
+<int>
+<id,main>
+<(>
+<)>
+FuncFParams<{>
+<return>
+<into>
+<;>
+StmtBlockItem<}>
+BlockItemsBlockItemsBlockCompUnitCompUnitsCompUnitsCompilerCompUnits (1)
+  FuncDef (1)
+    FuncFParam (1)
+    Block (2)
+      BlockItems (2)
+        Return_Stmt (2)
+          IntConst (2)
+            CONSTANTOCT: 0
+
+
+===========================================================
+Global
+ID             category       type           depictor
+               
+main           Function       TYPEINTEGER    NOT NULL       
+===========================================================
+Formal:main
+ID             category       type           depictor
+              
+               NOParam                       NULL           
+===========================================================
+Local:main
+ID             category       type           depictor
+              

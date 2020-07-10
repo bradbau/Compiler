@@ -7,7 +7,7 @@
 #include<stdlib.h>
 #include<stdarg.h>
 #include<string>
-#include "SymbolTable.h"
+#include "../SymbolTable/SymbolTable.h"
 using namespace std;
 
 extern char* yytext; 

@@ -1,0 +1,81 @@
+--(end of buffer or a NUL)
+--accepting rule at line 114 ("const")
+--accepting rule at line 130 (" ")
+--accepting rule at line 108 ("int")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("x")
+--accepting rule at line 97 ("=")
+--accepting rule at line 125 ("4")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 108 ("int")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("main")
+--accepting rule at line 88 ("(")
+--accepting rule at line 89 (")")
+--accepting rule at line 86 ("{")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 124 ("return")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("x")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 87 ("}")
+--(end of buffer or a NUL)
+--EOF (start condition 0)
+<const>
+<int>
+<id,x>
+VarDec<=>
+<intd>
+<;>
+InitValConstDefConstDefsDeclCompUnit<int>
+<id,main>
+<(>
+<)>
+FuncFParams<{>
+<return>
+<id,x>
+<;>
+ArrayExpsLval
+StmtBlockItem<}>
+BlockItemsBlockItemsBlockCompUnitCompUnitsCompUnitsCompUnitsCompilerCompUnits (1)
+  ConstDecl (1)
+    ConstOpassign (1)
+      IDENTIFIER x      ConstInitVal (1)
+        IntConst (1)
+          CONSTANTINTD: 4
+  CompUnits (3)
+    FuncDef (3)
+      FuncFParam (3)
+      Block (4)
+        BlockItems (4)
+          Return_Stmt (4)
+            LVal_EXP (4)
+              LVal (4)
+                IDENTIFIER x
+
+===========================================================
+Global
+ID             category       type           depictor
+               
+x              Variable       TYPEINTEGER    NULL           
+main           Function       TYPEINTEGER    NOT NULL       
+===========================================================
+Formal:main
+ID             category       type           depictor
+              
+               NOParam                       NULL           
+===========================================================
+Local:main
+ID             category       type           depictor
+              

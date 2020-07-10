@@ -1,0 +1,165 @@
+--(end of buffer or a NUL)
+--accepting rule at line 108 ("int")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("a")
+--accepting rule at line 84 (",")
+--accepting rule at line 128 ("b")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 108 ("int")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("main")
+--accepting rule at line 88 ("(")
+--accepting rule at line 89 (")")
+--accepting rule at line 86 ("{")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("a")
+--accepting rule at line 97 ("=")
+--accepting rule at line 125 ("10")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("b")
+--accepting rule at line 97 ("=")
+--accepting rule at line 125 ("5")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 108 ("int")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("c")
+--accepting rule at line 97 ("=")
+--accepting rule at line 128 ("a")
+--accepting rule at line 94 ("*")
+--accepting rule at line 125 ("2")
+--accepting rule at line 92 ("+")
+--accepting rule at line 128 ("b")
+--accepting rule at line 92 ("+")
+--accepting rule at line 125 ("3")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 124 ("return")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("c")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 87 ("}")
+--(end of buffer or a NUL)
+--EOF (start condition 0)
+<int>
+<id,a>
+<,>
+VarDecVarDef<id,b>
+VarDec<;>
+VarDefVarDefsVarDefsDeclCompUnit<int>
+<id,main>
+<(>
+<)>
+FuncFParams<{>
+<id,a>
+<=>
+ArrayExpsLval
+<intd>
+<;>
+stmt1
+BlockItem<id,b>
+<=>
+ArrayExpsLval
+<intd>
+<;>
+stmt1
+BlockItem<int>
+<id,c>
+VarDec<=>
+<id,a>
+<*>
+ArrayExpsLval
+<intd>
+<+>
+<id,b>
+<+>
+ArrayExpsLval
+<intd>
+<;>
+InitValVarDefVarDefsDeclBlockItem<return>
+<id,c>
+<;>
+ArrayExpsLval
+StmtBlockItem<}>
+BlockItemsBlockItemsBlockItemsBlockItemsBlockItemsBlockCompUnitCompUnitsCompUnitsCompUnitsCompilerCompUnits (1)
+  VarDecl (1)
+    IDENTIFIER a    VarDefs (1)
+      IDENTIFIER b  CompUnits (3)
+    FuncDef (3)
+      FuncFParam (3)
+      Block (4)
+        BlockItems (4)
+          Lval_Opassign_Stmt (4)
+            LVal (4)
+              IDENTIFIER a            IntConst (4)
+              CONSTANTINTD: 10
+          BlockItems (5)
+            Lval_Opassign_Stmt (5)
+              LVal (5)
+                IDENTIFIER b              IntConst (5)
+                CONSTANTINTD: 5
+            BlockItems (6)
+              VarDecl (6)
+                VarOPassign (6)
+                  IDENTIFIER c                  ConstInitVal (6)
+                    PLUSExp (6)
+                      PLUSExp (6)
+                        MulExp (6)
+                          LVal_EXP (6)
+                            LVal (6)
+                              IDENTIFIER a                          IntConst (6)
+                            CONSTANTINTD: 2
+                        LVal_EXP (6)
+                          LVal (6)
+                            IDENTIFIER b                      IntConst (6)
+                        CONSTANTINTD: 3
+              BlockItems (7)
+                Return_Stmt (7)
+                  LVal_EXP (7)
+                    LVal (7)
+                      IDENTIFIER c
+
+===========================================================
+Global
+ID             category       type           depictor
+               
+a              Variable       TYPEINTEGER    NULL           
+b              Variable       TYPEINTEGER    NULL           
+main           Function       TYPEINTEGER    NOT NULL       
+===========================================================
+Formal:main
+ID             category       type           depictor
+              
+               NOParam                       NOT NULL       
+===========================================================
+Local:main
+ID             category       type           depictor
+              
+c              Variable       TYPEINTEGER    NULL           

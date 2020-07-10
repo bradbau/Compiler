@@ -1,0 +1,371 @@
+--(end of buffer or a NUL)
+--accepting rule at line 108 ("int")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("doubleWhile")
+--accepting rule at line 88 ("(")
+--accepting rule at line 89 (")")
+--accepting rule at line 130 (" ")
+--accepting rule at line 86 ("{")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 108 ("int")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("i")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("i")
+--accepting rule at line 130 (" ")
+--accepting rule at line 97 ("=")
+--accepting rule at line 130 (" ")
+--accepting rule at line 125 ("5")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 108 ("int")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("j")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("j")
+--accepting rule at line 130 (" ")
+--accepting rule at line 97 ("=")
+--accepting rule at line 130 (" ")
+--accepting rule at line 125 ("7")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 111 ("while")
+--accepting rule at line 130 (" ")
+--accepting rule at line 88 ("(")
+--accepting rule at line 128 ("i")
+--accepting rule at line 130 (" ")
+--accepting rule at line 104 ("<")
+--accepting rule at line 130 (" ")
+--accepting rule at line 125 ("100")
+--accepting rule at line 89 (")")
+--accepting rule at line 130 (" ")
+--accepting rule at line 86 ("{")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("i")
+--accepting rule at line 130 (" ")
+--accepting rule at line 97 ("=")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("i")
+--accepting rule at line 130 (" ")
+--accepting rule at line 92 ("+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 125 ("30")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 111 ("while")
+--accepting rule at line 88 ("(")
+--accepting rule at line 128 ("j")
+--accepting rule at line 130 (" ")
+--accepting rule at line 104 ("<")
+--accepting rule at line 130 (" ")
+--accepting rule at line 125 ("100")
+--accepting rule at line 89 (")")
+--accepting rule at line 86 ("{")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("j")
+--accepting rule at line 130 (" ")
+--accepting rule at line 97 ("=")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("j")
+--accepting rule at line 130 (" ")
+--accepting rule at line 92 ("+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 125 ("6")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 87 ("}")
+<int>
+<id,doubleWhile>
+<(>
+<)>
+FuncFParams<{>
+<int>
+<id,i>
+VarDec<;>
+VarDefVarDefsDeclBlockItem<id,i>
+<=>
+ArrayExpsLval
+<intd>
+<;>
+stmt1
+BlockItem<int>
+<id,j>
+VarDec<;>
+VarDefVarDefsDeclBlockItem<id,j>
+<=>
+ArrayExpsLval
+<intd>
+<;>
+stmt1
+BlockItem<while>
+<(>
+<id,i>
+<<>
+ArrayExpsLval
+<intd>
+<)>
+Cond<{>
+<id,i>
+<=>
+ArrayExpsLval
+<id,i>
+<+>
+ArrayExpsLval
+<intd>
+<;>
+stmt1
+BlockItem<while>
+<(>
+<id,j>
+<<>
+ArrayExpsLval
+<intd>
+<)>
+Cond<{>
+<id,j>
+<=>
+ArrayExpsLval
+<id,j>
+<+>
+ArrayExpsLval
+<intd>
+<;>
+stmt1
+BlockItem<}--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("j")
+--accepting rule at line 130 (" ")
+--accepting rule at line 97 ("=")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("j")
+--accepting rule at line 130 (" ")
+--accepting rule at line 93 ("-")
+--accepting rule at line 130 (" ")
+--accepting rule at line 125 ("100")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 87 ("}")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 124 ("return")
+--accepting rule at line 130 (" ")
+--accepting rule at line 88 ("(")
+--accepting rule at line 128 ("j")
+--accepting rule at line 89 (")")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 87 ("}")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 108 ("int")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("main")
+--accepting rule at line 88 ("(")
+--accepting rule at line 89 (")")
+--accepting rule at line 130 (" ")
+--accepting rule at line 86 ("{")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 124 ("return")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("doubleWhile")
+--accepting rule at line 88 ("(")
+--accepting rule at line 89 (")")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 87 ("}")
+--accepting rule at line 131 ("
+")
+--(end of buffer or a NUL)
+--EOF (start condition 0)
+>
+BlockItemsBlockItemsBlockStmtStmtBlockItem<id,j>
+<=>
+ArrayExpsLval
+<id,j>
+<->
+ArrayExpsLval
+<intd>
+<;>
+stmt1
+BlockItem<}>
+BlockItemsBlockItemsBlockItemsBlockItemsBlockStmtStmtBlockItem<return>
+<(>
+<id,j>
+<)>
+ArrayExpsLval
+<;>
+StmtBlockItem<}>
+BlockItemsBlockItemsBlockItemsBlockItemsBlockItemsBlockItemsBlockItemsBlockCompUnit<int>
+<id,main>
+<(>
+<)>
+FuncFParams<{>
+<return>
+<id,doubleWhile>
+<(>
+<)>
+<;>
+StmtBlockItem<}>
+BlockItemsBlockItemsBlockCompUnitCompUnitsCompUnitsCompUnitsCompilerCompUnits (1)
+  FuncDef (1)
+    FuncFParam (1)
+    Block (2)
+      BlockItems (2)
+        VarDecl (2)
+          IDENTIFIER i        BlockItems (3)
+          Lval_Opassign_Stmt (3)
+            LVal (3)
+              IDENTIFIER i            IntConst (3)
+              CONSTANTINTD: 5
+          BlockItems (4)
+            VarDecl (4)
+              IDENTIFIER j            BlockItems (5)
+              Lval_Opassign_Stmt (5)
+                LVal (5)
+                  IDENTIFIER j                IntConst (5)
+                  CONSTANTINTD: 7
+              BlockItems (6)
+                While_Stmt (6)
+                  Cond (6)
+                    OPLIGHT (6)
+                      LVal_EXP (6)
+                        LVal (6)
+                          IDENTIFIER i                      IntConst (6)
+                        CONSTANTINTD: 100
+                  Block_Stmt (7)
+                    Block (7)
+                      BlockItems (7)
+                        Lval_Opassign_Stmt (7)
+                          LVal (7)
+                            IDENTIFIER i                          PLUSExp (7)
+                            LVal_EXP (7)
+                              LVal (7)
+                                IDENTIFIER i                            IntConst (7)
+                              CONSTANTINTD: 30
+                        BlockItems (8)
+                          While_Stmt (8)
+                            Cond (8)
+                              OPLIGHT (8)
+                                LVal_EXP (8)
+                                  LVal (8)
+                                    IDENTIFIER j                                IntConst (8)
+                                  CONSTANTINTD: 100
+                            Block_Stmt (9)
+                              Block (9)
+                                BlockItems (9)
+                                  Lval_Opassign_Stmt (9)
+                                    LVal (9)
+                                      IDENTIFIER j                                    PLUSExp (9)
+                                      LVal_EXP (9)
+                                        LVal (9)
+                                          IDENTIFIER j                                      IntConst (9)
+                                        CONSTANTINTD: 6
+                          BlockItems (11)
+                            Lval_Opassign_Stmt (11)
+                              LVal (11)
+                                IDENTIFIER j                              MINUSExp (11)
+                                LVal_EXP (11)
+                                  LVal (11)
+                                    IDENTIFIER j                                IntConst (11)
+                                  CONSTANTINTD: 100
+                BlockItems (13)
+                  Return_Stmt (13)
+                    (Exp) (13)
+                      LVal_EXP (13)
+                        LVal (13)
+                          IDENTIFIER j  CompUnits (16)
+    FuncDef (16)
+      FuncFParam (16)
+      Block (17)
+        BlockItems (17)
+          Return_Stmt (17)
+            funcall (17)
+              IDENTIFIER doubleWhile
+
+===========================================================
+Global
+ID             category       type           depictor
+               
+doubleWhile    Function       TYPEINTEGER    NOT NULL       
+main           Function       TYPEINTEGER    NOT NULL       
+===========================================================
+Formal:doubleWhile
+ID             category       type           depictor
+              
+               NOParam                       NOT NULL       
+===========================================================
+Local:doubleWhile
+ID             category       type           depictor
+              
+i              Variable       TYPEINTEGER    NULL           
+j              Variable       TYPEINTEGER    NULL           
+               Block          BLOCKStmt      NOT NULL       
+===========================================================
+Local:block
+ID             category       type           depictor
+              
+               Block          BLOCKStmt      NULL           
+===========================================================
+Formal:main
+ID             category       type           depictor
+              
+               NOParam                       NULL           
+===========================================================
+Local:main
+ID             category       type           depictor
+              

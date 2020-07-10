@@ -1,0 +1,10 @@
+--(end of buffer or a NUL)
+--accepting rule at line 82 ("// Simple atoi program
+")
+--accepting rule at line 108 ("int")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("atoi")
+--accepting rule at line 133 ("_")
+<int>
+<id,atoi>
+Lexical Error at Line 2 column 32: Wrong format of identifier.

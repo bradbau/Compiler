@@ -1,0 +1,312 @@
+--(end of buffer or a NUL)
+--accepting rule at line 82 ("// factorial number
+")
+--accepting rule at line 108 ("int")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("a")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 108 ("int")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("r")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 108 ("int")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("fac")
+--accepting rule at line 88 ("(")
+--accepting rule at line 108 ("int")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("x")
+--accepting rule at line 89 (")")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 86 ("{")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 109 ("if")
+--accepting rule at line 130 (" ")
+--accepting rule at line 88 ("(")
+--accepting rule at line 128 ("x")
+--accepting rule at line 130 (" ")
+--accepting rule at line 104 ("<")
+--accepting rule at line 125 ("2")
+--accepting rule at line 89 (")")
+--accepting rule at line 130 (" ")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 ("	")
+--accepting rule at line 124 ("return")
+--accepting rule at line 130 (" ")
+--accepting rule at line 125 ("1")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("a")
+--accepting rule at line 130 (" ")
+--accepting rule at line 97 ("=")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("x")
+--accepting rule at line 130 (" ")
+--accepting rule at line 93 ("-")
+--accepting rule at line 130 (" ")
+--accepting rule at line 125 ("1")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("r")
+--accepting rule at line 130 (" ")
+--accepting rule at line 97 ("=")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("fac")
+--accepting rule at line 88 ("(")
+--accepting rule at line 128 ("a")
+--accepting rule at line 89 (")")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("r")
+--accepting rule at line 130 (" ")
+--accepting rule at line 97 ("=")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("x")
+--accepting rule at line 130 (" ")
+--accepting rule at line 94 ("*")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("r")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 (" ")
+--accepting rule at line 130 (" ")
+--accepting rule at line 124 ("return")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("r")
+--accepting rule at line 83 (";")
+<int>
+<id,a>
+<;>
+VarDecVarDefVarDefsDeclCompUnit<int>
+<id,r>
+<;>
+VarDecVarDefVarDefsDeclCompUnit<int>
+<id,fac>
+<(>
+<int>
+<id,x>
+<)>
+FuncFParamFuncFParams<{>
+<if>
+<(>
+<id,x>
+<<>
+ArrayExpsLval
+<intd>
+<)>
+Cond<return>
+<intd>
+<;>
+Stmt<id,a>
+StmtBlockItem<=>
+ArrayExpsLval
+<id,x>
+<->
+ArrayExpsLval
+<intd>
+<;>
+stmt1
+BlockItem<id,r>
+<=>
+ArrayExpsLval
+<id,fac>
+<(>
+<id,a>
+<)>
+ArrayExpsLval
+<;>
+stmt1
+BlockItem<id,r>
+<=>
+ArrayExpsLval
+<id,x>
+<*>
+ArrayExpsLval
+<id,r>
+<;>
+ArrayExpsLval
+stmt1
+BlockItem<return>
+<id,r>
+<;>
+A--accepting rule at line 131 ("
+")
+--accepting rule at line 87 ("}")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 108 ("int")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("main")
+--accepting rule at line 88 ("(")
+--accepting rule at line 89 (")")
+--accepting rule at line 86 ("{")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 ("	")
+--accepting rule at line 108 ("int")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("a")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 ("	")
+--accepting rule at line 128 ("a")
+--accepting rule at line 130 (" ")
+--accepting rule at line 97 ("=")
+--accepting rule at line 130 (" ")
+--accepting rule at line 125 ("5")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 130 ("	")
+--accepting rule at line 124 ("return")
+--accepting rule at line 130 (" ")
+--accepting rule at line 128 ("fac")
+--accepting rule at line 88 ("(")
+--accepting rule at line 128 ("a")
+--accepting rule at line 89 (")")
+--accepting rule at line 83 (";")
+--accepting rule at line 131 ("
+")
+--accepting rule at line 87 ("}")
+--(end of buffer or a NUL)
+--EOF (start condition 0)
+rrayExpsLval
+StmtBlockItem<}>
+BlockItemsBlockItemsBlockItemsBlockItemsBlockItemsBlockItemsBlockCompUnit<int>
+<id,main>
+<(>
+<)>
+FuncFParams<{>
+<int>
+<id,a>
+VarDec<;>
+VarDefVarDefsDeclBlockItem<id,a>
+<=>
+ArrayExpsLval
+<intd>
+<;>
+stmt1
+BlockItem<return>
+<id,fac>
+<(>
+<id,a>
+<)>
+ArrayExpsLval
+<;>
+StmtBlockItem<}>
+BlockItemsBlockItemsBlockItemsBlockItemsBlockCompUnitCompUnitsCompUnitsCompUnitsCompUnitsCompUnitsCompilerCompUnits (2)
+  VarDecl (2)
+    IDENTIFIER a  CompUnits (3)
+    VarDecl (3)
+      IDENTIFIER r    CompUnits (4)
+      FuncDef (4)
+        FuncFParam (4)
+        Block (6)
+          BlockItems (6)
+            IF_Stmt (6)
+              Cond (6)
+                OPLIGHT (6)
+                  LVal_EXP (6)
+                    LVal (6)
+                      IDENTIFIER x                  IntConst (6)
+                    CONSTANTINTD: 2
+              Return_Stmt (7)
+                IntConst (7)
+                  CONSTANTINTD: 1
+            BlockItems (8)
+              Lval_Opassign_Stmt (8)
+                LVal (8)
+                  IDENTIFIER a                MINUSExp (8)
+                  LVal_EXP (8)
+                    LVal (8)
+                      IDENTIFIER x                  IntConst (8)
+                    CONSTANTINTD: 1
+              BlockItems (9)
+                Lval_Opassign_Stmt (9)
+                  LVal (9)
+                    IDENTIFIER r                  funcall (9)
+                    IDENTIFIER fac                    FuncRParams (9)
+                      LVal_EXP (9)
+                        LVal (9)
+                          IDENTIFIER a                BlockItems (10)
+                  Lval_Opassign_Stmt (10)
+                    LVal (10)
+                      IDENTIFIER r                    MulExp (10)
+                      LVal_EXP (10)
+                        LVal (10)
+                          IDENTIFIER x                      LVal_EXP (10)
+                        LVal (10)
+                          IDENTIFIER r                  BlockItems (11)
+                    Return_Stmt (11)
+                      LVal_EXP (11)
+                        LVal (11)
+                          IDENTIFIER r      CompUnits (14)
+        FuncDef (14)
+          FuncFParam (14)
+          Block (15)
+            BlockItems (15)
+              VarDecl (15)
+                IDENTIFIER a              BlockItems (16)
+                Lval_Opassign_Stmt (16)
+                  LVal (16)
+                    IDENTIFIER a                  IntConst (16)
+                    CONSTANTINTD: 5
+                BlockItems (17)
+                  Return_Stmt (17)
+                    funcall (17)
+                      IDENTIFIER fac                      FuncRParams (17)
+                        LVal_EXP (17)
+                          LVal (17)
+                            IDENTIFIER a
+
+===========================================================
+Global
+ID             category       type           depictor
+               
+a              Variable       TYPEINTEGER    NULL           
+r              Variable       TYPEINTEGER    NULL           
+fac            Function       TYPEINTEGER    NOT NULL       
+main           Function       TYPEINTEGER    NOT NULL       
+===========================================================
+Formal:fac
+ID             category       type           depictor
+              
+x              Variable       TYPEINTEGER    NULL           
+===========================================================
+Local:fac
+ID             category       type           depictor
+              
+===========================================================
+Formal:main
+ID             category       type           depictor
+              
+               NOParam                       NOT NULL       
+===========================================================
+Local:main
+ID             category       type           depictor
+              
+a              Variable       TYPEINTEGER    NULL           
