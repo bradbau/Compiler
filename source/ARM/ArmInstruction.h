@@ -69,7 +69,7 @@ private:
         Register reg1;
     
     };
-    int op2Type;// 0 1 2代表寄存器，立即数，作用于第一操作数的偏移量
+    int op2Type=0;// 0 1 代表寄存器，立即数
     union op2
     {
         Register reg2; // 
@@ -87,7 +87,7 @@ void ARMInstruction::setType(InstrcuctionType type);//设置类型
 void ARMInstruction::setRd(Register Rd);//设置目标寄存器
 void ARMInstruction::setfirstOp(Register firstOp);//设置第一寄存器
 void ARMInstruction::setsecondtOp(Register firstOp);//设置第二寄存器
-
+void ARMInstruction::setsecondtOp(Register secondtOp, int op2Type);
 
 
 //~~~~~~~~~~~~~~~~~~~~~~end of class ARMInstruction~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -118,8 +118,16 @@ class MemoryInstruction: public ARMInstruction//内存相关指令
 {
     /*内存相关指令的格式
 
-    1. 指令类型 ldr str ldm stm
+    1. 指令操作码 ldr str ldm stm
 
+    2. 操作数类型 
+    - Ra, [Rb, imm] 以第一操作数的寄存器内容作为偏移量基址的
+    - r0, [pc, #12] 以pc为基址的
+    - Ra, [Rb, Rc] 寄存器内容为偏移量
+    -*Ra, [Rb, Rc, <shifter>] 包含移位运算的寄存器为偏移量
+    3. 后缀
+    instantEffect 决定第二操作数的立即数类型：偏移量，改变第一操作数的偏移量，只改变第一操作数
+    多
 
     */
 
@@ -130,11 +138,11 @@ public:
 private:
     //这里添加内存指令相关的信息
     bool multipleSource;//如果为真就表示在op1和op2寄存器之外加{}符号，表示多个寄存器连续操作
-
+    int instantEffect; // 取值0 1 2 
 
 public:
     void MemoryInstruction();// 产生一个内存相关指令
-    void MemoryInstruction(InstrcuctionType type, Register rd, Register op1, Register op2, int op2Type);// 产生一个内存相关指令
+    void MemoryInstruction(InstrcuctionType type, Register rd, Register op1, Register op2, int op2Type, int instantEffect);// 产生一个内存相关指令
     
     string toString();
 

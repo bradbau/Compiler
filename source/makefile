@@ -57,7 +57,7 @@ y.tab.h y.tab.c: SysY.y
 
 
 ## 目标编译器编译
-$(COMPILER) : lex.yy.c  y.tab.c  $(SRCS)
+$(COMPILER) : lex.yy.c  y.tab.c y.tab.h $(SRCS)
 	echo $(SRCS)
 	$(CC)   $(SRCS)  ${CFLAGS} -o $@  $(LIBS) 
 

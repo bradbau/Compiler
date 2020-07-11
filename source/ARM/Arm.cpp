@@ -216,13 +216,16 @@ ARMInstruction::Register ARM::GetRegister(ScopeItem* variable){
             return goal;
         }
         else{
-            //首先寻找空寄存器
+            //寻找空寄存器
             for(ARMInstruction::Register item: ARMInstruction::userReg){
                 if(regs[item].filled==false){
                     regs[item].filled=true;
                     regs[item].tag=1;
                     regs[item].ScopeItem=variable;
-                    variable
+                    
+                    //插入ld指令
+                    MemoryInstruction InsItem= new InsItem(InstrcuctionType::LDR, )
+
                     return item;
                 }
             }
