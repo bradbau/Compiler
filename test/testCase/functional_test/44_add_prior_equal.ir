@@ -1,201 +1,490 @@
 --(end of buffer or a NUL)
---accepting rule at line 82 ("// Add is prior than equal and not equal
+--accepting rule at line 74 ("// Add is prior than equal and not equal
 ")
---accepting rule at line 108 ("int")
---accepting rule at line 130 (" ")
---accepting rule at line 128 ("main")
---accepting rule at line 130 (" ")
---accepting rule at line 88 ("(")
---accepting rule at line 89 (")")
---accepting rule at line 130 (" ")
---accepting rule at line 86 ("{")
---accepting rule at line 131 ("
+--accepting rule at line 100 ("int")
+--accepting rule at line 114 (" ")
+--accepting rule at line 112 ("main")
+--accepting rule at line 114 (" ")
+--accepting rule at line 80 ("(")
+--accepting rule at line 81 (")")
+--accepting rule at line 114 (" ")
+--accepting rule at line 78 ("{")
+--accepting rule at line 115 ("
 ")
---accepting rule at line 130 (" ")
---accepting rule at line 130 (" ")
---accepting rule at line 130 (" ")
---accepting rule at line 130 (" ")
---accepting rule at line 108 ("int")
---accepting rule at line 130 (" ")
---accepting rule at line 128 ("a")
---accepting rule at line 83 (";")
---accepting rule at line 131 ("
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 100 ("int")
+--accepting rule at line 114 (" ")
+--accepting rule at line 112 ("a")
+--accepting rule at line 75 (";")
+--accepting rule at line 115 ("
 ")
---accepting rule at line 130 (" ")
---accepting rule at line 130 (" ")
---accepting rule at line 130 (" ")
---accepting rule at line 130 (" ")
---accepting rule at line 108 ("int")
---accepting rule at line 130 (" ")
---accepting rule at line 128 ("b")
---accepting rule at line 83 (";")
---accepting rule at line 131 ("
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 100 ("int")
+--accepting rule at line 114 (" ")
+--accepting rule at line 112 ("b")
+--accepting rule at line 75 (";")
+--accepting rule at line 115 ("
 ")
---accepting rule at line 130 (" ")
---accepting rule at line 130 (" ")
---accepting rule at line 130 (" ")
---accepting rule at line 130 (" ")
---accepting rule at line 108 ("int")
---accepting rule at line 130 (" ")
---accepting rule at line 128 ("c")
---accepting rule at line 83 (";")
---accepting rule at line 131 ("
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 100 ("int")
+--accepting rule at line 114 (" ")
+--accepting rule at line 112 ("c")
+--accepting rule at line 75 (";")
+--accepting rule at line 115 ("
 ")
---accepting rule at line 130 (" ")
---accepting rule at line 130 (" ")
---accepting rule at line 130 (" ")
---accepting rule at line 130 (" ")
---accepting rule at line 128 ("a")
---accepting rule at line 130 (" ")
---accepting rule at line 97 ("=")
---accepting rule at line 130 (" ")
---accepting rule at line 125 ("1")
---accepting rule at line 83 (";")
---accepting rule at line 131 ("
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 112 ("a")
+--accepting rule at line 114 (" ")
+--accepting rule at line 89 ("=")
+--accepting rule at line 114 (" ")
+--accepting rule at line 109 ("1")
+--accepting rule at line 75 (";")
+--accepting rule at line 115 ("
 ")
---accepting rule at line 130 (" ")
---accepting rule at line 130 (" ")
---accepting rule at line 130 (" ")
---accepting rule at line 130 (" ")
---accepting rule at line 128 ("b")
---accepting rule at line 130 (" ")
---accepting rule at line 97 ("=")
---accepting rule at line 130 (" ")
---accepting rule at line 125 ("4")
---accepting rule at line 83 (";")
---accepting rule at line 131 ("
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 112 ("b")
+--accepting rule at line 114 (" ")
+--accepting rule at line 89 ("=")
+--accepting rule at line 114 (" ")
+--accepting rule at line 109 ("4")
+--accepting rule at line 75 (";")
+--accepting rule at line 115 ("
 ")
---accepting rule at line 130 (" ")
---accepting rule at line 130 (" ")
---accepting rule at line 130 (" ")
---accepting rule at line 130 (" ")
---accepting rule at line 128 ("c")
---accepting rule at line 130 (" ")
---accepting rule at line 97 ("=")
---accepting rule at line 130 (" ")
---accepting rule at line 125 ("28")
---accepting rule at line 83 (";")
---accepting rule at line 131 ("
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 112 ("c")
+--accepting rule at line 114 (" ")
+--accepting rule at line 89 ("=")
+--accepting rule at line 114 (" ")
+--accepting rule at line 109 ("28")
+--accepting rule at line 75 (";")
+--accepting rule at line 115 ("
 ")
---accepting rule at line 130 (" ")
---accepting rule at line 130 (" ")
---accepting rule at line 130 (" ")
---accepting rule at line 130 (" ")
---accepting rule at line 108 ("int")
---accepting rule at line 130 (" ")
---accepting rule at line 128 ("t")
---accepting rule at line 83 (";")
---accepting rule at line 131 ("
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 100 ("int")
+--accepting rule at line 114 (" ")
+--accepting rule at line 112 ("t")
+--accepting rule at line 75 (";")
+--accepting rule at line 115 ("
 ")
---accepting rule at line 130 (" ")
---accepting rule at line 130 (" ")
---accepting rule at line 130 (" ")
---accepting rule at line 130 (" ")
---accepting rule at line 109 ("if")
---accepting rule at line 130 (" ")
---accepting rule at line 88 ("(")
---accepting rule at line 128 ("c")
---accepting rule at line 130 (" ")
---accepting rule at line 92 ("+")
---accepting rule at line 130 (" ")
---accepting rule at line 128 ("a")
---accepting rule at line 130 (" ")
---accepting rule at line 102 ("!=")
---accepting rule at line 130 (" ")
---accepting rule at line 128 ("b")
---accepting rule at line 89 (")")
---accepting rule at line 130 (" ")
---accepting rule at line 86 ("{")
---accepting rule at line 131 ("
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 101 ("if")
+--accepting rule at line 114 (" ")
+--accepting rule at line 80 ("(")
+--accepting rule at line 112 ("c")
+--accepting rule at line 114 (" ")
+--accepting rule at line 84 ("+")
+--accepting rule at line 114 (" ")
+--accepting rule at line 112 ("a")
+--accepting rule at line 114 (" ")
+--accepting rule at line 94 ("!=")
+--accepting rule at line 114 (" ")
+--accepting rule at line 112 ("b")
+--accepting rule at line 81 (")")
+--accepting rule at line 114 (" ")
+--accepting rule at line 78 ("{")
+--accepting rule at line 115 ("
 ")
---accepting rule at line 130 (" ")
---accepting rule at line 130 (" ")
---accepting rule at line 130 (" ")
---accepting rule at line 130 (" ")
---accepting rule at line 130 (" ")
---accepting rule at line 130 (" ")
---accepting rule at line 130 (" ")
---accepting rule at line 130 (" ")
---accepting rule at line 128 ("t")
---accepting rule at line 130 (" ")
---accepting rule at line 97 ("=")
---accepting rule at line 130 (" ")
---accepting rule at line 128 ("c")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 112 ("t")
+--accepting rule at line 114 (" ")
+--accepting rule at line 89 ("=")
+--accepting rule at line 114 (" ")
+--accepting rule at line 112 ("c")
+--accepting rule at line 114 (" ")
+--accepting rule at line 88 ("%")
+--accepting rule at line 114 (" ")
+--accepting rule at line 85 ("-")
+--accepting rule at line 112 ("b")
+--accepting rule at line 75 (";")
+--accepting rule at line 115 ("
+")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 112 ("putint")
+--accepting rule at line 80 ("(")
+--accepting rule at line 112 ("t")
+--accepting rule at line 81 (")")
+--accepting rule at line 75 (";")
+--accepting rule at line 115 ("
+")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 79 ("}")
+--accepting rule at line 115 ("
+")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 101 ("if")
+--accepting rule at line 114 (" ")
+--accepting rule at line 80 ("(")
+--accepting rule at line 112 ("b")
+--accepting rule at line 114 (" ")
+--accepting rule at line 85 ("-")
+--accepting rule at line 114 (" ")
+--accepting rule at line 112 ("c")
+--accepting rule at line 114 (" ")
+--accepting rule at line 93 ("==")
+--accepting rule at line 114 (" ")
+--accepting rule at line 112 ("a")
+--accepting rule at line 81 (")")
+--accepting rule at line 114 (" ")
+--accepting rule at line 78 ("{")
+--accepting rule at line 115 ("
+")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 112 ("t")
+--accepting rule at line 114 (" ")
+--accepting rule at line 89 ("=")
+--accepting rule at line 114 (" ")
+--accepting rule at line 112 ("c")
+--accepting rule at line 88 ("%")
+--accepting rule at line 112 ("b")
+--accepting rule at line 84 ("+")
+--accepting rule at line 112 ("b")
+--accepting rule at line 75 (";")
 <int>
 <id,main>
 <(>
 <)>
-FuncFParams<{>
+<{>
 <int>
 <id,a>
-VarDec<;>
-VarDefVarDefsDeclBlockItem<int>
+<;>
+<int>
 <id,b>
-VarDec<;>
-VarDefVarDefsDeclBlockItem<int>
+<;>
+<int>
 <id,c>
-VarDec<;>
-VarDefVarDefsDeclBlockItem<id,a>
+<;>
+<id,a>
 <=>
-ArrayExpsLval
+Lval
 <intd>
+ExpNumber:0
 <;>
 stmt1
-BlockItem<id,b>
+<id,b>
 <=>
-ArrayExpsLval
+Lval
 <intd>
+ExpNumber:0
 <;>
 stmt1
-BlockItem<id,c>
+<id,c>
 <=>
-ArrayExpsLval
+Lval
 <intd>
+ExpNumber:0
 <;>
 stmt1
-BlockItem<int>
+<int>
 <id,t>
-VarDec<;>
-VarDefVarDefsDeclBlockItem<if>
+<;>
+<if>
 <(>
 <id,c>
 <+>
-ArrayExpsLval
+Lval
 <id,a>
 <!=>
-ArrayExpsLval
+Lval
 <id,b>
 <)>
-ArrayExpsLval
-Cond<{>
+Lval
+<{>
 <id,t>
 <=>
-ArrayExpsLval
-<id,c>--accepting rule at line 130 (" ")
---accepting rule at line 96 ("%")
---accepting rule at line 130 (" ")
---accepting rule at line 93 ("-")
---accepting rule at line 128 ("b")
---accepting rule at line 83 (";")
---accepting rule at line 131 ("
-")
---accepting rule at line 130 (" ")
---accepting rule at line 130 (" ")
---accepting rule at line 130 (" ")
---accepting rule at line 130 (" ")
---accepting rule at line 130 (" ")
---accepting rule at line 130 (" ")
---accepting rule at line 130 (" ")
---accepting rule at line 130 (" ")
---accepting rule at line 118 ("putint")
-Error type B at Line 12 Column 9: syntax error, unexpected KEYPUTINT, expecting SPRIGHTBRACE.
-
+Lval
+<id,c>
 <%>
-ArrayExpsLval
+Lval
 <->
 <id,b>
 <;>
-ArrayExpsLval
+Lval
 stmt1
-BlockItem<putint>
-BlockItemsBlockItems
+<id,putint>
+<(>
+<id,t>
+<)>
+Lval
+<;>
+<}>
+<if>
+<(>
+<id,b>
+<->
+Lval
+<id,c>
+<==>
+Lval
+<id,a>
+<)>
+Lval
+<{>
+<id,t>
+<=>
+Lval
+<id,c>
+<%>
+Lval
+<id,b>
+<+>
+Lval
+<id,b>
+<;>
+--accepting rule at line 115 ("
+")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 112 ("putint")
+--accepting rule at line 80 ("(")
+--accepting rule at line 112 ("t")
+--accepting rule at line 81 (")")
+--accepting rule at line 75 (";")
+--accepting rule at line 115 ("
+")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 79 ("}")
+--accepting rule at line 115 ("
+")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 108 ("return")
+--accepting rule at line 114 (" ")
+--accepting rule at line 111 ("0")
+--accepting rule at line 75 (";")
+--accepting rule at line 115 ("
+")
+--accepting rule at line 79 ("}")
+--accepting rule at line 115 ("
+")
+--(end of buffer or a NUL)
+--EOF (start condition 0)
+Lval
+stmt1
+<id,putint>
+<(>
+<id,t>
+<)>
+Lval
+<;>
+<}>
+<return>
+<into>
+ExpNumber:0
+<;>
+<}>
+CompUnits (2)
+  FuncDef (2)
+    FuncFParam (2)
+    Block (3)
+      BlockItems (3)
+        VarDecl (3)
+          IDENTIFIER a
+        BlockItems (4)
+          VarDecl (4)
+            IDENTIFIER b
+          BlockItems (5)
+            VarDecl (5)
+              IDENTIFIER c
+            BlockItems (6)
+              Lval_Opassign_Stmt (6)
+                LVal (6)
+                  IDENTIFIER a
+                  ArrayExps (6)
+                IntConst (6)
+                  CONSTANTINTD: 1
+              BlockItems (7)
+                Lval_Opassign_Stmt (7)
+                  LVal (7)
+                    IDENTIFIER b
+                    ArrayExps (7)
+                  IntConst (7)
+                    CONSTANTINTD: 4
+                BlockItems (8)
+                  Lval_Opassign_Stmt (8)
+                    LVal (8)
+                      IDENTIFIER c
+                      ArrayExps (8)
+                    IntConst (8)
+                      CONSTANTINTD: 28
+                  BlockItems (9)
+                    VarDecl (9)
+                      IDENTIFIER t
+                    BlockItems (10)
+                      IF_Stmt (10)
+                        Cond (10)
+                          OPNOTEQUAL (10)
+                            PLUSExp (10)
+                              LVal_EXP (10)
+                                LVal (10)
+                                  IDENTIFIER c
+                                  ArrayExps (10)
+                              LVal_EXP (10)
+                                LVal (10)
+                                  IDENTIFIER a
+                                  ArrayExps (10)
+                            LVal_EXP (10)
+                              LVal (10)
+                                IDENTIFIER b
+                                ArrayExps (10)
+                        Block_Stmt (11)
+                          Block (11)
+                            BlockItems (11)
+                              Lval_Opassign_Stmt (11)
+                                LVal (11)
+                                  IDENTIFIER t
+                                  ArrayExps (11)
+                                MODExp (11)
+                                  LVal_EXP (11)
+                                    LVal (11)
+                                      IDENTIFIER c
+                                      ArrayExps (11)
+                                  OPMINUS_Exp (11)
+                                    LVal_EXP (11)
+                                      LVal (11)
+                                        IDENTIFIER b
+                                        ArrayExps (11)
+                              BlockItems (12)
+                                Exp_Stmt (12)
+                                  funcall (12)
+                                    IDENTIFIER putint
+                                    FuncRParams (12)
+                                      LVal_EXP (12)
+                                        LVal (12)
+                                          IDENTIFIER t
+                                          ArrayExps (12)
+                      BlockItems (14)
+                        IF_Stmt (14)
+                          Cond (14)
+                            OPEQUAL (14)
+                              MINUSExp (14)
+                                LVal_EXP (14)
+                                  LVal (14)
+                                    IDENTIFIER b
+                                    ArrayExps (14)
+                                LVal_EXP (14)
+                                  LVal (14)
+                                    IDENTIFIER c
+                                    ArrayExps (14)
+                              LVal_EXP (14)
+                                LVal (14)
+                                  IDENTIFIER a
+                                  ArrayExps (14)
+                          Block_Stmt (15)
+                            Block (15)
+                              BlockItems (15)
+                                Lval_Opassign_Stmt (15)
+                                  LVal (15)
+                                    IDENTIFIER t
+                                    ArrayExps (15)
+                                  PLUSExp (15)
+                                    MODExp (15)
+                                      LVal_EXP (15)
+                                        LVal (15)
+                                          IDENTIFIER c
+                                          ArrayExps (15)
+                                      LVal_EXP (15)
+                                        LVal (15)
+                                          IDENTIFIER b
+                                          ArrayExps (15)
+                                    LVal_EXP (15)
+                                      LVal (15)
+                                        IDENTIFIER b
+                                        ArrayExps (15)
+                                BlockItems (16)
+                                  Exp_Stmt (16)
+                                    funcall (16)
+                                      IDENTIFIER putint
+                                      FuncRParams (16)
+                                        LVal_EXP (16)
+                                          LVal (16)
+                                            IDENTIFIER t
+                                            ArrayExps (16)
+                        BlockItems (18)
+                          Return_Stmt (18)
+                            IntConst (18)
+                              CONSTANTOCT: 0
+
+
+===========================================================
+Global
+ID             category       type           depictor
+               
+main           Function       TYPEINTEGER    NOT NULL       
+===========================================================
+Formal:main
+ID             category       type           depictor
+              
+               NOParam                       NOT NULL       
+===========================================================
+Local:main
+ID             category       type           depictor
+              
+a              Variable       TYPEINTEGER    NULL           
+b              Variable       TYPEINTEGER    NULL           
+c              Variable       TYPEINTEGER    NULL           
+t              Variable       TYPEINTEGER    NULL           
+               Block          BLOCKStmt      NULL           
+               Block          BLOCKStmt      NULL           
+Segmentation fault (core dumped)

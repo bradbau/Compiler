@@ -9,7 +9,7 @@
 
 #include "QuadrupleOperand.h"
 #include "Quadruple.h"
-#include "AST.h"
+#include "../GrammarTree/AST.h"
 #include "../SymbolTable/ScopeStack.h"
 
 typedef unsigned int Label;

@@ -1,8 +1,8 @@
 --(end of buffer or a NUL)
---accepting rule at line 82 ("// Use return value of a function as array's index
+--accepting rule at line 74 ("// Use return value of a function as array's index
 ")
---accepting rule at line 108 ("int")
---accepting rule at line 130 (" ")
---accepting rule at line 133 ("_getMaxOfAll")
+--accepting rule at line 100 ("int")
+--accepting rule at line 114 (" ")
+--accepting rule at line 117 ("_getMaxOfAll")
 <int>
 Lexical Error at Line 2 column 56: Wrong format of identifier.

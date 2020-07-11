@@ -9,25 +9,18 @@ using namespace std;
 extern char* yytext;
 
 ASTTree::ASTTree(string name, int num, int pos ,...) {
-    //printf("gouzao !!!\n");
     int i;
+    char* cache;
     va_list variables;       
     ASTTree *tmp;
     this->si = NULL;
-    //printf("~~~\n");
-    //printf("~~~~~~\n");
-    //printf("%s",name);
-    // char* tmpcache = (char *)malloc(sizeof(char) * strlen(name));
-    // strcpy(tmpcache, yytext);
     this->name = name;
-    //this->si = null;
-    //printf("%s",this->name);
     va_start(variables, pos);           // Init the variable parameter list
     if (num > 0)
     {
         tmp = va_arg(variables, ASTTree*);
         this->lchild = tmp;
-        if (tmp != NULL) {
+        if(tmp != NULL){
             this->line = tmp->line;      // Current grammar unit's line number is equal to its left child's
             for (i = 0; i < num - 1; i++)
             {                            // Brothers
@@ -47,8 +40,8 @@ ASTTree::ASTTree(string name, int num, int pos ,...) {
             
         if (this->name == "IDENTIFIER")
         {
-            //printf("%s\n",yytext);
-            string cache(yytext);
+            cache = (char *)malloc(sizeof(char) * strlen(yytext));
+            strcpy(cache, yytext);
             this->id = cache;
         }
         else  if (this->name == "CONSTANTINTD")
@@ -63,7 +56,15 @@ ASTTree::ASTTree(string name, int num, int pos ,...) {
         {
             this->int_value = strtol(yytext, NULL, 8);
         }
-         //printf("name:%s\n",this->name);
+        //merge dev-cjw(begin)
+        else  if (this->name=="STRING")
+        {
+            cache = (char *)malloc(sizeof(char) * strlen(yytext));
+            strcpy(cache, yytext);
+            this->formatstring = cache;
+        }
+        else{}
+        //merge dev-cjw(end)
     }
     va_end(variables);
 
@@ -73,35 +74,36 @@ void ASTTree::TraverseGrammerTree(int level)
 {
     int i;
     
-        //printf("%s",this->name);//printf("tra!\n");
+    for (i = 0; i < level; i++)
+        printf(" ");
+    if (this->line != -1)
+    {
         for (i = 0; i < level; i++)
-            printf(" ");
-        if (this->line != -1)
-        {
-          for (i = 0; i < level; i++)
-            printf(" ");
-            // Not void rule
-            cout << this->name;
-           if (this->name == "CONSTANTINTD")
-                printf(": %d\n", this->int_value);
-            else if (this->name == "CONSTANTINTH")
-                printf(": %d\n", this->int_value);
-            else if (this->name == "CONSTANTOCT")
-                printf(": %d\n", this->int_value);
-            else if (this->name == "IDENTIFIER")
-                cout << " " << this->id;
-            else
-                printf(" (%d)\n", this->line);
-        }
-        else 
-            ;
-            //printf("%s (Epsilon)\n", this->name);
-        //printf("leftc\n");
-        if(this->lchild)
-            this->lchild->TraverseGrammerTree(level + 1);
-        //printf("rightc\n");
-        if(this->rchild)
-           this->rchild->TraverseGrammerTree(level);
+        printf(" ");
+        // Not void rule
+        cout << this->name;
+        if (this->name == "CONSTANTINTD")
+            printf(": %d\n", this->int_value);
+        else if (this->name == "CONSTANTINTH")
+            printf(": %d\n", this->int_value);
+        else if (this->name == "CONSTANTOCT")
+            printf(": %d\n", this->int_value);
+        else if (this->name == "IDENTIFIER")
+            cout << " " << this->id << endl;
+        //merge dev-cjw(begin)
+        else if(this->name=="ArrayDec")
+            printf(": demmision=%d\n",this->GetIntValue());
+        else if(this->name=="STRING")
+            printf(": %s\n",this->GetString().c_str());
+        //merge dev-cjw(end)
+        else
+            printf(" (%d)\n", this->line);
+    }
+
+    if(this->lchild)
+        this->lchild->TraverseGrammerTree(level + 1);
+    if(this->rchild)
+        this->rchild->TraverseGrammerTree(level);
     
 }
 
@@ -152,18 +154,8 @@ void ASTTree::SetFuncPType(string ptype){
     this->funcptype = ptype;
 };
 
-void Si(ASTTree* tree) {
-    if (tree == NULL) {
-        return;
-    }/*
-    if (tree->lchild) {
-        if (tree->lchild->si == NULL) {
-            tree->lchild->si = tree->si;
-        }
-    }
-    if (tree->rchild) {
-        if (tree->rchild->si == NULL) {
-            tree->rchild->si = tree->si;
-        }
-    }*/
+//merge dev-cjw(begin)
+string ASTTree::GetString(){
+    return this->formatstring;
 };
+//merge dev-cjw(end)

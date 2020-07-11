@@ -1,43 +1,210 @@
 --(end of buffer or a NUL)
---accepting rule at line 108 ("int")
---accepting rule at line 130 (" ")
---accepting rule at line 128 ("a")
---accepting rule at line 83 (";")
---accepting rule at line 131 ("
+--accepting rule at line 100 ("int")
+--accepting rule at line 114 (" ")
+--accepting rule at line 112 ("a")
+--accepting rule at line 75 (";")
+--accepting rule at line 115 ("
 ")
---accepting rule at line 108 ("int")
---accepting rule at line 130 (" ")
---accepting rule at line 128 ("b")
---accepting rule at line 83 (";")
---accepting rule at line 131 ("
+--accepting rule at line 100 ("int")
+--accepting rule at line 114 (" ")
+--accepting rule at line 112 ("b")
+--accepting rule at line 75 (";")
+--accepting rule at line 115 ("
 ")
---accepting rule at line 108 ("int")
---accepting rule at line 130 (" ")
---accepting rule at line 128 ("main")
---accepting rule at line 88 ("(")
---accepting rule at line 89 (")")
---accepting rule at line 86 ("{")
---accepting rule at line 131 ("
+--accepting rule at line 100 ("int")
+--accepting rule at line 114 (" ")
+--accepting rule at line 112 ("main")
+--accepting rule at line 80 ("(")
+--accepting rule at line 81 (")")
+--accepting rule at line 78 ("{")
+--accepting rule at line 115 ("
 ")
---accepting rule at line 130 ("	")
---accepting rule at line 128 ("a")
---accepting rule at line 130 (" ")
---accepting rule at line 97 ("=")
---accepting rule at line 130 (" ")
---accepting rule at line 115 ("getint")
-Error type B at Line 4 Column 6: syntax error, unexpected KEYGETINT.
+--accepting rule at line 114 ("	")
+--accepting rule at line 112 ("a")
+--accepting rule at line 114 (" ")
+--accepting rule at line 89 ("=")
+--accepting rule at line 114 (" ")
+--accepting rule at line 112 ("getint")
+--accepting rule at line 80 ("(")
+--accepting rule at line 81 (")")
+--accepting rule at line 75 (";")
+--accepting rule at line 115 ("
+")
+--accepting rule at line 114 ("	")
+--accepting rule at line 112 ("b")
+--accepting rule at line 114 (" ")
+--accepting rule at line 89 ("=")
+--accepting rule at line 114 (" ")
+--accepting rule at line 112 ("getint")
+--accepting rule at line 80 ("(")
+--accepting rule at line 81 (")")
+--accepting rule at line 75 (";")
+--accepting rule at line 115 ("
+")
+--accepting rule at line 114 ("	")
+--accepting rule at line 101 ("if")
+--accepting rule at line 114 (" ")
+--accepting rule at line 80 ("(")
+--accepting rule at line 114 (" ")
+--accepting rule at line 112 ("a")
+--accepting rule at line 114 (" ")
+--accepting rule at line 93 ("==")
+--accepting rule at line 114 (" ")
+--accepting rule at line 112 ("b")
+--accepting rule at line 114 (" ")
+--accepting rule at line 81 (")")
+--accepting rule at line 78 ("{")
+--accepting rule at line 115 ("
+")
+--accepting rule at line 114 ("	")
+--accepting rule at line 114 ("	")
+--accepting rule at line 108 ("return")
+--accepting rule at line 114 (" ")
+--accepting rule at line 109 ("1")
+--accepting rule at line 75 (";")
+--accepting rule at line 115 ("
+")
+--accepting rule at line 114 ("	")
+--accepting rule at line 79 ("}")
+--accepting rule at line 115 ("
+")
+--accepting rule at line 114 ("	")
+--accepting rule at line 102 ("else")
+--accepting rule at line 78 ("{")
+--accepting rule at line 115 ("
+")
+--accepting rule at line 114 ("	")
+--accepting rule at line 114 ("	")
+--accepting rule at line 108 ("return")
+--accepting rule at line 114 (" ")
+--accepting rule at line 111 ("0")
+--accepting rule at line 75 (";")
+--accepting rule at line 115 ("
+")
+--accepting rule at line 114 ("	")
+--accepting rule at line 79 ("}")
+--accepting rule at line 115 ("
+")
+--accepting rule at line 79 ("}")
+--accepting rule at line 115 ("
+")
+--(end of buffer or a NUL)
+--EOF (start condition 0)
 <int>
 <id,a>
 <;>
-VarDecVarDefVarDefsDeclCompUnit<int>
+<int>
 <id,b>
 <;>
-VarDecVarDefVarDefsDeclCompUnit<int>
+<int>
 <id,main>
 <(>
 <)>
-FuncFParams<{>
+<{>
 <id,a>
 <=>
-ArrayExpsLval
-<getint>
+Lval
+<id,getint>
+<(>
+<)>
+<;>
+stmt1
+<id,b>
+<=>
+Lval
+<id,getint>
+<(>
+<)>
+<;>
+stmt1
+<if>
+<(>
+<id,a>
+<==>
+Lval
+<id,b>
+<)>
+Lval
+<{>
+<return>
+<intd>
+ExpNumber:0
+<;>
+<}>
+<else>
+<{>
+<return>
+<into>
+ExpNumber:0
+<;>
+<}>
+<}>
+CompUnits (1)
+  VarDecl (1)
+    IDENTIFIER a
+  CompUnits (2)
+    VarDecl (2)
+      IDENTIFIER b
+    CompUnits (3)
+      FuncDef (3)
+        FuncFParam (3)
+        Block (4)
+          BlockItems (4)
+            Lval_Opassign_Stmt (4)
+              LVal (4)
+                IDENTIFIER a
+                ArrayExps (4)
+              funcall (4)
+                IDENTIFIER getint
+            BlockItems (5)
+              Lval_Opassign_Stmt (5)
+                LVal (5)
+                  IDENTIFIER b
+                  ArrayExps (5)
+                funcall (5)
+                  IDENTIFIER getint
+              BlockItems (6)
+                IF_ELSE_Stmt (6)
+                  Cond (6)
+                    OPEQUAL (6)
+                      LVal_EXP (6)
+                        LVal (6)
+                          IDENTIFIER a
+                          ArrayExps (6)
+                      LVal_EXP (6)
+                        LVal (6)
+                          IDENTIFIER b
+                          ArrayExps (6)
+                  Block_Stmt (7)
+                    Block (7)
+                      BlockItems (7)
+                        Return_Stmt (7)
+                          IntConst (7)
+                            CONSTANTINTD: 1
+                  Block_Stmt (10)
+                    Block (10)
+                      BlockItems (10)
+                        Return_Stmt (10)
+                          IntConst (10)
+                            CONSTANTOCT: 0
+
+
+===========================================================
+Global
+ID             category       type           depictor
+               
+a              Variable       TYPEINTEGER    NULL           
+b              Variable       TYPEINTEGER    NULL           
+main           Function       TYPEINTEGER    NOT NULL       
+===========================================================
+Formal:main
+ID             category       type           depictor
+              
+               NOParam                       NOT NULL       
+===========================================================
+Local:main
+ID             category       type           depictor
+              
+               Block          BLOCKStmt      NULL           
+               Block          BLOCKStmt      NULL           
+Segmentation fault (core dumped)
