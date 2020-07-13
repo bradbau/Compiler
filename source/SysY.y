@@ -6,7 +6,7 @@
     #include <iostream>
     
     #include "./SymbolTable/SymbolTable.h"
-    #include "./SymbolTable/ScopeStack.h"
+    #include "./SymbolTable/ScopeStack_stl.h"
     #include "./IntermediateCode/TAC.h"
     #include "./GrammarTree/AST.h"
 
@@ -67,12 +67,13 @@ Compiler: CompUnits {
                 $1->TraverseGrammerTree(0);
                 // 打印符号表
                 displayGlobal($1->si);
-
-                  ScopeStack* stack = Stack();
+                  $$->si= $1->si;
+                  //ScopeStack* stack = Stack();
+                  vector<ScopeItem> stack;
                   ScopeItem scopeItem;
                   unsigned int temp_num = 0;
                   unsigned int label_num = 0;
-                  TACCode* entrance = BuildTAC($$ , $$->si , stack, temp_num, label_num);
+                  TACCode* entrance = BuildTAC($$ , *($$->si) , stack, temp_num, label_num);
                   DisplayTACCode(entrance);
                 }
         ;
@@ -155,7 +156,7 @@ FuncFParams: FuncFParam { $$ = $1;}
                               $$->si = mergeScope($1->si, $3->si);
                         }
                         }
-            | { ASTTree *asttree = new ASTTree("FuncFParam", 0, yylineno);
+            | { ASTTree *asttree = new ASTTree("NOFParam", 0, yylineno);
                 $$ = asttree;
                 $$->SetID(" ");
                 $$->si = addIntoScope(Formal, NULL, " ", NOParam, " ", NULL);

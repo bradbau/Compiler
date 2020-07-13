@@ -2,10 +2,10 @@
 
 
 ScopeItem* TraverseScopeStack(vector<ScopeItem> stack, string name){
-    for(auto iter= stack.cbegin(); iter!=stack.cend(); iter++){
+    for(auto iter= stack.begin(); iter!=stack.end(); iter++){
         if(iter->name==name){
             return &(*iter);
         }
     }
-    return null;
+    return NULL;
 }

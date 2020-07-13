@@ -50,7 +50,7 @@ ExpNumber:0
 <}>
 CompUnits (1)
   FuncDef (1)
-    FuncFParam (1)
+    NOFParam (1)
     Block (5)
       BlockItems (5)
         Return_Stmt (5)

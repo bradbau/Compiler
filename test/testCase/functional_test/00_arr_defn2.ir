@@ -60,7 +60,7 @@ CompUnits (1)
         IDENTIFIER a
   CompUnits (2)
     FuncDef (2)
-      FuncFParam (2)
+      NOFParam (2)
       Block (3)
         BlockItems (3)
           Return_Stmt (3)

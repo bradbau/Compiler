@@ -30,7 +30,7 @@ LEXFLAGS = -d
 YACCFLAGS = -dvty
 
 # Link with standard C library, math library, and lex library
-LIBS = -lc -lm -ll -lfl -ly
+LIBS = -lc -lm -ll -lfl #-ly
 
 
 #sources 所有含有源代码的目录
@@ -45,21 +45,15 @@ INCLUDES=-I./GrammarTree   -I./SymbolTable -I./IntermediateCode #${wildcard ./Gr
 JUNK =  *.o lex.yy.c  y.tab.c y.tab.h 
 
 
-# targets 以下编译方式没有生成obj，直接编译链接生成可执行文件
-
-## 中间中间代码生成
-lex.yy.c: SysY.l  SysY.y y.tab.h 
-	$(LEX) $(LEXFLAGS) SysY.l
 
 
-y.tab.h y.tab.c: SysY.y
+
+	## 目标编译器编译
+$(COMPILER) : SysY.l  SysY.y ./GrammarTree/AST.h ./SymbolTable/SymbolTable.h ./SymbolTable/ScopeStack_stl.h ./IntermediateCode/Quadruple.h ./IntermediateCode/QuadrupleOperand.h ./IntermediateCode/TAC.h
 	$(YACC) $(YACCFLAGS) SysY.y 
+	$(LEX) $(LEXFLAGS) SysY.l
+	$(CC)   ./GrammarTree/AST.cpp  ./SymbolTable/SymbolTable.cpp ./SymbolTable/ScopeStack_stl.cpp ./IntermediateCode/TAC.cpp lex.yy.c  y.tab.c y.tab.h  ${CFLAGS} -o $@
 
-
-## 目标编译器编译
-$(COMPILER) : lex.yy.c  y.tab.c y.tab.h $(SRCS)
-	echo $(SRCS)
-	$(CC)   $(SRCS)  ${CFLAGS} -o $@  $(LIBS) 
 
 
 # This target is to build small for testing (no debugging info), removes

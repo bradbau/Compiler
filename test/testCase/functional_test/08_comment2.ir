@@ -49,7 +49,7 @@ ExpNumber:0
 <}>
 CompUnits (1)
   FuncDef (1)
-    FuncFParam (1)
+    NOFParam (1)
     Block (9)
       BlockItems (9)
         Return_Stmt (9)

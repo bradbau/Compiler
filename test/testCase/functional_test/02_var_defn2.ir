@@ -93,7 +93,7 @@ CompUnits (1)
       IDENTIFIER b
     CompUnits (3)
       FuncDef (3)
-        FuncFParam (3)
+        NOFParam (3)
         Block (4)
           BlockItems (4)
             Lval_Opassign_Stmt (4)

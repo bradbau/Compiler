@@ -2383,7 +2383,7 @@ CompUnits (1)
                 IDENTIFIER C
           CompUnits (40)
             FuncDef (40)
-              FuncFParam (40)
+              NOFParam (40)
               Block (41)
                 BlockItems (41)
                   VarDecl (41)

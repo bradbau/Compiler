@@ -1178,7 +1178,7 @@ CompUnits (1)
                       CONSTANTOCT: 0
     CompUnits (25)
       FuncDef (25)
-        FuncFParam (25)
+        NOFParam (25)
         Block (26)
           BlockItems (26)
             Lval_Opassign_Stmt (26)

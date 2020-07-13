@@ -218,7 +218,7 @@ ExpNumber:0
 <}>
 CompUnits (1)
   FuncDef (1)
-    FuncFParam (1)
+    NOFParam (1)
     Block (2)
       BlockItems (2)
         VarDecl (2)

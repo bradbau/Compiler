@@ -43,4 +43,5 @@ void displayGlobal(ScopeItem* t);
 void displayFormal(ScopeItem* t, string tablename);
 void displayLocal(ScopeItem* t, string tablename);
 
+bool operator==(ScopeItem t1, ScopeItem t2);//重载操作符，判断两个scopeitem是否相等
 #endif
