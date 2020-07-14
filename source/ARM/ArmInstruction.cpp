@@ -83,3 +83,13 @@ void MemoryInstruction(InstrcuctionType type, Register rd, Register op1, Registe
 
 
 //~~~~~~~~~~~~~~ end of mem Instruction~~~~~~~~~~~~~~~~~~~~
+
+
+
+//~~~~~~~~~~~~~~~~~`  label ins~~~~~~~~~~~~~~~~~~~
+
+
+
+void LabelInstruction::LabelInstruction(string content){
+    this->content=content;
+}

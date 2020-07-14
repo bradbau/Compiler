@@ -153,8 +153,10 @@ class LabelInstruction: public ARMInstruction
 
 private:
     string content;//标记字符串
+   
 
 public:
+    void LabelInstruction(string content); 
 
     string LabelString(){return content};// 生成标记字符串
     string InstoString();//指向该标记的完整指令字符串

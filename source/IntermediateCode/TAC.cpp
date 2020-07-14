@@ -244,7 +244,7 @@ TACCode*  TranslateExp(ASTTree* tree, ScopeItem &scopeItem, vector<ScopeItem> &s
         TACCode* code3 = NULL;
         TACCode* tmp = NULL;
         variable.type = Local;
-        while (&current != &origin && current != NULL)
+        while (!(*current == *origin) && current != NULL)
         {
             if (code2 == NULL)
             {
