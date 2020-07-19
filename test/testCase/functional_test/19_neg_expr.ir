@@ -1,43 +1,195 @@
 --(end of buffer or a NUL)
---accepting rule at line 108 ("int")
---accepting rule at line 130 (" ")
---accepting rule at line 128 ("a")
---accepting rule at line 83 (";")
---accepting rule at line 131 ("
+--accepting rule at line 100 ("int")
+--accepting rule at line 114 (" ")
+--accepting rule at line 112 ("a")
+--accepting rule at line 75 (";")
+--accepting rule at line 115 ("
 ")
---accepting rule at line 108 ("int")
---accepting rule at line 130 (" ")
---accepting rule at line 128 ("b")
---accepting rule at line 83 (";")
---accepting rule at line 131 ("
+--accepting rule at line 100 ("int")
+--accepting rule at line 114 (" ")
+--accepting rule at line 112 ("b")
+--accepting rule at line 75 (";")
+--accepting rule at line 115 ("
 ")
---accepting rule at line 108 ("int")
---accepting rule at line 130 (" ")
---accepting rule at line 128 ("main")
---accepting rule at line 88 ("(")
---accepting rule at line 89 (")")
---accepting rule at line 86 ("{")
---accepting rule at line 131 ("
+--accepting rule at line 100 ("int")
+--accepting rule at line 114 (" ")
+--accepting rule at line 112 ("main")
+--accepting rule at line 80 ("(")
+--accepting rule at line 81 (")")
+--accepting rule at line 78 ("{")
+--accepting rule at line 115 ("
 ")
---accepting rule at line 130 ("	")
---accepting rule at line 128 ("a")
---accepting rule at line 130 (" ")
---accepting rule at line 97 ("=")
---accepting rule at line 130 (" ")
---accepting rule at line 115 ("getint")
-Error type B at Line 4 Column 6: syntax error, unexpected KEYGETINT.
+--accepting rule at line 114 ("	")
+--accepting rule at line 112 ("a")
+--accepting rule at line 114 (" ")
+--accepting rule at line 89 ("=")
+--accepting rule at line 114 (" ")
+--accepting rule at line 112 ("getint")
+--accepting rule at line 80 ("(")
+--accepting rule at line 81 (")")
+--accepting rule at line 75 (";")
+--accepting rule at line 115 ("
+")
+--accepting rule at line 114 ("	")
+--accepting rule at line 112 ("b")
+--accepting rule at line 114 (" ")
+--accepting rule at line 89 ("=")
+--accepting rule at line 114 (" ")
+--accepting rule at line 112 ("getint")
+--accepting rule at line 80 ("(")
+--accepting rule at line 81 (")")
+--accepting rule at line 75 (";")
+--accepting rule at line 115 ("
+")
+--accepting rule at line 114 ("	")
+--accepting rule at line 100 ("int")
+--accepting rule at line 114 (" ")
+--accepting rule at line 112 ("c")
+--accepting rule at line 75 (";")
+--accepting rule at line 115 ("
+")
+--accepting rule at line 114 ("	")
+--accepting rule at line 112 ("c")
+--accepting rule at line 114 (" ")
+--accepting rule at line 89 ("=")
+--accepting rule at line 114 (" ")
+--accepting rule at line 85 ("-")
+--accepting rule at line 80 ("(")
+--accepting rule at line 112 ("a")
+--accepting rule at line 114 (" ")
+--accepting rule at line 84 ("+")
+--accepting rule at line 114 (" ")
+--accepting rule at line 112 ("b")
+--accepting rule at line 81 (")")
+--accepting rule at line 75 (";")
+--accepting rule at line 115 ("
+")
+--accepting rule at line 114 ("	")
+--accepting rule at line 108 ("return")
+--accepting rule at line 114 (" ")
+--accepting rule at line 112 ("c")
+--accepting rule at line 75 (";")
+--accepting rule at line 115 ("
+")
+--accepting rule at line 79 ("}")
+--accepting rule at line 115 ("
+")
+--(end of buffer or a NUL)
+--EOF (start condition 0)
 <int>
 <id,a>
 <;>
-VarDecVarDefVarDefsDeclCompUnit<int>
+<int>
 <id,b>
 <;>
-VarDecVarDefVarDefsDeclCompUnit<int>
+<int>
 <id,main>
 <(>
 <)>
-FuncFParams<{>
+<{>
 <id,a>
 <=>
-ArrayExpsLval
-<getint>
+Lval
+<id,getint>
+<(>
+<)>
+<;>
+stmt1
+<id,b>
+<=>
+Lval
+<id,getint>
+<(>
+<)>
+<;>
+stmt1
+<int>
+<id,c>
+<;>
+<id,c>
+<=>
+Lval
+<->
+<(>
+<id,a>
+<+>
+Lval
+<id,b>
+<)>
+Lval
+<;>
+stmt1
+<return>
+<id,c>
+<;>
+Lval
+<}>
+CompUnits (1)
+  VarDecl (1)
+    IDENTIFIER a
+  CompUnits (2)
+    VarDecl (2)
+      IDENTIFIER b
+    CompUnits (3)
+      FuncDef (3)
+        NOFParam (3)
+        Block (4)
+          BlockItems (4)
+            Lval_Opassign_Stmt (4)
+              LVal (4)
+                IDENTIFIER a
+                ArrayExps (4)
+              funcall (4)
+                IDENTIFIER getint
+            BlockItems (5)
+              Lval_Opassign_Stmt (5)
+                LVal (5)
+                  IDENTIFIER b
+                  ArrayExps (5)
+                funcall (5)
+                  IDENTIFIER getint
+              BlockItems (6)
+                VarDecl (6)
+                  IDENTIFIER c
+                BlockItems (7)
+                  Lval_Opassign_Stmt (7)
+                    LVal (7)
+                      IDENTIFIER c
+                      ArrayExps (7)
+                    OPMINUS_Exp (7)
+                      (Exp) (7)
+                        PLUSExp (7)
+                          LVal_EXP (7)
+                            LVal (7)
+                              IDENTIFIER a
+                              ArrayExps (7)
+                          LVal_EXP (7)
+                            LVal (7)
+                              IDENTIFIER b
+                              ArrayExps (7)
+                  BlockItems (8)
+                    Return_Stmt (8)
+                      LVal_EXP (8)
+                        LVal (8)
+                          IDENTIFIER c
+                          ArrayExps (8)
+
+
+===========================================================
+Global
+ID             category       type           depictor
+               
+a              Variable       TYPEINTEGER    NULL           
+b              Variable       TYPEINTEGER    NULL           
+main           Function       TYPEINTEGER    NOT NULL       
+===========================================================
+Formal:main
+ID             category       type           depictor
+              
+               NOParam                       NOT NULL       
+===========================================================
+Local:main
+ID             category       type           depictor
+              
+c              Variable       TYPEINTEGER    NULL           
+Segmentation fault (core dumped)

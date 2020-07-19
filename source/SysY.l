@@ -104,15 +104,7 @@ STRING          \".*?\"
 {KEYBREAK} { printf("<break>\n");return KEYBREAK; }
 {KEYCONTINUE} {printf("<continue>\n");return KEYCONTINUE ; }
 {KEYCONST} {  printf("<const>\n");return KEYCONST ; }
-{KEYGETINT}  { printf("<getint>\n");return KEYGETINT; }    
-{KEYGETCHAR}    { printf("<getchar>\n");return KEYGETCHAR; }
-{KEYGETARRAY}   {  printf("<getarray>\n");return KEYGETARRAY; }
-{KEYPUTINT}      { printf("<putint>\n");return KEYPUTINT; }
-{KEYPUTCHAR}     {printf("<putchar>\n");return KEYPUTCHAR; }
-{KEYPUTARRAY}    { printf("<putarray>\n");return KEYPUTARRAY; }
-{KEYPUTF}         { printf("<putf>\n");return KEYPUTF; }
-{KEYSTARTTIME}    {  printf("<starttime>\n");return KEYSTARTTIME; }
-{KEYSTOPTIME}     { printf("<stoptime>\n");return SPSEMICOLON; }
+
 {KEYRETURN} {printf("<return>\n");return KEYRETURN; }
 {CONSTANTINTD} { printf("<intd>\n");ASTTree *asttree = new ASTTree("CONSTANTINTD", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return CONSTANTINTD; }
 {CONSTANTINTH} { printf("<inth>\n");ASTTree *asttree = new ASTTree("CONSTANTINTH", 0, yylineno, yylloc.first_column);yylval.ast_Tree = asttree; return CONSTANTINTH; }

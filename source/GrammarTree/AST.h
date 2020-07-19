@@ -17,27 +17,28 @@ extern int yyparse();
 
 
 class ASTTree{
-  private:
-
-    
-    
-
-  
   public:
-    ScopeItem *si;  //  符号表指针
-    ASTTree();
-    ASTTree(string name,int num,int pos,...);
 
-    ASTTree* lchild;
-    ASTTree* rchild;
     int int_value;  //只可能为int类型
-    int num;                      //计数器，可以用来统计形参个数
+    int num;        //计数器，可以用来统计形参个数
     int line;       // the number of its line
     int column;
     string name;     // the name of this AST unit
     string id;
     string functype; //函数返回类型
     string funcptype;//形参类型
+
+    //merge dev-cjw(begin)
+    string formatstring;
+    //merge dev-cjw(end)
+
+    ASTTree *lchild;
+    ASTTree *rchild;
+  
+
+    ScopeItem *si;  //  符号表指针
+    ASTTree();
+    ASTTree(string name,int num,int pos,...);
    
     //遍历当前语法树
     void TraverseGrammerTree(int level);
@@ -64,14 +65,15 @@ class ASTTree{
 
     int GetIntValue();
 
+    //merge dev-cjw(begin)
+    string GetString();
+    //merge dev-cjw(end)
+
     ASTTree * GetASTTree();
-    //
+    
     void Check() ;
     
     void Emit() ;
-
 };
-
-void Si(ASTTree* tree);
 
 #endif

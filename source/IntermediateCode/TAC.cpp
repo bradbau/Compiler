@@ -1,7 +1,6 @@
 #include "TAC.h"
 
-//#include "stack.h"
-//#include "AST.h"
+
 
 
 
@@ -18,7 +17,6 @@ TACCode*   MergeTACItem(int num, ...){
         // First, previous linklist's last element's "next" points to new linklist's first element
         if ((entrance->prev->next = va_arg(codelist, TACCode*)) == NULL)
         {
-            /*printf("3 test i:%d num:%d\n", i, num);*/
             i += 1;
         }
         else
@@ -35,7 +33,7 @@ TACCode*   MergeTACItem(int num, ...){
     return entrance;
 }
 
-TACCode*  TranslateInitVal(ASTTree* tree, ScopeItem* scopeItem, ScopeStack* stack, ScopeItem* place,  unsigned int &temp_num, unsigned int &label_num) { 
+TACCode*  TranslateInitVal(ASTTree* tree, ScopeItem &scopeItem, vector<ScopeItem> &stack, ScopeItem place,  unsigned int &temp_num, unsigned int &label_num) { 
     if (!tree->lchild) {
         return NULL;    //不知道对不对
     }
@@ -48,7 +46,7 @@ TACCode*  TranslateInitVal(ASTTree* tree, ScopeItem* scopeItem, ScopeStack* stac
 }
 
 
-TACCode*  TranslateStmt(ASTTree* tree, ScopeItem* scopeItem, ScopeStack* stack, Label continuevalue, Label breakvalue,unsigned int &temp_num, unsigned int &label_num) {
+TACCode*  TranslateStmt(ASTTree* tree, ScopeItem &scopeItem, vector<ScopeItem> &stack, Label continuevalue, Label breakvalue,unsigned int &temp_num, unsigned int &label_num) {
     if (tree->name == "Empty_Stmt") {
         return NULL;
     }
@@ -57,10 +55,10 @@ TACCode*  TranslateStmt(ASTTree* tree, ScopeItem* scopeItem, ScopeStack* stack, 
         Label label2 = label_num++;
         ASTTree* cond = tree->lchild;
         ASTTree* stmt = tree->lchild->rchild;
-        scopeItem = GetStackTopp(stack);
-        TACCode* code1 = TranslateCondition(cond, scopeItem, stack, label1, label2, temp_num, label_num);
-        scopeItem = GetStackTopp(stack);
-        TACCode* code2 = TranslateStmt(stmt, scopeItem, stack, continuevalue, breakvalue, temp_num, label_num);
+        //scopeItem = GetStackTopp(stack);
+        TACCode* code1 = TranslateCondition(cond, stack.back(), stack, label1, label2, temp_num, label_num);
+        //scopeItem = GetStackTopp(stack);
+        TACCode* code2 = TranslateStmt(stmt, stack.back(), stack, continuevalue, breakvalue, temp_num, label_num);
         TACCode* code3 = (TACCode*)malloc(sizeof(TACCode));
         TACCode* code4 = (TACCode*)malloc(sizeof(TACCode));
         code3->code.optype = LABELDF;
@@ -80,10 +78,10 @@ TACCode*  TranslateStmt(ASTTree* tree, ScopeItem* scopeItem, ScopeStack* stack, 
         Label label2 = label_num++;
         ASTTree* cond = tree->lchild;
         ASTTree* stmt = tree->lchild->rchild;
-        scopeItem = GetStackTopp(stack);
-        TACCode* code1 = TranslateCondition(cond, scopeItem, stack, label1, label2, temp_num, label_num);
-        scopeItem = GetStackTopp(stack);
-        TACCode* code2 = TranslateStmt(stmt, scopeItem, stack, continuevalue, breakvalue, temp_num, label_num);
+        //scopeItem = GetStackTopp(stack);
+        TACCode* code1 = TranslateCondition(cond, stack.back(), stack, label1, label2, temp_num, label_num);
+        //scopeItem = GetStackTopp(stack);
+        TACCode* code2 = TranslateStmt(stmt, stack.back(), stack, continuevalue, breakvalue, temp_num, label_num);
         TACCode* code3 = (TACCode*)malloc(sizeof(TACCode));
         TACCode* code4 = (TACCode*)malloc(sizeof(TACCode));
         code3->code.optype = LABELDF;
@@ -97,8 +95,8 @@ TACCode*  TranslateStmt(ASTTree* tree, ScopeItem* scopeItem, ScopeStack* stack, 
         code4->line = tree->lchild->line;
         code4->prev = code4;
         Label label3 = label_num++;
-        scopeItem = GetStackTopp(stack);
-        TACCode* code5 = TranslateStmt(stmt->rchild, scopeItem, stack, continuevalue, breakvalue, temp_num, label_num);
+        //scopeItem = GetStackTopp(stack);
+        TACCode* code5 = TranslateStmt(stmt->rchild, stack.back(), stack, continuevalue, breakvalue, temp_num, label_num);
         TACCode* code6 = (TACCode*)malloc(sizeof(TACCode));
         TACCode* code7 = (TACCode*)malloc(sizeof(TACCode));
         code6->code.optype = GOTO;
@@ -120,11 +118,11 @@ TACCode*  TranslateStmt(ASTTree* tree, ScopeItem* scopeItem, ScopeStack* stack, 
         ASTTree* cond = tree->lchild;
         ASTTree* stmt = tree->lchild->rchild;
         TACCode* code1 = (TACCode*)malloc(sizeof(TACCode));
-        scopeItem = GetStackTopp(stack);
-        TACCode* code2 = TranslateCondition(cond, scopeItem, stack, label2, label3, temp_num, label_num);
+        //scopeItem = GetStackTopp(stack);
+        TACCode* code2 = TranslateCondition(cond, stack.back(), stack, label2, label3, temp_num, label_num);
         TACCode* code3 = (TACCode*)malloc(sizeof(TACCode));
-        scopeItem = GetStackTopp(stack);
-        TACCode* code4 = TranslateStmt(stmt, scopeItem, stack, label1, label3, temp_num, label_num);
+        //scopeItem = GetStackTopp(stack);
+        TACCode* code4 = TranslateStmt(stmt, stack.back(), stack, label1, label3, temp_num, label_num);
         TACCode* code5 = (TACCode*)malloc(sizeof(TACCode));
         TACCode* code6 = (TACCode*)malloc(sizeof(TACCode));
         code1->code.optype = LABELDF;
@@ -165,17 +163,19 @@ TACCode*  TranslateStmt(ASTTree* tree, ScopeItem* scopeItem, ScopeStack* stack, 
     }
     else if (tree->name == "Return_Stmt") {
         ASTTree* expr = tree->lchild;
+        if (expr == NULL) {
+            return NULL;
+        }
         string cache;
-        
         TACCode* code1;
         TACCode* code2 = (TACCode*)malloc(sizeof(TACCode));
         cache = "_t" + to_string(temp_num++);
         //作用域操作
         //
-        ScopeItem* scope = GetStackTopp(stack);
-        ScopeItem* new_temp= addIntoScope(Local, scope, cache, Variable, "temp" , NULL);
+        //ScopeItem* scope = GetStackTopp(stack);
+        ScopeItem* new_temp= addIntoScope(Local, &stack.back(), cache, Variable, "temp" , NULL);
 
-        code1 = TranslateExp(expr, new_temp, stack, new_temp, temp_num, label_num);
+        code1 = TranslateExp(expr, *new_temp, stack, *new_temp, temp_num, label_num);
         code2->code.optype = RETURN;
         code2->code.dest.Type = VARIABLE;
         code2->code.dest.Data.variable = new_temp;
@@ -185,7 +185,7 @@ TACCode*  TranslateStmt(ASTTree* tree, ScopeItem* scopeItem, ScopeStack* stack, 
     }
 }
 
-TACCode*  TranslateExps(ASTTree* tree, ScopeItem* scopeItem, ScopeStack* stack, unsigned int &temp_num, unsigned int &label_num){
+TACCode*  TranslateExps(ASTTree* tree, ScopeItem &scopeItem, vector<ScopeItem> &stack, unsigned int &temp_num, unsigned int &label_num){
     if (tree==NULL) {
         return NULL;
     }
@@ -195,15 +195,15 @@ TACCode*  TranslateExps(ASTTree* tree, ScopeItem* scopeItem, ScopeStack* stack, 
 
         TACCode* code1, * code2;
         cache = "_t" + to_string(temp_num++);
-        ScopeItem* scope = GetStackTopp(stack);
-        ScopeItem *new_temp = addIntoScope(Local, scope, cache, Variable, "temp", NULL);
-        code1 = TranslateExps(tree->lchild, new_temp, stack, temp_num, label_num);
-        code2 = TranslateExp(tree->lchild->rchild, new_temp, stack, new_temp, temp_num, label_num);
+        //ScopeItem* scope = GetStackTopp(stack);
+        ScopeItem *new_temp = addIntoScope(Local, &stack.back(), cache, Variable, "temp", NULL);
+        code1 = TranslateExp(tree->lchild, *new_temp, stack, *new_temp, temp_num, label_num);
+        code2 = TranslateExps(tree->lchild->rchild, scopeItem, stack, temp_num, label_num);
         return MergeTACItem(2, code1, code2);
     }
 }
 
-TACCode*  TranslateExp(ASTTree* tree, ScopeItem* scopeItem, ScopeStack* stack, ScopeItem* place, unsigned int &temp_num, unsigned int &label_num){
+TACCode*  TranslateExp(ASTTree* tree, ScopeItem &scopeItem, vector<ScopeItem> &stack, ScopeItem place, unsigned int &temp_num, unsigned int &label_num){
     if (tree->name=="IntConst")   //ok
     {
         TACCode* tmp = (TACCode*)malloc(sizeof(TACCode));
@@ -211,7 +211,8 @@ TACCode*  TranslateExp(ASTTree* tree, ScopeItem* scopeItem, ScopeStack* stack, S
         tmp->code.dest.Type = VARIABLE;
         
 
-        tmp->code.dest.Data.variable = place;
+        tmp->code.dest.Data.variable = new ScopeItem;
+        *(tmp->code.dest.Data.variable) = place;
         tmp->code.firstOp.Type = INTEGERCONST;
         tmp->code.firstOp.Data.value = tree->lchild->int_value;
         tmp->line = tree->line;
@@ -222,10 +223,11 @@ TACCode*  TranslateExp(ASTTree* tree, ScopeItem* scopeItem, ScopeStack* stack, S
         TACCode* tmp = (TACCode*)malloc(sizeof(TACCode));
         tmp->code.optype = ASSIGN;
         tmp->code.dest.Type = VARIABLE;
-        tmp->code.dest.Data.variable = place;
+        tmp->code.dest.Data.variable = new ScopeItem;
+        *(tmp->code.dest.Data.variable) = place;
         tmp->code.firstOp.Type = VARIABLE;
-        tmp->code.firstOp.Data.variable = (ScopeItem*)malloc(sizeof(ScopeItem));
-        *(tmp->code.firstOp.Data.variable)=*(tree->si);
+        tmp->code.firstOp.Data.variable = new ScopeItem;
+        *(tmp->code.firstOp.Data.variable)= TraverseScopeStack(stack, tree->GetID());
         tmp->line = tree->lchild->line;
         tmp->prev = tmp;
         return tmp;
@@ -233,17 +235,17 @@ TACCode*  TranslateExp(ASTTree* tree, ScopeItem* scopeItem, ScopeStack* stack, S
     else if (tree->name == "funcall")
     {
         ScopeItem variable;
-        ScopeItem function = *TraverseScopeStack(stack, tree->lchild->GetID());
-        ScopeItem* origin = GetStackTopp(stack);
+        ScopeItem function = TraverseScopeStack(stack, tree->lchild->GetID());
+        ScopeItem* origin = &stack.back();
         ASTTree* actuals = tree->lchild->rchild;
-        scopeItem = GetStackTopp(stack);
-        TACCode* code1 = TranslateArgs(actuals, scopeItem, stack, temp_num, label_num);
-        ScopeItem* current = GetStackTopp(stack);
+        //scopeItem = GetStackTopp(stack);
+        TACCode* code1 = TranslateFuncRParams(actuals, stack.back(), stack, temp_num, label_num);
+        ScopeItem* current = &stack.back();
         TACCode* code2 = NULL;
         TACCode* code3 = NULL;
         TACCode* tmp = NULL;
         variable.type = Local;
-        while (&current != &origin && current != NULL)
+        while (!(*current == *origin) && current != NULL)
         {
             if (code2 == NULL)
             {
@@ -251,7 +253,7 @@ TACCode*  TranslateExp(ASTTree* tree, ScopeItem* scopeItem, ScopeStack* stack, S
                 code2->code.optype = ARG;
                 code2->code.dest.Type = VARIABLE;
                 variable.depictor = current;
-                code2->code.dest.Data.variable = (ScopeItem*)malloc(sizeof(ScopeItem));
+                code2->code.dest.Data.variable = new ScopeItem;
                 *(code2->code.dest.Data.variable)= variable;
                 code2->line = tree->lchild->line;
                 code2->prev = code2;
@@ -262,7 +264,7 @@ TACCode*  TranslateExp(ASTTree* tree, ScopeItem* scopeItem, ScopeStack* stack, S
                 tmp->code.optype = ARG;
                 tmp->code.dest.Type = VARIABLE;
                 variable.depictor = current;
-                tmp->code.dest.Data.variable  = (ScopeItem*)malloc(sizeof(ScopeItem));
+                tmp->code.dest.Data.variable  = new ScopeItem;
                 *(tmp->code.dest.Data.variable)= variable;
 
                 tmp->line = tree->lchild->line;
@@ -274,9 +276,10 @@ TACCode*  TranslateExp(ASTTree* tree, ScopeItem* scopeItem, ScopeStack* stack, S
         code3 = (TACCode*)malloc(sizeof(TACCode));
         code3->code.optype = CALLASSIGN;
         code3->code.dest.Type = VARIABLE;
-        code3->code.dest.Data.variable = place;
+        code3->code.dest.Data.variable = new ScopeItem;
+        *(code3->code.dest.Data.variable)=place;
         code3->code.firstOp.Type = FUNCTION;
-        code3->code.firstOp.Data.function  = (ScopeItem*)malloc(sizeof(ScopeItem));
+        code3->code.firstOp.Data.function  = new ScopeItem;
         *(code3->code.firstOp.Data.function)= function;
 
         code3->line = tree->lchild->line;
@@ -287,39 +290,39 @@ TACCode*  TranslateExp(ASTTree* tree, ScopeItem* scopeItem, ScopeStack* stack, S
         string cache;
         TACCode* tmp;
         cache = "_t" + to_string(temp_num++);
-        ScopeItem* scope = GetStackTopp(stack);
-        ScopeItem *new_temp = addIntoScope(Local, scope, cache, Variable, "temp", NULL);
+        //ScopeItem* scope = GetStackTopp(stack);
+        ScopeItem *new_temp = addIntoScope(Local, &stack.back(), cache, Variable, "temp", NULL);
         tmp = (TACCode*)malloc(sizeof(TACCode));
         tmp->code.optype = ADD;
         tmp->code.dest.Type = VARIABLE;
-        tmp->code.dest.Data.variable = place;
+        tmp->code.dest.Data.variable = new ScopeItem;
+        *(tmp->code.dest.Data.variable)= place;
         tmp->code.firstOp.Type = INTEGERCONST;
         tmp->code.firstOp.Data.value = 0;
         tmp->code.secondOp.Type = VARIABLE;
         tmp->code.secondOp.Data.variable = new_temp;
         tmp->line = tree->lchild->line;
         tmp->prev = tmp;
-        scopeItem = GetStackTopp(stack);
-        return MergeTACItem(2, TranslateExp(tree->lchild, new_temp, stack, new_temp, temp_num, label_num), tmp);
+        return MergeTACItem(2, TranslateExp(tree->lchild, *new_temp, stack, *new_temp, temp_num, label_num), tmp);
     }
     else if (tree->name == "OPMINUS_Exp") {
         string cache;
         TACCode* tmp;
         cache = "_t" + to_string(temp_num++);
-        ScopeItem* scope = GetStackTopp(stack);
-        ScopeItem *new_temp = addIntoScope(Local, scope, cache, Variable, "temp", NULL);
+        //ScopeItem* scope = GetStackTopp(stack);
+        ScopeItem *new_temp = addIntoScope(Local, &stack.back(), cache, Variable, "temp", NULL);
         tmp = (TACCode*)malloc(sizeof(TACCode));
         tmp->code.optype = SUB;
         tmp->code.dest.Type = VARIABLE;
-        tmp->code.dest.Data.variable = place;
+        tmp->code.dest.Data.variable = new ScopeItem;
+        *(tmp->code.dest.Data.variable)= place;
         tmp->code.firstOp.Type = INTEGERCONST;
         tmp->code.firstOp.Data.value = 0;
         tmp->code.secondOp.Type = VARIABLE;
         tmp->code.secondOp.Data.variable = new_temp;
         tmp->line = tree->lchild->line;
         tmp->prev = tmp;
-        scopeItem = GetStackTopp(stack);
-        return MergeTACItem(2, TranslateExp(tree->lchild, new_temp, stack, new_temp, temp_num, label_num), tmp);
+        return MergeTACItem(2, TranslateExp(tree->lchild, *new_temp, stack, *new_temp, temp_num, label_num), tmp);
     }
     else if (tree->name == "OPNOT_Exp"){
         Label label1 = label_num++;
@@ -331,12 +334,13 @@ TACCode*  TranslateExp(ASTTree* tree, ScopeItem* scopeItem, ScopeStack* stack, S
         TACCode* code4 = (TACCode*)malloc(sizeof(TACCode));
         code0->code.optype = ASSIGN;
         code0->code.dest.Type = VARIABLE;
-        code0->code.dest.Data.variable = place;
+        code0->code.dest.Data.variable =  new ScopeItem;
+        *(code0->code.dest.Data.variable)=place;
         code0->code.firstOp.Type = INTEGERCONST;
         code0->code.firstOp.Data.value = 0;
         code0->line = tree->lchild->line;
         code0->prev = code0;
-        scopeItem = GetStackTopp(stack);
+        scopeItem = stack.back();
         code1 = TranslateCondition(tree, scopeItem, stack, label1, label2, temp_num, label_num);
         code2->code.optype = LABELDF;
         code2->code.dest.Type = LABEL;
@@ -345,7 +349,8 @@ TACCode*  TranslateExp(ASTTree* tree, ScopeItem* scopeItem, ScopeStack* stack, S
         code2->prev = code2;
         code3->code.optype = ASSIGN;
         code3->code.dest.Type = VARIABLE;
-        code3->code.dest.Data.variable = place;
+        code3->code.dest.Data.variable =  new ScopeItem;
+        *(code3->code.dest.Data.variable)= place;
         code3->code.firstOp.Type = INTEGERCONST;
         code3->code.firstOp.Data.value = 1;
         code3->line = tree->lchild->line;
@@ -358,19 +363,15 @@ TACCode*  TranslateExp(ASTTree* tree, ScopeItem* scopeItem, ScopeStack* stack, S
         return MergeTACItem(5, code0, code1, code2, code3, code4);
     }
     else if (tree->name == "MulExp" || tree->name == "DIVIDEExp"
-    || tree->name == "PLUSExp" || tree->name == "MINUSExp"
-    || tree->name == "MODExp") {
+    || tree->name == "PLUSExp" || tree->name == "MINUSExp" || tree->name == "MODExp") {
         string cache1, cache2;
-
         TACCode* code1, * code2, * code3;
         cache1 = "_t" + to_string(temp_num++);
         cache2 = "_t" + to_string(temp_num++);
-        ScopeItem *new_temp1 = addIntoScope(tree->lchild->si->stype, tree->lchild->si, cache1, Variable, "temp", NULL);
-        ScopeItem *new_temp2 = addIntoScope(tree->lchild->rchild->si->stype, tree->lchild->rchild->si, cache2, Variable, "temp", NULL);
-        scopeItem = GetStackTopp(stack);
-        code1 = TranslateExp(tree->lchild, new_temp2, stack, new_temp1, temp_num, label_num);
-        scopeItem = GetStackTopp(stack);
-        code2 = TranslateExp(tree->lchild->rchild, new_temp2, stack, new_temp2, temp_num, label_num);
+        ScopeItem *new_temp1 = addIntoScope(stack.end()[0].stype, &stack.end()[0], cache1, Variable, "temp", NULL);
+        ScopeItem *new_temp2 = addIntoScope(stack.end()[0].stype, &stack.end()[0], cache2, Variable, "temp", NULL);
+        code1 = TranslateExp(tree->lchild, *new_temp2, stack, *new_temp1, temp_num, label_num);
+        code2 = TranslateExp(tree->lchild->rchild, *new_temp2, stack, *new_temp2, temp_num, label_num);
         code3 = (TACCode*)malloc(sizeof(TACCode));
         if (tree->name == "PLUSExp")
             code3->code.optype = ADD;
@@ -380,10 +381,12 @@ TACCode*  TranslateExp(ASTTree* tree, ScopeItem* scopeItem, ScopeStack* stack, S
             code3->code.optype = MUL;
         else if (tree->name == "DIVIDEExp")
             code3->code.optype = DIV;
-        else if (tree->name == "MODExp")
+        else if (tree->name == "MODExp") {
             code3->code.optype = MOD;
+        }
         code3->code.dest.Type = VARIABLE;
-        code3->code.dest.Data.variable = place;
+        code3->code.dest.Data.variable = new ScopeItem;
+        *(code3->code.dest.Data.variable)=place;
         code3->code.firstOp.Type = VARIABLE;
         code3->code.firstOp.Data.variable = new_temp1;
         code3->code.secondOp.Type = VARIABLE;
@@ -401,34 +404,36 @@ TACCode*  TranslateExp(ASTTree* tree, ScopeItem* scopeItem, ScopeStack* stack, S
         tmp = (TACCode*)malloc(sizeof(TACCode));
         tmp->code.optype = ASSIGN;
         tmp->code.dest.Type = VARIABLE;
-        tmp->code.dest.Data.variable = place;
+        tmp->code.dest.Data.variable =new ScopeItem;
+        *(tmp->code.dest.Data.variable)=place;
         tmp->code.firstOp.Type = VARIABLE;
         tmp->code.firstOp.Data.variable = new_temp;
         tmp->line = tree->line;
         tmp->prev = tmp;
-        scopeItem = GetStackTopp(stack);
-        return MergeTACItem(2, TranslateExp(tree->lchild, new_temp, stack, new_temp, temp_num, label_num), tmp);
+        //scopeItem = GetStackTopp(stack);
+        return MergeTACItem(2, TranslateExp(tree->lchild, *new_temp, stack, *new_temp, temp_num, label_num), tmp);
     }
     return NULL;
 }
 
-TACCode*  TranslateArgs(ASTTree* tree, ScopeItem* scopeItem, ScopeStack* stack, unsigned int &temp_num, unsigned int &label_num){
+TACCode*  TranslateFuncRParams(ASTTree* tree, ScopeItem &scopeItem, vector<ScopeItem> &stack, unsigned int &temp_num, unsigned int &label_num){
     if (tree->line == -1)
         return NULL;
     else
     {
-        scopeItem = GetStackTopp(stack);
-        return TranslateExps(tree->lchild, scopeItem, stack, temp_num, label_num);
+        string cache1 = "_t" + to_string(temp_num++);
+        ScopeItem* new_temp1 = addIntoScope(stack.end()[0].stype, &stack.end()[0], cache1, Variable, "temp", NULL);
+        return MergeTACItem(2, TranslateExp(tree->lchild, *new_temp1, stack, *new_temp1, temp_num, label_num), TranslateExps(tree->lchild->rchild, scopeItem, stack, temp_num, label_num));
     }
 }
 
-TACCode*  TranslateCondition(ASTTree* tree, ScopeItem* scopeItem, ScopeStack* stack, unsigned int label_true, unsigned int label_false, unsigned int &temp_num, unsigned int &label_num){
+TACCode*  TranslateCondition(ASTTree* tree, ScopeItem &scopeItem, vector<ScopeItem> &stack, unsigned int label_true, unsigned int label_false, unsigned int &temp_num, unsigned int &label_num){
     if (tree->name=="Cond_And")
     {
         Label label = label_num++;
-        scopeItem = GetStackTopp(stack);
+        scopeItem = stack.back();
         TACCode* code1 = TranslateCondition(tree->lchild, scopeItem, stack, label, label_false, temp_num, label_num);
-        scopeItem = GetStackTopp(stack);
+        scopeItem = stack.back();
         TACCode* code2 = TranslateCondition(tree->lchild->rchild->rchild, scopeItem, stack, label_true, label_false, temp_num, label_num);
         TACCode* code3 = (TACCode*)malloc(sizeof(TACCode));
         code3->code.optype = LABELDF;
@@ -441,10 +446,10 @@ TACCode*  TranslateCondition(ASTTree* tree, ScopeItem* scopeItem, ScopeStack* st
     else if (tree->name=="Cond_Or")
     {
         Label label = label_num++;
-        scopeItem = GetStackTopp(stack);
-        TACCode* code1 = TranslateCondition(tree->lchild, scopeItem, stack, label_true, label, temp_num, label_num);
-        scopeItem = GetStackTopp(stack);
-        TACCode* code2 = TranslateCondition(tree->lchild->rchild->rchild, scopeItem, stack, label_true, label_false, temp_num, label_num);
+        //peItem = GetStackTopp(stack);
+        TACCode* code1 = TranslateCondition(tree->lchild, stack.back(), stack, label_true, label, temp_num, label_num);
+        //scopeItem = GetStackTopp(stack);
+        TACCode* code2 = TranslateCondition(tree->lchild->rchild->rchild, stack.back(), stack, label_true, label_false, temp_num, label_num);
         TACCode* code3 = (TACCode*)malloc(sizeof(TACCode));
         code3->code.optype = LABELDF;
         code3->code.dest.Type = LABEL;
@@ -462,15 +467,17 @@ TACCode*  TranslateCondition(ASTTree* tree, ScopeItem* scopeItem, ScopeStack* st
             tree->lchild->name == "OPLIGHTEQ" || tree->lchild->name == "OPEQUAL" || tree->lchild->name == "OPNOTEQUAL") {
             cache1 = "_t" + to_string(temp_num++);
             cache2 = "_t" + to_string(temp_num++);
-            ScopeItem* first = GetStackTopp(stack);
-            ScopeItem *new_temp1 = addIntoScope(first->stype, first, cache1, Variable, "temp", NULL);
-            PopScopeStack(stack, &top);
-            ScopeItem *new_temp2 = addIntoScope(first->stype, new_temp1, cache2, Variable, "temp", NULL);
-            PushScopeStack(stack, *new_temp2);     //把new_temp2作为栈顶
-            scopeItem = GetStackTopp(stack);
-            code1 = TranslateExp(tree->lchild, new_temp2, stack, new_temp1, temp_num, label_num);
-            scopeItem = GetStackTopp(stack);
-            code2 = TranslateExp(tree->lchild->rchild->rchild, new_temp2, stack, new_temp2, temp_num, label_num);
+            ScopeItem first = stack.back();
+            ScopeItem *new_temp1 = addIntoScope(first.stype, &first, cache1, Variable, "temp", NULL);
+            //PopScopeStack(stack, &top);
+            stack.pop_back();
+            ScopeItem *new_temp2 = addIntoScope(first.stype, new_temp1, cache2, Variable, "temp", NULL);
+            //PushScopeStack(stack, *new_temp2);     //把new_temp2作为栈顶
+            stack.push_back(*new_temp2);
+            //scopeItem = GetStackTopp(stack);
+            code1 = TranslateExp(tree->lchild, *new_temp2, stack, *new_temp1, temp_num, label_num);
+            scopeItem = stack.back();
+            code2 = TranslateExp(tree->lchild->rchild->rchild, *new_temp2, stack, *new_temp2, temp_num, label_num);
             code3 = (TACCode*)malloc(sizeof(TACCode));
             code3->code.dest.Type = LABEL;
             code3->code.dest.Data.labelvalue = label_true;
@@ -493,7 +500,7 @@ TACCode*  TranslateCondition(ASTTree* tree, ScopeItem* scopeItem, ScopeStack* st
             else if (tree->lchild->name == "OPNOTEQUAL")
                 code3->code.optype = IFNEQGOTO;
             else
-                code3 = TranslateExp(tree->lchild, new_temp2, stack, new_temp2, temp_num, label_num);
+                code3 = TranslateExp(tree->lchild, *new_temp2, stack, *new_temp2, temp_num, label_num);
             code4 = (TACCode*)malloc(sizeof(TACCode));
             code4->code.optype = GOTO;
             code4->code.dest.Type = LABEL;
@@ -505,27 +512,31 @@ TACCode*  TranslateCondition(ASTTree* tree, ScopeItem* scopeItem, ScopeStack* st
         else {
             ScopeItem  top2;
             string cache3;
-            ScopeItem *new_temp3 = addIntoScope(scopeItem->stype, scopeItem, cache3, Variable, "temp", NULL);
-            PopScopeStack(stack, &top2);
-            PushScopeStack(stack, *new_temp3);     //把new_temp3作为栈顶
-            return TranslateExp(tree->lchild, new_temp3, stack, new_temp3, temp_num, label_num);
+            ScopeItem *new_temp3 = addIntoScope(scopeItem.stype, &scopeItem, cache3, Variable, "temp", NULL);
+            //PopScopeStack(stack, &top2);
+            stack.pop_back();
+            //PushScopeStack(stack, *new_temp3);     //把new_temp3作为栈顶
+            stack.push_back(*new_temp3);
+            return TranslateExp(tree->lchild, *new_temp3, stack, *new_temp3, temp_num, label_num);
         }
     }
 }
 
-TACCode*   BuildTAC(ASTTree* tree, ScopeItem *scopeItem, ScopeStack* stack,  unsigned int &temp_num, unsigned int &label_num){
+TACCode*   BuildTAC(ASTTree* tree, ScopeItem &scopeItem, vector<ScopeItem> &stack,  unsigned int &temp_num, unsigned int &label_num){
     if (tree == NULL)
         return NULL;
     if (tree->name == "Compiler")
     {
-        cout << "123";
-        PushScopeStack(stack, *scopeItem);
-        cout << "456";
+        cout << "123"<<endl;
+        //PushScopeStack(stack, *scopeItem);
+        stack.push_back(scopeItem);
+        cout << "456" << endl;
         return BuildTAC(tree->lchild, scopeItem, stack, temp_num, label_num);
     }
     else if (tree->name == "CompUnits") {
-        if (tree->lchild != NULL)
+        if (tree->lchild != NULL) {
             return MergeTACItem(2, BuildTAC(tree->lchild, scopeItem, stack, temp_num, label_num), BuildTAC(tree->lchild->rchild, scopeItem, stack, temp_num, label_num));
+        }
         else
             return NULL;
     }
@@ -537,19 +548,24 @@ TACCode*   BuildTAC(ASTTree* tree, ScopeItem *scopeItem, ScopeStack* stack,  uns
         //生成四元式部分
         tmp->code.optype = FUNCTIONDF;
         tmp->code.dest.Type = FUNCTION;
-        tmp->code.dest.Data.function = TraverseScopeStack(stack, tree->GetID()); //根据ID找到对应的作用域
+        tmp->code.dest.Data.function = new ScopeItem;
+        *(tmp->code.dest.Data.function) = TraverseScopeStack(stack, tree->GetID());//根据ID找到对应的作用域
         tmp->line = tree->line;
         tmp->prev = tmp;
+        //作用域栈操作部分
+        if (tree->lchild->si)
+            //PushScopeStack(stack, *tree->lchild->si);
+            stack.push_back(*(tree->lchild->si));
+        if (tree->lchild->rchild->si)
+            //PushScopeStack(stack, *tree->lchild->rchild->si);
+            stack.push_back(*(tree->lchild->rchild->si));
         formalcode = BuildTAC(tree->lchild, scopeItem, stack, temp_num, label_num);                    //形参四元式
         bodycode = BuildTAC(tree->lchild->rchild, scopeItem, stack, temp_num, label_num);              //函数体四元式
-        //作用域栈操作部分
-        if(tree->lchild->si)
-            PushScopeStack(stack, *tree->lchild->si);
-        if(tree->lchild->rchild->si)
-            PushScopeStack(stack, *tree->lchild->rchild->si);
+        cout << "877777" << endl;
         return MergeTACItem(3, tmp, formalcode, bodycode);  //合并四元式
     }
     else if (tree->name == "FuncFParams") {
+        /*
         if (tree->lchild == NULL) {
             return NULL;
         }
@@ -557,8 +573,9 @@ TACCode*   BuildTAC(ASTTree* tree, ScopeItem *scopeItem, ScopeStack* stack,  uns
             return BuildTAC(tree->lchild, scopeItem, stack, temp_num, label_num);
         }
         else {
-            return MergeTACItem(2, BuildTAC(tree->lchild, scopeItem, stack, temp_num, label_num), BuildTAC(tree->lchild->rchild, scopeItem, stack, temp_num, label_num));
-        }
+        */
+        return MergeTACItem(2, BuildTAC(tree->lchild, scopeItem, stack, temp_num, label_num), BuildTAC(tree->lchild->rchild, scopeItem, stack, temp_num, label_num));
+        //}
     }
     else if (tree->name == "FuncFParam") { //ok
         //暂时没管数组
@@ -566,7 +583,7 @@ TACCode*   BuildTAC(ASTTree* tree, ScopeItem *scopeItem, ScopeStack* stack,  uns
         tmp->code.optype = PARAM;
         tmp->code.dest.Type = VARIABLE;
         tmp->code.dest.Data.variable = tree->si;
-        tmp->code.dest.Data.variable = (ScopeItem*)malloc(sizeof(ScopeItem));
+        tmp->code.dest.Data.variable = new ScopeItem;
         *(tmp->code.dest.Data.variable)=*(tree->si);
         tmp->line = tree->line;
         tmp->prev = tmp;
@@ -578,18 +595,22 @@ TACCode*   BuildTAC(ASTTree* tree, ScopeItem *scopeItem, ScopeStack* stack,  uns
             return tmp;
         }
     }
+    else if (tree->name == "NOFParam") {
+        cout << "sbsbsbsbs" << endl;
+        return NULL;
+    }
     else if (tree->name == "ConstDecl") {
         return MergeTACItem(2, BuildTAC(tree->lchild, scopeItem, stack, temp_num, label_num), BuildTAC(tree->lchild->rchild, scopeItem, stack, temp_num, label_num));
     }
     else if (tree->name == "VarDecl") {//ok
-        cout << "789";
+        cout << "789" << endl;
         return MergeTACItem(2, BuildTAC(tree->lchild, scopeItem, stack, temp_num, label_num), BuildTAC(tree->lchild->rchild, scopeItem, stack, temp_num, label_num));
     }
     else if (tree->name == "ConstDefs") {
         return MergeTACItem(2, BuildTAC(tree->lchild, scopeItem, stack, temp_num, label_num), BuildTAC(tree->lchild->rchild, scopeItem, stack, temp_num, label_num));
     }
     else if (tree->name == "VarDefs") {//ok
-        cout << "101112";
+        cout << "101112" << endl;
         return MergeTACItem(2, BuildTAC(tree->lchild, scopeItem, stack, temp_num, label_num), BuildTAC(tree->lchild->rchild, scopeItem, stack, temp_num, label_num));
     }
     else if (tree->name == "ConstOpassign") {
@@ -598,14 +619,16 @@ TACCode*   BuildTAC(ASTTree* tree, ScopeItem *scopeItem, ScopeStack* stack,  uns
     }
     else if (tree->name == "VarOPassign") {     //ok
         //没考虑数组
+        cout << stack.end()[0].name << endl;
         return MergeTACItem(2, BuildTAC(tree->lchild, scopeItem, stack, temp_num, label_num), TranslateInitVal(tree->lchild->rchild, scopeItem, stack, TraverseScopeStack(stack, tree->lchild->GetID()), temp_num, label_num));
     }
     else if (tree->name == "IDENTIFIER") {      //ok
-        cout << "131415";
+        cout << "131415" << endl;
         TACCode* tmp = (TACCode*)malloc(sizeof(TACCode));
         tmp->code.optype = PARAM;
         tmp->code.dest.Type = VARIABLE;
-        tmp->code.dest.Data.variable = TraverseScopeStack(stack, tree->GetID());
+        tmp->code.dest.Data.variable = new ScopeItem;
+        *tmp->code.dest.Data.variable = TraverseScopeStack(stack, tree->GetID());
         tmp->line = tree->line;
         tmp->prev = tmp;
         return tmp;
@@ -623,8 +646,53 @@ TACCode*   BuildTAC(ASTTree* tree, ScopeItem *scopeItem, ScopeStack* stack,  uns
         return MergeTACItem(2, BuildTAC(tree->lchild, scopeItem, stack, temp_num, label_num), BuildTAC(tree->lchild->rchild, scopeItem, stack, temp_num, label_num));
     }
     else if (tree->name == "Exp_Stmt") {
-        scopeItem = GetStackTopp(stack);
-        return TranslateExp(tree->lchild, scopeItem, stack, scopeItem, temp_num, label_num);//这里不知道第四个参数会不会出问题
+        ScopeItem variable;
+        ScopeItem function = TraverseScopeStack(stack, tree->lchild->lchild->GetID());
+        ScopeItem* origin = &stack.back();
+        ASTTree* actuals = tree->lchild->lchild->rchild;
+        //scopeItem = GetStackTopp(stack);
+        TACCode* code1 = TranslateFuncRParams(actuals, stack.back(), stack, temp_num, label_num);
+        ScopeItem* current = &stack.back();
+        TACCode* code2 = NULL;
+        TACCode* code3 = NULL;
+        TACCode* tmp = NULL;
+        variable.type = Local;
+        while (!(*current == *origin) && current != NULL)
+        {
+            if (code2 == NULL)
+            {
+                code2 = (TACCode*)malloc(sizeof(TACCode));
+                code2->code.optype = ARG;
+                code2->code.dest.Type = VARIABLE;
+                variable.depictor = current;
+                code2->code.dest.Data.variable = new ScopeItem;
+                *(code2->code.dest.Data.variable)= variable;
+                code2->line = tree->lchild->lchild->line;
+                code2->prev = code2;
+            }
+            else
+            {
+                tmp = (TACCode*)malloc(sizeof(TACCode));
+                tmp->code.optype = ARG;
+                tmp->code.dest.Type = VARIABLE;
+                variable.depictor = current;
+                tmp->code.dest.Data.variable  = new ScopeItem;
+                *(tmp->code.dest.Data.variable)= variable;
+
+                tmp->line = tree->lchild->lchild->line;
+                tmp->prev = tmp;
+                code2 = MergeTACItem(2, code2, tmp);
+            }
+            current = current->next;
+        }
+        code3 = (TACCode*)malloc(sizeof(TACCode));
+        code3->code.optype = CALL;
+        code3->code.dest.Type = FUNCTION;
+        code3->code.dest.Data.variable = new ScopeItem;
+        *(code3->code.dest.Data.variable)= function;
+        code3->line = tree->lchild->lchild->line;
+        code3->prev = code3;
+        return MergeTACItem(3, code1, code2, code3);
     }
     else if (tree->name == "Block_Stmt") {
         return BuildTAC(tree->lchild, scopeItem, stack, temp_num, label_num);
@@ -632,20 +700,39 @@ TACCode*   BuildTAC(ASTTree* tree, ScopeItem *scopeItem, ScopeStack* stack,  uns
     else if (tree->name == "Block") {
         int flag = 0;
         // Judge if this block is function body
-        if (tree->si != NULL && tree->si != GetStackTopp(stack)) {
+        if (tree->si != NULL && !(*(tree->si) == (ScopeItem)stack.back())) {
             flag = 1;
-            PushScopeStack(stack, *tree->si);
+            //PushScopeStack(stack, *tree->si);
+            stack.push_back(*(tree->si));
         }
         TACCode* BlockItems = (TACCode*)malloc(sizeof(TACCode));
         BlockItems = BuildTAC(tree->lchild, scopeItem, stack, temp_num, label_num);
         ScopeItem top;
         if (flag == 1) {
-            PopScopeStack(stack, &top);
+            //PopScopeStack(stack, &top);
+            stack.pop_back();
         }
         return BlockItems;
     }
     else if (tree->name == "Lval_Opassign_Stmt") {
-        return TranslateExp(tree->lchild->rchild, tree->lchild->rchild->si, stack, tree->lchild->si, temp_num, label_num);
+        string cache1, cache2;
+        TACCode* code1, * code2;
+        cache1 = "_t" + to_string(temp_num++);
+        ScopeItem *new_temp1 = addIntoScope(stack.end()[0].stype, &stack.end()[0], cache1, Variable, "temp", NULL);
+        code1 = TranslateExp(tree->lchild->rchild, *new_temp1, stack, *new_temp1, temp_num, label_num);
+        code2 = (TACCode*)malloc(sizeof(TACCode));
+        code2->code.optype = ASSIGN;
+        code2->code.dest.Type = VARIABLE;
+        code2->code.dest.Data.variable = new ScopeItem;
+        *(code2->code.dest.Data.variable) = TraverseScopeStack(stack, tree->lchild->GetID());
+        code2->code.firstOp.Type = VARIABLE;
+        code2->code.firstOp.Data.variable = new_temp1;
+        code2->line = tree->line;
+        code2->prev = code2;
+        return MergeTACItem(2, code1, code2);
+
+
+        //return TranslateExp(tree->lchild->rchild, *(tree->lchild->rchild->si), stack, *(tree->lchild->si), temp_num, label_num);
     }
     else if (tree->name == "Empty_Stmt") {
         return NULL;
@@ -693,7 +780,7 @@ void DisplayTACCode(TACCode* entrance)
             else if (tmp->code.firstOp.Type == INTEGERCONST)
                 printf("#%d\n", tmp->code.firstOp.Data.value);
         }
-        else if (tmp->code.optype == ADD | tmp->code.optype == SUB | tmp->code.optype == MUL | tmp->code.optype == DIV)
+        else if (tmp->code.optype == ADD | tmp->code.optype == SUB | tmp->code.optype == MUL | tmp->code.optype == DIV | tmp->code.optype == MOD)
         {
             // Notice: no matter variable  is in which scopeItem, the scopeItem entry always has "name" attribute
             printf("%3d  (at line %3d)\t%s := ", line, tmp->line, tmp->code.dest.Data.variable->name.c_str());
@@ -705,23 +792,26 @@ void DisplayTACCode(TACCode* entrance)
                 printf("#%d ", tmp->code.firstOp.Data.value);
             switch (tmp->code.optype)
             {
-            case ADD:
-                printf("+ ");
-                break;
-            case SUB:
-                printf("- ");
-                break;
-            case MUL:
-                printf("* ");
-                break;
-            case DIV:
-                printf("/ ");
-                break;
+                case ADD:
+                    printf("+ ");
+                    break;
+                case SUB:
+                    printf("- ");
+                    break;
+                case MUL:
+                    printf("* ");
+                    break;
+                case DIV:
+                    printf("/ ");
+                    break;
+                case MOD:
+                    printf("%% ");
+                    break;
             }
             if (tmp->code.secondOp.Type == VARIABLE)
-                printf("%s\n", tmp->code.secondOp.Data.variable->depictor->name.c_str());
+                printf("%s\n", tmp->code.secondOp.Data.variable->name.c_str());
             else if (tmp->code.secondOp.Type == ADDRESSS)
-                printf("*%s\n", tmp->code.secondOp.Data.variable->depictor->name.c_str());
+                printf("*%s\n", tmp->code.secondOp.Data.variable->name.c_str());
             else if (tmp->code.secondOp.Type == INTEGERCONST)
                 printf("#%d\n", tmp->code.secondOp.Data.value);
         }

@@ -216,3 +216,9 @@ void displayLocal(ScopeItem* t, string tablename){
         displayLocal(EmbedScope[i].first, EmbedScope[i].second);
     }
 }
+
+
+bool operator==(ScopeItem t1, ScopeItem t2){
+    //重载操作符，判断两个scopeitem是否相等
+    return (t1.stype==t2.stype)&&(t1.name==t2.name)&&(t1.type==t2.type)&&(t1.category==t2.category);
+}
