@@ -291,7 +291,11 @@ Stmt: LVal OPASSIGN Exp SPSEMICOLON { printf("stmt1\n");ASTTree *asttree = new A
       | Block { ASTTree *asttree = new ASTTree("Block_Stmt", 1, yylineno, $1);
                 $$ = asttree; 
                 //内嵌域符号表
-                $$->si = addIntoScope(Local, $$->si, " ", Block, "BLOCKStmt", $1->si);
+                if($1->si=NULL){
+                    $$->si=NULL;
+                }
+                else
+                    $$->si = addIntoScope(Local, $$->si, " ", Block, "BLOCKStmt", $1->si);
                 }
       | KEYIF OPLEFTPRNT Cond OPRIGHTPRNT Stmt { ASTTree *asttree = new ASTTree("IF_Stmt", 2, yylineno, $3,$5);
             $$ = asttree; 
@@ -311,8 +315,8 @@ Stmt: LVal OPASSIGN Exp SPSEMICOLON { printf("stmt1\n");ASTTree *asttree = new A
             }
       | KEYBREAK SPSEMICOLON { ASTTree *asttree = new ASTTree("Break_Stmt", 0,yylineno);$$ = asttree; }
       | KEYCONTINUE SPSEMICOLON {  ASTTree *asttree = new ASTTree("Continue_Stmt", 0,yylineno);$$ = asttree; }
-      | KEYRETURN  SPSEMICOLON { ASTTree *asttree = new ASTTree("Return_Stmt", 0,yylineno);$$ = asttree; }
-      | KEYRETURN  Exp SPSEMICOLON { ASTTree *asttree = new ASTTree("Return_Stmt", 1, yylineno, $2);$$ = asttree; }
+      | KEYRETURN  SPSEMICOLON { ASTTree *asttree = new ASTTree("Return_Stmt", 0,yylineno);$$ = asttree;$$->si = NULL; }
+      | KEYRETURN  Exp SPSEMICOLON { ASTTree *asttree = new ASTTree("Return_Stmt", 1, yylineno, $2);$$ = asttree;$$->si = NULL; }
       ;
 
 /*条件表达式*/ 

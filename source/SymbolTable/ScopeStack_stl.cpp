@@ -4,14 +4,17 @@
 ScopeItem TraverseScopeStack(vector<ScopeItem> stack, string name){
     vector<ScopeItem>::iterator iter;
     ScopeItem* result = NULL;
-    for(iter= stack.end(); iter!=stack.begin(); iter--){
+    for(iter= stack.end(); iter!=stack.begin(); iter--){      
         if (iter[0].name == name) {
             return iter[0];
         }
         result = iter[0].next;
         while (result) {
             cout << name << endl;
+            cout << "ßÀßÀßÀßÀßÀCCDÊÇ" << endl;
+            cout << result->name << endl;
             if (result->name == name) {
+                cout << "CCCCCCDÊÇ" << endl;
                 return *result;
             }
             result = result->next;
