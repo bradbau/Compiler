@@ -73,7 +73,6 @@ Compiler: CompUnits {
                   ScopeItem scopeItem;
                   unsigned int temp_num = 0;
                   unsigned int label_num = 0;
-                  cout<<$$->si->name<<endl;
                   TACCode* entrance = BuildTAC($$ , *($$->si) , stack, temp_num, label_num);
                   DisplayTACCode(entrance);
                 }
