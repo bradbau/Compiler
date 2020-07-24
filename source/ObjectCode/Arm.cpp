@@ -5,6 +5,11 @@
 
 ARM::ARM(TACCode* entrance, ScopeItem &scopeItem){
     //根据输入的中间代码和符号表结构完成初始化，生成目标代码, 
+    #ifdef DEBUG
+    cout<<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"<<endl;
+    cout<<"build assembly code"<<endl;
+
+    #endif // DEBUG
 
     //初始化代码
 
@@ -16,6 +21,9 @@ ARM::ARM(TACCode* entrance, ScopeItem &scopeItem){
         switch(code.optype){
 
             case ASSIGN: 
+            #ifdef DEBUG
+            cout<<"tec type ASSIGN"<<endl;
+            #endif // DEBUG
                 //赋值，目的操作数可以是变量也可以是内存地址，
                 //code.dest一直是variable类型，没有别的类型
                 {
@@ -44,6 +52,9 @@ ARM::ARM(TACCode* entrance, ScopeItem &scopeItem){
                     break;
                 }
             case ADD:
+            #ifdef DEBUG
+            cout<<"tac type ADD"<<endl;
+            #endif // DEBUG
                 //变量与常量相加
                 //第一个和第二个操作数的类型固定
                 {
@@ -58,6 +69,9 @@ ARM::ARM(TACCode* entrance, ScopeItem &scopeItem){
                 
             case SUB:
             {
+                #ifdef DEBUG
+                cout<<"tac type SUB"<<endl;
+                #endif // DEBUG
                 assert(code.dest.Type = VARIABLE);
                 assert(code.firstOp.Type = VARIABLE);
                 assert(code.secondOp.Type = VARIABLE);
@@ -69,6 +83,9 @@ ARM::ARM(TACCode* entrance, ScopeItem &scopeItem){
             }
             case MUL:
             {
+                #ifdef DEBUG
+                cout<<"tac type MUL"<<endl;
+                #endif // DEBUG
                 assert(code.dest.Type = VARIABLE);
                 assert(code.firstOp.Type = VARIABLE);
                 assert(code.secondOp.Type = VARIABLE);
@@ -79,6 +96,9 @@ ARM::ARM(TACCode* entrance, ScopeItem &scopeItem){
             }
             case DIV:
             {
+                #ifdef DEBUG
+                cout<<"tac type DIV"<<endl;
+                #endif // DEBUG
                 assert(code.dest.Type = VARIABLE);
                 assert(code.firstOp.Type = VARIABLE);
                 assert(code.secondOp.Type = VARIABLE);
@@ -87,6 +107,9 @@ ARM::ARM(TACCode* entrance, ScopeItem &scopeItem){
             }
             case MOD:
             {
+                #ifdef DEBUG
+                cout<<"tac type MOD"<<endl;
+                #endif // DEBUG
                 //添加取模运算
                 assert(code.dest.Type = VARIABLE);
                 assert(code.firstOp.Type = VARIABLE);
@@ -101,6 +124,9 @@ ARM::ARM(TACCode* entrance, ScopeItem &scopeItem){
             }
             case FUNCTIONDF:
             {
+                #ifdef DEBUG
+                cout<<"tac type FUNCTIONDF"<<endl;
+                #endif // DEBUG
                 //函数标记指令
                 //ScopeItem localvariable=;
 
@@ -152,17 +178,25 @@ ARM::ARM(TACCode* entrance, ScopeItem &scopeItem){
             }
             case PARAM:
             {
-
+                #ifdef DEBUG
+                cout<<"tac type PARAM"<<endl;
+                #endif // DEBUG
                 break;
             }
             case LABELDF:
-            {
+            {   
+                #ifdef DEBUG
+                cout<<"tac type LABELDF"<<endl;
+                #endif // DEBUG
                 LabelInstruction* InsItem=new LabelInstruction("L"+to_string(code.dest.Data.labelvalue));
                 InsList.push_back(dynamic_cast<ARMInstruction*>(InsItem));
                 break;
             }
             case IFLTGOTO:
             {   
+                #ifdef DEBUG
+                cout<<"tac type IFLT"<<endl;
+                #endif // DEBUG
                 assert(code.firstOp.Type==VARIABLE);
                 assert(code.secondOp.Type==VARIABLE);
                 //加载元素并比较，然后加上跳转指令
@@ -175,6 +209,9 @@ ARM::ARM(TACCode* entrance, ScopeItem &scopeItem){
             }
             case IFLEGOTO:
             {
+                #ifdef DEBUG
+                cout<<"tac type IFLE"<<endl;
+                #endif // DEBUG
                 assert(code.firstOp.Type==VARIABLE);
                 assert(code.secondOp.Type==VARIABLE);
                 //加载元素并比较，然后加上跳转指令
@@ -186,6 +223,9 @@ ARM::ARM(TACCode* entrance, ScopeItem &scopeItem){
             }
             case IFGTGOTO:
             {
+                #ifdef DEBUG
+                cout<<"tac type IFGT"<<endl;
+                #endif // DEBUG
                 assert(code.firstOp.Type==VARIABLE);
                 assert(code.secondOp.Type==VARIABLE);
                 //加载元素并比较，然后加上跳转指令
@@ -197,6 +237,9 @@ ARM::ARM(TACCode* entrance, ScopeItem &scopeItem){
             }
             case IFGEGOTO:
             {
+                #ifdef DEBUG
+                cout<<"tac type IFGE"<<endl;
+                #endif // DEBUG
                 assert(code.firstOp.Type==VARIABLE);
                 assert(code.secondOp.Type==VARIABLE);
                 //加载元素并比较，然后加上跳转指令
@@ -208,6 +251,9 @@ ARM::ARM(TACCode* entrance, ScopeItem &scopeItem){
             }
             case IFEQGOTO:
             {
+                #ifdef DEBUG
+                cout<<"tac type IFEQ"<<endl;
+                #endif // DEBUG
                 assert(code.firstOp.Type==VARIABLE);
                 assert(code.secondOp.Type==VARIABLE);
                 //加载元素并比较，然后加上跳转指令
@@ -220,6 +266,9 @@ ARM::ARM(TACCode* entrance, ScopeItem &scopeItem){
             }
             case IFNEQGOTO:
             {
+                #ifdef DEBUG
+                cout<<"tac type IFNEQ"<<endl;
+                #endif // DEBUG
                 assert(code.firstOp.Type==VARIABLE);
                 assert(code.secondOp.Type==VARIABLE);
                 //加载元素并比较，然后加上跳转指令
@@ -231,6 +280,9 @@ ARM::ARM(TACCode* entrance, ScopeItem &scopeItem){
             }
             case GOTO:   //关于goto的贴近arm的缩减稍后进行
             {
+                #ifdef DEBUG
+                cout<<"tac type GOTO"<<endl;
+                #endif // DEBUG
                 assert(code.dest.Type==LABEL);
                 ControlInstruction* InsItem= new ControlInstruction(INSB, "L"+to_string(code.dest.Data.labelvalue), AL);
                 InsList.push_back(dynamic_cast<ARMInstruction*>(InsItem));
@@ -238,6 +290,9 @@ ARM::ARM(TACCode* entrance, ScopeItem &scopeItem){
             }
             case RETURN:
             {
+                #ifdef DEBUG
+                cout<<"tac type RETURN"<<endl;
+                #endif // DEBUG
                 assert(code.dest.Type==VARIABLE);
 
                 if(code.dest.Type==VARIABLE){
@@ -259,10 +314,16 @@ ARM::ARM(TACCode* entrance, ScopeItem &scopeItem){
             }
             case ARG:
             {
+                #ifdef DEBUG
+                cout<<"tac type ARG"<<endl;
+                #endif // DEBUG
                 break;
             }
             case CALLASSIGN:
             {
+                #ifdef DEBUG
+                cout<<"tac type CALLASSIGN"<<endl;
+                #endif // DEBUG
                 //函数调用
                 //保存寄存器状态
 
@@ -298,10 +359,13 @@ ARM::ARM(TACCode* entrance, ScopeItem &scopeItem){
                 break;
             }
             case CALL:
-            {
+            {   
+                #ifdef DEBUG
+                cout<< "tac type CALL"<<endl;
+                #endif // DEBUG
                 //函数调用
                 //保存寄存器状态
-                
+
                 
 
 

@@ -900,5 +900,52 @@ _______________________________________
  74  (at line  26)	_t6 := _t7
  75  (at line  26)	_t3 := _t5 + _t6
  76  (at line  26)	_t4 := 
- 77  (at lcompiler: ./ObjectCode/Arm.cpp:61: ARM::ARM(TACCode*, ScopeItem&): Assertion `code.dest.Type = VARIABLE' failed.
+ 77  (at line  26)	_t2 := _t3 + _t4
+ 78  (at line  26)	_t1 := _t2
+ 79  (at line  26)	RETURN _t1
+
+ 80  (at line  29)	FUNCTION main :
+ 81  (at line  30)	_t0 := CALL FourWhile
+ 82  (at line  30)	RETURN _t0
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+build assembly code
+tac type FUNCTIONDF
+tec type ASSIGN
+tec type ASSIGN
+tec type ASSIGN
+tec type ASSIGN
+tec type ASSIGN
+tec type ASSIGN
+tec type ASSIGN
+tec type ASSIGN
+tac type LABELDF
+tec type ASSIGN
+tec type ASSIGN
+tac type IFLT
+tac type GOTO
+tac type LABELDF
+tec type ASSIGN
+tec type ASSIGN
+tac type ADD
+tec type ASSIGN
+tac type LABELDF
+tec type ASSIGN
+tec type ASSIGN
+tac type IFLT
+tac type GOTO
+tac type LABELDF
+tec type ASSIGN
+tec type ASSIGN
+tac type ADD
+tec type ASSIGN
+tac type LABELDF
+tec type ASSIGN
+tec type ASSIGN
+tac type IFEQ
+tac type GOTO
+tac type LABELDF
+tec type ASSIGN
+tec type ASSIGN
+tac type SUB
+compiler: ./ObjectCode/Arm.cpp:75: ARM::ARM(TACCode*, ScopeItem&): Assertion `code.dest.Type = VARIABLE' failed.
 Aborted (core dumped)

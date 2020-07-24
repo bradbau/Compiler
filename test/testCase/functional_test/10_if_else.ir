@@ -179,4 +179,25 @@ _______________________________________
  10  (at line   5)	RETURN _t4
  11  (at line   4)	GOTO label2
  12  (at line   4)	LABEL label1 :
- 13  (at line   8)Segmentation fault (core dumped)
+ 13  (at line   8)	_t5 := #0
+ 14  (at line   8)	RETURN _t5
+ 15  (at line   4)	LABEL label2 :
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+build assembly code
+tac type FUNCTIONDF
+tec type ASSIGN
+tec type ASSIGN
+tec type ASSIGN
+tec type ASSIGN
+tac type IFGT
+tac type GOTO
+tac type LABELDF
+tec type ASSIGN
+tac type RETURN
+tac type GOTO
+tac type LABELDF
+tec type ASSIGN
+tac type RETURN
+tac type LABELDF
+tac build complete
+Segmentation fault (core dumped)

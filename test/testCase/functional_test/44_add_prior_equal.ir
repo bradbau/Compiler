@@ -539,5 +539,38 @@ _______________________________________
  26  (at line  14)	_t1 := _t4 - _t5
  27  (at line  14)	_t6 := 
  28  (at line  14)	IF _t1 = _t6 GOTO label0
- 29  (at line  14)	GOTO label1compiler: ./ObjectCode/Arm.cpp:61: ARM::ARM(TACCode*, ScopeItem&): Assertion `code.dest.Type = VARIABLE' failed.
+ 29  (at line  14)	GOTO label1
+ 30  (at line  14)	LABEL label0 :
+ 31  (at line  15)	_t11 := 
+ 32  (at line  15)	_t12 := 
+ 33  (at line  15)	_t9 := _t11 % _t12
+ 34  (at line  15)	_t10 := 
+ 35  (at line  15)	_t8 := _t9 + _t10
+ 36  (at line  15)	 := _t8
+ 37  (at line  16)	_t7 := 
+ 38  (at line  16)	ARG _t7
+ 39  (at line  16)	CALL 
+ 40  (at line  14)	LABEL label1 :
+ 41  (at line  18)	_t0 := #0
+ 42  (at line  18)	RETURN _t0
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+build assembly code
+tac type FUNCTIONDF
+tec type ASSIGN
+tec type ASSIGN
+tec type ASSIGN
+tec type ASSIGN
+tec type ASSIGN
+tec type ASSIGN
+tec type ASSIGN
+tec type ASSIGN
+tac type ADD
+tec type ASSIGN
+tac type IFNEQ
+tac type GOTO
+tac type LABELDF
+tec type ASSIGN
+tec type ASSIGN
+tac type SUB
+compiler: ./ObjectCode/Arm.cpp:75: ARM::ARM(TACCode*, ScopeItem&): Assertion `code.dest.Type = VARIABLE' failed.
 Aborted (core dumped)

@@ -136,4 +136,29 @@ Local:main
 ID             category       type           depictor
               
 a              Variable       TYPEINTEGER    NULL           
-Segmentation fault (core dumped)
+
+~~~~TAC~~~~~
+ No  Source Position	TACCode
+_______________________________________
+  0  (at line   0)	CALL main
+
+  1  (at line   1)	FUNCTION defn :
+  2  (at line   2)	_t1 := #4
+  3  (at line   2)	RETURN _t1
+
+  4  (at line   5)	FUNCTION main :
+  5  (at line   6)	a := CALL defn
+  6  (at line   7)	_t0 := 
+  7  (at line   7)	RETURN _t0
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+build assembly code
+tac type FUNCTIONDF
+tec type ASSIGN
+tac type RETURN
+tac type FUNCTIONDF
+tac type CALLASSIGN
+tec type ASSIGN
+tac type RETURN
+tac build complete
+#armv7 assembly code
+defn:LDRiaADD SUBLDRiaMOV r0, 4ADD ADD LDRiaBX lrmain:LDRiaADD SUBBL defnLDRiaMOV r0, r0LDRiaADD ADD ADD LDRiaBX lr

@@ -1842,5 +1842,55 @@ _______________________________________
 152  (at line  46)	RETURN _t5
 
 153  (at line  49)	FUNCTION main :
-154  (at line  50)	_t4 compiler: ./ObjectCode/Arm.cpp:61: ARM::ARM(TACCode*, ScopeItem&): Assertion `code.dest.Type = VARIABLE' failed.
+154  (at line  50)	_t4 := #1
+155  (at line  50)	 := _t4
+156  (at line  51)	_t3 := #2
+157  (at line  51)	 := _t3
+158  (at line  52)	_t2 := #4
+159  (at line  52)	 := _t2
+160  (at line  53)	_t1 := #6
+161  (at line  53)	 := _t1
+162  (at line  54)	_t0 := CALL EightWhile
+163  (at line  54)	RETURN _t0
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+build assembly code
+tac type FUNCTIONDF
+tec type ASSIGN
+tec type ASSIGN
+tec type ASSIGN
+tec type ASSIGN
+tec type ASSIGN
+tec type ASSIGN
+tec type ASSIGN
+tec type ASSIGN
+tac type LABELDF
+tec type ASSIGN
+tec type ASSIGN
+tac type IFLT
+tac type GOTO
+tac type LABELDF
+tec type ASSIGN
+tec type ASSIGN
+tac type ADD
+tec type ASSIGN
+tac type LABELDF
+tec type ASSIGN
+tec type ASSIGN
+tac type IFLT
+tac type GOTO
+tac type LABELDF
+tec type ASSIGN
+tec type ASSIGN
+tac type ADD
+tec type ASSIGN
+tac type LABELDF
+tec type ASSIGN
+tec type ASSIGN
+tac type IFEQ
+tac type GOTO
+tac type LABELDF
+tec type ASSIGN
+tec type ASSIGN
+tac type SUB
+compiler: ./ObjectCode/Arm.cpp:75: ARM::ARM(TACCode*, ScopeItem&): Assertion `code.dest.Type = VARIABLE' failed.
 Aborted (core dumped)

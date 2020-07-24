@@ -96,4 +96,24 @@ ID             category       type           depictor
               
 a              Variable       TYPEINTEGER    NULL           
 TraverseScopeStack no result
-Segmentation fault (core dumped)
+
+~~~~TAC~~~~~
+ No  Source Position	TACCode
+_______________________________________
+  0  (at line   0)	CALL main
+
+  1  (at line   1)	FUNCTION main :
+  2  (at line   3)	_t1 := CALL 
+  3  (at line   3)	 := _t1
+  4  (at line   4)	_t0 := 
+  5  (at line   4)	RETURN _t0
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+build assembly code
+tac type FUNCTIONDF
+tac type CALLASSIGN
+tec type ASSIGN
+tec type ASSIGN
+tac type RETURN
+tac build complete
+#armv7 assembly code
+main:LDRiaADD SUBBL LDRiaMOV r0, r0LDRiaADD LDRiaADD ADD ADD LDRiaBX lr

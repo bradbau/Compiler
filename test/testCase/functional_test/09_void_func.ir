@@ -286,4 +286,27 @@ _______________________________________
  11  (at line  10)	_t3 := #2
  12  (at line  10)	 := _t3
  13  (at line  11)	_t1 := 
- 14  (at line  11)	Segmentation fault (core dumped)
+ 14  (at line  11)	_t2 := 
+ 15  (at line  11)	ARG _t2
+ 16  (at line  11)	ARG _t1
+ 17  (at line  11)	CALL add
+ 18  (at line  12)	_t0 := 
+ 19  (at line  12)	RETURN _t0
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+build assembly code
+tac type FUNCTIONDF
+tec type ASSIGN
+tec type ASSIGN
+tac type ADD
+tec type ASSIGN
+tac type FUNCTIONDF
+tec type ASSIGN
+tec type ASSIGN
+tec type ASSIGN
+tec type ASSIGN
+tec type ASSIGN
+tec type ASSIGN
+tac type ARG
+tac type ARG
+tac type CALL
+Segmentation fault (core dumped)

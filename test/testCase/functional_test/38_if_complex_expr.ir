@@ -786,5 +786,21 @@ _______________________________________
  73  (at line  17)	_t27 := #4
  74  (at line  17)	 := _t27
  75  (at line  18)	_t26 := 
- compiler: ./ObjectCode/Arm.cpp:61: ARM::ARM(TACCode*, ScopeItem&): Assertion `code.dest.Type = VARIABLE' failed.
+ 76  (at line  18)	ARG _t26
+ 77  (at line  18)	CALL 
+ 78  (at line  16)	LABEL label1 :
+ 79  (at line  20)	_t0 := #0
+ 80  (at line  20)	RETURN _t0
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+build assembly code
+tac type FUNCTIONDF
+tec type ASSIGN
+tec type ASSIGN
+tec type ASSIGN
+tec type ASSIGN
+tec type ASSIGN
+tec type ASSIGN
+tec type ASSIGN
+tac type SUB
+compiler: ./ObjectCode/Arm.cpp:75: ARM::ARM(TACCode*, ScopeItem&): Assertion `code.dest.Type = VARIABLE' failed.
 Aborted (core dumped)

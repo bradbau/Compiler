@@ -301,5 +301,26 @@ _______________________________________
  10  (at line   7)	_t3 := _t5 - _t6
  11  (at line   7)	_t12 := 
  12  (at line   7)	_t13 := 
- 13  (at line   7)	_t11 := _t1compiler: ./ObjectCode/Arm.cpp:61: ARM::ARM(TACCode*, ScopeItem&): Assertion `code.dest.Type = VARIABLE' failed.
+ 13  (at line   7)	_t11 := _t12 + _t13
+ 14  (at line   7)	_t9 := _t11
+ 15  (at line   7)	_t16 := 
+ 16  (at line   7)	_t17 := 
+ 17  (at line   7)	_t15 := _t16 - _t17
+ 18  (at line   7)	_t14 := _t15
+ 19  (at line   7)	_t10 := #0 - _t14
+ 20  (at line   7)	_t8 := _t9 % _t10
+ 21  (at line   7)	_t4 := #0 - _t8
+ 22  (at line   7)	_t2 := _t3 + _t4
+ 23  (at line   7)	 := _t2
+ 24  (at line   8)	_t1 := 
+ 25  (at line   8)	ARG _t1
+ 26  (at line   8)	CALL 
+ 27  (at line   9)	_t0 := #0
+ 28  (at line   9)	RETURN _t0
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+build assembly code
+tac type FUNCTIONDF
+tec type ASSIGN
+tac type SUB
+compiler: ./ObjectCode/Arm.cpp:75: ARM::ARM(TACCode*, ScopeItem&): Assertion `code.dest.Type = VARIABLE' failed.
 Aborted (core dumped)

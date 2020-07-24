@@ -165,4 +165,21 @@ _______________________________________
  10  (at line   6)	RETURN _t5
  11  (at line   5)	LABEL label1 :
  12  (at line   8)	_t0 := #0
- 13  (at line   8)	RSegmentation fault (core dumped)
+ 13  (at line   8)	RETURN _t0
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+build assembly code
+tac type FUNCTIONDF
+tec type ASSIGN
+tec type ASSIGN
+tec type ASSIGN
+tec type ASSIGN
+tac type IFGT
+tac type GOTO
+tac type LABELDF
+tec type ASSIGN
+tac type RETURN
+tac type LABELDF
+tec type ASSIGN
+tac type RETURN
+tac build complete
+Segmentation fault (core dumped)

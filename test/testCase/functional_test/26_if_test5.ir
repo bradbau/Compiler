@@ -371,4 +371,48 @@ _______________________________________
  10  (at line   7)	LABEL label0 :
  11  (at line   8)	_t8 := 
  12  (at line   8)	_t11 := #10
- 13  (at line   8)Segmentation fault (core dumped)
+ 13  (at line   8)	IF _t8 = _t11 GOTO label2
+ 14  (at line   8)	GOTO label3
+ 15  (at line   8)	LABEL label2 :
+ 16  (at line   8)	LABEL label3 :
+ 17  (at line   7)	GOTO label4
+ 18  (at line   7)	LABEL label1 :
+ 19  (at line   7)	LABEL label4 :
+ 20  (at line  13)	_t3 := 
+ 21  (at line  13)	_t2 := _t3
+ 22  (at line  13)	RETURN _t2
+
+ 23  (at line  16)	FUNCTION main :
+ 24  (at line  17)	_t1 := CALL if_if_Else
+ 25  (at line  17)	_t0 := _t1
+ 26  (at line  17)	RETURN _t0
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+build assembly code
+tac type FUNCTIONDF
+tec type ASSIGN
+tec type ASSIGN
+tec type ASSIGN
+tec type ASSIGN
+tec type ASSIGN
+tec type ASSIGN
+tac type IFEQ
+tac type GOTO
+tac type LABELDF
+tec type ASSIGN
+tec type ASSIGN
+tac type IFEQ
+tac type GOTO
+tac type LABELDF
+tac type LABELDF
+tac type GOTO
+tac type LABELDF
+tac type LABELDF
+tec type ASSIGN
+tec type ASSIGN
+tac type RETURN
+tac type FUNCTIONDF
+tac type CALLASSIGN
+tec type ASSIGN
+tac type RETURN
+tac build complete
+Segmentation fault (core dumped)

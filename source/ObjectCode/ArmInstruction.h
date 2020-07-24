@@ -119,15 +119,14 @@ const char ConditionName[15][3]={
 
 private:
     InstrcuctionType type;
-    bool flagsuffix; //对应指令中是否有s标记，用来说明指令是否根据结果设置条件位
     ConditionFlag ConditionExe;
     Register rd;//目标寄存器
     
     int op1;
     int op1Type=0;
-    int op2Type=0;// 0 1 代表寄存器，立即数
+   
     int op2;
-
+    int op2Type=0;// 0 1 代表寄存器，立即数
 
 public:
 
@@ -135,12 +134,13 @@ public:
 
 
     InstrcuctionType  getType(){return type;}
+
     int  getRd(){return rd;}
     int  getOp1(){return op1;}
     int  getOp2(){return op2;}
     int getOp1Type(){return op1Type;}
     int getOp2Type(){return op2Type;}
-    bool getFlagsuffix(){return flagsuffix;}
+
     ConditionFlag getConditionExe(){return ConditionExe;}
 
 

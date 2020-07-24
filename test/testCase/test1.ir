@@ -37,5 +37,8 @@ ccc            Variable       TYPEINTEGER    NULL
  No  Source Position	TACCode
 _______________________________________
   0  (at line   0)	CALL main
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+build assembly code
+tac build complete
 #armv7 assembly code
 

@@ -80,6 +80,7 @@ Compiler: CompUnits {
                   DisplayTACCode(entrance);
                   
                   ARM* AssemblyCode=new ARM(entrance, *($$->si));
+                  cout<<"tac build complete"<<endl;
                   string CodeString=AssemblyCode->toString();
                   cout<<CodeString<<endl;
                 }

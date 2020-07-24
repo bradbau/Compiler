@@ -53,8 +53,10 @@ CalculateInstruction::CalculateInstruction(InstrcuctionType type, Register rd, i
     ARMInstruction::setType(type);
     ARMInstruction::setRd(rd);
     ARMInstruction::setOp1(op1);
-    ARMInstruction::setOp2Type(op2Type);
+    ARMInstruction::setOp1Type(0);
     ARMInstruction::setOp2(op2);
+    ARMInstruction::setOp2Type(op2Type);
+    ARMInstruction::setConditionExe(AL);
 }
 
 
@@ -66,7 +68,7 @@ CalculateInstruction::CalculateInstruction(InstrcuctionType type, Register rd, i
     ARMInstruction::setOp1Type(op1Type);
     ARMInstruction::setOp2(-1);
     ARMInstruction::setOp2Type(-1);
-    
+    ARMInstruction::setConditionExe(AL);
 }
 
 string CalculateInstruction::toString(){
@@ -87,6 +89,7 @@ string CalculateInstruction::toString(){
             }
             
             InsHead=InsHead+buf;
+            InsHead+="\n";
             return InsHead;
             
         }
@@ -106,7 +109,7 @@ string CalculateInstruction::toString(){
             else {
                 //可能会增加类型
             }
-            
+            InsHead+="\n";
             return InsHead;
         }
         case INSSUB:{
@@ -123,6 +126,7 @@ string CalculateInstruction::toString(){
             else {
                 //可能会增加类型
             }
+            InsHead+="\n";
             return InsHead;
         }
         case INSMUL:{
@@ -139,6 +143,7 @@ string CalculateInstruction::toString(){
             else {
                 //可能会增加类型
             }
+            InsHead+="\n";
             return InsHead;
         }
         case INSSDIV:{
@@ -155,6 +160,7 @@ string CalculateInstruction::toString(){
             else {
                 //可能会增加类型
             }
+            InsHead+="\n";
             return InsHead;
         }
         case INSCMP:{
@@ -164,6 +170,7 @@ string CalculateInstruction::toString(){
             }
             sprintf(buf, " %s, %s, %s", RegName[ARMInstruction::getRd()], RegName[ARMInstruction::getOp1()]);
             InsHead=InsHead+buf;
+            InsHead+="\n";
             return InsHead;
         }
         default:{
@@ -182,8 +189,13 @@ ControlInstruction::ControlInstruction(InstrcuctionType type,  string label, Con
     this->label=label;
     setConditionExe(ConditionExe);
     
+    ARMInstruction::setRd(0);
+    ARMInstruction::setOp1(-1);
+    ARMInstruction::setOp1Type(-1);
+    ARMInstruction::setOp2(-1);
+    ARMInstruction::setOp2Type(-1);
+    
 }
-
 
 /*
 bx lr # bx r14
@@ -194,6 +206,12 @@ bx lr # bx r14
 ControlInstruction::ControlInstruction(InstrcuctionType type, Register rd){
     setType(type);
     setRd(rd);
+
+    ARMInstruction::setOp1(-1);
+    ARMInstruction::setOp1Type(-1);
+    ARMInstruction::setOp2(-1);
+    ARMInstruction::setOp2Type(-1);
+    ARMInstruction::setConditionExe(AL);
 }
 
 
@@ -208,6 +226,7 @@ string ControlInstruction::toString(){
             }
             InsHead=InsHead+" ";
             InsHead+=label;
+            InsHead+="\n";
             return InsHead;
 
         }
@@ -218,6 +237,7 @@ string ControlInstruction::toString(){
             }
             InsHead=InsHead+" ";
             InsHead+=label;
+            InsHead+="\n";
             return InsHead;
         }
         case INSBX:{
@@ -225,7 +245,7 @@ string ControlInstruction::toString(){
             if(ARMInstruction::getConditionExe()!=0){//条件执行后缀
                 InsHead=InsHead+ConditionName[ARMInstruction::getConditionExe()];
             }
-            sprintf(buf, " %s", RegName[ARMInstruction::getRd()]);
+            sprintf(buf, " %s\n", RegName[ARMInstruction::getRd()]);
             InsHead+=buf;
             return InsHead;
         }
@@ -288,6 +308,9 @@ MemoryInstruction::MemoryInstruction(InstrcuctionType type, Register rd, int op1
         setOp1(op1);
         setOp1Type(op1Type);
         setOp2(-1);
+       
+        ARMInstruction::setOp2Type(-1);
+        ARMInstruction::setConditionExe(AL);
     }
     else{
         
@@ -303,6 +326,11 @@ MemoryInstruction::MemoryInstruction(InstrcuctionType type, Register rd){
         setRd(rd);
         setOp1(-1);
         setOp2(-1);
+
+       
+        ARMInstruction::setOp1Type(0);
+        ARMInstruction::setOp2Type(-1);
+        ARMInstruction::setConditionExe(AL);
     }
     else{
         
@@ -337,7 +365,7 @@ string MemoryInstruction::toString(){
             }
 
 
-            InsHead+="}";
+            InsHead+="}\n";
         }
         case INSPOP:{
             InsHead="POP";
@@ -361,7 +389,7 @@ string MemoryInstruction::toString(){
             }
 
 
-            InsHead+="}";
+            InsHead+="}\n";
         }
         case INSSTR:{
             InsHead="STR";
@@ -372,7 +400,7 @@ string MemoryInstruction::toString(){
                 InsHead=InsHead+ConditionName[ARMInstruction::getConditionExe()];
             }
             if(ARMInstruction::getOp2Type()==0){
-                sprintf(buf," %s, [%s, %s]",  RegName[ARMInstruction::getRd()], ARMInstruction::getOp1(), ARMInstruction::getOp2());
+                sprintf(buf," %s, [%s, %s]\n",  RegName[ARMInstruction::getRd()], ARMInstruction::getOp1(), ARMInstruction::getOp2());
                 InsHead+=buf;
             }
             else{//op2Type==1
@@ -402,7 +430,7 @@ string MemoryInstruction::toString(){
             if(ARMInstruction::getOp1Type()==0){
                 
                 if(ARMInstruction::getOp2Type()==0){
-                    sprintf(buf," %s, [%s, %s]",  RegName[ARMInstruction::getRd()],  RegName[ARMInstruction::getOp1()], RegName[ARMInstruction::getOp2()]);
+                    sprintf(buf," %s, [%s, %s]\n",  RegName[ARMInstruction::getRd()],  RegName[ARMInstruction::getOp1()], RegName[ARMInstruction::getOp2()]);
                     InsHead+=buf;
                 }
                 else{//op2Type==1
@@ -423,7 +451,7 @@ string MemoryInstruction::toString(){
             else{
                 //op1Type==1
                 //ldr rd, =const
-                sprintf(buf," %s, =0x%x",  RegName[ARMInstruction::getRd()], ARMInstruction::getOp1());
+                sprintf(buf," %s, =0x%x\n",  RegName[ARMInstruction::getRd()], ARMInstruction::getOp1());
                 InsHead+=buf;
             }
 
@@ -456,9 +484,17 @@ string MemoryInstruction::toString(){
 
 LabelInstruction::LabelInstruction(string content){
     this->content=content;
+
+    ARMInstruction::setType(INSADD);
+    ARMInstruction::setRd(0);
+    ARMInstruction::setOp1(-1);
+    ARMInstruction::setOp1Type(-1);
+    ARMInstruction::setOp2(-1);
+    ARMInstruction::setOp2Type(-1);
+    ARMInstruction::setConditionExe(AL);
 }
 string LabelInstruction::toString(){
     //指向该标记的完整指令字符串
 
-    return content+":";
+    return content+":\n";
 }

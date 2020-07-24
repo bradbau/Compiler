@@ -564,5 +564,53 @@ _______________________________________
  42  (at line  15)	 := _t22
  43  (at line  13)	GOTO label6
  44  (at line  13)	LABEL label8 :
- 45  (compiler: ./ObjectCode/Arm.cpp:72: ARM::ARM(TACCode*, ScopeItem&): Assertion `code.dest.Type = VARIABLE' failed.
+ 45  (at line   6)	LABEL label5 :
+ 46  (at line  17)	_t3 := 
+ 47  (at line  17)	_t2 := _t3
+ 48  (at line  17)	RETURN _t2
+
+ 49  (at line  21)	FUNCTION main :
+ 50  (at line  22)	_t1 := CALL ifWhile
+ 51  (at line  22)	_t0 := _t1
+ 52  (at line  22)	RETURN _t0
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+build assembly code
+tac type FUNCTIONDF
+tec type ASSIGN
+tec type ASSIGN
+tec type ASSIGN
+tec type ASSIGN
+tec type ASSIGN
+tec type ASSIGN
+tac type IFEQ
+tac type GOTO
+tac type LABELDF
+tac type LABELDF
+tec type ASSIGN
+tec type ASSIGN
+tac type IFEQ
+tac type GOTO
+tac type LABELDF
+tec type ASSIGN
+tec type ASSIGN
+tac type ADD
+tec type ASSIGN
+tac type GOTO
+tac type LABELDF
+tec type ASSIGN
+tec type ASSIGN
+tac type ADD
+tec type ASSIGN
+tac type GOTO
+tac type LABELDF
+tac type LABELDF
+tec type ASSIGN
+tec type ASSIGN
+tac type IFLT
+tac type GOTO
+tac type LABELDF
+tec type ASSIGN
+tec type ASSIGN
+tac type MUL
+compiler: ./ObjectCode/Arm.cpp:89: ARM::ARM(TACCode*, ScopeItem&): Assertion `code.dest.Type = VARIABLE' failed.
 Aborted (core dumped)

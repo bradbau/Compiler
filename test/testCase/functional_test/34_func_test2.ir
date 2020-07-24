@@ -826,4 +826,60 @@ _______________________________________
  43  (at line  43)	_t6 := 
  44  (at line  42)	_t3 := _t5 + _t6
  45  (at line  43)	_t4 := 
- 46  Segmentation fault (core dumped)
+ 46  (at line  42)	_t1 := _t3 + _t4
+ 47  (at line  43)	_t2 := 
+ 48  (at line  42)	_t0 := _t1 + _t2
+ 49  (at line  42)	RETURN _t0
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+build assembly code
+tac type FUNCTIONDF
+tec type ASSIGN
+tec type ASSIGN
+tec type ASSIGN
+tac type RETURN
+tac type FUNCTIONDF
+tec type ASSIGN
+tec type ASSIGN
+tec type ASSIGN
+tac type RETURN
+tac type FUNCTIONDF
+tec type ASSIGN
+tec type ASSIGN
+tec type ASSIGN
+tac type RETURN
+tac type FUNCTIONDF
+tec type ASSIGN
+tec type ASSIGN
+tec type ASSIGN
+tec type ASSIGN
+tec type ASSIGN
+tec type ASSIGN
+tec type ASSIGN
+tec type ASSIGN
+tac type ADD
+tec type ASSIGN
+tec type ASSIGN
+tac type RETURN
+tac type FUNCTIONDF
+tec type ASSIGN
+tec type ASSIGN
+tec type ASSIGN
+tec type ASSIGN
+tec type ASSIGN
+tec type ASSIGN
+tac type CALLASSIGN
+tac type CALLASSIGN
+tac type ADD
+tac type CALLASSIGN
+tac type ADD
+tac type CALLASSIGN
+tac type ADD
+tec type ASSIGN
+tac type ADD
+tec type ASSIGN
+tac type ADD
+tec type ASSIGN
+tac type ADD
+tac type RETURN
+tac build complete
+Segmentation fault (core dumped)
