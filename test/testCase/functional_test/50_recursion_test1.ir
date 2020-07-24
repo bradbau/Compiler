@@ -298,4 +298,30 @@ Local:main
 ID             category       type           depictor
               
 n              Variable       TYPEINTEGER    NULL           
-Segmentation fault (core dumped)
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+
+~~~~TAC~~~~~
+ No  Source Position	TACCode
+_______________________________________
+  0  (at line   0)	CALL main
+
+  1  (at line   1)	FUNCTION fact :
+  2  (at line   1)	PARAM n
+  3  (at line   2)	_t11 := 
+  4  (at line   2)	_t14 := #0
+  5  (at line   2)	IF _t11 = _t14 GOTO label0
+  6  (at line   2)	GOTO label1
+  7  (at line   2)	LABEL label0 :
+  8  (at line   3)	_t15 := #1
+  9  (at line   3)	RETURN _t15
+ 10  (at line   2)	LABEL label1 :
+ 11  (at line   6)	_t9 := 
+ 12  (at line   6)	_t10 := #1
+ 13  (at line   compiler: ./ObjectCode/Arm.cpp:61: ARM::ARM(TACCode*, ScopeItem&): Assertion `code.dest.Type = VARIABLE' failed.
+Aborted (core dumped)

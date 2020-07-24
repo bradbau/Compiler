@@ -640,4 +640,68 @@ Local:main
 ID             category       type           depictor
               
 p              Variable       TYPEINTEGER    NULL           
-Segmentation fault (core dumped)
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+
+~~~~TAC~~~~~
+ No  Source Position	TACCode
+_______________________________________
+  0  (at line   0)	CALL main
+
+  1  (at line   1)	FUNCTION deepWhileBr :
+  2  (at line   1)	PARAM a
+  3  (at line   1)	PARAM b
+  4  (at line   3)	_t33 := 
+  5  (at line   3)	_t34 := 
+  6  (at line   3)	_t32 := _t33 + _t34
+  7  (at line   3)	 := _t32
+  8  (at line   4)	LABEL label0 :
+  9  (at line   4)	_t6 := 
+ 10  (at line   4)	_t9 := #75
+ 11  (at line   4)	IF _t6 < _t9 GOTO label1
+ 12  (at line   4)	GOTO label2
+ 13  (at line   4)	LABEL label1 :
+ 14  (at line   6)	_t31 := #42
+ 15  (at line   6)	 := _t31
+ 16  (at line   7)	_t10 := 
+ 17  (at line   7)	_t13 := #100
+ 18  (at line   7)	IF _t10 < _t13 GOTO label3
+ 19  (at line   7)	GOTO label4
+ 20  (at line   7)	LABEL label3 :
+ 21  (at line   8)	_t29 := 
+ 22  (at line   8)	_t30 := 
+ 23  (at line   8)	_t28 := _t29 + _t30
+ 24  (at line   8)	 := _t28
+ 25  (at line   9)	_t14 := 
+ 26  (at line   9)	_t17 := #99
+ 27  (at line   9)	IF _t14 > _t17 GOTO label5
+ 28  (at line   9)	GOTO label6
+ 29  (at line   9)	LABEL label5 :
+ 30  (at line  11)	_t26 := 
+ 31  (at line  11)	_t27 := #2
+ 32  (at line  11)	_t25 := _t26 * _t27
+ 33  (at line  11)	 := _t25
+ 34  (at line  12)	_t18 := #1
+ 35  (at line  12)	_t21 := #1
+ 36  (at line  12)	IF _t18 = _t21 GOTO label7
+ 37  (at line  12)	GOTO label8
+ 38  (at line  12)	LABEL label7 :
+ 39  (at line  13)	_t23 := 
+ 40  (at line  13)	_t24 := #2
+ 41  (at line  13)	_t22 := _t23 * _t24
+ 42  (at line  13)	 := _t22
+ 43  (at line  12)	LABEL label8 :
+ 44  (at line   9)	LABEL lcompiler: ./ObjectCode/Arm.cpp:72: ARM::ARM(TACCode*, ScopeItem&): Assertion `code.dest.Type = VARIABLE' failed.
+Aborted (core dumped)

@@ -394,4 +394,51 @@ Formal:main
 ID             category       type           depictor
               
                NOParam                       NULL           
-Segmentation fault (core dumped)
+===========================================================
+Local:main
+ID             category       type           depictor
+              
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+
+~~~~TAC~~~~~
+ No  Source Position	TACCode
+_______________________________________
+  0  (at line   0)	CALL main
+
+  1  (at line   2)	FUNCTION ifElseElseIf :
+  2  (at line   4)	_t18 := #66
+  3  (at line   4)	 := _t18
+  4  (at line   6)	_t17 := #8923
+  5  (at line   6)	 := _t17
+  6  (at line   7)	_t4 := 
+  7  (at line   7)	_t7 := #5
+  8  (at line   7)	IF _t4 = _t7 GOTO label0
+  9  (at line   7)	GOTO label1
+ 10  (at line   7)	LABEL label0 :
+ 11  (at line   8)	_t8 := #25
+ 12  (at line   8)	 := _t8
+ 13  (at line   7)	GOTO label2
+ 14  (at line   7)	LABEL label1 :
+ 15  (at line  10)	_t9 := 
+ 16  (at line  10)	_t12 := #10
+ 17  (at line  10)	IF _t9 = _t12 GOTO label3
+ 18  (at line  10)	GOTO label4
+ 19  (at line  10)	LABEL label3 :
+ 20  (at line  11)	_t13 := #42
+ 21  (at line  11)	 := _t13
+ 22  (at line  10)	GOTO label5
+ 23  (at line  10)	LABEL label4 :
+ 24  (at line  14)	_t15 := 
+ 25  (at line  14)	_t16 := #2
+ 26  (at line  14)	_t14 := _t15 * _t16
+ 27  (at line  14)	 := _t14
+ 28  (at line  10)	LABEL label5 :
+ 29  (at lcompiler: ./ObjectCode/Arm.cpp:72: ARM::ARM(TACCode*, ScopeItem&): Assertion `code.dest.Type = VARIABLE' failed.
+Aborted (core dumped)

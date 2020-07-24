@@ -209,4 +209,5 @@ ID             category       type           depictor
               
                Block          BLOCKStmt      NULL           
                Block          BLOCKStmt      NULL           
+TraverseScopeStack no result
 Segmentation fault (core dumped)

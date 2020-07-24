@@ -2547,4 +2547,9 @@ n              Variable       TYPEINTEGER    NULL
 x              Variable       TYPEINTEGER    NULL           
 y              Variable       TYPEINTEGER    NULL           
                Block          BLOCKStmt      NULL           
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
 Segmentation fault (core dumped)

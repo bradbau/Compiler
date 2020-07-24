@@ -207,4 +207,27 @@ ID             category       type           depictor
               
                Block          BLOCKStmt      NULL           
                Block          BLOCKStmt      NULL           
-Segmentation fault (core dumped)
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+
+~~~~TAC~~~~~
+ No  Source Position	TACCode
+_______________________________________
+  0  (at line   0)	CALL main
+
+  1  (at line   3)	FUNCTION main :
+  2  (at line   4)	_t7 := CALL 
+  3  (at line   4)	 := _t7
+  4  (at line   5)	_t6 := CALL 
+  5  (at line   5)	 := _t6
+  6  (at line   6)	_t0 := 
+  7  (at line   6)	_t3 := 
+  8  (at line   6)	IF _t0 < _t3 GOTO label0
+  9  (at line   6)	GOTO label1
+ 10  (at line   6)	LABEL label0 :
+ 11  (at line   7)	_t4 := #1
+ 12  (at line   7)	RETURN _t4
+ 13  (at line   6)	GOTO Segmentation fault (core dumped)

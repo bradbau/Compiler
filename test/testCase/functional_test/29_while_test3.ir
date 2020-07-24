@@ -1642,4 +1642,205 @@ Formal:main
 ID             category       type           depictor
               
                NOParam                       NULL           
-Segmentation fault (core dumped)
+===========================================================
+Local:main
+ID             category       type           depictor
+              
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+
+~~~~TAC~~~~~
+ No  Source Position	TACCode
+_______________________________________
+  0  (at line   0)	CALL main
+
+  1  (at line   5)	FUNCTION EightWhile :
+  2  (at line   7)	_t103 := #5
+  3  (at line   7)	 := _t103
+  4  (at line  10)	_t102 := #6
+  5  (at line  10)	 := _t102
+  6  (at line  11)	_t101 := #7
+  7  (at line  11)	 := _t101
+  8  (at line  13)	_t100 := #10
+  9  (at line  13)	 := _t100
+ 10  (at line  14)	LABEL label0 :
+ 11  (at line  14)	_t23 := 
+ 12  (at line  14)	_t26 := #20
+ 13  (at line  14)	IF _t23 < _t26 GOTO label1
+ 14  (at line  14)	GOTO label2
+ 15  (at line  14)	LABEL label1 :
+ 16  (at line  15)	_t98 := 
+ 17  (at line  15)	_t99 := #3
+ 18  (at line  15)	_t97 := _t98 + _t99
+ 19  (at line  15)	 := _t97
+ 20  (at line  16)	LABEL label3 :
+ 21  (at line  16)	_t30 := 
+ 22  (at line  16)	_t33 := #10
+ 23  (at line  16)	IF _t30 < _t33 GOTO label4
+ 24  (at line  16)	GOTO label5
+ 25  (at line  16)	LABEL label4 :
+ 26  (at line  17)	_t95 := 
+ 27  (at line  17)	_t96 := #1
+ 28  (at line  17)	_t94 := _t95 + _t96
+ 29  (at line  17)	 := _t94
+ 30  (at line  18)	LABEL label6 :
+ 31  (at line  18)	_t37 := 
+ 32  (at line  18)	_t40 := #7
+ 33  (at line  18)	IF _t37 = _t40 GOTO label7
+ 34  (at line  18)	GOTO label8
+ 35  (at line  18)	LABEL label7 :
+ 36  (at line  19)	_t92 := 
+ 37  (at line  19)	_t93 := #1
+ 38  (at line  19)	_t91 := _t92 - _t93
+ 39  (at line  19)	 := _t91
+ 40  (at line  20)	LABEL label9 :
+ 41  (at line  20)	_t44 := 
+ 42  (at line  20)	_t47 := #20
+ 43  (at line  20)	IF _t44 < _t47 GOTO label10
+ 44  (at line  20)	GOTO label11
+ 45  (at line  20)	LABEL label10 :
+ 46  (at line  21)	_t89 := 
+ 47  (at line  21)	_t90 := #3
+ 48  (at line  21)	_t88 := _t89 + _t90
+ 49  (at line  21)	 := _t88
+ 50  (at line  22)	LABEL label12 :
+ 51  (at line  22)	_t51 := 
+ 52  (at line  22)	_t54 := #1
+ 53  (at line  22)	IF _t51 > _t54 GOTO label13
+ 54  (at line  22)	GOTO label14
+ 55  (at line  22)	LABEL label13 :
+ 56  (at line  23)	_t86 := 
+ 57  (at line  23)	_t87 := #1
+ 58  (at line  23)	_t85 := _t86 - _t87
+ 59  (at line  23)	 := _t85
+ 60  (at line  24)	LABEL label15 :
+ 61  (at line  24)	_t58 := 
+ 62  (at line  24)	_t61 := #2
+ 63  (at line  24)	IF _t58 > _t61 GOTO label16
+ 64  (at line  24)	GOTO label17
+ 65  (at line  24)	LABEL label16 :
+ 66  (at line  25)	_t83 := 
+ 67  (at line  25)	_t84 := #2
+ 68  (at line  25)	_t82 := _t83 - _t84
+ 69  (at line  25)	 := _t82
+ 70  (at line  26)	LABEL label18 :
+ 71  (at line  26)	_t65 := 
+ 72  (at line  26)	_t68 := #3
+ 73  (at line  26)	IF _t65 < _t68 GOTO label19
+ 74  (at line  26)	GOTO label20
+ 75  (at line  26)	LABEL label19 :
+ 76  (at line  27)	_t80 := 
+ 77  (at line  27)	_t81 := #10
+ 78  (at line  27)	_t79 := _t80 + _t81
+ 79  (at line  27)	 := _t79
+ 80  (at line  28)	LABEL label21 :
+ 81  (at line  28)	_t72 := 
+ 82  (at line  28)	_t75 := #10
+ 83  (at line  28)	IF _t72 < _t75 GOTO label22
+ 84  (at line  28)	GOTO label23
+ 85  (at line  28)	LABEL label22 :
+ 86  (at line  29)	_t77 := 
+ 87  (at line  29)	_t78 := #8
+ 88  (at line  29)	_t76 := _t77 + _t78
+ 89  (at line  29)	 := _t76
+ 90  (at line  28)	GOTO label21
+ 91  (at line  28)	LABEL label23 :
+ 92  (at line  31)	_t70 := 
+ 93  (at line  31)	_t71 := #1
+ 94  (at line  31)	_t69 := _t70 - _t71
+ 95  (at line  31)	 := _t69
+ 96  (at line  26)	GOTO label18
+ 97  (at line  26)	LABEL label20 :
+ 98  (at line  33)	_t63 := 
+ 99  (at line  33)	_t64 := #8
+100  (at line  33)	_t62 := _t63 - _t64
+101  (at line  33)	 := _t62
+102  (at line  24)	GOTO label15
+103  (at line  24)	LABEL label17 :
+104  (at line  35)	_t56 := 
+105  (at line  35)	_t57 := #1
+106  (at line  35)	_t55 := _t56 + _t57
+107  (at line  35)	 := _t55
+108  (at line  22)	GOTO label12
+109  (at line  22)	LABEL label14 :
+110  (at line  37)	_t49 := 
+111  (at line  37)	_t50 := #1
+112  (at line  37)	_t48 := _t49 + _t50
+113  (at line  37)	 := _t48
+114  (at line  20)	GOTO label9
+115  (at line  20)	LABEL label11 :
+116  (at line  39)	_t42 := 
+117  (at line  39)	_t43 := #1
+118  (at line  39)	_t41 := _t42 - _t43
+119  (at line  39)	 := _t41
+120  (at line  18)	GOTO label6
+121  (at line  18)	LABEL label8 :
+122  (at line  41)	_t35 := 
+123  (at line  41)	_t36 := #1
+124  (at line  41)	_t34 := _t35 + _t36
+125  (at line  41)	 := _t34
+126  (at line  16)	GOTO label3
+127  (at line  16)	LABEL label5 :
+128  (at line  43)	_t28 := 
+129  (at line  43)	_t29 := #2
+130  (at line  43)	_t27 := _t28 - _t29
+131  (at line  43)	 := _t27
+132  (at line  14)	GOTO label0
+133  (at line  14)	LABEL label2 :
+134  (at line  46)	_t11 := 
+135  (at line  46)	_t14 := 
+136  (at line  46)	_t15 := 
+137  (at line  46)	_t13 := _t14 + _t15
+138  (at line  46)	_t12 := _t13
+139  (at line  46)	_t9 := _t11 + _t12
+140  (at line  46)	_t10 := 
+141  (at line  46)	_t8 := _t9 + _t10
+142  (at line  46)	_t6 := _t8
+143  (at line  46)	_t21 := 
+144  (at line  46)	_t22 := 
+145  (at line  46)	_t19 := _t21 + _t22
+146  (at line  46)	_t20 := 
+147  (at line  46)	_t17 := _t19 - _t20
+148  (at line  46)	_t18 := 
+149  (at line  46)	_t16 := _t17 + _t18
+150  (at line  46)	_t7 := _t16
+151  (at line  46)	_t5 := _t6 - _t7
+152  (at line  46)	RETURN _t5
+
+153  (at line  49)	FUNCTION main :
+154  (at line  50)	_t4 compiler: ./ObjectCode/Arm.cpp:61: ARM::ARM(TACCode*, ScopeItem&): Assertion `code.dest.Type = VARIABLE' failed.
+Aborted (core dumped)

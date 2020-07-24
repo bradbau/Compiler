@@ -192,4 +192,7 @@ Local:main
 ID             category       type           depictor
               
 c              Variable       TYPEINTEGER    NULL           
-Segmentation fault (core dumped)
+TraverseScopeStack no result
+TraverseScopeStack no result
+compiler: ./ObjectCode/Arm.cpp:61: ARM::ARM(TACCode*, ScopeItem&): Assertion `code.dest.Type = VARIABLE' failed.
+Aborted (core dumped)

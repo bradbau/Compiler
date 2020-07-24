@@ -457,4 +457,16 @@ ID             category       type           depictor
 cnt            Variable       TYPEINTEGER    NULL           
 sum            Variable       TYPEINTEGER    NULL           
                Block          BLOCKStmt      NULL           
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
 Segmentation fault (core dumped)

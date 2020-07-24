@@ -32,7 +32,6 @@ typedef struct ScopeItem{
     string type; //for example: TYPEINTEGER
     SysYCategory category; //for example: Variable Function
     struct ScopeItem *depictor;
-    struct ScopeItem* prev;
     struct ScopeItem *next;
     int offset;
     int reg;

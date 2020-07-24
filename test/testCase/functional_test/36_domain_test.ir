@@ -409,4 +409,9 @@ ID             category       type           depictor
               
 a              Variable       TYPEINTEGER    NULL           
 array          Array          TYPEINTEGER    NULL           
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
 Segmentation fault (core dumped)

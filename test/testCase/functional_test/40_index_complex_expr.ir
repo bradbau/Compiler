@@ -822,4 +822,6 @@ c              Variable       TYPEINTEGER    NULL
 d              Variable       TYPEINTEGER    NULL           
 result         Array          TYPEINTEGER    NULL           
 t              Variable       TYPEINTEGER    NULL           
+TraverseScopeStack no result
+TraverseScopeStack no result
 Segmentation fault (core dumped)

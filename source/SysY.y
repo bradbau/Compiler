@@ -9,9 +9,12 @@
     #include "./SymbolTable/ScopeStack_stl.h"
     #include "./IntermediateCode/TAC.h"
     #include "./GrammarTree/AST.h"
+    #include "./ObjectCode/Arm.h"
+    #include "./ObjectCode/ArmInstruction.h"
 
     using std::string;
     using std::cout;
+    using std::endl;
 
     extern int yylineno; //共用
     extern int yylex();
@@ -75,6 +78,10 @@ Compiler: CompUnits {
                   unsigned int label_num = 0;
                   TACCode* entrance = BuildTAC($$ , *($$->si) , stack, temp_num, label_num);
                   DisplayTACCode(entrance);
+                  
+                  ARM* AssemblyCode=new ARM(entrance, *($$->si));
+                  string CodeString=AssemblyCode->toString();
+                  cout<<CodeString<<endl;
                 }
         ;
 CompUnits:{ $$ = NULL;}

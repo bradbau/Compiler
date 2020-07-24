@@ -146,4 +146,5 @@ ID             category       type           depictor
               
 a              Variable       TYPEINTEGER    NULL           
 t              Variable       TYPEINTEGER    NULL           
+TraverseScopeStack no result
 Segmentation fault (core dumped)

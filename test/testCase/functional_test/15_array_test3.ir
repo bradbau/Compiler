@@ -563,4 +563,9 @@ Formal:main
 ID             category       type           depictor
               
                NOParam                       NULL           
+===========================================================
+Local:main
+ID             category       type           depictor
+              
+TraverseScopeStack no result
 Segmentation fault (core dumped)

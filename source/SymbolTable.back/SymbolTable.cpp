@@ -15,10 +15,6 @@ ScopeItem* addIntoScope(ScopeType stype, ScopeItem* pre_si, string name, SysYCat
     si->category = category;
     si->depictor = depictor;
     si->next = pre_si;
-    si->prev = NULL;
-    if (pre_si) {
-        pre_si->prev = si;
-    }
     return si;
 }
 

@@ -261,4 +261,29 @@ Formal:main
 ID             category       type           depictor
               
                NOParam                       NULL           
-Segmentation fault (core dumped)
+===========================================================
+Local:main
+ID             category       type           depictor
+              
+TraverseScopeStack no result
+
+~~~~TAC~~~~~
+ No  Source Position	TACCode
+_______________________________________
+  0  (at line   0)	CALL main
+
+  1  (at line   3)	FUNCTION add :
+  2  (at line   3)	PARAM a
+  3  (at line   3)	PARAM b
+  4  (at line   4)	_t6 := 
+  5  (at line   4)	_t7 := 
+  6  (at line   4)	_t5 := _t6 + _t7
+  7  (at line   4)	 := _t5
+
+  8  (at line   8)	FUNCTION main :
+  9  (at line   9)	_t4 := #3
+ 10  (at line   9)	 := _t4
+ 11  (at line  10)	_t3 := #2
+ 12  (at line  10)	 := _t3
+ 13  (at line  11)	_t1 := 
+ 14  (at line  11)	Segmentation fault (core dumped)

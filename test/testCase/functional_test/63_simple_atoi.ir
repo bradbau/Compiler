@@ -1395,4 +1395,6 @@ string         Array          TYPEINTEGER    NULL
 temp           Variable       TYPEINTEGER    NULL           
 i              Variable       TYPEINTEGER    NULL           
                Block          BLOCKStmt      NULL           
+TraverseScopeStack no result
+TraverseScopeStack no result
 Segmentation fault (core dumped)
