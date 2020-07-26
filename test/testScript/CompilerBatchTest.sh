@@ -12,9 +12,11 @@ run(){
         FileNameNoExtention=${FileName%.*}
         irFileName=${FileNameNoExtention}".ir"
         irFileNameRoot=${irFileName}
+        outFileName=${FileNameNoExtention}".s"
 
         touch $irFileNameRoot
-        $compiler_dir $FilePathRoot > $irFileNameRoot 2>&1
+
+        $compiler_dir $FilePathRoot -o$outFileName > $irFileNameRoot 2>&1
 
     fi
 
