@@ -1,7 +1,7 @@
 #ifndef ARM_H
 #define ARM_H
 
-#define DEBUG
+
 
 #include<stdio.h>
 #include<stdlib.h>

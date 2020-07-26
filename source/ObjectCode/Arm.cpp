@@ -30,7 +30,7 @@ ARM::ARM(TACCode* entrance, ScopeItem &scopeItem){
                     assert(code.dest.Type==VARIABLE);
                     if(code.firstOp.Type== VARIABLE){ 
                         //变量赋值
-                        CalculateInstruction* InsItem=new CalculateInstruction(INSADD, GetRegister(code.dest.Data.variable),GetRegister(code.firstOp.Data.variable), 0,1 );
+                        CalculateInstruction* InsItem=new CalculateInstruction(INSADD, GetRegister(code.dest.Data.variable),GetRegister(code.firstOp.Data.variable), 0, 1 );
                         InsList.push_back(dynamic_cast<ARMInstruction*>(InsItem));
                     }
                     else if(code.firstOp.Type== INTEGERCONST){
@@ -421,7 +421,10 @@ Register ARM::GetRegister(ScopeItem* variable){
                     regs[item].variable=*variable;
                     
                     //插入ld指令,加载数据
-                    MemoryInstruction* MemItem=new MemoryInstruction(INSLDR,(Register)goal,  R11, variable->offset , 1, 0);
+                    #ifdef DEBUG
+                    cout<<"findregister: insldr rd="<<item<< ",r1="<<R11<<",r2 offset="<<variable->offset<<",op2type=1, insefft=0"   <<endl;
+                    #endif // DEBUG
+                    MemoryInstruction* MemItem=new MemoryInstruction(INSLDR,(Register)item,  R11, variable->offset , 1, 0);
                     InsList.push_back(dynamic_cast<ARMInstruction*>(MemItem));
 
                     return item;
@@ -442,6 +445,9 @@ Register ARM::GetRegister(ScopeItem* variable){
             //分配寄存器给输入变量
             regs[goal].tag=1;
             regs[goal].variable=*variable;
+            #ifdef DEBUG
+                    cout<<"findregister: insldr rd="<<goal<< ",r1="<<R11<<",r2 offset="<<variable->offset<<",op2type=1, insefft=0" <<  endl;
+            #endif // DEBUG
             MemItem=  new MemoryInstruction(INSLDR,(Register)goal,  R11, variable->offset , 1, 0);
             InsList.push_back(dynamic_cast<ARMInstruction*>(MemItem));
             return (Register)goal;

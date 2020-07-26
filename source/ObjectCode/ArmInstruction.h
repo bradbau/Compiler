@@ -2,7 +2,14 @@
 #define ARMINSTRUCTION_H
 
 #include<string>
+#include<iostream>
+#include<stdexcept>
+#include <assert.h>
 using std::string;
+using std::cout;
+using std::endl;
+
+#define DEBUG
 
 
 typedef enum {R0, R1,R2, R3,R4,R5,R6,  // 这一部分是通用寄存器
@@ -80,7 +87,7 @@ typedef enum {
 constexpr static Register userReg[10]={R0, R1,R2, R3,R4,R5,R6, R8,R9,R10};
 
     constexpr static char MemSuffixName[4][3]={
-        "ia", "ib","da", "db"
+        "IA", "IB","DA", "DB"
     };
 
 //~~~~~~~~~~~~~~~~~ class ARMInstruction ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -236,7 +243,7 @@ private:
     //这里添加内存指令相关的信息
     int multipleSource;//如果为真就表示在op1和op2寄存器之外加{}符号，表示多个寄存器连续操作
     int instantEffect; // 取值0 1 2 决定第二操作数的立即数类型：偏移量，改变第一操作数的偏移量，只改变第一操作数
-    MemSuffix addrMod;//地址模式，默认为0 ，一般对
+    int addrMod;//地址模式，默认为0 ，一般对
 public:
     MemoryInstruction();// 产生一个内存相关指令
     MemoryInstruction(InstrcuctionType type, Register rd);//push pop专用指令生成
@@ -246,7 +253,7 @@ public:
     string toString();
     int getMultipleSource(){return (int)multipleSource;}
     int getInstantEffect(){return instantEffect;}
-    MemSuffix getAddrMod(){return addrMod;}
+    int getAddrMod(){return addrMod;}
 
     void setInstantEffect(int instantEffect){this->instantEffect=instantEffect;}
 

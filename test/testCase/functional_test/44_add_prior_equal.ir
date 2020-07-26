@@ -557,20 +557,29 @@ _______________________________________
 build assembly code
 tac type FUNCTIONDF
 tec type ASSIGN
+findregister: insldr rd=0,r1=11,r2 offset=0,op2type=1, insefft=0
 tec type ASSIGN
 tec type ASSIGN
+findregister: insldr rd=1,r1=11,r2 offset=0,op2type=1, insefft=0
 tec type ASSIGN
 tec type ASSIGN
+findregister: insldr rd=2,r1=11,r2 offset=0,op2type=1, insefft=0
 tec type ASSIGN
 tec type ASSIGN
+findregister: insldr rd=3,r1=11,r2 offset=0,op2type=1, insefft=0
 tec type ASSIGN
+findregister: insldr rd=4,r1=11,r2 offset=0,op2type=1, insefft=0
 tac type ADD
+findregister: insldr rd=5,r1=11,r2 offset=0,op2type=1, insefft=0
 tec type ASSIGN
+findregister: insldr rd=6,r1=11,r2 offset=0,op2type=1, insefft=0
 tac type IFNEQ
 tac type GOTO
 tac type LABELDF
 tec type ASSIGN
+findregister: insldr rd=8,r1=11,r2 offset=0,op2type=1, insefft=0
 tec type ASSIGN
+findregister: insldr rd=9,r1=11,r2 offset=0,op2type=1, insefft=0
 tac type SUB
 compiler: ./ObjectCode/Arm.cpp:75: ARM::ARM(TACCode*, ScopeItem&): Assertion `code.dest.Type = VARIABLE' failed.
 Aborted (core dumped)

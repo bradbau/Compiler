@@ -84,7 +84,19 @@ _______________________________________
 build assembly code
 tac type FUNCTIONDF
 tec type ASSIGN
+findregister: insldr rd=0,r1=11,r2 offset=0,op2type=1, insefft=0
 tac type RETURN
 tac build complete
+push instruction
+op2type==1
 #armv7 assembly code
-main:LDRiaADD SUBLDRiaADD ADD LDRiaBX lr
+main:
+PUSH {fp}
+ADD  fp, sp, #0
+SUB fp, fp, #64
+LDRIA r0, [fp, 0x0]
+ADD  r0, r0, #0
+ADD  sp, fp, #0
+POP {fp}
+BX lr
+
