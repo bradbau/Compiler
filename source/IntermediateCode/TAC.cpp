@@ -33,7 +33,7 @@ TACCode*   MergeTACItem(int num, ...){
     return entrance;
 }
 
-TACCode*  TranslateInitVal(ASTTree* tree, int offset, int layer, ScopeItem &scopeItem, vector<ScopeItem> &stack, ScopeItem place, unsigned int &temp_num, unsigned int &label_num) { 
+TACCode*  TranslateInitVal(ASTTree* tree, ScopeItem &offset, int &layer, ScopeItem &scopeItem, vector<ScopeItem> &stack, ScopeItem place, unsigned int &temp_num, unsigned int &label_num) {
     TACCode* code1, * code2, * code3;
     if (!tree->lchild) {
          string cache1 = "_t" + to_string(temp_num++);
@@ -55,19 +55,21 @@ TACCode*  TranslateInitVal(ASTTree* tree, int offset, int layer, ScopeItem &scop
             code3->prev = code3;
             code1= MergeTACItem(3, code1, code2, code3);
         }
-         TACCode* code4, * code5, * code6, * code7, * code8;
+         TACCode* code4, * code5, * code6, * code7, * code8, * code9;
          code4 = (TACCode*)malloc(sizeof(TACCode));
          code5 = (TACCode*)malloc(sizeof(TACCode));
          code6 = (TACCode*)malloc(sizeof(TACCode));
          code7 = (TACCode*)malloc(sizeof(TACCode));
          code8 = (TACCode*)malloc(sizeof(TACCode));
+         code9 = (TACCode*)malloc(sizeof(TACCode));
          string cache3 = "_t" + to_string(temp_num++);
          ScopeItem* new_temp3 = addIntoScope(stack.end()[0].stype, &stack.end()[0], cache3, Variable, "temp", NULL);
          code4->code.optype = ASSIGN;
          code4->code.dest.Type = VARIABLE;
          code4->code.dest.Data.variable = new_temp3;
-         code4->code.firstOp.Type = INTEGERCONST;
-         code4->code.firstOp.Data.value = offset;
+         code4->code.firstOp.Type = VARIABLE;
+         code4->code.firstOp.Data.variable = new ScopeItem;
+         *code4->code.firstOp.Data.variable = offset;
          Label label1 = label_num++;
          code5->code.optype = LABELDF;
          code5->code.dest.Type = LABEL;
@@ -93,7 +95,16 @@ TACCode*  TranslateInitVal(ASTTree* tree, int offset, int layer, ScopeItem &scop
          code8->code.firstOp.Type = VARIABLE;
          code8->code.firstOp.Data.variable = new_temp3;
          code8->code.secondOp.Type = VARIABLE;
-         code8->code.secondOp.Data.variable = new_temp1;  
+         code8->code.secondOp.Data.variable = new_temp1; 
+         code9->code.optype = ADD;
+         code9->code.dest.Type = VARIABLE;
+         code9->code.dest.Data.variable = new ScopeItem;
+         *code9->code.dest.Data.variable = offset;
+         code9->code.firstOp.Type = VARIABLE;
+         code9->code.firstOp.Data.variable = new ScopeItem;
+         *code9->code.firstOp.Data.variable = offset;
+         code9->code.secondOp.Type = VARIABLE;
+         code9->code.secondOp.Data.variable = new_temp1;
          code4->line = tree->line;
          code4->prev = code4;
          code5->line = tree->line;
@@ -104,14 +115,55 @@ TACCode*  TranslateInitVal(ASTTree* tree, int offset, int layer, ScopeItem &scop
          code7->prev = code7;
          code8->line = tree->line;
          code8->prev = code8;
-         return MergeTACItem(6, code1, code4, code5, code6, code7, code8);
+         code9->line = tree->line;
+         code9->prev = code9;
+         return MergeTACItem(6, code1, code4, code5, code6, code7, code8, code9);
         
     }
     else if (!tree->lchild->rchild) {  //ok
-        return TranslateExp(tree->lchild, scopeItem, stack, place, temp_num, label_num);
+        code1 = (TACCode*)malloc(sizeof(TACCode));
+        code1->code.optype = ADD;
+        code1->code.dest.Type = VARIABLE;
+        code1->code.dest.Data.variable = new ScopeItem;
+        *code1->code.dest.Data.variable = offset;
+        code1->code.firstOp.Type = VARIABLE;
+        code1->code.firstOp.Data.variable = new ScopeItem;
+        *code1->code.firstOp.Data.variable = offset;
+        code1->code.secondOp.Type = INTEGERCONST;
+        code1->code.secondOp.Data.value = 1;
+        code1->line = tree->line;
+        code1->prev = code1;
+        string cache1 = "_t" + to_string(temp_num++);
+        ScopeItem* new_temp1 = addIntoScope(stack.end()[0].stype, &stack.end()[0], cache1, Variable, "temp", NULL);
+        code3 = TranslateExp(tree->lchild, scopeItem, stack, *new_temp1, temp_num, label_num);
+        code2 = (TACCode*)malloc(sizeof(TACCode));
+        code2->code.optype = ASSIGN;
+        code2->code.dest.Type = ARRAY;
+        code2->code.dest.Data.array_add = new ARRAY_ADD;
+        code2->code.dest.Data.array_add->array_si = new ScopeItem;
+        *code2->code.dest.Data.array_add->array_si = place;
+        code2->code.dest.Data.array_add->deviation = new ScopeItem;
+        *code2->code.dest.Data.array_add->deviation = offset;
+        code2->code.firstOp.Type = VARIABLE;
+        code2->code.firstOp.Data.variable = new_temp1;
+        code2->line = tree->line;
+        code2->prev = code2;
+        return  MergeTACItem(3, code3, code2, code1);
     }
     else {
-        //数组赋值
+        layer += 1;
+        code1 = TranslateInitVal(tree->lchild, offset, layer, scopeItem, stack, place, temp_num, label_num);
+        code2 = TranslateInitValList(tree->lchild->rchild, offset, layer, scopeItem, stack, place, temp_num, label_num);
+        return MergeTACItem(2, code1, code2);
+    }
+}
+
+TACCode* TranslateInitValList(ASTTree* tree, ScopeItem& offset, int& layer, ScopeItem& scopeItem, vector<ScopeItem>& stack, ScopeItem place, unsigned int& temp_num, unsigned int& label_num) {
+    if (tree == NULL) {
+        return NULL;
+    }
+    else {
+        return MergeTACItem(2, TranslateInitVal(tree->lchild, offset, layer, scopeItem, stack, place, temp_num, label_num), TranslateInitValList(tree->lchild->rchild, offset, layer, scopeItem, stack, place, temp_num, label_num));
     }
 }
 
@@ -852,12 +904,51 @@ TACCode*   BuildTAC(ASTTree* tree, ScopeItem &scopeItem, vector<ScopeItem> &stac
         return MergeTACItem(2, BuildTAC(tree->lchild, scopeItem, stack, temp_num, label_num), BuildTAC(tree->lchild->rchild, scopeItem, stack, temp_num, label_num));
     }
     else if (tree->name == "ConstOpassign") {
-        //没考虑数组
-        return TranslateInitVal(tree->lchild->rchild, 0, 0, scopeItem, stack, TraverseScopeStack(stack, tree->lchild->GetID()), temp_num, label_num);
+        string cache1 = "_t" + to_string(temp_num++);
+        ScopeItem* new_temp1 = addIntoScope(stack.end()[0].stype, &stack.end()[0], cache1, Variable, "temp", NULL);
+        TACCode* codex = (TACCode*)malloc(sizeof(TACCode));
+        codex->code.optype = ASSIGN;
+        codex->code.dest.Type = VARIABLE;
+        codex->code.dest.Data.variable = new_temp1;
+        codex->code.firstOp.Type = INTEGERCONST;
+        codex->code.firstOp.Data.value = 0;
+        codex->line = tree->line;
+        codex->prev = codex;
+        int layer = 0;
+        return MergeTACItem(2, codex, TranslateInitVal(tree->lchild->rchild, *new_temp1, layer, scopeItem, stack, TraverseScopeStack(stack, tree->lchild->GetID()), temp_num, label_num));
     }
     else if (tree->name == "VarOPassign") {     //ok
-        //没考虑数组
-        return MergeTACItem(2, BuildTAC(tree->lchild, scopeItem, stack, temp_num, label_num), TranslateInitVal(tree->lchild->rchild, 0, 0, scopeItem, stack, TraverseScopeStack(stack, tree->lchild->GetID()), temp_num, label_num));
+        if (!tree->lchild->rchild->lchild) {
+            string cache1 = "_t" + to_string(temp_num++);
+            ScopeItem* new_temp1 = addIntoScope(stack.end()[0].stype, &stack.end()[0], cache1, Variable, "temp", NULL);
+            TACCode* codex = (TACCode*)malloc(sizeof(TACCode));
+            codex->code.optype = ASSIGN;
+            codex->code.dest.Type = VARIABLE;
+            codex->code.dest.Data.variable = new_temp1;
+            codex->code.firstOp.Type = INTEGERCONST;
+            codex->code.firstOp.Data.value = 0;
+            codex->line = tree->line;
+            codex->prev = codex;
+            int layer = 0;
+            return MergeTACItem(3, BuildTAC(tree->lchild, scopeItem, stack, temp_num, label_num), codex, TranslateInitVal(tree->lchild->rchild, *new_temp1, layer, scopeItem, stack, TraverseScopeStack(stack, tree->lchild->GetID()), temp_num, label_num));
+        }
+        if (!tree->lchild->rchild->lchild->rchild) {
+            return  MergeTACItem(2, BuildTAC(tree->lchild, scopeItem, stack, temp_num, label_num), TranslateExp(tree->lchild->rchild->lchild, scopeItem, stack, TraverseScopeStack(stack, tree->lchild->GetID()), temp_num, label_num));
+        }
+        else {
+            string cache1 = "_t" + to_string(temp_num++);
+            ScopeItem* new_temp1 = addIntoScope(stack.end()[0].stype, &stack.end()[0], cache1, Variable, "temp", NULL);
+            TACCode* codex = (TACCode*)malloc(sizeof(TACCode));
+            codex->code.optype = ASSIGN;
+            codex->code.dest.Type = VARIABLE;
+            codex->code.dest.Data.variable = new_temp1;
+            codex->code.firstOp.Type = INTEGERCONST;
+            codex->code.firstOp.Data.value = 0;
+            codex->line = tree->line;
+            codex->prev = codex;
+            int layer = 0;
+            return MergeTACItem(3, BuildTAC(tree->lchild, scopeItem, stack, temp_num, label_num), codex, TranslateInitVal(tree->lchild->rchild, *new_temp1, layer, scopeItem, stack, TraverseScopeStack(stack, tree->lchild->GetID()), temp_num, label_num));
+        }
     }
     else if (tree->name == "IDENTIFIER") {      //ok
         return NULL;

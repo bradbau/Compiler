@@ -48,7 +48,8 @@ typedef struct basic_block {
     TACCode* TranslateFuncRParams(ASTTree* tree, ScopeItem &scopeItem, vector<ScopeItem> &stack, unsigned int &temp_num, unsigned int &label_num);
     TACCode* TranslateExps(ASTTree* tree, ScopeItem &scopeItem, vector<ScopeItem> &stack, unsigned int &temp_num, unsigned int &label_num);
     TACCode* TranslateStmt(ASTTree* tree, ScopeItem &scopeItem, vector<ScopeItem> &stack, Label continuevalue, Label breakvalue, unsigned int &temp_num, unsigned int &label_num);
-    TACCode* TranslateInitVal(ASTTree* tree, int offset, int layer, ScopeItem &scopeItem, vector<ScopeItem> &stack, ScopeItem place, unsigned int &temp_num, unsigned int &label_num);
+    TACCode* TranslateInitVal(ASTTree* tree, ScopeItem& offset, int& layer, ScopeItem& scopeItem, vector<ScopeItem>& stack, ScopeItem place, unsigned int& temp_num, unsigned int& label_num);
+    TACCode* TranslateInitValList(ASTTree* tree, ScopeItem& offset, int& layer, ScopeItem& scopeItem, vector<ScopeItem>& stack, ScopeItem place, unsigned int& temp_num, unsigned int& label_num);
     TACCode* TranslateRelExp(ASTTree* tree, ScopeItem& scopeItem, vector<ScopeItem>& stack, ScopeItem place, unsigned int label_true, unsigned int label_false, unsigned int& temp_num, unsigned int& label_num);
     TACCode* TranslateFuncRParams(ASTTree* tree, ScopeItem& scopeItem, vector<ScopeItem>& stack, unsigned int& temp_num, unsigned int& label_num);
     void DisplayTACCode(TACCode* entrance);
