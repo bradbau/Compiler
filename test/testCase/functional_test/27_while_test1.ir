@@ -21,6 +21,17 @@
 --accepting rule at line 112 ("i")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+<int>
+<id,doubleWhile>
+<(>
+<)>
+<{>
+<int>
+<id,i>
+<;>
+<id,i>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 109 ("5")
 --accepting rule at line 75 (";")
@@ -39,6 +50,17 @@
 --accepting rule at line 112 ("j")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+Lval
+<intd>
+ExpNumber:0
+<;>
+stmt1
+<int>
+<id,j>
+<;>
+<id,j>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 109 ("7")
 --accepting rule at line 75 (";")
@@ -52,6 +74,16 @@
 --accepting rule at line 112 ("i")
 --accepting rule at line 114 (" ")
 --accepting rule at line 96 ("<")
+Lval
+<intd>
+ExpNumber:0
+<;>
+stmt1
+<while>
+<(>
+<id,i>
+<<>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 109 ("100")
 --accepting rule at line 81 (")")
@@ -66,10 +98,22 @@
 --accepting rule at line 112 ("i")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+Lval
+<intd>
+ExpNumber:0
+<)>
+<{>
+<id,i>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("i")
 --accepting rule at line 114 (" ")
 --accepting rule at line 84 ("+")
+Lval
+<id,i>
+<+>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 109 ("30")
 --accepting rule at line 75 (";")
@@ -84,6 +128,16 @@
 --accepting rule at line 112 ("j")
 --accepting rule at line 114 (" ")
 --accepting rule at line 96 ("<")
+Lval
+<intd>
+ExpNumber:0
+<;>
+stmt1
+<while>
+<(>
+<id,j>
+<<>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 109 ("100")
 --accepting rule at line 81 (")")
@@ -99,10 +153,22 @@
 --accepting rule at line 112 ("j")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+Lval
+<intd>
+ExpNumber:0
+<)>
+<{>
+<id,j>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("j")
 --accepting rule at line 114 (" ")
 --accepting rule at line 84 ("+")
+Lval
+<id,j>
+<+>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 109 ("6")
 --accepting rule at line 75 (";")
@@ -122,10 +188,23 @@
 --accepting rule at line 112 ("j")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+Lval
+<intd>
+ExpNumber:0
+<;>
+stmt1
+<}>
+<id,j>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("j")
 --accepting rule at line 114 (" ")
 --accepting rule at line 85 ("-")
+Lval
+<id,j>
+<->
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 109 ("100")
 --accepting rule at line 75 (";")
@@ -143,6 +222,17 @@
 --accepting rule at line 80 ("(")
 --accepting rule at line 112 ("j")
 --accepting rule at line 81 (")")
+Lval
+<intd>
+ExpNumber:0
+<;>
+stmt1
+<}>
+<return>
+<(>
+<id,j>
+<)>
+33333333333
 --accepting rule at line 75 (";")
 --accepting rule at line 115 ("
 ")
@@ -154,90 +244,7 @@
 --accepting rule at line 100 ("int")
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("main")
-<int>
-<id,doubleWhile>
-<(>
-<)>
-<{>
-<int>
-<id,i>
-<;>
-<id,i>
-<=>
-Lval
-<intd>
-ExpNumber:0
-<;>
-stmt1
-<int>
-<id,j>
-<;>
-<id,j>
-<=>
-Lval
-<intd>
-ExpNumber:0
-<;>
-stmt1
-<while>
-<(>
-<id,i>
-<<>
-Lval
-<intd>
-ExpNumber:0
-<)>
-<{>
-<id,i>
-<=>
-Lval
-<id,i>
-<+>
-Lval
-<intd>
-ExpNumber:0
-<;>
-stmt1
-<while>
-<(>
-<id,j>
-<<>
-Lval
-<intd>
-ExpNumber:0
-<)>
-<{>
-<id,j>
-<=>
-Lval
-<id,j>
-<+>
-Lval
-<intd>
-ExpNumber:0
-<;>
-stmt1
-<}>
-<id,j>
-<=>
-Lval
-<id,j>
-<->
-Lval
-<intd>
-ExpNumber:0
-<;>
-stmt1
-<}>
-<return>
-<(>
-<id,j>
-<)>
-Lval
-<;>
-<}>
-<int>
-<id,main>--accepting rule at line 80 ("(")
+--accepting rule at line 80 ("(")
 --accepting rule at line 81 (")")
 --accepting rule at line 114 (" ")
 --accepting rule at line 78 ("{")
@@ -258,7 +265,11 @@ Lval
 ")
 --(end of buffer or a NUL)
 --EOF (start condition 0)
-
+Lval
+<;>
+<}>
+<int>
+<id,main>
 <(>
 <)>
 <{>
@@ -376,10 +387,12 @@ ID             category       type           depictor
 doubleWhile    Function       TYPEINTEGER    NOT NULL       
 main           Function       TYPEINTEGER    NOT NULL       
 ===========================================================
+===========================================================
 Formal:doubleWhile
 ID             category       type           depictor
               
                NOParam                       NOT NULL       
+===========================================================
 ===========================================================
 Local:doubleWhile
 ID             category       type           depictor
@@ -388,10 +401,12 @@ i              Variable       TYPEINTEGER    NULL
 j              Variable       TYPEINTEGER    NULL           
                Block          BLOCKStmt      NOT NULL       
 ===========================================================
+===========================================================
 Local:block
 ID             category       type           depictor
               
                Block          BLOCKStmt      NULL           
+===========================================================
 ===========================================================
 Formal:main
 ID             category       type           depictor

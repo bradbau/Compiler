@@ -23,6 +23,17 @@
 --accepting rule at line 112 ("a")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+<int>
+<id,whileIf>
+<(>
+<)>
+<{>
+<int>
+<id,a>
+<;>
+<id,a>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 111 ("0")
 --accepting rule at line 75 (";")
@@ -41,6 +52,17 @@
 --accepting rule at line 112 ("b")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+Lval
+<into>
+ExpNumber:0
+<;>
+stmt1
+<int>
+<id,b>
+<;>
+<id,b>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 111 ("0")
 --accepting rule at line 75 (";")
@@ -54,6 +76,16 @@
 --accepting rule at line 112 ("a")
 --accepting rule at line 114 (" ")
 --accepting rule at line 96 ("<")
+Lval
+<into>
+ExpNumber:0
+<;>
+stmt1
+<while>
+<(>
+<id,a>
+<<>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 109 ("100")
 --accepting rule at line 81 (")")
@@ -71,6 +103,16 @@
 --accepting rule at line 112 ("a")
 --accepting rule at line 114 (" ")
 --accepting rule at line 93 ("==")
+Lval
+<intd>
+ExpNumber:0
+<)>
+<{>
+<if>
+<(>
+<id,a>
+<==>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 109 ("5")
 --accepting rule at line 81 (")")
@@ -87,6 +129,14 @@
 --accepting rule at line 112 ("b")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+Lval
+<intd>
+ExpNumber:0
+<)>
+<{>
+<id,b>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 109 ("25")
 --accepting rule at line 75 (";")
@@ -111,6 +161,18 @@
 --accepting rule at line 112 ("a")
 --accepting rule at line 114 (" ")
 --accepting rule at line 93 ("==")
+Lval
+<intd>
+ExpNumber:0
+<;>
+stmt1
+<}>
+<else>
+<if>
+<(>
+<id,a>
+<==>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 109 ("10")
 --accepting rule at line 81 (")")
@@ -127,6 +189,14 @@
 --accepting rule at line 112 ("b")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+Lval
+<intd>
+ExpNumber:0
+<)>
+<{>
+<id,b>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 109 ("42")
 --accepting rule at line 75 (";")
@@ -159,10 +229,25 @@
 --accepting rule at line 112 ("b")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+Lval
+<intd>
+ExpNumber:0
+<;>
+stmt1
+<}>
+<else>
+<{>
+<id,b>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("a")
 --accepting rule at line 114 (" ")
 --accepting rule at line 86 ("*")
+Lval
+<id,a>
+<*>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 109 ("2")
 --accepting rule at line 75 (";")
@@ -182,82 +267,6 @@
 --accepting rule at line 112 ("a")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
-<int>
-<id,whileIf>
-<(>
-<)>
-<{>
-<int>
-<id,a>
-<;>
-<id,a>
-<=>
-Lval
-<into>
-ExpNumber:0
-<;>
-stmt1
-<int>
-<id,b>
-<;>
-<id,b>
-<=>
-Lval
-<into>
-ExpNumber:0
-<;>
-stmt1
-<while>
-<(>
-<id,a>
-<<>
-Lval
-<intd>
-ExpNumber:0
-<)>
-<{>
-<if>
-<(>
-<id,a>
-<==>
-Lval
-<intd>
-ExpNumber:0
-<)>
-<{>
-<id,b>
-<=>
-Lval
-<intd>
-ExpNumber:0
-<;>
-stmt1
-<}>
-<else>
-<if>
-<(>
-<id,a>
-<==>
-Lval
-<intd>
-ExpNumber:0
-<)>
-<{>
-<id,b>
-<=>
-Lval
-<intd>
-ExpNumber:0
-<;>
-stmt1
-<}>
-<else>
-<{>
-<id,b>
-<=>
-Lval
-<id,a>
-<*>
 Lval
 <intd>
 ExpNumber:0
@@ -266,10 +275,15 @@ stmt1
 <}>
 <id,a>
 <=>
-Lval--accepting rule at line 114 (" ")
+33333333333
+--accepting rule at line 114 (" ")
 --accepting rule at line 112 ("a")
 --accepting rule at line 114 (" ")
 --accepting rule at line 84 ("+")
+Lval
+<id,a>
+<+>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 109 ("1")
 --accepting rule at line 75 (";")
@@ -287,6 +301,17 @@ Lval--accepting rule at line 114 (" ")
 --accepting rule at line 80 ("(")
 --accepting rule at line 112 ("b")
 --accepting rule at line 81 (")")
+Lval
+<intd>
+ExpNumber:0
+<;>
+stmt1
+<}>
+<return>
+<(>
+<id,b>
+<)>
+33333333333
 --accepting rule at line 75 (";")
 --accepting rule at line 115 ("
 ")
@@ -322,19 +347,6 @@ Lval--accepting rule at line 114 (" ")
 ")
 --(end of buffer or a NUL)
 --EOF (start condition 0)
-
-<id,a>
-<+>
-Lval
-<intd>
-ExpNumber:0
-<;>
-stmt1
-<}>
-<return>
-<(>
-<id,b>
-<)>
 Lval
 <;>
 <}>
@@ -475,10 +487,12 @@ ID             category       type           depictor
 whileIf        Function       TYPEINTEGER    NOT NULL       
 main           Function       TYPEINTEGER    NOT NULL       
 ===========================================================
+===========================================================
 Formal:whileIf
 ID             category       type           depictor
               
                NOParam                       NOT NULL       
+===========================================================
 ===========================================================
 Local:whileIf
 ID             category       type           depictor
@@ -487,12 +501,14 @@ a              Variable       TYPEINTEGER    NULL
 b              Variable       TYPEINTEGER    NULL           
                Block          BLOCKStmt      NOT NULL       
 ===========================================================
+===========================================================
 Local:block
 ID             category       type           depictor
               
                Block          BLOCKStmt      NULL           
                Block          BLOCKStmt      NULL           
                Block          BLOCKStmt      NULL           
+===========================================================
 ===========================================================
 Formal:main
 ID             category       type           depictor

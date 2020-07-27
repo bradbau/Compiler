@@ -19,6 +19,17 @@
 --accepting rule at line 112 ("a")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+<int>
+<id,func1>
+<(>
+<)>
+<{>
+<int>
+<id,a>
+<;>
+<id,a>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 109 ("1")
 --accepting rule at line 75 (";")
@@ -29,6 +40,15 @@
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("a")
 --accepting rule at line 75 (";")
+Lval
+<intd>
+ExpNumber:0
+<;>
+stmt1
+<return>
+<id,a>
+<;>
+33333333333
 --accepting rule at line 115 ("
 ")
 --accepting rule at line 79 ("}")
@@ -56,6 +76,19 @@
 --accepting rule at line 112 ("a")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+Lval
+<}>
+<int>
+<id,func2>
+<(>
+<)>
+<{>
+<int>
+<id,a>
+<;>
+<id,a>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 109 ("2")
 --accepting rule at line 75 (";")
@@ -66,6 +99,15 @@
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("a")
 --accepting rule at line 75 (";")
+Lval
+<intd>
+ExpNumber:0
+<;>
+stmt1
+<return>
+<id,a>
+<;>
+33333333333
 --accepting rule at line 115 ("
 ")
 --accepting rule at line 79 ("}")
@@ -93,6 +135,19 @@
 --accepting rule at line 112 ("a")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+Lval
+<}>
+<int>
+<id,func3>
+<(>
+<)>
+<{>
+<int>
+<id,a>
+<;>
+<id,a>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 109 ("4")
 --accepting rule at line 75 (";")
@@ -103,6 +158,15 @@
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("a")
 --accepting rule at line 75 (";")
+Lval
+<intd>
+ExpNumber:0
+<;>
+stmt1
+<return>
+<id,a>
+<;>
+33333333333
 --accepting rule at line 115 ("
 ")
 --accepting rule at line 79 ("}")
@@ -143,81 +207,6 @@
 --accepting rule at line 112 ("b")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
---accepting rule at line 114 (" ")
---accepting rule at line 109 ("8")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 ("	")
---accepting rule at line 114 ("	")
---accepting rule at line 112 ("a")
---accepting rule at line 114 (" ")
---accepting rule at line 89 ("=")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("b")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 ("	")
---accepting rule at line 79 ("}")
-<int>
-<id,func1>
-<(>
-<)>
-<{>
-<int>
-<id,a>
-<;>
-<id,a>
-<=>
-Lval
-<intd>
-ExpNumber:0
-<;>
-stmt1
-<return>
-<id,a>
-<;>
-Lval
-<}>
-<int>
-<id,func2>
-<(>
-<)>
-<{>
-<int>
-<id,a>
-<;>
-<id,a>
-<=>
-Lval
-<intd>
-ExpNumber:0
-<;>
-stmt1
-<return>
-<id,a>
-<;>
-Lval
-<}>
-<int>
-<id,func3>
-<(>
-<)>
-<{>
-<int>
-<id,a>
-<;>
-<id,a>
-<=>
-Lval
-<intd>
-ExpNumber:0
-<;>
-stmt1
-<return>
-<id,a>
-<;>
 Lval
 <}>
 <int>
@@ -234,6 +223,17 @@ Lval
 <;>
 <id,b>
 <=>
+33333333333
+--accepting rule at line 114 (" ")
+--accepting rule at line 109 ("8")
+--accepting rule at line 75 (";")
+--accepting rule at line 115 ("
+")
+--accepting rule at line 114 ("	")
+--accepting rule at line 114 ("	")
+--accepting rule at line 112 ("a")
+--accepting rule at line 114 (" ")
+--accepting rule at line 89 ("=")
 Lval
 <intd>
 ExpNumber:0
@@ -241,12 +241,19 @@ ExpNumber:0
 stmt1
 <id,a>
 <=>
+33333333333
+--accepting rule at line 114 (" ")
+--accepting rule at line 112 ("b")
+--accepting rule at line 75 (";")
 Lval
 <id,b>
 <;>
-Lval
-stmt1
-<}--accepting rule at line 115 ("
+33333333333
+--accepting rule at line 115 ("
+")
+--accepting rule at line 114 ("	")
+--accepting rule at line 79 ("}")
+--accepting rule at line 115 ("
 ")
 --accepting rule at line 114 ("	")
 --accepting rule at line 78 ("{")
@@ -265,6 +272,16 @@ stmt1
 --accepting rule at line 112 ("b")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+Lval
+stmt1
+<}>
+<{>
+<int>
+<id,b>
+<;>
+<id,b>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 109 ("16")
 --accepting rule at line 75 (";")
@@ -275,13 +292,29 @@ stmt1
 --accepting rule at line 112 ("a")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+Lval
+<intd>
+ExpNumber:0
+<;>
+stmt1
+<id,a>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("a")
 --accepting rule at line 114 (" ")
 --accepting rule at line 84 ("+")
+Lval
+<id,a>
+<+>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("b")
 --accepting rule at line 75 (";")
+Lval
+<id,b>
+<;>
+33333333333
 --accepting rule at line 115 ("
 ")
 --accepting rule at line 114 ("	")
@@ -293,6 +326,13 @@ stmt1
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("a")
 --accepting rule at line 75 (";")
+Lval
+stmt1
+<}>
+<return>
+<id,a>
+<;>
+33333333333
 --accepting rule at line 115 ("
 ")
 --accepting rule at line 79 ("}")
@@ -334,6 +374,25 @@ stmt1
 --accepting rule at line 112 ("a")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+Lval
+<}>
+<int>
+<id,main>
+<(>
+<)>
+<{>
+<int>
+<id,a>
+<;>
+<int>
+<id,b>
+<;>
+<int>
+<id,c>
+<;>
+<id,a>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 109 ("32")
 --accepting rule at line 75 (";")
@@ -343,6 +402,14 @@ stmt1
 --accepting rule at line 112 ("b")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+Lval
+<intd>
+ExpNumber:0
+<;>
+stmt1
+<id,b>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 109 ("32")
 --accepting rule at line 75 (";")
@@ -352,6 +419,14 @@ stmt1
 --accepting rule at line 112 ("c")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+Lval
+<intd>
+ExpNumber:0
+<;>
+stmt1
+<id,c>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 109 ("32")
 --accepting rule at line 75 (";")
@@ -392,71 +467,6 @@ stmt1
 --accepting rule at line 112 ("a")
 --accepting rule at line 114 (" ")
 --accepting rule at line 84 ("+")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("b")
---accepting rule at line 114 (" ")
---accepting rule at line 84 ("+")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("c")
---accepting rule at line 75 (";")
->
-<{>
-<int>
-<id,b>
-<;>
-<id,b>
-<=>
-Lval
-<intd>
-ExpNumber:0
-<;>
-stmt1
-<id,a>
-<=>
-Lval
-<id,a>
-<+>
-Lval
-<id,b>
-<;>
-Lval
-stmt1
-<}>
-<return>
-<id,a>
-<;>
-Lval
-<}>
-<int>
-<id,main>
-<(>
-<)>
-<{>
-<int>
-<id,a>
-<;>
-<int>
-<id,b>
-<;>
-<int>
-<id,c>
-<;>
-<id,a>
-<=>
-Lval
-<intd>
-ExpNumber:0
-<;>
-stmt1
-<id,b>
-<=>
-Lval
-<intd>
-ExpNumber:0
-<;>
-stmt1
-<id,c>
-<=>
 Lval
 <intd>
 ExpNumber:0
@@ -481,17 +491,27 @@ stmt1
 <+>
 <id,a>
 <+>
+33333333333
+--accepting rule at line 114 (" ")
+--accepting rule at line 112 ("b")
+--accepting rule at line 114 (" ")
+--accepting rule at line 84 ("+")
 Lval
 <id,b>
 <+>
+33333333333
+--accepting rule at line 114 (" ")
+--accepting rule at line 112 ("c")
+--accepting rule at line 75 (";")
 Lval
 <id,c>
-<;>--accepting rule at line 115 ("
+<;>
+33333333333
+--accepting rule at line 115 ("
 ")
 --accepting rule at line 79 ("}")
 --(end of buffer or a NUL)
 --EOF (start condition 0)
-
 Lval
 <}>
 CompUnits (1)
@@ -690,40 +710,48 @@ func3          Function       TYPEINTEGER    NOT NULL
 func4          Function       TYPEINTEGER    NOT NULL       
 main           Function       TYPEINTEGER    NOT NULL       
 ===========================================================
+===========================================================
 Formal:func1
 ID             category       type           depictor
               
                NOParam                       NOT NULL       
+===========================================================
 ===========================================================
 Local:func1
 ID             category       type           depictor
               
 a              Variable       TYPEINTEGER    NULL           
 ===========================================================
+===========================================================
 Formal:func2
 ID             category       type           depictor
               
                NOParam                       NOT NULL       
+===========================================================
 ===========================================================
 Local:func2
 ID             category       type           depictor
               
 a              Variable       TYPEINTEGER    NULL           
 ===========================================================
+===========================================================
 Formal:func3
 ID             category       type           depictor
               
                NOParam                       NOT NULL       
+===========================================================
 ===========================================================
 Local:func3
 ID             category       type           depictor
               
 a              Variable       TYPEINTEGER    NULL           
 ===========================================================
+===========================================================
 Formal:func4
 ID             category       type           depictor
               
                NOParam                       NOT NULL       
+===========================================================
 ===========================================================
 Local:func4
 ID             category       type           depictor
@@ -732,20 +760,24 @@ a              Variable       TYPEINTEGER    NULL
                Block          BLOCKStmt      NOT NULL       
                Block          BLOCKStmt      NOT NULL       
 ===========================================================
-Local:block
-ID             category       type           depictor
-              
-b              Variable       TYPEINTEGER    NULL           
 ===========================================================
 Local:block
 ID             category       type           depictor
               
 b              Variable       TYPEINTEGER    NULL           
+===========================================================
+===========================================================
+Local:block
+ID             category       type           depictor
+              
+b              Variable       TYPEINTEGER    NULL           
+===========================================================
 ===========================================================
 Formal:main
 ID             category       type           depictor
               
                NOParam                       NOT NULL       
+===========================================================
 ===========================================================
 Local:main
 ID             category       type           depictor

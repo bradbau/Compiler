@@ -20,10 +20,27 @@
 --accepting rule at line 112 ("p")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+<int>
+<id,a>
+<;>
+<int>
+<id,func>
+<(>
+<int>
+<id,p>
+<)>
+<{>
+<id,p>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("p")
 --accepting rule at line 114 (" ")
 --accepting rule at line 85 ("-")
+Lval
+<id,p>
+<->
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 109 ("1")
 --accepting rule at line 75 (";")
@@ -34,6 +51,15 @@
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("p")
 --accepting rule at line 75 (";")
+Lval
+<intd>
+ExpNumber:0
+<;>
+stmt1
+<return>
+<id,p>
+<;>
+33333333333
 --accepting rule at line 115 ("
 ")
 --accepting rule at line 79 ("}")
@@ -58,58 +84,6 @@
 --accepting rule at line 112 ("a")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
---accepting rule at line 114 (" ")
---accepting rule at line 109 ("10")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 ("	")
---accepting rule at line 112 ("b")
---accepting rule at line 114 (" ")
---accepting rule at line 89 ("=")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("func")
---accepting rule at line 80 ("(")
---accepting rule at line 112 ("a")
---accepting rule at line 81 (")")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 ("	")
---accepting rule at line 108 ("return")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("b")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 79 ("}")
---accepting rule at line 115 ("
-")
---(end of buffer or a NUL)
---EOF (start condition 0)
-<int>
-<id,a>
-<;>
-<int>
-<id,func>
-<(>
-<int>
-<id,p>
-<)>
-<{>
-<id,p>
-<=>
-Lval
-<id,p>
-<->
-Lval
-<intd>
-ExpNumber:0
-<;>
-stmt1
-<return>
-<id,p>
-<;>
 Lval
 <}>
 <int>
@@ -122,6 +96,16 @@ Lval
 <;>
 <id,a>
 <=>
+33333333333
+--accepting rule at line 114 (" ")
+--accepting rule at line 109 ("10")
+--accepting rule at line 75 (";")
+--accepting rule at line 115 ("
+")
+--accepting rule at line 114 ("	")
+--accepting rule at line 112 ("b")
+--accepting rule at line 114 (" ")
+--accepting rule at line 89 ("=")
 Lval
 <intd>
 ExpNumber:0
@@ -129,17 +113,40 @@ ExpNumber:0
 stmt1
 <id,b>
 <=>
+33333333333
+--accepting rule at line 114 (" ")
+--accepting rule at line 112 ("func")
+--accepting rule at line 80 ("(")
+--accepting rule at line 112 ("a")
+--accepting rule at line 81 (")")
 Lval
 <id,func>
 <(>
 <id,a>
 <)>
+33333333333
+--accepting rule at line 75 (";")
+--accepting rule at line 115 ("
+")
+--accepting rule at line 114 ("	")
+--accepting rule at line 108 ("return")
+--accepting rule at line 114 (" ")
+--accepting rule at line 112 ("b")
+--accepting rule at line 75 (";")
 Lval
 <;>
 stmt1
 <return>
 <id,b>
 <;>
+33333333333
+--accepting rule at line 115 ("
+")
+--accepting rule at line 79 ("}")
+--accepting rule at line 115 ("
+")
+--(end of buffer or a NUL)
+--EOF (start condition 0)
 Lval
 <}>
 CompUnits (1)
@@ -209,22 +216,64 @@ a              Variable       TYPEINTEGER    NULL
 func           Function       TYPEINTEGER    NOT NULL       
 main           Function       TYPEINTEGER    NOT NULL       
 ===========================================================
+===========================================================
 Formal:func
 ID             category       type           depictor
               
 p              Variable       TYPEINTEGER    NULL           
 ===========================================================
+===========================================================
 Local:func
 ID             category       type           depictor
               
+===========================================================
 ===========================================================
 Formal:main
 ID             category       type           depictor
               
                NOParam                       NOT NULL       
 ===========================================================
+===========================================================
 Local:main
 ID             category       type           depictor
               
 b              Variable       TYPEINTEGER    NULL           
-Segmentation fault (core dumped)
+===========================================================
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+
+~~~~TAC~~~~~
+ No  Source Position	TACCode
+_______________________________________
+  0  (at line   0)	CALL main
+
+  1  (at line   2)	FUNCTION func :
+  2  (at line   2)	PARAM p
+  3  (at line   3)	_t6 := 
+  4  (at line   3)	_t7 := #1
+  5  (at line   3)	_t5 := _t6 - _t7
+  6  (at line   3)	 := _t5
+  7  (at line   4)	_t4 := 
+  8  (at line   4)	RETURN _t4
+
+  9  (at line   6)	FUNCTION main :
+ 10  (at line   8)	_t3 := #10
+ 11  (at line   8)	 := _t3
+ 12  (at line   9)	_t2 := 
+ 13  (at line   9)	ARG _t2
+ 14  (at line   9)	_t1 := CALL func
+ 15  (at line   9)	 := _t1
+ 16  (at line  10)	_t0 := 
+ 17  (at line  10)	RETURN _t0
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+build assembly code
+tac type FUNCTIONDF
+tec type ASSIGN
+findregister: insldr rd=0,r1=11,r2 offset=0,op2type=1, insefft=0
+findregister: insldr rd=1,r1=11,r2 offset=0,op2type=1, insefft=0
+tec type ASSIGN
+findregister: insldr rd=2,r1=11,r2 offset=0,op2type=1, insefft=0
+tac type SUB
+compiler: ./ObjectCode/Arm.cpp:75: ARM::ARM(TACCode*, ScopeItem&): Assertion `code.dest.Type = VARIABLE' failed.
+Aborted (core dumped)

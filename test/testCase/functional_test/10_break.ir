@@ -27,6 +27,22 @@
 --accepting rule at line 80 ("(")
 --accepting rule at line 112 ("a")
 --accepting rule at line 95 (">")
+<int>
+<id,main>
+<(>
+<)>
+<{>
+<int>
+<id,a>
+<=>
+<intd>
+ExpNumber:0
+<;>
+<while>
+<(>
+<id,a>
+<>>
+33333333333
 --accepting rule at line 111 ("0")
 --accepting rule at line 81 (")")
 --accepting rule at line 78 ("{")
@@ -42,8 +58,20 @@
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("a")
 --accepting rule at line 89 ("=")
+Lval
+<into>
+ExpNumber:0
+<)>
+<{>
+<id,a>
+<=>
+33333333333
 --accepting rule at line 112 ("a")
 --accepting rule at line 85 ("-")
+Lval
+<id,a>
+<->
+33333333333
 --accepting rule at line 109 ("1")
 --accepting rule at line 75 (";")
 --accepting rule at line 115 ("
@@ -60,6 +88,16 @@
 --accepting rule at line 80 ("(")
 --accepting rule at line 112 ("a")
 --accepting rule at line 93 ("==")
+Lval
+<intd>
+ExpNumber:0
+<;>
+stmt1
+<if>
+<(>
+<id,a>
+<==>
+33333333333
 --accepting rule at line 109 ("5")
 --accepting rule at line 81 (")")
 --accepting rule at line 115 ("
@@ -95,45 +133,6 @@
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("a")
 --accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 79 ("}")
---(end of buffer or a NUL)
---EOF (start condition 0)
-<int>
-<id,main>
-<(>
-<)>
-<{>
-<int>
-<id,a>
-<=>
-<intd>
-ExpNumber:0
-<;>
-<while>
-<(>
-<id,a>
-<>>
-Lval
-<into>
-ExpNumber:0
-<)>
-<{>
-<id,a>
-<=>
-Lval
-<id,a>
-<->
-Lval
-<intd>
-ExpNumber:0
-<;>
-stmt1
-<if>
-<(>
-<id,a>
-<==>
 Lval
 <intd>
 ExpNumber:0
@@ -144,6 +143,12 @@ ExpNumber:0
 <return>
 <id,a>
 <;>
+33333333333
+--accepting rule at line 115 ("
+")
+--accepting rule at line 79 ("}")
+--(end of buffer or a NUL)
+--EOF (start condition 0)
 Lval
 <}>
 CompUnits (1)
@@ -206,10 +211,12 @@ ID             category       type           depictor
                
 main           Function       TYPEINTEGER    NOT NULL       
 ===========================================================
+===========================================================
 Formal:main
 ID             category       type           depictor
               
                NOParam                       NOT NULL       
+===========================================================
 ===========================================================
 Local:main
 ID             category       type           depictor

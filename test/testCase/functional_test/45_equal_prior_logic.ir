@@ -58,6 +58,26 @@
 --accepting rule at line 112 ("a")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+<int>
+<id,main>
+<(>
+<)>
+<{>
+<int>
+<id,a>
+<;>
+<int>
+<id,b>
+<;>
+<int>
+<id,c>
+<;>
+<int>
+<id,d>
+<;>
+<id,a>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 109 ("10")
 --accepting rule at line 75 (";")
@@ -70,6 +90,14 @@
 --accepting rule at line 112 ("b")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+Lval
+<intd>
+ExpNumber:0
+<;>
+stmt1
+<id,b>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 109 ("6")
 --accepting rule at line 75 (";")
@@ -82,6 +110,14 @@
 --accepting rule at line 112 ("c")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+Lval
+<intd>
+ExpNumber:0
+<;>
+stmt1
+<id,c>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 109 ("4")
 --accepting rule at line 75 (";")
@@ -94,6 +130,14 @@
 --accepting rule at line 112 ("d")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+Lval
+<intd>
+ExpNumber:0
+<;>
+stmt1
+<id,d>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 109 ("5")
 --accepting rule at line 75 (";")
@@ -119,22 +163,51 @@
 --accepting rule at line 112 ("b")
 --accepting rule at line 114 (" ")
 --accepting rule at line 84 ("+")
+Lval
+<intd>
+ExpNumber:0
+<;>
+stmt1
+<int>
+<id,t>
+<;>
+<if>
+<(>
+<id,b>
+<+>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("c")
 --accepting rule at line 114 (" ")
 --accepting rule at line 93 ("==")
+Lval
+<id,c>
+<==>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("a")
 --accepting rule at line 114 (" ")
 --accepting rule at line 90 ("&&")
+Lval
+<id,a>
+<&&>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("d")
 --accepting rule at line 114 (" ")
 --accepting rule at line 94 ("!=")
+Lval
+<id,d>
+<!=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("a")
 --accepting rule at line 114 (" ")
 --accepting rule at line 87 ("/")
+Lval
+<id,a>
+</>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 109 ("2")
 --accepting rule at line 81 (")")
@@ -153,18 +226,38 @@
 --accepting rule at line 112 ("t")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+Lval
+<intd>
+ExpNumber:0
+<)>
+<{>
+<id,t>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("b")
 --accepting rule at line 114 (" ")
 --accepting rule at line 84 ("+")
+Lval
+<id,b>
+<+>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("c")
 --accepting rule at line 114 (" ")
 --accepting rule at line 87 ("/")
+Lval
+<id,c>
+</>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("d")
 --accepting rule at line 114 (" ")
 --accepting rule at line 86 ("*")
+Lval
+<id,d>
+<*>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 109 ("2")
 --accepting rule at line 75 (";")
@@ -179,94 +272,19 @@
 --accepting rule at line 114 (" ")
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("putint")
-<int>
-<id,main>
-<(>
-<)>
-<{>
-<int>
-<id,a>
-<;>
-<int>
-<id,b>
-<;>
-<int>
-<id,c>
-<;>
-<int>
-<id,d>
-<;>
-<id,a>
-<=>
-Lval
-<intd>
-ExpNumber:0
-<;>
-stmt1
-<id,b>
-<=>
-Lval
-<intd>
-ExpNumber:0
-<;>
-stmt1
-<id,c>
-<=>
-Lval
-<intd>
-ExpNumber:0
-<;>
-stmt1
-<id,d>
-<=>
-Lval
-<intd>
-ExpNumber:0
-<;>
-stmt1
-<int>
-<id,t>
-<;>
-<if>
-<(>
-<id,b>
-<+>
-Lval
-<id,c>
-<==>
-Lval
-<id,a>
-<&&>
-Lval
-<id,d>
-<!=>
-Lval
-<id,a>
-</>
-Lval
-<intd>
-ExpNumber:0
-<)>
-<{>
-<id,t>
-<=>
-Lval
-<id,b>
-<+>
-Lval
-<id,c>
-</>
-Lval
-<id,d>
-<*>
-Lval
-<intd>
-ExpNumber:0
-<;>
-stmt1
-<id,put--accepting rule at line 80 ("(")
+--accepting rule at line 80 ("(")
 --accepting rule at line 112 ("t")
 --accepting rule at line 81 (")")
+Lval
+<intd>
+ExpNumber:0
+<;>
+stmt1
+<id,putint>
+<(>
+<id,t>
+<)>
+33333333333
 --accepting rule at line 75 (";")
 --accepting rule at line 115 ("
 ")
@@ -287,6 +305,14 @@ stmt1
 --accepting rule at line 112 ("c")
 --accepting rule at line 114 (" ")
 --accepting rule at line 96 ("<")
+Lval
+<;>
+<}>
+<if>
+<(>
+<id,c>
+<<>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 111 ("0")
 --accepting rule at line 114 (" ")
@@ -295,22 +321,45 @@ stmt1
 --accepting rule at line 112 ("a")
 --accepting rule at line 114 (" ")
 --accepting rule at line 85 ("-")
+Lval
+<into>
+ExpNumber:0
+<||>
+<id,a>
+<->
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("c")
 --accepting rule at line 114 (" ")
 --accepting rule at line 93 ("==")
+Lval
+<id,c>
+<==>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("b")
 --accepting rule at line 114 (" ")
 --accepting rule at line 90 ("&&")
+Lval
+<id,b>
+<&&>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("a")
 --accepting rule at line 114 (" ")
 --accepting rule at line 94 ("!=")
+Lval
+<id,a>
+<!=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("d")
 --accepting rule at line 114 (" ")
 --accepting rule at line 86 ("*")
+Lval
+<id,d>
+<*>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 109 ("2")
 --accepting rule at line 81 (")")
@@ -329,6 +378,14 @@ stmt1
 --accepting rule at line 112 ("t")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+Lval
+<intd>
+ExpNumber:0
+<)>
+<{>
+<id,t>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 109 ("1")
 --accepting rule at line 75 (";")
@@ -346,6 +403,16 @@ stmt1
 --accepting rule at line 80 ("(")
 --accepting rule at line 112 ("t")
 --accepting rule at line 81 (")")
+Lval
+<intd>
+ExpNumber:0
+<;>
+stmt1
+<id,putint>
+<(>
+<id,t>
+<)>
+33333333333
 --accepting rule at line 75 (";")
 --accepting rule at line 115 ("
 ")
@@ -371,51 +438,6 @@ stmt1
 ")
 --(end of buffer or a NUL)
 --EOF (start condition 0)
-int>
-<(>
-<id,t>
-<)>
-Lval
-<;>
-<}>
-<if>
-<(>
-<id,c>
-<<>
-Lval
-<into>
-ExpNumber:0
-<||>
-<id,a>
-<->
-Lval
-<id,c>
-<==>
-Lval
-<id,b>
-<&&>
-Lval
-<id,a>
-<!=>
-Lval
-<id,d>
-<*>
-Lval
-<intd>
-ExpNumber:0
-<)>
-<{>
-<id,t>
-<=>
-Lval
-<intd>
-ExpNumber:0
-<;>
-stmt1
-<id,putint>
-<(>
-<id,t>
-<)>
 Lval
 <;>
 <}>
@@ -605,10 +627,12 @@ ID             category       type           depictor
                
 main           Function       TYPEINTEGER    NOT NULL       
 ===========================================================
+===========================================================
 Formal:main
 ID             category       type           depictor
               
                NOParam                       NOT NULL       
+===========================================================
 ===========================================================
 Local:main
 ID             category       type           depictor
@@ -620,5 +644,130 @@ d              Variable       TYPEINTEGER    NULL
 t              Variable       TYPEINTEGER    NULL           
                Block          BLOCKStmt      NULL           
                Block          BLOCKStmt      NULL           
-123456pigpigpig
-Segmentation fault (core dumped)
+===========================================================
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+
+~~~~TAC~~~~~
+ No  Source Position	TACCode
+_______________________________________
+  0  (at line   0)	CALL main
+
+  1  (at line   2)	FUNCTION main :
+  2  (at line   7)	_t42 := #10
+  3  (at line   7)	 := _t42
+  4  (at line   8)	_t41 := #6
+  5  (at line   8)	 := _t41
+  6  (at line   9)	_t40 := #4
+  7  (at line   9)	 := _t40
+  8  (at line  10)	_t39 := #5
+  9  (at line  10)	 := _t39
+ 10  (at line  12)	_t22 := 
+ 11  (at line  12)	_t23 := 
+ 12  (at line  12)	_t19 := _t22 + _t23
+ 13  (at line  12)	_t24 := 
+ 14  (at line  12)	IF _t19 = _t24 GOTO label6
+ 15  (at line  12)	GOTO label5
+ 16  (at line  12)	LABEL label6 :
+ 17  (at line  12)	_t25 := 
+ 18  (at line  12)	_t29 := 
+ 19  (at line  12)	_t30 := #2
+ 20  (at line  12)	_t28 := _t29 / _t30
+ 21  (at line  12)	IF _t25 != _t28 GOTO label4
+ 22  (at line  12)	GOTO label5
+ 23  (at line  12)	LABEL label4 :
+ 24  (at line  13)	_t33 := 
+ 25  (at line  13)	_t37 := 
+ 26  (at line  13)	_t38 := 
+ 27  (at line  13)	_t35 := _t37 / _t38
+ 28  (at line  13)	_t36 := #2
+ 29  (at line  13)	_t34 := _t35 * _t36
+ 30  (at line  13)	_t32 := _t33 + _t34
+ 31  (at line  13)	 := _t32
+ 32  (at line  14)	_t31 := 
+ 33  (at line  14)	ARG _t31
+ 34  (at line  14)	CALL 
+ 35  (at line  12)	LABEL label5 :
+ 36  (at line  16)	_t1 := 
+ 37  (at line  16)	_t4 := #0
+ 38  (at line  16)	IF _t1 < _t4 GOTO label0
+ 39  (at line  16)	GOTO label2
+ 40  (at line  16)	LABEL label2 :
+ 41  (at line  16)	_t8 := 
+ 42  (at line  16)	_t9 := 
+ 43  (at line  16)	_t5 := _t8 - _t9
+ 44  (at line  16)	_t10 := 
+ 45  (at line  16)	IF _t5 = _t10 GOTO label3
+ 46  (at line  16)	GOTO label1
+ 47  (at line  16)	LABEL label3 :
+ 48  (at line  16)	_t11 := 
+ 49  (at line  16)	_t15 := 
+ 50  (at line  16)	_t16 := #2
+ 51  (at line  16)	_t14 := _t15 * _t16
+ 52  (at line  16)	IF _t11 != _t14 GOTO label0
+ 53  (at line  16)	GOTO label1
+ 54  (at line  16)	LABEL label0 :
+ 55  (at line  17)	_t18 := #1
+ 56  (at line  17)	 := _t18
+ 57  (at line  18)	_t17 := 
+ 58  (at line  18)	ARG _t17
+ 59  (at line  18)	CALL 
+ 60  (at line  16)	LABEL label1 :
+ 61  (at line  20)	_t0 := #0
+ 62  (at line  20)	RETURN _t0
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+build assembly code
+tac type FUNCTIONDF
+tec type ASSIGN
+findregister: insldr rd=0,r1=11,r2 offset=0,op2type=1, insefft=0
+tec type ASSIGN
+tec type ASSIGN
+findregister: insldr rd=1,r1=11,r2 offset=0,op2type=1, insefft=0
+tec type ASSIGN
+tec type ASSIGN
+findregister: insldr rd=2,r1=11,r2 offset=0,op2type=1, insefft=0
+tec type ASSIGN
+tec type ASSIGN
+findregister: insldr rd=3,r1=11,r2 offset=0,op2type=1, insefft=0
+tec type ASSIGN
+tec type ASSIGN
+findregister: insldr rd=4,r1=11,r2 offset=0,op2type=1, insefft=0
+tec type ASSIGN
+findregister: insldr rd=5,r1=11,r2 offset=0,op2type=1, insefft=0
+tac type ADD
+findregister: insldr rd=6,r1=11,r2 offset=0,op2type=1, insefft=0
+tec type ASSIGN
+findregister: insldr rd=8,r1=11,r2 offset=0,op2type=1, insefft=0
+tac type IFEQ
+tac type GOTO
+tac type LABELDF
+tec type ASSIGN
+findregister: insldr rd=9,r1=11,r2 offset=0,op2type=1, insefft=0
+tec type ASSIGN
+findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
+tec type ASSIGN
+findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
+tac type DIV
+compiler: ./ObjectCode/Arm.cpp:102: ARM::ARM(TACCode*, ScopeItem&): Assertion `code.dest.Type = VARIABLE' failed.
+Aborted (core dumped)

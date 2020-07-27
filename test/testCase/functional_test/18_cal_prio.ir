@@ -29,6 +29,23 @@
 --accepting rule at line 112 ("a")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+<int>
+<id,a>
+<;>
+<int>
+<id,b>
+<;>
+<int>
+<id,c>
+<;>
+<int>
+<id,main>
+<(>
+<)>
+<{>
+<id,a>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("getint")
 --accepting rule at line 80 ("(")
@@ -40,6 +57,15 @@
 --accepting rule at line 112 ("b")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+Lval
+<id,getint>
+<(>
+<)>
+<;>
+stmt1
+<id,b>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("getint")
 --accepting rule at line 80 ("(")
@@ -51,6 +77,15 @@
 --accepting rule at line 112 ("c")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+Lval
+<id,getint>
+<(>
+<)>
+<;>
+stmt1
+<id,c>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("getint")
 --accepting rule at line 80 ("(")
@@ -69,13 +104,37 @@
 --accepting rule at line 112 ("d")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+Lval
+<id,getint>
+<(>
+<)>
+<;>
+stmt1
+<int>
+<id,d>
+<;>
+<id,d>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("a")
 --accepting rule at line 84 ("+")
+Lval
+<id,a>
+<+>
+33333333333
 --accepting rule at line 112 ("b")
 --accepting rule at line 86 ("*")
+Lval
+<id,b>
+<*>
+33333333333
 --accepting rule at line 112 ("c")
 --accepting rule at line 75 (";")
+Lval
+<id,c>
+<;>
+33333333333
 --accepting rule at line 115 ("
 ")
 --accepting rule at line 114 ("	")
@@ -83,6 +142,12 @@
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("d")
 --accepting rule at line 75 (";")
+Lval
+stmt1
+<return>
+<id,d>
+<;>
+33333333333
 --accepting rule at line 115 ("
 ")
 --accepting rule at line 79 ("}")
@@ -90,63 +155,6 @@
 ")
 --(end of buffer or a NUL)
 --EOF (start condition 0)
-<int>
-<id,a>
-<;>
-<int>
-<id,b>
-<;>
-<int>
-<id,c>
-<;>
-<int>
-<id,main>
-<(>
-<)>
-<{>
-<id,a>
-<=>
-Lval
-<id,getint>
-<(>
-<)>
-<;>
-stmt1
-<id,b>
-<=>
-Lval
-<id,getint>
-<(>
-<)>
-<;>
-stmt1
-<id,c>
-<=>
-Lval
-<id,getint>
-<(>
-<)>
-<;>
-stmt1
-<int>
-<id,d>
-<;>
-<id,d>
-<=>
-Lval
-<id,a>
-<+>
-Lval
-<id,b>
-<*>
-Lval
-<id,c>
-<;>
-Lval
-stmt1
-<return>
-<id,d>
-<;>
 Lval
 <}>
 CompUnits (1)
@@ -222,13 +230,67 @@ b              Variable       TYPEINTEGER    NULL
 c              Variable       TYPEINTEGER    NULL           
 main           Function       TYPEINTEGER    NOT NULL       
 ===========================================================
+===========================================================
 Formal:main
 ID             category       type           depictor
               
                NOParam                       NOT NULL       
 ===========================================================
+===========================================================
 Local:main
 ID             category       type           depictor
               
 d              Variable       TYPEINTEGER    NULL           
-Segmentation fault (core dumped)
+===========================================================
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+
+~~~~TAC~~~~~
+ No  Source Position	TACCode
+_______________________________________
+  0  (at line   0)	CALL main
+
+  1  (at line   4)	FUNCTION main :
+  2  (at line   5)	_t8 := CALL 
+  3  (at line   5)	 := _t8
+  4  (at line   6)	_t7 := CALL 
+  5  (at line   6)	 := _t7
+  6  (at line   7)	_t6 := CALL 
+  7  (at line   7)	 := _t6
+  8  (at line   9)	_t2 := 
+  9  (at line   9)	_t4 := 
+ 10  (at line   9)	_t5 := 
+ 11  (at line   9)	_t3 := _t4 * _t5
+ 12  (at line   9)	_t1 := _t2 + _t3
+ 13  (at line   9)	 := _t1
+ 14  (at line  10)	_t0 := 
+ 15  (at line  10)	RETURN _t0
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+build assembly code
+tac type FUNCTIONDF
+tac type CALLASSIGN
+findregister: insldr rd=0,r1=11,r2 offset=0,op2type=1, insefft=0
+tec type ASSIGN
+tac type CALLASSIGN
+findregister: insldr rd=1,r1=11,r2 offset=0,op2type=1, insefft=0
+tec type ASSIGN
+tac type CALLASSIGN
+findregister: insldr rd=2,r1=11,r2 offset=0,op2type=1, insefft=0
+tec type ASSIGN
+tec type ASSIGN
+findregister: insldr rd=3,r1=11,r2 offset=0,op2type=1, insefft=0
+tec type ASSIGN
+findregister: insldr rd=4,r1=11,r2 offset=0,op2type=1, insefft=0
+tec type ASSIGN
+findregister: insldr rd=5,r1=11,r2 offset=0,op2type=1, insefft=0
+tac type MUL
+compiler: ./ObjectCode/Arm.cpp:89: ARM::ARM(TACCode*, ScopeItem&): Assertion `code.dest.Type = VARIABLE' failed.
+Aborted (core dumped)

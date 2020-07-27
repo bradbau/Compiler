@@ -18,22 +18,6 @@
 --accepting rule at line 114 ("	")
 --accepting rule at line 112 ("a")
 --accepting rule at line 89 ("=")
---accepting rule at line 109 ("10")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 ("	")
---accepting rule at line 108 ("return")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("a")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 79 ("}")
---accepting rule at line 115 ("
-")
---(end of buffer or a NUL)
---EOF (start condition 0)
 <int>
 <id,a>
 <;>
@@ -44,6 +28,16 @@
 <{>
 <id,a>
 <=>
+33333333333
+--accepting rule at line 109 ("10")
+--accepting rule at line 75 (";")
+--accepting rule at line 115 ("
+")
+--accepting rule at line 114 ("	")
+--accepting rule at line 108 ("return")
+--accepting rule at line 114 (" ")
+--accepting rule at line 112 ("a")
+--accepting rule at line 75 (";")
 Lval
 <intd>
 ExpNumber:0
@@ -52,6 +46,14 @@ stmt1
 <return>
 <id,a>
 <;>
+33333333333
+--accepting rule at line 115 ("
+")
+--accepting rule at line 79 ("}")
+--accepting rule at line 115 ("
+")
+--(end of buffer or a NUL)
+--EOF (start condition 0)
 Lval
 <}>
 CompUnits (1)
@@ -83,8 +85,37 @@ ID             category       type           depictor
 a              Variable       TYPEINTEGER    NULL           
 main           Function       TYPEINTEGER    NOT NULL       
 ===========================================================
+===========================================================
 Formal:main
 ID             category       type           depictor
               
                NOParam                       NULL           
-Segmentation fault (core dumped)
+===========================================================
+===========================================================
+Local:main
+ID             category       type           depictor
+              
+===========================================================
+
+~~~~TAC~~~~~
+ No  Source Position	TACCode
+_______________________________________
+  0  (at line   0)	CALL main
+
+  1  (at line   3)	FUNCTION main :
+  2  (at line   4)	_t1 := #10
+  3  (at line   4)	 := _t1
+  4  (at line   5)	_t0 := 
+  5  (at line   5)	RETURN _t0
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+build assembly code
+tac type FUNCTIONDF
+tec type ASSIGN
+tec type ASSIGN
+tec type ASSIGN
+findregister: insldr rd=0,r1=11,r2 offset=0,op2type=1, insefft=0
+tac type RETURN
+tac build complete
+push instruction
+compiler: ./ObjectCode/ArmInstruction.cpp:108: virtual std::__cxx11::string CalculateInstruction::toString(): Assertion `ARMInstruction::getRd()>=0&&ARMInstruction::getRd()<=15' failed.
+Aborted (core dumped)

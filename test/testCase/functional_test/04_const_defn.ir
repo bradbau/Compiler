@@ -27,11 +27,6 @@
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("x")
 --accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 79 ("}")
---(end of buffer or a NUL)
---EOF (start condition 0)
 <const>
 <int>
 <id,x>
@@ -47,6 +42,12 @@ ExpNumber:0
 <return>
 <id,x>
 <;>
+33333333333
+--accepting rule at line 115 ("
+")
+--accepting rule at line 79 ("}")
+--(end of buffer or a NUL)
+--EOF (start condition 0)
 Lval
 <}>
 CompUnits (1)
@@ -75,8 +76,37 @@ ID             category       type           depictor
 x              Variable       TYPEINTEGER    NULL           
 main           Function       TYPEINTEGER    NOT NULL       
 ===========================================================
+===========================================================
 Formal:main
 ID             category       type           depictor
               
                NOParam                       NULL           
+===========================================================
+===========================================================
+Local:main
+ID             category       type           depictor
+              
+===========================================================
+
+~~~~TAC~~~~~
+ No  Source Position	TACCode
+_______________________________________
+  0  (at line   0)	CALL main
+  1  (at line   1)	x := #4
+
+  2  (at line   3)	FUNCTION main :
+  3  (at line   4)	_t0 := 
+  4  (at line   4)	RETURN _t0
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+build assembly code
+tec type ASSIGN
+findregister: insldr rd=0,r1=11,r2 offset=0,op2type=1, insefft=0
+tac type FUNCTIONDF
+tec type ASSIGN
+findregister: insldr rd=1,r1=11,r2 offset=0,op2type=1, insefft=0
+tac type RETURN
+tac build complete
+op2type==1
+push instruction
+op2type==1
 Segmentation fault (core dumped)

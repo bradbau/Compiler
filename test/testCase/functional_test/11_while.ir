@@ -22,69 +22,6 @@
 --accepting rule at line 114 ("	")
 --accepting rule at line 112 ("b")
 --accepting rule at line 89 ("=")
---accepting rule at line 111 ("0")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 ("	")
---accepting rule at line 112 ("a")
---accepting rule at line 89 ("=")
---accepting rule at line 109 ("3")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 ("	")
---accepting rule at line 103 ("while")
---accepting rule at line 80 ("(")
---accepting rule at line 112 ("a")
---accepting rule at line 95 (">")
---accepting rule at line 111 ("0")
---accepting rule at line 81 (")")
---accepting rule at line 78 ("{")
---accepting rule at line 114 ("	")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 ("	")
---accepting rule at line 114 ("	")
---accepting rule at line 112 ("b")
---accepting rule at line 114 (" ")
---accepting rule at line 89 ("=")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("b")
---accepting rule at line 84 ("+")
---accepting rule at line 112 ("a")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 ("	")
---accepting rule at line 114 ("	")
---accepting rule at line 112 ("a")
---accepting rule at line 114 (" ")
---accepting rule at line 89 ("=")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("a")
---accepting rule at line 85 ("-")
---accepting rule at line 109 ("1")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 ("	")
---accepting rule at line 79 ("}")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 ("	")
---accepting rule at line 108 ("return")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("b")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 79 ("}")
---accepting rule at line 114 ("	")
---accepting rule at line 115 ("
-")
---(end of buffer or a NUL)
---EOF (start condition 0)
 <int>
 <id,a>
 <;>
@@ -98,6 +35,14 @@
 <{>
 <id,b>
 <=>
+33333333333
+--accepting rule at line 111 ("0")
+--accepting rule at line 75 (";")
+--accepting rule at line 115 ("
+")
+--accepting rule at line 114 ("	")
+--accepting rule at line 112 ("a")
+--accepting rule at line 89 ("=")
 Lval
 <into>
 ExpNumber:0
@@ -105,6 +50,16 @@ ExpNumber:0
 stmt1
 <id,a>
 <=>
+33333333333
+--accepting rule at line 109 ("3")
+--accepting rule at line 75 (";")
+--accepting rule at line 115 ("
+")
+--accepting rule at line 114 ("	")
+--accepting rule at line 103 ("while")
+--accepting rule at line 80 ("(")
+--accepting rule at line 112 ("a")
+--accepting rule at line 95 (">")
 Lval
 <intd>
 ExpNumber:0
@@ -114,6 +69,18 @@ stmt1
 <(>
 <id,a>
 <>>
+33333333333
+--accepting rule at line 111 ("0")
+--accepting rule at line 81 (")")
+--accepting rule at line 78 ("{")
+--accepting rule at line 114 ("	")
+--accepting rule at line 115 ("
+")
+--accepting rule at line 114 ("	")
+--accepting rule at line 114 ("	")
+--accepting rule at line 112 ("b")
+--accepting rule at line 114 (" ")
+--accepting rule at line 89 ("=")
 Lval
 <into>
 ExpNumber:0
@@ -121,19 +88,52 @@ ExpNumber:0
 <{>
 <id,b>
 <=>
+33333333333
+--accepting rule at line 114 (" ")
+--accepting rule at line 112 ("b")
+--accepting rule at line 84 ("+")
 Lval
 <id,b>
 <+>
+33333333333
+--accepting rule at line 112 ("a")
+--accepting rule at line 75 (";")
 Lval
 <id,a>
 <;>
+33333333333
+--accepting rule at line 115 ("
+")
+--accepting rule at line 114 ("	")
+--accepting rule at line 114 ("	")
+--accepting rule at line 112 ("a")
+--accepting rule at line 114 (" ")
+--accepting rule at line 89 ("=")
 Lval
 stmt1
 <id,a>
 <=>
+33333333333
+--accepting rule at line 114 (" ")
+--accepting rule at line 112 ("a")
+--accepting rule at line 85 ("-")
 Lval
 <id,a>
 <->
+33333333333
+--accepting rule at line 109 ("1")
+--accepting rule at line 75 (";")
+--accepting rule at line 115 ("
+")
+--accepting rule at line 114 ("	")
+--accepting rule at line 79 ("}")
+--accepting rule at line 115 ("
+")
+--accepting rule at line 114 ("	")
+--accepting rule at line 108 ("return")
+--accepting rule at line 114 (" ")
+--accepting rule at line 112 ("b")
+--accepting rule at line 75 (";")
 Lval
 <intd>
 ExpNumber:0
@@ -143,6 +143,15 @@ stmt1
 <return>
 <id,b>
 <;>
+33333333333
+--accepting rule at line 115 ("
+")
+--accepting rule at line 79 ("}")
+--accepting rule at line 114 ("	")
+--accepting rule at line 115 ("
+")
+--(end of buffer or a NUL)
+--EOF (start condition 0)
 Lval
 <}>
 CompUnits (1)
@@ -223,10 +232,12 @@ a              Variable       TYPEINTEGER    NULL
 b              Variable       TYPEINTEGER    NULL           
 main           Function       TYPEINTEGER    NOT NULL       
 ===========================================================
+===========================================================
 Formal:main
 ID             category       type           depictor
               
                NOParam                       NOT NULL       
+===========================================================
 ===========================================================
 Local:main
 ID             category       type           depictor

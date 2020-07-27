@@ -32,4 +32,14 @@ ID             category       type           depictor
 aaa            Variable       TYPEINTEGER    NULL           
 bbb            Variable       TYPEINTEGER    NULL           
 ccc            Variable       TYPEINTEGER    NULL           
-Segmentation fault (core dumped)
+===========================================================
+
+~~~~TAC~~~~~
+ No  Source Position	TACCode
+_______________________________________
+  0  (at line   0)	CALL main
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+build assembly code
+tac build complete
+#armv7 assembly code
+

@@ -32,10 +32,38 @@
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("c")
 --accepting rule at line 89 ("=")
+<int>
+<id,a>
+<,>
+<id,b>
+<,>
+<id,c>
+<;>
+<void>
+<id,add>
+<(>
+<int>
+<id,a>
+<,>
+<int>
+<id,b>
+<)>
+<{>
+<id,c>
+<=>
+33333333333
 --accepting rule at line 112 ("a")
 --accepting rule at line 84 ("+")
+Lval
+<id,a>
+<+>
+33333333333
 --accepting rule at line 112 ("b")
 --accepting rule at line 75 (";")
+Lval
+<id,b>
+<;>
+33333333333
 --accepting rule at line 115 ("
 ")
 --accepting rule at line 114 (" ")
@@ -65,71 +93,6 @@
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("a")
 --accepting rule at line 89 ("=")
---accepting rule at line 109 ("3")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("b")
---accepting rule at line 89 ("=")
---accepting rule at line 109 ("2")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("add")
---accepting rule at line 80 ("(")
---accepting rule at line 112 ("a")
---accepting rule at line 76 (",")
---accepting rule at line 112 ("b")
---accepting rule at line 81 (")")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 108 ("return")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("c")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 79 ("}")
---(end of buffer or a NUL)
---EOF (start condition 0)
-<int>
-<id,a>
-<,>
-<id,b>
-<,>
-<id,c>
-<;>
-<void>
-<id,add>
-<(>
-<int>
-<id,a>
-<,>
-<int>
-<id,b>
-<)>
-<{>
-<id,c>
-<=>
-Lval
-<id,a>
-<+>
-Lval
-<id,b>
-<;>
 Lval
 stmt1
 <return>
@@ -142,6 +105,17 @@ stmt1
 <{>
 <id,a>
 <=>
+33333333333
+--accepting rule at line 109 ("3")
+--accepting rule at line 75 (";")
+--accepting rule at line 115 ("
+")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 112 ("b")
+--accepting rule at line 89 ("=")
 Lval
 <intd>
 ExpNumber:0
@@ -149,6 +123,19 @@ ExpNumber:0
 stmt1
 <id,b>
 <=>
+33333333333
+--accepting rule at line 109 ("2")
+--accepting rule at line 75 (";")
+--accepting rule at line 115 ("
+")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 112 ("add")
+--accepting rule at line 80 ("(")
+--accepting rule at line 112 ("a")
+--accepting rule at line 76 (",")
 Lval
 <intd>
 ExpNumber:0
@@ -158,14 +145,35 @@ stmt1
 <(>
 <id,a>
 <,>
+33333333333
+--accepting rule at line 112 ("b")
+--accepting rule at line 81 (")")
 Lval
 <id,b>
 <)>
+33333333333
+--accepting rule at line 75 (";")
+--accepting rule at line 115 ("
+")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 108 ("return")
+--accepting rule at line 114 (" ")
+--accepting rule at line 112 ("c")
+--accepting rule at line 75 (";")
 Lval
 <;>
 <return>
 <id,c>
 <;>
+33333333333
+--accepting rule at line 115 ("
+")
+--accepting rule at line 79 ("}")
+--(end of buffer or a NUL)
+--EOF (start condition 0)
 Lval
 <}>
 CompUnits (1)
@@ -247,18 +255,23 @@ c              Variable       TYPEINTEGER    NULL
 add            Function       void           NOT NULL       
 main           Function       TYPEINTEGER    NOT NULL       
 ===========================================================
+===========================================================
 Formal:add
 ID             category       type           depictor
               
 a              Variable       TYPEINTEGER    NULL           
 b              Variable       TYPEINTEGER    NULL           
 ===========================================================
+===========================================================
 Local:add
 ID             category       type           depictor
               
+===========================================================
 ===========================================================
 Formal:main
 ID             category       type           depictor
               
                NOParam                       NULL           
-Segmentation fault (core dumped)
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+Aborted (core dumped)

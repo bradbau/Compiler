@@ -34,8 +34,8 @@ LIBS = -lc -lm -ll -lfl #-ly
 
 
 #sources 所有含有源代码的目录
-SRCS_DIR= ./GrammarTree   ./SymbolTable ./IntermediateCode #Generated  # ARM
-#INCLUDE_DIR=GrammarTree SymbolTable IntermediateCode Generated  # ARM
+SRCS_DIR= ./GrammarTree   ./SymbolTable ./IntermediateCode #Generated  # ObjectCode
+#INCLUDE_DIR=GrammarTree SymbolTable IntermediateCode Generated  # ObjectCode
 
 SRCS=$(wildcard  ./GrammarTree/*.c ./SymbolTable/*.c ./IntermediateCode/*.c *.c)  $(wildcard ./GrammarTree/*.cpp ./SymbolTable/*.cpp ./IntermediateCode/*.cpp *.cpp)
 INCLUDES=-I./GrammarTree   -I./SymbolTable -I./IntermediateCode #${wildcard ./GrammarTree/*.h ./SymbolTable/*.h ./IntermediateCode/*.h *.h}
@@ -49,10 +49,10 @@ JUNK =  *.o lex.yy.c  y.tab.c y.tab.h
 
 
 	## 目标编译器编译
-$(COMPILER) : SysY.l  SysY.y ./GrammarTree/AST.h ./SymbolTable/SymbolTable.h ./SymbolTable/ScopeStack_stl.h ./IntermediateCode/Quadruple.h ./IntermediateCode/QuadrupleOperand.h ./IntermediateCode/TAC.h
+$(COMPILER) : SysY.l  SysY.y ./GrammarTree/AST.h ./SymbolTable/SymbolTable.h ./SymbolTable/ScopeStack_stl.h ./IntermediateCode/Quadruple.h ./IntermediateCode/QuadrupleOperand.h ./IntermediateCode/TAC.h ./ObjectCode/Arm.h ./ObjectCode/ArmInstruction.h 
 	$(YACC) $(YACCFLAGS) SysY.y 
 	$(LEX) $(LEXFLAGS) SysY.l
-	$(CC)   ./GrammarTree/AST.cpp  ./SymbolTable/SymbolTable.cpp ./SymbolTable/ScopeStack_stl.cpp ./IntermediateCode/TAC.cpp lex.yy.c  y.tab.c y.tab.h  ${CFLAGS} -o $@
+	$(CC)   ./GrammarTree/AST.cpp  ./SymbolTable/SymbolTable.cpp ./SymbolTable/ScopeStack_stl.cpp ./IntermediateCode/TAC.cpp ./ObjectCode/Arm.cpp ./ObjectCode/ArmInstruction.cpp lex.yy.c  y.tab.c   ${CFLAGS} -o $@
 
 
 

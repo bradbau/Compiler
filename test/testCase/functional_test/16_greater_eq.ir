@@ -68,42 +68,6 @@
 --accepting rule at line 82 ("[")
 --accepting rule at line 112 ("i")
 --accepting rule at line 83 ("]")
---accepting rule at line 97 (">=")
---accepting rule at line 112 ("a")
---accepting rule at line 81 (")")
---accepting rule at line 78 ("{")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("i")
---accepting rule at line 89 ("=")
---accepting rule at line 112 ("i")
---accepting rule at line 84 ("+")
---accepting rule at line 109 ("1")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 79 ("}")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 108 ("return")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("i")
 <int>
 <id,a>
 <=>
@@ -163,18 +127,61 @@ ExpNumber:0
 <[>
 <id,i>
 <]>
+33333333333
+--accepting rule at line 97 (">=")
 Lval
 <>=>
+33333333333
+22222222222222
+--accepting rule at line 112 ("a")
+--accepting rule at line 81 (")")
 Lval
 <id,a>
 <)>
+33333333333
+--accepting rule at line 78 ("{")
+--accepting rule at line 115 ("
+")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 112 ("i")
+--accepting rule at line 89 ("=")
 Lval
 <{>
 <id,i>
 <=>
+33333333333
+--accepting rule at line 112 ("i")
+--accepting rule at line 84 ("+")
 Lval
 <id,i>
 <+>
+33333333333
+--accepting rule at line 109 ("1")
+--accepting rule at line 75 (";")
+--accepting rule at line 115 ("
+")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 79 ("}")
+--accepting rule at line 115 ("
+")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 108 ("return")
+--accepting rule at line 114 (" ")
+--accepting rule at line 112 ("i")
+--accepting rule at line 75 (";")
 Lval
 <intd>
 ExpNumber:0
@@ -182,14 +189,14 @@ ExpNumber:0
 stmt1
 <}>
 <return>
-<i--accepting rule at line 75 (";")
+<id,i>
+<;>
+33333333333
 --accepting rule at line 115 ("
 ")
 --accepting rule at line 79 ("}")
 --(end of buffer or a NUL)
 --EOF (start condition 0)
-d,i>
-<;>
 Lval
 <}>
 CompUnits (1)
@@ -295,13 +302,15 @@ Global
 ID             category       type           depictor
                
 a              Variable       TYPEINTEGER    NULL           
-s              Array          TYPEINTEGER    NULL           
+s              Array          TYPEINTEGER    ----------> dim=1
 main           Function       TYPEINTEGER    NOT NULL       
+===========================================================
 ===========================================================
 Formal:main
 ID             category       type           depictor
               
                NOParam                       NOT NULL       
+===========================================================
 ===========================================================
 Local:main
 ID             category       type           depictor

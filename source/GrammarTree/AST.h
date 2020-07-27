@@ -14,6 +14,7 @@ extern char* yytext;
 extern FILE* yyin;
 extern int yylineno;
 extern int yyparse();
+struct ScopeItem;
 
 
 class ASTTree{

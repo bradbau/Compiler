@@ -19,6 +19,9 @@ ScopeItem* addIntoScope(ScopeType stype, ScopeItem* pre_si, string name, SysYCat
     if (pre_si) {
         pre_si->prev = si;
     }
+    if(category == Array){
+        si->array_depictor = depictor;
+    }
     return si;
 }
 
@@ -92,18 +95,24 @@ void displayGlobal(ScopeItem* t){
             cout << setw(15) << "NOParam";
             break;
         default:
+            cout << s->category;
             break;
         }
         cout << setw(15) << s->type;
-        if(s->depictor == NULL){
+        if(s->depictor == NULL && s->array_depictor == NULL){
             cout << setw(15) << "NULL" << endl;
         }else{
-            cout << setw(15) << "NOT NULL" << endl;
-            //将指向Formal的指针暂缓斯存储在vector中，等Global全都打印完再打印Formal
-            FormalScope.push_back(make_pair(s->depictor, s->name));
+            if(s->category != Array){
+                cout << setw(15) << "NOT NULL" << endl;
+                //将指向Formal的指针暂缓斯存储在vector中，等Global全都打印完再打印Formal
+                FormalScope.push_back(make_pair(s->depictor, s->name));
+            }else{
+                cout << "----------> " << "dim=" << s->array_depictor->dim  << endl;
+            }
         }
         s = s->next;
     }
+    cout << "===========================================================\n";
     //打印Formal
     for(int i=0; i<FormalScope.size(); i++){
         displayFormal(FormalScope[i].first, FormalScope[i].second);
@@ -152,13 +161,18 @@ void displayFormal(ScopeItem* t, string tablename){
             break;
         }
         cout << setw(15) << s->type;
-        if(s->depictor == NULL){
+        if(s->depictor == NULL && s->array_depictor == NULL){
             cout << setw(15) << "NULL" << endl;
         }else{
-            cout << setw(15) << "NOT NULL" << endl;
+            if(s->category != Array){
+                cout << setw(15) << "NOT NULL" << endl;            
+            }else{
+                cout << "----------> " << "dim=" << s->array_depictor->dim << endl;
+            }
         }
         s = s->next;
     }
+    cout << "===========================================================\n";
     //打印此Formal作用域对应的Local域
     //由于Formal作用域每一项的depictor都一样，所以直接用第一项的即可
     displayLocal(temp->depictor, tablename);
@@ -206,15 +220,20 @@ void displayLocal(ScopeItem* t, string tablename){
             break;
         }
         cout << setw(15) << s->type;
-        if(s->depictor == NULL){
+        if(s->depictor == NULL && s->array_depictor == NULL){
             cout << setw(15) << "NULL" << endl;
         }else{
-            cout << setw(15) << "NOT NULL" << endl;
-            //将指向内嵌域的指针暂缓斯存储在vector中，等Local全都打印完再打印内嵌域
-            EmbedScope.push_back(make_pair(s->depictor, "block"));
+            if(s->category != Array){
+                cout << setw(15) << "NOT NULL" << endl;
+                //将指向内嵌域的指针暂缓斯存储在vector中，等Local全都打印完再打印内嵌域
+                EmbedScope.push_back(make_pair(s->depictor, "block"));
+            }else{
+                cout << "----------> " << "dim=" << s->array_depictor->dim << endl;
+            }
         }
         s = s->next;
     }
+    cout << "===========================================================\n";
     //打印Embed
     for(int i=0; i<EmbedScope.size(); i++){
         displayLocal(EmbedScope[i].first, EmbedScope[i].second);

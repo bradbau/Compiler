@@ -23,6 +23,17 @@
 --accepting rule at line 112 ("a")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+<int>
+<id,if_if_Else>
+<(>
+<)>
+<{>
+<int>
+<id,a>
+<;>
+<id,a>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 109 ("5")
 --accepting rule at line 75 (";")
@@ -41,6 +52,17 @@
 --accepting rule at line 112 ("b")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+Lval
+<intd>
+ExpNumber:0
+<;>
+stmt1
+<int>
+<id,b>
+<;>
+<id,b>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 109 ("10")
 --accepting rule at line 75 (";")
@@ -53,6 +75,16 @@
 --accepting rule at line 112 ("a")
 --accepting rule at line 114 (" ")
 --accepting rule at line 93 ("==")
+Lval
+<intd>
+ExpNumber:0
+<;>
+stmt1
+<if>
+<(>
+<id,a>
+<==>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 109 ("5")
 --accepting rule at line 81 (")")
@@ -69,6 +101,16 @@
 --accepting rule at line 112 ("b")
 --accepting rule at line 114 (" ")
 --accepting rule at line 93 ("==")
+Lval
+<intd>
+ExpNumber:0
+<)>
+<{>
+<if>
+<(>
+<id,b>
+<==>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 109 ("10")
 --accepting rule at line 81 (")")
@@ -84,6 +126,13 @@
 --accepting rule at line 112 ("a")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+Lval
+<intd>
+ExpNumber:0
+<)>
+<id,a>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 109 ("25")
 --accepting rule at line 75 (";")
@@ -111,10 +160,24 @@
 --accepting rule at line 112 ("a")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+Lval
+<intd>
+ExpNumber:0
+<;>
+stmt1
+<}>
+<else>
+<id,a>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("a")
 --accepting rule at line 114 (" ")
 --accepting rule at line 84 ("+")
+Lval
+<id,a>
+<+>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 109 ("15")
 --accepting rule at line 75 (";")
@@ -127,6 +190,16 @@
 --accepting rule at line 80 ("(")
 --accepting rule at line 112 ("a")
 --accepting rule at line 81 (")")
+Lval
+<intd>
+ExpNumber:0
+<;>
+stmt1
+<return>
+<(>
+<id,a>
+<)>
+33333333333
 --accepting rule at line 75 (";")
 --accepting rule at line 115 ("
 ")
@@ -160,71 +233,6 @@
 ")
 --(end of buffer or a NUL)
 --EOF (start condition 0)
-<int>
-<id,if_if_Else>
-<(>
-<)>
-<{>
-<int>
-<id,a>
-<;>
-<id,a>
-<=>
-Lval
-<intd>
-ExpNumber:0
-<;>
-stmt1
-<int>
-<id,b>
-<;>
-<id,b>
-<=>
-Lval
-<intd>
-ExpNumber:0
-<;>
-stmt1
-<if>
-<(>
-<id,a>
-<==>
-Lval
-<intd>
-ExpNumber:0
-<)>
-<{>
-<if>
-<(>
-<id,b>
-<==>
-Lval
-<intd>
-ExpNumber:0
-<)>
-<id,a>
-<=>
-Lval
-<intd>
-ExpNumber:0
-<;>
-stmt1
-<}>
-<else>
-<id,a>
-<=>
-Lval
-<id,a>
-<+>
-Lval
-<intd>
-ExpNumber:0
-<;>
-stmt1
-<return>
-<(>
-<id,a>
-<)>
 Lval
 <;>
 <}>
@@ -329,10 +337,12 @@ ID             category       type           depictor
 if_if_Else     Function       TYPEINTEGER    NOT NULL       
 main           Function       TYPEINTEGER    NOT NULL       
 ===========================================================
+===========================================================
 Formal:if_if_Else
 ID             category       type           depictor
               
                NOParam                       NOT NULL       
+===========================================================
 ===========================================================
 Local:if_if_Else
 ID             category       type           depictor
@@ -341,8 +351,93 @@ a              Variable       TYPEINTEGER    NULL
 b              Variable       TYPEINTEGER    NULL           
                Block          BLOCKStmt      NULL           
 ===========================================================
+===========================================================
 Formal:main
 ID             category       type           depictor
               
                NOParam                       NULL           
-Segmentation fault (core dumped)
+===========================================================
+===========================================================
+Local:main
+ID             category       type           depictor
+              
+===========================================================
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+
+~~~~TAC~~~~~
+ No  Source Position	TACCode
+_______________________________________
+  0  (at line   0)	CALL main
+
+  1  (at line   2)	FUNCTION if_if_Else :
+  2  (at line   4)	_t13 := #5
+  3  (at line   4)	 := _t13
+  4  (at line   6)	_t12 := #10
+  5  (at line   6)	 := _t12
+  6  (at line   7)	_t4 := 
+  7  (at line   7)	_t7 := #5
+  8  (at line   7)	IF _t4 = _t7 GOTO label0
+  9  (at line   7)	GOTO label1
+ 10  (at line   7)	LABEL label0 :
+ 11  (at line   8)	_t8 := 
+ 12  (at line   8)	_t11 := #10
+ 13  (at line   8)	IF _t8 = _t11 GOTO label2
+ 14  (at line   8)	GOTO label3
+ 15  (at line   8)	LABEL label2 :
+ 16  (at line   8)	LABEL label3 :
+ 17  (at line   7)	GOTO label4
+ 18  (at line   7)	LABEL label1 :
+ 19  (at line   7)	LABEL label4 :
+ 20  (at line  13)	_t3 := 
+ 21  (at line  13)	_t2 := _t3
+ 22  (at line  13)	RETURN _t2
+
+ 23  (at line  16)	FUNCTION main :
+ 24  (at line  17)	_t1 := CALL if_if_Else
+ 25  (at line  17)	_t0 := _t1
+ 26  (at line  17)	RETURN _t0
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+build assembly code
+tac type FUNCTIONDF
+tec type ASSIGN
+findregister: insldr rd=0,r1=11,r2 offset=0,op2type=1, insefft=0
+tec type ASSIGN
+tec type ASSIGN
+findregister: insldr rd=1,r1=11,r2 offset=0,op2type=1, insefft=0
+tec type ASSIGN
+tec type ASSIGN
+findregister: insldr rd=2,r1=11,r2 offset=0,op2type=1, insefft=0
+tec type ASSIGN
+findregister: insldr rd=3,r1=11,r2 offset=0,op2type=1, insefft=0
+tac type IFEQ
+tac type GOTO
+tac type LABELDF
+tec type ASSIGN
+findregister: insldr rd=4,r1=11,r2 offset=0,op2type=1, insefft=0
+tec type ASSIGN
+findregister: insldr rd=5,r1=11,r2 offset=0,op2type=1, insefft=0
+tac type IFEQ
+tac type GOTO
+tac type LABELDF
+tac type LABELDF
+tac type GOTO
+tac type LABELDF
+tac type LABELDF
+tec type ASSIGN
+findregister: insldr rd=6,r1=11,r2 offset=0,op2type=1, insefft=0
+tec type ASSIGN
+findregister: insldr rd=8,r1=11,r2 offset=0,op2type=1, insefft=0
+tac type RETURN
+tac type FUNCTIONDF
+tac type CALLASSIGN
+tec type ASSIGN
+findregister: insldr rd=9,r1=11,r2 offset=0,op2type=1, insefft=0
+tac type RETURN
+tac build complete
+push instruction
+op2type==1
+compiler: ./ObjectCode/ArmInstruction.cpp:108: virtual std::__cxx11::string CalculateInstruction::toString(): Assertion `ARMInstruction::getRd()>=0&&ARMInstruction::getRd()<=15' failed.
+Aborted (core dumped)

@@ -45,8 +45,42 @@ ID             category       type           depictor
                
 main           Function       TYPEINTEGER    NOT NULL       
 ===========================================================
+===========================================================
 Formal:main
 ID             category       type           depictor
               
                NOParam                       NULL           
-Segmentation fault (core dumped)
+===========================================================
+===========================================================
+Local:main
+ID             category       type           depictor
+              
+===========================================================
+
+~~~~TAC~~~~~
+ No  Source Position	TACCode
+_______________________________________
+  0  (at line   0)	CALL main
+
+  1  (at line   1)	FUNCTION main :
+  2  (at line   2)	_t0 := #0
+  3  (at line   2)	RETURN _t0
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+build assembly code
+tac type FUNCTIONDF
+tec type ASSIGN
+findregister: insldr rd=0,r1=11,r2 offset=0,op2type=1, insefft=0
+tac type RETURN
+tac build complete
+push instruction
+op2type==1
+#armv7 assembly code
+main:
+PUSH {fp}
+ADD  fp, sp, #0
+LDR r0, [fp, 0x0]
+ADD  r0, r0, #0
+ADD  sp, fp, #0
+POP {fp}
+BX lr
+
