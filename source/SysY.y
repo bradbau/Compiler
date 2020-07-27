@@ -3,7 +3,12 @@
 %locations
 
 %{
-    #include <iostream>
+      #include <unistd.h>//参数处理头文件
+      #include<getopt.h> 
+      #include <iostream>
+      #include<string.h>
+      #include<string>   
+      #include <fstream>
     
     #include "./SymbolTable/SymbolTable.h"
     #include "./SymbolTable/ScopeStack_stl.h"
@@ -23,6 +28,14 @@
     extern int yydebug;
     extern int yywrap(void);
     void yyerror(const char* fmt, ...);
+
+      extern char *optarg;//参数处理外部变量
+      string CodeString;//输出代码字符串
+   
+
+    int dim = 0;
+    ScopeItem *recordArrayInfo;
+    ScopeItem *recordArrayInfo_param;
 %}
 
 %union {
@@ -144,12 +157,16 @@ FuncFParam: TYPEINTEGER IDENTIFIER{ASTTree *asttree = new ASTTree("FuncFParam", 
                 $$->SetFuncPType("TYPEINTEGER");
                 $$->si = addIntoScope(Formal, $$->si, $2->GetID(), Variable, "TYPEINTEGER", NULL);
                 }
-          | TYPEINTEGER IDENTIFIER OPLEFTBRACKET OPRIGHTBRACKET ArrayExps{ 
+          | TYPEINTEGER IDENTIFIER OPLEFTBRACKET OPRIGHTBRACKET ArrayExps{
+                cout << "1111111111111111" << endl; 
                 ASTTree *asttree = new ASTTree("FuncFParam", 1, yylineno, $5);
                 $$ = asttree;
                 $$->SetFuncPType("array");
                 $$->SetID($2->GetID()); 
-                $$->si = addIntoScope(Formal, $$->si, $2->GetID(), Array, "TYPEINTEGER", NULL);
+                dim++;
+                recordArrayInfo_param->dim = dim;
+                recordArrayInfo_param->len.insert(recordArrayInfo_param->len.begin(), NULL);//由于数组作函数形参时，第一维都是空的，所以我们设置为NULL
+                $$->si = addIntoScope(Formal, $$->si, $2->GetID(), Array, "TYPEINTEGER", recordArrayInfo_param);
                 }
           
           ;
@@ -214,19 +231,34 @@ ConstDef: VarDec OPASSIGN InitVal{ ASTTree *asttree = new ASTTree("ConstOpassign
 
 //VarDec节点是Decl节点的孙子节点，而Decl极可能出现在CompUnit中也可能出现在Block中，所以定义的变量极有可能是Local也有可能是Global。但是我们在VarDec处不好进行区分。我们可以先统一定义成Local，最后再CompUnit处将其再改为Global
 VarDec:   IDENTIFIER { $$ = $1;
+                dim = 0;
+                recordArrayInfo = NULL;
                 $$->si = addIntoScope(Local, $$->si, $1->GetID(), Variable, "TYPEINTEGER", NULL);
                 }   //ID结点，标识符符号串存放结点的type_id
          | VarDec OPLEFTBRACKET Exp OPRIGHTBRACKET { ASTTree *asttree = new ASTTree("ArrayDec", 1, yylineno, $1);
                 $$ = asttree;
                 $$->SetIntValue($3->GetIntValue());
                 $$->SetID($1->GetID());
-                $$->si = addIntoScope(Local, $$->si, $1->GetID(), Array, "TYPEINTEGER", NULL);
+                dim++;
+                if(dim == 1){
+                      //此时是第一次进入此位置，VarDec为Variable类型，需要为其定义新的arrayInfo
+                      ScopeItem *arrayInfo = (ScopeItem*)malloc(sizeof(ScopeItem));
+                      arrayInfo->dim = dim;
+                      arrayInfo->len.push_back($3);//将这一维长度的信息的指针添加到变长数组和中
+                      recordArrayInfo = arrayInfo;//recordArrayInfo是全局变量，在这里将指针记录下来方便后面再次使用
+                }else{
+                      //此时处理的已经不是数组的第一个维度，arrayInfo在前面也已经定义过，直接通过recordArrayInfo拿来用
+                      recordArrayInfo->dim = dim;
+                      recordArrayInfo->len.push_back($3);
+                }
+                
+                $$->si = addIntoScope(Local, $$->si, $1->GetID(), Array, "TYPEINTEGER", recordArrayInfo);
                 }     //数组,数组名存放在$$->type_id
          ;
 
 /*变量定义*/
 VarDef: VarDec{ $$ = $1;}  
-       | VarDec OPASSIGN InitVal{ ASTTree *asttree = new ASTTree("VarOPassign", 2, yylineno, $1,$3);
+       | VarDec OPASSIGN InitVal{ASTTree *asttree = new ASTTree("VarOPassign", 2, yylineno, $1,$3);
                 $$ = asttree; 
                 $$->si = $1->si;               
                 }
@@ -257,12 +289,25 @@ InitValList:{ $$ = NULL;}
            ;
 
 /*数组维度*/
-ArrayExps:{ ASTTree *asttree = new ASTTree("ArrayExps", 0, yylineno);$$ = asttree;}
-         | OPLEFTBRACKET Exp OPRIGHTBRACKET ArrayExps{ ASTTree *asttree = new ASTTree("ArrayExps", 2, yylineno, $2,$4);$$ = asttree; }
+ArrayExps:{ dim = 0;//初始化数组的维数
+            cout << "33333333333" << endl;
+            ScopeItem *arrayInfo2 = (ScopeItem*)malloc(sizeof(ScopeItem));
+            arrayInfo2->dim = dim;
+            recordArrayInfo_param = arrayInfo2;
+            ASTTree *asttree = new ASTTree("ArrayExps", 0, yylineno);
+            $$ = asttree;}
+         | OPLEFTBRACKET Exp OPRIGHTBRACKET ArrayExps{ 
+               cout << "22222222222222" << endl;
+               dim++;
+               recordArrayInfo_param->dim = dim;
+               recordArrayInfo_param->len.insert(recordArrayInfo_param->len.begin(), $2);//将记录数组这一维长度的EXP节点加入到len中
+               ASTTree *asttree = new ASTTree("ArrayExps", 2, yylineno, $2,$4);
+               $$ = asttree; 
+            }
          ;
 
 /*语句块*/ 
-Block:SPLEFTBRACE BlockItems SPRIGHTBRACE{ ASTTree *asttree = new ASTTree("Block", 1,yylineno, $2);
+Block:SPLEFTBRACE BlockItems SPRIGHTBRACE{ASTTree *asttree = new ASTTree("Block", 1,yylineno, $2);
                 $$ = asttree;
                 if($2 == NULL){
                       $$->si = NULL;
@@ -383,12 +428,53 @@ Exps:{ $$ = NULL;}
 
 
 int main(int argc, char *argv[]){
-        //extern int yyparse(void);
+            //extern int yyparse(void);
         //extern int yylex(void);
 	yyin=fopen(argv[1],"r");
+      
+      //处理输入参数
+       
+      char opt;
+      char* outputFileName;
+      outputFileName=(char*)malloc(256*sizeof(char));
+
+      while ((opt = getopt(argc, argv, "S:o::O")) != -1){
+
+            switch(opt){
+                  case 'S':{
+                        cout<<"arg S"<<endl;
+                        break;
+                  }
+                  case 'o':{
+                        strcpy(outputFileName,optarg);
+                        break;
+                  }
+                  case 'O':{
+                        cout<<"arg O"<<endl;
+                        if(strcmp(optarg, "2")){
+                              //设置优化参数
+                        }
+                        break;
+                  }
+                  default:{
+                        cout<<"unknown arg"<<endl;
+                        break;
+                  }
+            }
+      }
+
 	if (!yyin) return -1;
 	yylineno=1;
 	yyparse();
+
+      //输出文件
+      
+      ofstream outstream(outputFileName, ios::out);
+      if(outstream.is_open()){
+            outstream<<CodeString;
+            outstream.close();
+      }
+      
 	return 0;
 }
 void yyerror(const char* fmt, ...)

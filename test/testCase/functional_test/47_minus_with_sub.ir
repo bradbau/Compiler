@@ -38,6 +38,20 @@
 --accepting rule at line 112 ("a")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+<int>
+<id,main>
+<(>
+<)>
+<{>
+<int>
+<id,a>
+<;>
+<int>
+<id,b>
+<;>
+<id,a>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 85 ("-")
 --accepting rule at line 109 ("2")
@@ -51,6 +65,15 @@
 --accepting rule at line 112 ("b")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+Lval
+<->
+<intd>
+ExpNumber:0
+<;>
+stmt1
+<id,b>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 109 ("1")
 --accepting rule at line 75 (";")
@@ -63,24 +86,51 @@
 --accepting rule at line 112 ("a")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+Lval
+<intd>
+ExpNumber:0
+<;>
+stmt1
+<id,a>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("a")
 --accepting rule at line 114 (" ")
 --accepting rule at line 85 ("-")
+Lval
+<id,a>
+<->
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 85 ("-")
 --accepting rule at line 112 ("b")
 --accepting rule at line 114 (" ")
 --accepting rule at line 84 ("+")
+Lval
+<->
+<id,b>
+<+>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 85 ("-")
 --accepting rule at line 80 ("(")
 --accepting rule at line 112 ("a")
 --accepting rule at line 114 (" ")
 --accepting rule at line 84 ("+")
+Lval
+<->
+<(>
+<id,a>
+<+>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("b")
 --accepting rule at line 81 (")")
+Lval
+<id,b>
+<)>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 88 ("%")
 --accepting rule at line 114 (" ")
@@ -89,9 +139,20 @@
 --accepting rule at line 112 ("a")
 --accepting rule at line 114 (" ")
 --accepting rule at line 85 ("-")
+Lval
+<%>
+<->
+<(>
+<id,a>
+<->
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("b")
 --accepting rule at line 81 (")")
+Lval
+<id,b>
+<)>
+33333333333
 --accepting rule at line 75 (";")
 --accepting rule at line 115 ("
 ")
@@ -103,6 +164,14 @@
 --accepting rule at line 80 ("(")
 --accepting rule at line 112 ("a")
 --accepting rule at line 81 (")")
+Lval
+<;>
+stmt1
+<id,putint>
+<(>
+<id,a>
+<)>
+33333333333
 --accepting rule at line 75 (";")
 --accepting rule at line 115 ("
 ")
@@ -121,65 +190,6 @@
 ")
 --(end of buffer or a NUL)
 --EOF (start condition 0)
-<int>
-<id,main>
-<(>
-<)>
-<{>
-<int>
-<id,a>
-<;>
-<int>
-<id,b>
-<;>
-<id,a>
-<=>
-Lval
-<->
-<intd>
-ExpNumber:0
-<;>
-stmt1
-<id,b>
-<=>
-Lval
-<intd>
-ExpNumber:0
-<;>
-stmt1
-<id,a>
-<=>
-Lval
-<id,a>
-<->
-Lval
-<->
-<id,b>
-<+>
-Lval
-<->
-<(>
-<id,a>
-<+>
-Lval
-<id,b>
-<)>
-Lval
-<%>
-<->
-<(>
-<id,a>
-<->
-Lval
-<id,b>
-<)>
-Lval
-<;>
-stmt1
-<id,putint>
-<(>
-<id,a>
-<)>
 Lval
 <;>
 <return>
@@ -272,16 +282,29 @@ ID             category       type           depictor
                
 main           Function       TYPEINTEGER    NOT NULL       
 ===========================================================
+===========================================================
 Formal:main
 ID             category       type           depictor
               
                NOParam                       NOT NULL       
+===========================================================
 ===========================================================
 Local:main
 ID             category       type           depictor
               
 a              Variable       TYPEINTEGER    NULL           
 b              Variable       TYPEINTEGER    NULL           
+===========================================================
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
 TraverseScopeStack no result
 
 ~~~~TAC~~~~~

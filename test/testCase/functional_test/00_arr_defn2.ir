@@ -72,8 +72,9 @@ CompUnits (1)
 Global
 ID             category       type           depictor
                
-a              Array          TYPEINTEGER    NULL           
+a              Array          TYPEINTEGER    ----------> dim=2
 main           Function       TYPEINTEGER    NOT NULL       
+===========================================================
 ===========================================================
 Formal:main
 ID             category       type           depictor

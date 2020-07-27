@@ -24,6 +24,20 @@
 --accepting rule at line 114 ("	")
 --accepting rule at line 112 ("a")
 --accepting rule at line 89 ("=")
+<int>
+<id,a>
+<;>
+<int>
+<id,b>
+<;>
+<int>
+<id,main>
+<(>
+<)>
+<{>
+<id,a>
+<=>
+33333333333
 --accepting rule at line 109 ("10")
 --accepting rule at line 75 (";")
 --accepting rule at line 115 ("
@@ -31,6 +45,14 @@
 --accepting rule at line 114 ("	")
 --accepting rule at line 112 ("b")
 --accepting rule at line 89 ("=")
+Lval
+<intd>
+ExpNumber:0
+<;>
+stmt1
+<id,b>
+<=>
+33333333333
 --accepting rule at line 109 ("20")
 --accepting rule at line 75 (";")
 --accepting rule at line 115 ("
@@ -46,13 +68,32 @@
 --accepting rule at line 112 ("c")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+Lval
+<intd>
+ExpNumber:0
+<;>
+stmt1
+<int>
+<id,c>
+<;>
+<id,c>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("a")
 --accepting rule at line 114 (" ")
 --accepting rule at line 84 ("+")
+Lval
+<id,a>
+<+>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("b")
 --accepting rule at line 75 (";")
+Lval
+<id,b>
+<;>
+33333333333
 --accepting rule at line 115 ("
 ")
 --accepting rule at line 114 ("	")
@@ -60,6 +101,12 @@
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("c")
 --accepting rule at line 75 (";")
+Lval
+stmt1
+<return>
+<id,c>
+<;>
+33333333333
 --accepting rule at line 115 ("
 ")
 --accepting rule at line 79 ("}")
@@ -67,47 +114,6 @@
 ")
 --(end of buffer or a NUL)
 --EOF (start condition 0)
-<int>
-<id,a>
-<;>
-<int>
-<id,b>
-<;>
-<int>
-<id,main>
-<(>
-<)>
-<{>
-<id,a>
-<=>
-Lval
-<intd>
-ExpNumber:0
-<;>
-stmt1
-<id,b>
-<=>
-Lval
-<intd>
-ExpNumber:0
-<;>
-stmt1
-<int>
-<id,c>
-<;>
-<id,c>
-<=>
-Lval
-<id,a>
-<+>
-Lval
-<id,b>
-<;>
-Lval
-stmt1
-<return>
-<id,c>
-<;>
 Lval
 <}>
 CompUnits (1)
@@ -167,15 +173,23 @@ a              Variable       TYPEINTEGER    NULL
 b              Variable       TYPEINTEGER    NULL           
 main           Function       TYPEINTEGER    NOT NULL       
 ===========================================================
+===========================================================
 Formal:main
 ID             category       type           depictor
               
                NOParam                       NOT NULL       
 ===========================================================
+===========================================================
 Local:main
 ID             category       type           depictor
               
 c              Variable       TYPEINTEGER    NULL           
+===========================================================
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
+TraverseScopeStack no result
 
 ~~~~TAC~~~~~
  No  Source Position	TACCode
@@ -199,52 +213,21 @@ tac type FUNCTIONDF
 tec type ASSIGN
 findregister: insldr rd=0,r1=11,r2 offset=0,op2type=1, insefft=0
 tec type ASSIGN
+tec type ASSIGN
 findregister: insldr rd=1,r1=11,r2 offset=0,op2type=1, insefft=0
+tec type ASSIGN
 tec type ASSIGN
 findregister: insldr rd=2,r1=11,r2 offset=0,op2type=1, insefft=0
 tec type ASSIGN
-tec type ASSIGN
 findregister: insldr rd=3,r1=11,r2 offset=0,op2type=1, insefft=0
-tec type ASSIGN
-findregister: insldr rd=4,r1=11,r2 offset=0,op2type=1, insefft=0
 tac type ADD
+findregister: insldr rd=4,r1=11,r2 offset=0,op2type=1, insefft=0
+tec type ASSIGN
+tec type ASSIGN
 findregister: insldr rd=5,r1=11,r2 offset=0,op2type=1, insefft=0
-tec type ASSIGN
-tec type ASSIGN
-findregister: insldr rd=6,r1=11,r2 offset=0,op2type=1, insefft=0
 tac type RETURN
 tac build complete
 push instruction
 op2type==1
-op2type==1
-op2type==1
-op2type==1
-op2type==1
-op2type==1
-op2type==1
-#armv7 assembly code
-main:
-PUSH {fp}
-ADD  fp, sp, #0
-SUB fp, fp, #64
-LDRIA r0, [fp, 0x0]
-MOV r0, 10
-LDRIA r1, [fp, 0x0]
-ADD  r1, r0, #0
-LDRIA r2, [fp, 0x0]
-MOV r2, 20
-ADD  r1, r2, #0
-LDRIA r3, [fp, 0x0]
-ADD  r3, r1, #0
-LDRIA r4, [fp, 0x0]
-ADD  r4, r1, #0
-LDRIA r5, [fp, 0x0]
-ADD  r5, r3, r4
-ADD  r1, r5, #0
-LDRIA r6, [fp, 0x0]
-ADD  r6, r8, #0
-ADD  r0, r6, #0
-ADD  sp, fp, #0
-POP {fp}
-BX lr
-
+compiler: ./ObjectCode/ArmInstruction.cpp:108: virtual std::__cxx11::string CalculateInstruction::toString(): Assertion `ARMInstruction::getRd()>=0&&ARMInstruction::getRd()<=15' failed.
+Aborted (core dumped)

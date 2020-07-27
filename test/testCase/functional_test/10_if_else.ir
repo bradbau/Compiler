@@ -17,6 +17,17 @@
 --accepting rule at line 112 ("a")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+<int>
+<id,a>
+<;>
+<int>
+<id,main>
+<(>
+<)>
+<{>
+<id,a>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 109 ("10")
 --accepting rule at line 75 (";")
@@ -28,6 +39,16 @@
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("a")
 --accepting rule at line 95 (">")
+Lval
+<intd>
+ExpNumber:0
+<;>
+stmt1
+<if>
+<(>
+<id,a>
+<>>
+33333333333
 --accepting rule at line 111 ("0")
 --accepting rule at line 114 (" ")
 --accepting rule at line 81 (")")
@@ -68,25 +89,6 @@
 ")
 --(end of buffer or a NUL)
 --EOF (start condition 0)
-<int>
-<id,a>
-<;>
-<int>
-<id,main>
-<(>
-<)>
-<{>
-<id,a>
-<=>
-Lval
-<intd>
-ExpNumber:0
-<;>
-stmt1
-<if>
-<(>
-<id,a>
-<>>
 Lval
 <into>
 ExpNumber:0
@@ -150,16 +152,19 @@ ID             category       type           depictor
 a              Variable       TYPEINTEGER    NULL           
 main           Function       TYPEINTEGER    NOT NULL       
 ===========================================================
+===========================================================
 Formal:main
 ID             category       type           depictor
               
                NOParam                       NOT NULL       
+===========================================================
 ===========================================================
 Local:main
 ID             category       type           depictor
               
                Block          BLOCKStmt      NULL           
                Block          BLOCKStmt      NULL           
+===========================================================
 TraverseScopeStack no result
 
 ~~~~TAC~~~~~

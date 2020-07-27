@@ -22,22 +22,6 @@
 --accepting rule at line 111 ("0")
 --accepting rule at line 83 ("]")
 --accepting rule at line 89 ("=")
---accepting rule at line 109 ("1")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 ("	")
---accepting rule at line 108 ("return")
---accepting rule at line 114 (" ")
---accepting rule at line 111 ("0")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 79 ("}")
---accepting rule at line 115 ("
-")
---(end of buffer or a NUL)
---EOF (start condition 0)
 <int>
 <id,a>
 <[>
@@ -56,6 +40,24 @@ ExpNumber:0
 ExpNumber:0
 <]>
 <=>
+33333333333
+22222222222222
+--accepting rule at line 109 ("1")
+--accepting rule at line 75 (";")
+--accepting rule at line 115 ("
+")
+--accepting rule at line 114 ("	")
+--accepting rule at line 108 ("return")
+--accepting rule at line 114 (" ")
+--accepting rule at line 111 ("0")
+--accepting rule at line 75 (";")
+--accepting rule at line 115 ("
+")
+--accepting rule at line 79 ("}")
+--accepting rule at line 115 ("
+")
+--(end of buffer or a NUL)
+--EOF (start condition 0)
 Lval
 <intd>
 ExpNumber:0
@@ -94,8 +96,9 @@ CompUnits (1)
 Global
 ID             category       type           depictor
                
-a              Array          TYPEINTEGER    NULL           
+a              Array          TYPEINTEGER    ----------> dim=1
 main           Function       TYPEINTEGER    NOT NULL       
+===========================================================
 ===========================================================
 Formal:main
 ID             category       type           depictor

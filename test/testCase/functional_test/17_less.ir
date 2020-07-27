@@ -23,6 +23,20 @@
 --accepting rule at line 112 ("a")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+<int>
+<id,a>
+<;>
+<int>
+<id,b>
+<;>
+<int>
+<id,main>
+<(>
+<)>
+<{>
+<id,a>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("getint")
 --accepting rule at line 80 ("(")
@@ -34,6 +48,15 @@
 --accepting rule at line 112 ("b")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+Lval
+<id,getint>
+<(>
+<)>
+<;>
+stmt1
+<id,b>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("getint")
 --accepting rule at line 80 ("(")
@@ -49,10 +72,25 @@
 --accepting rule at line 112 ("a")
 --accepting rule at line 114 (" ")
 --accepting rule at line 96 ("<")
+Lval
+<id,getint>
+<(>
+<)>
+<;>
+stmt1
+<if>
+<(>
+<id,a>
+<<>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("b")
 --accepting rule at line 114 (" ")
 --accepting rule at line 81 (")")
+Lval
+<id,b>
+<)>
+33333333333
 --accepting rule at line 78 ("{")
 --accepting rule at line 115 ("
 ")
@@ -90,40 +128,6 @@
 ")
 --(end of buffer or a NUL)
 --EOF (start condition 0)
-<int>
-<id,a>
-<;>
-<int>
-<id,b>
-<;>
-<int>
-<id,main>
-<(>
-<)>
-<{>
-<id,a>
-<=>
-Lval
-<id,getint>
-<(>
-<)>
-<;>
-stmt1
-<id,b>
-<=>
-Lval
-<id,getint>
-<(>
-<)>
-<;>
-stmt1
-<if>
-<(>
-<id,a>
-<<>
-Lval
-<id,b>
-<)>
 Lval
 <{>
 <return>
@@ -197,16 +201,19 @@ a              Variable       TYPEINTEGER    NULL
 b              Variable       TYPEINTEGER    NULL           
 main           Function       TYPEINTEGER    NOT NULL       
 ===========================================================
+===========================================================
 Formal:main
 ID             category       type           depictor
               
                NOParam                       NOT NULL       
+===========================================================
 ===========================================================
 Local:main
 ID             category       type           depictor
               
                Block          BLOCKStmt      NULL           
                Block          BLOCKStmt      NULL           
+===========================================================
 TraverseScopeStack no result
 TraverseScopeStack no result
 TraverseScopeStack no result

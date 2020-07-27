@@ -136,21 +136,26 @@ ARM::ARM(TACCode* entrance, ScopeItem &scopeItem){
                 //进入函数通用语句
                 MemoryInstruction* InsItem2= new MemoryInstruction(INSPUSH,  R11);
                 InsList.push_back(dynamic_cast<ARMInstruction*>(InsItem2));//push r11
+
+                
                 CalculateInstruction* InsItem3= new CalculateInstruction(INSADD, R11, R13, 0, 1);
                 InsList.push_back(dynamic_cast<ARMInstruction*>(InsItem3)); //add    r11, sp, #0
-                InsItem3=new CalculateInstruction(INSSUB, R11, R11, FUNCSTACKSIZE, 1);
-                InsList.push_back(dynamic_cast<ARMInstruction*>(InsItem3));//sub    sp, sp, #FUNCSTACKSIZE
+
+                //栈移动实在有参数函数的调用发生时执行的
+                //InsItem3=new CalculateInstruction(INSSUB, R11, R11, FUNCSTACKSIZE, 1);
+                //InsList.push_back(dynamic_cast<ARMInstruction*>(InsItem3));//sub    sp, sp, #FUNCSTACKSIZE
+
                
-                //清空寄存器
-                EmptyRegister();
-                //传参处理
+                //传入参数的处理
                 int i=0;
+                int offset=0;//函数堆栈大小
                 while(entrance->next->code.optype==PARAM){
                     entrance=entrance->next;
                     if(i<4){
                         //函数参数在四个以内就用寄存器r0到r3传参
                         entrance->code.dest.Data.variable->reg=i;
                         regs[i].variable.reg=i;
+                        offset+=4;
                     }
                     else{
                         entrance->code.dest.Data.variable->offset=(i - 3) * 4;// 这里没有溯源到符号表，应该溯源到符号表，那么是否应该把四元式里的variable改回到指针指向符号表内容
@@ -162,8 +167,7 @@ ARM::ARM(TACCode* entrance, ScopeItem &scopeItem){
 
 
 
-                //
-                int offset=FUNCSTACKSIZE;//函数堆栈大小
+                
                 AllocateStack(code.dest.Data.function, offset );
 
 
@@ -332,6 +336,7 @@ ARM::ARM(TACCode* entrance, ScopeItem &scopeItem){
 
                 //传入参数
                 int i=0;
+                int offset=0;
                 TACCode* arg=entrance;
                 while(arg->prev->code.optype==ARG){
                     arg = arg->prev;

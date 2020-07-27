@@ -32,6 +32,7 @@ ID             category       type           depictor
 aaa            Variable       TYPEINTEGER    NULL           
 bbb            Variable       TYPEINTEGER    NULL           
 ccc            Variable       TYPEINTEGER    NULL           
+===========================================================
 
 ~~~~TAC~~~~~
  No  Source Position	TACCode

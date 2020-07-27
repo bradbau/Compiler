@@ -295,6 +295,8 @@ MemoryInstruction::MemoryInstruction(InstrcuctionType type, Register rd, int op1
             setOp2(op2);
             setOp2Type(op2Type);
             setConditionExe(AL);
+            this->addrMod=-1;
+            this->instantEffect=instantEffect;
             break;
 
         }
@@ -307,6 +309,7 @@ MemoryInstruction::MemoryInstruction(InstrcuctionType type, Register rd, int op1
             setOp1Type(0);
             setOp2Type(op2Type);
             this->instantEffect=instantEffect;
+            this->addrMod=-1;
             setConditionExe(AL);
             break;
         }
@@ -455,7 +458,7 @@ string MemoryInstruction::toString(){
         }
         case INSLDR:{
             InsHead="LDR";
-            if(addrMod>=0){
+            if(addrMod>=0&& addrMod<=3){
                 InsHead=InsHead+MemSuffixName[addrMod];
             }
             if(ARMInstruction::getConditionExe()!=0){//条件执行后缀
@@ -543,7 +546,7 @@ string MemoryInstruction::toString(){
 
 
 
-//~~~~~~~~~~~~~~~~~`  label ins~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~ label Instruction~~~~~~~~~~~~~~~~~~~
 
 
 

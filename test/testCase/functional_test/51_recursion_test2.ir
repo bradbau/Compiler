@@ -18,6 +18,18 @@
 --accepting rule at line 112 ("n")
 --accepting rule at line 114 (" ")
 --accepting rule at line 93 ("==")
+<int>
+<id,fib>
+<(>
+<int>
+<id,n>
+<)>
+<{>
+<if>
+<(>
+<id,n>
+<==>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 111 ("0")
 --accepting rule at line 81 (")")
@@ -38,6 +50,19 @@
 --accepting rule at line 112 ("n")
 --accepting rule at line 114 (" ")
 --accepting rule at line 93 ("==")
+Lval
+<into>
+ExpNumber:0
+<)>
+<return>
+<into>
+ExpNumber:0
+<;>
+<if>
+<(>
+<id,n>
+<==>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 109 ("1")
 --accepting rule at line 81 (")")
@@ -62,10 +87,28 @@
 --accepting rule at line 112 ("p")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+Lval
+<intd>
+ExpNumber:0
+<)>
+<return>
+<intd>
+ExpNumber:0
+<;>
+<int>
+<id,p>
+<;>
+<id,p>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("n")
 --accepting rule at line 114 (" ")
 --accepting rule at line 85 ("-")
+Lval
+<id,n>
+<->
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 109 ("1")
 --accepting rule at line 75 (";")
@@ -82,10 +125,25 @@
 --accepting rule at line 112 ("q")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+Lval
+<intd>
+ExpNumber:0
+<;>
+stmt1
+<int>
+<id,q>
+<;>
+<id,q>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("n")
 --accepting rule at line 114 (" ")
 --accepting rule at line 85 ("-")
+Lval
+<id,n>
+<->
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 109 ("2")
 --accepting rule at line 75 (";")
@@ -98,6 +156,17 @@
 --accepting rule at line 80 ("(")
 --accepting rule at line 112 ("p")
 --accepting rule at line 81 (")")
+Lval
+<intd>
+ExpNumber:0
+<;>
+stmt1
+<return>
+<id,fib>
+<(>
+<id,p>
+<)>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 84 ("+")
 --accepting rule at line 114 (" ")
@@ -105,6 +174,13 @@
 --accepting rule at line 80 ("(")
 --accepting rule at line 112 ("q")
 --accepting rule at line 81 (")")
+Lval
+<+>
+<id,fib>
+<(>
+<id,q>
+<)>
+33333333333
 --accepting rule at line 75 (";")
 --accepting rule at line 115 ("
 ")
@@ -133,76 +209,6 @@
 --accepting rule at line 112 ("tmp")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
---accepting rule at line 114 (" ")
---accepting rule at line 109 ("10")
-<int>
-<id,fib>
-<(>
-<int>
-<id,n>
-<)>
-<{>
-<if>
-<(>
-<id,n>
-<==>
-Lval
-<into>
-ExpNumber:0
-<)>
-<return>
-<into>
-ExpNumber:0
-<;>
-<if>
-<(>
-<id,n>
-<==>
-Lval
-<intd>
-ExpNumber:0
-<)>
-<return>
-<intd>
-ExpNumber:0
-<;>
-<int>
-<id,p>
-<;>
-<id,p>
-<=>
-Lval
-<id,n>
-<->
-Lval
-<intd>
-ExpNumber:0
-<;>
-stmt1
-<int>
-<id,q>
-<;>
-<id,q>
-<=>
-Lval
-<id,n>
-<->
-Lval
-<intd>
-ExpNumber:0
-<;>
-stmt1
-<return>
-<id,fib>
-<(>
-<id,p>
-<)>
-Lval
-<+>
-<id,fib>
-<(>
-<id,q>
-<)>
 Lval
 <;>
 <}>
@@ -216,9 +222,10 @@ Lval
 <;>
 <id,tmp>
 <=>
-Lval
-<intd>
-Exp--accepting rule at line 75 (";")
+33333333333
+--accepting rule at line 114 (" ")
+--accepting rule at line 109 ("10")
+--accepting rule at line 75 (";")
 --accepting rule at line 115 ("
 ")
 --accepting rule at line 114 ("	")
@@ -228,13 +235,9 @@ Exp--accepting rule at line 75 (";")
 --accepting rule at line 80 ("(")
 --accepting rule at line 112 ("tmp")
 --accepting rule at line 81 (")")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 79 ("}")
---(end of buffer or a NUL)
---EOF (start condition 0)
-Number:0
+Lval
+<intd>
+ExpNumber:0
 <;>
 stmt1
 <return>
@@ -242,6 +245,13 @@ stmt1
 <(>
 <id,tmp>
 <)>
+33333333333
+--accepting rule at line 75 (";")
+--accepting rule at line 115 ("
+")
+--accepting rule at line 79 ("}")
+--(end of buffer or a NUL)
+--EOF (start condition 0)
 Lval
 <;>
 <}>
@@ -354,10 +364,12 @@ ID             category       type           depictor
 fib            Function       TYPEINTEGER    NOT NULL       
 main           Function       TYPEINTEGER    NOT NULL       
 ===========================================================
+===========================================================
 Formal:fib
 ID             category       type           depictor
               
 n              Variable       TYPEINTEGER    NOT NULL       
+===========================================================
 ===========================================================
 Local:fib
 ID             category       type           depictor
@@ -365,102 +377,15 @@ ID             category       type           depictor
 p              Variable       TYPEINTEGER    NULL           
 q              Variable       TYPEINTEGER    NULL           
 ===========================================================
+===========================================================
 Formal:main
 ID             category       type           depictor
               
                NOParam                       NOT NULL       
 ===========================================================
+===========================================================
 Local:main
 ID             category       type           depictor
               
 tmp            Variable       TYPEINTEGER    NULL           
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-
-~~~~TAC~~~~~
- No  Source Position	TACCode
-_______________________________________
-  0  (at line   0)	CALL main
-
-  1  (at line   1)	FUNCTION fib :
-  2  (at line   1)	PARAM n
-  3  (at line   2)	_t19 := 
-  4  (at line   2)	_t22 := #0
-  5  (at line   2)	IF _t19 = _t22 GOTO label2
-  6  (at line   2)	GOTO label3
-  7  (at line   2)	LABEL label2 :
-  8  (at line   3)	_t23 := #0
-  9  (at line   3)	RETURN _t23
- 10  (at line   2)	LABEL label3 :
- 11  (at line   4)	_t14 := 
- 12  (at line   4)	_t17 := #1
- 13  (at line   4)	IF _t14 = _t17 GOTO label0
- 14  (at line   4)	GOTO label1
- 15  (at line   4)	LABEL label0 :
- 16  (at line   5)	_t18 := #1
- 17  (at line   5)	RETURN _t18
- 18  (at line   4)	LABEL label1 :
- 19  (at line   7)	_t12 := 
- 20  (at line   7)	_t13 := #1
- 21  (at line   7)	_t11 := _t12 - _t13
- 22  (at line   7)	 := _t11
- 23  (at line   9)	_t9 := 
- 24  (at line   9)	_t10 := #2
- 25  (at line   9)	_t8 := _t9 - _t10
- 26  (at line   9)	 := _t8
- 27  (at line  10)	_t6 := 
- 28  (at line  10)	ARG _t6
- 29  (at line  10)	_t4 := CALL fib
- 30  (at line  10)	_t7 := 
- 31  (at line  10)	ARG _t7
- 32  (at line  10)	_t5 := CALL fib
- 33  (at line  10)	_t3 := _t4 + _t5
- 34  (at line  10)	RETURN _t3
-
- 35  (at line  13)	FUNCTION main :
- 36  (at line  15)	_t2 := #10
- 37  (at line  15)	 := _t2
- 38  (at line  16)	_t1 := 
- 39  (at line  16)	ARG _t1
- 40  (at line  16)	_t0 := CALL fib
- 41  (at line  16)	RETURN _t0
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-build assembly code
-tac type FUNCTIONDF
-tec type ASSIGN
-findregister: insldr rd=0,r1=11,r2 offset=0,op2type=1, insefft=0
-tec type ASSIGN
-findregister: insldr rd=1,r1=11,r2 offset=0,op2type=1, insefft=0
-tac type IFEQ
-tac type GOTO
-tac type LABELDF
-tec type ASSIGN
-findregister: insldr rd=2,r1=11,r2 offset=0,op2type=1, insefft=0
-tac type RETURN
-tac type LABELDF
-tec type ASSIGN
-findregister: insldr rd=3,r1=11,r2 offset=0,op2type=1, insefft=0
-tec type ASSIGN
-findregister: insldr rd=4,r1=11,r2 offset=0,op2type=1, insefft=0
-tac type IFEQ
-tac type GOTO
-tac type LABELDF
-tec type ASSIGN
-findregister: insldr rd=5,r1=11,r2 offset=0,op2type=1, insefft=0
-tac type RETURN
-tac type LABELDF
-tec type ASSIGN
-findregister: insldr rd=6,r1=11,r2 offset=0,op2type=1, insefft=0
-tec type ASSIGN
-findregister: insldr rd=8,r1=11,r2 offset=0,op2type=1, insefft=0
-tac type SUB
-compiler: ./ObjectCode/Arm.cpp:75: ARM::ARM(TACCode*, ScopeItem&): Assertion `code.dest.Type = VARIABLE' failed.
-Aborted (core dumped)
+Segmentation fault (core dumped)

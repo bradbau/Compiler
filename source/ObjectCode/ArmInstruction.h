@@ -243,7 +243,7 @@ private:
     //这里添加内存指令相关的信息
     int multipleSource;//如果为真就表示在op1和op2寄存器之外加{}符号，表示多个寄存器连续操作
     int instantEffect; // 取值0 1 2 决定第二操作数的立即数类型：偏移量，改变第一操作数的偏移量，只改变第一操作数
-    int addrMod;//地址模式，默认为0 ，一般对
+    int addrMod;//地址模式，没有后缀则赋值为-1 ，一般对
 public:
     MemoryInstruction();// 产生一个内存相关指令
     MemoryInstruction(InstrcuctionType type, Register rd);//push pop专用指令生成

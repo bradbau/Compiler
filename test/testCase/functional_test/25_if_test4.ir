@@ -23,6 +23,17 @@
 --accepting rule at line 112 ("a")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+<int>
+<id,if_ifElse_>
+<(>
+<)>
+<{>
+<int>
+<id,a>
+<;>
+<id,a>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 109 ("5")
 --accepting rule at line 75 (";")
@@ -41,6 +52,17 @@
 --accepting rule at line 112 ("b")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+Lval
+<intd>
+ExpNumber:0
+<;>
+stmt1
+<int>
+<id,b>
+<;>
+<id,b>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 109 ("10")
 --accepting rule at line 75 (";")
@@ -53,6 +75,16 @@
 --accepting rule at line 112 ("a")
 --accepting rule at line 114 (" ")
 --accepting rule at line 93 ("==")
+Lval
+<intd>
+ExpNumber:0
+<;>
+stmt1
+<if>
+<(>
+<id,a>
+<==>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 109 ("5")
 --accepting rule at line 81 (")")
@@ -69,6 +101,16 @@
 --accepting rule at line 112 ("b")
 --accepting rule at line 114 (" ")
 --accepting rule at line 93 ("==")
+Lval
+<intd>
+ExpNumber:0
+<)>
+<{>
+<if>
+<(>
+<id,b>
+<==>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 109 ("10")
 --accepting rule at line 81 (")")
@@ -84,6 +126,13 @@
 --accepting rule at line 112 ("a")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+Lval
+<intd>
+ExpNumber:0
+<)>
+<id,a>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 109 ("25")
 --accepting rule at line 75 (";")
@@ -106,10 +155,23 @@
 --accepting rule at line 112 ("a")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+Lval
+<intd>
+ExpNumber:0
+<;>
+stmt1
+<else>
+<id,a>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("a")
 --accepting rule at line 114 (" ")
 --accepting rule at line 84 ("+")
+Lval
+<id,a>
+<+>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 109 ("15")
 --accepting rule at line 75 (";")
@@ -127,6 +189,17 @@
 --accepting rule at line 80 ("(")
 --accepting rule at line 112 ("a")
 --accepting rule at line 81 (")")
+Lval
+<intd>
+ExpNumber:0
+<;>
+stmt1
+<}>
+<return>
+<(>
+<id,a>
+<)>
+33333333333
 --accepting rule at line 75 (";")
 --accepting rule at line 115 ("
 ")
@@ -160,71 +233,6 @@
 ")
 --(end of buffer or a NUL)
 --EOF (start condition 0)
-<int>
-<id,if_ifElse_>
-<(>
-<)>
-<{>
-<int>
-<id,a>
-<;>
-<id,a>
-<=>
-Lval
-<intd>
-ExpNumber:0
-<;>
-stmt1
-<int>
-<id,b>
-<;>
-<id,b>
-<=>
-Lval
-<intd>
-ExpNumber:0
-<;>
-stmt1
-<if>
-<(>
-<id,a>
-<==>
-Lval
-<intd>
-ExpNumber:0
-<)>
-<{>
-<if>
-<(>
-<id,b>
-<==>
-Lval
-<intd>
-ExpNumber:0
-<)>
-<id,a>
-<=>
-Lval
-<intd>
-ExpNumber:0
-<;>
-stmt1
-<else>
-<id,a>
-<=>
-Lval
-<id,a>
-<+>
-Lval
-<intd>
-ExpNumber:0
-<;>
-stmt1
-<}>
-<return>
-<(>
-<id,a>
-<)>
 Lval
 <;>
 <}>
@@ -329,10 +337,12 @@ ID             category       type           depictor
 if_ifElse_     Function       TYPEINTEGER    NOT NULL       
 main           Function       TYPEINTEGER    NOT NULL       
 ===========================================================
+===========================================================
 Formal:if_ifElse_
 ID             category       type           depictor
               
                NOParam                       NOT NULL       
+===========================================================
 ===========================================================
 Local:if_ifElse_
 ID             category       type           depictor
@@ -341,14 +351,17 @@ a              Variable       TYPEINTEGER    NULL
 b              Variable       TYPEINTEGER    NULL           
                Block          BLOCKStmt      NULL           
 ===========================================================
+===========================================================
 Formal:main
 ID             category       type           depictor
               
                NOParam                       NULL           
 ===========================================================
+===========================================================
 Local:main
 ID             category       type           depictor
               
+===========================================================
 TraverseScopeStack no result
 TraverseScopeStack no result
 TraverseScopeStack no result
@@ -420,9 +433,8 @@ findregister: insldr rd=8,r1=11,r2 offset=0,op2type=1, insefft=0
 tac type RETURN
 tac type FUNCTIONDF
 tac type CALLASSIGN
-findregister: insldr rd=0,r1=11,r2 offset=0,op2type=1, insefft=0
 tec type ASSIGN
-findregister: insldr rd=1,r1=11,r2 offset=0,op2type=1, insefft=0
+findregister: insldr rd=9,r1=11,r2 offset=0,op2type=1, insefft=0
 tac type RETURN
 tac build complete
 push instruction

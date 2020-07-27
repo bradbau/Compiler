@@ -18,6 +18,17 @@
 --accepting rule at line 112 ("a")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+<int>
+<id,main>
+<(>
+<)>
+<{>
+<int>
+<id,a>
+<;>
+<id,a>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("getint")
 --accepting rule at line 80 ("(")
@@ -30,23 +41,6 @@
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("a")
 --accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 79 ("}")
---accepting rule at line 115 ("
-")
---(end of buffer or a NUL)
---EOF (start condition 0)
-<int>
-<id,main>
-<(>
-<)>
-<{>
-<int>
-<id,a>
-<;>
-<id,a>
-<=>
 Lval
 <id,getint>
 <(>
@@ -56,6 +50,14 @@ stmt1
 <return>
 <id,a>
 <;>
+33333333333
+--accepting rule at line 115 ("
+")
+--accepting rule at line 79 ("}")
+--accepting rule at line 115 ("
+")
+--(end of buffer or a NUL)
+--EOF (start condition 0)
 Lval
 <}>
 CompUnits (1)
@@ -86,15 +88,19 @@ ID             category       type           depictor
                
 main           Function       TYPEINTEGER    NOT NULL       
 ===========================================================
+===========================================================
 Formal:main
 ID             category       type           depictor
               
                NOParam                       NOT NULL       
 ===========================================================
+===========================================================
 Local:main
 ID             category       type           depictor
               
 a              Variable       TYPEINTEGER    NULL           
+===========================================================
+TraverseScopeStack no result
 TraverseScopeStack no result
 
 ~~~~TAC~~~~~
@@ -113,29 +119,11 @@ tac type FUNCTIONDF
 tac type CALLASSIGN
 findregister: insldr rd=0,r1=11,r2 offset=0,op2type=1, insefft=0
 tec type ASSIGN
-findregister: insldr rd=1,r1=11,r2 offset=0,op2type=1, insefft=0
 tec type ASSIGN
-findregister: insldr rd=2,r1=11,r2 offset=0,op2type=1, insefft=0
+findregister: insldr rd=1,r1=11,r2 offset=0,op2type=1, insefft=0
 tac type RETURN
 tac build complete
 push instruction
 op2type==1
-op2type==1
-op2type==1
-#armv7 assembly code
-main:
-PUSH {fp}
-ADD  fp, sp, #0
-SUB fp, fp, #64
-BL 
-LDRIA r0, [fp, 0x0]
-MOV r0, r0
-LDRIA r1, [fp, 0x0]
-ADD  r1, r0, #0
-LDRIA r2, [fp, 0x0]
-ADD  r2, r3, #0
-ADD  r0, r2, #0
-ADD  sp, fp, #0
-POP {fp}
-BX lr
-
+compiler: ./ObjectCode/ArmInstruction.cpp:108: virtual std::__cxx11::string CalculateInstruction::toString(): Assertion `ARMInstruction::getRd()>=0&&ARMInstruction::getRd()<=15' failed.
+Aborted (core dumped)

@@ -5,6 +5,9 @@
 #include <string>
 #include<stdio.h>
 #include<stdlib.h>
+#include <vector>
+#include "../GrammarTree/AST.h"
+class ASTTree; 
 
 using namespace std;
 
@@ -36,6 +39,11 @@ typedef struct ScopeItem{
     struct ScopeItem *next;
     int offset;
     int reg;
+    //下面的两项记录数组信息（数组内情向量）
+    //ASTTree* len;//数组的长度（数组第一维的长度。对于这样的数组array[][2],我们规定其len为0）
+    struct ScopeItem *array_depictor;
+    vector<ASTTree*> len;//记录数组的长度的变长数组,每一项都是指向可以表示那一维长度的EXP节点的指针（对于这样的数组array[][2],我们规定其第一维len为NULL）
+    int dim;//数组的维数
 }ScopeItem;
 
 ScopeItem* addIntoScope(ScopeType stype, ScopeItem* pre_si, string name, SysYCategory category, string type, ScopeItem* depictor);

@@ -16,6 +16,19 @@
 --accepting rule at line 82 ("[")
 --accepting rule at line 83 ("]")
 --accepting rule at line 76 (",")
+<int>
+<id,n>
+<;>
+<int>
+<id,swap>
+<(>
+<int>
+<id,array>
+<[>
+<]>
+<,>
+33333333333
+1111111111111111
 --accepting rule at line 114 (" ")
 --accepting rule at line 100 ("int")
 --accepting rule at line 114 (" ")
@@ -46,12 +59,35 @@
 --accepting rule at line 112 ("temp")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+<int>
+<id,i>
+<,>
+<int>
+<id,j>
+<)>
+<{>
+<int>
+<id,temp>
+<;>
+<id,temp>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("array")
 --accepting rule at line 82 ("[")
 --accepting rule at line 112 ("i")
 --accepting rule at line 83 ("]")
+Lval
+<id,array>
+<[>
+<id,i>
+<]>
+33333333333
 --accepting rule at line 75 (";")
+Lval
+<;>
+33333333333
+22222222222222
 --accepting rule at line 115 ("
 ")
 --accepting rule at line 114 (" ")
@@ -62,14 +98,35 @@
 --accepting rule at line 82 ("[")
 --accepting rule at line 112 ("i")
 --accepting rule at line 83 ("]")
+Lval
+stmt1
+<id,array>
+<[>
+<id,i>
+<]>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+Lval
+<=>
+33333333333
+22222222222222
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("array")
 --accepting rule at line 82 ("[")
 --accepting rule at line 112 ("j")
 --accepting rule at line 83 ("]")
+Lval
+<id,array>
+<[>
+<id,j>
+<]>
+33333333333
 --accepting rule at line 75 (";")
+Lval
+<;>
+33333333333
+22222222222222
 --accepting rule at line 115 ("
 ")
 --accepting rule at line 114 (" ")
@@ -80,11 +137,26 @@
 --accepting rule at line 82 ("[")
 --accepting rule at line 112 ("j")
 --accepting rule at line 83 ("]")
+Lval
+stmt1
+<id,array>
+<[>
+<id,j>
+<]>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+Lval
+<=>
+33333333333
+22222222222222
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("temp")
 --accepting rule at line 75 (";")
+Lval
+<id,temp>
+<;>
+33333333333
 --accepting rule at line 115 ("
 ")
 --accepting rule at line 114 (" ")
@@ -112,6 +184,23 @@
 --accepting rule at line 82 ("[")
 --accepting rule at line 83 ("]")
 --accepting rule at line 76 (",")
+Lval
+stmt1
+<return>
+<into>
+ExpNumber:0
+<;>
+<}>
+<int>
+<id,heap_ajust>
+<(>
+<int>
+<id,arr>
+<[>
+<]>
+<,>
+33333333333
+1111111111111111
 --accepting rule at line 114 (" ")
 --accepting rule at line 100 ("int")
 --accepting rule at line 114 (" ")
@@ -145,79 +234,6 @@
 --accepting rule at line 112 ("dad")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("start")
-<int>
-<id,n>
-<;>
-<int>
-<id,swap>
-<(>
-<int>
-<id,array>
-<[>
-<]>
-<,>
-<int>
-<id,i>
-<,>
-<int>
-<id,j>
-<)>
-<{>
-<int>
-<id,temp>
-<;>
-<id,temp>
-<=>
-Lval
-<id,array>
-<[>
-<id,i>
-<]>
-Lval
-<;>
-Lval
-stmt1
-<id,array>
-<[>
-<id,i>
-<]>
-Lval
-<=>
-Lval
-<id,array>
-<[>
-<id,j>
-<]>
-Lval
-<;>
-Lval
-stmt1
-<id,array>
-<[>
-<id,j>
-<]>
-Lval
-<=>
-Lval
-<id,temp>
-<;>
-Lval
-stmt1
-<return>
-<into>
-ExpNumber:0
-<;>
-<}>
-<int>
-<id,heap_ajust>
-<(>
-<int>
-<id,arr>
-<[>
-<]>
-<,>
 <int>
 <id,start>
 <,>
@@ -230,8 +246,14 @@ ExpNumber:0
 <;>
 <id,dad>
 <=>
+33333333333
+--accepting rule at line 114 (" ")
+--accepting rule at line 112 ("start")
+--accepting rule at line 75 (";")
 Lval
-<i--accepting rule at line 75 (";")
+<id,start>
+<;>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 114 (" ")
 --accepting rule at line 115 ("
@@ -253,10 +275,22 @@ Lval
 --accepting rule at line 112 ("son")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+Lval
+stmt1
+<int>
+<id,son>
+<;>
+<id,son>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("dad")
 --accepting rule at line 114 (" ")
 --accepting rule at line 86 ("*")
+Lval
+<id,dad>
+<*>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 109 ("2")
 --accepting rule at line 114 (" ")
@@ -278,10 +312,27 @@ Lval
 --accepting rule at line 112 ("son")
 --accepting rule at line 114 (" ")
 --accepting rule at line 96 ("<")
+Lval
+<intd>
+ExpNumber:0
+<+>
+<intd>
+ExpNumber:0
+<;>
+stmt1
+<while>
+<(>
+<id,son>
+<<>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("end")
 --accepting rule at line 114 (" ")
 --accepting rule at line 84 ("+")
+Lval
+<id,end>
+<+>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 109 ("1")
 --accepting rule at line 81 (")")
@@ -304,27 +355,64 @@ Lval
 --accepting rule at line 112 ("son")
 --accepting rule at line 114 (" ")
 --accepting rule at line 96 ("<")
+Lval
+<intd>
+ExpNumber:0
+<)>
+<{>
+<if>
+<(>
+<id,son>
+<<>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("end")
 --accepting rule at line 114 (" ")
 --accepting rule at line 90 ("&&")
+Lval
+<id,end>
+<&&>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("arr")
 --accepting rule at line 82 ("[")
 --accepting rule at line 112 ("son")
 --accepting rule at line 83 ("]")
+Lval
+<id,arr>
+<[>
+<id,son>
+<]>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 96 ("<")
+Lval
+<<>
+33333333333
+22222222222222
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("arr")
 --accepting rule at line 82 ("[")
 --accepting rule at line 112 ("son")
 --accepting rule at line 114 (" ")
 --accepting rule at line 84 ("+")
+Lval
+<id,arr>
+<[>
+<id,son>
+<+>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 109 ("1")
 --accepting rule at line 83 ("]")
 --accepting rule at line 81 (")")
+Lval
+<intd>
+ExpNumber:0
+<]>
+<)>
+33333333333
+22222222222222
 --accepting rule at line 115 ("
 ")
 --accepting rule at line 114 (" ")
@@ -342,10 +430,18 @@ Lval
 --accepting rule at line 112 ("son")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+Lval
+<id,son>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("son")
 --accepting rule at line 114 (" ")
 --accepting rule at line 84 ("+")
+Lval
+<id,son>
+<+>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 109 ("1")
 --accepting rule at line 75 (";")
@@ -368,14 +464,40 @@ Lval
 --accepting rule at line 82 ("[")
 --accepting rule at line 112 ("dad")
 --accepting rule at line 83 ("]")
+Lval
+<intd>
+ExpNumber:0
+<;>
+stmt1
+<if>
+<(>
+<id,arr>
+<[>
+<id,dad>
+<]>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 95 (">")
+Lval
+<>>
+33333333333
+22222222222222
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("arr")
 --accepting rule at line 82 ("[")
 --accepting rule at line 112 ("son")
 --accepting rule at line 83 ("]")
+Lval
+<id,arr>
+<[>
+<id,son>
+<]>
+33333333333
 --accepting rule at line 81 (")")
+Lval
+<)>
+33333333333
+22222222222222
 --accepting rule at line 115 ("
 ")
 --accepting rule at line 114 (" ")
@@ -391,90 +513,7 @@ Lval
 --accepting rule at line 114 (" ")
 --accepting rule at line 114 (" ")
 --accepting rule at line 108 ("return")
-d,start>
-<;>
-Lval
-stmt1
-<int>
-<id,son>
-<;>
-<id,son>
-<=>
-Lval
-<id,dad>
-<*>
-Lval
-<intd>
-ExpNumber:0
-<+>
-<intd>
-ExpNumber:0
-<;>
-stmt1
-<while>
-<(>
-<id,son>
-<<>
-Lval
-<id,end>
-<+>
-Lval
-<intd>
-ExpNumber:0
-<)>
-<{>
-<if>
-<(>
-<id,son>
-<<>
-Lval
-<id,end>
-<&&>
-Lval
-<id,arr>
-<[>
-<id,son>
-<]>
-Lval
-<<>
-Lval
-<id,arr>
-<[>
-<id,son>
-<+>
-Lval
-<intd>
-ExpNumber:0
-<]>
-<)>
-Lval
-<id,son>
-<=>
-Lval
-<id,son>
-<+>
-Lval
-<intd>
-ExpNumber:0
-<;>
-stmt1
-<if>
-<(>
-<id,arr>
-<[>
-<id,dad>
-<]>
-Lval
-<>>
-Lval
-<id,arr>
-<[>
-<id,son>
-<]>
-Lval
-<)>
-Lval
-<re--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
 --accepting rule at line 111 ("0")
 --accepting rule at line 75 (";")
 --accepting rule at line 114 (" ")
@@ -509,15 +548,39 @@ Lval
 --accepting rule at line 112 ("dad")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+Lval
+<return>
+<into>
+ExpNumber:0
+<;>
+<else>
+<{>
+<id,dad>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("swap")
 --accepting rule at line 80 ("(")
 --accepting rule at line 112 ("arr")
 --accepting rule at line 76 (",")
+Lval
+<id,swap>
+<(>
+<id,arr>
+<,>
+33333333333
 --accepting rule at line 112 ("dad")
 --accepting rule at line 76 (",")
+Lval
+<id,dad>
+<,>
+33333333333
 --accepting rule at line 112 ("son")
 --accepting rule at line 81 (")")
+Lval
+<id,son>
+<)>
+33333333333
 --accepting rule at line 75 (";")
 --accepting rule at line 114 (" ")
 --accepting rule at line 114 (" ")
@@ -538,9 +601,19 @@ Lval
 --accepting rule at line 112 ("dad")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+Lval
+<;>
+stmt1
+<id,dad>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("son")
 --accepting rule at line 75 (";")
+Lval
+<id,son>
+<;>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 114 (" ")
 --accepting rule at line 115 ("
@@ -560,10 +633,19 @@ Lval
 --accepting rule at line 112 ("son")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+Lval
+stmt1
+<id,son>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("dad")
 --accepting rule at line 114 (" ")
 --accepting rule at line 86 ("*")
+Lval
+<id,dad>
+<*>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 109 ("2")
 --accepting rule at line 114 (" ")
@@ -624,98 +706,6 @@ Lval
 --accepting rule at line 82 ("[")
 --accepting rule at line 83 ("]")
 --accepting rule at line 76 (",")
---accepting rule at line 114 (" ")
---accepting rule at line 100 ("int")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("len")
---accepting rule at line 81 (")")
---accepting rule at line 114 (" ")
---accepting rule at line 78 ("{")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 100 ("int")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("i")
---accepting rule at line 75 (";")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 100 ("int")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("tmp")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("i")
---accepting rule at line 114 (" ")
---accepting rule at line 89 ("=")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("len")
---accepting rule at line 114 (" ")
---accepting rule at line 87 ("/")
---accepting rule at line 114 (" ")
---accepting rule at line 109 ("2")
---accepting rule at line 114 (" ")
---accepting rule at line 85 ("-")
---accepting rule at line 114 (" ")
---accepting rule at line 109 ("1")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 103 ("while")
-turn>
-<into>
-ExpNumber:0
-<;>
-<else>
-<{>
-<id,dad>
-<=>
-Lval
-<id,swap>
-<(>
-<id,arr>
-<,>
-Lval
-<id,dad>
-<,>
-Lval
-<id,son>
-<)>
-Lval
-<;>
-stmt1
-<id,dad>
-<=>
-Lval
-<id,son>
-<;>
-Lval
-stmt1
-<id,son>
-<=>
-Lval
-<id,dad>
-<*>
 Lval
 <intd>
 ExpNumber:0
@@ -739,6 +729,48 @@ ExpNumber:0
 <[>
 <]>
 <,>
+33333333333
+1111111111111111
+--accepting rule at line 114 (" ")
+--accepting rule at line 100 ("int")
+--accepting rule at line 114 (" ")
+--accepting rule at line 112 ("len")
+--accepting rule at line 81 (")")
+--accepting rule at line 114 (" ")
+--accepting rule at line 78 ("{")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 115 ("
+")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 100 ("int")
+--accepting rule at line 114 (" ")
+--accepting rule at line 112 ("i")
+--accepting rule at line 75 (";")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 115 ("
+")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 100 ("int")
+--accepting rule at line 114 (" ")
+--accepting rule at line 112 ("tmp")
+--accepting rule at line 75 (";")
+--accepting rule at line 115 ("
+")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 112 ("i")
+--accepting rule at line 114 (" ")
+--accepting rule at line 89 ("=")
 <int>
 <id,len>
 <)>
@@ -751,9 +783,35 @@ ExpNumber:0
 <;>
 <id,i>
 <=>
+33333333333
+--accepting rule at line 114 (" ")
+--accepting rule at line 112 ("len")
+--accepting rule at line 114 (" ")
+--accepting rule at line 87 ("/")
 Lval
 <id,len>
 </>
+33333333333
+--accepting rule at line 114 (" ")
+--accepting rule at line 109 ("2")
+--accepting rule at line 114 (" ")
+--accepting rule at line 85 ("-")
+--accepting rule at line 114 (" ")
+--accepting rule at line 109 ("1")
+--accepting rule at line 75 (";")
+--accepting rule at line 115 ("
+")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 103 ("while")
+--accepting rule at line 114 (" ")
+--accepting rule at line 80 ("(")
+--accepting rule at line 114 (" ")
+--accepting rule at line 112 ("i")
+--accepting rule at line 114 (" ")
+--accepting rule at line 95 (">")
 Lval
 <intd>
 ExpNumber:0
@@ -762,12 +820,11 @@ ExpNumber:0
 ExpNumber:0
 <;>
 stmt1
-<whil--accepting rule at line 114 (" ")
---accepting rule at line 80 ("(")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("i")
---accepting rule at line 114 (" ")
---accepting rule at line 95 (">")
+<while>
+<(>
+<id,i>
+<>>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 85 ("-")
 --accepting rule at line 109 ("1")
@@ -787,10 +844,23 @@ stmt1
 --accepting rule at line 112 ("tmp")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+Lval
+<->
+<intd>
+ExpNumber:0
+<)>
+<{>
+<id,tmp>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("len")
 --accepting rule at line 114 (" ")
 --accepting rule at line 85 ("-")
+Lval
+<id,len>
+<->
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 109 ("1")
 --accepting rule at line 75 (";")
@@ -807,17 +877,39 @@ stmt1
 --accepting rule at line 112 ("tmp")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+Lval
+<intd>
+ExpNumber:0
+<;>
+stmt1
+<id,tmp>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("heap_ajust")
 --accepting rule at line 80 ("(")
 --accepting rule at line 112 ("arr")
 --accepting rule at line 76 (",")
+Lval
+<id,heap_ajust>
+<(>
+<id,arr>
+<,>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("i")
 --accepting rule at line 76 (",")
+Lval
+<id,i>
+<,>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("tmp")
 --accepting rule at line 81 (")")
+Lval
+<id,tmp>
+<)>
+33333333333
 --accepting rule at line 75 (";")
 --accepting rule at line 114 (" ")
 --accepting rule at line 114 (" ")
@@ -834,10 +926,20 @@ stmt1
 --accepting rule at line 112 ("i")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+Lval
+<;>
+stmt1
+<id,i>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("i")
 --accepting rule at line 114 (" ")
 --accepting rule at line 85 ("-")
+Lval
+<id,i>
+<->
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 109 ("1")
 --accepting rule at line 75 (";")
@@ -861,10 +963,23 @@ stmt1
 --accepting rule at line 112 ("i")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+Lval
+<intd>
+ExpNumber:0
+<;>
+stmt1
+<}>
+<id,i>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("len")
 --accepting rule at line 114 (" ")
 --accepting rule at line 85 ("-")
+Lval
+<id,len>
+<->
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 109 ("1")
 --accepting rule at line 75 (";")
@@ -884,6 +999,16 @@ stmt1
 --accepting rule at line 112 ("i")
 --accepting rule at line 114 (" ")
 --accepting rule at line 95 (">")
+Lval
+<intd>
+ExpNumber:0
+<;>
+stmt1
+<while>
+<(>
+<id,i>
+<>>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 111 ("0")
 --accepting rule at line 81 (")")
@@ -918,6 +1043,17 @@ stmt1
 --accepting rule at line 112 ("tmp0")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+Lval
+<into>
+ExpNumber:0
+<)>
+<{>
+<int>
+<id,tmp0>
+<;>
+<id,tmp0>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 111 ("0")
 --accepting rule at line 75 (";")
@@ -934,97 +1070,37 @@ stmt1
 --accepting rule at line 112 ("tmp")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+Lval
+<into>
+ExpNumber:0
+<;>
+stmt1
+<id,tmp>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("swap")
 --accepting rule at line 80 ("(")
 --accepting rule at line 112 ("arr")
 --accepting rule at line 76 (",")
-e>
-<(>
-<id,i>
-<>>
-Lval
-<->
-<intd>
-ExpNumber:0
-<)>
-<{>
-<id,tmp>
-<=>
-Lval
-<id,len>
-<->
-Lval
-<intd>
-ExpNumber:0
-<;>
-stmt1
-<id,tmp>
-<=>
-Lval
-<id,heap_ajust>
-<(>
-<id,arr>
-<,>
-Lval
-<id,i>
-<,>
-Lval
-<id,tmp>
-<)>
-Lval
-<;>
-stmt1
-<id,i>
-<=>
-Lval
-<id,i>
-<->
-Lval
-<intd>
-ExpNumber:0
-<;>
-stmt1
-<}>
-<id,i>
-<=>
-Lval
-<id,len>
-<->
-Lval
-<intd>
-ExpNumber:0
-<;>
-stmt1
-<while>
-<(>
-<id,i>
-<>>
-Lval
-<into>
-ExpNumber:0
-<)>
-<{>
-<int>
-<id,tmp0>
-<;>
-<id,tmp0>
-<=>
-Lval
-<into>
-ExpNumber:0
-<;>
-stmt1
-<id,tmp>
-<=>
 Lval
 <id,swap>
 <(>
 <id,arr>
-<--accepting rule at line 112 ("tmp0")
+<,>
+33333333333
+--accepting rule at line 112 ("tmp0")
 --accepting rule at line 76 (",")
+Lval
+<id,tmp0>
+<,>
+33333333333
 --accepting rule at line 112 ("i")
 --accepting rule at line 81 (")")
+Lval
+<id,i>
+<)>
+33333333333
 --accepting rule at line 75 (";")
 --accepting rule at line 115 ("
 ")
@@ -1039,10 +1115,20 @@ Lval
 --accepting rule at line 112 ("tmp")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+Lval
+<;>
+stmt1
+<id,tmp>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("i")
 --accepting rule at line 114 (" ")
 --accepting rule at line 85 ("-")
+Lval
+<id,i>
+<->
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 109 ("1")
 --accepting rule at line 75 (";")
@@ -1059,17 +1145,39 @@ Lval
 --accepting rule at line 112 ("tmp")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+Lval
+<intd>
+ExpNumber:0
+<;>
+stmt1
+<id,tmp>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("heap_ajust")
 --accepting rule at line 80 ("(")
 --accepting rule at line 112 ("arr")
 --accepting rule at line 76 (",")
+Lval
+<id,heap_ajust>
+<(>
+<id,arr>
+<,>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("tmp0")
 --accepting rule at line 76 (",")
+Lval
+<id,tmp0>
+<,>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("tmp")
 --accepting rule at line 81 (")")
+Lval
+<id,tmp>
+<)>
+33333333333
 --accepting rule at line 75 (";")
 --accepting rule at line 114 (" ")
 --accepting rule at line 114 (" ")
@@ -1086,9 +1194,19 @@ Lval
 --accepting rule at line 112 ("i")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+Lval
+<;>
+stmt1
+<id,i>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("i")
 --accepting rule at line 85 ("-")
+Lval
+<id,i>
+<->
+33333333333
 --accepting rule at line 109 ("1")
 --accepting rule at line 75 (";")
 --accepting rule at line 115 ("
@@ -1134,77 +1252,6 @@ Lval
 --accepting rule at line 112 ("n")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
---accepting rule at line 114 (" ")
---accepting rule at line 109 ("10")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 100 ("int")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("a")
---accepting rule at line 82 ("[")
---accepting rule at line 109 ("10")
---accepting rule at line 83 ("]")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("a")
---accepting rule at line 82 ("[")
---accepting rule at line 111 ("0")
---accepting rule at line 83 ("]")
---accepting rule at line 89 ("=")
---accepting rule at line 109 ("4")
---accepting rule at line 75 (";")
---accepting rule at line 112 ("a")
-,>
-Lval
-<id,tmp0>
-<,>
-Lval
-<id,i>
-<)>
-Lval
-<;>
-stmt1
-<id,tmp>
-<=>
-Lval
-<id,i>
-<->
-Lval
-<intd>
-ExpNumber:0
-<;>
-stmt1
-<id,tmp>
-<=>
-Lval
-<id,heap_ajust>
-<(>
-<id,arr>
-<,>
-Lval
-<id,tmp0>
-<,>
-Lval
-<id,tmp>
-<)>
-Lval
-<;>
-stmt1
-<id,i>
-<=>
-Lval
-<id,i>
-<->
 Lval
 <intd>
 ExpNumber:0
@@ -1223,6 +1270,34 @@ ExpNumber:0
 <{>
 <id,n>
 <=>
+33333333333
+--accepting rule at line 114 (" ")
+--accepting rule at line 109 ("10")
+--accepting rule at line 75 (";")
+--accepting rule at line 115 ("
+")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 100 ("int")
+--accepting rule at line 114 (" ")
+--accepting rule at line 112 ("a")
+--accepting rule at line 82 ("[")
+--accepting rule at line 109 ("10")
+--accepting rule at line 83 ("]")
+--accepting rule at line 75 (";")
+--accepting rule at line 115 ("
+")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 114 (" ")
+--accepting rule at line 112 ("a")
+--accepting rule at line 82 ("[")
+--accepting rule at line 111 ("0")
+--accepting rule at line 83 ("]")
+--accepting rule at line 89 ("=")
 Lval
 <intd>
 ExpNumber:0
@@ -1241,15 +1316,28 @@ ExpNumber:0
 ExpNumber:0
 <]>
 <=>
+33333333333
+22222222222222
+--accepting rule at line 109 ("4")
+--accepting rule at line 75 (";")
+--accepting rule at line 112 ("a")
+--accepting rule at line 82 ("[")
+--accepting rule at line 109 ("1")
+--accepting rule at line 83 ("]")
+--accepting rule at line 89 ("=")
 Lval
 <intd>
 ExpNumber:0
 <;>
 stmt1
-<id--accepting rule at line 82 ("[")
---accepting rule at line 109 ("1")
---accepting rule at line 83 ("]")
---accepting rule at line 89 ("=")
+<id,a>
+<[>
+<intd>
+ExpNumber:0
+<]>
+<=>
+33333333333
+22222222222222
 --accepting rule at line 109 ("3")
 --accepting rule at line 75 (";")
 --accepting rule at line 112 ("a")
@@ -1257,6 +1345,19 @@ stmt1
 --accepting rule at line 109 ("2")
 --accepting rule at line 83 ("]")
 --accepting rule at line 89 ("=")
+Lval
+<intd>
+ExpNumber:0
+<;>
+stmt1
+<id,a>
+<[>
+<intd>
+ExpNumber:0
+<]>
+<=>
+33333333333
+22222222222222
 --accepting rule at line 109 ("9")
 --accepting rule at line 75 (";")
 --accepting rule at line 112 ("a")
@@ -1264,6 +1365,19 @@ stmt1
 --accepting rule at line 109 ("3")
 --accepting rule at line 83 ("]")
 --accepting rule at line 89 ("=")
+Lval
+<intd>
+ExpNumber:0
+<;>
+stmt1
+<id,a>
+<[>
+<intd>
+ExpNumber:0
+<]>
+<=>
+33333333333
+22222222222222
 --accepting rule at line 109 ("2")
 --accepting rule at line 75 (";")
 --accepting rule at line 112 ("a")
@@ -1271,6 +1385,19 @@ stmt1
 --accepting rule at line 109 ("4")
 --accepting rule at line 83 ("]")
 --accepting rule at line 89 ("=")
+Lval
+<intd>
+ExpNumber:0
+<;>
+stmt1
+<id,a>
+<[>
+<intd>
+ExpNumber:0
+<]>
+<=>
+33333333333
+22222222222222
 --accepting rule at line 111 ("0")
 --accepting rule at line 75 (";")
 --accepting rule at line 115 ("
@@ -1284,64 +1411,6 @@ stmt1
 --accepting rule at line 109 ("5")
 --accepting rule at line 83 ("]")
 --accepting rule at line 89 ("=")
---accepting rule at line 109 ("1")
---accepting rule at line 75 (";")
---accepting rule at line 112 ("a")
---accepting rule at line 82 ("[")
---accepting rule at line 109 ("6")
---accepting rule at line 83 ("]")
---accepting rule at line 89 ("=")
---accepting rule at line 109 ("6")
---accepting rule at line 75 (";")
---accepting rule at line 112 ("a")
---accepting rule at line 82 ("[")
---accepting rule at line 109 ("7")
---accepting rule at line 83 ("]")
---accepting rule at line 89 ("=")
---accepting rule at line 109 ("5")
---accepting rule at line 75 (";")
---accepting rule at line 112 ("a")
---accepting rule at line 82 ("[")
---accepting rule at line 109 ("8")
-,a>
-<[>
-<intd>
-ExpNumber:0
-<]>
-<=>
-Lval
-<intd>
-ExpNumber:0
-<;>
-stmt1
-<id,a>
-<[>
-<intd>
-ExpNumber:0
-<]>
-<=>
-Lval
-<intd>
-ExpNumber:0
-<;>
-stmt1
-<id,a>
-<[>
-<intd>
-ExpNumber:0
-<]>
-<=>
-Lval
-<intd>
-ExpNumber:0
-<;>
-stmt1
-<id,a>
-<[>
-<intd>
-ExpNumber:0
-<]>
-<=>
 Lval
 <into>
 ExpNumber:0
@@ -1353,37 +1422,68 @@ stmt1
 ExpNumber:0
 <]>
 <=>
-Lval
-<intd>
-ExpNumber:0
-<;>
-stmt1
-<id,a>
-<[>
-<intd>
-ExpNumber:0
-<]>
-<=>
-Lval
-<intd>
-ExpNumber:0
-<;>
-stmt1
-<id,a>
-<[>
-<intd>
-ExpNumber:0
-<]>
-<=>
-Lval
-<intd>
-ExpNumber:0
-<;>
-stmt1
-<id,a>
-<[>
+33333333333
+22222222222222
+--accepting rule at line 109 ("1")
+--accepting rule at line 75 (";")
+--accepting rule at line 112 ("a")
+--accepting rule at line 82 ("[")
+--accepting rule at line 109 ("6")
 --accepting rule at line 83 ("]")
 --accepting rule at line 89 ("=")
+Lval
+<intd>
+ExpNumber:0
+<;>
+stmt1
+<id,a>
+<[>
+<intd>
+ExpNumber:0
+<]>
+<=>
+33333333333
+22222222222222
+--accepting rule at line 109 ("6")
+--accepting rule at line 75 (";")
+--accepting rule at line 112 ("a")
+--accepting rule at line 82 ("[")
+--accepting rule at line 109 ("7")
+--accepting rule at line 83 ("]")
+--accepting rule at line 89 ("=")
+Lval
+<intd>
+ExpNumber:0
+<;>
+stmt1
+<id,a>
+<[>
+<intd>
+ExpNumber:0
+<]>
+<=>
+33333333333
+22222222222222
+--accepting rule at line 109 ("5")
+--accepting rule at line 75 (";")
+--accepting rule at line 112 ("a")
+--accepting rule at line 82 ("[")
+--accepting rule at line 109 ("8")
+--accepting rule at line 83 ("]")
+--accepting rule at line 89 ("=")
+Lval
+<intd>
+ExpNumber:0
+<;>
+stmt1
+<id,a>
+<[>
+<intd>
+ExpNumber:0
+<]>
+<=>
+33333333333
+22222222222222
 --accepting rule at line 109 ("7")
 --accepting rule at line 75 (";")
 --accepting rule at line 112 ("a")
@@ -1391,6 +1491,19 @@ stmt1
 --accepting rule at line 109 ("9")
 --accepting rule at line 83 ("]")
 --accepting rule at line 89 ("=")
+Lval
+<intd>
+ExpNumber:0
+<;>
+stmt1
+<id,a>
+<[>
+<intd>
+ExpNumber:0
+<]>
+<=>
+33333333333
+22222222222222
 --accepting rule at line 109 ("8")
 --accepting rule at line 75 (";")
 --accepting rule at line 115 ("
@@ -1412,6 +1525,17 @@ stmt1
 --accepting rule at line 112 ("i")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+Lval
+<intd>
+ExpNumber:0
+<;>
+stmt1
+<int>
+<id,i>
+<;>
+<id,i>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 111 ("0")
 --accepting rule at line 75 (";")
@@ -1424,14 +1548,32 @@ stmt1
 --accepting rule at line 112 ("i")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+Lval
+<into>
+ExpNumber:0
+<;>
+stmt1
+<id,i>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("heap_sort")
 --accepting rule at line 80 ("(")
 --accepting rule at line 112 ("a")
 --accepting rule at line 76 (",")
+Lval
+<id,heap_sort>
+<(>
+<id,a>
+<,>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("n")
 --accepting rule at line 81 (")")
+Lval
+<id,n>
+<)>
+33333333333
 --accepting rule at line 75 (";")
 --accepting rule at line 115 ("
 ")
@@ -1445,9 +1587,21 @@ stmt1
 --accepting rule at line 112 ("i")
 --accepting rule at line 114 (" ")
 --accepting rule at line 96 ("<")
+Lval
+<;>
+stmt1
+<while>
+<(>
+<id,i>
+<<>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("n")
 --accepting rule at line 81 (")")
+Lval
+<id,n>
+<)>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 78 ("{")
 --accepting rule at line 115 ("
@@ -1477,12 +1631,30 @@ stmt1
 --accepting rule at line 112 ("tmp")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+Lval
+<{>
+<int>
+<id,tmp>
+<;>
+<id,tmp>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("a")
 --accepting rule at line 82 ("[")
 --accepting rule at line 112 ("i")
 --accepting rule at line 83 ("]")
+Lval
+<id,a>
+<[>
+<id,i>
+<]>
+33333333333
 --accepting rule at line 75 (";")
+Lval
+<;>
+33333333333
+22222222222222
 --accepting rule at line 115 ("
 ")
 --accepting rule at line 114 (" ")
@@ -1497,6 +1669,13 @@ stmt1
 --accepting rule at line 80 ("(")
 --accepting rule at line 112 ("tmp")
 --accepting rule at line 81 (")")
+Lval
+stmt1
+<id,putint>
+<(>
+<id,tmp>
+<)>
+33333333333
 --accepting rule at line 75 (";")
 --accepting rule at line 115 ("
 ")
@@ -1511,6 +1690,11 @@ stmt1
 --accepting rule at line 112 ("tmp")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+Lval
+<;>
+<id,tmp>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 109 ("10")
 --accepting rule at line 75 (";")
@@ -1528,80 +1712,6 @@ stmt1
 --accepting rule at line 80 ("(")
 --accepting rule at line 112 ("tmp")
 --accepting rule at line 81 (")")
-<intd>
-ExpNumber:0
-<]>
-<=>
-Lval
-<intd>
-ExpNumber:0
-<;>
-stmt1
-<id,a>
-<[>
-<intd>
-ExpNumber:0
-<]>
-<=>
-Lval
-<intd>
-ExpNumber:0
-<;>
-stmt1
-<int>
-<id,i>
-<;>
-<id,i>
-<=>
-Lval
-<into>
-ExpNumber:0
-<;>
-stmt1
-<id,i>
-<=>
-Lval
-<id,heap_sort>
-<(>
-<id,a>
-<,>
-Lval
-<id,n>
-<)>
-Lval
-<;>
-stmt1
-<while>
-<(>
-<id,i>
-<<>
-Lval
-<id,n>
-<)>
-Lval
-<{>
-<int>
-<id,tmp>
-<;>
-<id,tmp>
-<=>
-Lval
-<id,a>
-<[>
-<id,i>
-<]>
-Lval
-<;>
-Lval
-stmt1
-<id,putint>
-<(>
-<id,tmp>
-<)>
-Lval
-<;>
-<id,tmp>
-<=>
 Lval
 <intd>
 ExpNumber:0
@@ -1611,6 +1721,7 @@ stmt1
 <(>
 <id,tmp>
 <)>
+33333333333
 --accepting rule at line 75 (";")
 --accepting rule at line 115 ("
 ")
@@ -1625,10 +1736,19 @@ stmt1
 --accepting rule at line 112 ("i")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+Lval
+<;>
+<id,i>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("i")
 --accepting rule at line 114 (" ")
 --accepting rule at line 84 ("+")
+Lval
+<id,i>
+<+>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 109 ("1")
 --accepting rule at line 75 (";")
@@ -1656,13 +1776,6 @@ stmt1
 ")
 --(end of buffer or a NUL)
 --EOF (start condition 0)
-Lval
-<;>
-<id,i>
-<=>
-Lval
-<id,i>
-<+>
 Lval
 <intd>
 ExpNumber:0
@@ -2339,24 +2452,28 @@ heap_ajust     Function       TYPEINTEGER    NOT NULL
 heap_sort      Function       TYPEINTEGER    NOT NULL       
 main           Function       TYPEINTEGER    NOT NULL       
 ===========================================================
+===========================================================
 Formal:swap
 ID             category       type           depictor
               
-array          Array          TYPEINTEGER    NOT NULL       
+array          Array          TYPEINTEGER    ----------> dim=1
 i              Variable       TYPEINTEGER    NOT NULL       
 j              Variable       TYPEINTEGER    NOT NULL       
+===========================================================
 ===========================================================
 Local:swap
 ID             category       type           depictor
               
 temp           Variable       TYPEINTEGER    NULL           
 ===========================================================
+===========================================================
 Formal:heap_ajust
 ID             category       type           depictor
               
-arr            Array          TYPEINTEGER    NOT NULL       
+arr            Array          TYPEINTEGER    ----------> dim=1
 start          Variable       TYPEINTEGER    NOT NULL       
 end            Variable       TYPEINTEGER    NOT NULL       
+===========================================================
 ===========================================================
 Local:heap_ajust
 ID             category       type           depictor
@@ -2365,16 +2482,19 @@ dad            Variable       TYPEINTEGER    NULL
 son            Variable       TYPEINTEGER    NULL           
                Block          BLOCKStmt      NOT NULL       
 ===========================================================
+===========================================================
 Local:block
 ID             category       type           depictor
               
                Block          BLOCKStmt      NULL           
 ===========================================================
+===========================================================
 Formal:heap_sort
 ID             category       type           depictor
               
-arr            Array          TYPEINTEGER    NOT NULL       
+arr            Array          TYPEINTEGER    ----------> dim=1
 len            Variable       TYPEINTEGER    NOT NULL       
+===========================================================
 ===========================================================
 Local:heap_sort
 ID             category       type           depictor
@@ -2384,27 +2504,32 @@ tmp            Variable       TYPEINTEGER    NULL
                Block          BLOCKStmt      NULL           
                Block          BLOCKStmt      NOT NULL       
 ===========================================================
+===========================================================
 Local:block
 ID             category       type           depictor
               
 tmp0           Variable       TYPEINTEGER    NULL           
+===========================================================
 ===========================================================
 Formal:main
 ID             category       type           depictor
               
                NOParam                       NOT NULL       
 ===========================================================
+===========================================================
 Local:main
 ID             category       type           depictor
               
-a              Array          TYPEINTEGER    NULL           
+a              Array          TYPEINTEGER    ----------> dim=1
 i              Variable       TYPEINTEGER    NULL           
                Block          BLOCKStmt      NOT NULL       
+===========================================================
 ===========================================================
 Local:block
 ID             category       type           depictor
               
 tmp            Variable       TYPEINTEGER    NULL           
+===========================================================
 TraverseScopeStack no result
 TraverseScopeStack no result
 TraverseScopeStack no result

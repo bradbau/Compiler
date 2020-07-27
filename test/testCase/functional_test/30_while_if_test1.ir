@@ -23,6 +23,17 @@
 --accepting rule at line 112 ("a")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+<int>
+<id,whileIf>
+<(>
+<)>
+<{>
+<int>
+<id,a>
+<;>
+<id,a>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 111 ("0")
 --accepting rule at line 75 (";")
@@ -41,6 +52,17 @@
 --accepting rule at line 112 ("b")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+Lval
+<into>
+ExpNumber:0
+<;>
+stmt1
+<int>
+<id,b>
+<;>
+<id,b>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 111 ("0")
 --accepting rule at line 75 (";")
@@ -54,6 +76,16 @@
 --accepting rule at line 112 ("a")
 --accepting rule at line 114 (" ")
 --accepting rule at line 96 ("<")
+Lval
+<into>
+ExpNumber:0
+<;>
+stmt1
+<while>
+<(>
+<id,a>
+<<>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 109 ("100")
 --accepting rule at line 81 (")")
@@ -71,6 +103,16 @@
 --accepting rule at line 112 ("a")
 --accepting rule at line 114 (" ")
 --accepting rule at line 93 ("==")
+Lval
+<intd>
+ExpNumber:0
+<)>
+<{>
+<if>
+<(>
+<id,a>
+<==>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 109 ("5")
 --accepting rule at line 81 (")")
@@ -87,6 +129,14 @@
 --accepting rule at line 112 ("b")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+Lval
+<intd>
+ExpNumber:0
+<)>
+<{>
+<id,b>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 109 ("25")
 --accepting rule at line 75 (";")
@@ -111,6 +161,18 @@
 --accepting rule at line 112 ("a")
 --accepting rule at line 114 (" ")
 --accepting rule at line 93 ("==")
+Lval
+<intd>
+ExpNumber:0
+<;>
+stmt1
+<}>
+<else>
+<if>
+<(>
+<id,a>
+<==>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 109 ("10")
 --accepting rule at line 81 (")")
@@ -127,6 +189,14 @@
 --accepting rule at line 112 ("b")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+Lval
+<intd>
+ExpNumber:0
+<)>
+<{>
+<id,b>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 109 ("42")
 --accepting rule at line 75 (";")
@@ -159,10 +229,25 @@
 --accepting rule at line 112 ("b")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+Lval
+<intd>
+ExpNumber:0
+<;>
+stmt1
+<}>
+<else>
+<{>
+<id,b>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("a")
 --accepting rule at line 114 (" ")
 --accepting rule at line 86 ("*")
+Lval
+<id,a>
+<*>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 109 ("2")
 --accepting rule at line 75 (";")
@@ -182,82 +267,6 @@
 --accepting rule at line 112 ("a")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
-<int>
-<id,whileIf>
-<(>
-<)>
-<{>
-<int>
-<id,a>
-<;>
-<id,a>
-<=>
-Lval
-<into>
-ExpNumber:0
-<;>
-stmt1
-<int>
-<id,b>
-<;>
-<id,b>
-<=>
-Lval
-<into>
-ExpNumber:0
-<;>
-stmt1
-<while>
-<(>
-<id,a>
-<<>
-Lval
-<intd>
-ExpNumber:0
-<)>
-<{>
-<if>
-<(>
-<id,a>
-<==>
-Lval
-<intd>
-ExpNumber:0
-<)>
-<{>
-<id,b>
-<=>
-Lval
-<intd>
-ExpNumber:0
-<;>
-stmt1
-<}>
-<else>
-<if>
-<(>
-<id,a>
-<==>
-Lval
-<intd>
-ExpNumber:0
-<)>
-<{>
-<id,b>
-<=>
-Lval
-<intd>
-ExpNumber:0
-<;>
-stmt1
-<}>
-<else>
-<{>
-<id,b>
-<=>
-Lval
-<id,a>
-<*>
 Lval
 <intd>
 ExpNumber:0
@@ -266,10 +275,15 @@ stmt1
 <}>
 <id,a>
 <=>
-Lval--accepting rule at line 114 (" ")
+33333333333
+--accepting rule at line 114 (" ")
 --accepting rule at line 112 ("a")
 --accepting rule at line 114 (" ")
 --accepting rule at line 84 ("+")
+Lval
+<id,a>
+<+>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 109 ("1")
 --accepting rule at line 75 (";")
@@ -287,6 +301,17 @@ Lval--accepting rule at line 114 (" ")
 --accepting rule at line 80 ("(")
 --accepting rule at line 112 ("b")
 --accepting rule at line 81 (")")
+Lval
+<intd>
+ExpNumber:0
+<;>
+stmt1
+<}>
+<return>
+<(>
+<id,b>
+<)>
+33333333333
 --accepting rule at line 75 (";")
 --accepting rule at line 115 ("
 ")
@@ -322,19 +347,6 @@ Lval--accepting rule at line 114 (" ")
 ")
 --(end of buffer or a NUL)
 --EOF (start condition 0)
-
-<id,a>
-<+>
-Lval
-<intd>
-ExpNumber:0
-<;>
-stmt1
-<}>
-<return>
-<(>
-<id,b>
-<)>
 Lval
 <;>
 <}>
@@ -475,10 +487,12 @@ ID             category       type           depictor
 whileIf        Function       TYPEINTEGER    NOT NULL       
 main           Function       TYPEINTEGER    NOT NULL       
 ===========================================================
+===========================================================
 Formal:whileIf
 ID             category       type           depictor
               
                NOParam                       NOT NULL       
+===========================================================
 ===========================================================
 Local:whileIf
 ID             category       type           depictor
@@ -487,6 +501,7 @@ a              Variable       TYPEINTEGER    NULL
 b              Variable       TYPEINTEGER    NULL           
                Block          BLOCKStmt      NOT NULL       
 ===========================================================
+===========================================================
 Local:block
 ID             category       type           depictor
               
@@ -494,123 +509,9 @@ ID             category       type           depictor
                Block          BLOCKStmt      NULL           
                Block          BLOCKStmt      NULL           
 ===========================================================
+===========================================================
 Formal:main
 ID             category       type           depictor
               
                NOParam                       NULL           
-===========================================================
-Local:main
-ID             category       type           depictor
-              
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-
-~~~~TAC~~~~~
- No  Source Position	TACCode
-_______________________________________
-  0  (at line   0)	CALL main
-
-  1  (at line   2)	FUNCTION whileIf :
-  2  (at line   4)	_t25 := #0
-  3  (at line   4)	 := _t25
-  4  (at line   6)	_t24 := #0
-  5  (at line   6)	 := _t24
-  6  (at line   7)	LABEL label0 :
-  7  (at line   7)	_t4 := 
-  8  (at line   7)	_t7 := #100
-  9  (at line   7)	IF _t4 < _t7 GOTO label1
- 10  (at line   7)	GOTO label2
- 11  (at line   7)	LABEL label1 :
- 12  (at line   8)	_t11 := 
- 13  (at line   8)	_t14 := #5
- 14  (at line   8)	IF _t11 = _t14 GOTO label3
- 15  (at line   8)	GOTO label4
- 16  (at line   8)	LABEL label3 :
- 17  (at line   9)	_t15 := #25
- 18  (at line   9)	 := _t15
- 19  (at line   8)	GOTO label5
- 20  (at line   8)	LABEL label4 :
- 21  (at line  11)	_t16 := 
- 22  (at line  11)	_t19 := #10
- 23  (at line  11)	IF _t16 = _t19 GOTO label6
- 24  (at line  11)	GOTO label7
- 25  (at line  11)	LABEL label6 :
- 26  (at line  12)	_t20 := #42
- 27  (at line  12)	 := _t20
- 28  (at line  11)	GOTO label8
- 29  (at line  11)	LABEL label7 :
- 30  (at line  15)	_t22 := 
- 31  (at line  15)	_t23 := #2
- 32  (at line  15)	_t21 := _t22 * _t23
- 33  (at line  15)	 := _t21
- 34  (at line  11)	LABEL label8 :
- 35  (at line   8)	LABEL label5 :
- 36  (at line  17)	_t9 := 
- 37  (at line  17)	_t10 := #1
- 38  (at line  17)	_t8 := _t9 + _t10
- 39  (at line  17)	 := _t8
- 40  (at line   7)	GOTO label0
- 41  (at line   7)	LABEL label2 :
- 42  (at line  19)	_t3 := 
- 43  (at line  19)	_t2 := _t3
- 44  (at line  19)	RETURN _t2
-
- 45  (at line  23)	FUNCTION main :
- 46  (at line  24)	_t1 := CALL whileIf
- 47  (at line  24)	_t0 := _t1
- 48  (at line  24)	RETURN _t0
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-build assembly code
-tac type FUNCTIONDF
-tec type ASSIGN
-findregister: insldr rd=0,r1=11,r2 offset=0,op2type=1, insefft=0
-tec type ASSIGN
-tec type ASSIGN
-findregister: insldr rd=1,r1=11,r2 offset=0,op2type=1, insefft=0
-tec type ASSIGN
-tac type LABELDF
-tec type ASSIGN
-findregister: insldr rd=2,r1=11,r2 offset=0,op2type=1, insefft=0
-tec type ASSIGN
-findregister: insldr rd=3,r1=11,r2 offset=0,op2type=1, insefft=0
-tac type IFLT
-tac type GOTO
-tac type LABELDF
-tec type ASSIGN
-findregister: insldr rd=4,r1=11,r2 offset=0,op2type=1, insefft=0
-tec type ASSIGN
-findregister: insldr rd=5,r1=11,r2 offset=0,op2type=1, insefft=0
-tac type IFEQ
-tac type GOTO
-tac type LABELDF
-tec type ASSIGN
-findregister: insldr rd=6,r1=11,r2 offset=0,op2type=1, insefft=0
-tec type ASSIGN
-tac type GOTO
-tac type LABELDF
-tec type ASSIGN
-findregister: insldr rd=8,r1=11,r2 offset=0,op2type=1, insefft=0
-tec type ASSIGN
-findregister: insldr rd=9,r1=11,r2 offset=0,op2type=1, insefft=0
-tac type IFEQ
-tac type GOTO
-tac type LABELDF
-tec type ASSIGN
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
-tec type ASSIGN
-tac type GOTO
-tac type LABELDF
-tec type ASSIGN
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
-tec type ASSIGN
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
-tac type MUL
-compiler: ./ObjectCode/Arm.cpp:89: ARM::ARM(TACCode*, ScopeItem&): Assertion `code.dest.Type = VARIABLE' failed.
-Aborted (core dumped)
+Segmentation fault (core dumped)

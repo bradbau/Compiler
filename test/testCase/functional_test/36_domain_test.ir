@@ -22,6 +22,23 @@
 --accepting rule at line 82 ("[")
 --accepting rule at line 83 ("]")
 --accepting rule at line 81 (")")
+<int>
+<id,a>
+<[>
+<intd>
+ExpNumber:0
+<]>
+<;>
+<int>
+<id,func>
+<(>
+<int>
+<id,array>
+<[>
+<]>
+<)>
+33333333333
+1111111111111111
 --accepting rule at line 114 (" ")
 --accepting rule at line 78 ("{")
 --accepting rule at line 115 ("
@@ -33,6 +50,15 @@
 --accepting rule at line 83 ("]")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+<{>
+<id,a>
+<[>
+<into>
+ExpNumber:0
+<]>
+<=>
+33333333333
+22222222222222
 --accepting rule at line 114 (" ")
 --accepting rule at line 109 ("1")
 --accepting rule at line 75 (";")
@@ -52,7 +78,30 @@
 --accepting rule at line 111 ("0")
 --accepting rule at line 83 ("]")
 --accepting rule at line 83 ("]")
+Lval
+<intd>
+ExpNumber:0
+<;>
+stmt1
+<return>
+<id,array>
+<[>
+<intd>
+ExpNumber:0
+<->
+<id,a>
+<[>
+<into>
+ExpNumber:0
+<]>
+<]>
+33333333333
+22222222222222
 --accepting rule at line 75 (";")
+Lval
+<;>
+33333333333
+22222222222222
 --accepting rule at line 115 ("
 ")
 --accepting rule at line 79 ("}")
@@ -93,64 +142,6 @@
 --accepting rule at line 83 ("]")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
---accepting rule at line 114 (" ")
---accepting rule at line 80 ("(")
---accepting rule at line 85 ("-")
---accepting rule at line 109 ("1")
---accepting rule at line 81 (")")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 ("	")
---accepting rule at line 112 ("array")
---accepting rule at line 82 ("[")
---accepting rule at line 109 ("1")
---accepting rule at line 83 ("]")
---accepting rule at line 114 (" ")
---accepting rule at line 89 ("=")
---accepting rule at line 114 (" ")
---accepting rule at line 109 ("4")
-<int>
-<id,a>
-<[>
-<intd>
-ExpNumber:0
-<]>
-<;>
-<int>
-<id,func>
-<(>
-<int>
-<id,array>
-<[>
-<]>
-<)>
-<{>
-<id,a>
-<[>
-<into>
-ExpNumber:0
-<]>
-<=>
-Lval
-<intd>
-ExpNumber:0
-<;>
-stmt1
-<return>
-<id,array>
-<[>
-<intd>
-ExpNumber:0
-<->
-<id,a>
-<[>
-<into>
-ExpNumber:0
-<]>
-<]>
-Lval
-<;>
 Lval
 <}>
 <int>
@@ -174,6 +165,23 @@ ExpNumber:0
 ExpNumber:0
 <]>
 <=>
+33333333333
+22222222222222
+--accepting rule at line 114 (" ")
+--accepting rule at line 80 ("(")
+--accepting rule at line 85 ("-")
+--accepting rule at line 109 ("1")
+--accepting rule at line 81 (")")
+--accepting rule at line 75 (";")
+--accepting rule at line 115 ("
+")
+--accepting rule at line 114 ("	")
+--accepting rule at line 112 ("array")
+--accepting rule at line 82 ("[")
+--accepting rule at line 109 ("1")
+--accepting rule at line 83 ("]")
+--accepting rule at line 114 (" ")
+--accepting rule at line 89 ("=")
 Lval
 <(>
 <->
@@ -188,9 +196,11 @@ stmt1
 ExpNumber:0
 <]>
 <=>
-Lval
-<intd>
-ExpNu--accepting rule at line 75 (";")
+33333333333
+22222222222222
+--accepting rule at line 114 (" ")
+--accepting rule at line 109 ("4")
+--accepting rule at line 75 (";")
 --accepting rule at line 115 ("
 ")
 --accepting rule at line 114 ("	")
@@ -200,6 +210,19 @@ ExpNu--accepting rule at line 75 (";")
 --accepting rule at line 83 ("]")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+Lval
+<intd>
+ExpNumber:0
+<;>
+stmt1
+<id,array>
+<[>
+<intd>
+ExpNumber:0
+<]>
+<=>
+33333333333
+22222222222222
 --accepting rule at line 114 (" ")
 --accepting rule at line 109 ("8")
 --accepting rule at line 75 (";")
@@ -209,11 +232,25 @@ ExpNu--accepting rule at line 75 (";")
 --accepting rule at line 112 ("a")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
+Lval
+<intd>
+ExpNumber:0
+<;>
+stmt1
+<id,a>
+<=>
+33333333333
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("func")
 --accepting rule at line 80 ("(")
 --accepting rule at line 112 ("array")
 --accepting rule at line 81 (")")
+Lval
+<id,func>
+<(>
+<id,array>
+<)>
+33333333333
 --accepting rule at line 75 (";")
 --accepting rule at line 115 ("
 ")
@@ -224,39 +261,6 @@ ExpNu--accepting rule at line 75 (";")
 --accepting rule at line 112 ("a")
 --accepting rule at line 114 (" ")
 --accepting rule at line 84 ("+")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("array")
---accepting rule at line 82 ("[")
---accepting rule at line 109 ("1")
---accepting rule at line 83 ("]")
---accepting rule at line 81 (")")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 79 ("}")
---(end of buffer or a NUL)
---EOF (start condition 0)
-mber:0
-<;>
-stmt1
-<id,array>
-<[>
-<intd>
-ExpNumber:0
-<]>
-<=>
-Lval
-<intd>
-ExpNumber:0
-<;>
-stmt1
-<id,a>
-<=>
-Lval
-<id,func>
-<(>
-<id,array>
-<)>
 Lval
 <;>
 stmt1
@@ -264,6 +268,13 @@ stmt1
 <(>
 <id,a>
 <+>
+33333333333
+--accepting rule at line 114 (" ")
+--accepting rule at line 112 ("array")
+--accepting rule at line 82 ("[")
+--accepting rule at line 109 ("1")
+--accepting rule at line 83 ("]")
+--accepting rule at line 81 (")")
 Lval
 <id,array>
 <[>
@@ -271,6 +282,14 @@ Lval
 ExpNumber:0
 <]>
 <)>
+33333333333
+22222222222222
+--accepting rule at line 75 (";")
+--accepting rule at line 115 ("
+")
+--accepting rule at line 79 ("}")
+--(end of buffer or a NUL)
+--EOF (start condition 0)
 Lval
 <;>
 <}>
@@ -386,32 +405,33 @@ CompUnits (2)
 Global
 ID             category       type           depictor
                
-a              Array          TYPEINTEGER    NULL           
+a              Array          TYPEINTEGER    ----------> dim=1
 func           Function       TYPEINTEGER    NOT NULL       
 main           Function       TYPEINTEGER    NOT NULL       
+===========================================================
 ===========================================================
 Formal:func
 ID             category       type           depictor
               
-array          Array          TYPEINTEGER    NULL           
+array          Array          TYPEINTEGER    ----------> dim=1
+===========================================================
 ===========================================================
 Local:func
 ID             category       type           depictor
               
+===========================================================
 ===========================================================
 Formal:main
 ID             category       type           depictor
               
                NOParam                       NOT NULL       
 ===========================================================
+===========================================================
 Local:main
 ID             category       type           depictor
               
 a              Variable       TYPEINTEGER    NULL           
-array          Array          TYPEINTEGER    NULL           
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-Segmentation fault (core dumped)
+array          Array          TYPEINTEGER    ----------> dim=1
+terminate called after throwing an instance of 'std::logic_error'
+  what():  basic_string::_M_construct null not valid
+Aborted (core dumped)

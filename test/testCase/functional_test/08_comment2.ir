@@ -63,14 +63,17 @@ ID             category       type           depictor
                
 main           Function       TYPEINTEGER    NOT NULL       
 ===========================================================
+===========================================================
 Formal:main
 ID             category       type           depictor
               
                NOParam                       NULL           
 ===========================================================
+===========================================================
 Local:main
 ID             category       type           depictor
               
+===========================================================
 
 ~~~~TAC~~~~~
  No  Source Position	TACCode
@@ -93,8 +96,7 @@ op2type==1
 main:
 PUSH {fp}
 ADD  fp, sp, #0
-SUB fp, fp, #64
-LDRIA r0, [fp, 0x0]
+LDR r0, [fp, 0x0]
 ADD  r0, r0, #0
 ADD  sp, fp, #0
 POP {fp}
