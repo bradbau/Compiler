@@ -1,3 +1,4 @@
+arg S
 --(end of buffer or a NUL)
 --accepting rule at line 100 ("int")
 --accepting rule at line 114 (" ")
@@ -480,4 +481,916 @@ ID             category       type           depictor
 cnt            Variable       TYPEINTEGER    NULL           
 sum            Variable       TYPEINTEGER    NULL           
                Block          BLOCKStmt      NULL           
-Segmentation fault (core dumped)
+===========================================================
+789
+789
+789
+789
+789
+789
+TraverseScopeStack no result
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+TraverseScopeStack no result
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+TraverseScopeStack no result
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+TraverseScopeStack no result
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+TraverseScopeStack no result
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+456
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+456
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+456
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+456
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+456
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+456
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+456
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+456
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+456
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+456
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+456
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+456
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+456
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+456
+
+~~~~TAC~~~~~
+ No  Source Position	TACCode
+_______________________________________
+  0  (at line   0)	CALL main
+
+  1  (at line   2)	FUNCTION main :
+  2  (at line   3)	_t0 := CALL 
+  3  (at line   3)	_t3 := #0
+  4  (at line   3)	a[_t3] := _t0
+  5  (at line   4)	_t5 := CALL 
+  6  (at line   4)	_t8 := #1
+  7  (at line   4)	a[_t8] := _t5
+  8  (at line   5)	_t10 := CALL 
+  9  (at line   5)	_t13 := #2
+ 10  (at line   5)	a[_t13] := _t10
+ 11  (at line   6)	_t15 := CALL 
+ 12  (at line   6)	_t18 := #3
+ 13  (at line   6)	a[_t18] := _t15
+ 14  (at line   7)	_t20 := CALL 
+ 15  (at line   7)	_t23 := #4
+ 16  (at line   7)	a[_t23] := _t20
+ 17  (at line   9)	_t25 := #4
+ 18  (at line   9)	cnt := _t25
+ 19  (at line  11)	_t26 := #0
+ 20  (at line  11)	sum := _t26
+ 21  (at line  12)	LABEL label0 :
+ 22  (at line  12)	_t27 := cnt
+ 23  (at line  12)	_t30 := #1
+ 24  (at line  12)	IF _t27 > _t30 GOTO label1
+ 25  (at line  12)	GOTO label2
+ 26  (at line  12)	LABEL label1 :
+ 27  (at line  13)	_t32 := sum
+ 28  (at line  13)	_t36 := cnt
+ 29  (at line  13)	_t33 := a[_t36]
+ 30  (at line  13)	_t31 := _t32 + _t33
+ 31  (at line  13)	sum := _t31
+ 32  (at line  14)	_t39 := cnt
+ 33  (at line  14)	_t40 := #1
+ 34  (at line  14)	_t38 := _t39 - _t40
+ 35  (at line  14)	cnt := _t38
+ 36  (at line  12)	GOTO label0
+ 37  (at line  12)	LABEL label2 :
+ 38  (at line  16)	_t41 := sum
+ 39  (at line  16)	RETURN _t41
+
+
+===========================================================
+Global
+ID             category       type           depictor
+               
+a              Array          TYPEINTEGER    ----------> dim=1
+main           Function       TYPEINTEGER    NOT NULL       
+===========================================================
+===========================================================
+Formal:main
+ID             category       type           depictor
+              
+               NOParam                       NOT NULL       
+scope type is wrong
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+build assembly code
+tac type FUNCTIONDF
+Variable offset count+4 :cnt
+Variable offset count+4 :cnt
+Variable offset count+4 :cnt
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t0
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t1
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t2
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t3
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t4
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t5
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t6
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t7
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t8
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t9
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t10
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t11
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t12
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t13
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t14
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t15
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t16
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t17
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t18
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t19
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t20
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t21
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t22
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t23
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t24
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t25
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t26
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t27
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t30
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t31
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t32
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t33
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t34
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t35
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t36
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t37
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t38
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t39
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t40
+Variable offset count+4 :_t41
+tac type CALLASSIGN
+findregister: insldr rd=0,r1=11,r2 offset=0,op2type=1, insefft=0
+tec type ASSIGN
+findregister: insldr rd=1,r1=11,r2 offset=0,op2type=1, insefft=0
+tec type ASSIGN
+compiler: ./ObjectCode/Arm.cpp:32: ARM::ARM(TACCode *, ScopeItem &): Assertion `code.dest.Type==VARIABLE' failed.
+Aborted (core dumped)

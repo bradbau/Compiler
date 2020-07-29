@@ -88,7 +88,7 @@ string CalculateInstruction::toString(){
                 
             }
             else{//op1是立即数
-                sprintf(buf, " %s, %d", RegName[ARMInstruction::getRd()], ARMInstruction::getOp1());
+                sprintf(buf, " %s, #%d", RegName[ARMInstruction::getRd()], ARMInstruction::getOp1());
                 
             }
             
@@ -198,9 +198,9 @@ string CalculateInstruction::toString(){
 
 
 ControlInstruction::ControlInstruction(InstrcuctionType type,  string label, ConditionFlag ConditionExe){
-    setType(type);
+    ARMInstruction::setType(type);
     this->label=label;
-    setConditionExe(ConditionExe);
+    ARMInstruction::setConditionExe(ConditionExe);
     
     ARMInstruction::setRd(0);
     ARMInstruction::setOp1(-1);
@@ -217,8 +217,9 @@ bx lr # bx r14
 */
 
 ControlInstruction::ControlInstruction(InstrcuctionType type, Register rd){
-    setType(type);
-    setRd(rd);
+    ARMInstruction::setType(type);
+    //this->label=NULL;
+    ARMInstruction::setRd(rd);
 
     ARMInstruction::setOp1(-1);
     ARMInstruction::setOp1Type(-1);
@@ -229,10 +230,16 @@ ControlInstruction::ControlInstruction(InstrcuctionType type, Register rd){
 
 
 string ControlInstruction::toString(){
+     #ifdef DEBUG
+            cout<<" ControlInstruction tostring"<<endl;
+        #endif // DEBUG
     char * buf;
     buf=(char*)malloc(64*sizeof(char));
     switch(this->ARMInstruction::getType()){
         case INSB:{
+            #ifdef DEBUG
+            cout<<"INS B tostring"<<endl;
+            #endif // DEBUG
             string InsHead="B";
             if(ARMInstruction::getConditionExe()!=0){//条件执行后缀
                 InsHead=InsHead+ConditionName[ARMInstruction::getConditionExe()];
@@ -244,6 +251,9 @@ string ControlInstruction::toString(){
 
         }
         case INSBL:{
+             #ifdef DEBUG
+            cout<<"INS BL tostring"<<endl;
+            #endif // DEBUG
             string InsHead="BL";
             if(ARMInstruction::getConditionExe()!=0){//条件执行后缀
                 InsHead=InsHead+ConditionName[ARMInstruction::getConditionExe()];
@@ -254,6 +264,9 @@ string ControlInstruction::toString(){
             return InsHead;
         }
         case INSBX:{
+             #ifdef DEBUG
+            cout<<"INS BX tostring"<<endl;
+            #endif // DEBUG
             string InsHead="BX";
             if(ARMInstruction::getConditionExe()!=0){//条件执行后缀
                 InsHead=InsHead+ConditionName[ARMInstruction::getConditionExe()];
@@ -265,9 +278,11 @@ string ControlInstruction::toString(){
         case INSBLX:{
             //这个指令目标可以是label也可以是寄存器 暂放
             //错误处理
+            throw std::runtime_error("controll instruction blx");
             break;
         }
         default:{
+            throw std::runtime_error("controll instruction tostring error");
             //错误处理
         }
     }
@@ -458,6 +473,7 @@ string MemoryInstruction::toString(){
         }
         case INSLDR:{
             InsHead="LDR";
+            cout<<"ldr instruction"<<endl;
             if(addrMod>=0&& addrMod<=3){
                 InsHead=InsHead+MemSuffixName[addrMod];
             }

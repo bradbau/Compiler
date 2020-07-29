@@ -6,6 +6,7 @@
       #include <unistd.h>//参数处理头文件
       #include<getopt.h> 
       #include <iostream>
+
       #include<string.h>
       #include<string>   
       #include <fstream>
@@ -31,6 +32,8 @@
 
       extern char *optarg;//参数处理外部变量
       string CodeString;//输出代码字符串
+      char outputFileName[256];
+      //outputFileName=(char*)malloc(256*sizeof(char));
    
 
     int dim = 0;
@@ -75,12 +78,36 @@
 %nonassoc KEYELSE
 
 %%
+
+
 /*add new*/
 Compiler: CompUnits {  
                   ASTTree *asttree = new ASTTree("Compiler", 1, yylineno, $1);
                   $$ = asttree;
                   //打印AST
                 $1->TraverseGrammerTree(0);
+                ScopeItem *arrayInfox = (ScopeItem*)malloc(sizeof(ScopeItem));
+                arrayInfox->dim = 1;
+                arrayInfox->len.push_back(NULL);
+                //加入库函数
+                  $$->si= $1->si;
+                  $$->si = addIntoScope(Global, $$->si, "getint", Function, "int", NULL);       //getint
+                  $$->si->depictor = addIntoScope(Formal, NULL, " ", NOParam, " ", NULL);
+                  $$->si = addIntoScope(Global, $$->si, "getchar", Function, "int", NULL);      //getchar
+                  $$->si->depictor = addIntoScope(Formal, NULL, " ", NOParam, " ", NULL);
+                  $$->si = addIntoScope(Global, $$->si, "getarray", Function, "int", NULL);     //getarray
+                  $$->si->depictor = addIntoScope(Formal, NULL, "a", Array, "int", arrayInfox);
+                  $$->si = addIntoScope(Global, $$->si, "putint", Function, "void", NULL);      //putint
+                  $$->si->depictor = addIntoScope(Formal, NULL, "a", Variable, "int", NULL);
+                  $$->si = addIntoScope(Global, $$->si, "putchar", Function, "void", NULL);     //putchar
+                  $$->si->depictor = addIntoScope(Formal, NULL, "a", Variable, "int", NULL);
+                  $$->si = addIntoScope(Global, $$->si, "putarray", Function, "void", NULL);    //putarray
+                  $$->si->depictor = addIntoScope(Formal, NULL, "a", Variable, "int", NULL);
+                  ScopeItem *arrayInfoy = (ScopeItem*)malloc(sizeof(ScopeItem));
+                  arrayInfoy->dim = 1;
+                  arrayInfoy->len.push_back(NULL);
+                  $$->si->depictor = addIntoScope(Formal, $$->si->depictor, "a", Array, "int", arrayInfoy);
+                  $$->si = addIntoScope(Global, $$->si, "putf" , Function, "void", NULL);
                 // 打印符号表
                 displayGlobal($1->si);
                   $$->si= $1->si;
@@ -91,11 +118,24 @@ Compiler: CompUnits {
                   unsigned int label_num = 0;
                   TACCode* entrance = BuildTAC($$ , *($$->si) , stack, temp_num, label_num);
                   DisplayTACCode(entrance);
+                  displayGlobal($1->si);
                   
                   ARM* AssemblyCode=new ARM(entrance, *($$->si));
                   cout<<"tac build complete"<<endl;
                   string CodeString=AssemblyCode->toString();
                   cout<<CodeString<<endl;
+
+                  //输出文件
+      
+                  ofstream outstream(outputFileName, ios::out);
+                  if(outstream.is_open()){
+ 
+                        outstream<<CodeString;
+                        outstream.close();
+                  }
+                  else{
+                        cout<<"output file open error"<<endl;
+                  }
                 }
         ;
 CompUnits:{ $$ = NULL;}
@@ -333,7 +373,7 @@ BlockItem:Decl { $$ = $1;}
          ;
 
 /*左值表达式*/ 
-LVal: IDENTIFIER ArrayExps {  printf("Lval\n");ASTTree *asttree = new ASTTree("LVal", 2, yylineno, $1,$2);$$ = asttree; }
+LVal: IDENTIFIER ArrayExps {  printf("Lval\n");ASTTree *asttree = new ASTTree("LVal", 2, yylineno, $1,$2);$$ = asttree; $$->SetID($1->GetID());}
       ;
 
 /*语句*/ 
@@ -430,13 +470,11 @@ Exps:{ $$ = NULL;}
 int main(int argc, char *argv[]){
             //extern int yyparse(void);
         //extern int yylex(void);
-	yyin=fopen(argv[1],"r");
+	
       
       //处理输入参数
        
       char opt;
-      char* outputFileName;
-      outputFileName=(char*)malloc(256*sizeof(char));
 
       while ((opt = getopt(argc, argv, "S:o::O")) != -1){
 
@@ -447,6 +485,7 @@ int main(int argc, char *argv[]){
                   }
                   case 'o':{
                         strcpy(outputFileName,optarg);
+
                         break;
                   }
                   case 'O':{
@@ -463,17 +502,12 @@ int main(int argc, char *argv[]){
             }
       }
 
+      yyin=fopen(argv[4],"r");
 	if (!yyin) return -1;
 	yylineno=1;
 	yyparse();
 
-      //输出文件
       
-      ofstream outstream(outputFileName, ios::out);
-      if(outstream.is_open()){
-            outstream<<CodeString;
-            outstream.close();
-      }
       
 	return 0;
 }

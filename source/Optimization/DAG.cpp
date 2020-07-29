@@ -1,7 +1,4 @@
-#include "..\TAC.h"
-#include "..\SymbolTable.h"
-#include "..\stack.h"
-#include "..\AST.h"
+
 #include "DAG.h"
 #include <vector>
 

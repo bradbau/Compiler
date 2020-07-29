@@ -39,6 +39,7 @@ typedef struct ScopeItem{
     struct ScopeItem *next;
     int offset;
     int reg;
+    ScopeItem* address;
     //下面的两项记录数组信息（数组内情向量）
     //ASTTree* len;//数组的长度（数组第一维的长度。对于这样的数组array[][2],我们规定其len为0）
     struct ScopeItem *array_depictor;

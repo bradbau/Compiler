@@ -1,3 +1,4 @@
+arg S
 --(end of buffer or a NUL)
 --accepting rule at line 100 ("int")
 --accepting rule at line 114 (" ")
@@ -165,7 +166,20 @@ ID             category       type           depictor
                Block          BLOCKStmt      NULL           
                Block          BLOCKStmt      NULL           
 ===========================================================
-TraverseScopeStack no result
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
 
 ~~~~TAC~~~~~
  No  Source Position	TACCode
@@ -173,44 +187,175 @@ _______________________________________
   0  (at line   0)	CALL main
 
   1  (at line   2)	FUNCTION main :
-  2  (at line   3)	_t6 := #10
-  3  (at line   3)	 := _t6
-  4  (at line   4)	_t0 := 
-  5  (at line   4)	_t3 := #0
-  6  (at line   4)	IF _t0 > _t3 GOTO label0
+  2  (at line   3)	_t0 := #10
+  3  (at line   3)	a := _t0
+  4  (at line   4)	_t1 := a
+  5  (at line   4)	_t4 := #0
+  6  (at line   4)	IF _t1 > _t4 GOTO label0
   7  (at line   4)	GOTO label1
   8  (at line   4)	LABEL label0 :
-  9  (at line   5)	_t4 := #1
- 10  (at line   5)	RETURN _t4
+  9  (at line   5)	_t5 := #1
+ 10  (at line   5)	RETURN _t5
  11  (at line   4)	GOTO label2
  12  (at line   4)	LABEL label1 :
- 13  (at line   8)	_t5 := #0
- 14  (at line   8)	RETURN _t5
+ 13  (at line   8)	_t6 := #0
+ 14  (at line   8)	RETURN _t6
  15  (at line   4)	LABEL label2 :
+
+
+===========================================================
+Global
+ID             category       type           depictor
+               
+a              Variable       TYPEINTEGER    NULL           
+main           Function       TYPEINTEGER    NOT NULL       
+===========================================================
+===========================================================
+Formal:main
+ID             category       type           depictor
+              
+               NOParam                       NOT NULL       
+scope type is wrong
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 build assembly code
 tac type FUNCTIONDF
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t0
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t1
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t4
+Variable offset count+4 :_t5
+Variable offset count+4 :_t6
 tec type ASSIGN
 findregister: insldr rd=0,r1=11,r2 offset=0,op2type=1, insefft=0
-tec type ASSIGN
 tec type ASSIGN
 findregister: insldr rd=1,r1=11,r2 offset=0,op2type=1, insefft=0
 tec type ASSIGN
 findregister: insldr rd=2,r1=11,r2 offset=0,op2type=1, insefft=0
-tac type IFGT
-tac type GOTO
-tac type LABELDF
 tec type ASSIGN
 findregister: insldr rd=3,r1=11,r2 offset=0,op2type=1, insefft=0
-tac type RETURN
+tac type IFGT
+ControlInstruction String: ControlInstruction tostring
+INS B tostring
+BGT L0
+
 tac type GOTO
+Goto string  ControlInstruction tostring
+INS B tostring
+B L1
+
 tac type LABELDF
+L0:
+
 tec type ASSIGN
 findregister: insldr rd=4,r1=11,r2 offset=0,op2type=1, insefft=0
 tac type RETURN
+tac type ARG
+tac type GOTO
+Goto string  ControlInstruction tostring
+INS B tostring
+B L2
+
 tac type LABELDF
+L1:
+
+tec type ASSIGN
+findregister: insldr rd=5,r1=11,r2 offset=0,op2type=1, insefft=0
+tac type RETURN
+tac type ARG
+tac type LABELDF
+L2:
+
 tac build complete
+instruction number1
+instruction number2
 push instruction
+instruction number3
+instruction number4
+instruction number5
+ldr instruction
 op2type==1
-compiler: ./ObjectCode/ArmInstruction.cpp:108: virtual std::__cxx11::string CalculateInstruction::toString(): Assertion `ARMInstruction::getRd()>=0&&ARMInstruction::getRd()<=15' failed.
-Aborted (core dumped)
+instruction number6
+instruction number7
+ldr instruction
+op2type==1
+instruction number8
+instruction number9
+ldr instruction
+op2type==1
+instruction number10
+instruction number11
+ldr instruction
+op2type==1
+instruction number12
+instruction number13
+instruction number14
+ ControlInstruction tostring
+INS B tostring
+instruction number15
+ ControlInstruction tostring
+INS B tostring
+instruction number16
+instruction number17
+ldr instruction
+op2type==1
+instruction number18
+instruction number19
+instruction number20
+instruction number21
+instruction number22
+ ControlInstruction tostring
+INS BX tostring
+instruction number23
+ ControlInstruction tostring
+INS B tostring
+instruction number24
+instruction number25
+ldr instruction
+op2type==1
+instruction number26
+instruction number27
+instruction number28
+instruction number29
+instruction number30
+ ControlInstruction tostring
+INS BX tostring
+instruction number31
+#armv7 assembly code
+main:
+PUSH {fp}
+ADD  fp, sp, #0
+SUB sp, sp, #0
+LDR r0, [fp, 0x0]
+MOV r0, #10
+LDR r1, [fp, 0x0]
+ADD  r1, r0, #0
+LDR r2, [fp, 0x0]
+ADD  r2, r1, #0
+LDR r3, [fp, 0x0]
+MOV r3, #0
+CMP r2, r3, 
+BGT L0
+B L1
+L0:
+LDR r4, [fp, 0x0]
+MOV r4, #1
+ADD  r0, r4, #0
+ADD  sp, fp, #0
+POP {fp}
+BX lr
+B L2
+L1:
+LDR r5, [fp, 0x0]
+MOV r5, #0
+ADD  r0, r5, #0
+ADD  sp, fp, #0
+POP {fp}
+BX lr
+L2:
+
+output file open error

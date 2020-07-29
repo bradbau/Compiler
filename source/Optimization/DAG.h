@@ -7,9 +7,9 @@
 #include<stdlib.h>
 #include<stdarg.h>
 #include<string>
-#include"..\TAC.h"
-#include"..\IndirectTriple.h"
-#include"..\IndirectTripleOperand.h"
+
+
+
 using namespace std;
 
 enum NodeType  // 操作数类型

@@ -1,3 +1,4 @@
+arg S
 --(end of buffer or a NUL)
 --accepting rule at line 100 ("int")
 --accepting rule at line 114 (" ")
@@ -644,18 +645,20 @@ ID             category       type           depictor
               
                Block          BLOCKStmt      NULL           
 ===========================================================
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
+456
+789
+789
+456
+789
+789
+789
+789
+456
+789
+789
+789
+789
+789
+789
+456
 Segmentation fault (core dumped)

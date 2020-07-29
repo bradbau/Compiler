@@ -1,3 +1,4 @@
+arg S
 --(end of buffer or a NUL)
 --accepting rule at line 100 ("int")
 --accepting rule at line 114 (" ")
@@ -187,4 +188,13 @@ Local:main
 ID             category       type           depictor
               
 c              Variable       TYPEINTEGER    NULL           
+===========================================================
+789
+789
+789
+789
+789
+789
+789
+456
 Segmentation fault (core dumped)

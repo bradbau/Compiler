@@ -1,3 +1,4 @@
+arg S
 --(end of buffer or a NUL)
 --accepting rule at line 100 ("int")
 --accepting rule at line 114 (" ")
@@ -275,4 +276,6 @@ Local:block
 ID             category       type           depictor
               
                Block          BLOCKStmt      NULL           
+===========================================================
+456
 Segmentation fault (core dumped)

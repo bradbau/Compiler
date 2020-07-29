@@ -16,6 +16,7 @@ ScopeItem* addIntoScope(ScopeType stype, ScopeItem* pre_si, string name, SysYCat
     si->depictor = depictor;
     si->next = pre_si;
     si->prev = NULL;
+    si->address = si;
     if (pre_si) {
         pre_si->prev = si;
     }
@@ -193,7 +194,7 @@ void displayLocal(ScopeItem* t, string tablename){
     while(s != NULL){
         if(s->stype != Local){
             cout << "scope type is wrong\n";
-            return;
+            //return;
         }
         cout << setw(15) << s->name;
         switch (s->category)

@@ -16,7 +16,7 @@ run(){
 
         touch $irFileNameRoot
 
-        $compiler_dir $FilePathRoot -o$outFileName > $irFileNameRoot 2>&1
+        $compiler_dir -S -o $outFileName $FilePathRoot > $irFileNameRoot 2>&1
 
     fi
 

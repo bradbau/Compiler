@@ -1,6 +1,7 @@
 #ifndef ARMINSTRUCTION_H
 #define ARMINSTRUCTION_H
 
+
 #include<string>
 #include<iostream>
 #include<stdexcept>
@@ -8,6 +9,7 @@
 using std::string;
 using std::cout;
 using std::endl;
+using std::runtime_error;
 
 #define DEBUG
 

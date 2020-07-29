@@ -1,3 +1,4 @@
+arg S
 --(end of buffer or a NUL)
 --accepting rule at line 100 ("int")
 --accepting rule at line 114 (" ")
@@ -84,22 +85,58 @@ _______________________________________
   1  (at line   1)	FUNCTION main :
   2  (at line   5)	_t0 := #0
   3  (at line   5)	RETURN _t0
+
+
+===========================================================
+Global
+ID             category       type           depictor
+               
+main           Function       TYPEINTEGER    NOT NULL       
+===========================================================
+===========================================================
+Formal:main
+ID             category       type           depictor
+              
+               NOParam                       NULL           
+===========================================================
+===========================================================
+Local:main
+ID             category       type           depictor
+              
+===========================================================
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 build assembly code
 tac type FUNCTIONDF
 tec type ASSIGN
 findregister: insldr rd=0,r1=11,r2 offset=0,op2type=1, insefft=0
 tac type RETURN
+tac type ARG
 tac build complete
+instruction number1
+instruction number2
 push instruction
+instruction number3
+instruction number4
+instruction number5
+ldr instruction
 op2type==1
+instruction number6
+instruction number7
+instruction number8
+instruction number9
+instruction number10
+ ControlInstruction tostring
+INS BX tostring
 #armv7 assembly code
 main:
 PUSH {fp}
 ADD  fp, sp, #0
+SUB sp, sp, #0
 LDR r0, [fp, 0x0]
+MOV r0, #0
 ADD  r0, r0, #0
 ADD  sp, fp, #0
 POP {fp}
 BX lr
 
+output file open error

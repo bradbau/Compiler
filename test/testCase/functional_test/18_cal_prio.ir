@@ -1,3 +1,4 @@
+arg S
 --(end of buffer or a NUL)
 --accepting rule at line 100 ("int")
 --accepting rule at line 114 (" ")
@@ -242,16 +243,103 @@ ID             category       type           depictor
               
 d              Variable       TYPEINTEGER    NULL           
 ===========================================================
+789
+789
 TraverseScopeStack no result
+789
+789
+789
+789
+789
 TraverseScopeStack no result
+789
+789
+789
+789
+789
+789
+789
 TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+456
+789
+789
+789
+789
+789
+789
+789
+789
+456
+789
+789
+789
+789
+789
+789
+789
+789
+456
 
 ~~~~TAC~~~~~
  No  Source Position	TACCode
@@ -259,38 +347,85 @@ _______________________________________
   0  (at line   0)	CALL main
 
   1  (at line   4)	FUNCTION main :
-  2  (at line   5)	_t8 := CALL 
-  3  (at line   5)	 := _t8
-  4  (at line   6)	_t7 := CALL 
-  5  (at line   6)	 := _t7
-  6  (at line   7)	_t6 := CALL 
-  7  (at line   7)	 := _t6
-  8  (at line   9)	_t2 := 
-  9  (at line   9)	_t4 := 
- 10  (at line   9)	_t5 := 
- 11  (at line   9)	_t3 := _t4 * _t5
- 12  (at line   9)	_t1 := _t2 + _t3
- 13  (at line   9)	 := _t1
- 14  (at line  10)	_t0 := 
- 15  (at line  10)	RETURN _t0
+  2  (at line   5)	_t0 := CALL 
+  3  (at line   5)	a := _t0
+  4  (at line   6)	_t1 := CALL 
+  5  (at line   6)	b := _t1
+  6  (at line   7)	_t2 := CALL 
+  7  (at line   7)	c := _t2
+  8  (at line   9)	_t4 := a
+  9  (at line   9)	_t6 := b
+ 10  (at line   9)	_t7 := c
+ 11  (at line   9)	_t5 := _t6 * _t7
+ 12  (at line   9)	_t3 := _t4 + _t5
+ 13  (at line   9)	d := _t3
+ 14  (at line  10)	_t8 := d
+ 15  (at line  10)	RETURN _t8
+
+
+===========================================================
+Global
+ID             category       type           depictor
+               
+a              Variable       TYPEINTEGER    NULL           
+b              Variable       TYPEINTEGER    NULL           
+c              Variable       TYPEINTEGER    NULL           
+main           Function       TYPEINTEGER    NOT NULL       
+===========================================================
+===========================================================
+Formal:main
+ID             category       type           depictor
+              
+               NOParam                       NOT NULL       
+scope type is wrong
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 build assembly code
 tac type FUNCTIONDF
+Variable offset count+4 :d
+Variable offset count+4 :d
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t0
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t1
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t2
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t3
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t4
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t5
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t6
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t7
+Variable offset count+4 :_t8
 tac type CALLASSIGN
 findregister: insldr rd=0,r1=11,r2 offset=0,op2type=1, insefft=0
 tec type ASSIGN
-tac type CALLASSIGN
 findregister: insldr rd=1,r1=11,r2 offset=0,op2type=1, insefft=0
-tec type ASSIGN
 tac type CALLASSIGN
 findregister: insldr rd=2,r1=11,r2 offset=0,op2type=1, insefft=0
 tec type ASSIGN
-tec type ASSIGN
 findregister: insldr rd=3,r1=11,r2 offset=0,op2type=1, insefft=0
-tec type ASSIGN
+tac type CALLASSIGN
 findregister: insldr rd=4,r1=11,r2 offset=0,op2type=1, insefft=0
 tec type ASSIGN
 findregister: insldr rd=5,r1=11,r2 offset=0,op2type=1, insefft=0
+tec type ASSIGN
+findregister: insldr rd=6,r1=11,r2 offset=0,op2type=1, insefft=0
+tec type ASSIGN
+findregister: insldr rd=8,r1=11,r2 offset=0,op2type=1, insefft=0
+tec type ASSIGN
+findregister: insldr rd=9,r1=11,r2 offset=0,op2type=1, insefft=0
 tac type MUL
-compiler: ./ObjectCode/Arm.cpp:89: ARM::ARM(TACCode*, ScopeItem&): Assertion `code.dest.Type = VARIABLE' failed.
+compiler: ./ObjectCode/Arm.cpp:99: ARM::ARM(TACCode *, ScopeItem &): Assertion `code.dest.Type = VARIABLE' failed.
 Aborted (core dumped)

@@ -1,3 +1,4 @@
+arg S
 --(end of buffer or a NUL)
 --accepting rule at line 106 ("const")
 --accepting rule at line 114 (" ")

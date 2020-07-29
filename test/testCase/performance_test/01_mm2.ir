@@ -1,3 +1,4 @@
+arg S
 --(end of buffer or a NUL)
 --accepting rule at line 106 ("const")
 --accepting rule at line 114 (" ")
@@ -3008,61 +3009,4 @@ Local:block
 ID             category       type           depictor
               
                Block          BLOCKStmt      NULL           
-===========================================================
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
 Segmentation fault (core dumped)

@@ -1,3 +1,4 @@
+arg S
 --(end of buffer or a NUL)
 --accepting rule at line 100 ("int")
 --accepting rule at line 114 (" ")
@@ -2684,19 +2685,5 @@ x              Variable       TYPEINTEGER    NULL
 y              Variable       TYPEINTEGER    NULL           
                Block          BLOCKStmt      NULL           
 ===========================================================
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
+456
 Segmentation fault (core dumped)

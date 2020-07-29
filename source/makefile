@@ -6,8 +6,8 @@ PRODUCTS = $(COMPILER)
 default: $(PRODUCTS)
 
 # 定义工具链
-CC= g++
-LD = g++
+CC= clang++
+LD = clang++
 LEX = flex
 YACC = bison
 

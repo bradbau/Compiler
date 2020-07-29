@@ -1,3 +1,4 @@
+arg S
 --(end of buffer or a NUL)
 --accepting rule at line 100 ("int")
 --accepting rule at line 114 (" ")
@@ -38,8 +39,19 @@ ccc            Variable       TYPEINTEGER    NULL
  No  Source Position	TACCode
 _______________________________________
   0  (at line   0)	CALL main
+
+
+===========================================================
+Global
+ID             category       type           depictor
+               
+aaa            Variable       TYPEINTEGER    NULL           
+bbb            Variable       TYPEINTEGER    NULL           
+ccc            Variable       TYPEINTEGER    NULL           
+===========================================================
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 build assembly code
 tac build complete
 #armv7 assembly code
 
+output file open error

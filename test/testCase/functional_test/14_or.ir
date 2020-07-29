@@ -1,3 +1,4 @@
+arg S
 --(end of buffer or a NUL)
 --accepting rule at line 100 ("int")
 --accepting rule at line 114 (" ")
@@ -215,4 +216,122 @@ ID             category       type           depictor
               
                Block          BLOCKStmt      NULL           
                Block          BLOCKStmt      NULL           
-Segmentation fault (core dumped)
+===========================================================
+789
+789
+789
+789
+TraverseScopeStack no result
+789
+789
+789
+789
+789
+789
+789
+789
+789
+TraverseScopeStack no result
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+
+~~~~TAC~~~~~
+ No  Source Position	TACCode
+_______________________________________
+  0  (at line   0)	CALL main
+
+  1  (at line   3)	FUNCTION main :
+  2  (at line   4)	_t0 := CALL 
+  3  (at line   4)	a := _t0
+  4  (at line   5)	_t1 := CALL 
+  5  (at line   5)	b := _t1
+  6  (at line   6)	_t2 := a
+  7  (at line   6)	IF _t2 != 0 GOTO label0
+  8  (at line   6)	GOTO label2
+  9  (at line   6)	LABEL label2 :
+ 10  (at line   6)	_t3 := b
+ 11  (at line   6)	IF _t3 != 0 GOTO label0
+ 12  (at line   6)	GOTO label1
+ 13  (at line   6)	LABEL label0 :
+ 14  (at line   7)	_t4 := #1
+ 15  (at line   7)	RETURN _t4
+ 16  (at line   6)	GOTO label3
+ 17  (at line   6)	LABEL label1 :
+ 18  (at line  10)	_t5 := #0
+ 19  (at line  10)	RETURN _t5
+ 20  (at line   6)	LABEL label3 :
+
+
+===========================================================
+Global
+ID             category       type           depictor
+               
+a              Variable       TYPEINTEGER    NULL           
+b              Variable       TYPEINTEGER    NULL           
+main           Function       TYPEINTEGER    NOT NULL       
+===========================================================
+===========================================================
+Formal:main
+ID             category       type           depictor
+              
+               NOParam                       NOT NULL       
+scope type is wrong
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+build assembly code
+tac type FUNCTIONDF
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t0
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t1
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t2
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t3
+Variable offset count+4 :_t4
+Variable offset count+4 :_t5
+tac type CALLASSIGN
+findregister: insldr rd=0,r1=11,r2 offset=0,op2type=1, insefft=0
+tec type ASSIGN
+findregister: insldr rd=1,r1=11,r2 offset=0,op2type=1, insefft=0
+tac type CALLASSIGN
+findregister: insldr rd=2,r1=11,r2 offset=0,op2type=1, insefft=0
+tec type ASSIGN
+findregister: insldr rd=3,r1=11,r2 offset=0,op2type=1, insefft=0
+tec type ASSIGN
+findregister: insldr rd=4,r1=11,r2 offset=0,op2type=1, insefft=0
+tac type IFNEQ
+compiler: ./ObjectCode/Arm.cpp:337: ARM::ARM(TACCode *, ScopeItem &): Assertion `code.secondOp.Type==VARIABLE' failed.
+Aborted (core dumped)

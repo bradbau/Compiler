@@ -1,3 +1,4 @@
+arg S
 --(end of buffer or a NUL)
 --accepting rule at line 100 ("int")
 --accepting rule at line 114 (" ")
@@ -272,6 +273,121 @@ Formal:main
 ID             category       type           depictor
               
                NOParam                       NULL           
-terminate called after throwing an instance of 'std::bad_alloc'
-  what():  std::bad_alloc
-Aborted (core dumped)
+===========================================================
+===========================================================
+Local:main
+ID             category       type           depictor
+              
+===========================================================
+789
+789
+456
+789
+789
+456
+789
+789
+789
+456
+789
+789
+789
+456
+789
+789
+789
+789
+
+~~~~TAC~~~~~
+ No  Source Position	TACCode
+_______________________________________
+  0  (at line   0)	CALL main
+
+  1  (at line   3)	FUNCTION add :
+  2  (at line   3)	PARAM a
+  3  (at line   3)	PARAM b
+  4  (at line   4)	_t1 := a
+  5  (at line   4)	_t2 := b
+  6  (at line   4)	_t0 := _t1 + _t2
+  7  (at line   4)	c := _t0
+
+  8  (at line   8)	FUNCTION main :
+  9  (at line   9)	_t3 := #3
+ 10  (at line   9)	a := _t3
+ 11  (at line  10)	_t4 := #2
+ 12  (at line  10)	b := _t4
+ 13  (at line  11)	_t5 := a
+ 14  (at line  11)	_t6 := b
+ 15  (at line  11)	ARG _t6
+ 16  (at line  11)	ARG _t5
+ 17  (at line  11)	CALL add
+ 18  (at line  12)	_t7 := c
+ 19  (at line  12)	RETURN _t7
+
+
+===========================================================
+Global
+ID             category       type           depictor
+               
+a              Variable       TYPEINTEGER    NULL           
+b              Variable       TYPEINTEGER    NULL           
+c              Variable       TYPEINTEGER    NULL           
+add            Function       void           NOT NULL       
+main           Function       TYPEINTEGER    NOT NULL       
+===========================================================
+===========================================================
+Formal:add
+ID             category       type           depictor
+              
+a              Variable       TYPEINTEGER    NULL           
+b              Variable       TYPEINTEGER    NULL           
+===========================================================
+===========================================================
+Local:add
+ID             category       type           depictor
+              
+===========================================================
+===========================================================
+Formal:main
+ID             category       type           depictor
+              
+               NOParam                       NULL           
+===========================================================
+===========================================================
+Local:main
+ID             category       type           depictor
+              
+===========================================================
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+build assembly code
+tac type FUNCTIONDF
+tec type ASSIGN
+findregister: insldr rd=0,r1=11,r2 offset=0,op2type=1, insefft=0
+findregister: insldr rd=1,r1=11,r2 offset=0,op2type=1, insefft=0
+tec type ASSIGN
+findregister: insldr rd=2,r1=11,r2 offset=0,op2type=1, insefft=0
+findregister: insldr rd=3,r1=11,r2 offset=0,op2type=1, insefft=0
+tac type ADD
+findregister: insldr rd=4,r1=11,r2 offset=0,op2type=1, insefft=0
+tec type ASSIGN
+findregister: insldr rd=5,r1=11,r2 offset=0,op2type=1, insefft=0
+tac type FUNCTIONDF
+tec type ASSIGN
+findregister: insldr rd=6,r1=11,r2 offset=0,op2type=1, insefft=0
+tec type ASSIGN
+findregister: insldr rd=8,r1=11,r2 offset=0,op2type=1, insefft=0
+tec type ASSIGN
+findregister: insldr rd=9,r1=11,r2 offset=0,op2type=1, insefft=0
+tec type ASSIGN
+findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
+tec type ASSIGN
+findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
+tec type ASSIGN
+findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
+findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
+tac type ARG
+tac type ARG
+tac type CALL
+findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
+findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
+Segmentation fault (core dumped)

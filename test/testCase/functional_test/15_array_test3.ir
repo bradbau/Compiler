@@ -1,3 +1,4 @@
+arg S
 --(end of buffer or a NUL)
 --accepting rule at line 100 ("int")
 --accepting rule at line 114 (" ")
@@ -585,11 +586,4 @@ Formal:main
 ID             category       type           depictor
               
                NOParam                       NULL           
-===========================================================
-===========================================================
-Local:main
-ID             category       type           depictor
-              
-===========================================================
-TraverseScopeStack no result
 Segmentation fault (core dumped)

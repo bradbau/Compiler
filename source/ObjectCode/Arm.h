@@ -23,7 +23,7 @@ typedef struct RegisterEntry
 {
       bool filled;         // 是否使用
       int tag;           // Tag for LRU algorithm
-      ScopeItem variable;     // 存储的变量对象
+      ScopeItem* variable;     // 存储的变量对象
       
 } RegisterEntry;
 
@@ -36,7 +36,8 @@ private:
       list<ARMInstruction*> InsList; //生成的汇编代码序列
       RegisterEntry regs[15];// 用户可用寄存器
 
-
+      CalculateInstruction* StackSubHandler=NULL;//用来保存函数中为局部变量分配空间的语句的句柄 sub sp sp imm
+      
       Register GetRegister(ScopeItem* variable); //分配或者获取已经分配的空余寄存器
       int FinfRegister(ScopeItem* variable);//查找存有对应变量的寄存器
       void EmptyRegister();//清空用户使用寄存器

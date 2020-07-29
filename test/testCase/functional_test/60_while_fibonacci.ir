@@ -1,3 +1,4 @@
+arg S
 --(end of buffer or a NUL)
 --accepting rule at line 100 ("int")
 --accepting rule at line 114 (" ")
@@ -593,25 +594,389 @@ ID             category       type           depictor
               
 res            Variable       TYPEINTEGER    NULL           
 ===========================================================
+456
+789
+789
+456
+789
+789
+789
+789
+789
+789
+789
+789
+123
+789
+789
+789
+789
+789
+789
+789
+789
+123
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+123
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+123
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+123
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+123
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+456
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+456
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+456
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+456
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+456
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+456
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+456
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+456
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+456
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+456
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+456
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+123
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+123
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+123
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+456
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+456
+789
+789
 TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
-TraverseScopeStack no result
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+456
+789
+789
+789
+456
+789
+789
+789
+456
 
 ~~~~TAC~~~~~
  No  Source Position	TACCode
@@ -620,97 +985,209 @@ _______________________________________
 
   1  (at line   2)	FUNCTION fib :
   2  (at line   2)	PARAM p
-  3  (at line   6)	_t28 := #0
-  4  (at line   6)	 := _t28
-  5  (at line   7)	_t27 := #1
-  6  (at line   7)	 := _t27
-  7  (at line   8)	_t22 := 
-  8  (at line   8)	_t25 := #0
-  9  (at line   8)	IF _t22 = _t25 GOTO label5
- 10  (at line   8)	GOTO label6
- 11  (at line   8)	LABEL label5 :
- 12  (at line   9)	_t26 := #0
- 13  (at line   9)	RETURN _t26
- 14  (at line   8)	LABEL label6 :
- 15  (at line  11)	_t17 := 
- 16  (at line  11)	_t20 := #1
- 17  (at line  11)	IF _t17 = _t20 GOTO label3
- 18  (at line  11)	GOTO label4
- 19  (at line  11)	LABEL label3 :
- 20  (at line  12)	_t21 := #1
- 21  (at line  12)	RETURN _t21
- 22  (at line  11)	LABEL label4 :
- 23  (at line  14)	LABEL label0 :
- 24  (at line  14)	_t5 := 
- 25  (at line  14)	_t8 := #1
- 26  (at line  14)	IF _t5 > _t8 GOTO label1
- 27  (at line  14)	GOTO label2
- 28  (at line  14)	LABEL label1 :
- 29  (at line  15)	_t15 := 
- 30  (at line  15)	_t16 := 
- 31  (at line  15)	_t14 := _t15 + _t16
- 32  (at line  15)	 := _t14
- 33  (at line  16)	_t13 := 
- 34  (at line  16)	 := _t13
- 35  (at line  17)	_t12 := 
- 36  (at line  17)	 := _t12
- 37  (at line  18)	_t10 := 
- 38  (at line  18)	_t11 := #1
- 39  (at line  18)	_t9 := _t10 - _t11
- 40  (at line  18)	 := _t9
- 41  (at line  14)	GOTO label0
- 42  (at line  14)	LABEL label2 :
- 43  (at line  20)	_t4 := 
- 44  (at line  20)	RETURN _t4
+  3  (at line   6)	_t0 := #0
+  4  (at line   6)	a := _t0
+  5  (at line   7)	_t1 := #1
+  6  (at line   7)	b := _t1
+  7  (at line   8)	_t2 := p
+  8  (at line   8)	_t5 := #0
+  9  (at line   8)	IF _t2 = _t5 GOTO label0
+ 10  (at line   8)	GOTO label1
+ 11  (at line   8)	LABEL label0 :
+ 12  (at line   9)	_t6 := #0
+ 13  (at line   9)	RETURN _t6
+ 14  (at line   8)	LABEL label1 :
+ 15  (at line  11)	_t7 := p
+ 16  (at line  11)	_t10 := #1
+ 17  (at line  11)	IF _t7 = _t10 GOTO label2
+ 18  (at line  11)	GOTO label3
+ 19  (at line  11)	LABEL label2 :
+ 20  (at line  12)	_t11 := #1
+ 21  (at line  12)	RETURN _t11
+ 22  (at line  11)	LABEL label3 :
+ 23  (at line  14)	LABEL label4 :
+ 24  (at line  14)	_t12 := p
+ 25  (at line  14)	_t15 := #1
+ 26  (at line  14)	IF _t12 > _t15 GOTO label5
+ 27  (at line  14)	GOTO label6
+ 28  (at line  14)	LABEL label5 :
+ 29  (at line  15)	_t17 := a
+ 30  (at line  15)	_t18 := b
+ 31  (at line  15)	_t16 := _t17 + _t18
+ 32  (at line  15)	c := _t16
+ 33  (at line  16)	_t19 := b
+ 34  (at line  16)	a := _t19
+ 35  (at line  17)	_t20 := c
+ 36  (at line  17)	b := _t20
+ 37  (at line  18)	_t22 := p
+ 38  (at line  18)	_t23 := #1
+ 39  (at line  18)	_t21 := _t22 - _t23
+ 40  (at line  18)	p := _t21
+ 41  (at line  14)	GOTO label4
+ 42  (at line  14)	LABEL label6 :
+ 43  (at line  20)	_t24 := c
+ 44  (at line  20)	RETURN _t24
 
  45  (at line  22)	FUNCTION main :
- 46  (at line  23)	_t3 := CALL 
- 47  (at line  23)	 := _t3
- 48  (at line  25)	_t2 := 
- 49  (at line  25)	ARG _t2
- 50  (at line  25)	_t1 := CALL fib
- 51  (at line  25)	 := _t1
- 52  (at line  26)	_t0 := 
- 53  (at line  26)	RETURN _t0
+ 46  (at line  23)	_t25 := CALL 
+ 47  (at line  23)	n := _t25
+ 48  (at line  25)	_t27 := n
+ 49  (at line  25)	ARG _t27
+ 50  (at line  25)	_t26 := CALL fib
+ 51  (at line  25)	res := _t26
+ 52  (at line  26)	_t28 := res
+ 53  (at line  26)	RETURN _t28
+
+
+===========================================================
+Global
+ID             category       type           depictor
+               
+n              Variable       TYPEINTEGER    NULL           
+fib            Function       TYPEINTEGER    NOT NULL       
+main           Function       TYPEINTEGER    NOT NULL       
+===========================================================
+===========================================================
+Formal:fib
+ID             category       type           depictor
+              
+p              Variable       TYPEINTEGER    NOT NULL       
+scope type is wrong
+===========================================================
+Formal:main
+ID             category       type           depictor
+              
+               NOParam                       NOT NULL       
+scope type is wrong
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 build assembly code
 tac type FUNCTIONDF
+Variable offset count+4 :a
+Variable offset count+4 :a
+Variable offset count+4 :a
+Variable offset count+4 :a
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t0
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t1
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t2
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t5
+Variable offset count+4 :_t6
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t7
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t10
+Variable offset count+4 :_t11
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t12
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t15
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t16
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t17
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t18
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t19
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t20
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t21
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t22
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t23
+Variable offset count+4 :_t24
 tec type ASSIGN
 findregister: insldr rd=0,r1=11,r2 offset=0,op2type=1, insefft=0
 tec type ASSIGN
-tec type ASSIGN
 findregister: insldr rd=1,r1=11,r2 offset=0,op2type=1, insefft=0
-tec type ASSIGN
 tec type ASSIGN
 findregister: insldr rd=2,r1=11,r2 offset=0,op2type=1, insefft=0
 tec type ASSIGN
 findregister: insldr rd=3,r1=11,r2 offset=0,op2type=1, insefft=0
-tac type IFEQ
-tac type GOTO
-tac type LABELDF
 tec type ASSIGN
 findregister: insldr rd=4,r1=11,r2 offset=0,op2type=1, insefft=0
-tac type RETURN
-tac type LABELDF
-tec type ASSIGN
 findregister: insldr rd=5,r1=11,r2 offset=0,op2type=1, insefft=0
 tec type ASSIGN
 findregister: insldr rd=6,r1=11,r2 offset=0,op2type=1, insefft=0
 tac type IFEQ
 tac type GOTO
+Goto string  ControlInstruction tostring
+INS B tostring
+B L1
+
 tac type LABELDF
+L0:
+
 tec type ASSIGN
 findregister: insldr rd=8,r1=11,r2 offset=0,op2type=1, insefft=0
 tac type RETURN
+tac type ARG
 tac type LABELDF
-tac type LABELDF
+L1:
+
 tec type ASSIGN
 findregister: insldr rd=9,r1=11,r2 offset=0,op2type=1, insefft=0
 tec type ASSIGN
 findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
-tac type IFGT
+tac type IFEQ
 tac type GOTO
+Goto string  ControlInstruction tostring
+INS B tostring
+B L3
+
 tac type LABELDF
+L2:
+
+tec type ASSIGN
+findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
+tac type RETURN
+tac type ARG
+tac type LABELDF
+L3:
+
+tac type LABELDF
+L4:
+
+tec type ASSIGN
+findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
+tec type ASSIGN
+findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
+tac type IFGT
+findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
+findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
+ControlInstruction String: ControlInstruction tostring
+INS B tostring
+BGT L5
+
+tac type GOTO
+Goto string  ControlInstruction tostring
+INS B tostring
+B L6
+
+tac type LABELDF
+L5:
+
 tec type ASSIGN
 findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
 tec type ASSIGN
@@ -721,16 +1198,19 @@ findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
 findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
 tec type ASSIGN
 findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
+findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
 tec type ASSIGN
 findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
 tec type ASSIGN
 tec type ASSIGN
 findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
+findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
 tec type ASSIGN
+findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
 tec type ASSIGN
 findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
 tec type ASSIGN
 findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
 tac type SUB
-compiler: ./ObjectCode/Arm.cpp:75: ARM::ARM(TACCode*, ScopeItem&): Assertion `code.dest.Type = VARIABLE' failed.
+compiler: ./ObjectCode/Arm.cpp:85: ARM::ARM(TACCode *, ScopeItem &): Assertion `code.dest.Type = VARIABLE' failed.
 Aborted (core dumped)

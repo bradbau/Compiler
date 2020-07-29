@@ -1,3 +1,4 @@
+arg S
 --(end of buffer or a NUL)
 --accepting rule at line 74 ("// Use return value of a function as array's index
 ")
