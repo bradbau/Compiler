@@ -82,10 +82,10 @@ TACCode*  TranslateInitVal(ASTTree* tree, ScopeItem &offset, int &layer, ScopeIt
          code5->code.dest.Data.labelvalue = label1;
          code6->code.optype = ASSIGN;
          code6->code.dest.Type = ARRAY;
-         code6->code.dest.Data.array_add = new ARRAY_ADD;
-         code6->code.dest.Data.array_add->array_si = new ScopeItem;
-         *code6->code.dest.Data.array_add->array_si = place;
-         code6->code.dest.Data.array_add->deviation = new_temp3;
+         code6->code.dest.Data.array_addr = new ARRAY_ADDR;
+         code6->code.dest.Data.array_addr->array_si = new ScopeItem;
+         *code6->code.dest.Data.array_addr->array_si = place;
+         code6->code.dest.Data.array_addr->deviation = new_temp3;
          code6->code.firstOp.Type = INTEGERCONST;
          code6->code.firstOp.Data.value = 0;
          code7->code.optype = ADD;
@@ -148,11 +148,11 @@ TACCode*  TranslateInitVal(ASTTree* tree, ScopeItem &offset, int &layer, ScopeIt
         code2 = (TACCode*)malloc(sizeof(TACCode));
         code2->code.optype = ASSIGN;
         code2->code.dest.Type = ARRAY;
-        code2->code.dest.Data.array_add = new ARRAY_ADD;
-        code2->code.dest.Data.array_add->array_si = new ScopeItem;
-        *code2->code.dest.Data.array_add->array_si = place;
-        code2->code.dest.Data.array_add->deviation = new ScopeItem;
-        *code2->code.dest.Data.array_add->deviation = offset;
+        code2->code.dest.Data.array_addr = new ARRAY_ADDR;
+        code2->code.dest.Data.array_addr->array_si = new ScopeItem;
+        *code2->code.dest.Data.array_addr->array_si = place;
+        code2->code.dest.Data.array_addr->deviation = new ScopeItem;
+        *code2->code.dest.Data.array_addr->deviation = offset;
         code2->code.firstOp.Type = VARIABLE;
         code2->code.firstOp.Data.variable = new_temp1;
         code2->line = tree->line;
@@ -240,11 +240,11 @@ TACCode*  TranslateInitVal(ASTTree* tree, ScopeItem &offset, int &layer, ScopeIt
         code10->code.secondOp.Data.value = 1;
         code11->code.optype = ASSIGN;
         code11->code.dest.Type = ARRAY;
-        code11->code.dest.Data.array_add = new ARRAY_ADD;
-        code11->code.dest.Data.array_add->array_si = new ScopeItem;
-        *code11->code.dest.Data.array_add->array_si = place;
-        code11->code.dest.Data.array_add->deviation = new ScopeItem;
-        *code11->code.dest.Data.array_add->deviation = offset;
+        code11->code.dest.Data.array_addr = new ARRAY_ADDR;
+        code11->code.dest.Data.array_addr->array_si = new ScopeItem;
+        *code11->code.dest.Data.array_addr->array_si = place;
+        code11->code.dest.Data.array_addr->deviation = new ScopeItem;
+        *code11->code.dest.Data.array_addr->deviation = offset;
         code11->code.firstOp.Type = INTEGERCONST;
         code11->code.firstOp.Data.value = 0;
         code12->code.optype = GOTO;
@@ -302,13 +302,13 @@ TACCode* TranslateLvalAssign(ASTTree* tree, ScopeItem& scopeItem, vector<ScopeIt
         code1 = (TACCode*)malloc(sizeof(TACCode));
         code1->code.optype = ASSIGN;
         code1->code.dest.Type = ARRAY;
-        code1->code.dest.Data.array_add = new ARRAY_ADD;
-        code1->code.dest.Data.array_add->array_si = new ScopeItem;
-        *(code1->code.dest.Data.array_add->array_si) = TraverseScopeStack(stack, tree->lchild->GetID());
+        code1->code.dest.Data.array_addr = new ARRAY_ADDR;
+        code1->code.dest.Data.array_addr->array_si = new ScopeItem;
+        *(code1->code.dest.Data.array_addr->array_si) = TraverseScopeStack(stack, tree->lchild->GetID());
         //ScopeItem* scope = GetStackTopp(stack);
         ARRAY_CODE arrayexp = TranslateArrayExps(tree->lchild->rchild, 0, tree->lchild->GetID(), scopeItem, stack, temp_num, label_num);
         code2 = arrayexp.code;
-        code1->code.dest.Data.array_add->deviation = arrayexp.deviation;
+        code1->code.dest.Data.array_addr->deviation = arrayexp.deviation;
         code1->code.firstOp.Data.variable = new ScopeItem;
         code1->code.firstOp.Type = VARIABLE;
         *code1->code.firstOp.Data.variable = place;
@@ -634,11 +634,11 @@ TACCode*  TranslateExp(ASTTree* tree, ScopeItem &scopeItem, vector<ScopeItem> &s
         }
         else {  //数组
             tmp->code.firstOp.Type = ARRAY;
-            tmp->code.firstOp.Data.array_add = new ARRAY_ADD;
-            tmp->code.firstOp.Data.array_add->array_si = new ScopeItem;
-            *(tmp->code.firstOp.Data.array_add->array_si) = TraverseScopeStack(stack, tree->lchild->lchild->GetID());
+            tmp->code.firstOp.Data.array_addr = new ARRAY_ADDR;
+            tmp->code.firstOp.Data.array_addr->array_si = new ScopeItem;
+            *(tmp->code.firstOp.Data.array_addr->array_si) = TraverseScopeStack(stack, tree->lchild->lchild->GetID());
             ARRAY_CODE arrays = TranslateArrayExps(tree->lchild->lchild->rchild, 0, tree->lchild->lchild->GetID(), scopeItem, stack, temp_num, label_num);
-            tmp->code.firstOp.Data.array_add->deviation = arrays.deviation;
+            tmp->code.firstOp.Data.array_addr->deviation = arrays.deviation;
             tmp->line = tree->line;
             tmp->prev = tmp;
             return MergeTACItem(2, arrays.code, tmp);
@@ -829,9 +829,9 @@ TACCode* TranslateFuncRParams(ASTTree* tree, ScopeItem& scopeItem, vector<ScopeI
         else {
             code2->code.optype = ARG;
             code2->code.dest.Type = ARRAY;
-            code2->code.dest.Data.array_add = new ARRAY_ADD;
-            code2->code.dest.Data.array_add->array_si = new ScopeItem;
-            *code2->code.dest.Data.array_add->array_si = TraverseScopeStack(stack, tree->lchild->lchild->GetID());
+            code2->code.dest.Data.array_addr = new ARRAY_ADDR;
+            code2->code.dest.Data.array_addr->array_si = new ScopeItem;
+            *code2->code.dest.Data.array_addr->array_si = TraverseScopeStack(stack, tree->lchild->lchild->GetID());
             TACCode* code3, * code4, * code5;
             string cache1 = "_t" + to_string(temp_num++);
             ScopeItem* new_temp1;
@@ -863,7 +863,7 @@ TACCode* TranslateFuncRParams(ASTTree* tree, ScopeItem& scopeItem, vector<ScopeI
                     code3 = MergeTACItem(3, code3, code4, code5);
                 }
             }
-            code2->code.dest.Data.array_add->deviation = new_temp1;
+            code2->code.dest.Data.array_addr->deviation = new_temp1;
             code2->line = tree->line;
             code2->prev = code2;
             return MergeTACItem(3, code3, TranslateFuncRParams(tree->lchild->rchild, scopeItem, stack, temp_num, label_num), code2);
@@ -1092,8 +1092,8 @@ TACCode*   BuildTAC(ASTTree* tree, ScopeItem &scopeItem, vector<ScopeItem> &stac
         TACCode* code1, * code2, * code3;
         tmp->code.optype = PARAM;
         tmp->code.dest.Type = ARRAY;
-        tmp->code.dest.Data.array_add = new ARRAY_ADD;
-        tmp->code.dest.Data.array_add->array_si = tree->si;//开始求数组空间
+        tmp->code.dest.Data.array_addr = new ARRAY_ADDR;
+        tmp->code.dest.Data.array_addr->array_si = tree->si;//开始求数组空间
         string cache1 = "_t" + to_string(temp_num++);
         ScopeItem* new_temp1 = addIntoScope((*(&stack)->end()).stype, stack.back().address, cache1, Variable, "temp", NULL);
         stack.pop_back();
@@ -1118,7 +1118,7 @@ TACCode*   BuildTAC(ASTTree* tree, ScopeItem &scopeItem, vector<ScopeItem> &stac
                 code3->prev = code3;
                 code1 = MergeTACItem(3, code1, code2, code3);
             }
-            tmp->code.dest.Data.array_add->deviation = new_temp1;
+            tmp->code.dest.Data.array_addr->deviation = new_temp1;
             tmp->line = tree->line;
             tmp->prev = tmp;
             return MergeTACItem(2, code1, tmp);
@@ -1127,9 +1127,9 @@ TACCode*   BuildTAC(ASTTree* tree, ScopeItem &scopeItem, vector<ScopeItem> &stac
             TACCode* tmp = (TACCode*)malloc(sizeof(TACCode));
             tmp->code.optype = PARAM;
             tmp->code.dest.Type = ARRAY;
-            tmp->code.dest.Data.array_add = new ARRAY_ADD;
-            tmp->code.dest.Data.array_add->array_si = tree->si;//开始求数组空间
-            tmp->code.dest.Data.array_add->deviation = NULL;        //a[]作为参数,deviation为NULL
+            tmp->code.dest.Data.array_addr = new ARRAY_ADDR;
+            tmp->code.dest.Data.array_addr->array_si = tree->si;//开始求数组空间
+            tmp->code.dest.Data.array_addr->deviation = NULL;        //a[]作为参数,deviation为NULL
             tmp->line = tree->line;
             tmp->prev = tmp;
             return tmp;
@@ -1338,11 +1338,11 @@ void DisplayTACCode(TACCode* entrance)
         if (tmp->code.optype == ASSIGN)
         {
             if (tmp->code.dest.Type == ARRAY) {
-                printf("%3d  (at line %3d)\t%s[%s] := ", line, tmp->line, tmp->code.dest.Data.array_add->array_si->name.c_str(), tmp->code.dest.Data.array_add->deviation->name.c_str());
+                printf("%3d  (at line %3d)\t%s[%s] := ", line, tmp->line, tmp->code.dest.Data.array_addr->array_si->name.c_str(), tmp->code.dest.Data.array_addr->deviation->name.c_str());
                 if (tmp->code.firstOp.Type == VARIABLE)
                     printf("%s\n", tmp->code.firstOp.Data.variable->name.c_str());
                 else if (tmp->code.firstOp.Type == ARRAY)
-                    printf("%s[%s]\n", tmp->code.firstOp.Data.array_add->array_si->name.c_str(), tmp->code.firstOp.Data.array_add->deviation->name.c_str());
+                    printf("%s[%s]\n", tmp->code.firstOp.Data.array_addr->array_si->name.c_str(), tmp->code.firstOp.Data.array_addr->deviation->name.c_str());
                 else if (tmp->code.firstOp.Type == ADDRESSS)
                     printf("*%s\n", tmp->code.firstOp.Data.variable->name.c_str());
                 else if (tmp->code.firstOp.Type == INTEGERCONST)
@@ -1354,7 +1354,7 @@ void DisplayTACCode(TACCode* entrance)
                 if (tmp->code.firstOp.Type == VARIABLE)
                     printf("%s\n", tmp->code.firstOp.Data.variable->name.c_str());
                 else if (tmp->code.firstOp.Type == ARRAY)
-                    printf("%s[%s]\n", tmp->code.firstOp.Data.array_add->array_si->name.c_str(), tmp->code.firstOp.Data.array_add->deviation->name.c_str());
+                    printf("%s[%s]\n", tmp->code.firstOp.Data.array_addr->array_si->name.c_str(), tmp->code.firstOp.Data.array_addr->deviation->name.c_str());
                 else if (tmp->code.firstOp.Type == ADDRESSS)
                     printf("*%s\n", tmp->code.firstOp.Data.variable->name.c_str());
                 else if (tmp->code.firstOp.Type == INTEGERCONST)
@@ -1368,7 +1368,7 @@ void DisplayTACCode(TACCode* entrance)
             if (tmp->code.firstOp.Type == VARIABLE)
                 printf("%s ", tmp->code.firstOp.Data.variable->name.c_str());
             else if (tmp->code.firstOp.Type == ARRAY)
-                printf("%s[%s]\n", tmp->code.firstOp.Data.array_add->array_si->name.c_str(), tmp->code.firstOp.Data.array_add->deviation->name.c_str());
+                printf("%s[%s]\n", tmp->code.firstOp.Data.array_addr->array_si->name.c_str(), tmp->code.firstOp.Data.array_addr->deviation->name.c_str());
             else if (tmp->code.firstOp.Type == ADDRESSS)
                 printf("*%s ", tmp->code.firstOp.Data.variable->name.c_str());
             else if (tmp->code.firstOp.Type == INTEGERCONST)
@@ -1394,7 +1394,7 @@ void DisplayTACCode(TACCode* entrance)
             if (tmp->code.secondOp.Type == VARIABLE)
                 printf("%s\n", tmp->code.secondOp.Data.variable->name.c_str());
             else if (tmp->code.secondOp.Type == ARRAY)
-                printf("%s[%s]\n", tmp->code.secondOp.Data.array_add->array_si->name.c_str(), tmp->code.secondOp.Data.array_add->deviation->name.c_str());
+                printf("%s[%s]\n", tmp->code.secondOp.Data.array_addr->array_si->name.c_str(), tmp->code.secondOp.Data.array_addr->deviation->name.c_str());
             else if (tmp->code.secondOp.Type == ADDRESSS)
                 printf("*%s\n", tmp->code.secondOp.Data.variable->name.c_str());
             else if (tmp->code.secondOp.Type == INTEGERCONST)
@@ -1406,11 +1406,11 @@ void DisplayTACCode(TACCode* entrance)
             if(tmp->code.dest.Type == VARIABLE)
                 printf("%3d  (at line %3d)\tPARAM %s\n", line, tmp->line, tmp->code.dest.Data.variable->name.c_str());
             else {
-                if (tmp->code.dest.Data.array_add->deviation == NULL) {
-                    printf("%3d  (at line %3d)\tPARAM %s[]\n", line, tmp->line, tmp->code.dest.Data.array_add->array_si->name.c_str());
+                if (tmp->code.dest.Data.array_addr->deviation == NULL) {
+                    printf("%3d  (at line %3d)\tPARAM %s[]\n", line, tmp->line, tmp->code.dest.Data.array_addr->array_si->name.c_str());
                 }
                 else
-                    printf("%3d  (at line %3d)\tPARAM %s[][%s]\n", line, tmp->line, tmp->code.dest.Data.array_add->array_si->name.c_str(), tmp->code.dest.Data.array_add->deviation->name.c_str());
+                    printf("%3d  (at line %3d)\tPARAM %s[][%s]\n", line, tmp->line, tmp->code.dest.Data.array_addr->array_si->name.c_str(), tmp->code.dest.Data.array_addr->deviation->name.c_str());
             }
         }
             
@@ -1473,11 +1473,11 @@ void DisplayTACCode(TACCode* entrance)
             if(tmp->code.dest.Type==VARIABLE)
                 printf("%3d  (at line %3d)\tARG %s\n", line, tmp->line, tmp->code.dest.Data.variable->name.c_str());
             else {
-                if (tmp->code.dest.Data.array_add->deviation == NULL) {     //形参数组作为实参
-                    printf("%3d  (at line %3d)\tARG %s[]\n", line, tmp->line, tmp->code.dest.Data.array_add->array_si->name.c_str());
+                if (tmp->code.dest.Data.array_addr->deviation == NULL) {     //形参数组作为实参
+                    printf("%3d  (at line %3d)\tARG %s[]\n", line, tmp->line, tmp->code.dest.Data.array_addr->array_si->name.c_str());
                 }
                 else
-                    printf("%3d  (at line %3d)\tARG %s[%s]\n", line, tmp->line, tmp->code.dest.Data.array_add->array_si->name.c_str(), tmp->code.dest.Data.array_add->deviation->name.c_str());
+                    printf("%3d  (at line %3d)\tARG %s[%s]\n", line, tmp->line, tmp->code.dest.Data.array_addr->array_si->name.c_str(), tmp->code.dest.Data.array_addr->deviation->name.c_str());
             } 
         }
         else if (tmp->code.optype == CALLASSIGN)

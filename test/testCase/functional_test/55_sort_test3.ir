@@ -16,7 +16,7 @@ arg S
 --accepting rule at line 82 ("[")
 --accepting rule at line 83 ("]")
 --accepting rule at line 76 (",")
-<int>
+-o<int>
 <id,n>
 <;>
 <int>
@@ -1677,7 +1677,7 @@ CompUnits (1)
   CompUnits (2)
     FuncDef (2)
       FuncFParams (2)
-        FuncFParam (2)
+        ArrayFuncFParam (2)
           ArrayExps (2)
         FuncFParams (2)
           FuncFParam (2)
@@ -2253,9 +2253,87 @@ CompUnits (1)
 Global
 ID             category       type           depictor
                
+putf           Function       void           NULL           
+putarray       Function       void           NOT NULL       
+putchar        Function       void           NOT NULL       
+putint         Function       void           NOT NULL       
+getarray       Function       int            NOT NULL       
+getchar        Function       int            NOT NULL       
+getint         Function       int            NOT NULL       
 n              Variable       TYPEINTEGER    NULL           
 QuickSort      Function       TYPEINTEGER    NOT NULL       
 main           Function       TYPEINTEGER    NOT NULL       
+===========================================================
+===========================================================
+Formal:putarray
+ID             category       type           depictor
+              
+a              Array          int            ----------> dim=1
+a              Variable       int            NULL           
+===========================================================
+===========================================================
+Local:putarray
+ID             category       type           depictor
+              
+scope type is wrong
+               Variable                      NULL           
+===========================================================
+===========================================================
+Formal:putchar
+ID             category       type           depictor
+              
+a              Variable       int            NULL           
+===========================================================
+===========================================================
+Local:putchar
+ID             category       type           depictor
+              
+===========================================================
+===========================================================
+Formal:putint
+ID             category       type           depictor
+              
+a              Variable       int            NULL           
+===========================================================
+===========================================================
+Local:putint
+ID             category       type           depictor
+              
+===========================================================
+===========================================================
+Formal:getarray
+ID             category       type           depictor
+              
+a              Array          int            ----------> dim=1
+===========================================================
+===========================================================
+Local:getarray
+ID             category       type           depictor
+              
+scope type is wrong
+               Variable                      NULL           
+===========================================================
+===========================================================
+Formal:getchar
+ID             category       type           depictor
+              
+               NOParam                       NULL           
+===========================================================
+===========================================================
+Local:getchar
+ID             category       type           depictor
+              
+===========================================================
+===========================================================
+Formal:getint
+ID             category       type           depictor
+              
+               NOParam                       NULL           
+===========================================================
+===========================================================
+Local:getint
+ID             category       type           depictor
+              
 ===========================================================
 ===========================================================
 Formal:QuickSort
@@ -2312,13 +2390,17 @@ ID             category       type           depictor
 tmp            Variable       TYPEINTEGER    NULL           
 ===========================================================
 789
+789
 456
+789
 789
 456
 789
 789
 789
+789
 456
+789
 789
 789
 789
@@ -2330,7 +2412,9 @@ tmp            Variable       TYPEINTEGER    NULL
 789
 789
 789
+789
 456
+789
 789
 789
 789
@@ -2349,7 +2433,9 @@ tmp            Variable       TYPEINTEGER    NULL
 789
 789
 789
+789
 456
+789
 789
 789
 789
@@ -2372,7 +2458,8 @@ tmp            Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
+789
 789
 789
 789
@@ -2381,8 +2468,8 @@ tmp            Variable       TYPEINTEGER    NULL
 789
 789
 789
+456
 789
-123
 789
 789
 789
@@ -2396,6 +2483,7 @@ tmp            Variable       TYPEINTEGER    NULL
 789
 789
 456
+789
 789
 789
 789
@@ -2531,7 +2619,7 @@ tmp            Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -2553,7 +2641,7 @@ tmp            Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -2860,7 +2948,7 @@ tmp            Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -2895,7 +2983,7 @@ tmp            Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -2998,7 +3086,7 @@ tmp            Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -3398,7 +3486,7 @@ tmp            Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -3447,7 +3535,7 @@ tmp            Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -4053,7 +4141,7 @@ tmp            Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -4113,7 +4201,7 @@ tmp            Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -4289,7 +4377,7 @@ tmp            Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -4647,7 +4735,7 @@ tmp            Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -4729,6 +4817,8 @@ tmp            Variable       TYPEINTEGER    NULL
 789
 789
 456
+789
+789
 789
 789
 789
@@ -4779,8 +4869,8 @@ tmp            Variable       TYPEINTEGER    NULL
 789
 789
 789
+456
 789
-123
 789
 789
 789
@@ -4804,8 +4894,8 @@ tmp            Variable       TYPEINTEGER    NULL
 789
 789
 789
+456
 789
-123
 789
 789
 789
@@ -4829,8 +4919,8 @@ tmp            Variable       TYPEINTEGER    NULL
 789
 789
 789
+456
 789
-123
 789
 789
 789
@@ -4856,6 +4946,7 @@ tmp            Variable       TYPEINTEGER    NULL
 789
 789
 456
+789
 789
 789
 789
@@ -4907,6 +4998,7 @@ tmp            Variable       TYPEINTEGER    NULL
 789
 789
 789
+789
 456
 789
 789
@@ -5076,6 +5168,7 @@ tmp            Variable       TYPEINTEGER    NULL
 789
 789
 456
+789
 789
 789
 789
@@ -5139,7 +5232,7 @@ tmp            Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -5170,7 +5263,7 @@ tmp            Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -5201,7 +5294,7 @@ tmp            Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -5320,7 +5413,9 @@ tmp            Variable       TYPEINTEGER    NULL
 789
 789
 789
+789
 456
+789
 789
 789
 789
@@ -5388,6 +5483,7 @@ tmp            Variable       TYPEINTEGER    NULL
 789
 789
 789
+789
 456
 789
 789
@@ -6635,37 +6731,6 @@ tmp            Variable       TYPEINTEGER    NULL
 789
 789
 456
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
 789
 789
 789
@@ -6826,23 +6891,6 @@ tmp            Variable       TYPEINTEGER    NULL
 789
 789
 789
-456
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
 789
 789
 789
@@ -6874,18 +6922,6 @@ tmp            Variable       TYPEINTEGER    NULL
 789
 789
 789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
 456
 789
 789
@@ -6946,12 +6982,7 @@ tmp            Variable       TYPEINTEGER    NULL
 789
 789
 789
-789
-789
-789
-789
 456
-789
 789
 789
 789
@@ -7014,25 +7045,8 @@ tmp            Variable       TYPEINTEGER    NULL
 789
 789
 789
-456
-789
-789
-789
 789
 456
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
 789
 789
 789
@@ -7091,35 +7105,17 @@ tmp            Variable       TYPEINTEGER    NULL
 789
 789
 789
-TraverseScopeStack no result
 789
 789
 789
 789
-456
-789
-789
-789
-789
-789
-456
-789
 789
-789
-789
-789
 456
-789
 789
 789
 789
 789
-789
 456
-789
-789
-789
-789
 789
 789
 789
@@ -7189,7 +7185,6 @@ TraverseScopeStack no result
 789
 789
 789
-TraverseScopeStack no result
 789
 789
 789
@@ -7202,81 +7197,13 @@ TraverseScopeStack no result
 789
 789
 789
-789
-789
 456
-789
-789
 789
 789
 789
 789
 789
 456
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
 789
 789
 789
@@ -7354,380 +7281,9 @@ TraverseScopeStack no result
 789
 789
 789
-456
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
 789
 789
 789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-456
-
-~~~~TAC~~~~~
- No  Source Position	TACCode
-_______________________________________
-  0  (at line   0)	CALL main
-
-  1  (at line   2)	FUNCTION QuickSort :
-  2  (at line   2)	PARAM arr
-  3  (at line   2)	PARAM low
-  4  (at line   2)	PARAM high
-  5  (at line   4)	_t0 := low
-  6  (at line   4)	_t3 := high
-  7  (at line   4)	IF _t0 < _t3 GOTO label0
-  8  (at line   4)	GOTO label1
-  9  (at line   4)	LABEL label0 :
- 10  (at line   7)	_t4 := low
- 11  (at line   7)	i := _t4
- 12  (at line   9)	_t5 := high
- 13  (at line   9)	j := _t5
- 14  (at line  11)	_t9 := low
- 15  (at line  11)	_t6 := arr[_t9]
- 16  (at line  11)	k := _t6
- 17  (at line  12)	LABEL label2 :
- 18  (at line  12)	_t11 := i
- 19  (at line  12)	_t14 := j
- 20  (at line  12)	IF _t11 < _t14 GOTO label3
- 21  (at line  12)	GOTO label4
- 22  (at line  12)	LABEL label3 :
- 23  (at line  14)	LABEL label5 :
- 24  (at line  14)	_t15 := i
- 25  (at line  14)	_t18 := j
- 26  (at line  14)	IF _t15 < _t18 GOTO label8
- 27  (at line  14)	GOTO label7
- 28  (at line  14)	LABEL label8 :
- 29  (at line  14)	_t24 := j
- 30  (at line  14)	_t19 := arr[_t24]
- 31  (at line  14)	_t27 := k
- 32  (at line  14)	_t28 := #1
- 33  (at line  14)	_t26 := _t27 - _t28
- 34  (at line  14)	IF _t19 > _t26 GOTO label6
- 35  (at line  14)	GOTO label7
- 36  (at line  14)	LABEL label6 :
- 37  (at line  16)	_t30 := j
- 38  (at line  16)	_t31 := #1
- 39  (at line  16)	_t29 := _t30 - _t31
- 40  (at line  16)	j := _t29
- 41  (at line  14)	GOTO label5
- 42  (at line  14)	LABEL label7 :
- 43  (at line  19)	_t32 := i
- 44  (at line  19)	_t35 := j
- 45  (at line  19)	IF _t32 < _t35 GOTO label9
- 46  (at line  19)	GOTO label10
- 47  (at line  19)	LABEL label9 :
- 48  (at line  21)	_t39 := j
- 49  (at line  21)	_t36 := arr[_t39]
- 50  (at line  21)	_t43 := i
- 51  (at line  21)	arr[_t43] := _t36
- 52  (at line  22)	_t46 := i
- 53  (at line  22)	_t47 := #1
- 54  (at line  22)	_t45 := _t46 + _t47
- 55  (at line  22)	i := _t45
- 56  (at line  19)	LABEL label10 :
- 57  (at line  25)	LABEL label11 :
- 58  (at line  25)	_t48 := i
- 59  (at line  25)	_t51 := j
- 60  (at line  25)	IF _t48 < _t51 GOTO label14
- 61  (at line  25)	GOTO label13
- 62  (at line  25)	LABEL label14 :
- 63  (at line  25)	_t57 := i
- 64  (at line  25)	_t52 := arr[_t57]
- 65  (at line  25)	_t59 := k
- 66  (at line  25)	IF _t52 < _t59 GOTO label12
- 67  (at line  25)	GOTO label13
- 68  (at line  25)	LABEL label12 :
- 69  (at line  27)	_t61 := i
- 70  (at line  27)	_t62 := #1
- 71  (at line  27)	_t60 := _t61 + _t62
- 72  (at line  27)	i := _t60
- 73  (at line  25)	GOTO label11
- 74  (at line  25)	LABEL label13 :
- 75  (at line  30)	_t63 := i
- 76  (at line  30)	_t66 := j
- 77  (at line  30)	IF _t63 < _t66 GOTO label15
- 78  (at line  30)	GOTO label16
- 79  (at line  30)	LABEL label15 :
- 80  (at line  32)	_t70 := i
- 81  (at line  32)	_t67 := arr[_t70]
- 82  (at line  32)	_t74 := j
- 83  (at line  32)	arr[_t74] := _t67
- 84  (at line  33)	_t77 := j
- 85  (at line  33)	_t78 := #1
- 86  (at line  33)	_t76 := _t77 - _t78
- 87  (at line  33)	j := _t76
- 88  (at line  30)	LABEL label16 :
- 89  (at line  12)	GOTO label2
- 90  (at line  12)	LABEL label4 :
- 91  (at line  37)	_t79 := k
- 92  (at line  37)	_t82 := i
- 93  (at line  37)	arr[_t82] := _t79
- 94  (at line  39)	_t85 := i
- 95  (at line  39)	_t86 := #1
- 96  (at line  39)	_t84 := _t85 - _t86
- 97  (at line  39)	tmp := _t84
- 98  (at line  40)	_t90 := low
- 99  (at line  40)	_t91 := tmp
-100  (at line  40)	ARG _t91
-101  (at line  40)	ARG _t90
-102  (at line  40)	ARG arr[]
-103  (at line  40)	_t87 := CALL QuickSort
-104  (at line  40)	tmp := _t87
-105  (at line  41)	_t93 := i
-106  (at line  41)	_t94 := #1
-107  (at line  41)	_t92 := _t93 + _t94
-108  (at line  41)	tmp := _t92
-109  (at line  42)	_t98 := tmp
-110  (at line  42)	_t99 := high
-111  (at line  42)	ARG _t99
-112  (at line  42)	ARG _t98
-113  (at line  42)	ARG arr[]
-114  (at line  42)	_t95 := CALL QuickSort
-115  (at line  42)	tmp := _t95
-116  (at line   4)	LABEL label1 :
-117  (at line  44)	_t100 := #0
-118  (at line  44)	RETURN _t100
-
-119  (at line  47)	FUNCTION main :
-120  (at line  48)	_t101 := #10
-121  (at line  48)	n := _t101
-122  (at line  50)	_t102 := #4
-123  (at line  50)	_t105 := #0
-124  (at line  50)	a[_t105] := _t102
-125  (at line  50)	_t107 := #3
-126  (at line  50)	_t110 := #1
-127  (at line  50)	a[_t110] := _t107
-128  (at line  50)	_t112 := #9
-129  (at line  50)	_t115 := #2
-130  (at line  50)	a[_t115] := _t112
-131  (at line  50)	_t117 := #2
-132  (at line  50)	_t120 := #3
-133  (at line  50)	a[_t120] := _t117
-134  (at line  50)	_t122 := #0
-135  (at line  50)	_t125 := #4
-136  (at line  50)	a[_t125] := _t122
-137  (at line  51)	_t127 := #1
-138  (at line  51)	_t130 := #5
-139  (at line  51)	a[_t130] := _t127
-140  (at line  51)	_t132 := #6
-141  (at line  51)	_t135 := #6
-142  (at line  51)	a[_t135] := _t132
-143  (at line  51)	_t137 := #5
-144  (at line  51)	_t140 := #7
-145  (at line  51)	a[_t140] := _t137
-146  (at line  51)	_t142 := #7
-147  (at line  51)	_t145 := #8
-148  (at line  51)	a[_t145] := _t142
-149  (at line  51)	_t147 := #8
-150  (at line  51)	_t150 := #9
-151  (at line  51)	a[_t150] := _t147
-152  (at line  53)	_t152 := #0
-153  (at line  53)	i := _t152
-154  (at line  55)	_t153 := #9
-155  (at line  55)	tmp := _t153
-156  (at line  49)	_t156 := #10
-157  (at line  56)	_t157 := i
-158  (at line  56)	_t158 := tmp
-159  (at line  56)	ARG _t158
-160  (at line  56)	ARG _t157
-161  (at line  56)	ARG a[_t156]
-162  (at line  56)	_t154 := CALL QuickSort
-163  (at line  56)	i := _t154
-164  (at line  57)	LABEL label17 :
-165  (at line  57)	_t159 := i
-166  (at line  57)	_t162 := n
-167  (at line  57)	IF _t159 < _t162 GOTO label18
-168  (at line  57)	GOTO label19
-169  (at line  57)	LABEL label18 :
-170  (at line  59)	_t166 := i
-171  (at line  59)	_t163 := a[_t166]
-172  (at line  59)	tmp := _t163
-173  (at line  60)	_t168 := tmp
-174  (at line  60)	ARG _t168
-175  (at line  60)	CALL 
-176  (at line  61)	_t169 := #10
-177  (at line  61)	tmp := _t169
-178  (at line  62)	_t170 := tmp
-179  (at line  62)	ARG _t170
-180  (at line  62)	CALL 
-181  (at line  63)	_t172 := i
-182  (at line  63)	_t173 := #1
-183  (at line  63)	_t171 := _t172 + _t173
-184  (at line  63)	i := _t171
-185  (at line  57)	GOTO label17
-186  (at line  57)	LABEL label19 :
-187  (at line  65)	_t174 := #0
-188  (at line  65)	RETURN _t174
-
-
-===========================================================
-Global
-ID             category       type           depictor
-               
-n              Variable       TYPEINTEGER    NULL           
-QuickSort      Function       TYPEINTEGER    NOT NULL       
-main           Function       TYPEINTEGER    NOT NULL       
-===========================================================
-===========================================================
-Formal:QuickSort
-ID             category       type           depictor
-              
-arr            Array          TYPEINTEGER    ----------> dim=1
-low            Variable       TYPEINTEGER    NOT NULL       
-high           Variable       TYPEINTEGER    NOT NULL       
-scope type is wrong
-===========================================================
-Formal:main
-ID             category       type           depictor
-              
-               NOParam                       NOT NULL       
-scope type is wrong
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-build assembly code
-tac type FUNCTIONDF
-scope type not local in functiondf
-scopeprev:0
-Variable offset count+4 :_t0
-scope type not local in functiondf
-scopeprev:0
-Variable offset count+4 :_t3
-Variable offset count+4 :_t100
-tec type ASSIGN
-findregister: insldr rd=0,r1=11,r2 offset=0,op2type=1, insefft=0
-tec type ASSIGN
-findregister: insldr rd=1,r1=11,r2 offset=0,op2type=1, insefft=0
-tac type IFLT
-tac type GOTO
-Goto string  ControlInstruction tostring
-INS B tostring
-B L1
-
-tac type LABELDF
-L0:
-
-tec type ASSIGN
-findregister: insldr rd=2,r1=11,r2 offset=0,op2type=1, insefft=0
-findregister: insldr rd=3,r1=11,r2 offset=0,op2type=1, insefft=0
-tec type ASSIGN
-findregister: insldr rd=4,r1=11,r2 offset=0,op2type=1, insefft=0
-tec type ASSIGN
-findregister: insldr rd=5,r1=11,r2 offset=0,op2type=1, insefft=0
-findregister: insldr rd=6,r1=11,r2 offset=0,op2type=1, insefft=0
-tec type ASSIGN
-findregister: insldr rd=8,r1=11,r2 offset=0,op2type=1, insefft=0
-tec type ASSIGN
-findregister: insldr rd=9,r1=11,r2 offset=0,op2type=1, insefft=0
-tec type ASSIGN
-tec type ASSIGN
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
-tac type LABELDF
-L2:
-
-tec type ASSIGN
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
-tec type ASSIGN
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
-tac type IFLT
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
-tac type GOTO
-Goto string  ControlInstruction tostring
-INS B tostring
-B L4
-
-tac type LABELDF
-L3:
-
-tac type LABELDF
-L5:
-
-tec type ASSIGN
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
-tec type ASSIGN
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
-tac type IFLT
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
-tac type GOTO
-Goto string  ControlInstruction tostring
-INS B tostring
-B L7
-
-tac type LABELDF
-L8:
-
-tec type ASSIGN
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
-tec type ASSIGN
-tec type ASSIGN
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
-tec type ASSIGN
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
-tac type SUB
-compiler: ./ObjectCode/Arm.cpp:85: ARM::ARM(TACCode *, ScopeItem &): Assertion `code.dest.Type = VARIABLE' failed.
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  TraverseScopeStack no result
 Aborted (core dumped)

@@ -28,7 +28,7 @@ arg S
 --accepting rule at line 80 ("(")
 --accepting rule at line 112 ("a")
 --accepting rule at line 95 (">")
-<int>
+-o<int>
 <id,main>
 <(>
 <)>
@@ -160,7 +160,7 @@ CompUnits (1)
         VarDecl (2)
           VarOPassign (2)
             IDENTIFIER a
-            ConstInitVal (2)
+            ExpInitval (2)
               IntConst (2)
                 CONSTANTINTD: 10
         BlockItems (3)
@@ -210,7 +210,85 @@ CompUnits (1)
 Global
 ID             category       type           depictor
                
+putf           Function       void           NULL           
+putarray       Function       void           NOT NULL       
+putchar        Function       void           NOT NULL       
+putint         Function       void           NOT NULL       
+getarray       Function       int            NOT NULL       
+getchar        Function       int            NOT NULL       
+getint         Function       int            NOT NULL       
 main           Function       TYPEINTEGER    NOT NULL       
+===========================================================
+===========================================================
+Formal:putarray
+ID             category       type           depictor
+              
+a              Array          int            ----------> dim=1
+a              Variable       int            NULL           
+===========================================================
+===========================================================
+Local:putarray
+ID             category       type           depictor
+              
+scope type is wrong
+               Variable                      NULL           
+===========================================================
+===========================================================
+Formal:putchar
+ID             category       type           depictor
+              
+a              Variable       int            NULL           
+===========================================================
+===========================================================
+Local:putchar
+ID             category       type           depictor
+              
+===========================================================
+===========================================================
+Formal:putint
+ID             category       type           depictor
+              
+a              Variable       int            NULL           
+===========================================================
+===========================================================
+Local:putint
+ID             category       type           depictor
+              
+===========================================================
+===========================================================
+Formal:getarray
+ID             category       type           depictor
+              
+a              Array          int            ----------> dim=1
+===========================================================
+===========================================================
+Local:getarray
+ID             category       type           depictor
+              
+scope type is wrong
+               Variable                      NULL           
+===========================================================
+===========================================================
+Formal:getchar
+ID             category       type           depictor
+              
+               NOParam                       NULL           
+===========================================================
+===========================================================
+Local:getchar
+ID             category       type           depictor
+              
+===========================================================
+===========================================================
+Formal:getint
+ID             category       type           depictor
+              
+               NOParam                       NULL           
+===========================================================
+===========================================================
+Local:getint
+ID             category       type           depictor
+              
 ===========================================================
 ===========================================================
 Formal:main
@@ -225,5 +303,226 @@ ID             category       type           depictor
 a              Variable       TYPEINTEGER    NULL           
                Block          BLOCKStmt      NULL           
 ===========================================================
+123
 456
-Segmentation fault (core dumped)
+456
+789
+789
+789
+789
+456
+789
+789
+789
+789
+456
+789
+789
+789
+789
+456
+789
+789
+789
+789
+789
+456
+789
+789
+789
+789
+789
+456
+789
+789
+789
+789
+789
+789
+789
+456
+789
+789
+789
+789
+789
+789
+789
+456
+
+~~~~TAC~~~~~
+ No  Source Position	TACCode
+_______________________________________
+  0  (at line   0)	CALL main
+
+  1  (at line   1)	FUNCTION main :
+  2  (at line   2)	a := #10
+  3  (at line   3)	LABEL label0 :
+  4  (at line   3)	_t0 := a
+  5  (at line   3)	_t3 := #0
+  6  (at line   3)	IF _t0 > _t3 GOTO label1
+  7  (at line   3)	GOTO label2
+  8  (at line   3)	LABEL label1 :
+  9  (at line   4)	_t5 := a
+ 10  (at line   4)	_t6 := #1
+ 11  (at line   4)	_t4 := _t5 - _t6
+ 12  (at line   4)	a := _t4
+ 13  (at line   5)	_t7 := a
+ 14  (at line   5)	_t10 := #5
+ 15  (at line   5)	IF _t7 = _t10 GOTO label3
+ 16  (at line   5)	GOTO label4
+ 17  (at line   5)	LABEL label3 :
+ 18  (at line   0)	GOTO label-1
+ 19  (at line   5)	LABEL label4 :
+ 20  (at line   3)	GOTO label0
+ 21  (at line   3)	LABEL label2 :
+ 22  (at line   8)	_t11 := a
+ 23  (at line   8)	RETURN _t11
+
+
+===========================================================
+Global
+ID             category       type           depictor
+               
+putf           Function       void           NULL           
+putarray       Function       void           NOT NULL       
+putchar        Function       void           NOT NULL       
+putint         Function       void           NOT NULL       
+getarray       Function       int            NOT NULL       
+getchar        Function       int            NOT NULL       
+getint         Function       int            NOT NULL       
+main           Function       TYPEINTEGER    NOT NULL       
+===========================================================
+===========================================================
+Formal:putarray
+ID             category       type           depictor
+              
+a              Array          int            ----------> dim=1
+a              Variable       int            NULL           
+===========================================================
+===========================================================
+Local:putarray
+ID             category       type           depictor
+              
+scope type is wrong
+               Variable                      NULL           
+===========================================================
+===========================================================
+Formal:putchar
+ID             category       type           depictor
+              
+a              Variable       int            NULL           
+===========================================================
+===========================================================
+Local:putchar
+ID             category       type           depictor
+              
+===========================================================
+===========================================================
+Formal:putint
+ID             category       type           depictor
+              
+a              Variable       int            NULL           
+===========================================================
+===========================================================
+Local:putint
+ID             category       type           depictor
+              
+===========================================================
+===========================================================
+Formal:getarray
+ID             category       type           depictor
+              
+a              Array          int            ----------> dim=1
+===========================================================
+===========================================================
+Local:getarray
+ID             category       type           depictor
+              
+scope type is wrong
+               Variable                      NULL           
+===========================================================
+===========================================================
+Formal:getchar
+ID             category       type           depictor
+              
+               NOParam                       NULL           
+===========================================================
+===========================================================
+Local:getchar
+ID             category       type           depictor
+              
+===========================================================
+===========================================================
+Formal:getint
+ID             category       type           depictor
+              
+               NOParam                       NULL           
+===========================================================
+===========================================================
+Local:getint
+ID             category       type           depictor
+              
+===========================================================
+===========================================================
+Formal:main
+ID             category       type           depictor
+              
+               NOParam                       NOT NULL       
+scope type is wrong
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+build assembly code
+tac type FUNCTIONDF
+Variable offset count+4 :a
+Variable offset count+4 :a
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t0
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t3
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t4
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t5
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t6
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t7
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t10
+Variable offset count+4 :_t11
+tec type ASSIGN
+findregister: insldr rd=0,r1=11,r2 offset=0,op2type=1, insefft=0
+tac type LABELDF
+L0:
+
+tec type ASSIGN
+findregister: insldr rd=1,r1=11,r2 offset=0,op2type=1, insefft=0
+tec type ASSIGN
+findregister: insldr rd=2,r1=11,r2 offset=0,op2type=1, insefft=0
+tac type IFGT
+ControlInstruction String: ControlInstruction tostring
+INS B tostring
+BGT L1
+
+tac type GOTO
+Goto string  ControlInstruction tostring
+INS B tostring
+B L2
+
+tac type LABELDF
+L1:
+
+tec type ASSIGN
+findregister: insldr rd=3,r1=11,r2 offset=0,op2type=1, insefft=0
+tec type ASSIGN
+findregister: insldr rd=4,r1=11,r2 offset=0,op2type=1, insefft=0
+tac type SUB
+compiler: ./ObjectCode/Arm.cpp:131: ARM::ARM(TACCode *, ScopeItem *, vector<ScopeItem> &): Assertion `code.dest.Type = VARIABLE' failed.
+Aborted (core dumped)

@@ -29,7 +29,7 @@ arg S
 --accepting rule at line 112 ("a")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
-<int>
+-o<int>
 <id,main>
 <(>
 <)>
@@ -137,7 +137,85 @@ CompUnits (2)
 Global
 ID             category       type           depictor
                
+putf           Function       void           NULL           
+putarray       Function       void           NOT NULL       
+putchar        Function       void           NOT NULL       
+putint         Function       void           NOT NULL       
+getarray       Function       int            NOT NULL       
+getchar        Function       int            NOT NULL       
+getint         Function       int            NOT NULL       
 main           Function       TYPEINTEGER    NOT NULL       
+===========================================================
+===========================================================
+Formal:putarray
+ID             category       type           depictor
+              
+a              Array          int            ----------> dim=1
+a              Variable       int            NULL           
+===========================================================
+===========================================================
+Local:putarray
+ID             category       type           depictor
+              
+scope type is wrong
+               Variable                      NULL           
+===========================================================
+===========================================================
+Formal:putchar
+ID             category       type           depictor
+              
+a              Variable       int            NULL           
+===========================================================
+===========================================================
+Local:putchar
+ID             category       type           depictor
+              
+===========================================================
+===========================================================
+Formal:putint
+ID             category       type           depictor
+              
+a              Variable       int            NULL           
+===========================================================
+===========================================================
+Local:putint
+ID             category       type           depictor
+              
+===========================================================
+===========================================================
+Formal:getarray
+ID             category       type           depictor
+              
+a              Array          int            ----------> dim=1
+===========================================================
+===========================================================
+Local:getarray
+ID             category       type           depictor
+              
+scope type is wrong
+               Variable                      NULL           
+===========================================================
+===========================================================
+Formal:getchar
+ID             category       type           depictor
+              
+               NOParam                       NULL           
+===========================================================
+===========================================================
+Local:getchar
+ID             category       type           depictor
+              
+===========================================================
+===========================================================
+Formal:getint
+ID             category       type           depictor
+              
+               NOParam                       NULL           
+===========================================================
+===========================================================
+Local:getint
+ID             category       type           depictor
+              
 ===========================================================
 ===========================================================
 Formal:main
@@ -157,7 +235,6 @@ t              Variable       TYPEINTEGER    NULL
 789
 789
 789
-TraverseScopeStack no result
 456
 789
 456
@@ -174,7 +251,7 @@ _______________________________________
   3  (at line   4)	a := _t0
   4  (at line   6)	_t1 := a
   5  (at line   6)	ARG _t1
-  6  (at line   6)	CALL 
+  6  (at line   6)	CALL putint
   7  (at line   7)	_t2 := #0
   8  (at line   7)	RETURN _t2
 
@@ -183,7 +260,85 @@ _______________________________________
 Global
 ID             category       type           depictor
                
+putf           Function       void           NULL           
+putarray       Function       void           NOT NULL       
+putchar        Function       void           NOT NULL       
+putint         Function       void           NOT NULL       
+getarray       Function       int            NOT NULL       
+getchar        Function       int            NOT NULL       
+getint         Function       int            NOT NULL       
 main           Function       TYPEINTEGER    NOT NULL       
+===========================================================
+===========================================================
+Formal:putarray
+ID             category       type           depictor
+              
+a              Array          int            ----------> dim=1
+a              Variable       int            NULL           
+===========================================================
+===========================================================
+Local:putarray
+ID             category       type           depictor
+              
+scope type is wrong
+               Variable                      NULL           
+===========================================================
+===========================================================
+Formal:putchar
+ID             category       type           depictor
+              
+a              Variable       int            NULL           
+===========================================================
+===========================================================
+Local:putchar
+ID             category       type           depictor
+              
+===========================================================
+===========================================================
+Formal:putint
+ID             category       type           depictor
+              
+a              Variable       int            NULL           
+===========================================================
+===========================================================
+Local:putint
+ID             category       type           depictor
+              
+===========================================================
+===========================================================
+Formal:getarray
+ID             category       type           depictor
+              
+a              Array          int            ----------> dim=1
+===========================================================
+===========================================================
+Local:getarray
+ID             category       type           depictor
+              
+scope type is wrong
+               Variable                      NULL           
+===========================================================
+===========================================================
+Formal:getchar
+ID             category       type           depictor
+              
+               NOParam                       NULL           
+===========================================================
+===========================================================
+Local:getchar
+ID             category       type           depictor
+              
+===========================================================
+===========================================================
+Formal:getint
+ID             category       type           depictor
+              
+               NOParam                       NULL           
+===========================================================
+===========================================================
+Local:getint
+ID             category       type           depictor
+              
 ===========================================================
 ===========================================================
 Formal:main
@@ -195,7 +350,7 @@ scope type is wrong
 build assembly code
 tac type FUNCTIONDF
 Variable offset count+4 :a
-Variable offset count+4 :a
+Variable offset count+4 :t
 Variable offset count+4 :a
 scope type not local in functiondf
 scopeprev:0

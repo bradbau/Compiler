@@ -3,7 +3,6 @@ func1:
 PUSH {fp}
 ADD  fp, sp, #0
 SUB sp, sp, #0
-LDR r0, [fp, 0x0]
 MOV r0, #1
 LDR r1, [fp, 0x0]
 ADD  r1, r0, #0
@@ -17,7 +16,6 @@ func2:
 PUSH {fp}
 ADD  fp, sp, #0
 SUB sp, sp, #0
-LDR r3, [fp, 0x0]
 MOV r3, #2
 ADD  r1, r3, #0
 LDR r4, [fp, 0x0]
@@ -30,7 +28,6 @@ func3:
 PUSH {fp}
 ADD  fp, sp, #0
 SUB sp, sp, #0
-LDR r5, [fp, 0x0]
 MOV r5, #4
 ADD  r1, r5, #0
 LDR r6, [fp, 0x0]
@@ -43,11 +40,9 @@ func4:
 PUSH {fp}
 ADD  fp, sp, #0
 SUB sp, sp, #0
-LDR r8, [fp, 0x0]
 MOV r8, #8
 LDR r9, [fp, 0x0]
 ADD  r9, r8, #0
-LDR r10, [fp, 0x0]
 ADD  r10, r9, #0
 ADD  r1, r10, #0
 STRLDR r10, [fp, 0x0]

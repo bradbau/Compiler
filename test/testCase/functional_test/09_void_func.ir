@@ -33,7 +33,7 @@ arg S
 --accepting rule at line 114 (" ")
 --accepting rule at line 112 ("c")
 --accepting rule at line 89 ("=")
-<int>
+-o<int>
 <id,a>
 <,>
 <id,b>
@@ -250,11 +250,89 @@ CompUnits (1)
 Global
 ID             category       type           depictor
                
+putf           Function       void           NULL           
+putarray       Function       void           NOT NULL       
+putchar        Function       void           NOT NULL       
+putint         Function       void           NOT NULL       
+getarray       Function       int            NOT NULL       
+getchar        Function       int            NOT NULL       
+getint         Function       int            NOT NULL       
 a              Variable       TYPEINTEGER    NULL           
 b              Variable       TYPEINTEGER    NULL           
 c              Variable       TYPEINTEGER    NULL           
 add            Function       void           NOT NULL       
 main           Function       TYPEINTEGER    NOT NULL       
+===========================================================
+===========================================================
+Formal:putarray
+ID             category       type           depictor
+              
+a              Array          int            ----------> dim=1
+a              Variable       int            NULL           
+===========================================================
+===========================================================
+Local:putarray
+ID             category       type           depictor
+              
+scope type is wrong
+               Variable                      NULL           
+===========================================================
+===========================================================
+Formal:putchar
+ID             category       type           depictor
+              
+a              Variable       int            NULL           
+===========================================================
+===========================================================
+Local:putchar
+ID             category       type           depictor
+              
+===========================================================
+===========================================================
+Formal:putint
+ID             category       type           depictor
+              
+a              Variable       int            NULL           
+===========================================================
+===========================================================
+Local:putint
+ID             category       type           depictor
+              
+===========================================================
+===========================================================
+Formal:getarray
+ID             category       type           depictor
+              
+a              Array          int            ----------> dim=1
+===========================================================
+===========================================================
+Local:getarray
+ID             category       type           depictor
+              
+scope type is wrong
+               Variable                      NULL           
+===========================================================
+===========================================================
+Formal:getchar
+ID             category       type           depictor
+              
+               NOParam                       NULL           
+===========================================================
+===========================================================
+Local:getchar
+ID             category       type           depictor
+              
+===========================================================
+===========================================================
+Formal:getint
+ID             category       type           depictor
+              
+               NOParam                       NULL           
+===========================================================
+===========================================================
+Local:getint
+ID             category       type           depictor
+              
 ===========================================================
 ===========================================================
 Formal:add
@@ -329,11 +407,89 @@ _______________________________________
 Global
 ID             category       type           depictor
                
+putf           Function       void           NULL           
+putarray       Function       void           NOT NULL       
+putchar        Function       void           NOT NULL       
+putint         Function       void           NOT NULL       
+getarray       Function       int            NOT NULL       
+getchar        Function       int            NOT NULL       
+getint         Function       int            NOT NULL       
 a              Variable       TYPEINTEGER    NULL           
 b              Variable       TYPEINTEGER    NULL           
 c              Variable       TYPEINTEGER    NULL           
 add            Function       void           NOT NULL       
 main           Function       TYPEINTEGER    NOT NULL       
+===========================================================
+===========================================================
+Formal:putarray
+ID             category       type           depictor
+              
+a              Array          int            ----------> dim=1
+a              Variable       int            NULL           
+===========================================================
+===========================================================
+Local:putarray
+ID             category       type           depictor
+              
+scope type is wrong
+               Variable                      NULL           
+===========================================================
+===========================================================
+Formal:putchar
+ID             category       type           depictor
+              
+a              Variable       int            NULL           
+===========================================================
+===========================================================
+Local:putchar
+ID             category       type           depictor
+              
+===========================================================
+===========================================================
+Formal:putint
+ID             category       type           depictor
+              
+a              Variable       int            NULL           
+===========================================================
+===========================================================
+Local:putint
+ID             category       type           depictor
+              
+===========================================================
+===========================================================
+Formal:getarray
+ID             category       type           depictor
+              
+a              Array          int            ----------> dim=1
+===========================================================
+===========================================================
+Local:getarray
+ID             category       type           depictor
+              
+scope type is wrong
+               Variable                      NULL           
+===========================================================
+===========================================================
+Formal:getchar
+ID             category       type           depictor
+              
+               NOParam                       NULL           
+===========================================================
+===========================================================
+Local:getchar
+ID             category       type           depictor
+              
+===========================================================
+===========================================================
+Formal:getint
+ID             category       type           depictor
+              
+               NOParam                       NULL           
+===========================================================
+===========================================================
+Local:getint
+ID             category       type           depictor
+              
 ===========================================================
 ===========================================================
 Formal:add

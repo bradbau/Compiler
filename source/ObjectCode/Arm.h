@@ -24,7 +24,7 @@ typedef struct RegisterEntry
       bool filled;         // 是否使用
       int tag;           // Tag for LRU algorithm
       ScopeItem* variable;     // 存储的变量对象
-      
+      //int instantNum; 不一定有用，记录寄存器内容的具体值
 } RegisterEntry;
 
 
@@ -40,13 +40,18 @@ private:
       
       Register GetRegister(ScopeItem* variable); //分配或者获取已经分配的空余寄存器
       int FinfRegister(ScopeItem* variable);//查找存有对应变量的寄存器
+      int LoadInstantToRegister(int instantNum);//加载一个一次性的立即数到空寄存器中，不统计内容
       void EmptyRegister();//清空用户使用寄存器
       //void AllocateHeap(ScopeItem & variable, int &offset);//给变量在堆中分配地址
+
       void AllocateStack(ScopeItem * variable, int &offset);//给变量在栈中分配地址
+
+
+      void StoreRegister(int RegisterNum);//将这个寄存器内的变量保存到它内部offset指向的内存地址
 
 public:
 
-      ARM(TACCode* entrance, ScopeItem &scopeItem);
+      ARM(TACCode* entrance,  ScopeItem *GlobalItemHead, vector<ScopeItem> &stack);
      
       string toString();//生成汇编文本
 

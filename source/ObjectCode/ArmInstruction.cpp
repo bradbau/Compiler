@@ -451,7 +451,22 @@ string MemoryInstruction::toString(){
                 InsHead=InsHead+ConditionName[ARMInstruction::getConditionExe()];
             }
             if(ARMInstruction::getOp2Type()==0){
-                sprintf(buf," %s, [%s, %s]\n",  RegName[ARMInstruction::getRd()], ARMInstruction::getOp1(), ARMInstruction::getOp2());
+                    //立即数为偏移量的存储
+                if(ARMInstruction::getOp1Type()==0){
+                    //第一寄存器是寄存器
+                    sprintf(buf," %s, [%s, #%d]\n",  RegName[ARMInstruction::getRd()], RegName[ARMInstruction::getOp1()], ARMInstruction::getOp2());
+                    InsHead=InsHead+buf;
+                }
+                else{
+                        
+                }
+
+
+                
+            }
+            else if(ARMInstruction::getOp2Type()==-1){
+                //没有第二寄存器
+                sprintf(buf,"%s, [%s]\n", RegName[ARMInstruction::getRd()], RegName[ARMInstruction::getOp1()]);
                 InsHead=InsHead+buf;
             }
             else{//op2Type==1

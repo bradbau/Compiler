@@ -5,5 +5,5 @@ arg S
 --accepting rule at line 100 ("int")
 --accepting rule at line 114 (" ")
 --accepting rule at line 117 ("_getMaxOfAll")
-<int>
+-o<int>
 Lexical Error at Line 2 column 56: Wrong format of identifier.

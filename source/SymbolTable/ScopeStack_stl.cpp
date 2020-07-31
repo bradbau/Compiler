@@ -1,13 +1,13 @@
 #include"ScopeStack_stl.h"
 #include <iostream>
 
-ScopeItem TraverseScopeStack(vector<ScopeItem> stack, string name){
+ScopeItem& TraverseScopeStack(vector<ScopeItem> stack, string name){
     vector<ScopeItem>::iterator iter;
     ScopeItem* result = NULL;
     for(iter= stack.end()-1; iter!=stack.begin(); iter--){   
         if (iter[0].name == name) {
             cout << "123" << endl;
-            return iter[0];
+            return (*iter);
         }
         result = iter[0].next;
         while (result) {
@@ -20,7 +20,7 @@ ScopeItem TraverseScopeStack(vector<ScopeItem> stack, string name){
         }
     }   
     if (iter[0].name == name) {
-        return iter[0];
+        return *iter;
     }
     result = iter[0].next;
     while (result) {
@@ -29,7 +29,6 @@ ScopeItem TraverseScopeStack(vector<ScopeItem> stack, string name){
         }
         result = result->next;
     }
-    cout << "TraverseScopeStack no result" << endl;
-    ScopeItem scopeItem;
-    return scopeItem;
+    
+    throw std::runtime_error("TraverseScopeStack no result");
 }

@@ -20,7 +20,7 @@ arg S
 --accepting rule at line 82 ("[")
 --accepting rule at line 83 ("]")
 --accepting rule at line 81 (")")
-<int>
+-o<int>
 <id,n>
 <;>
 <int>
@@ -7172,7 +7172,7 @@ CompUnits (2)
     IDENTIFIER n
   CompUnits (4)
     FuncDef (4)
-      FuncFParam (4)
+      ArrayFuncFParam (4)
         ArrayExps (4)
       Block (5)
         BlockItems (5)
@@ -7347,7 +7347,7 @@ CompUnits (2)
                       CONSTANTOCT: 0
     CompUnits (26)
       FuncDef (26)
-        FuncFParam (26)
+        ArrayFuncFParam (26)
           ArrayExps (26)
         Block (27)
           BlockItems (27)
@@ -7505,7 +7505,7 @@ CompUnits (2)
       CompUnits (46)
         FuncDef (46)
           FuncFParams (46)
-            FuncFParam (46)
+            ArrayFuncFParam (46)
               ArrayExps (46)
             FuncFParams (46)
               FuncFParam (46)
@@ -7848,7 +7848,7 @@ CompUnits (2)
                     CONSTANTOCT: 0
         CompUnits (92)
           FuncDef (92)
-            FuncFParam (92)
+            ArrayFuncFParam (92)
               ArrayExps (92)
             Block (93)
               BlockItems (93)
@@ -7936,7 +7936,7 @@ CompUnits (2)
                                     ArrayExps (99)
           CompUnits (103)
             FuncDef (103)
-              FuncFParam (103)
+              ArrayFuncFParam (103)
                 ArrayExps (103)
               Block (104)
                 BlockItems (104)
@@ -8124,7 +8124,7 @@ CompUnits (2)
                                           ArrayExps (125)
             CompUnits (128)
               FuncDef (128)
-                FuncFParam (128)
+                ArrayFuncFParam (128)
                   ArrayExps (128)
                 Block (129)
                   BlockItems (129)
@@ -8242,9 +8242,9 @@ CompUnits (2)
               CompUnits (144)
                 FuncDef (144)
                   FuncFParams (144)
-                    FuncFParam (144)
+                    ArrayFuncFParam (144)
                       ArrayExps (144)
-                    FuncFParam (144)
+                    ArrayFuncFParam (144)
                       ArrayExps (144)
                   Block (145)
                     BlockItems (145)
@@ -8309,7 +8309,7 @@ CompUnits (2)
                 CompUnits (154)
                   FuncDef (154)
                     FuncFParams (154)
-                      FuncFParam (154)
+                      ArrayFuncFParam (154)
                         ArrayExps (154)
                       FuncFParam (154)
                     Block (155)
@@ -8442,7 +8442,7 @@ CompUnits (2)
                   CompUnits (172)
                     FuncDef (172)
                       FuncFParams (172)
-                        FuncFParam (172)
+                        ArrayFuncFParam (172)
                           ArrayExps (172)
                         FuncFParam (172)
                       Block (173)
@@ -9694,6 +9694,13 @@ CompUnits (2)
 Global
 ID             category       type           depictor
                
+putf           Function       void           NULL           
+putarray       Function       void           NOT NULL       
+putchar        Function       void           NOT NULL       
+putint         Function       void           NOT NULL       
+getarray       Function       int            NOT NULL       
+getchar        Function       int            NOT NULL       
+getint         Function       int            NOT NULL       
 n              Variable       TYPEINTEGER    NULL           
 bubblesort     Function       TYPEINTEGER    NOT NULL       
 insertsort     Function       TYPEINTEGER    NOT NULL       
@@ -9705,6 +9712,77 @@ arrCopy        Function       TYPEINTEGER    NOT NULL
 calSum         Function       TYPEINTEGER    NOT NULL       
 avgPooling     Function       TYPEINTEGER    NOT NULL       
 main           Function       TYPEINTEGER    NOT NULL       
+===========================================================
+===========================================================
+Formal:putarray
+ID             category       type           depictor
+              
+a              Array          int            ----------> dim=1
+a              Variable       int            NULL           
+===========================================================
+===========================================================
+Local:putarray
+ID             category       type           depictor
+              
+scope type is wrong
+               Variable                      NULL           
+===========================================================
+===========================================================
+Formal:putchar
+ID             category       type           depictor
+              
+a              Variable       int            NULL           
+===========================================================
+===========================================================
+Local:putchar
+ID             category       type           depictor
+              
+===========================================================
+===========================================================
+Formal:putint
+ID             category       type           depictor
+              
+a              Variable       int            NULL           
+===========================================================
+===========================================================
+Local:putint
+ID             category       type           depictor
+              
+===========================================================
+===========================================================
+Formal:getarray
+ID             category       type           depictor
+              
+a              Array          int            ----------> dim=1
+===========================================================
+===========================================================
+Local:getarray
+ID             category       type           depictor
+              
+scope type is wrong
+               Variable                      NULL           
+===========================================================
+===========================================================
+Formal:getchar
+ID             category       type           depictor
+              
+               NOParam                       NULL           
+===========================================================
+===========================================================
+Local:getchar
+ID             category       type           depictor
+              
+===========================================================
+===========================================================
+Formal:getint
+ID             category       type           depictor
+              
+               NOParam                       NULL           
+===========================================================
+===========================================================
+Local:getint
+ID             category       type           depictor
+              
 ===========================================================
 ===========================================================
 Formal:bubblesort
@@ -9959,6 +10037,8 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
+789
+789
 456
 789
 789
@@ -9976,6 +10056,8 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 456
+789
+789
 789
 789
 789
@@ -10049,7 +10131,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -10065,7 +10147,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -10120,7 +10202,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -10141,7 +10223,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -10217,7 +10299,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -10245,7 +10327,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -10349,7 +10431,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -10384,7 +10466,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -10495,7 +10577,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -10663,7 +10745,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -10892,6 +10974,8 @@ i              Variable       TYPEINTEGER    NULL
 456
 789
 456
+789
+789
 789
 789
 789
@@ -10911,7 +10995,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -10919,7 +11003,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -11041,7 +11125,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -11061,7 +11145,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -11120,7 +11204,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -11145,7 +11229,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -11218,7 +11302,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -11473,7 +11557,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -11689,13 +11773,17 @@ i              Variable       TYPEINTEGER    NULL
 789
 456
 789
+789
 456
+789
 789
 456
 789
 789
 789
+789
 456
+789
 789
 789
 789
@@ -11707,7 +11795,9 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
+789
 456
+789
 789
 789
 789
@@ -11726,6 +11816,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
+789
 456
 789
 789
@@ -11736,10 +11827,12 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
+789
 456
 789
 789
 456
+789
 789
 789
 789
@@ -11748,8 +11841,8 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
+456
 789
-123
 789
 789
 789
@@ -11758,8 +11851,8 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
+456
 789
-123
 789
 789
 789
@@ -11785,6 +11878,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
+789
 456
 789
 789
@@ -11908,7 +12002,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -11930,7 +12024,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -12237,7 +12331,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -12272,7 +12366,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -12375,7 +12469,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -12775,7 +12869,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -12824,7 +12918,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -13430,7 +13524,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -13490,7 +13584,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -13666,7 +13760,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -14024,7 +14118,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -14156,8 +14250,10 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
+789
+789
+456
 789
-123
 789
 789
 789
@@ -14181,8 +14277,8 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
+456
 789
-123
 789
 789
 789
@@ -14206,8 +14302,8 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
+456
 789
-123
 789
 789
 789
@@ -14258,7 +14354,9 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
+789
 456
+789
 789
 789
 789
@@ -14516,8 +14614,9 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
 789
+456
+789
 789
 789
 789
@@ -14547,7 +14646,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -14578,7 +14677,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -14697,7 +14796,9 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
+789
 456
+789
 789
 789
 789
@@ -14765,6 +14866,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
+789
 456
 789
 789
@@ -14796,6 +14898,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 456
+789
 789
 789
 789
@@ -14842,6 +14945,9 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
+789
+789
+789
 456
 789
 789
@@ -14858,7 +14964,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -14874,7 +14980,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -14926,7 +15032,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -14946,7 +15052,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -14991,6 +15097,8 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 456
+789
+789
 789
 789
 789
@@ -15108,7 +15216,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -15138,7 +15246,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -15322,6 +15430,8 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 456
+789
+789
 789
 789
 789
@@ -15396,7 +15506,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -15419,7 +15529,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -16281,7 +16391,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -16290,7 +16400,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -16331,7 +16441,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -16345,7 +16455,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -16393,7 +16503,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -16490,7 +16600,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -16737,13 +16847,19 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
 789
 789
 789
 789
 789
-123
+456
+789
+789
+789
+789
+789
+789
+456
 789
 789
 789
@@ -16767,6 +16883,8 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
+789
+789
 456
 789
 789
@@ -16847,6 +16965,8 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 456
+789
+789
 789
 789
 789
@@ -16893,7 +17013,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -16904,7 +17024,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -16990,6 +17110,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
+789
 456
 789
 789
@@ -17008,7 +17129,9 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
+789
 456
+789
 789
 789
 789
@@ -17050,6 +17173,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
+789
 456
 789
 789
@@ -17072,7 +17196,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -17193,7 +17317,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -17390,6 +17514,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 456
+789
 789
 789
 789
@@ -17425,6 +17550,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
+789
 456
 789
 789
@@ -17434,6 +17560,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 456
+789
 789
 789
 789
@@ -17463,6 +17590,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
+789
 456
 789
 789
@@ -17507,7 +17635,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -17525,7 +17653,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -17615,6 +17743,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 456
+789
 789
 789
 789
@@ -17666,6 +17795,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
+789
 456
 789
 789
@@ -17693,7 +17823,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -17720,7 +17850,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -17807,6 +17937,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 456
+789
 789
 789
 789
@@ -17874,6 +18005,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
+789
 456
 789
 789
@@ -17908,7 +18040,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -18027,7 +18159,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -18070,7 +18202,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -18332,7 +18464,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -18380,7 +18512,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -18483,6 +18615,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 456
+789
 789
 789
 789
@@ -18592,6 +18725,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
+789
 456
 789
 789
@@ -18754,6 +18888,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 456
+789
 789
 789
 789
@@ -18871,6 +19006,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
+789
 456
 789
 789
@@ -18930,7 +19066,7 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+456
 789
 789
 789
@@ -19120,7 +19256,9 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
+789
 456
+789
 789
 789
 789
@@ -19385,6 +19523,8 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 456
+789
+789
 789
 789
 789
@@ -19436,7 +19576,9 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
+789
 456
+789
 789
 789
 789
@@ -19541,7 +19683,9 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
+789
+789
+456
 789
 789
 789
@@ -26946,7 +27090,6 @@ i              Variable       TYPEINTEGER    NULL
 789
 789
 789
-TraverseScopeStack no result
 789
 789
 789
@@ -31007,7 +31150,6 @@ TraverseScopeStack no result
 789
 789
 789
-TraverseScopeStack no result
 789
 789
 789
@@ -33762,7 +33904,6 @@ TraverseScopeStack no result
 789
 789
 789
-TraverseScopeStack no result
 789
 789
 789
@@ -35974,7 +36115,6 @@ TraverseScopeStack no result
 789
 789
 789
-TraverseScopeStack no result
 789
 789
 789
@@ -42356,7 +42496,6 @@ TraverseScopeStack no result
 789
 789
 789
-TraverseScopeStack no result
 789
 789
 789
@@ -49910,7 +50049,6 @@ TraverseScopeStack no result
 789
 789
 789
-TraverseScopeStack no result
 789
 789
 789
@@ -59775,7 +59913,6 @@ TraverseScopeStack no result
 789
 789
 789
-TraverseScopeStack no result
 789
 789
 789
@@ -68597,7 +68734,6 @@ TraverseScopeStack no result
 789
 789
 789
-TraverseScopeStack no result
 789
 789
 789
@@ -78031,7 +78167,6 @@ TraverseScopeStack no result
 789
 789
 789
-TraverseScopeStack no result
 789
 789
 789
@@ -79772,877 +79907,884 @@ _______________________________________
   0  (at line   0)	CALL main
 
   1  (at line   4)	FUNCTION bubblesort :
-  2  (at line   4)	PARAM arr
-  3  (at line   7)	_t0 := #0
-  4  (at line   7)	i := _t0
+  2  (at line   4)	PARAM arr[]
+  3  (at line   7)	_t1 := #0
+  4  (at line   7)	i := _t1
   5  (at line   8)	LABEL label0 :
-  6  (at line   8)	_t1 := i
-  7  (at line   8)	_t5 := n
-  8  (at line   8)	_t6 := #1
-  9  (at line   8)	_t4 := _t5 - _t6
- 10  (at line   8)	IF _t1 < _t4 GOTO label1
+  6  (at line   8)	_t2 := i
+  7  (at line   8)	_t6 := n
+  8  (at line   8)	_t7 := #1
+  9  (at line   8)	_t5 := _t6 - _t7
+ 10  (at line   8)	IF _t2 < _t5 GOTO label1
  11  (at line   8)	GOTO label2
  12  (at line   8)	LABEL label1 :
- 13  (at line  10)	_t7 := #0
- 14  (at line  10)	j := _t7
+ 13  (at line  10)	_t8 := #0
+ 14  (at line  10)	j := _t8
  15  (at line  11)	LABEL label3 :
- 16  (at line  11)	_t8 := j
- 17  (at line  11)	_t14 := n
- 18  (at line  11)	_t15 := i
- 19  (at line  11)	_t12 := _t14 - _t15
- 20  (at line  11)	_t13 := #1
- 21  (at line  11)	_t11 := _t12 - _t13
- 22  (at line  11)	IF _t8 < _t11 GOTO label4
+ 16  (at line  11)	_t9 := j
+ 17  (at line  11)	_t15 := n
+ 18  (at line  11)	_t16 := i
+ 19  (at line  11)	_t13 := _t15 - _t16
+ 20  (at line  11)	_t14 := #1
+ 21  (at line  11)	_t12 := _t13 - _t14
+ 22  (at line  11)	IF _t9 < _t12 GOTO label4
  23  (at line  11)	GOTO label5
  24  (at line  11)	LABEL label4 :
- 25  (at line  12)	_t21 := j
- 26  (at line  12)	_t16 := arr[_t21]
- 27  (at line  12)	_t27 := j
- 28  (at line  12)	_t28 := #1
- 29  (at line  12)	_t26 := _t27 + _t28
- 30  (at line  12)	_t23 := arr[_t26]
- 31  (at line  12)	IF _t16 > _t23 GOTO label6
+ 25  (at line  12)	_t22 := j
+ 26  (at line  12)	_t17 := arr[_t22]
+ 27  (at line  12)	_t28 := j
+ 28  (at line  12)	_t29 := #1
+ 29  (at line  12)	_t27 := _t28 + _t29
+ 30  (at line  12)	_t24 := arr[_t27]
+ 31  (at line  12)	IF _t17 > _t24 GOTO label6
  32  (at line  12)	GOTO label7
  33  (at line  12)	LABEL label6 :
- 34  (at line  15)	_t34 := j
- 35  (at line  15)	_t35 := #1
- 36  (at line  15)	_t33 := _t34 + _t35
- 37  (at line  15)	_t30 := arr[_t33]
- 38  (at line  15)	tmp := _t30
- 39  (at line  16)	_t40 := j
- 40  (at line  16)	_t37 := arr[_t40]
- 41  (at line  16)	_t45 := j
- 42  (at line  16)	_t46 := #1
- 43  (at line  16)	_t44 := _t45 + _t46
- 44  (at line  16)	arr[_t44] := _t37
- 45  (at line  17)	_t48 := tmp
- 46  (at line  17)	_t51 := j
- 47  (at line  17)	arr[_t51] := _t48
+ 34  (at line  15)	_t35 := j
+ 35  (at line  15)	_t36 := #1
+ 36  (at line  15)	_t34 := _t35 + _t36
+ 37  (at line  15)	_t31 := arr[_t34]
+ 38  (at line  15)	tmp := _t31
+ 39  (at line  16)	_t41 := j
+ 40  (at line  16)	_t38 := arr[_t41]
+ 41  (at line  16)	_t46 := j
+ 42  (at line  16)	_t47 := #1
+ 43  (at line  16)	_t45 := _t46 + _t47
+ 44  (at line  16)	arr[_t45] := _t38
+ 45  (at line  17)	_t49 := tmp
+ 46  (at line  17)	_t52 := j
+ 47  (at line  17)	arr[_t52] := _t49
  48  (at line  12)	LABEL label7 :
- 49  (at line  19)	_t54 := j
- 50  (at line  19)	_t55 := #1
- 51  (at line  19)	_t53 := _t54 + _t55
- 52  (at line  19)	j := _t53
+ 49  (at line  19)	_t55 := j
+ 50  (at line  19)	_t56 := #1
+ 51  (at line  19)	_t54 := _t55 + _t56
+ 52  (at line  19)	j := _t54
  53  (at line  11)	GOTO label3
  54  (at line  11)	LABEL label5 :
- 55  (at line  21)	_t57 := i
- 56  (at line  21)	_t58 := #1
- 57  (at line  21)	_t56 := _t57 + _t58
- 58  (at line  21)	i := _t56
+ 55  (at line  21)	_t58 := i
+ 56  (at line  21)	_t59 := #1
+ 57  (at line  21)	_t57 := _t58 + _t59
+ 58  (at line  21)	i := _t57
  59  (at line   8)	GOTO label0
  60  (at line   8)	LABEL label2 :
- 61  (at line  23)	_t59 := #0
- 62  (at line  23)	RETURN _t59
+ 61  (at line  23)	_t60 := #0
+ 62  (at line  23)	RETURN _t60
 
  63  (at line  26)	FUNCTION insertsort :
- 64  (at line  26)	PARAM a
- 65  (at line  28)	_t60 := #1
- 66  (at line  28)	i := _t60
+ 64  (at line  26)	PARAM a[]
+ 65  (at line  28)	_t62 := #1
+ 66  (at line  28)	i := _t62
  67  (at line  29)	LABEL label8 :
- 68  (at line  29)	_t61 := i
- 69  (at line  29)	_t64 := n
- 70  (at line  29)	IF _t61 < _t64 GOTO label9
+ 68  (at line  29)	_t63 := i
+ 69  (at line  29)	_t66 := n
+ 70  (at line  29)	IF _t63 < _t66 GOTO label9
  71  (at line  29)	GOTO label10
  72  (at line  29)	LABEL label9 :
- 73  (at line  32)	_t68 := i
- 74  (at line  32)	_t65 := a[_t68]
- 75  (at line  32)	temp := _t65
- 76  (at line  34)	_t71 := i
- 77  (at line  34)	_t72 := #1
- 78  (at line  34)	_t70 := _t71 - _t72
- 79  (at line  34)	j := _t70
+ 73  (at line  32)	_t70 := i
+ 74  (at line  32)	_t67 := a[_t70]
+ 75  (at line  32)	temp := _t67
+ 76  (at line  34)	_t73 := i
+ 77  (at line  34)	_t74 := #1
+ 78  (at line  34)	_t72 := _t73 - _t74
+ 79  (at line  34)	j := _t72
  80  (at line  35)	LABEL label11 :
- 81  (at line  35)	_t73 := j
- 82  (at line  35)	_t77 := #1
- 83  (at line  35)	_t76 := #0 - _t77
- 84  (at line  35)	IF _t73 > _t76 GOTO label14
+ 81  (at line  35)	_t75 := j
+ 82  (at line  35)	_t79 := #1
+ 83  (at line  35)	_t78 := #0 - _t79
+ 84  (at line  35)	IF _t75 > _t78 GOTO label14
  85  (at line  35)	GOTO label13
  86  (at line  35)	LABEL label14 :
- 87  (at line  35)	_t78 := temp
- 88  (at line  35)	_t84 := j
- 89  (at line  35)	_t81 := a[_t84]
- 90  (at line  35)	IF _t78 < _t81 GOTO label12
+ 87  (at line  35)	_t80 := temp
+ 88  (at line  35)	_t86 := j
+ 89  (at line  35)	_t83 := a[_t86]
+ 90  (at line  35)	IF _t80 < _t83 GOTO label12
  91  (at line  35)	GOTO label13
  92  (at line  35)	LABEL label12 :
- 93  (at line  37)	_t89 := j
- 94  (at line  37)	_t86 := a[_t89]
- 95  (at line  37)	_t94 := j
- 96  (at line  37)	_t95 := #1
- 97  (at line  37)	_t93 := _t94 + _t95
- 98  (at line  37)	a[_t93] := _t86
- 99  (at line  38)	_t98 := j
-100  (at line  38)	_t99 := #1
-101  (at line  38)	_t97 := _t98 - _t99
-102  (at line  38)	j := _t97
+ 93  (at line  37)	_t91 := j
+ 94  (at line  37)	_t88 := a[_t91]
+ 95  (at line  37)	_t96 := j
+ 96  (at line  37)	_t97 := #1
+ 97  (at line  37)	_t95 := _t96 + _t97
+ 98  (at line  37)	a[_t95] := _t88
+ 99  (at line  38)	_t100 := j
+100  (at line  38)	_t101 := #1
+101  (at line  38)	_t99 := _t100 - _t101
+102  (at line  38)	j := _t99
 103  (at line  35)	GOTO label11
 104  (at line  35)	LABEL label13 :
-105  (at line  40)	_t100 := temp
-106  (at line  40)	_t104 := j
-107  (at line  40)	_t105 := #1
-108  (at line  40)	_t103 := _t104 + _t105
-109  (at line  40)	a[_t103] := _t100
-110  (at line  41)	_t108 := i
-111  (at line  41)	_t109 := #1
-112  (at line  41)	_t107 := _t108 + _t109
-113  (at line  41)	i := _t107
+105  (at line  40)	_t102 := temp
+106  (at line  40)	_t106 := j
+107  (at line  40)	_t107 := #1
+108  (at line  40)	_t105 := _t106 + _t107
+109  (at line  40)	a[_t105] := _t102
+110  (at line  41)	_t110 := i
+111  (at line  41)	_t111 := #1
+112  (at line  41)	_t109 := _t110 + _t111
+113  (at line  41)	i := _t109
 114  (at line  29)	GOTO label8
 115  (at line  29)	LABEL label10 :
-116  (at line  43)	_t110 := #0
-117  (at line  43)	RETURN _t110
+116  (at line  43)	_t112 := #0
+117  (at line  43)	RETURN _t112
 
 118  (at line  46)	FUNCTION QuickSort :
-119  (at line  46)	PARAM arr
+119  (at line  46)	PARAM arr[]
 120  (at line  46)	PARAM low
 121  (at line  46)	PARAM high
-122  (at line  48)	_t111 := low
-123  (at line  48)	_t114 := high
-124  (at line  48)	IF _t111 < _t114 GOTO label15
+122  (at line  48)	_t114 := low
+123  (at line  48)	_t117 := high
+124  (at line  48)	IF _t114 < _t117 GOTO label15
 125  (at line  48)	GOTO label16
 126  (at line  48)	LABEL label15 :
-127  (at line  51)	_t115 := low
-128  (at line  51)	i := _t115
-129  (at line  53)	_t116 := high
-130  (at line  53)	j := _t116
-131  (at line  55)	_t120 := low
-132  (at line  55)	_t117 := arr[_t120]
-133  (at line  55)	k := _t117
+127  (at line  51)	_t118 := low
+128  (at line  51)	i := _t118
+129  (at line  53)	_t119 := high
+130  (at line  53)	j := _t119
+131  (at line  55)	_t123 := low
+132  (at line  55)	_t120 := arr[_t123]
+133  (at line  55)	k := _t120
 134  (at line  56)	LABEL label17 :
-135  (at line  56)	_t122 := i
-136  (at line  56)	_t125 := j
-137  (at line  56)	IF _t122 < _t125 GOTO label18
+135  (at line  56)	_t125 := i
+136  (at line  56)	_t128 := j
+137  (at line  56)	IF _t125 < _t128 GOTO label18
 138  (at line  56)	GOTO label19
 139  (at line  56)	LABEL label18 :
 140  (at line  58)	LABEL label20 :
-141  (at line  58)	_t126 := i
-142  (at line  58)	_t129 := j
-143  (at line  58)	IF _t126 < _t129 GOTO label23
+141  (at line  58)	_t129 := i
+142  (at line  58)	_t132 := j
+143  (at line  58)	IF _t129 < _t132 GOTO label23
 144  (at line  58)	GOTO label22
 145  (at line  58)	LABEL label23 :
-146  (at line  58)	_t135 := j
-147  (at line  58)	_t130 := arr[_t135]
-148  (at line  58)	_t138 := k
-149  (at line  58)	_t139 := #1
-150  (at line  58)	_t137 := _t138 - _t139
-151  (at line  58)	IF _t130 > _t137 GOTO label21
+146  (at line  58)	_t138 := j
+147  (at line  58)	_t133 := arr[_t138]
+148  (at line  58)	_t141 := k
+149  (at line  58)	_t142 := #1
+150  (at line  58)	_t140 := _t141 - _t142
+151  (at line  58)	IF _t133 > _t140 GOTO label21
 152  (at line  58)	GOTO label22
 153  (at line  58)	LABEL label21 :
-154  (at line  60)	_t141 := j
-155  (at line  60)	_t142 := #1
-156  (at line  60)	_t140 := _t141 - _t142
-157  (at line  60)	j := _t140
+154  (at line  60)	_t144 := j
+155  (at line  60)	_t145 := #1
+156  (at line  60)	_t143 := _t144 - _t145
+157  (at line  60)	j := _t143
 158  (at line  58)	GOTO label20
 159  (at line  58)	LABEL label22 :
-160  (at line  63)	_t143 := i
-161  (at line  63)	_t146 := j
-162  (at line  63)	IF _t143 < _t146 GOTO label24
+160  (at line  63)	_t146 := i
+161  (at line  63)	_t149 := j
+162  (at line  63)	IF _t146 < _t149 GOTO label24
 163  (at line  63)	GOTO label25
 164  (at line  63)	LABEL label24 :
-165  (at line  65)	_t150 := j
-166  (at line  65)	_t147 := arr[_t150]
-167  (at line  65)	_t154 := i
-168  (at line  65)	arr[_t154] := _t147
-169  (at line  66)	_t157 := i
-170  (at line  66)	_t158 := #1
-171  (at line  66)	_t156 := _t157 + _t158
-172  (at line  66)	i := _t156
+165  (at line  65)	_t153 := j
+166  (at line  65)	_t150 := arr[_t153]
+167  (at line  65)	_t157 := i
+168  (at line  65)	arr[_t157] := _t150
+169  (at line  66)	_t160 := i
+170  (at line  66)	_t161 := #1
+171  (at line  66)	_t159 := _t160 + _t161
+172  (at line  66)	i := _t159
 173  (at line  63)	LABEL label25 :
 174  (at line  69)	LABEL label26 :
-175  (at line  69)	_t159 := i
-176  (at line  69)	_t162 := j
-177  (at line  69)	IF _t159 < _t162 GOTO label29
+175  (at line  69)	_t162 := i
+176  (at line  69)	_t165 := j
+177  (at line  69)	IF _t162 < _t165 GOTO label29
 178  (at line  69)	GOTO label28
 179  (at line  69)	LABEL label29 :
-180  (at line  69)	_t168 := i
-181  (at line  69)	_t163 := arr[_t168]
-182  (at line  69)	_t170 := k
-183  (at line  69)	IF _t163 < _t170 GOTO label27
+180  (at line  69)	_t171 := i
+181  (at line  69)	_t166 := arr[_t171]
+182  (at line  69)	_t173 := k
+183  (at line  69)	IF _t166 < _t173 GOTO label27
 184  (at line  69)	GOTO label28
 185  (at line  69)	LABEL label27 :
-186  (at line  71)	_t172 := i
-187  (at line  71)	_t173 := #1
-188  (at line  71)	_t171 := _t172 + _t173
-189  (at line  71)	i := _t171
+186  (at line  71)	_t175 := i
+187  (at line  71)	_t176 := #1
+188  (at line  71)	_t174 := _t175 + _t176
+189  (at line  71)	i := _t174
 190  (at line  69)	GOTO label26
 191  (at line  69)	LABEL label28 :
-192  (at line  74)	_t174 := i
-193  (at line  74)	_t177 := j
-194  (at line  74)	IF _t174 < _t177 GOTO label30
+192  (at line  74)	_t177 := i
+193  (at line  74)	_t180 := j
+194  (at line  74)	IF _t177 < _t180 GOTO label30
 195  (at line  74)	GOTO label31
 196  (at line  74)	LABEL label30 :
-197  (at line  76)	_t181 := i
-198  (at line  76)	_t178 := arr[_t181]
-199  (at line  76)	_t185 := j
-200  (at line  76)	arr[_t185] := _t178
-201  (at line  77)	_t188 := j
-202  (at line  77)	_t189 := #1
-203  (at line  77)	_t187 := _t188 - _t189
-204  (at line  77)	j := _t187
+197  (at line  76)	_t184 := i
+198  (at line  76)	_t181 := arr[_t184]
+199  (at line  76)	_t188 := j
+200  (at line  76)	arr[_t188] := _t181
+201  (at line  77)	_t191 := j
+202  (at line  77)	_t192 := #1
+203  (at line  77)	_t190 := _t191 - _t192
+204  (at line  77)	j := _t190
 205  (at line  74)	LABEL label31 :
 206  (at line  56)	GOTO label17
 207  (at line  56)	LABEL label19 :
-208  (at line  81)	_t190 := k
-209  (at line  81)	_t193 := i
-210  (at line  81)	arr[_t193] := _t190
-211  (at line  83)	_t196 := i
-212  (at line  83)	_t197 := #1
-213  (at line  83)	_t195 := _t196 - _t197
-214  (at line  83)	tmp := _t195
-215  (at line  84)	_t201 := low
-216  (at line  84)	_t202 := tmp
-217  (at line  84)	ARG _t202
-218  (at line  84)	ARG _t201
+208  (at line  81)	_t193 := k
+209  (at line  81)	_t196 := i
+210  (at line  81)	arr[_t196] := _t193
+211  (at line  83)	_t199 := i
+212  (at line  83)	_t200 := #1
+213  (at line  83)	_t198 := _t199 - _t200
+214  (at line  83)	tmp := _t198
+215  (at line  84)	_t204 := low
+216  (at line  84)	_t205 := tmp
+217  (at line  84)	ARG _t205
+218  (at line  84)	ARG _t204
 219  (at line  84)	ARG arr[]
-220  (at line  84)	_t198 := CALL QuickSort
-221  (at line  84)	tmp := _t198
-222  (at line  85)	_t204 := i
-223  (at line  85)	_t205 := #1
-224  (at line  85)	_t203 := _t204 + _t205
-225  (at line  85)	tmp := _t203
-226  (at line  86)	_t209 := tmp
-227  (at line  86)	_t210 := high
-228  (at line  86)	ARG _t210
-229  (at line  86)	ARG _t209
+220  (at line  84)	_t201 := CALL QuickSort
+221  (at line  84)	tmp := _t201
+222  (at line  85)	_t207 := i
+223  (at line  85)	_t208 := #1
+224  (at line  85)	_t206 := _t207 + _t208
+225  (at line  85)	tmp := _t206
+226  (at line  86)	_t212 := tmp
+227  (at line  86)	_t213 := high
+228  (at line  86)	ARG _t213
+229  (at line  86)	ARG _t212
 230  (at line  86)	ARG arr[]
-231  (at line  86)	_t206 := CALL QuickSort
-232  (at line  86)	tmp := _t206
+231  (at line  86)	_t209 := CALL QuickSort
+232  (at line  86)	tmp := _t209
 233  (at line  48)	LABEL label16 :
-234  (at line  88)	_t211 := #0
-235  (at line  88)	RETURN _t211
+234  (at line  88)	_t214 := #0
+235  (at line  88)	RETURN _t214
 
 236  (at line  92)	FUNCTION getMid :
-237  (at line  92)	PARAM arr
-238  (at line  94)	_t215 := n
-239  (at line  94)	_t216 := #2
-240  (at line  94)	_t212 := _t215 % _t216
-241  (at line  94)	_t217 := #0
-242  (at line  94)	IF _t212 = _t217 GOTO label32
+237  (at line  92)	PARAM arr[]
+238  (at line  94)	_t219 := n
+239  (at line  94)	_t220 := #2
+240  (at line  94)	_t216 := _t219 % _t220
+241  (at line  94)	_t221 := #0
+242  (at line  94)	IF _t216 = _t221 GOTO label32
 243  (at line  94)	GOTO label33
 244  (at line  94)	LABEL label32 :
-245  (at line  95)	_t219 := n
-246  (at line  95)	_t220 := #2
-247  (at line  95)	_t218 := _t219 / _t220
-248  (at line  95)	mid := _t218
-249  (at line  96)	_t229 := mid
-250  (at line  96)	_t225 := arr[_t229]
-251  (at line  96)	_t234 := mid
-252  (at line  96)	_t235 := #1
-253  (at line  96)	_t233 := _t234 - _t235
-254  (at line  96)	_t226 := arr[_t233]
-255  (at line  96)	_t224 := _t225 + _t226
-256  (at line  96)	_t222 := _t224
-257  (at line  96)	_t223 := #2
-258  (at line  96)	_t221 := _t222 / _t223
-259  (at line  96)	RETURN _t221
+245  (at line  95)	_t223 := n
+246  (at line  95)	_t224 := #2
+247  (at line  95)	_t222 := _t223 / _t224
+248  (at line  95)	mid := _t222
+249  (at line  96)	_t233 := mid
+250  (at line  96)	_t229 := arr[_t233]
+251  (at line  96)	_t238 := mid
+252  (at line  96)	_t239 := #1
+253  (at line  96)	_t237 := _t238 - _t239
+254  (at line  96)	_t230 := arr[_t237]
+255  (at line  96)	_t228 := _t229 + _t230
+256  (at line  96)	_t226 := _t228
+257  (at line  96)	_t227 := #2
+258  (at line  96)	_t225 := _t226 / _t227
+259  (at line  96)	RETURN _t225
 260  (at line  94)	GOTO label34
 261  (at line  94)	LABEL label33 :
-262  (at line  98)	_t238 := n
-263  (at line  98)	_t239 := #2
-264  (at line  98)	_t237 := _t238 / _t239
-265  (at line  98)	mid := _t237
-266  (at line  99)	_t243 := mid
-267  (at line  99)	_t240 := arr[_t243]
-268  (at line  99)	RETURN _t240
+262  (at line  98)	_t242 := n
+263  (at line  98)	_t243 := #2
+264  (at line  98)	_t241 := _t242 / _t243
+265  (at line  98)	mid := _t241
+266  (at line  99)	_t247 := mid
+267  (at line  99)	_t244 := arr[_t247]
+268  (at line  99)	RETURN _t244
 269  (at line  94)	LABEL label34 :
 
 270  (at line 103)	FUNCTION getMost :
-271  (at line 103)	PARAM arr
-272  (at line 106)	_t245 := #0
-273  (at line 106)	i := _t245
+271  (at line 103)	PARAM arr[]
+272  (at line 106)	_t250 := #0
+273  (at line 106)	i := _t250
 274  (at line 107)	LABEL label35 :
-275  (at line 107)	_t246 := i
-276  (at line 107)	_t249 := #1000
-277  (at line 107)	IF _t246 < _t249 GOTO label36
+275  (at line 107)	_t251 := i
+276  (at line 107)	_t254 := #1000
+277  (at line 107)	IF _t251 < _t254 GOTO label36
 278  (at line 107)	GOTO label37
 279  (at line 107)	LABEL label36 :
-280  (at line 108)	_t250 := #0
-281  (at line 108)	_t253 := i
-282  (at line 108)	count[_t253] := _t250
-283  (at line 109)	_t256 := i
-284  (at line 109)	_t257 := #1
-285  (at line 109)	_t255 := _t256 + _t257
-286  (at line 109)	i := _t255
+280  (at line 108)	_t255 := #0
+281  (at line 108)	_t258 := i
+282  (at line 108)	count[_t258] := _t255
+283  (at line 109)	_t261 := i
+284  (at line 109)	_t262 := #1
+285  (at line 109)	_t260 := _t261 + _t262
+286  (at line 109)	i := _t260
 287  (at line 107)	GOTO label35
 288  (at line 107)	LABEL label37 :
-289  (at line 111)	_t258 := #0
-290  (at line 111)	i := _t258
-291  (at line 114)	_t259 := #0
-292  (at line 114)	max := _t259
+289  (at line 111)	_t263 := #0
+290  (at line 111)	i := _t263
+291  (at line 114)	_t264 := #0
+292  (at line 114)	max := _t264
 293  (at line 115)	LABEL label38 :
-294  (at line 115)	_t260 := i
-295  (at line 115)	_t263 := n
-296  (at line 115)	IF _t260 < _t263 GOTO label39
+294  (at line 115)	_t265 := i
+295  (at line 115)	_t268 := n
+296  (at line 115)	IF _t265 < _t268 GOTO label39
 297  (at line 115)	GOTO label40
 298  (at line 115)	LABEL label39 :
-299  (at line 117)	_t267 := i
-300  (at line 117)	_t264 := arr[_t267]
-301  (at line 117)	num := _t264
-302  (at line 118)	_t274 := num
-303  (at line 118)	_t270 := count[_t274]
-304  (at line 118)	_t271 := #1
-305  (at line 118)	_t269 := _t270 + _t271
-306  (at line 118)	_t278 := num
-307  (at line 118)	count[_t278] := _t269
-308  (at line 119)	_t285 := num
-309  (at line 119)	_t280 := count[_t285]
-310  (at line 119)	_t287 := max
-311  (at line 119)	IF _t280 > _t287 GOTO label41
+299  (at line 117)	_t272 := i
+300  (at line 117)	_t269 := arr[_t272]
+301  (at line 117)	num := _t269
+302  (at line 118)	_t279 := num
+303  (at line 118)	_t275 := count[_t279]
+304  (at line 118)	_t276 := #1
+305  (at line 118)	_t274 := _t275 + _t276
+306  (at line 118)	_t283 := num
+307  (at line 118)	count[_t283] := _t274
+308  (at line 119)	_t290 := num
+309  (at line 119)	_t285 := count[_t290]
+310  (at line 119)	_t292 := max
+311  (at line 119)	IF _t285 > _t292 GOTO label41
 312  (at line 119)	GOTO label42
 313  (at line 119)	LABEL label41 :
-314  (at line 120)	_t291 := num
-315  (at line 120)	_t288 := count[_t291]
-316  (at line 120)	max := _t288
-317  (at line 121)	_t293 := num
-318  (at line 121)	number := _t293
+314  (at line 120)	_t296 := num
+315  (at line 120)	_t293 := count[_t296]
+316  (at line 120)	max := _t293
+317  (at line 121)	_t298 := num
+318  (at line 121)	number := _t298
 319  (at line 119)	LABEL label42 :
-320  (at line 123)	_t295 := i
-321  (at line 123)	_t296 := #1
-322  (at line 123)	_t294 := _t295 + _t296
-323  (at line 123)	i := _t294
+320  (at line 123)	_t300 := i
+321  (at line 123)	_t301 := #1
+322  (at line 123)	_t299 := _t300 + _t301
+323  (at line 123)	i := _t299
 324  (at line 115)	GOTO label38
 325  (at line 115)	LABEL label40 :
-326  (at line 125)	_t297 := number
-327  (at line 125)	RETURN _t297
+326  (at line 125)	_t302 := number
+327  (at line 125)	RETURN _t302
 
 328  (at line 128)	FUNCTION revert :
-329  (at line 128)	PARAM arr
-330  (at line 132)	_t298 := #0
-331  (at line 132)	i := _t298
-332  (at line 133)	_t299 := #0
-333  (at line 133)	j := _t299
+329  (at line 128)	PARAM arr[]
+330  (at line 132)	_t304 := #0
+331  (at line 132)	i := _t304
+332  (at line 133)	_t305 := #0
+333  (at line 133)	j := _t305
 334  (at line 134)	LABEL label43 :
-335  (at line 134)	_t300 := i
-336  (at line 134)	_t303 := j
-337  (at line 134)	IF _t300 < _t303 GOTO label44
+335  (at line 134)	_t306 := i
+336  (at line 134)	_t309 := j
+337  (at line 134)	IF _t306 < _t309 GOTO label44
 338  (at line 134)	GOTO label45
 339  (at line 134)	LABEL label44 :
-340  (at line 135)	_t307 := i
-341  (at line 135)	_t304 := arr[_t307]
-342  (at line 135)	temp := _t304
-343  (at line 136)	_t312 := j
-344  (at line 136)	_t309 := arr[_t312]
-345  (at line 136)	_t316 := i
-346  (at line 136)	arr[_t316] := _t309
-347  (at line 137)	_t318 := temp
-348  (at line 137)	_t321 := j
-349  (at line 137)	arr[_t321] := _t318
-350  (at line 138)	_t324 := i
-351  (at line 138)	_t325 := #1
-352  (at line 138)	_t323 := _t324 + _t325
-353  (at line 138)	i := _t323
-354  (at line 139)	_t327 := j
-355  (at line 139)	_t328 := #1
-356  (at line 139)	_t326 := _t327 - _t328
-357  (at line 139)	j := _t326
+340  (at line 135)	_t313 := i
+341  (at line 135)	_t310 := arr[_t313]
+342  (at line 135)	temp := _t310
+343  (at line 136)	_t318 := j
+344  (at line 136)	_t315 := arr[_t318]
+345  (at line 136)	_t322 := i
+346  (at line 136)	arr[_t322] := _t315
+347  (at line 137)	_t324 := temp
+348  (at line 137)	_t327 := j
+349  (at line 137)	arr[_t327] := _t324
+350  (at line 138)	_t330 := i
+351  (at line 138)	_t331 := #1
+352  (at line 138)	_t329 := _t330 + _t331
+353  (at line 138)	i := _t329
+354  (at line 139)	_t333 := j
+355  (at line 139)	_t334 := #1
+356  (at line 139)	_t332 := _t333 - _t334
+357  (at line 139)	j := _t332
 358  (at line 134)	GOTO label43
 359  (at line 134)	LABEL label45 :
-360  (at line 141)	_t329 := #0
-361  (at line 141)	RETURN _t329
+360  (at line 141)	_t335 := #0
+361  (at line 141)	RETURN _t335
 
 362  (at line 144)	FUNCTION arrCopy :
-363  (at line 144)	PARAM src
-364  (at line 144)	PARAM target
-365  (at line 146)	_t330 := #0
-366  (at line 146)	i := _t330
+363  (at line 144)	PARAM src[]
+364  (at line 144)	PARAM target[]
+365  (at line 146)	_t338 := #0
+366  (at line 146)	i := _t338
 367  (at line 147)	LABEL label46 :
-368  (at line 147)	_t331 := i
-369  (at line 147)	_t334 := n
-370  (at line 147)	IF _t331 < _t334 GOTO label47
+368  (at line 147)	_t339 := i
+369  (at line 147)	_t342 := n
+370  (at line 147)	IF _t339 < _t342 GOTO label47
 371  (at line 147)	GOTO label48
 372  (at line 147)	LABEL label47 :
-373  (at line 148)	_t338 := i
-374  (at line 148)	_t335 := src[_t338]
-375  (at line 148)	_t342 := i
-376  (at line 148)	target[_t342] := _t335
-377  (at line 149)	_t345 := i
-378  (at line 149)	_t346 := #1
-379  (at line 149)	_t344 := _t345 + _t346
-380  (at line 149)	i := _t344
+373  (at line 148)	_t346 := i
+374  (at line 148)	_t343 := src[_t346]
+375  (at line 148)	_t350 := i
+376  (at line 148)	target[_t350] := _t343
+377  (at line 149)	_t353 := i
+378  (at line 149)	_t354 := #1
+379  (at line 149)	_t352 := _t353 + _t354
+380  (at line 149)	i := _t352
 381  (at line 147)	GOTO label46
 382  (at line 147)	LABEL label48 :
-383  (at line 151)	_t347 := #0
-384  (at line 151)	RETURN _t347
+383  (at line 151)	_t355 := #0
+384  (at line 151)	RETURN _t355
 
 385  (at line 154)	FUNCTION calSum :
-386  (at line 154)	PARAM arr
+386  (at line 154)	PARAM arr[]
 387  (at line 154)	PARAM stride
-388  (at line 156)	_t348 := #0
-389  (at line 156)	sum := _t348
-390  (at line 158)	_t349 := #0
-391  (at line 158)	i := _t349
+388  (at line 156)	_t357 := #0
+389  (at line 156)	sum := _t357
+390  (at line 158)	_t358 := #0
+391  (at line 158)	i := _t358
 392  (at line 159)	LABEL label49 :
-393  (at line 159)	_t350 := i
-394  (at line 159)	_t353 := n
-395  (at line 159)	IF _t350 < _t353 GOTO label50
+393  (at line 159)	_t359 := i
+394  (at line 159)	_t362 := n
+395  (at line 159)	IF _t359 < _t362 GOTO label50
 396  (at line 159)	GOTO label51
 397  (at line 159)	LABEL label50 :
-398  (at line 160)	_t355 := sum
-399  (at line 160)	_t359 := i
-400  (at line 160)	_t356 := arr[_t359]
-401  (at line 160)	_t354 := _t355 + _t356
-402  (at line 160)	sum := _t354
-403  (at line 161)	_t364 := i
-404  (at line 161)	_t365 := stride
-405  (at line 161)	_t361 := _t364 % _t365
-406  (at line 161)	_t367 := stride
-407  (at line 161)	_t368 := #1
-408  (at line 161)	_t366 := _t367 - _t368
-409  (at line 161)	IF _t361 != _t366 GOTO label52
+398  (at line 160)	_t364 := sum
+399  (at line 160)	_t368 := i
+400  (at line 160)	_t365 := arr[_t368]
+401  (at line 160)	_t363 := _t364 + _t365
+402  (at line 160)	sum := _t363
+403  (at line 161)	_t373 := i
+404  (at line 161)	_t374 := stride
+405  (at line 161)	_t370 := _t373 % _t374
+406  (at line 161)	_t376 := stride
+407  (at line 161)	_t377 := #1
+408  (at line 161)	_t375 := _t376 - _t377
+409  (at line 161)	IF _t370 != _t375 GOTO label52
 410  (at line 161)	GOTO label53
 411  (at line 161)	LABEL label52 :
-412  (at line 162)	_t369 := #0
-413  (at line 162)	_t372 := i
-414  (at line 162)	arr[_t372] := _t369
+412  (at line 162)	_t378 := #0
+413  (at line 162)	_t381 := i
+414  (at line 162)	arr[_t381] := _t378
 415  (at line 161)	GOTO label54
 416  (at line 161)	LABEL label53 :
-417  (at line 164)	_t374 := sum
-418  (at line 164)	_t377 := i
-419  (at line 164)	arr[_t377] := _t374
-420  (at line 165)	_t379 := #0
-421  (at line 165)	sum := _t379
+417  (at line 164)	_t383 := sum
+418  (at line 164)	_t386 := i
+419  (at line 164)	arr[_t386] := _t383
+420  (at line 165)	_t388 := #0
+421  (at line 165)	sum := _t388
 422  (at line 161)	LABEL label54 :
-423  (at line 167)	_t381 := i
-424  (at line 167)	_t382 := #1
-425  (at line 167)	_t380 := _t381 + _t382
-426  (at line 167)	i := _t380
+423  (at line 167)	_t390 := i
+424  (at line 167)	_t391 := #1
+425  (at line 167)	_t389 := _t390 + _t391
+426  (at line 167)	i := _t389
 427  (at line 159)	GOTO label49
 428  (at line 159)	LABEL label51 :
-429  (at line 169)	_t383 := #0
-430  (at line 169)	RETURN _t383
+429  (at line 169)	_t392 := #0
+430  (at line 169)	RETURN _t392
 
 431  (at line 172)	FUNCTION avgPooling :
-432  (at line 172)	PARAM arr
+432  (at line 172)	PARAM arr[]
 433  (at line 172)	PARAM stride
-434  (at line 175)	_t384 := #0
-435  (at line 175)	i := _t384
-436  (at line 176)	_t385 := #0
-437  (at line 176)	sum := _t385
+434  (at line 175)	_t394 := #0
+435  (at line 175)	i := _t394
+436  (at line 176)	_t395 := #0
+437  (at line 176)	sum := _t395
 438  (at line 178)	LABEL label55 :
-439  (at line 178)	_t386 := i
-440  (at line 178)	_t389 := n
-441  (at line 178)	IF _t386 < _t389 GOTO label56
+439  (at line 178)	_t396 := i
+440  (at line 178)	_t399 := n
+441  (at line 178)	IF _t396 < _t399 GOTO label56
 442  (at line 178)	GOTO label57
 443  (at line 178)	LABEL label56 :
-444  (at line 179)	_t390 := i
-445  (at line 179)	_t394 := stride
-446  (at line 179)	_t395 := #1
-447  (at line 179)	_t393 := _t394 - _t395
-448  (at line 179)	IF _t390 < _t393 GOTO label58
+444  (at line 179)	_t400 := i
+445  (at line 179)	_t404 := stride
+446  (at line 179)	_t405 := #1
+447  (at line 179)	_t403 := _t404 - _t405
+448  (at line 179)	IF _t400 < _t403 GOTO label58
 449  (at line 179)	GOTO label59
 450  (at line 179)	LABEL label58 :
-451  (at line 180)	_t397 := sum
-452  (at line 180)	_t401 := i
-453  (at line 180)	_t398 := arr[_t401]
-454  (at line 180)	_t396 := _t397 + _t398
-455  (at line 180)	sum := _t396
+451  (at line 180)	_t407 := sum
+452  (at line 180)	_t411 := i
+453  (at line 180)	_t408 := arr[_t411]
+454  (at line 180)	_t406 := _t407 + _t408
+455  (at line 180)	sum := _t406
 456  (at line 179)	GOTO label60
 457  (at line 179)	LABEL label59 :
-458  (at line 181)	_t403 := i
-459  (at line 181)	_t407 := stride
-460  (at line 181)	_t408 := #1
-461  (at line 181)	_t406 := _t407 - _t408
-462  (at line 181)	IF _t403 = _t406 GOTO label61
+458  (at line 181)	_t413 := i
+459  (at line 181)	_t417 := stride
+460  (at line 181)	_t418 := #1
+461  (at line 181)	_t416 := _t417 - _t418
+462  (at line 181)	IF _t413 = _t416 GOTO label61
 463  (at line 181)	GOTO label62
 464  (at line 181)	LABEL label61 :
-465  (at line 182)	_t412 := #0
-466  (at line 182)	_t409 := arr[_t412]
-467  (at line 182)	lastnum := _t409
-468  (at line 183)	_t415 := sum
-469  (at line 183)	_t416 := stride
-470  (at line 183)	_t414 := _t415 / _t416
-471  (at line 183)	_t419 := #0
-472  (at line 183)	arr[_t419] := _t414
+465  (at line 182)	_t422 := #0
+466  (at line 182)	_t419 := arr[_t422]
+467  (at line 182)	lastnum := _t419
+468  (at line 183)	_t425 := sum
+469  (at line 183)	_t426 := stride
+470  (at line 183)	_t424 := _t425 / _t426
+471  (at line 183)	_t429 := #0
+472  (at line 183)	arr[_t429] := _t424
 473  (at line 181)	GOTO label63
 474  (at line 181)	LABEL label62 :
-475  (at line 185)	_t424 := sum
-476  (at line 185)	_t428 := i
-477  (at line 185)	_t425 := arr[_t428]
-478  (at line 185)	_t422 := _t424 + _t425
-479  (at line 185)	_t423 := lastnum
-480  (at line 185)	_t421 := _t422 - _t423
-481  (at line 185)	sum := _t421
-482  (at line 186)	_t436 := i
-483  (at line 186)	_t437 := stride
-484  (at line 186)	_t434 := _t436 - _t437
-485  (at line 186)	_t435 := #1
-486  (at line 186)	_t433 := _t434 + _t435
-487  (at line 186)	_t430 := arr[_t433]
-488  (at line 186)	lastnum := _t430
-489  (at line 187)	_t440 := sum
-490  (at line 187)	_t441 := stride
-491  (at line 187)	_t439 := _t440 / _t441
-492  (at line 187)	_t447 := i
-493  (at line 187)	_t448 := stride
-494  (at line 187)	_t445 := _t447 - _t448
-495  (at line 187)	_t446 := #1
-496  (at line 187)	_t444 := _t445 + _t446
-497  (at line 187)	arr[_t444] := _t439
+475  (at line 185)	_t434 := sum
+476  (at line 185)	_t438 := i
+477  (at line 185)	_t435 := arr[_t438]
+478  (at line 185)	_t432 := _t434 + _t435
+479  (at line 185)	_t433 := lastnum
+480  (at line 185)	_t431 := _t432 - _t433
+481  (at line 185)	sum := _t431
+482  (at line 186)	_t446 := i
+483  (at line 186)	_t447 := stride
+484  (at line 186)	_t444 := _t446 - _t447
+485  (at line 186)	_t445 := #1
+486  (at line 186)	_t443 := _t444 + _t445
+487  (at line 186)	_t440 := arr[_t443]
+488  (at line 186)	lastnum := _t440
+489  (at line 187)	_t450 := sum
+490  (at line 187)	_t451 := stride
+491  (at line 187)	_t449 := _t450 / _t451
+492  (at line 187)	_t457 := i
+493  (at line 187)	_t458 := stride
+494  (at line 187)	_t455 := _t457 - _t458
+495  (at line 187)	_t456 := #1
+496  (at line 187)	_t454 := _t455 + _t456
+497  (at line 187)	arr[_t454] := _t449
 498  (at line 181)	LABEL label63 :
 499  (at line 179)	LABEL label60 :
-500  (at line 189)	_t451 := i
-501  (at line 189)	_t452 := #1
-502  (at line 189)	_t450 := _t451 + _t452
-503  (at line 189)	i := _t450
+500  (at line 189)	_t461 := i
+501  (at line 189)	_t462 := #1
+502  (at line 189)	_t460 := _t461 + _t462
+503  (at line 189)	i := _t460
 504  (at line 178)	GOTO label55
 505  (at line 178)	LABEL label57 :
-506  (at line 191)	_t456 := n
-507  (at line 191)	_t457 := stride
-508  (at line 191)	_t454 := _t456 - _t457
-509  (at line 191)	_t455 := #1
-510  (at line 191)	_t453 := _t454 + _t455
-511  (at line 191)	i := _t453
+506  (at line 191)	_t466 := n
+507  (at line 191)	_t467 := stride
+508  (at line 191)	_t464 := _t466 - _t467
+509  (at line 191)	_t465 := #1
+510  (at line 191)	_t463 := _t464 + _t465
+511  (at line 191)	i := _t463
 512  (at line 192)	LABEL label64 :
-513  (at line 192)	_t458 := i
-514  (at line 192)	_t461 := n
-515  (at line 192)	IF _t458 < _t461 GOTO label65
+513  (at line 192)	_t468 := i
+514  (at line 192)	_t471 := n
+515  (at line 192)	IF _t468 < _t471 GOTO label65
 516  (at line 192)	GOTO label66
 517  (at line 192)	LABEL label65 :
-518  (at line 193)	_t462 := #0
-519  (at line 193)	_t465 := i
-520  (at line 193)	arr[_t465] := _t462
-521  (at line 194)	_t468 := i
-522  (at line 194)	_t469 := #1
-523  (at line 194)	_t467 := _t468 + _t469
-524  (at line 194)	i := _t467
+518  (at line 193)	_t472 := #0
+519  (at line 193)	_t475 := i
+520  (at line 193)	arr[_t475] := _t472
+521  (at line 194)	_t478 := i
+522  (at line 194)	_t479 := #1
+523  (at line 194)	_t477 := _t478 + _t479
+524  (at line 194)	i := _t477
 525  (at line 192)	GOTO label64
 526  (at line 192)	LABEL label66 :
-527  (at line 196)	_t470 := #0
-528  (at line 196)	RETURN _t470
+527  (at line 196)	_t480 := #0
+528  (at line 196)	RETURN _t480
 
 529  (at line 199)	FUNCTION main :
-530  (at line 200)	_t471 := #32
-531  (at line 200)	n := _t471
-532  (at line 203)	_t472 := #7
-533  (at line 203)	_t475 := #0
-534  (at line 203)	arr[_t475] := _t472
-535  (at line 204)	_t477 := #23
-536  (at line 204)	_t480 := #1
-537  (at line 204)	arr[_t480] := _t477
-538  (at line 205)	_t482 := #89
-539  (at line 205)	_t485 := #2
-540  (at line 205)	arr[_t485] := _t482
-541  (at line 206)	_t487 := #26
-542  (at line 206)	_t490 := #3
-543  (at line 206)	arr[_t490] := _t487
-544  (at line 207)	_t492 := #282
-545  (at line 207)	_t495 := #4
-546  (at line 207)	arr[_t495] := _t492
-547  (at line 208)	_t497 := #254
-548  (at line 208)	_t500 := #5
-549  (at line 208)	arr[_t500] := _t497
-550  (at line 209)	_t502 := #27
-551  (at line 209)	_t505 := #6
-552  (at line 209)	arr[_t505] := _t502
-553  (at line 210)	_t507 := #5
-554  (at line 210)	_t510 := #7
-555  (at line 210)	arr[_t510] := _t507
-556  (at line 211)	_t512 := #83
-557  (at line 211)	_t515 := #8
-558  (at line 211)	arr[_t515] := _t512
-559  (at line 212)	_t517 := #273
-560  (at line 212)	_t520 := #9
-561  (at line 212)	arr[_t520] := _t517
-562  (at line 213)	_t522 := #574
-563  (at line 213)	_t525 := #10
-564  (at line 213)	arr[_t525] := _t522
-565  (at line 214)	_t527 := #905
-566  (at line 214)	_t530 := #11
-567  (at line 214)	arr[_t530] := _t527
-568  (at line 215)	_t532 := #354
-569  (at line 215)	_t535 := #12
-570  (at line 215)	arr[_t535] := _t532
-571  (at line 216)	_t537 := #657
-572  (at line 216)	_t540 := #13
-573  (at line 216)	arr[_t540] := _t537
-574  (at line 217)	_t542 := #935
-575  (at line 217)	_t545 := #14
-576  (at line 217)	arr[_t545] := _t542
-577  (at line 218)	_t547 := #264
-578  (at line 218)	_t550 := #15
-579  (at line 218)	arr[_t550] := _t547
-580  (at line 219)	_t552 := #639
-581  (at line 219)	_t555 := #16
-582  (at line 219)	arr[_t555] := _t552
-583  (at line 220)	_t557 := #459
-584  (at line 220)	_t560 := #17
-585  (at line 220)	arr[_t560] := _t557
-586  (at line 221)	_t562 := #29
-587  (at line 221)	_t565 := #18
-588  (at line 221)	arr[_t565] := _t562
-589  (at line 222)	_t567 := #68
-590  (at line 222)	_t570 := #19
-591  (at line 222)	arr[_t570] := _t567
-592  (at line 223)	_t572 := #929
-593  (at line 223)	_t575 := #20
-594  (at line 223)	arr[_t575] := _t572
-595  (at line 224)	_t577 := #756
-596  (at line 224)	_t580 := #21
-597  (at line 224)	arr[_t580] := _t577
-598  (at line 225)	_t582 := #452
-599  (at line 225)	_t585 := #22
-600  (at line 225)	arr[_t585] := _t582
-601  (at line 226)	_t587 := #279
-602  (at line 226)	_t590 := #23
-603  (at line 226)	arr[_t590] := _t587
-604  (at line 227)	_t592 := #58
-605  (at line 227)	_t595 := #24
-606  (at line 227)	arr[_t595] := _t592
-607  (at line 228)	_t597 := #87
-608  (at line 228)	_t600 := #25
-609  (at line 228)	arr[_t600] := _t597
-610  (at line 229)	_t602 := #96
-611  (at line 229)	_t605 := #26
-612  (at line 229)	arr[_t605] := _t602
-613  (at line 230)	_t607 := #36
-614  (at line 230)	_t610 := #27
-615  (at line 230)	arr[_t610] := _t607
-616  (at line 231)	_t612 := #39
-617  (at line 231)	_t615 := #28
-618  (at line 231)	arr[_t615] := _t612
-619  (at line 232)	_t617 := #28
-620  (at line 232)	_t620 := #29
-621  (at line 232)	arr[_t620] := _t617
-622  (at line 233)	_t622 := #1
-623  (at line 233)	_t625 := #30
-624  (at line 233)	arr[_t625] := _t622
-625  (at line 234)	_t627 := #290
-626  (at line 234)	_t630 := #31
-627  (at line 234)	arr[_t630] := _t627
-628  (at line 201)	_t634 := #32
-629  (at line 202)	_t636 := #32
-630  (at line 236)	ARG result[_t636]
-631  (at line 236)	ARG arr[_t634]
-632  (at line 236)	_t632 := CALL arrCopy
-633  (at line 236)	t := _t632
-634  (at line 202)	_t639 := #32
-635  (at line 237)	ARG result[_t639]
-636  (at line 237)	_t637 := CALL revert
-637  (at line 237)	t := _t637
-638  (at line 239)	_t640 := #0
-639  (at line 239)	i := _t640
+530  (at line 200)	_t481 := #32
+531  (at line 200)	n := _t481
+532  (at line 203)	_t482 := #7
+533  (at line 203)	_t485 := #0
+534  (at line 203)	arr[_t485] := _t482
+535  (at line 204)	_t487 := #23
+536  (at line 204)	_t490 := #1
+537  (at line 204)	arr[_t490] := _t487
+538  (at line 205)	_t492 := #89
+539  (at line 205)	_t495 := #2
+540  (at line 205)	arr[_t495] := _t492
+541  (at line 206)	_t497 := #26
+542  (at line 206)	_t500 := #3
+543  (at line 206)	arr[_t500] := _t497
+544  (at line 207)	_t502 := #282
+545  (at line 207)	_t505 := #4
+546  (at line 207)	arr[_t505] := _t502
+547  (at line 208)	_t507 := #254
+548  (at line 208)	_t510 := #5
+549  (at line 208)	arr[_t510] := _t507
+550  (at line 209)	_t512 := #27
+551  (at line 209)	_t515 := #6
+552  (at line 209)	arr[_t515] := _t512
+553  (at line 210)	_t517 := #5
+554  (at line 210)	_t520 := #7
+555  (at line 210)	arr[_t520] := _t517
+556  (at line 211)	_t522 := #83
+557  (at line 211)	_t525 := #8
+558  (at line 211)	arr[_t525] := _t522
+559  (at line 212)	_t527 := #273
+560  (at line 212)	_t530 := #9
+561  (at line 212)	arr[_t530] := _t527
+562  (at line 213)	_t532 := #574
+563  (at line 213)	_t535 := #10
+564  (at line 213)	arr[_t535] := _t532
+565  (at line 214)	_t537 := #905
+566  (at line 214)	_t540 := #11
+567  (at line 214)	arr[_t540] := _t537
+568  (at line 215)	_t542 := #354
+569  (at line 215)	_t545 := #12
+570  (at line 215)	arr[_t545] := _t542
+571  (at line 216)	_t547 := #657
+572  (at line 216)	_t550 := #13
+573  (at line 216)	arr[_t550] := _t547
+574  (at line 217)	_t552 := #935
+575  (at line 217)	_t555 := #14
+576  (at line 217)	arr[_t555] := _t552
+577  (at line 218)	_t557 := #264
+578  (at line 218)	_t560 := #15
+579  (at line 218)	arr[_t560] := _t557
+580  (at line 219)	_t562 := #639
+581  (at line 219)	_t565 := #16
+582  (at line 219)	arr[_t565] := _t562
+583  (at line 220)	_t567 := #459
+584  (at line 220)	_t570 := #17
+585  (at line 220)	arr[_t570] := _t567
+586  (at line 221)	_t572 := #29
+587  (at line 221)	_t575 := #18
+588  (at line 221)	arr[_t575] := _t572
+589  (at line 222)	_t577 := #68
+590  (at line 222)	_t580 := #19
+591  (at line 222)	arr[_t580] := _t577
+592  (at line 223)	_t582 := #929
+593  (at line 223)	_t585 := #20
+594  (at line 223)	arr[_t585] := _t582
+595  (at line 224)	_t587 := #756
+596  (at line 224)	_t590 := #21
+597  (at line 224)	arr[_t590] := _t587
+598  (at line 225)	_t592 := #452
+599  (at line 225)	_t595 := #22
+600  (at line 225)	arr[_t595] := _t592
+601  (at line 226)	_t597 := #279
+602  (at line 226)	_t600 := #23
+603  (at line 226)	arr[_t600] := _t597
+604  (at line 227)	_t602 := #58
+605  (at line 227)	_t605 := #24
+606  (at line 227)	arr[_t605] := _t602
+607  (at line 228)	_t607 := #87
+608  (at line 228)	_t610 := #25
+609  (at line 228)	arr[_t610] := _t607
+610  (at line 229)	_t612 := #96
+611  (at line 229)	_t615 := #26
+612  (at line 229)	arr[_t615] := _t612
+613  (at line 230)	_t617 := #36
+614  (at line 230)	_t620 := #27
+615  (at line 230)	arr[_t620] := _t617
+616  (at line 231)	_t622 := #39
+617  (at line 231)	_t625 := #28
+618  (at line 231)	arr[_t625] := _t622
+619  (at line 232)	_t627 := #28
+620  (at line 232)	_t630 := #29
+621  (at line 232)	arr[_t630] := _t627
+622  (at line 233)	_t632 := #1
+623  (at line 233)	_t635 := #30
+624  (at line 233)	arr[_t635] := _t632
+625  (at line 234)	_t637 := #290
+626  (at line 234)	_t640 := #31
+627  (at line 234)	arr[_t640] := _t637
+628  (at line 201)	_t644 := #32
+629  (at line 202)	_t646 := #32
+630  (at line 236)	ARG result[_t646]
+631  (at line 236)	ARG arr[_t644]
+632  (at line 236)	_t642 := CALL arrCopy
+633  (at line 236)	t := _t642
+634  (at line 202)	_t649 := #32
+635  (at line 237)	ARG result[_t649]
+636  (at line 237)	_t647 := CALL revert
+637  (at line 237)	t := _t647
+638  (at line 239)	_t650 := #0
+639  (at line 239)	i := _t650
 640  (at line 240)	LABEL label67 :
-641  (at line 240)	_t641 := i
-642  (at line 240)	_t644 := #32
-643  (at line 240)	IF _t641 < _t644 GOTO label68
+641  (at line 240)	_t651 := i
+642  (at line 240)	_t654 := #32
+643  (at line 240)	IF _t651 < _t654 GOTO label68
 644  (at line 240)	GOTO label69
 645  (at line 240)	LABEL label68 :
-646  (at line 241)	_t648 := i
-647  (at line 241)	_t645 := result[_t648]
-648  (at line 241)	t := _t645
-649  (at line 242)	_t650 := t
-650  (at line 242)	ARG _t650
-651  (at line 242)	CALL 
-652  (at line 243)	_t652 := i
-653  (at line 243)	_t653 := #1
-654  (at line 243)	_t651 := _t652 + _t653
-655  (at line 243)	i := _t651
+646  (at line 241)	_t658 := i
+647  (at line 241)	_t655 := result[_t658]
+648  (at line 241)	t := _t655
+649  (at line 242)	_t660 := t
+650  (at line 242)	ARG _t660
+651  (at line 242)	CALL putint
+652  (at line 243)	_t662 := i
+653  (at line 243)	_t663 := #1
+654  (at line 243)	_t661 := _t662 + _t663
+655  (at line 243)	i := _t661
 656  (at line 240)	GOTO label67
 657  (at line 240)	LABEL label69 :
-658  (at line 202)	_t656 := #32
-659  (at line 245)	ARG result[_t656]
-660  (at line 245)	_t654 := CALL bubblesort
-661  (at line 245)	t := _t654
-662  (at line 246)	_t657 := #0
-663  (at line 246)	i := _t657
+658  (at line 202)	_t666 := #32
+659  (at line 245)	ARG result[_t666]
+660  (at line 245)	_t664 := CALL bubblesort
+661  (at line 245)	t := _t664
+662  (at line 246)	_t667 := #0
+663  (at line 246)	i := _t667
 664  (at line 247)	LABEL label70 :
-665  (at line 247)	_t658 := i
-666  (at line 247)	_t661 := #32
-667  (at line 247)	IF _t658 < _t661 GOTO label71
+665  (at line 247)	_t668 := i
+666  (at line 247)	_t671 := #32
+667  (at line 247)	IF _t668 < _t671 GOTO label71
 668  (at line 247)	GOTO label72
 669  (at line 247)	LABEL label71 :
-670  (at line 248)	_t665 := i
-671  (at line 248)	_t662 := result[_t665]
-672  (at line 248)	t := _t662
-673  (at line 249)	_t667 := t
-674  (at line 249)	ARG _t667
-675  (at line 249)	CALL 
-676  (at line 250)	_t669 := i
-677  (at line 250)	_t670 := #1
-678  (at line 250)	_t668 := _t669 + _t670
-679  (at line 250)	i := _t668
+670  (at line 248)	_t675 := i
+671  (at line 248)	_t672 := result[_t675]
+672  (at line 248)	t := _t672
+673  (at line 249)	_t677 := t
+674  (at line 249)	ARG _t677
+675  (at line 249)	CALL putint
+676  (at line 250)	_t679 := i
+677  (at line 250)	_t680 := #1
+678  (at line 250)	_t678 := _t679 + _t680
+679  (at line 250)	i := _t678
 680  (at line 247)	GOTO label70
 681  (at line 247)	LABEL label72 :
-682  (at line 202)	_t673 := #32
-683  (at line 252)	ARG result[_t673]
-684  (at line 252)	_t671 := CALL getMid
-685  (at line 252)	t := _t671
-686  (at line 253)	_t674 := t
-687  (at line 253)	ARG _t674
-688  (at line 253)	CALL 
-689  (at line 202)	_t677 := #32
-690  (at line 254)	ARG result[_t677]
-691  (at line 254)	_t675 := CALL getMost
-692  (at line 254)	t := _t675
-693  (at line 255)	_t678 := t
-694  (at line 255)	ARG _t678
-695  (at line 255)	CALL 
-696  (at line 201)	_t681 := #32
-697  (at line 202)	_t683 := #32
-698  (at line 257)	ARG result[_t683]
-699  (at line 257)	ARG arr[_t681]
-700  (at line 257)	_t679 := CALL arrCopy
-701  (at line 257)	t := _t679
-702  (at line 202)	_t686 := #32
-703  (at line 258)	ARG result[_t686]
-704  (at line 258)	_t684 := CALL bubblesort
-705  (at line 258)	t := _t684
-706  (at line 259)	_t687 := #0
-707  (at line 259)	i := _t687
+682  (at line 202)	_t683 := #32
+683  (at line 252)	ARG result[_t683]
+684  (at line 252)	_t681 := CALL getMid
+685  (at line 252)	t := _t681
+686  (at line 253)	_t684 := t
+687  (at line 253)	ARG _t684
+688  (at line 253)	CALL putint
+689  (at line 202)	_t687 := #32
+690  (at line 254)	ARG result[_t687]
+691  (at line 254)	_t685 := CALL getMost
+692  (at line 254)	t := _t685
+693  (at line 255)	_t688 := t
+694  (at line 255)	ARG _t688
+695  (at line 255)	CALL putint
+696  (at line 201)	_t691 := #32
+697  (at line 202)	_t693 := #32
+698  (at line 257)	ARG result[_t693]
+699  (at line 257)	ARG arr[_t691]
+700  (at line 257)	_t689 := CALL arrCopy
+701  (at line 257)	t := _t689
+702  (at line 202)	_t696 := #32
+703  (at line 258)	ARG result[_t696]
+704  (at line 258)	_t694 := CALL bubblesort
+705  (at line 258)	t := _t694
+706  (at line 259)	_t697 := #0
+707  (at line 259)	i := _t697
 708  (at line 260)	LABEL label73 :
-709  (at line 260)	_t688 := i
-710  (at line 260)	_t691 := #32
-711  (at line 260)	IF _t688 < _t691 GOTO label74
+709  (at line 260)	_t698 := i
+710  (at line 260)	_t701 := #32
+711  (at line 260)	IF _t698 < _t701 GOTO label74
 712  (at line 260)	GOTO label75
 713  (at line 260)	LABEL label74 :
-714  (at line 261)	_t695 := i
-715  (at line 261)	_t692 := result[_t695]
-716  (at line 261)	t := _t692
-717  (at line 262)	_t697 := t
-718  (at line 262)	ARG _t697
-719  (at line 262)	CALL 
-720  (at line 263)	_t699 := i
-721  (at line 263)	_t700 := #1
-722  (at line 263)	_t698 := _t699 + _t700
-723  (at line 263)	i := _t698
+714  (at line 261)	_t705 := i
+715  (at line 261)	_t702 := result[_t705]
+716  (at line 261)	t := _t702
+717  (at line 262)	_t707 := t
+718  (at line 262)	ARG _t707
+719  (at line 262)	CALL putint
+720  (at line 263)	_t709 := i
+721  (at line 263)	_t710 := #1
+722  (at line 263)	_t708 := _t709 + _t710
+723  (at line 263)	i := _t708
 724  (at line 260)	GOTO label73
 725  (at line 260)	LABEL label75 :
-726  (at line 201)	_t703 := #32
-727  (at line 202)	_t705 := #32
-728  (at line 266)	ARG result[_t705]
-729  (at line 266)	ARG arr[_t703]
-730  (at line 266)	_t701 := CALL arrCopy
-731  (at line 266)	t := _t701
-732  (at line 202)	_t708 := #32
-733  (at line 267)	ARG result[_t708]
-734  (at line 267)	_t706 := CALL insertsort
-735  (at line 267)	t := _t706
-736  (at line 268)	_t709 := #0
-737  (at line 268)	i := _t709
+726  (at line 201)	_t713 := #32
+727  (at line 202)	_t715 := #32
+728  (at line 266)	ARG result[_t715]
+729  (at line 266)	ARG arr[_t713]
+730  (at line 266)	_t711 := CALL arrCopy
+731  (at line 266)	t := _t711
+732  (at line 202)	_t718 := #32
+733  (at line 267)	ARG result[_t718]
+734  (at line 267)	_t716 := CALL insertsort
+735  (at line 267)	t := _t716
+736  (at line 268)	_t719 := #0
+737  (at line 268)	i := _t719
 738  (at line 269)	LABEL label76 :
-739  (at line 269)	_t710 := i
-740  (at line 269)	_t713 := #32
-741  (at line 269)	IF _t710 < _t713 GOTO label77
+739  (at line 269)	_t720 := i
+740  (at line 269)	_t723 := #32
+741  (at line 269)	IF _t720 < _t723 GOTO label77
 742  (at line 269)	GOTO label78
 743  (at line 269)	LABEL label77 :
-744  (at line 270)	_t717 := i
-745  (at line 270)	_t714 := result[_t717]
-746  (at line 270)	t := _t714
-747  (at line 271)	_t719 := t
-748  (at line 271)	ARG _t719
-749  (at line 271)	CALL 
-750  (at line 272)	_t721 := i
-751  (at line 272)	_t722 := #1
-752  (at line 272)	_t720 := _t721 + _t722
-753  (at line 272)	i := _t720
+744  (at line 270)	_t727 := i
+745  (at line 270)	_t724 := result[_t727]
+746  (at line 270)	t := _t724
+747  (at line 271)	_t729 := t
+748  (at line 271)	ARG _t729
+749  (at line 271)	CALL putint
+750  (at line 272)	_t731 := i
+751  (at line 272)	_t732 := #1
+752  (at line 272)	_t730 := _t731 + _t732
+753  (at line 272)	i := _t730
 754  (at line 269)	GOTO label76
 755  (at line 269)	LABEL label78 :
-756  (at line 201)	_t725 := #32
-757  (at line 202)	_t727 := #32
-758  (at line 275)	ARG result[_t727]
-759  (at line 275)	ARG arr[_t725]
-760  (at line 275)	_t723 := CALL arrCopy
-761  (at line 275)	t := _t723
-762  (at line 276)	_t728 := #0
-763  (at line 276)	i := _t728
-764  (at line 277)	_t729 := #31
-765  (at line 277)	t := _t729
-766  (at line 202)	_t732 := #32
-767  (at line 278)	_t733 := i
-768  (at line 278)	_t734 := t
-769  (at line 278)	ARG _t734
-770  (at line 278)	ARG _t733
-771  (at line 278)	ARG result[_t732]
-772  (at line 278)	_t730 := CALL QuickSort
-773  (at line 278)	t := _t730
+756  (at line 201)	_t735 := #32
+757  (at line 202)	_t737 := #32
+758  (at line 275)	ARG result[_t737]
+759  (at line 275)	ARG arr[_t735]
+760  (at line 275)	_t733 := CALL arrCopy
+761  (at line 275)	t := _t733
+762  (at line 276)	_t738 := #0
+763  (at line 276)	i := _t738
+764  (at line 277)	_t739 := #31
+765  (at line 277)	t := _t739
+766  (at line 202)	_t742 := #32
+767  (at line 278)	_t743 := i
+768  (at line 278)	_t744 := t
+769  (at line 278)	ARG _t744
+770  (at line 278)	ARG _t743
+771  (at line 278)	ARG result[_t742]
+772  (at line 278)	_t740 := CALL QuickSort
+773  (at line 278)	t := _t740
 774  (at line 279)	LABEL label79 :
-775  (at line 279)	_t735 := i
-776  (at line 279)	_t738 := #32
-777  (at line 279)	IF _t735 < _t738 GOTO label80
+775  (at line 279)	_t745 := i
+776  (at line 279)	_t748 := #32
+777  (at line 279)	IF _t745 < _t748 GOTO label80
 778  (at line 279)	GOTO label81
 779  (at line 279)	LABEL label80 :
-780  (at line 280)	_t742 := i
-781  (at line 280)	_t739 := result[_t742]
-782  (at line 280)	t := _t739
-783  (at line 281)	_t744 := t
-784  (at line 281)	ARG _t744
-785  (at line 281)	CALL 
-786  (at line 282)	_t746 := i
-787  (at line 282)	_t747 := #1
-788  (at line 282)	_t745 := _t746 + _t747
-789  (at line 282)	i := _t745
+780  (at line 280)	_t752 := i
+781  (at line 280)	_t749 := result[_t752]
+782  (at line 280)	t := _t749
+783  (at line 281)	_t754 := t
+784  (at line 281)	ARG _t754
+785  (at line 281)	CALL putint
+786  (at line 282)	_t756 := i
+787  (at line 282)	_t757 := #1
+788  (at line 282)	_t755 := _t756 + _t757
+789  (at line 282)	i := _t755
 790  (at line 279)	GOTO label79
 791  (at line 279)	LABEL label81 :
-792  (at line 201)	_t750 := #32
-793  (at line 202)	_t752 := #32
-794  (at line 285)	ARG result[_t752]
-795  (at line 285)	ARG arr[_t750]
-796  (at line 285)	_t748 := CALL arrCopy
-797  (at line 285)	t := _t748
-798  (at line 202)	_t755 := #32
-799  (at line 286)	_t756 := #4
-800  (at line 286)	ARG _t756
-801  (at line 286)	ARG result[_t755]
-802  (at line 286)	_t753 := CALL calSum
-803  (at line 286)	t := _t753
-804  (at line 287)	_t757 := #0
-805  (at line 287)	i := _t757
+792  (at line 201)	_t760 := #32
+793  (at line 202)	_t762 := #32
+794  (at line 285)	ARG result[_t762]
+795  (at line 285)	ARG arr[_t760]
+796  (at line 285)	_t758 := CALL arrCopy
+797  (at line 285)	t := _t758
+798  (at line 202)	_t765 := #32
+799  (at line 286)	_t766 := #4
+800  (at line 286)	ARG _t766
+801  (at line 286)	ARG result[_t765]
+802  (at line 286)	_t763 := CALL calSum
+803  (at line 286)	t := _t763
+804  (at line 287)	_t767 := #0
+805  (at line 287)	i := _t767
 806  (at line 288)	LABEL label82 :
-807  (at line 288)	_t758 := i
-808  (at line 288)	_t761 := #32
-809  (at line 288)	IF _t758 < _t761 GOTO label83
+807  (at line 288)	_t768 := i
+808  (at line 288)	_t771 := #32
+809  (at line 288)	IF _t768 < _t771 GOTO label83
 810  (at line 288)	GOTO label84
 811  (at line 288)	LABEL label83 :
-812  (at line 289)	_t765 := i
-813  (at line 289)	_t762 := result[_t765]
-814  (at line 289)	t := _t762
-815  (at line 290)	_t767 := t
-816  (at line 290)	ARG _t767
-817  (at line 290)	CALL 
-818  (at line 291)	_t769 := i
-819  (at line 291)	_t770 := #1
-820  (at line 291)	_t768 := _t769 + _t770
-821  (at line 291)	i := _t768
+812  (at line 289)	_t775 := i
+813  (at line 289)	_t772 := result[_t775]
+814  (at line 289)	t := _t772
+815  (at line 290)	_t777 := t
+816  (at line 290)	ARG _t777
+817  (at line 290)	CALL putint
+818  (at line 291)	_t779 := i
+819  (at line 291)	_t780 := #1
+820  (at line 291)	_t778 := _t779 + _t780
+821  (at line 291)	i := _t778
 822  (at line 288)	GOTO label82
 823  (at line 288)	LABEL label84 :
-824  (at line 201)	_t773 := #32
-825  (at line 202)	_t775 := #32
-826  (at line 294)	ARG result[_t775]
-827  (at line 294)	ARG arr[_t773]
-828  (at line 294)	_t771 := CALL arrCopy
-829  (at line 294)	t := _t771
-830  (at line 202)	_t778 := #32
-831  (at line 295)	_t779 := #3
-832  (at line 295)	ARG _t779
-833  (at line 295)	ARG result[_t778]
-834  (at line 295)	_t776 := CALL avgPooling
-835  (at line 295)	t := _t776
-836  (at line 296)	_t780 := #0
-837  (at line 296)	i := _t780
+824  (at line 201)	_t783 := #32
+825  (at line 202)	_t785 := #32
+826  (at line 294)	ARG result[_t785]
+827  (at line 294)	ARG arr[_t783]
+828  (at line 294)	_t781 := CALL arrCopy
+829  (at line 294)	t := _t781
+830  (at line 202)	_t788 := #32
+831  (at line 295)	_t789 := #3
+832  (at line 295)	ARG _t789
+833  (at line 295)	ARG result[_t788]
+834  (at line 295)	_t786 := CALL avgPooling
+835  (at line 295)	t := _t786
+836  (at line 296)	_t790 := #0
+837  (at line 296)	i := _t790
 838  (at line 297)	LABEL label85 :
-839  (at line 297)	_t781 := i
-840  (at line 297)	_t784 := #32
-841  (at line 297)	IF _t781 < _t784 GOTO label86
+839  (at line 297)	_t791 := i
+840  (at line 297)	_t794 := #32
+841  (at line 297)	IF _t791 < _t794 GOTO label86
 842  (at line 297)	GOTO label87
 843  (at line 297)	LABEL label86 :
-844  (at line 298)	_t788 := i
-845  (at line 298)	_t785 := result[_t788]
-846  (at line 298)	t := _t785
-847  (at line 299)	_t790 := t
-848  (at line 299)	ARG _t790
-849  (at line 299)	CALL 
-850  (at line 300)	_t792 := i
-851  (at line 300)	_t793 := #1
-852  (at line 300)	_t791 := _t792 + _t793
-853  (at line 300)	i := _t791
+844  (at line 298)	_t798 := i
+845  (at line 298)	_t795 := result[_t798]
+846  (at line 298)	t := _t795
+847  (at line 299)	_t800 := t
+848  (at line 299)	ARG _t800
+849  (at line 299)	CALL putint
+850  (at line 300)	_t802 := i
+851  (at line 300)	_t803 := #1
+852  (at line 300)	_t801 := _t802 + _t803
+853  (at line 300)	i := _t801
 854  (at line 297)	GOTO label85
 855  (at line 297)	LABEL label87 :
-856  (at line 302)	_t794 := #0
-857  (at line 302)	RETURN _t794
+856  (at line 302)	_t804 := #0
+857  (at line 302)	RETURN _t804
 
 
 ===========================================================
 Global
 ID             category       type           depictor
                
+putf           Function       void           NULL           
+putarray       Function       void           NOT NULL       
+putchar        Function       void           NOT NULL       
+putint         Function       void           NOT NULL       
+getarray       Function       int            NOT NULL       
+getchar        Function       int            NOT NULL       
+getint         Function       int            NOT NULL       
 n              Variable       TYPEINTEGER    NULL           
 bubblesort     Function       TYPEINTEGER    NOT NULL       
 insertsort     Function       TYPEINTEGER    NOT NULL       
@@ -80654,6 +80796,77 @@ arrCopy        Function       TYPEINTEGER    NOT NULL
 calSum         Function       TYPEINTEGER    NOT NULL       
 avgPooling     Function       TYPEINTEGER    NOT NULL       
 main           Function       TYPEINTEGER    NOT NULL       
+===========================================================
+===========================================================
+Formal:putarray
+ID             category       type           depictor
+              
+a              Array          int            ----------> dim=1
+a              Variable       int            NULL           
+===========================================================
+===========================================================
+Local:putarray
+ID             category       type           depictor
+              
+scope type is wrong
+               Variable                      NULL           
+===========================================================
+===========================================================
+Formal:putchar
+ID             category       type           depictor
+              
+a              Variable       int            NULL           
+===========================================================
+===========================================================
+Local:putchar
+ID             category       type           depictor
+              
+===========================================================
+===========================================================
+Formal:putint
+ID             category       type           depictor
+              
+a              Variable       int            NULL           
+===========================================================
+===========================================================
+Local:putint
+ID             category       type           depictor
+              
+===========================================================
+===========================================================
+Formal:getarray
+ID             category       type           depictor
+              
+a              Array          int            ----------> dim=1
+===========================================================
+===========================================================
+Local:getarray
+ID             category       type           depictor
+              
+scope type is wrong
+               Variable                      NULL           
+===========================================================
+===========================================================
+Formal:getchar
+ID             category       type           depictor
+              
+               NOParam                       NULL           
+===========================================================
+===========================================================
+Local:getchar
+ID             category       type           depictor
+              
+===========================================================
+===========================================================
+Formal:getint
+ID             category       type           depictor
+              
+               NOParam                       NULL           
+===========================================================
+===========================================================
+Local:getint
+ID             category       type           depictor
+              
 ===========================================================
 ===========================================================
 Formal:bubblesort
@@ -80724,38 +80937,25 @@ scope type is wrong
 build assembly code
 tac type FUNCTIONDF
 Variable offset count+4 :i
+Variable offset count+4 :j
 Variable offset count+4 :i
-Variable offset count+4 :i
-scope type not local in functiondf
-scopeprev:0
-Variable offset count+4 :_t0
 scope type not local in functiondf
 scopeprev:0
 Variable offset count+4 :_t1
 scope type not local in functiondf
 scopeprev:0
-Variable offset count+4 :_t4
+Variable offset count+4 :_t2
 scope type not local in functiondf
 scopeprev:0
 Variable offset count+4 :_t5
 scope type not local in functiondf
 scopeprev:0
 Variable offset count+4 :_t6
-Variable offset count+4 :_t59
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t7
+Variable offset count+4 :_t60
 tec type ASSIGN
-findregister: insldr rd=0,r1=11,r2 offset=0,op2type=1, insefft=0
-tec type ASSIGN
-findregister: insldr rd=1,r1=11,r2 offset=0,op2type=1, insefft=0
-tac type LABELDF
-L0:
-
-tec type ASSIGN
-findregister: insldr rd=2,r1=11,r2 offset=0,op2type=1, insefft=0
-tec type ASSIGN
-findregister: insldr rd=3,r1=11,r2 offset=0,op2type=1, insefft=0
-findregister: insldr rd=4,r1=11,r2 offset=0,op2type=1, insefft=0
-tec type ASSIGN
-findregister: insldr rd=5,r1=11,r2 offset=0,op2type=1, insefft=0
-tac type SUB
-compiler: ./ObjectCode/Arm.cpp:85: ARM::ARM(TACCode *, ScopeItem &): Assertion `code.dest.Type = VARIABLE' failed.
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
 Aborted (core dumped)

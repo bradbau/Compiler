@@ -22,6 +22,6 @@ typedef struct ExprType
 } ExprType;
 
 
-ScopeItem TraverseScopeStack(vector<ScopeItem> stack, string name);
+ScopeItem& TraverseScopeStack(vector<ScopeItem> stack, string name);
 
 #endif

@@ -132,10 +132,10 @@ private:
     Register rd;//目标寄存器
     
     int op1;
-    int op1Type=0;
+    int op1Type=0;//-1  0 1 代表无，寄存器，立即数
    
     int op2;
-    int op2Type=0;// 0 1 代表寄存器，立即数
+    int op2Type=0;//-1 0 1 代表无，寄存器，立即数
 
 public:
 

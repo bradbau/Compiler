@@ -47,6 +47,7 @@
 
 
 
+
 %type <ast_Tree> Compiler CompUnits CompUnit Decl ConstDef ConstDefs   
 %type <ast_Tree> VarDef VarDefs InitVal InitValList FuncFParams FuncFParam ArrayExps 
 %type <ast_Tree> Block BlockItems BlockItem Stmt Exp Exps Cond LVal Number  
@@ -78,8 +79,6 @@
 %nonassoc KEYELSE
 
 %%
-
-
 /*add new*/
 Compiler: CompUnits {  
                   ASTTree *asttree = new ASTTree("Compiler", 1, yylineno, $1);
@@ -109,8 +108,7 @@ Compiler: CompUnits {
                   $$->si->depictor = addIntoScope(Formal, $$->si->depictor, "a", Array, "int", arrayInfoy);
                   $$->si = addIntoScope(Global, $$->si, "putf" , Function, "void", NULL);
                 // 打印符号表
-                displayGlobal($1->si);
-                  $$->si= $1->si;
+                displayGlobal($$->si);
                   //ScopeStack* stack = Stack();
                   vector<ScopeItem> stack;
                   ScopeItem scopeItem;
@@ -118,16 +116,16 @@ Compiler: CompUnits {
                   unsigned int label_num = 0;
                   TACCode* entrance = BuildTAC($$ , *($$->si) , stack, temp_num, label_num);
                   DisplayTACCode(entrance);
-                  displayGlobal($1->si);
                   
-                  ARM* AssemblyCode=new ARM(entrance, *($$->si));
+
+                  displayGlobal($$->si);
+                  ARM* AssemblyCode=new ARM(entrance, $$->si, stack);
                   cout<<"tac build complete"<<endl;
                   string CodeString=AssemblyCode->toString();
                   cout<<CodeString<<endl;
-
                   //输出文件
       
-                  ofstream outstream(outputFileName, ios::out);
+                  ofstream outstream(outputFileName, ios::out);         
                   if(outstream.is_open()){
  
                         outstream<<CodeString;
@@ -199,7 +197,7 @@ FuncFParam: TYPEINTEGER IDENTIFIER{ASTTree *asttree = new ASTTree("FuncFParam", 
                 }
           | TYPEINTEGER IDENTIFIER OPLEFTBRACKET OPRIGHTBRACKET ArrayExps{
                 cout << "1111111111111111" << endl; 
-                ASTTree *asttree = new ASTTree("FuncFParam", 1, yylineno, $5);
+                ASTTree *asttree = new ASTTree("ArrayFuncFParam", 1, yylineno, $5);
                 $$ = asttree;
                 $$->SetFuncPType("array");
                 $$->SetID($2->GetID()); 
@@ -273,7 +271,7 @@ ConstDef: VarDec OPASSIGN InitVal{ ASTTree *asttree = new ASTTree("ConstOpassign
 VarDec:   IDENTIFIER { $$ = $1;
                 dim = 0;
                 recordArrayInfo = NULL;
-                $$->si = addIntoScope(Local, $$->si, $1->GetID(), Variable, "TYPEINTEGER", NULL);
+                $$->si = addIntoScope(Local, NULL, $1->GetID(), Variable, "TYPEINTEGER", NULL);
                 }   //ID结点，标识符符号串存放结点的type_id
          | VarDec OPLEFTBRACKET Exp OPRIGHTBRACKET { ASTTree *asttree = new ASTTree("ArrayDec", 1, yylineno, $1);
                 $$ = asttree;
@@ -318,8 +316,8 @@ VarDefs:{  $$ = NULL;}
        ;
 
 /*常量/变量初值*/ 
-InitVal: Exp {  ASTTree *asttree = new ASTTree("ConstInitVal", 1, yylineno, $1);$$ = asttree; }
-             | SPLEFTBRACE SPRIGHTBRACE{ ASTTree *asttree = new ASTTree("ConstInitVal", 0, yylineno);$$ = asttree; }
+InitVal: Exp {  ASTTree *asttree = new ASTTree("ExpInitval", 1, yylineno, $1);$$ = asttree; }
+             | SPLEFTBRACE SPRIGHTBRACE{ ASTTree *asttree = new ASTTree("AutoInitVal", 0, yylineno);$$ = asttree; }
              | SPLEFTBRACE InitVal InitValList SPRIGHTBRACE{ ASTTree *asttree = new ASTTree("ConstInitVal", 2, yylineno,  $2,$3);$$ = asttree; }
              ;
 
@@ -373,7 +371,7 @@ BlockItem:Decl { $$ = $1;}
          ;
 
 /*左值表达式*/ 
-LVal: IDENTIFIER ArrayExps {  printf("Lval\n");ASTTree *asttree = new ASTTree("LVal", 2, yylineno, $1,$2);$$ = asttree; $$->SetID($1->GetID());}
+LVal: IDENTIFIER ArrayExps {  printf("Lval\n");ASTTree *asttree = new ASTTree("LVal", 2, yylineno, $1,$2);$$ = asttree;$$->SetID($1->GetID()); }
       ;
 
 /*语句*/ 
@@ -481,15 +479,28 @@ int main(int argc, char *argv[]){
             switch(opt){
                   case 'S':{
                         cout<<"arg S"<<endl;
+                        if(optarg){
+                              printf("%s", optarg);
+                        }
                         break;
                   }
                   case 'o':{
+                        //opt = getopt(argc, argv, "S:o::O");
+                        if(optarg!=NULL){
+                              printf("%s\n", optarg);
+                        }
+                        else{
+                              printf("arg o error\n");
+                        }
                         strcpy(outputFileName,optarg);
-
+                        cout<<"outputFileName"<<outputFileName<<endl;
                         break;
                   }
                   case 'O':{
                         cout<<"arg O"<<endl;
+                        if(optarg){
+                              printf("%s\n", optarg);
+                        }
                         if(strcmp(optarg, "2")){
                               //设置优化参数
                         }
@@ -501,13 +512,14 @@ int main(int argc, char *argv[]){
                   }
             }
       }
-
       yyin=fopen(argv[4],"r");
 	if (!yyin) return -1;
+      strcpy(outputFileName,argv[3]);
+      
 	yylineno=1;
 	yyparse();
 
-      
+     
       
 	return 0;
 }

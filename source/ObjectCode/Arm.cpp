@@ -3,7 +3,7 @@
 
 
 
-ARM::ARM(TACCode* entrance, ScopeItem &scopeItem){
+ARM::ARM(TACCode* entrance, ScopeItem *GlobalItemHead, vector<ScopeItem> &stack){
     //根据输入的中间代码和符号表结构完成初始化，生成目标代码, 
     #ifdef DEBUG
     cout<<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"<<endl;
@@ -15,6 +15,40 @@ ARM::ARM(TACCode* entrance, ScopeItem &scopeItem){
 
 
     StackSubHandler=NULL;
+
+    ScopeItem* GlobalIter=GlobalItemHead;
+    int GlobalOffset =0;//或者某个值
+    //全局变量空间分配, ，给符号表中的global变量分配
+    while(GlobalIter!=NULL){
+        if(GlobalIter->stype!=Global){
+            cout << "scope type not global\n";
+        }
+        switch(GlobalIter->category){
+            case Variable:{
+                //默认等于int
+                //在符号表中查找该变量并给他的offset赋值
+                
+                GlobalIter->offset=GlobalOffset;
+                GlobalOffset-=4;
+
+                break;
+            }
+            case ConstVariable:{
+
+                break;
+            }
+            case Array:{
+                GlobalIter->offset=GlobalOffset;
+                //计算数组总长度
+                //GlobalOffset-=
+                break;
+            }
+            default:{
+
+            }
+        }
+        GlobalIter=GlobalIter->next;
+    }
 
     //中间代码翻译
 
@@ -29,33 +63,48 @@ ARM::ARM(TACCode* entrance, ScopeItem &scopeItem){
                 //赋值，目的操作数可以是变量也可以是内存地址，
                 //code.dest一直是variable类型，没有别的类型
                 {
-                    assert(code.dest.Type==VARIABLE);
-                    if(code.firstOp.Type== VARIABLE){ 
-                        //变量赋值
-                        CalculateInstruction* InsItem=new CalculateInstruction(INSADD, GetRegister(code.dest.Data.variable),GetRegister(code.firstOp.Data.variable), 0, 1 );
-                        InsList.push_back(dynamic_cast<ARMInstruction*>(InsItem));
-                    }
-                    else if(code.firstOp.Type== INTEGERCONST){
-                        //常量赋值
-                        //这个常量赋值可能是
+                    if(code.dest.Type==ARRAY){
+                        //目标是数组元素的赋值
 
-                        //如果是小于255的常量直接用mov，大于255的用ldr伪指令
-                        if(code.firstOp.Data.value>=0&& code.firstOp.Data.value<=255){
-                            CalculateInstruction* InsItem= new CalculateInstruction(INSMOV, GetRegister(code.dest.Data.variable),  code.firstOp.Data.value, 1);
+
+                    }
+                    else if(code.dest.Type==VARIABLE){
+                        if(code.firstOp.Type== VARIABLE){ 
+                            //变量赋值
+                            CalculateInstruction* InsItem=new CalculateInstruction(INSADD, GetRegister(code.dest.Data.variable),GetRegister(code.firstOp.Data.variable), 0, 1 );
                             InsList.push_back(dynamic_cast<ARMInstruction*>(InsItem));
                         }
-                        else{
-                            MemoryInstruction* MemItem= new MemoryInstruction(INSLDR, GetRegister(code.dest.Data.variable), code.firstOp.Data.value, 1);
-                            InsList.push_back(dynamic_cast<ARMInstruction*>(MemItem));
-                        }
+                        else if(code.firstOp.Type== INTEGERCONST){
+                            //常量赋值
+                            //这个常量赋值可能是
 
-                        //如果是函数内部局部变量的声明，需要给分配栈空间
-                        //StackSubHandler->setOp2(StackSubHandler->getOp2()+4);//一个整形变量需要4字节空间
-                        
+                            //如果是小于255的常量直接用mov，大于255的用ldr伪指令
+                            if(code.firstOp.Data.value>=0&& code.firstOp.Data.value<=255){
+                                CalculateInstruction* InsItem= new CalculateInstruction(INSMOV, GetRegister(code.dest.Data.variable),  code.firstOp.Data.value, 1);
+                                InsList.push_back(dynamic_cast<ARMInstruction*>(InsItem));
+                            }
+                            else{
+                                MemoryInstruction* MemItem= new MemoryInstruction(INSLDR, GetRegister(code.dest.Data.variable), code.firstOp.Data.value, 1);
+                                InsList.push_back(dynamic_cast<ARMInstruction*>(MemItem));
+                            }
+
+                            //如果是函数内部局部变量的声明，需要给分配栈空间
+                            //StackSubHandler->setOp2(StackSubHandler->getOp2()+4);//一个整形变量需要4字节空间
+                            
+                        }
+                        else if(code.firstOp.Type== ARRAY){
+                            //数组元素赋值
+                            //首先要将数组元素加载到寄存器中
+                            //然后寄存器赋值
+                            //然后是否可以延后保存
+
+                        }
+                        else{
+                            //错误处理
+                        }
                     }
-                    else{
-                        //错误处理
-                    }
+                    
+                    
 
                     
 
@@ -82,11 +131,18 @@ ARM::ARM(TACCode* entrance, ScopeItem &scopeItem){
                 #ifdef DEBUG
                 cout<<"tac type SUB"<<endl;
                 #endif // DEBUG
-                assert(code.dest.Type = VARIABLE);
+                
                 assert(code.firstOp.Type = VARIABLE);
                 assert(code.secondOp.Type = VARIABLE);
-                CalculateInstruction* InsItem=new CalculateInstruction(INSSUB, GetRegister(code.dest.Data.variable), GetRegister(code.firstOp.Data.variable), GetRegister(code.secondOp.Data.variable), 0);
-                InsList.push_back(dynamic_cast<ARMInstruction*>(InsItem));
+                if(code.dest.Type == VARIABLE){
+                    CalculateInstruction* InsItem=new CalculateInstruction(INSSUB, GetRegister(code.dest.Data.variable), GetRegister(code.firstOp.Data.variable), GetRegister(code.secondOp.Data.variable), 0);
+                    InsList.push_back(dynamic_cast<ARMInstruction*>(InsItem));
+                }
+                else if(code.dest.Type ==ARRAY){
+
+                }
+
+               
 
 
                 break;
@@ -158,7 +214,7 @@ ARM::ARM(TACCode* entrance, ScopeItem &scopeItem){
                 //传入参数的处理
                 int i=0;
                 int offset=0;//函数堆栈大小
-                while(entrance->next->code.optype==PARAM){
+                while(entrance->next!=NULL&&entrance->next->code.optype==PARAM){
                     entrance=entrance->next;
                     if(i<4){
                         //函数参数在四个以内就用寄存器r0到r3传参
@@ -192,7 +248,7 @@ ARM::ARM(TACCode* entrance, ScopeItem &scopeItem){
                     switch(localvariable->category){
                         case Variable:{
                             offset+=4;//这里默认variable是int
-                            cout<<"Variable offset count+4 :"<<tempvariable->name<<endl;
+                            cout<<"Variable offset count+4 :"<<localvariable->name<<endl;
                             break;
                         }
                         case Array:{
@@ -475,13 +531,14 @@ ARM::ARM(TACCode* entrance, ScopeItem &scopeItem){
 
 Register ARM::GetRegister(ScopeItem* variable){
     //分配空余寄存器，可用寄存器有r0-r10 
-    if(variable->stype==ScopeType::Formal ||variable->stype==ScopeType:: Local|| variable->stype==ScopeType::Global){
+    
         int goal;
         //找到保存有该变量的寄存器
         if((goal=FinfRegister(variable))!=-1){
             regs[goal].tag++;
             return (Register)goal;
         }
+        //没有变量保存
         else{
             //寻找空寄存器
             for(Register item: userReg){
@@ -494,8 +551,18 @@ Register ARM::GetRegister(ScopeItem* variable){
                     #ifdef DEBUG
                     cout<<"findregister: insldr rd="<<item<< ",r1="<<R11<<",r2 offset="<<variable->offset<<",op2type=1, insefft=0"   <<endl;
                     #endif // DEBUG
-                    MemoryInstruction* MemItem=new MemoryInstruction(INSLDR,(Register)item,  R11, variable->offset , 1, 0);
-                    InsList.push_back(dynamic_cast<ARMInstruction*>(MemItem));
+
+                    //全局变量
+                    if(variable->stype==Global){
+
+                        //MemoryInstruction* MemItem=new MemoryInstruction(INSLDR, (Register)item
+                    }
+                    else{
+                        //如果是局部变量或者形参
+                        MemoryInstruction* MemItem=new MemoryInstruction(INSLDR,(Register)item,  R11, variable->offset , 1, 0);
+                        InsList.push_back(dynamic_cast<ARMInstruction*>(MemItem));
+                    }
+                    
 
                     return item;
                 }
@@ -522,17 +589,8 @@ Register ARM::GetRegister(ScopeItem* variable){
             InsList.push_back(dynamic_cast<ARMInstruction*>(MemItem));
             return (Register)goal;
         }
-    }   
-    else if(variable->stype==ScopeType::Local){
-        //对于不同作用域中的变量
-        for(Register item: userReg){
-            
-        }
-    }
-    else{
-        //错误处理
-
-    }
+    
+    
 }
 
 //Register ARM::GetRegister(ScopeItem* variable);//分配空余寄存器
@@ -554,7 +612,49 @@ void ARM::EmptyRegister(){
         
     }
 }
+int ARM::LoadInstantToRegister(int instantNum){
+    //加载一个一次性的立即数到空寄存器中，不统计内容
+    for(Register item: userReg){
+        if(regs[item].filled==false){
+            CalculateInstruction* CalItem=new CalculateInstruction(INSMOV, (Register)item, instantNum, 1 );
+            InsList.push_back(dynamic_cast<ARMInstruction*>(CalItem));
+            return item;
+        }
+    }
 
+    //如果没有空寄存器，要腾空一个
+    int minTag=1000;//无穷大
+    int goal=-1;
+            for(Register item: userReg){
+                if(regs[item].tag<minTag){
+                    goal=item;
+                    regs[item].tag=minTag;
+                }
+            }
+    StoreRegister(goal);
+    CalculateInstruction* CalItem=new CalculateInstruction(INSMOV, (Register)goal, instantNum, 1 );
+    InsList.push_back(dynamic_cast<ARMInstruction*>(CalItem));
+}
+
+
+//将这个寄存器内的变量保存到它内部offset指向的内存单元中
+//对于局部变量的存储, 不能用于数组
+void ARM::StoreRegister(int RegisterNum){
+    
+    if(regs[RegisterNum].filled==false || regs[RegisterNum].variable==NULL){
+        throw std::runtime_error("no variable in this register");
+    }
+    //分类型存储
+    if(regs[RegisterNum].variable->stype==Global){
+        //全局变量如何存储
+    }
+    else{
+        //局部变量和形参
+        MemoryInstruction* MemItem=new MemoryInstruction(INSSTR, (Register)RegisterNum, LoadInstantToRegister(regs[RegisterNum].variable->offset), 0);
+        InsList.push_back(dynamic_cast<ARMInstruction*>(MemItem));
+
+    }
+}
 
 void ARM::AllocateStack(ScopeItem * variable, int &offset){
     //给变量在栈中分配地址,相对于当前fp

@@ -24,7 +24,7 @@ arg S
 --accepting rule at line 112 ("a")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
-<int>
+-o<int>
 <id,a>
 <;>
 <int>
@@ -198,9 +198,87 @@ CompUnits (1)
 Global
 ID             category       type           depictor
                
+putf           Function       void           NULL           
+putarray       Function       void           NOT NULL       
+putchar        Function       void           NOT NULL       
+putint         Function       void           NOT NULL       
+getarray       Function       int            NOT NULL       
+getchar        Function       int            NOT NULL       
+getint         Function       int            NOT NULL       
 a              Variable       TYPEINTEGER    NULL           
 b              Variable       TYPEINTEGER    NULL           
 main           Function       TYPEINTEGER    NOT NULL       
+===========================================================
+===========================================================
+Formal:putarray
+ID             category       type           depictor
+              
+a              Array          int            ----------> dim=1
+a              Variable       int            NULL           
+===========================================================
+===========================================================
+Local:putarray
+ID             category       type           depictor
+              
+scope type is wrong
+               Variable                      NULL           
+===========================================================
+===========================================================
+Formal:putchar
+ID             category       type           depictor
+              
+a              Variable       int            NULL           
+===========================================================
+===========================================================
+Local:putchar
+ID             category       type           depictor
+              
+===========================================================
+===========================================================
+Formal:putint
+ID             category       type           depictor
+              
+a              Variable       int            NULL           
+===========================================================
+===========================================================
+Local:putint
+ID             category       type           depictor
+              
+===========================================================
+===========================================================
+Formal:getarray
+ID             category       type           depictor
+              
+a              Array          int            ----------> dim=1
+===========================================================
+===========================================================
+Local:getarray
+ID             category       type           depictor
+              
+scope type is wrong
+               Variable                      NULL           
+===========================================================
+===========================================================
+Formal:getchar
+ID             category       type           depictor
+              
+               NOParam                       NULL           
+===========================================================
+===========================================================
+Local:getchar
+ID             category       type           depictor
+              
+===========================================================
+===========================================================
+Formal:getint
+ID             category       type           depictor
+              
+               NOParam                       NULL           
+===========================================================
+===========================================================
+Local:getint
+ID             category       type           depictor
+              
 ===========================================================
 ===========================================================
 Formal:main
@@ -219,7 +297,6 @@ ID             category       type           depictor
 789
 789
 789
-TraverseScopeStack no result
 789
 789
 789
@@ -229,7 +306,6 @@ TraverseScopeStack no result
 789
 789
 789
-TraverseScopeStack no result
 789
 789
 789
@@ -268,9 +344,9 @@ _______________________________________
   0  (at line   0)	CALL main
 
   1  (at line   3)	FUNCTION main :
-  2  (at line   4)	_t0 := CALL 
+  2  (at line   4)	_t0 := CALL getint
   3  (at line   4)	a := _t0
-  4  (at line   5)	_t1 := CALL 
+  4  (at line   5)	_t1 := CALL getint
   5  (at line   5)	b := _t1
   6  (at line   6)	_t2 := a
   7  (at line   6)	_t5 := b
@@ -290,9 +366,87 @@ _______________________________________
 Global
 ID             category       type           depictor
                
+putf           Function       void           NULL           
+putarray       Function       void           NOT NULL       
+putchar        Function       void           NOT NULL       
+putint         Function       void           NOT NULL       
+getarray       Function       int            NOT NULL       
+getchar        Function       int            NOT NULL       
+getint         Function       int            NOT NULL       
 a              Variable       TYPEINTEGER    NULL           
 b              Variable       TYPEINTEGER    NULL           
 main           Function       TYPEINTEGER    NOT NULL       
+===========================================================
+===========================================================
+Formal:putarray
+ID             category       type           depictor
+              
+a              Array          int            ----------> dim=1
+a              Variable       int            NULL           
+===========================================================
+===========================================================
+Local:putarray
+ID             category       type           depictor
+              
+scope type is wrong
+               Variable                      NULL           
+===========================================================
+===========================================================
+Formal:putchar
+ID             category       type           depictor
+              
+a              Variable       int            NULL           
+===========================================================
+===========================================================
+Local:putchar
+ID             category       type           depictor
+              
+===========================================================
+===========================================================
+Formal:putint
+ID             category       type           depictor
+              
+a              Variable       int            NULL           
+===========================================================
+===========================================================
+Local:putint
+ID             category       type           depictor
+              
+===========================================================
+===========================================================
+Formal:getarray
+ID             category       type           depictor
+              
+a              Array          int            ----------> dim=1
+===========================================================
+===========================================================
+Local:getarray
+ID             category       type           depictor
+              
+scope type is wrong
+               Variable                      NULL           
+===========================================================
+===========================================================
+Formal:getchar
+ID             category       type           depictor
+              
+               NOParam                       NULL           
+===========================================================
+===========================================================
+Local:getchar
+ID             category       type           depictor
+              
+===========================================================
+===========================================================
+Formal:getint
+ID             category       type           depictor
+              
+               NOParam                       NULL           
+===========================================================
+===========================================================
+Local:getint
+ID             category       type           depictor
+              
 ===========================================================
 ===========================================================
 Formal:main
@@ -367,27 +521,21 @@ instruction number5
  ControlInstruction tostring
 INS BL tostring
 instruction number6
-ldr instruction
-op2type==1
 instruction number7
 instruction number8
-ldr instruction
-op2type==1
-instruction number9
-instruction number10
  ControlInstruction tostring
 INS BL tostring
+instruction number9
+instruction number10
 instruction number11
-ldr instruction
-op2type==1
 instruction number12
 instruction number13
-ldr instruction
-op2type==1
 instruction number14
+ ControlInstruction tostring
+INS B tostring
 instruction number15
-ldr instruction
-op2type==1
+ ControlInstruction tostring
+INS B tostring
 instruction number16
 instruction number17
 ldr instruction
@@ -395,55 +543,37 @@ op2type==1
 instruction number18
 instruction number19
 instruction number20
- ControlInstruction tostring
-INS B tostring
 instruction number21
+instruction number22
+ ControlInstruction tostring
+INS BX tostring
+instruction number23
  ControlInstruction tostring
 INS B tostring
-instruction number22
-instruction number23
-ldr instruction
-op2type==1
 instruction number24
 instruction number25
+ldr instruction
+op2type==1
 instruction number26
 instruction number27
 instruction number28
- ControlInstruction tostring
-INS BX tostring
 instruction number29
- ControlInstruction tostring
-INS B tostring
 instruction number30
-instruction number31
-ldr instruction
-op2type==1
-instruction number32
-instruction number33
-instruction number34
-instruction number35
-instruction number36
  ControlInstruction tostring
 INS BX tostring
-instruction number37
+instruction number31
 #armv7 assembly code
 main:
 PUSH {fp}
 ADD  fp, sp, #0
 SUB sp, sp, #0
-BL 
-LDR r0, [fp, 0x0]
+BL getint
 MOV r0, r0
-LDR r1, [fp, 0x0]
 ADD  r1, r0, #0
-BL 
-LDR r2, [fp, 0x0]
+BL getint
 MOV r2, r0
-LDR r3, [fp, 0x0]
 ADD  r3, r2, #0
-LDR r4, [fp, 0x0]
 ADD  r4, r1, #0
-LDR r5, [fp, 0x0]
 ADD  r5, r3, #0
 CMP r4, r5, 
 BLT L0
@@ -465,4 +595,3 @@ POP {fp}
 BX lr
 L2:
 
-output file open error

@@ -20,7 +20,7 @@ arg S
 --accepting rule at line 112 ("a")
 --accepting rule at line 114 (" ")
 --accepting rule at line 89 ("=")
-<int>
+-o<int>
 <id,func1>
 <(>
 <)>
@@ -705,11 +705,89 @@ CompUnits (1)
 Global
 ID             category       type           depictor
                
+putf           Function       void           NULL           
+putarray       Function       void           NOT NULL       
+putchar        Function       void           NOT NULL       
+putint         Function       void           NOT NULL       
+getarray       Function       int            NOT NULL       
+getchar        Function       int            NOT NULL       
+getint         Function       int            NOT NULL       
 func1          Function       TYPEINTEGER    NOT NULL       
 func2          Function       TYPEINTEGER    NOT NULL       
 func3          Function       TYPEINTEGER    NOT NULL       
 func4          Function       TYPEINTEGER    NOT NULL       
 main           Function       TYPEINTEGER    NOT NULL       
+===========================================================
+===========================================================
+Formal:putarray
+ID             category       type           depictor
+              
+a              Array          int            ----------> dim=1
+a              Variable       int            NULL           
+===========================================================
+===========================================================
+Local:putarray
+ID             category       type           depictor
+              
+scope type is wrong
+               Variable                      NULL           
+===========================================================
+===========================================================
+Formal:putchar
+ID             category       type           depictor
+              
+a              Variable       int            NULL           
+===========================================================
+===========================================================
+Local:putchar
+ID             category       type           depictor
+              
+===========================================================
+===========================================================
+Formal:putint
+ID             category       type           depictor
+              
+a              Variable       int            NULL           
+===========================================================
+===========================================================
+Local:putint
+ID             category       type           depictor
+              
+===========================================================
+===========================================================
+Formal:getarray
+ID             category       type           depictor
+              
+a              Array          int            ----------> dim=1
+===========================================================
+===========================================================
+Local:getarray
+ID             category       type           depictor
+              
+scope type is wrong
+               Variable                      NULL           
+===========================================================
+===========================================================
+Formal:getchar
+ID             category       type           depictor
+              
+               NOParam                       NULL           
+===========================================================
+===========================================================
+Local:getchar
+ID             category       type           depictor
+              
+===========================================================
+===========================================================
+Formal:getint
+ID             category       type           depictor
+              
+               NOParam                       NULL           
+===========================================================
+===========================================================
+Local:getint
+ID             category       type           depictor
+              
 ===========================================================
 ===========================================================
 Formal:func1
@@ -1096,11 +1174,89 @@ _______________________________________
 Global
 ID             category       type           depictor
                
+putf           Function       void           NULL           
+putarray       Function       void           NOT NULL       
+putchar        Function       void           NOT NULL       
+putint         Function       void           NOT NULL       
+getarray       Function       int            NOT NULL       
+getchar        Function       int            NOT NULL       
+getint         Function       int            NOT NULL       
 func1          Function       TYPEINTEGER    NOT NULL       
 func2          Function       TYPEINTEGER    NOT NULL       
 func3          Function       TYPEINTEGER    NOT NULL       
 func4          Function       TYPEINTEGER    NOT NULL       
 main           Function       TYPEINTEGER    NOT NULL       
+===========================================================
+===========================================================
+Formal:putarray
+ID             category       type           depictor
+              
+a              Array          int            ----------> dim=1
+a              Variable       int            NULL           
+===========================================================
+===========================================================
+Local:putarray
+ID             category       type           depictor
+              
+scope type is wrong
+               Variable                      NULL           
+===========================================================
+===========================================================
+Formal:putchar
+ID             category       type           depictor
+              
+a              Variable       int            NULL           
+===========================================================
+===========================================================
+Local:putchar
+ID             category       type           depictor
+              
+===========================================================
+===========================================================
+Formal:putint
+ID             category       type           depictor
+              
+a              Variable       int            NULL           
+===========================================================
+===========================================================
+Local:putint
+ID             category       type           depictor
+              
+===========================================================
+===========================================================
+Formal:getarray
+ID             category       type           depictor
+              
+a              Array          int            ----------> dim=1
+===========================================================
+===========================================================
+Local:getarray
+ID             category       type           depictor
+              
+scope type is wrong
+               Variable                      NULL           
+===========================================================
+===========================================================
+Formal:getchar
+ID             category       type           depictor
+              
+               NOParam                       NULL           
+===========================================================
+===========================================================
+Local:getchar
+ID             category       type           depictor
+              
+===========================================================
+===========================================================
+Formal:getint
+ID             category       type           depictor
+              
+               NOParam                       NULL           
+===========================================================
+===========================================================
+Local:getint
+ID             category       type           depictor
+              
 ===========================================================
 ===========================================================
 Formal:func1
@@ -1207,8 +1363,8 @@ tac type RETURN
 tac type ARG
 tac type FUNCTIONDF
 Variable offset count+4 :a
-Variable offset count+4 :a
-Variable offset count+4 :a
+Variable offset count+4 :b
+Variable offset count+4 :c
 Variable offset count+4 :a
 scope type not local in functiondf
 scopeprev:0
@@ -1316,46 +1472,42 @@ push instruction
 instruction number3
 instruction number4
 instruction number5
-ldr instruction
-op2type==1
 instruction number6
+ldr instruction
+op2type==1
 instruction number7
-ldr instruction
-op2type==1
 instruction number8
-instruction number9
 ldr instruction
 op2type==1
+instruction number9
 instruction number10
 instruction number11
 instruction number12
 instruction number13
-instruction number14
  ControlInstruction tostring
 INS BX tostring
+instruction number14
 instruction number15
-instruction number16
 push instruction
+instruction number16
 instruction number17
 instruction number18
 instruction number19
+instruction number20
 ldr instruction
 op2type==1
-instruction number20
 instruction number21
 instruction number22
-ldr instruction
-op2type==1
 instruction number23
 instruction number24
 instruction number25
-instruction number26
-instruction number27
  ControlInstruction tostring
 INS BX tostring
+instruction number26
+instruction number27
+push instruction
 instruction number28
 instruction number29
-push instruction
 instruction number30
 instruction number31
 instruction number32
@@ -1364,207 +1516,205 @@ op2type==1
 instruction number33
 instruction number34
 instruction number35
-ldr instruction
-op2type==1
 instruction number36
 instruction number37
-instruction number38
-instruction number39
-instruction number40
  ControlInstruction tostring
 INS BX tostring
+instruction number38
+instruction number39
+push instruction
+instruction number40
 instruction number41
 instruction number42
-push instruction
 instruction number43
+ldr instruction
+op2type==1
 instruction number44
 instruction number45
-ldr instruction
-op2type==1
 instruction number46
 instruction number47
-ldr instruction
-op2type==1
 instruction number48
-instruction number49
 ldr instruction
 op2type==1
+instruction number49
 instruction number50
 instruction number51
 instruction number52
-instruction number53
 ldr instruction
 op2type==1
+instruction number53
 instruction number54
 instruction number55
-instruction number56
-instruction number57
 ldr instruction
 op2type==1
+instruction number56
+instruction number57
 instruction number58
+ldr instruction
+op2type==1
 instruction number59
 instruction number60
 ldr instruction
 op2type==1
 instruction number61
 instruction number62
-instruction number63
 ldr instruction
 op2type==1
+instruction number63
 instruction number64
 instruction number65
 ldr instruction
 op2type==1
 instruction number66
 instruction number67
+instruction number68
 ldr instruction
 op2type==1
-instruction number68
 instruction number69
 instruction number70
-ldr instruction
-op2type==1
 instruction number71
 instruction number72
 instruction number73
-ldr instruction
-op2type==1
+ ControlInstruction tostring
+INS BX tostring
 instruction number74
 instruction number75
+push instruction
 instruction number76
 instruction number77
 instruction number78
- ControlInstruction tostring
-INS BX tostring
 instruction number79
+ldr instruction
+op2type==1
 instruction number80
-push instruction
 instruction number81
 instruction number82
 instruction number83
-instruction number84
 ldr instruction
 op2type==1
+instruction number84
 instruction number85
 instruction number86
 instruction number87
-instruction number88
 ldr instruction
 op2type==1
+instruction number88
 instruction number89
 instruction number90
+ldr instruction
+op2type==1
 instruction number91
 instruction number92
 ldr instruction
 op2type==1
 instruction number93
 instruction number94
-instruction number95
-ldr instruction
-op2type==1
-instruction number96
-instruction number97
-ldr instruction
-op2type==1
-instruction number98
-instruction number99
  ControlInstruction tostring
 INS BL tostring
-instruction number100
-instruction number101
+instruction number95
+instruction number96
 ldr instruction
 op2type==1
+instruction number97
+instruction number98
+ ControlInstruction tostring
+INS BL tostring
+instruction number99
+instruction number100
+ldr instruction
+op2type==1
+instruction number101
 instruction number102
 instruction number103
- ControlInstruction tostring
-INS BL tostring
+ldr instruction
+op2type==1
 instruction number104
 instruction number105
 ldr instruction
 op2type==1
 instruction number106
 instruction number107
+ldr instruction
+op2type==1
 instruction number108
-ldr instruction
-op2type==1
 instruction number109
-instruction number110
-ldr instruction
-op2type==1
-instruction number111
-instruction number112
-ldr instruction
-op2type==1
-instruction number113
-instruction number114
  ControlInstruction tostring
 INS BL tostring
+instruction number110
+instruction number111
+ldr instruction
+op2type==1
+instruction number112
+instruction number113
+instruction number114
+ldr instruction
+op2type==1
 instruction number115
 instruction number116
 ldr instruction
 op2type==1
 instruction number117
 instruction number118
+ldr instruction
+op2type==1
 instruction number119
-ldr instruction
-op2type==1
 instruction number120
-instruction number121
-ldr instruction
-op2type==1
-instruction number122
-instruction number123
-ldr instruction
-op2type==1
-instruction number124
-instruction number125
  ControlInstruction tostring
 INS BL tostring
+instruction number121
+instruction number122
+ldr instruction
+op2type==1
+instruction number123
+instruction number124
+instruction number125
+ldr instruction
+op2type==1
 instruction number126
 instruction number127
 ldr instruction
 op2type==1
 instruction number128
 instruction number129
-instruction number130
 ldr instruction
 op2type==1
+instruction number130
 instruction number131
 instruction number132
 ldr instruction
 op2type==1
 instruction number133
 instruction number134
+instruction number135
 ldr instruction
 op2type==1
-instruction number135
 instruction number136
 instruction number137
 ldr instruction
 op2type==1
 instruction number138
 instruction number139
-instruction number140
 ldr instruction
 op2type==1
+instruction number140
 instruction number141
 instruction number142
 ldr instruction
 op2type==1
 instruction number143
 instruction number144
+instruction number145
 ldr instruction
 op2type==1
-instruction number145
 instruction number146
 instruction number147
 ldr instruction
 op2type==1
 instruction number148
 instruction number149
-instruction number150
 ldr instruction
 op2type==1
+instruction number150
 instruction number151
 instruction number152
 ldr instruction
@@ -1584,26 +1734,17 @@ ldr instruction
 op2type==1
 instruction number160
 instruction number161
-instruction number162
 ldr instruction
 op2type==1
+instruction number162
 instruction number163
 instruction number164
 ldr instruction
 op2type==1
 instruction number165
 instruction number166
-ldr instruction
-op2type==1
 instruction number167
 instruction number168
-instruction number169
-ldr instruction
-op2type==1
-instruction number170
-instruction number171
-instruction number172
-instruction number173
  ControlInstruction tostring
 INS BX tostring
 #armv7 assembly code
@@ -1611,7 +1752,6 @@ func1:
 PUSH {fp}
 ADD  fp, sp, #0
 SUB sp, sp, #0
-LDR r0, [fp, 0x0]
 MOV r0, #1
 LDR r1, [fp, 0x0]
 ADD  r1, r0, #0
@@ -1625,7 +1765,6 @@ func2:
 PUSH {fp}
 ADD  fp, sp, #0
 SUB sp, sp, #0
-LDR r3, [fp, 0x0]
 MOV r3, #2
 ADD  r1, r3, #0
 LDR r4, [fp, 0x0]
@@ -1638,7 +1777,6 @@ func3:
 PUSH {fp}
 ADD  fp, sp, #0
 SUB sp, sp, #0
-LDR r5, [fp, 0x0]
 MOV r5, #4
 ADD  r1, r5, #0
 LDR r6, [fp, 0x0]
@@ -1651,11 +1789,9 @@ func4:
 PUSH {fp}
 ADD  fp, sp, #0
 SUB sp, sp, #0
-LDR r8, [fp, 0x0]
 MOV r8, #8
 LDR r9, [fp, 0x0]
 ADD  r9, r8, #0
-LDR r10, [fp, 0x0]
 ADD  r10, r9, #0
 ADD  r1, r10, #0
 STRLDR r10, [fp, 0x0]
@@ -1741,4 +1877,3 @@ ADD  sp, fp, #0
 POP {fp}
 BX lr
 
-output file open error

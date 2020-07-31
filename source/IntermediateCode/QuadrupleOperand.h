@@ -14,11 +14,11 @@ typedef enum
     LABEL           //我们的label应该是用于标记间接三元式的在数组中的位置，用来作为取三元式值的索引
 } TACOperandType;  // 操作数类型;
 
-typedef struct ARRAY_ADD            //四元式数组存储：指向数组的指针+偏移地址
+typedef struct ARRAY_ADDR            //四元式数组存储：指向数组的指针+偏移地址
 {
     ScopeItem* array_si;
     ScopeItem* deviation;
-} ARRAY_ADD;
+} ARRAY_ADDR;
 
 
 typedef union
@@ -27,7 +27,7 @@ typedef union
         int labelvalue;
         ScopeItem* variable;     //
         ScopeItem* function;     //
-        ARRAY_ADD* array_add;
+        ARRAY_ADDR* array_addr;
 
 } TACOperandData;
 

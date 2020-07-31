@@ -17,7 +17,7 @@ arg S
 --accepting rule at line 82 ("[")
 --accepting rule at line 83 ("]")
 --accepting rule at line 76 (",")
-<int>
+-o<int>
 <id,n>
 <;>
 <int>
@@ -1794,7 +1794,7 @@ CompUnits (1)
   CompUnits (2)
     FuncDef (2)
       FuncFParams (2)
-        FuncFParam (2)
+        ArrayFuncFParam (2)
           ArrayExps (2)
         FuncFParams (2)
           FuncFParam (2)
@@ -1857,7 +1857,7 @@ CompUnits (1)
     CompUnits (9)
       FuncDef (9)
         FuncFParams (9)
-          FuncFParam (9)
+          ArrayFuncFParam (9)
             ArrayExps (9)
           FuncFParams (9)
             FuncFParam (9)
@@ -2037,7 +2037,7 @@ CompUnits (1)
       CompUnits (27)
         FuncDef (27)
           FuncFParams (27)
-            FuncFParam (27)
+            ArrayFuncFParam (27)
               ArrayExps (27)
             FuncFParam (27)
           Block (28)
@@ -2447,11 +2447,89 @@ CompUnits (1)
 Global
 ID             category       type           depictor
                
+putf           Function       void           NULL           
+putarray       Function       void           NOT NULL       
+putchar        Function       void           NOT NULL       
+putint         Function       void           NOT NULL       
+getarray       Function       int            NOT NULL       
+getchar        Function       int            NOT NULL       
+getint         Function       int            NOT NULL       
 n              Variable       TYPEINTEGER    NULL           
 swap           Function       TYPEINTEGER    NOT NULL       
 heap_ajust     Function       TYPEINTEGER    NOT NULL       
 heap_sort      Function       TYPEINTEGER    NOT NULL       
 main           Function       TYPEINTEGER    NOT NULL       
+===========================================================
+===========================================================
+Formal:putarray
+ID             category       type           depictor
+              
+a              Array          int            ----------> dim=1
+a              Variable       int            NULL           
+===========================================================
+===========================================================
+Local:putarray
+ID             category       type           depictor
+              
+scope type is wrong
+               Variable                      NULL           
+===========================================================
+===========================================================
+Formal:putchar
+ID             category       type           depictor
+              
+a              Variable       int            NULL           
+===========================================================
+===========================================================
+Local:putchar
+ID             category       type           depictor
+              
+===========================================================
+===========================================================
+Formal:putint
+ID             category       type           depictor
+              
+a              Variable       int            NULL           
+===========================================================
+===========================================================
+Local:putint
+ID             category       type           depictor
+              
+===========================================================
+===========================================================
+Formal:getarray
+ID             category       type           depictor
+              
+a              Array          int            ----------> dim=1
+===========================================================
+===========================================================
+Local:getarray
+ID             category       type           depictor
+              
+scope type is wrong
+               Variable                      NULL           
+===========================================================
+===========================================================
+Formal:getchar
+ID             category       type           depictor
+              
+               NOParam                       NULL           
+===========================================================
+===========================================================
+Local:getchar
+ID             category       type           depictor
+              
+===========================================================
+===========================================================
+Formal:getint
+ID             category       type           depictor
+              
+               NOParam                       NULL           
+===========================================================
+===========================================================
+Local:getint
+ID             category       type           depictor
+              
 ===========================================================
 ===========================================================
 Formal:swap
@@ -2532,9 +2610,16 @@ ID             category       type           depictor
 tmp            Variable       TYPEINTEGER    NULL           
 ===========================================================
 789
-123
+456
 789
-123
+456
+789
+789
+789
+789
+789
+456
+789
 789
 789
 789
@@ -2549,25 +2634,9 @@ tmp            Variable       TYPEINTEGER    NULL
 789
 789
 789
+789
+789
 456
-789
-789
-789
-789
-789
-789
-123
-789
-789
-789
-789
-789
-789
-123
-789
-789
-789
-789
 789
 789
 789
@@ -2575,6 +2644,7 @@ tmp            Variable       TYPEINTEGER    NULL
 789
 789
 456
+789
 789
 789
 789
@@ -2596,10 +2666,8 @@ tmp            Variable       TYPEINTEGER    NULL
 789
 789
 789
-123
 789
-789
-789
+456
 789
 789
 789
@@ -2611,6 +2679,7 @@ tmp            Variable       TYPEINTEGER    NULL
 789
 789
 456
+789
 789
 789
 789
@@ -2669,8 +2738,24 @@ tmp            Variable       TYPEINTEGER    NULL
 789
 789
 789
+456
 789
-123
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+456
+789
 789
 789
 789
@@ -2710,17 +2795,8 @@ tmp            Variable       TYPEINTEGER    NULL
 789
 789
 789
-456
-789
-789
 789
 456
-789
-789
-789
-456
-456
-789
 789
 789
 789
@@ -2730,6 +2806,12 @@ tmp            Variable       TYPEINTEGER    NULL
 789
 789
 789
+456
+456
+789
+789
+789
+789
 789
 456
 789
@@ -2737,9 +2819,7 @@ tmp            Variable       TYPEINTEGER    NULL
 789
 789
 789
-789
 456
-789
 789
 789
 789
@@ -2762,12 +2842,6 @@ tmp            Variable       TYPEINTEGER    NULL
 789
 789
 789
-789
-789
-789
-789
-789
-789
 456
 789
 789
@@ -2782,7 +2856,11 @@ tmp            Variable       TYPEINTEGER    NULL
 789
 789
 789
+789
 456
+789
+789
+789
 789
 789
 789
@@ -2818,59 +2896,7 @@ tmp            Variable       TYPEINTEGER    NULL
 789
 789
 789
-789
-789
-789
-789
 456
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-456
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-123
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-789
-123
 789
 789
 789
@@ -2920,13 +2946,7 @@ tmp            Variable       TYPEINTEGER    NULL
 789
 789
 789
-789
-789
-789
-789
-789
-123
-789
+456
 789
 789
 789
@@ -2942,11 +2962,83 @@ tmp            Variable       TYPEINTEGER    NULL
 789
 789
 789
+456
 789
 789
 789
 789
-123
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+456
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+456
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+456
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+456
 789
 789
 789

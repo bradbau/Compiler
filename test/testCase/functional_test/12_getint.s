@@ -3,8 +3,7 @@ main:
 PUSH {fp}
 ADD  fp, sp, #0
 SUB sp, sp, #0
-BL 
-LDR r0, [fp, 0x0]
+BL getint
 MOV r0, r0
 LDR r1, [fp, 0x0]
 ADD  r1, r0, #0
