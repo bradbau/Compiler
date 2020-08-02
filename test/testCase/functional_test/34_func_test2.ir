@@ -1,25 +1,3 @@
-arg S
---(end of buffer or a NUL)
---accepting rule at line 100 ("int")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("func1")
---accepting rule at line 80 ("(")
---accepting rule at line 81 (")")
---accepting rule at line 114 (" ")
---accepting rule at line 78 ("{")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 ("	")
---accepting rule at line 100 ("int")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("a")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 ("	")
---accepting rule at line 112 ("a")
---accepting rule at line 114 (" ")
---accepting rule at line 89 ("=")
 -o<int>
 <id,func1>
 <(>
@@ -30,17 +8,6 @@ arg S
 <;>
 <id,a>
 <=>
-33333333333
---accepting rule at line 114 (" ")
---accepting rule at line 109 ("1")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 ("	")
---accepting rule at line 108 ("return")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("a")
---accepting rule at line 75 (";")
 Lval
 <intd>
 ExpNumber:0
@@ -49,34 +16,6 @@ stmt1
 <return>
 <id,a>
 <;>
-33333333333
---accepting rule at line 115 ("
-")
---accepting rule at line 79 ("}")
---accepting rule at line 115 ("
-")
---accepting rule at line 115 ("
-")
---accepting rule at line 100 ("int")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("func2")
---accepting rule at line 80 ("(")
---accepting rule at line 81 (")")
---accepting rule at line 114 (" ")
---accepting rule at line 78 ("{")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 ("	")
---accepting rule at line 100 ("int")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("a")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 ("	")
---accepting rule at line 112 ("a")
---accepting rule at line 114 (" ")
---accepting rule at line 89 ("=")
 Lval
 <}>
 <int>
@@ -89,17 +28,6 @@ Lval
 <;>
 <id,a>
 <=>
-33333333333
---accepting rule at line 114 (" ")
---accepting rule at line 109 ("2")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 ("	")
---accepting rule at line 108 ("return")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("a")
---accepting rule at line 75 (";")
 Lval
 <intd>
 ExpNumber:0
@@ -108,34 +36,6 @@ stmt1
 <return>
 <id,a>
 <;>
-33333333333
---accepting rule at line 115 ("
-")
---accepting rule at line 79 ("}")
---accepting rule at line 115 ("
-")
---accepting rule at line 115 ("
-")
---accepting rule at line 100 ("int")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("func3")
---accepting rule at line 80 ("(")
---accepting rule at line 81 (")")
---accepting rule at line 114 (" ")
---accepting rule at line 78 ("{")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 ("	")
---accepting rule at line 100 ("int")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("a")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 ("	")
---accepting rule at line 112 ("a")
---accepting rule at line 114 (" ")
---accepting rule at line 89 ("=")
 Lval
 <}>
 <int>
@@ -148,17 +48,6 @@ Lval
 <;>
 <id,a>
 <=>
-33333333333
---accepting rule at line 114 (" ")
---accepting rule at line 109 ("4")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 ("	")
---accepting rule at line 108 ("return")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("a")
---accepting rule at line 75 (";")
 Lval
 <intd>
 ExpNumber:0
@@ -167,47 +56,6 @@ stmt1
 <return>
 <id,a>
 <;>
-33333333333
---accepting rule at line 115 ("
-")
---accepting rule at line 79 ("}")
---accepting rule at line 115 ("
-")
---accepting rule at line 115 ("
-")
---accepting rule at line 100 ("int")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("func4")
---accepting rule at line 80 ("(")
---accepting rule at line 81 (")")
---accepting rule at line 114 (" ")
---accepting rule at line 78 ("{")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 ("	")
---accepting rule at line 100 ("int")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("a")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 ("	")
---accepting rule at line 78 ("{")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 ("	")
---accepting rule at line 114 ("	")
---accepting rule at line 100 ("int")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("b")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 ("	")
---accepting rule at line 114 ("	")
---accepting rule at line 112 ("b")
---accepting rule at line 114 (" ")
---accepting rule at line 89 ("=")
 Lval
 <}>
 <int>
@@ -224,17 +72,6 @@ Lval
 <;>
 <id,b>
 <=>
-33333333333
---accepting rule at line 114 (" ")
---accepting rule at line 109 ("8")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 ("	")
---accepting rule at line 114 ("	")
---accepting rule at line 112 ("a")
---accepting rule at line 114 (" ")
---accepting rule at line 89 ("=")
 Lval
 <intd>
 ExpNumber:0
@@ -242,37 +79,9 @@ ExpNumber:0
 stmt1
 <id,a>
 <=>
-33333333333
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("b")
---accepting rule at line 75 (";")
 Lval
 <id,b>
 <;>
-33333333333
---accepting rule at line 115 ("
-")
---accepting rule at line 114 ("	")
---accepting rule at line 79 ("}")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 ("	")
---accepting rule at line 78 ("{")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 ("	")
---accepting rule at line 114 ("	")
---accepting rule at line 100 ("int")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("b")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 ("	")
---accepting rule at line 114 ("	")
---accepting rule at line 112 ("b")
---accepting rule at line 114 (" ")
---accepting rule at line 89 ("=")
 Lval
 stmt1
 <}>
@@ -282,17 +91,6 @@ stmt1
 <;>
 <id,b>
 <=>
-33333333333
---accepting rule at line 114 (" ")
---accepting rule at line 109 ("16")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 ("	")
---accepting rule at line 114 ("	")
---accepting rule at line 112 ("a")
---accepting rule at line 114 (" ")
---accepting rule at line 89 ("=")
 Lval
 <intd>
 ExpNumber:0
@@ -300,81 +98,18 @@ ExpNumber:0
 stmt1
 <id,a>
 <=>
-33333333333
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("a")
---accepting rule at line 114 (" ")
---accepting rule at line 84 ("+")
 Lval
 <id,a>
 <+>
-33333333333
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("b")
---accepting rule at line 75 (";")
 Lval
 <id,b>
 <;>
-33333333333
---accepting rule at line 115 ("
-")
---accepting rule at line 114 ("	")
---accepting rule at line 79 ("}")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 ("	")
---accepting rule at line 108 ("return")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("a")
---accepting rule at line 75 (";")
 Lval
 stmt1
 <}>
 <return>
 <id,a>
 <;>
-33333333333
---accepting rule at line 115 ("
-")
---accepting rule at line 79 ("}")
---accepting rule at line 115 ("
-")
---accepting rule at line 115 ("
-")
---accepting rule at line 100 ("int")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("main")
---accepting rule at line 80 ("(")
---accepting rule at line 81 (")")
---accepting rule at line 114 (" ")
---accepting rule at line 78 ("{")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 ("	")
---accepting rule at line 100 ("int")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("a")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 ("	")
---accepting rule at line 100 ("int")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("b")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 ("	")
---accepting rule at line 100 ("int")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("c")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 ("	")
---accepting rule at line 112 ("a")
---accepting rule at line 114 (" ")
---accepting rule at line 89 ("=")
 Lval
 <}>
 <int>
@@ -393,16 +128,6 @@ Lval
 <;>
 <id,a>
 <=>
-33333333333
---accepting rule at line 114 (" ")
---accepting rule at line 109 ("32")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 ("	")
---accepting rule at line 112 ("b")
---accepting rule at line 114 (" ")
---accepting rule at line 89 ("=")
 Lval
 <intd>
 ExpNumber:0
@@ -410,16 +135,6 @@ ExpNumber:0
 stmt1
 <id,b>
 <=>
-33333333333
---accepting rule at line 114 (" ")
---accepting rule at line 109 ("32")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 ("	")
---accepting rule at line 112 ("c")
---accepting rule at line 114 (" ")
---accepting rule at line 89 ("=")
 Lval
 <intd>
 ExpNumber:0
@@ -427,47 +142,6 @@ ExpNumber:0
 stmt1
 <id,c>
 <=>
-33333333333
---accepting rule at line 114 (" ")
---accepting rule at line 109 ("32")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 ("	")
---accepting rule at line 108 ("return")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("func1")
---accepting rule at line 80 ("(")
---accepting rule at line 81 (")")
---accepting rule at line 114 (" ")
---accepting rule at line 84 ("+")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("func2")
---accepting rule at line 80 ("(")
---accepting rule at line 81 (")")
---accepting rule at line 114 (" ")
---accepting rule at line 84 ("+")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("func3")
---accepting rule at line 80 ("(")
---accepting rule at line 81 (")")
---accepting rule at line 114 (" ")
---accepting rule at line 84 ("+")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("func4")
---accepting rule at line 80 ("(")
---accepting rule at line 81 (")")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 ("	")
---accepting rule at line 114 ("	")
---accepting rule at line 84 ("+")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("a")
---accepting rule at line 114 (" ")
---accepting rule at line 84 ("+")
 Lval
 <intd>
 ExpNumber:0
@@ -492,379 +166,14 @@ stmt1
 <+>
 <id,a>
 <+>
-33333333333
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("b")
---accepting rule at line 114 (" ")
---accepting rule at line 84 ("+")
 Lval
 <id,b>
 <+>
-33333333333
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("c")
---accepting rule at line 75 (";")
 Lval
 <id,c>
 <;>
-33333333333
---accepting rule at line 115 ("
-")
---accepting rule at line 79 ("}")
---(end of buffer or a NUL)
---EOF (start condition 0)
 Lval
 <}>
-CompUnits (1)
-  FuncDef (1)
-    NOFParam (1)
-    Block (2)
-      BlockItems (2)
-        VarDecl (2)
-          IDENTIFIER a
-        BlockItems (3)
-          Lval_Opassign_Stmt (3)
-            LVal (3)
-              IDENTIFIER a
-              ArrayExps (3)
-            IntConst (3)
-              CONSTANTINTD: 1
-          BlockItems (4)
-            Return_Stmt (4)
-              LVal_EXP (4)
-                LVal (4)
-                  IDENTIFIER a
-                  ArrayExps (4)
-  CompUnits (7)
-    FuncDef (7)
-      NOFParam (7)
-      Block (8)
-        BlockItems (8)
-          VarDecl (8)
-            IDENTIFIER a
-          BlockItems (9)
-            Lval_Opassign_Stmt (9)
-              LVal (9)
-                IDENTIFIER a
-                ArrayExps (9)
-              IntConst (9)
-                CONSTANTINTD: 2
-            BlockItems (10)
-              Return_Stmt (10)
-                LVal_EXP (10)
-                  LVal (10)
-                    IDENTIFIER a
-                    ArrayExps (10)
-    CompUnits (13)
-      FuncDef (13)
-        NOFParam (13)
-        Block (14)
-          BlockItems (14)
-            VarDecl (14)
-              IDENTIFIER a
-            BlockItems (15)
-              Lval_Opassign_Stmt (15)
-                LVal (15)
-                  IDENTIFIER a
-                  ArrayExps (15)
-                IntConst (15)
-                  CONSTANTINTD: 4
-              BlockItems (16)
-                Return_Stmt (16)
-                  LVal_EXP (16)
-                    LVal (16)
-                      IDENTIFIER a
-                      ArrayExps (16)
-      CompUnits (19)
-        FuncDef (19)
-          NOFParam (19)
-          Block (20)
-            BlockItems (20)
-              VarDecl (20)
-                IDENTIFIER a
-              BlockItems (22)
-                Block_Stmt (22)
-                  Block (22)
-                    BlockItems (22)
-                      VarDecl (22)
-                        IDENTIFIER b
-                      BlockItems (23)
-                        Lval_Opassign_Stmt (23)
-                          LVal (23)
-                            IDENTIFIER b
-                            ArrayExps (23)
-                          IntConst (23)
-                            CONSTANTINTD: 8
-                        BlockItems (24)
-                          Lval_Opassign_Stmt (24)
-                            LVal (24)
-                              IDENTIFIER a
-                              ArrayExps (24)
-                            LVal_EXP (24)
-                              LVal (24)
-                                IDENTIFIER b
-                                ArrayExps (24)
-                BlockItems (27)
-                  Block_Stmt (27)
-                    Block (27)
-                      BlockItems (27)
-                        VarDecl (27)
-                          IDENTIFIER b
-                        BlockItems (28)
-                          Lval_Opassign_Stmt (28)
-                            LVal (28)
-                              IDENTIFIER b
-                              ArrayExps (28)
-                            IntConst (28)
-                              CONSTANTINTD: 16
-                          BlockItems (29)
-                            Lval_Opassign_Stmt (29)
-                              LVal (29)
-                                IDENTIFIER a
-                                ArrayExps (29)
-                              PLUSExp (29)
-                                LVal_EXP (29)
-                                  LVal (29)
-                                    IDENTIFIER a
-                                    ArrayExps (29)
-                                LVal_EXP (29)
-                                  LVal (29)
-                                    IDENTIFIER b
-                                    ArrayExps (29)
-                  BlockItems (31)
-                    Return_Stmt (31)
-                      LVal_EXP (31)
-                        LVal (31)
-                          IDENTIFIER a
-                          ArrayExps (31)
-        CompUnits (34)
-          FuncDef (34)
-            NOFParam (34)
-            Block (35)
-              BlockItems (35)
-                VarDecl (35)
-                  IDENTIFIER a
-                BlockItems (36)
-                  VarDecl (36)
-                    IDENTIFIER b
-                  BlockItems (37)
-                    VarDecl (37)
-                      IDENTIFIER c
-                    BlockItems (38)
-                      Lval_Opassign_Stmt (38)
-                        LVal (38)
-                          IDENTIFIER a
-                          ArrayExps (38)
-                        IntConst (38)
-                          CONSTANTINTD: 32
-                      BlockItems (39)
-                        Lval_Opassign_Stmt (39)
-                          LVal (39)
-                            IDENTIFIER b
-                            ArrayExps (39)
-                          IntConst (39)
-                            CONSTANTINTD: 32
-                        BlockItems (40)
-                          Lval_Opassign_Stmt (40)
-                            LVal (40)
-                              IDENTIFIER c
-                              ArrayExps (40)
-                            IntConst (40)
-                              CONSTANTINTD: 32
-                          BlockItems (42)
-                            Return_Stmt (42)
-                              PLUSExp (42)
-                                PLUSExp (42)
-                                  PLUSExp (42)
-                                    PLUSExp (42)
-                                      PLUSExp (42)
-                                        PLUSExp (42)
-                                          funcall (42)
-                                            IDENTIFIER func1
-                                          funcall (42)
-                                            IDENTIFIER func2
-                                        funcall (42)
-                                          IDENTIFIER func3
-                                      funcall (42)
-                                        IDENTIFIER func4
-                                    LVal_EXP (43)
-                                      LVal (43)
-                                        IDENTIFIER a
-                                        ArrayExps (43)
-                                  LVal_EXP (43)
-                                    LVal (43)
-                                      IDENTIFIER b
-                                      ArrayExps (43)
-                                LVal_EXP (43)
-                                  LVal (43)
-                                    IDENTIFIER c
-                                    ArrayExps (43)
-
-
-===========================================================
-Global
-ID             category       type           depictor
-               
-putf           Function       void           NULL           
-putarray       Function       void           NOT NULL       
-putchar        Function       void           NOT NULL       
-putint         Function       void           NOT NULL       
-getarray       Function       int            NOT NULL       
-getchar        Function       int            NOT NULL       
-getint         Function       int            NOT NULL       
-func1          Function       TYPEINTEGER    NOT NULL       
-func2          Function       TYPEINTEGER    NOT NULL       
-func3          Function       TYPEINTEGER    NOT NULL       
-func4          Function       TYPEINTEGER    NOT NULL       
-main           Function       TYPEINTEGER    NOT NULL       
-===========================================================
-===========================================================
-Formal:putarray
-ID             category       type           depictor
-              
-a              Array          int            ----------> dim=1
-a              Variable       int            NULL           
-===========================================================
-===========================================================
-Local:putarray
-ID             category       type           depictor
-              
-scope type is wrong
-               Variable                      NULL           
-===========================================================
-===========================================================
-Formal:putchar
-ID             category       type           depictor
-              
-a              Variable       int            NULL           
-===========================================================
-===========================================================
-Local:putchar
-ID             category       type           depictor
-              
-===========================================================
-===========================================================
-Formal:putint
-ID             category       type           depictor
-              
-a              Variable       int            NULL           
-===========================================================
-===========================================================
-Local:putint
-ID             category       type           depictor
-              
-===========================================================
-===========================================================
-Formal:getarray
-ID             category       type           depictor
-              
-a              Array          int            ----------> dim=1
-===========================================================
-===========================================================
-Local:getarray
-ID             category       type           depictor
-              
-scope type is wrong
-               Variable                      NULL           
-===========================================================
-===========================================================
-Formal:getchar
-ID             category       type           depictor
-              
-               NOParam                       NULL           
-===========================================================
-===========================================================
-Local:getchar
-ID             category       type           depictor
-              
-===========================================================
-===========================================================
-Formal:getint
-ID             category       type           depictor
-              
-               NOParam                       NULL           
-===========================================================
-===========================================================
-Local:getint
-ID             category       type           depictor
-              
-===========================================================
-===========================================================
-Formal:func1
-ID             category       type           depictor
-              
-               NOParam                       NOT NULL       
-===========================================================
-===========================================================
-Local:func1
-ID             category       type           depictor
-              
-a              Variable       TYPEINTEGER    NULL           
-===========================================================
-===========================================================
-Formal:func2
-ID             category       type           depictor
-              
-               NOParam                       NOT NULL       
-===========================================================
-===========================================================
-Local:func2
-ID             category       type           depictor
-              
-a              Variable       TYPEINTEGER    NULL           
-===========================================================
-===========================================================
-Formal:func3
-ID             category       type           depictor
-              
-               NOParam                       NOT NULL       
-===========================================================
-===========================================================
-Local:func3
-ID             category       type           depictor
-              
-a              Variable       TYPEINTEGER    NULL           
-===========================================================
-===========================================================
-Formal:func4
-ID             category       type           depictor
-              
-               NOParam                       NOT NULL       
-===========================================================
-===========================================================
-Local:func4
-ID             category       type           depictor
-              
-a              Variable       TYPEINTEGER    NULL           
-               Block          BLOCKStmt      NOT NULL       
-               Block          BLOCKStmt      NOT NULL       
-===========================================================
-===========================================================
-Local:block
-ID             category       type           depictor
-              
-b              Variable       TYPEINTEGER    NULL           
-===========================================================
-===========================================================
-Local:block
-ID             category       type           depictor
-              
-b              Variable       TYPEINTEGER    NULL           
-===========================================================
-===========================================================
-Formal:main
-ID             category       type           depictor
-              
-               NOParam                       NOT NULL       
-===========================================================
-===========================================================
-Local:main
-ID             category       type           depictor
-              
-a              Variable       TYPEINTEGER    NULL           
-b              Variable       TYPEINTEGER    NULL           
-c              Variable       TYPEINTEGER    NULL           
-===========================================================
 456
 789
 456
@@ -1109,259 +418,27 @@ c              Variable       TYPEINTEGER    NULL
 789
 789
 456
-
-~~~~TAC~~~~~
- No  Source Position	TACCode
-_______________________________________
-  0  (at line   0)	CALL main
-
-  1  (at line   1)	FUNCTION func1 :
-  2  (at line   3)	_t0 := #1
-  3  (at line   3)	a := _t0
-  4  (at line   4)	_t1 := a
-  5  (at line   4)	RETURN _t1
-
-  6  (at line   7)	FUNCTION func2 :
-  7  (at line   9)	_t2 := #2
-  8  (at line   9)	a := _t2
-  9  (at line  10)	_t3 := a
- 10  (at line  10)	RETURN _t3
-
- 11  (at line  13)	FUNCTION func3 :
- 12  (at line  15)	_t4 := #4
- 13  (at line  15)	a := _t4
- 14  (at line  16)	_t5 := a
- 15  (at line  16)	RETURN _t5
-
- 16  (at line  19)	FUNCTION func4 :
- 17  (at line  23)	_t6 := #8
- 18  (at line  23)	b := _t6
- 19  (at line  24)	_t7 := b
- 20  (at line  24)	a := _t7
- 21  (at line  28)	_t8 := #16
- 22  (at line  28)	b := _t8
- 23  (at line  29)	_t10 := a
- 24  (at line  29)	_t11 := b
- 25  (at line  29)	_t9 := _t10 + _t11
- 26  (at line  29)	a := _t9
- 27  (at line  31)	_t12 := a
- 28  (at line  31)	RETURN _t12
-
- 29  (at line  34)	FUNCTION main :
- 30  (at line  38)	_t13 := #32
- 31  (at line  38)	a := _t13
- 32  (at line  39)	_t14 := #32
- 33  (at line  39)	b := _t14
- 34  (at line  40)	_t15 := #32
- 35  (at line  40)	c := _t15
- 36  (at line  42)	_t27 := CALL func1
- 37  (at line  42)	_t28 := CALL func2
- 38  (at line  42)	_t25 := _t27 + _t28
- 39  (at line  42)	_t26 := CALL func3
- 40  (at line  42)	_t23 := _t25 + _t26
- 41  (at line  42)	_t24 := CALL func4
- 42  (at line  42)	_t21 := _t23 + _t24
- 43  (at line  43)	_t22 := a
- 44  (at line  42)	_t19 := _t21 + _t22
- 45  (at line  43)	_t20 := b
- 46  (at line  42)	_t17 := _t19 + _t20
- 47  (at line  43)	_t18 := c
- 48  (at line  42)	_t16 := _t17 + _t18
- 49  (at line  42)	RETURN _t16
-
-
-===========================================================
-Global
-ID             category       type           depictor
-               
-putf           Function       void           NULL           
-putarray       Function       void           NOT NULL       
-putchar        Function       void           NOT NULL       
-putint         Function       void           NOT NULL       
-getarray       Function       int            NOT NULL       
-getchar        Function       int            NOT NULL       
-getint         Function       int            NOT NULL       
-func1          Function       TYPEINTEGER    NOT NULL       
-func2          Function       TYPEINTEGER    NOT NULL       
-func3          Function       TYPEINTEGER    NOT NULL       
-func4          Function       TYPEINTEGER    NOT NULL       
-main           Function       TYPEINTEGER    NOT NULL       
-===========================================================
-===========================================================
-Formal:putarray
-ID             category       type           depictor
-              
-a              Array          int            ----------> dim=1
-a              Variable       int            NULL           
-===========================================================
-===========================================================
-Local:putarray
-ID             category       type           depictor
-              
-scope type is wrong
-               Variable                      NULL           
-===========================================================
-===========================================================
-Formal:putchar
-ID             category       type           depictor
-              
-a              Variable       int            NULL           
-===========================================================
-===========================================================
-Local:putchar
-ID             category       type           depictor
-              
-===========================================================
-===========================================================
-Formal:putint
-ID             category       type           depictor
-              
-a              Variable       int            NULL           
-===========================================================
-===========================================================
-Local:putint
-ID             category       type           depictor
-              
-===========================================================
-===========================================================
-Formal:getarray
-ID             category       type           depictor
-              
-a              Array          int            ----------> dim=1
-===========================================================
-===========================================================
-Local:getarray
-ID             category       type           depictor
-              
-scope type is wrong
-               Variable                      NULL           
-===========================================================
-===========================================================
-Formal:getchar
-ID             category       type           depictor
-              
-               NOParam                       NULL           
-===========================================================
-===========================================================
-Local:getchar
-ID             category       type           depictor
-              
-===========================================================
-===========================================================
-Formal:getint
-ID             category       type           depictor
-              
-               NOParam                       NULL           
-===========================================================
-===========================================================
-Local:getint
-ID             category       type           depictor
-              
-===========================================================
-===========================================================
-Formal:func1
-ID             category       type           depictor
-              
-               NOParam                       NOT NULL       
-scope type is wrong
-===========================================================
-Formal:func2
-ID             category       type           depictor
-              
-               NOParam                       NOT NULL       
-scope type is wrong
-===========================================================
-Formal:func3
-ID             category       type           depictor
-              
-               NOParam                       NOT NULL       
-scope type is wrong
-===========================================================
-Formal:func4
-ID             category       type           depictor
-              
-               NOParam                       NOT NULL       
-scope type is wrong
-===========================================================
-Formal:main
-ID             category       type           depictor
-              
-               NOParam                       NOT NULL       
-scope type is wrong
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-build assembly code
-tac type FUNCTIONDF
 Variable offset count+4 :a
 Variable offset count+4 :a
 scope type not local in functiondf
 scopeprev:0
 Variable offset count+4 :_t0
 Variable offset count+4 :_t1
-tec type ASSIGN
-findregister: insldr rd=0,r1=11,r2 offset=0,op2type=1, insefft=0
-tec type ASSIGN
-findregister: insldr rd=1,r1=11,r2 offset=0,op2type=1, insefft=0
-tec type ASSIGN
-findregister: insldr rd=2,r1=11,r2 offset=0,op2type=1, insefft=0
-tac type RETURN
-tac type ARG
-tac type FUNCTIONDF
 Variable offset count+4 :a
 Variable offset count+4 :a
 scope type not local in functiondf
 scopeprev:0
 Variable offset count+4 :_t2
 Variable offset count+4 :_t3
-tec type ASSIGN
-findregister: insldr rd=3,r1=11,r2 offset=0,op2type=1, insefft=0
-tec type ASSIGN
-tec type ASSIGN
-findregister: insldr rd=4,r1=11,r2 offset=0,op2type=1, insefft=0
-tac type RETURN
-tac type ARG
-tac type FUNCTIONDF
 Variable offset count+4 :a
 Variable offset count+4 :a
 scope type not local in functiondf
 scopeprev:0
 Variable offset count+4 :_t4
 Variable offset count+4 :_t5
-tec type ASSIGN
-findregister: insldr rd=5,r1=11,r2 offset=0,op2type=1, insefft=0
-tec type ASSIGN
-tec type ASSIGN
-findregister: insldr rd=6,r1=11,r2 offset=0,op2type=1, insefft=0
-tac type RETURN
-tac type ARG
-tac type FUNCTIONDF
 Variable offset count+4 :a
 Variable offset count+4 :a
 Variable offset count+4 :_t12
-tec type ASSIGN
-findregister: insldr rd=8,r1=11,r2 offset=0,op2type=1, insefft=0
-tec type ASSIGN
-findregister: insldr rd=9,r1=11,r2 offset=0,op2type=1, insefft=0
-tec type ASSIGN
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
-tec type ASSIGN
-tec type ASSIGN
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
-tec type ASSIGN
-tec type ASSIGN
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
-tec type ASSIGN
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
-tac type ADD
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
-tec type ASSIGN
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
-tec type ASSIGN
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
-tac type RETURN
-tac type ARG
-tac type FUNCTIONDF
 Variable offset count+4 :a
 Variable offset count+4 :b
 Variable offset count+4 :c
@@ -1412,468 +489,6 @@ Variable offset count+4 :_t27
 scope type not local in functiondf
 scopeprev:1
 Variable offset count+4 :_t28
-tec type ASSIGN
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
-tec type ASSIGN
-tec type ASSIGN
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
-tec type ASSIGN
-tec type ASSIGN
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
-tec type ASSIGN
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
-tac type CALLASSIGN
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
-tac type CALLASSIGN
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
-tac type ADD
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
-tac type CALLASSIGN
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
-tac type ADD
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
-tac type CALLASSIGN
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
-tac type ADD
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
-tec type ASSIGN
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
-tac type ADD
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
-tec type ASSIGN
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
-tac type ADD
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
-tec type ASSIGN
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
-tac type ADD
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
-tac type RETURN
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
-tac type ARG
-tac build complete
-instruction number1
-instruction number2
-push instruction
-instruction number3
-instruction number4
-instruction number5
-instruction number6
-ldr instruction
-op2type==1
-instruction number7
-instruction number8
-ldr instruction
-op2type==1
-instruction number9
-instruction number10
-instruction number11
-instruction number12
-instruction number13
- ControlInstruction tostring
-INS BX tostring
-instruction number14
-instruction number15
-push instruction
-instruction number16
-instruction number17
-instruction number18
-instruction number19
-instruction number20
-ldr instruction
-op2type==1
-instruction number21
-instruction number22
-instruction number23
-instruction number24
-instruction number25
- ControlInstruction tostring
-INS BX tostring
-instruction number26
-instruction number27
-push instruction
-instruction number28
-instruction number29
-instruction number30
-instruction number31
-instruction number32
-ldr instruction
-op2type==1
-instruction number33
-instruction number34
-instruction number35
-instruction number36
-instruction number37
- ControlInstruction tostring
-INS BX tostring
-instruction number38
-instruction number39
-push instruction
-instruction number40
-instruction number41
-instruction number42
-instruction number43
-ldr instruction
-op2type==1
-instruction number44
-instruction number45
-instruction number46
-instruction number47
-instruction number48
-ldr instruction
-op2type==1
-instruction number49
-instruction number50
-instruction number51
-instruction number52
-ldr instruction
-op2type==1
-instruction number53
-instruction number54
-instruction number55
-ldr instruction
-op2type==1
-instruction number56
-instruction number57
-instruction number58
-ldr instruction
-op2type==1
-instruction number59
-instruction number60
-ldr instruction
-op2type==1
-instruction number61
-instruction number62
-ldr instruction
-op2type==1
-instruction number63
-instruction number64
-instruction number65
-ldr instruction
-op2type==1
-instruction number66
-instruction number67
-instruction number68
-ldr instruction
-op2type==1
-instruction number69
-instruction number70
-instruction number71
-instruction number72
-instruction number73
- ControlInstruction tostring
-INS BX tostring
-instruction number74
-instruction number75
-push instruction
-instruction number76
-instruction number77
-instruction number78
-instruction number79
-ldr instruction
-op2type==1
-instruction number80
-instruction number81
-instruction number82
-instruction number83
-ldr instruction
-op2type==1
-instruction number84
-instruction number85
-instruction number86
-instruction number87
-ldr instruction
-op2type==1
-instruction number88
-instruction number89
-instruction number90
-ldr instruction
-op2type==1
-instruction number91
-instruction number92
-ldr instruction
-op2type==1
-instruction number93
-instruction number94
- ControlInstruction tostring
-INS BL tostring
-instruction number95
-instruction number96
-ldr instruction
-op2type==1
-instruction number97
-instruction number98
- ControlInstruction tostring
-INS BL tostring
-instruction number99
-instruction number100
-ldr instruction
-op2type==1
-instruction number101
-instruction number102
-instruction number103
-ldr instruction
-op2type==1
-instruction number104
-instruction number105
-ldr instruction
-op2type==1
-instruction number106
-instruction number107
-ldr instruction
-op2type==1
-instruction number108
-instruction number109
- ControlInstruction tostring
-INS BL tostring
-instruction number110
-instruction number111
-ldr instruction
-op2type==1
-instruction number112
-instruction number113
-instruction number114
-ldr instruction
-op2type==1
-instruction number115
-instruction number116
-ldr instruction
-op2type==1
-instruction number117
-instruction number118
-ldr instruction
-op2type==1
-instruction number119
-instruction number120
- ControlInstruction tostring
-INS BL tostring
-instruction number121
-instruction number122
-ldr instruction
-op2type==1
-instruction number123
-instruction number124
-instruction number125
-ldr instruction
-op2type==1
-instruction number126
-instruction number127
-ldr instruction
-op2type==1
-instruction number128
-instruction number129
-ldr instruction
-op2type==1
-instruction number130
-instruction number131
-instruction number132
-ldr instruction
-op2type==1
-instruction number133
-instruction number134
-instruction number135
-ldr instruction
-op2type==1
-instruction number136
-instruction number137
-ldr instruction
-op2type==1
-instruction number138
-instruction number139
-ldr instruction
-op2type==1
-instruction number140
-instruction number141
-instruction number142
-ldr instruction
-op2type==1
-instruction number143
-instruction number144
-instruction number145
-ldr instruction
-op2type==1
-instruction number146
-instruction number147
-ldr instruction
-op2type==1
-instruction number148
-instruction number149
-ldr instruction
-op2type==1
-instruction number150
-instruction number151
-instruction number152
-ldr instruction
-op2type==1
-instruction number153
-instruction number154
-ldr instruction
-op2type==1
-instruction number155
-instruction number156
-instruction number157
-ldr instruction
-op2type==1
-instruction number158
-instruction number159
-ldr instruction
-op2type==1
-instruction number160
-instruction number161
-ldr instruction
-op2type==1
-instruction number162
-instruction number163
-instruction number164
-ldr instruction
-op2type==1
-instruction number165
-instruction number166
-instruction number167
-instruction number168
- ControlInstruction tostring
-INS BX tostring
-#armv7 assembly code
-func1:
-PUSH {fp}
-ADD  fp, sp, #0
-SUB sp, sp, #0
-MOV r0, #1
-LDR r1, [fp, 0x0]
-ADD  r1, r0, #0
-LDR r2, [fp, 0x0]
-ADD  r2, r1, #0
-ADD  r0, r2, #0
-ADD  sp, fp, #0
-POP {fp}
-BX lr
-func2:
-PUSH {fp}
-ADD  fp, sp, #0
-SUB sp, sp, #0
-MOV r3, #2
-ADD  r1, r3, #0
-LDR r4, [fp, 0x0]
-ADD  r4, r1, #0
-ADD  r0, r4, #0
-ADD  sp, fp, #0
-POP {fp}
-BX lr
-func3:
-PUSH {fp}
-ADD  fp, sp, #0
-SUB sp, sp, #0
-MOV r5, #4
-ADD  r1, r5, #0
-LDR r6, [fp, 0x0]
-ADD  r6, r1, #0
-ADD  r0, r6, #0
-ADD  sp, fp, #0
-POP {fp}
-BX lr
-func4:
-PUSH {fp}
-ADD  fp, sp, #0
-SUB sp, sp, #0
-MOV r8, #8
-LDR r9, [fp, 0x0]
-ADD  r9, r8, #0
-ADD  r10, r9, #0
-ADD  r1, r10, #0
-STRLDR r10, [fp, 0x0]
-MOV r10, #16
-ADD  r9, r10, #0
-STRLDR r10, [fp, 0x0]
-ADD  r10, r1, #0
-STRLDR r10, [fp, 0x0]
-ADD  r10, r9, #0
-STRLDR r10, [fp, 0x0]
-STRLDR r10, [fp, 0x0]
-STRLDR r10, [fp, 0x0]
-ADD  r10, r10, r10
-STRLDR r10, [fp, 0x0]
-ADD  r1, r10, #0
-STRLDR r10, [fp, 0x0]
-ADD  r10, r1, #0
-ADD  r0, r10, #0
-ADD  sp, fp, #0
-POP {fp}
-BX lr
-main:
-PUSH {fp}
-ADD  fp, sp, #0
-SUB sp, sp, #0
-STRLDR r10, [fp, 0x0]
-MOV r10, #32
-ADD  r1, r10, #0
-STRLDR r10, [fp, 0x0]
-MOV r10, #32
-ADD  r9, r10, #0
-STRLDR r10, [fp, 0x0]
-MOV r10, #32
-STRLDR r10, [fp, 0x0]
-STRLDR r10, [fp, 0x0]
-ADD  r10, r10, #0
-BL func1
-STRLDR r10, [fp, 0x0]
-MOV r10, r0
-BL func2
-STRLDR r10, [fp, 0x0]
-MOV r10, r0
-STRLDR r10, [fp, 0x0]
-STRLDR r10, [fp, 0x0]
-STRLDR r10, [fp, 0x0]
-ADD  r10, r10, r10
-BL func3
-STRLDR r10, [fp, 0x0]
-MOV r10, r0
-STRLDR r10, [fp, 0x0]
-STRLDR r10, [fp, 0x0]
-STRLDR r10, [fp, 0x0]
-ADD  r10, r10, r10
-BL func4
-STRLDR r10, [fp, 0x0]
-MOV r10, r0
-STRLDR r10, [fp, 0x0]
-STRLDR r10, [fp, 0x0]
-STRLDR r10, [fp, 0x0]
-ADD  r10, r10, r10
-STRLDR r10, [fp, 0x0]
-ADD  r10, r1, #0
-STRLDR r10, [fp, 0x0]
-STRLDR r10, [fp, 0x0]
-STRLDR r10, [fp, 0x0]
-ADD  r10, r10, r10
-STRLDR r10, [fp, 0x0]
-ADD  r10, r9, #0
-STRLDR r10, [fp, 0x0]
-STRLDR r10, [fp, 0x0]
-STRLDR r10, [fp, 0x0]
-ADD  r10, r10, r10
-STRLDR r10, [fp, 0x0]
-STRLDR r10, [fp, 0x0]
-ADD  r10, r10, #0
-STRLDR r10, [fp, 0x0]
-STRLDR r10, [fp, 0x0]
-STRLDR r10, [fp, 0x0]
-ADD  r10, r10, r10
-STRLDR r10, [fp, 0x0]
-ADD  r0, r10, #0
-ADD  sp, fp, #0
-POP {fp}
-BX lr
-
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  no variable in this register
+Aborted (core dumped)

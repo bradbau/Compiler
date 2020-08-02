@@ -1,74 +1,3 @@
-arg S
---(end of buffer or a NUL)
---accepting rule at line 74 ("// Use complex expression in if structure
-")
---accepting rule at line 100 ("int")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("main")
---accepting rule at line 114 (" ")
---accepting rule at line 80 ("(")
---accepting rule at line 81 (")")
---accepting rule at line 114 (" ")
---accepting rule at line 78 ("{")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 100 ("int")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("a")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 100 ("int")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("b")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 100 ("int")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("c")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 100 ("int")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("d")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 100 ("int")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("result")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("a")
---accepting rule at line 114 (" ")
---accepting rule at line 89 ("=")
 -o<int>
 <id,main>
 <(>
@@ -91,19 +20,6 @@ arg S
 <;>
 <id,a>
 <=>
-33333333333
---accepting rule at line 114 (" ")
---accepting rule at line 109 ("5")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("b")
---accepting rule at line 114 (" ")
---accepting rule at line 89 ("=")
 Lval
 <intd>
 ExpNumber:0
@@ -111,19 +27,6 @@ ExpNumber:0
 stmt1
 <id,b>
 <=>
-33333333333
---accepting rule at line 114 (" ")
---accepting rule at line 109 ("5")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("c")
---accepting rule at line 114 (" ")
---accepting rule at line 89 ("=")
 Lval
 <intd>
 ExpNumber:0
@@ -131,19 +34,6 @@ ExpNumber:0
 stmt1
 <id,c>
 <=>
-33333333333
---accepting rule at line 114 (" ")
---accepting rule at line 109 ("1")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("d")
---accepting rule at line 114 (" ")
---accepting rule at line 89 ("=")
 Lval
 <intd>
 ExpNumber:0
@@ -151,20 +41,6 @@ ExpNumber:0
 stmt1
 <id,d>
 <=>
-33333333333
---accepting rule at line 114 (" ")
---accepting rule at line 85 ("-")
---accepting rule at line 109 ("2")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("result")
---accepting rule at line 114 (" ")
---accepting rule at line 89 ("=")
 Lval
 <->
 <intd>
@@ -173,23 +49,6 @@ ExpNumber:0
 stmt1
 <id,result>
 <=>
-33333333333
---accepting rule at line 114 (" ")
---accepting rule at line 109 ("2")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 101 ("if")
---accepting rule at line 114 (" ")
---accepting rule at line 80 ("(")
---accepting rule at line 80 ("(")
---accepting rule at line 112 ("d")
---accepting rule at line 114 (" ")
---accepting rule at line 86 ("*")
 Lval
 <intd>
 ExpNumber:0
@@ -200,25 +59,6 @@ stmt1
 <(>
 <id,d>
 <*>
-33333333333
---accepting rule at line 114 (" ")
---accepting rule at line 109 ("1")
---accepting rule at line 114 (" ")
---accepting rule at line 87 ("/")
---accepting rule at line 114 (" ")
---accepting rule at line 109 ("2")
---accepting rule at line 81 (")")
---accepting rule at line 114 (" ")
---accepting rule at line 96 ("<")
---accepting rule at line 114 (" ")
---accepting rule at line 111 ("0")
---accepting rule at line 114 (" ")
---accepting rule at line 91 ("||")
---accepting rule at line 114 (" ")
---accepting rule at line 80 ("(")
---accepting rule at line 112 ("a")
---accepting rule at line 114 (" ")
---accepting rule at line 85 ("-")
 Lval
 <intd>
 ExpNumber:0
@@ -233,25 +73,9 @@ ExpNumber:0
 <(>
 <id,a>
 <->
-33333333333
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("b")
---accepting rule at line 81 (")")
 Lval
 <id,b>
 <)>
-33333333333
---accepting rule at line 114 (" ")
---accepting rule at line 94 ("!=")
---accepting rule at line 114 (" ")
---accepting rule at line 111 ("0")
---accepting rule at line 114 (" ")
---accepting rule at line 90 ("&&")
---accepting rule at line 114 (" ")
---accepting rule at line 80 ("(")
---accepting rule at line 112 ("c")
---accepting rule at line 114 (" ")
---accepting rule at line 84 ("+")
 Lval
 <!=>
 <into>
@@ -260,35 +84,6 @@ ExpNumber:0
 <(>
 <id,c>
 <+>
-33333333333
---accepting rule at line 114 (" ")
---accepting rule at line 109 ("3")
---accepting rule at line 81 (")")
---accepting rule at line 114 (" ")
---accepting rule at line 88 ("%")
---accepting rule at line 114 (" ")
---accepting rule at line 109 ("2")
---accepting rule at line 114 (" ")
---accepting rule at line 94 ("!=")
---accepting rule at line 114 (" ")
---accepting rule at line 111 ("0")
---accepting rule at line 81 (")")
---accepting rule at line 114 (" ")
---accepting rule at line 78 ("{")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("putint")
---accepting rule at line 80 ("(")
---accepting rule at line 112 ("result")
---accepting rule at line 81 (")")
 Lval
 <intd>
 ExpNumber:0
@@ -305,28 +100,6 @@ ExpNumber:0
 <(>
 <id,result>
 <)>
-33333333333
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 79 ("}")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 101 ("if")
---accepting rule at line 114 (" ")
---accepting rule at line 80 ("(")
---accepting rule at line 80 ("(")
---accepting rule at line 112 ("d")
---accepting rule at line 114 (" ")
---accepting rule at line 88 ("%")
 Lval
 <;>
 <}>
@@ -335,25 +108,6 @@ Lval
 <(>
 <id,d>
 <%>
-33333333333
---accepting rule at line 114 (" ")
---accepting rule at line 109 ("2")
---accepting rule at line 114 (" ")
---accepting rule at line 84 ("+")
---accepting rule at line 114 (" ")
---accepting rule at line 109 ("67")
---accepting rule at line 81 (")")
---accepting rule at line 114 (" ")
---accepting rule at line 96 ("<")
---accepting rule at line 114 (" ")
---accepting rule at line 111 ("0")
---accepting rule at line 114 (" ")
---accepting rule at line 91 ("||")
---accepting rule at line 114 (" ")
---accepting rule at line 80 ("(")
---accepting rule at line 112 ("a")
---accepting rule at line 114 (" ")
---accepting rule at line 85 ("-")
 Lval
 <intd>
 ExpNumber:0
@@ -368,25 +122,9 @@ ExpNumber:0
 <(>
 <id,a>
 <->
-33333333333
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("b")
---accepting rule at line 81 (")")
 Lval
 <id,b>
 <)>
-33333333333
---accepting rule at line 114 (" ")
---accepting rule at line 94 ("!=")
---accepting rule at line 114 (" ")
---accepting rule at line 111 ("0")
---accepting rule at line 114 (" ")
---accepting rule at line 90 ("&&")
---accepting rule at line 114 (" ")
---accepting rule at line 80 ("(")
---accepting rule at line 112 ("c")
---accepting rule at line 114 (" ")
---accepting rule at line 84 ("+")
 Lval
 <!=>
 <into>
@@ -395,34 +133,6 @@ ExpNumber:0
 <(>
 <id,c>
 <+>
-33333333333
---accepting rule at line 114 (" ")
---accepting rule at line 109 ("2")
---accepting rule at line 81 (")")
---accepting rule at line 114 (" ")
---accepting rule at line 88 ("%")
---accepting rule at line 114 (" ")
---accepting rule at line 109 ("2")
---accepting rule at line 114 (" ")
---accepting rule at line 94 ("!=")
---accepting rule at line 114 (" ")
---accepting rule at line 111 ("0")
---accepting rule at line 81 (")")
---accepting rule at line 114 (" ")
---accepting rule at line 78 ("{")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("result")
---accepting rule at line 114 (" ")
---accepting rule at line 89 ("=")
 Lval
 <intd>
 ExpNumber:0
@@ -437,24 +147,6 @@ ExpNumber:0
 <{>
 <id,result>
 <=>
-33333333333
---accepting rule at line 114 (" ")
---accepting rule at line 109 ("4")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("putint")
---accepting rule at line 80 ("(")
---accepting rule at line 112 ("result")
---accepting rule at line 81 (")")
 Lval
 <intd>
 ExpNumber:0
@@ -464,32 +156,6 @@ stmt1
 <(>
 <id,result>
 <)>
-33333333333
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 79 ("}")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 108 ("return")
---accepting rule at line 114 (" ")
---accepting rule at line 111 ("0")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 79 ("}")
---accepting rule at line 115 ("
-")
---(end of buffer or a NUL)
---EOF (start condition 0)
 Lval
 <;>
 <}>
@@ -498,294 +164,6 @@ Lval
 ExpNumber:0
 <;>
 <}>
-CompUnits (2)
-  FuncDef (2)
-    NOFParam (2)
-    Block (3)
-      BlockItems (3)
-        VarDecl (3)
-          IDENTIFIER a
-        BlockItems (4)
-          VarDecl (4)
-            IDENTIFIER b
-          BlockItems (5)
-            VarDecl (5)
-              IDENTIFIER c
-            BlockItems (6)
-              VarDecl (6)
-                IDENTIFIER d
-              BlockItems (7)
-                VarDecl (7)
-                  IDENTIFIER result
-                BlockItems (8)
-                  Lval_Opassign_Stmt (8)
-                    LVal (8)
-                      IDENTIFIER a
-                      ArrayExps (8)
-                    IntConst (8)
-                      CONSTANTINTD: 5
-                  BlockItems (9)
-                    Lval_Opassign_Stmt (9)
-                      LVal (9)
-                        IDENTIFIER b
-                        ArrayExps (9)
-                      IntConst (9)
-                        CONSTANTINTD: 5
-                    BlockItems (10)
-                      Lval_Opassign_Stmt (10)
-                        LVal (10)
-                          IDENTIFIER c
-                          ArrayExps (10)
-                        IntConst (10)
-                          CONSTANTINTD: 1
-                      BlockItems (11)
-                        Lval_Opassign_Stmt (11)
-                          LVal (11)
-                            IDENTIFIER d
-                            ArrayExps (11)
-                          OPMINUS_Exp (11)
-                            IntConst (11)
-                              CONSTANTINTD: 2
-                        BlockItems (12)
-                          Lval_Opassign_Stmt (12)
-                            LVal (12)
-                              IDENTIFIER result
-                              ArrayExps (12)
-                            IntConst (12)
-                              CONSTANTINTD: 2
-                          BlockItems (13)
-                            IF_Stmt (13)
-                              Cond_Or (13)
-                                Cond (13)
-                                  OPLIGHT (13)
-                                    (Exp) (13)
-                                      DIVIDEExp (13)
-                                        MulExp (13)
-                                          LVal_EXP (13)
-                                            LVal (13)
-                                              IDENTIFIER d
-                                              ArrayExps (13)
-                                          IntConst (13)
-                                            CONSTANTINTD: 1
-                                        IntConst (13)
-                                          CONSTANTINTD: 2
-                                    IntConst (13)
-                                      CONSTANTOCT: 0
-                                Cond_And (13)
-                                  Cond (13)
-                                    OPNOTEQUAL (13)
-                                      (Exp) (13)
-                                        MINUSExp (13)
-                                          LVal_EXP (13)
-                                            LVal (13)
-                                              IDENTIFIER a
-                                              ArrayExps (13)
-                                          LVal_EXP (13)
-                                            LVal (13)
-                                              IDENTIFIER b
-                                              ArrayExps (13)
-                                      IntConst (13)
-                                        CONSTANTOCT: 0
-                                  Cond (13)
-                                    OPNOTEQUAL (13)
-                                      MODExp (13)
-                                        (Exp) (13)
-                                          PLUSExp (13)
-                                            LVal_EXP (13)
-                                              LVal (13)
-                                                IDENTIFIER c
-                                                ArrayExps (13)
-                                            IntConst (13)
-                                              CONSTANTINTD: 3
-                                        IntConst (13)
-                                          CONSTANTINTD: 2
-                                      IntConst (13)
-                                        CONSTANTOCT: 0
-                              Block_Stmt (14)
-                                Block (14)
-                                  BlockItems (14)
-                                    Exp_Stmt (14)
-                                      funcall (14)
-                                        IDENTIFIER putint
-                                        FuncRParams (14)
-                                          LVal_EXP (14)
-                                            LVal (14)
-                                              IDENTIFIER result
-                                              ArrayExps (14)
-                            BlockItems (16)
-                              IF_Stmt (16)
-                                Cond_Or (16)
-                                  Cond (16)
-                                    OPLIGHT (16)
-                                      (Exp) (16)
-                                        PLUSExp (16)
-                                          MODExp (16)
-                                            LVal_EXP (16)
-                                              LVal (16)
-                                                IDENTIFIER d
-                                                ArrayExps (16)
-                                            IntConst (16)
-                                              CONSTANTINTD: 2
-                                          IntConst (16)
-                                            CONSTANTINTD: 67
-                                      IntConst (16)
-                                        CONSTANTOCT: 0
-                                  Cond_And (16)
-                                    Cond (16)
-                                      OPNOTEQUAL (16)
-                                        (Exp) (16)
-                                          MINUSExp (16)
-                                            LVal_EXP (16)
-                                              LVal (16)
-                                                IDENTIFIER a
-                                                ArrayExps (16)
-                                            LVal_EXP (16)
-                                              LVal (16)
-                                                IDENTIFIER b
-                                                ArrayExps (16)
-                                        IntConst (16)
-                                          CONSTANTOCT: 0
-                                    Cond (16)
-                                      OPNOTEQUAL (16)
-                                        MODExp (16)
-                                          (Exp) (16)
-                                            PLUSExp (16)
-                                              LVal_EXP (16)
-                                                LVal (16)
-                                                  IDENTIFIER c
-                                                  ArrayExps (16)
-                                              IntConst (16)
-                                                CONSTANTINTD: 2
-                                          IntConst (16)
-                                            CONSTANTINTD: 2
-                                        IntConst (16)
-                                          CONSTANTOCT: 0
-                                Block_Stmt (17)
-                                  Block (17)
-                                    BlockItems (17)
-                                      Lval_Opassign_Stmt (17)
-                                        LVal (17)
-                                          IDENTIFIER result
-                                          ArrayExps (17)
-                                        IntConst (17)
-                                          CONSTANTINTD: 4
-                                      BlockItems (18)
-                                        Exp_Stmt (18)
-                                          funcall (18)
-                                            IDENTIFIER putint
-                                            FuncRParams (18)
-                                              LVal_EXP (18)
-                                                LVal (18)
-                                                  IDENTIFIER result
-                                                  ArrayExps (18)
-                              BlockItems (20)
-                                Return_Stmt (20)
-                                  IntConst (20)
-                                    CONSTANTOCT: 0
-
-
-===========================================================
-Global
-ID             category       type           depictor
-               
-putf           Function       void           NULL           
-putarray       Function       void           NOT NULL       
-putchar        Function       void           NOT NULL       
-putint         Function       void           NOT NULL       
-getarray       Function       int            NOT NULL       
-getchar        Function       int            NOT NULL       
-getint         Function       int            NOT NULL       
-main           Function       TYPEINTEGER    NOT NULL       
-===========================================================
-===========================================================
-Formal:putarray
-ID             category       type           depictor
-              
-a              Array          int            ----------> dim=1
-a              Variable       int            NULL           
-===========================================================
-===========================================================
-Local:putarray
-ID             category       type           depictor
-              
-scope type is wrong
-               Variable                      NULL           
-===========================================================
-===========================================================
-Formal:putchar
-ID             category       type           depictor
-              
-a              Variable       int            NULL           
-===========================================================
-===========================================================
-Local:putchar
-ID             category       type           depictor
-              
-===========================================================
-===========================================================
-Formal:putint
-ID             category       type           depictor
-              
-a              Variable       int            NULL           
-===========================================================
-===========================================================
-Local:putint
-ID             category       type           depictor
-              
-===========================================================
-===========================================================
-Formal:getarray
-ID             category       type           depictor
-              
-a              Array          int            ----------> dim=1
-===========================================================
-===========================================================
-Local:getarray
-ID             category       type           depictor
-              
-scope type is wrong
-               Variable                      NULL           
-===========================================================
-===========================================================
-Formal:getchar
-ID             category       type           depictor
-              
-               NOParam                       NULL           
-===========================================================
-===========================================================
-Local:getchar
-ID             category       type           depictor
-              
-===========================================================
-===========================================================
-Formal:getint
-ID             category       type           depictor
-              
-               NOParam                       NULL           
-===========================================================
-===========================================================
-Local:getint
-ID             category       type           depictor
-              
-===========================================================
-===========================================================
-Formal:main
-ID             category       type           depictor
-              
-               NOParam                       NOT NULL       
-===========================================================
-===========================================================
-Local:main
-ID             category       type           depictor
-              
-a              Variable       TYPEINTEGER    NULL           
-b              Variable       TYPEINTEGER    NULL           
-c              Variable       TYPEINTEGER    NULL           
-d              Variable       TYPEINTEGER    NULL           
-result         Variable       TYPEINTEGER    NULL           
-               Block          BLOCKStmt      NULL           
-               Block          BLOCKStmt      NULL           
-===========================================================
 456
 789
 789
@@ -1665,187 +1043,6 @@ result         Variable       TYPEINTEGER    NULL
 789
 789
 456
-
-~~~~TAC~~~~~
- No  Source Position	TACCode
-_______________________________________
-  0  (at line   0)	CALL main
-
-  1  (at line   2)	FUNCTION main :
-  2  (at line   8)	_t0 := #5
-  3  (at line   8)	a := _t0
-  4  (at line   9)	_t1 := #5
-  5  (at line   9)	b := _t1
-  6  (at line  10)	_t2 := #1
-  7  (at line  10)	c := _t2
-  8  (at line  11)	_t4 := #2
-  9  (at line  11)	_t3 := #0 - _t4
- 10  (at line  11)	d := _t3
- 11  (at line  12)	_t5 := #2
- 12  (at line  12)	result := _t5
- 13  (at line  13)	_t12 := d
- 14  (at line  13)	_t13 := #1
- 15  (at line  13)	_t10 := _t12 * _t13
- 16  (at line  13)	_t11 := #2
- 17  (at line  13)	_t9 := _t10 / _t11
- 18  (at line  13)	_t6 := _t9
- 19  (at line  13)	_t14 := #0
- 20  (at line  13)	IF _t6 < _t14 GOTO label0
- 21  (at line  13)	GOTO label2
- 22  (at line  13)	LABEL label2 :
- 23  (at line  13)	_t19 := a
- 24  (at line  13)	_t20 := b
- 25  (at line  13)	_t18 := _t19 - _t20
- 26  (at line  13)	_t15 := _t18
- 27  (at line  13)	_t21 := #0
- 28  (at line  13)	IF _t15 != _t21 GOTO label3
- 29  (at line  13)	GOTO label1
- 30  (at line  13)	LABEL label3 :
- 31  (at line  13)	_t28 := c
- 32  (at line  13)	_t29 := #3
- 33  (at line  13)	_t27 := _t28 + _t29
- 34  (at line  13)	_t25 := _t27
- 35  (at line  13)	_t26 := #2
- 36  (at line  13)	_t22 := _t25 % _t26
- 37  (at line  13)	_t30 := #0
- 38  (at line  13)	IF _t22 != _t30 GOTO label0
- 39  (at line  13)	GOTO label1
- 40  (at line  13)	LABEL label0 :
- 41  (at line  14)	_t31 := result
- 42  (at line  14)	ARG _t31
- 43  (at line  14)	CALL putint
- 44  (at line  13)	LABEL label1 :
- 45  (at line  16)	_t38 := d
- 46  (at line  16)	_t39 := #2
- 47  (at line  16)	_t36 := _t38 % _t39
- 48  (at line  16)	_t37 := #67
- 49  (at line  16)	_t35 := _t36 + _t37
- 50  (at line  16)	_t32 := _t35
- 51  (at line  16)	_t40 := #0
- 52  (at line  16)	IF _t32 < _t40 GOTO label4
- 53  (at line  16)	GOTO label6
- 54  (at line  16)	LABEL label6 :
- 55  (at line  16)	_t45 := a
- 56  (at line  16)	_t46 := b
- 57  (at line  16)	_t44 := _t45 - _t46
- 58  (at line  16)	_t41 := _t44
- 59  (at line  16)	_t47 := #0
- 60  (at line  16)	IF _t41 != _t47 GOTO label7
- 61  (at line  16)	GOTO label5
- 62  (at line  16)	LABEL label7 :
- 63  (at line  16)	_t54 := c
- 64  (at line  16)	_t55 := #2
- 65  (at line  16)	_t53 := _t54 + _t55
- 66  (at line  16)	_t51 := _t53
- 67  (at line  16)	_t52 := #2
- 68  (at line  16)	_t48 := _t51 % _t52
- 69  (at line  16)	_t56 := #0
- 70  (at line  16)	IF _t48 != _t56 GOTO label4
- 71  (at line  16)	GOTO label5
- 72  (at line  16)	LABEL label4 :
- 73  (at line  17)	_t57 := #4
- 74  (at line  17)	result := _t57
- 75  (at line  18)	_t58 := result
- 76  (at line  18)	ARG _t58
- 77  (at line  18)	CALL putint
- 78  (at line  16)	LABEL label5 :
- 79  (at line  20)	_t59 := #0
- 80  (at line  20)	RETURN _t59
-
-
-===========================================================
-Global
-ID             category       type           depictor
-               
-putf           Function       void           NULL           
-putarray       Function       void           NOT NULL       
-putchar        Function       void           NOT NULL       
-putint         Function       void           NOT NULL       
-getarray       Function       int            NOT NULL       
-getchar        Function       int            NOT NULL       
-getint         Function       int            NOT NULL       
-main           Function       TYPEINTEGER    NOT NULL       
-===========================================================
-===========================================================
-Formal:putarray
-ID             category       type           depictor
-              
-a              Array          int            ----------> dim=1
-a              Variable       int            NULL           
-===========================================================
-===========================================================
-Local:putarray
-ID             category       type           depictor
-              
-scope type is wrong
-               Variable                      NULL           
-===========================================================
-===========================================================
-Formal:putchar
-ID             category       type           depictor
-              
-a              Variable       int            NULL           
-===========================================================
-===========================================================
-Local:putchar
-ID             category       type           depictor
-              
-===========================================================
-===========================================================
-Formal:putint
-ID             category       type           depictor
-              
-a              Variable       int            NULL           
-===========================================================
-===========================================================
-Local:putint
-ID             category       type           depictor
-              
-===========================================================
-===========================================================
-Formal:getarray
-ID             category       type           depictor
-              
-a              Array          int            ----------> dim=1
-===========================================================
-===========================================================
-Local:getarray
-ID             category       type           depictor
-              
-scope type is wrong
-               Variable                      NULL           
-===========================================================
-===========================================================
-Formal:getchar
-ID             category       type           depictor
-              
-               NOParam                       NULL           
-===========================================================
-===========================================================
-Local:getchar
-ID             category       type           depictor
-              
-===========================================================
-===========================================================
-Formal:getint
-ID             category       type           depictor
-              
-               NOParam                       NULL           
-===========================================================
-===========================================================
-Local:getint
-ID             category       type           depictor
-              
-===========================================================
-===========================================================
-Formal:main
-ID             category       type           depictor
-              
-               NOParam                       NOT NULL       
-scope type is wrong
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-build assembly code
-tac type FUNCTIONDF
 Variable offset count+4 :a
 Variable offset count+4 :b
 Variable offset count+4 :c
@@ -1992,20 +1189,5 @@ scope type not local in functiondf
 scopeprev:0
 Variable offset count+4 :_t58
 Variable offset count+4 :_t59
-tec type ASSIGN
-findregister: insldr rd=0,r1=11,r2 offset=0,op2type=1, insefft=0
-tec type ASSIGN
-findregister: insldr rd=1,r1=11,r2 offset=0,op2type=1, insefft=0
-tec type ASSIGN
-findregister: insldr rd=2,r1=11,r2 offset=0,op2type=1, insefft=0
-tec type ASSIGN
-findregister: insldr rd=3,r1=11,r2 offset=0,op2type=1, insefft=0
-tec type ASSIGN
-findregister: insldr rd=4,r1=11,r2 offset=0,op2type=1, insefft=0
-tec type ASSIGN
-findregister: insldr rd=5,r1=11,r2 offset=0,op2type=1, insefft=0
-tec type ASSIGN
-findregister: insldr rd=6,r1=11,r2 offset=0,op2type=1, insefft=0
-tac type SUB
-compiler: ./ObjectCode/Arm.cpp:131: ARM::ARM(TACCode *, ScopeItem *, vector<ScopeItem> &): Assertion `code.dest.Type = VARIABLE' failed.
+compiler: ./ObjectCode/Arm.cpp:276: ARM::ARM(TACCode *, ScopeItem *, vector<ScopeItem> &): Assertion `code.firstOp.Type = VARIABLE' failed.
 Aborted (core dumped)

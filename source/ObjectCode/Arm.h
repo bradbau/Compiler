@@ -23,7 +23,11 @@ typedef struct RegisterEntry
 {
       bool filled;         // 是否使用
       int tag;           // Tag for LRU algorithm
-      ScopeItem* variable;     // 存储的变量对象
+      
+      union {
+            ScopeItem* variable;     // 存储的变量对象
+            ARRAY_ADDR* array_addr;//数组对象
+      };
       //int instantNum; 不一定有用，记录寄存器内容的具体值
 } RegisterEntry;
 
@@ -39,7 +43,13 @@ private:
       CalculateInstruction* StackSubHandler=NULL;//用来保存函数中为局部变量分配空间的语句的句柄 sub sp sp imm
       
       Register GetRegister(ScopeItem* variable); //分配或者获取已经分配的空余寄存器
-      int FinfRegister(ScopeItem* variable);//查找存有对应变量的寄存器
+      Register GetRegister(ARRAY_ADDR* array_addr); //分配或者获取已经分配的空余寄存器
+      Register GetRegisterNoLoad(ScopeItem* variable); //分配或者获取已经分配的空余寄存器
+      Register GetRegisterNoLoad(ARRAY_ADDR* array_addr); //分配或者获取已经分配的空余寄存器
+      
+      int FindRegister(ScopeItem* variable);//查找存有对应变量的寄存器
+      int FindRegister(ARRAY_ADDR* array_addr);//查找存有对应变量的寄存器
+      
       int LoadInstantToRegister(int instantNum);//加载一个一次性的立即数到空寄存器中，不统计内容
       void EmptyRegister();//清空用户使用寄存器
       //void AllocateHeap(ScopeItem & variable, int &offset);//给变量在堆中分配地址

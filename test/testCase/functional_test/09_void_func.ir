@@ -1,38 +1,3 @@
-arg S
---(end of buffer or a NUL)
---accepting rule at line 100 ("int")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("a")
---accepting rule at line 76 (",")
---accepting rule at line 112 ("b")
---accepting rule at line 76 (",")
---accepting rule at line 112 ("c")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 115 ("
-")
---accepting rule at line 99 ("void")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("add")
---accepting rule at line 80 ("(")
---accepting rule at line 100 ("int")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("a")
---accepting rule at line 76 (",")
---accepting rule at line 100 ("int")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("b")
---accepting rule at line 81 (")")
---accepting rule at line 78 ("{")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("c")
---accepting rule at line 89 ("=")
 -o<int>
 <id,a>
 <,>
@@ -52,48 +17,12 @@ arg S
 <{>
 <id,c>
 <=>
-33333333333
---accepting rule at line 112 ("a")
---accepting rule at line 84 ("+")
 Lval
 <id,a>
 <+>
-33333333333
---accepting rule at line 112 ("b")
---accepting rule at line 75 (";")
 Lval
 <id,b>
 <;>
-33333333333
---accepting rule at line 115 ("
-")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 108 ("return")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 79 ("}")
---accepting rule at line 115 ("
-")
---accepting rule at line 115 ("
-")
---accepting rule at line 100 ("int")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("main")
---accepting rule at line 80 ("(")
---accepting rule at line 81 (")")
---accepting rule at line 78 ("{")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("a")
---accepting rule at line 89 ("=")
 Lval
 stmt1
 <return>
@@ -106,17 +35,6 @@ stmt1
 <{>
 <id,a>
 <=>
-33333333333
---accepting rule at line 109 ("3")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("b")
---accepting rule at line 89 ("=")
 Lval
 <intd>
 ExpNumber:0
@@ -124,19 +42,6 @@ ExpNumber:0
 stmt1
 <id,b>
 <=>
-33333333333
---accepting rule at line 109 ("2")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("add")
---accepting rule at line 80 ("(")
---accepting rule at line 112 ("a")
---accepting rule at line 76 (",")
 Lval
 <intd>
 ExpNumber:0
@@ -146,217 +51,16 @@ stmt1
 <(>
 <id,a>
 <,>
-33333333333
---accepting rule at line 112 ("b")
---accepting rule at line 81 (")")
 Lval
 <id,b>
 <)>
-33333333333
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 108 ("return")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("c")
---accepting rule at line 75 (";")
 Lval
 <;>
 <return>
 <id,c>
 <;>
-33333333333
---accepting rule at line 115 ("
-")
---accepting rule at line 79 ("}")
---(end of buffer or a NUL)
---EOF (start condition 0)
 Lval
 <}>
-CompUnits (1)
-  VarDecl (1)
-    IDENTIFIER a
-    VarDefs (1)
-      IDENTIFIER b
-      VarDefs (1)
-        IDENTIFIER c
-  CompUnits (3)
-    FuncDef (3)
-      FuncFParams (3)
-        FuncFParam (3)
-        FuncFParam (3)
-      Block (4)
-        BlockItems (4)
-          Lval_Opassign_Stmt (4)
-            LVal (4)
-              IDENTIFIER c
-              ArrayExps (4)
-            PLUSExp (4)
-              LVal_EXP (4)
-                LVal (4)
-                  IDENTIFIER a
-                  ArrayExps (4)
-              LVal_EXP (4)
-                LVal (4)
-                  IDENTIFIER b
-                  ArrayExps (4)
-          BlockItems (5)
-            Return_Stmt (5)
-    CompUnits (8)
-      FuncDef (8)
-        NOFParam (8)
-        Block (9)
-          BlockItems (9)
-            Lval_Opassign_Stmt (9)
-              LVal (9)
-                IDENTIFIER a
-                ArrayExps (9)
-              IntConst (9)
-                CONSTANTINTD: 3
-            BlockItems (10)
-              Lval_Opassign_Stmt (10)
-                LVal (10)
-                  IDENTIFIER b
-                  ArrayExps (10)
-                IntConst (10)
-                  CONSTANTINTD: 2
-              BlockItems (11)
-                Exp_Stmt (11)
-                  funcall (11)
-                    IDENTIFIER add
-                    FuncRParams (11)
-                      LVal_EXP (11)
-                        LVal (11)
-                          IDENTIFIER a
-                          ArrayExps (11)
-                      Exps (11)
-                        LVal_EXP (11)
-                          LVal (11)
-                            IDENTIFIER b
-                            ArrayExps (11)
-                BlockItems (12)
-                  Return_Stmt (12)
-                    LVal_EXP (12)
-                      LVal (12)
-                        IDENTIFIER c
-                        ArrayExps (12)
-
-
-===========================================================
-Global
-ID             category       type           depictor
-               
-putf           Function       void           NULL           
-putarray       Function       void           NOT NULL       
-putchar        Function       void           NOT NULL       
-putint         Function       void           NOT NULL       
-getarray       Function       int            NOT NULL       
-getchar        Function       int            NOT NULL       
-getint         Function       int            NOT NULL       
-a              Variable       TYPEINTEGER    NULL           
-b              Variable       TYPEINTEGER    NULL           
-c              Variable       TYPEINTEGER    NULL           
-add            Function       void           NOT NULL       
-main           Function       TYPEINTEGER    NOT NULL       
-===========================================================
-===========================================================
-Formal:putarray
-ID             category       type           depictor
-              
-a              Array          int            ----------> dim=1
-a              Variable       int            NULL           
-===========================================================
-===========================================================
-Local:putarray
-ID             category       type           depictor
-              
-scope type is wrong
-               Variable                      NULL           
-===========================================================
-===========================================================
-Formal:putchar
-ID             category       type           depictor
-              
-a              Variable       int            NULL           
-===========================================================
-===========================================================
-Local:putchar
-ID             category       type           depictor
-              
-===========================================================
-===========================================================
-Formal:putint
-ID             category       type           depictor
-              
-a              Variable       int            NULL           
-===========================================================
-===========================================================
-Local:putint
-ID             category       type           depictor
-              
-===========================================================
-===========================================================
-Formal:getarray
-ID             category       type           depictor
-              
-a              Array          int            ----------> dim=1
-===========================================================
-===========================================================
-Local:getarray
-ID             category       type           depictor
-              
-scope type is wrong
-               Variable                      NULL           
-===========================================================
-===========================================================
-Formal:getchar
-ID             category       type           depictor
-              
-               NOParam                       NULL           
-===========================================================
-===========================================================
-Local:getchar
-ID             category       type           depictor
-              
-===========================================================
-===========================================================
-Formal:getint
-ID             category       type           depictor
-              
-               NOParam                       NULL           
-===========================================================
-===========================================================
-Local:getint
-ID             category       type           depictor
-              
-===========================================================
-===========================================================
-Formal:add
-ID             category       type           depictor
-              
-a              Variable       TYPEINTEGER    NULL           
-b              Variable       TYPEINTEGER    NULL           
-===========================================================
-===========================================================
-Local:add
-ID             category       type           depictor
-              
-===========================================================
-===========================================================
-Formal:main
-ID             category       type           depictor
-              
-               NOParam                       NULL           
-===========================================================
-===========================================================
-Local:main
-ID             category       type           depictor
-              
-===========================================================
 789
 789
 456
@@ -375,175 +79,4 @@ ID             category       type           depictor
 789
 789
 789
-
-~~~~TAC~~~~~
- No  Source Position	TACCode
-_______________________________________
-  0  (at line   0)	CALL main
-
-  1  (at line   3)	FUNCTION add :
-  2  (at line   3)	PARAM a
-  3  (at line   3)	PARAM b
-  4  (at line   4)	_t1 := a
-  5  (at line   4)	_t2 := b
-  6  (at line   4)	_t0 := _t1 + _t2
-  7  (at line   4)	c := _t0
-
-  8  (at line   8)	FUNCTION main :
-  9  (at line   9)	_t3 := #3
- 10  (at line   9)	a := _t3
- 11  (at line  10)	_t4 := #2
- 12  (at line  10)	b := _t4
- 13  (at line  11)	_t5 := a
- 14  (at line  11)	_t6 := b
- 15  (at line  11)	ARG _t6
- 16  (at line  11)	ARG _t5
- 17  (at line  11)	CALL add
- 18  (at line  12)	_t7 := c
- 19  (at line  12)	RETURN _t7
-
-
-===========================================================
-Global
-ID             category       type           depictor
-               
-putf           Function       void           NULL           
-putarray       Function       void           NOT NULL       
-putchar        Function       void           NOT NULL       
-putint         Function       void           NOT NULL       
-getarray       Function       int            NOT NULL       
-getchar        Function       int            NOT NULL       
-getint         Function       int            NOT NULL       
-a              Variable       TYPEINTEGER    NULL           
-b              Variable       TYPEINTEGER    NULL           
-c              Variable       TYPEINTEGER    NULL           
-add            Function       void           NOT NULL       
-main           Function       TYPEINTEGER    NOT NULL       
-===========================================================
-===========================================================
-Formal:putarray
-ID             category       type           depictor
-              
-a              Array          int            ----------> dim=1
-a              Variable       int            NULL           
-===========================================================
-===========================================================
-Local:putarray
-ID             category       type           depictor
-              
-scope type is wrong
-               Variable                      NULL           
-===========================================================
-===========================================================
-Formal:putchar
-ID             category       type           depictor
-              
-a              Variable       int            NULL           
-===========================================================
-===========================================================
-Local:putchar
-ID             category       type           depictor
-              
-===========================================================
-===========================================================
-Formal:putint
-ID             category       type           depictor
-              
-a              Variable       int            NULL           
-===========================================================
-===========================================================
-Local:putint
-ID             category       type           depictor
-              
-===========================================================
-===========================================================
-Formal:getarray
-ID             category       type           depictor
-              
-a              Array          int            ----------> dim=1
-===========================================================
-===========================================================
-Local:getarray
-ID             category       type           depictor
-              
-scope type is wrong
-               Variable                      NULL           
-===========================================================
-===========================================================
-Formal:getchar
-ID             category       type           depictor
-              
-               NOParam                       NULL           
-===========================================================
-===========================================================
-Local:getchar
-ID             category       type           depictor
-              
-===========================================================
-===========================================================
-Formal:getint
-ID             category       type           depictor
-              
-               NOParam                       NULL           
-===========================================================
-===========================================================
-Local:getint
-ID             category       type           depictor
-              
-===========================================================
-===========================================================
-Formal:add
-ID             category       type           depictor
-              
-a              Variable       TYPEINTEGER    NULL           
-b              Variable       TYPEINTEGER    NULL           
-===========================================================
-===========================================================
-Local:add
-ID             category       type           depictor
-              
-===========================================================
-===========================================================
-Formal:main
-ID             category       type           depictor
-              
-               NOParam                       NULL           
-===========================================================
-===========================================================
-Local:main
-ID             category       type           depictor
-              
-===========================================================
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-build assembly code
-tac type FUNCTIONDF
-tec type ASSIGN
-findregister: insldr rd=0,r1=11,r2 offset=0,op2type=1, insefft=0
-findregister: insldr rd=1,r1=11,r2 offset=0,op2type=1, insefft=0
-tec type ASSIGN
-findregister: insldr rd=2,r1=11,r2 offset=0,op2type=1, insefft=0
-findregister: insldr rd=3,r1=11,r2 offset=0,op2type=1, insefft=0
-tac type ADD
-findregister: insldr rd=4,r1=11,r2 offset=0,op2type=1, insefft=0
-tec type ASSIGN
-findregister: insldr rd=5,r1=11,r2 offset=0,op2type=1, insefft=0
-tac type FUNCTIONDF
-tec type ASSIGN
-findregister: insldr rd=6,r1=11,r2 offset=0,op2type=1, insefft=0
-tec type ASSIGN
-findregister: insldr rd=8,r1=11,r2 offset=0,op2type=1, insefft=0
-tec type ASSIGN
-findregister: insldr rd=9,r1=11,r2 offset=0,op2type=1, insefft=0
-tec type ASSIGN
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
-tec type ASSIGN
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
-tec type ASSIGN
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
-tac type ARG
-tac type ARG
-tac type CALL
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
 Segmentation fault (core dumped)

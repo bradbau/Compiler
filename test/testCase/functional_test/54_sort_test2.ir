@@ -1,21 +1,3 @@
-arg S
---(end of buffer or a NUL)
---accepting rule at line 100 ("int")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("n")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 100 ("int")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("insertsort")
---accepting rule at line 80 ("(")
---accepting rule at line 100 ("int")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("a")
---accepting rule at line 82 ("[")
---accepting rule at line 83 ("]")
---accepting rule at line 81 (")")
 -o<int>
 <id,n>
 <;>
@@ -27,50 +9,12 @@ arg S
 <[>
 <]>
 <)>
-33333333333
-1111111111111111
---accepting rule at line 115 ("
-")
---accepting rule at line 78 ("{")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 100 ("int")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("i")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("i")
---accepting rule at line 114 (" ")
---accepting rule at line 89 ("=")
 <{>
 <int>
 <id,i>
 <;>
 <id,i>
 <=>
-33333333333
---accepting rule at line 114 (" ")
---accepting rule at line 109 ("1")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 103 ("while")
---accepting rule at line 80 ("(")
---accepting rule at line 112 ("i")
---accepting rule at line 96 ("<")
 Lval
 <intd>
 ExpNumber:0
@@ -80,51 +24,9 @@ stmt1
 <(>
 <id,i>
 <<>
-33333333333
---accepting rule at line 112 ("n")
---accepting rule at line 81 (")")
 Lval
 <id,n>
 <)>
-33333333333
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 78 ("{")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 100 ("int")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("temp")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("temp")
---accepting rule at line 89 ("=")
 Lval
 <{>
 <int>
@@ -132,49 +34,13 @@ Lval
 <;>
 <id,temp>
 <=>
-33333333333
---accepting rule at line 112 ("a")
---accepting rule at line 82 ("[")
---accepting rule at line 112 ("i")
---accepting rule at line 83 ("]")
 Lval
 <id,a>
 <[>
 <id,i>
 <]>
-33333333333
---accepting rule at line 75 (";")
 Lval
 <;>
-33333333333
-22222222222222
---accepting rule at line 114 (" ")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 100 ("int")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("j")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("j")
---accepting rule at line 89 ("=")
 Lval
 stmt1
 <int>
@@ -182,29 +48,9 @@ stmt1
 <;>
 <id,j>
 <=>
-33333333333
---accepting rule at line 112 ("i")
---accepting rule at line 85 ("-")
 Lval
 <id,i>
 <->
-33333333333
---accepting rule at line 109 ("1")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 103 ("while")
---accepting rule at line 80 ("(")
---accepting rule at line 112 ("j")
---accepting rule at line 95 (">")
 Lval
 <intd>
 ExpNumber:0
@@ -214,12 +60,6 @@ stmt1
 <(>
 <id,j>
 <>>
-33333333333
---accepting rule at line 85 ("-")
---accepting rule at line 109 ("1")
---accepting rule at line 90 ("&&")
---accepting rule at line 112 ("temp")
---accepting rule at line 96 ("<")
 Lval
 <->
 <intd>
@@ -227,143 +67,38 @@ ExpNumber:0
 <&&>
 <id,temp>
 <<>
-33333333333
---accepting rule at line 112 ("a")
---accepting rule at line 82 ("[")
---accepting rule at line 112 ("j")
---accepting rule at line 83 ("]")
 Lval
 <id,a>
 <[>
 <id,j>
 <]>
-33333333333
---accepting rule at line 81 (")")
 Lval
 <)>
-33333333333
-22222222222222
---accepting rule at line 115 ("
-")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 78 ("{")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("a")
---accepting rule at line 82 ("[")
---accepting rule at line 112 ("j")
---accepting rule at line 84 ("+")
 Lval
 <{>
 <id,a>
 <[>
 <id,j>
 <+>
-33333333333
---accepting rule at line 109 ("1")
---accepting rule at line 83 ("]")
---accepting rule at line 89 ("=")
 Lval
 <intd>
 ExpNumber:0
 <]>
 <=>
-33333333333
-22222222222222
---accepting rule at line 112 ("a")
---accepting rule at line 82 ("[")
---accepting rule at line 112 ("j")
---accepting rule at line 83 ("]")
 Lval
 <id,a>
 <[>
 <id,j>
 <]>
-33333333333
---accepting rule at line 75 (";")
 Lval
 <;>
-33333333333
-22222222222222
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("j")
---accepting rule at line 114 (" ")
---accepting rule at line 89 ("=")
 Lval
 stmt1
 <id,j>
 <=>
-33333333333
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("j")
---accepting rule at line 114 (" ")
---accepting rule at line 85 ("-")
 Lval
 <id,j>
 <->
-33333333333
---accepting rule at line 114 (" ")
---accepting rule at line 109 ("1")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 79 ("}")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("a")
---accepting rule at line 82 ("[")
---accepting rule at line 112 ("j")
---accepting rule at line 84 ("+")
 Lval
 <intd>
 ExpNumber:0
@@ -374,92 +109,21 @@ stmt1
 <[>
 <id,j>
 <+>
-33333333333
---accepting rule at line 109 ("1")
---accepting rule at line 83 ("]")
---accepting rule at line 89 ("=")
 Lval
 <intd>
 ExpNumber:0
 <]>
 <=>
-33333333333
-22222222222222
---accepting rule at line 112 ("temp")
---accepting rule at line 75 (";")
 Lval
 <id,temp>
 <;>
-33333333333
---accepting rule at line 114 (" ")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("i")
---accepting rule at line 114 (" ")
---accepting rule at line 89 ("=")
 Lval
 stmt1
 <id,i>
 <=>
-33333333333
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("i")
---accepting rule at line 114 (" ")
---accepting rule at line 84 ("+")
 Lval
 <id,i>
 <+>
-33333333333
---accepting rule at line 114 (" ")
---accepting rule at line 109 ("1")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 79 ("}")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 108 ("return")
---accepting rule at line 114 (" ")
---accepting rule at line 111 ("0")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 79 ("}")
---accepting rule at line 115 ("
-")
---accepting rule at line 115 ("
-")
---accepting rule at line 100 ("int")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("main")
---accepting rule at line 80 ("(")
---accepting rule at line 81 (")")
---accepting rule at line 78 ("{")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("n")
---accepting rule at line 114 (" ")
---accepting rule at line 89 ("=")
 Lval
 <intd>
 ExpNumber:0
@@ -478,34 +142,6 @@ ExpNumber:0
 <{>
 <id,n>
 <=>
-33333333333
---accepting rule at line 114 (" ")
---accepting rule at line 109 ("10")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 100 ("int")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("a")
---accepting rule at line 82 ("[")
---accepting rule at line 109 ("10")
---accepting rule at line 83 ("]")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("a")
---accepting rule at line 82 ("[")
---accepting rule at line 111 ("0")
---accepting rule at line 83 ("]")
---accepting rule at line 89 ("=")
 Lval
 <intd>
 ExpNumber:0
@@ -524,15 +160,6 @@ ExpNumber:0
 ExpNumber:0
 <]>
 <=>
-33333333333
-22222222222222
---accepting rule at line 109 ("4")
---accepting rule at line 75 (";")
---accepting rule at line 112 ("a")
---accepting rule at line 82 ("[")
---accepting rule at line 109 ("1")
---accepting rule at line 83 ("]")
---accepting rule at line 89 ("=")
 Lval
 <intd>
 ExpNumber:0
@@ -544,15 +171,6 @@ stmt1
 ExpNumber:0
 <]>
 <=>
-33333333333
-22222222222222
---accepting rule at line 109 ("3")
---accepting rule at line 75 (";")
---accepting rule at line 112 ("a")
---accepting rule at line 82 ("[")
---accepting rule at line 109 ("2")
---accepting rule at line 83 ("]")
---accepting rule at line 89 ("=")
 Lval
 <intd>
 ExpNumber:0
@@ -564,15 +182,6 @@ stmt1
 ExpNumber:0
 <]>
 <=>
-33333333333
-22222222222222
---accepting rule at line 109 ("9")
---accepting rule at line 75 (";")
---accepting rule at line 112 ("a")
---accepting rule at line 82 ("[")
---accepting rule at line 109 ("3")
---accepting rule at line 83 ("]")
---accepting rule at line 89 ("=")
 Lval
 <intd>
 ExpNumber:0
@@ -584,15 +193,6 @@ stmt1
 ExpNumber:0
 <]>
 <=>
-33333333333
-22222222222222
---accepting rule at line 109 ("2")
---accepting rule at line 75 (";")
---accepting rule at line 112 ("a")
---accepting rule at line 82 ("[")
---accepting rule at line 109 ("4")
---accepting rule at line 83 ("]")
---accepting rule at line 89 ("=")
 Lval
 <intd>
 ExpNumber:0
@@ -604,21 +204,6 @@ stmt1
 ExpNumber:0
 <]>
 <=>
-33333333333
-22222222222222
---accepting rule at line 111 ("0")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("a")
---accepting rule at line 82 ("[")
---accepting rule at line 109 ("5")
---accepting rule at line 83 ("]")
---accepting rule at line 89 ("=")
 Lval
 <into>
 ExpNumber:0
@@ -630,15 +215,6 @@ stmt1
 ExpNumber:0
 <]>
 <=>
-33333333333
-22222222222222
---accepting rule at line 109 ("1")
---accepting rule at line 75 (";")
---accepting rule at line 112 ("a")
---accepting rule at line 82 ("[")
---accepting rule at line 109 ("6")
---accepting rule at line 83 ("]")
---accepting rule at line 89 ("=")
 Lval
 <intd>
 ExpNumber:0
@@ -650,15 +226,6 @@ stmt1
 ExpNumber:0
 <]>
 <=>
-33333333333
-22222222222222
---accepting rule at line 109 ("6")
---accepting rule at line 75 (";")
---accepting rule at line 112 ("a")
---accepting rule at line 82 ("[")
---accepting rule at line 109 ("7")
---accepting rule at line 83 ("]")
---accepting rule at line 89 ("=")
 Lval
 <intd>
 ExpNumber:0
@@ -670,15 +237,6 @@ stmt1
 ExpNumber:0
 <]>
 <=>
-33333333333
-22222222222222
---accepting rule at line 109 ("5")
---accepting rule at line 75 (";")
---accepting rule at line 112 ("a")
---accepting rule at line 82 ("[")
---accepting rule at line 109 ("8")
---accepting rule at line 83 ("]")
---accepting rule at line 89 ("=")
 Lval
 <intd>
 ExpNumber:0
@@ -690,15 +248,6 @@ stmt1
 ExpNumber:0
 <]>
 <=>
-33333333333
-22222222222222
---accepting rule at line 109 ("7")
---accepting rule at line 75 (";")
---accepting rule at line 112 ("a")
---accepting rule at line 82 ("[")
---accepting rule at line 109 ("9")
---accepting rule at line 83 ("]")
---accepting rule at line 89 ("=")
 Lval
 <intd>
 ExpNumber:0
@@ -710,29 +259,6 @@ stmt1
 ExpNumber:0
 <]>
 <=>
-33333333333
-22222222222222
---accepting rule at line 109 ("8")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 100 ("int")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("i")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("i")
---accepting rule at line 114 (" ")
---accepting rule at line 89 ("=")
 Lval
 <intd>
 ExpNumber:0
@@ -743,31 +269,11 @@ stmt1
 <;>
 <id,i>
 <=>
-33333333333
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("insertsort")
---accepting rule at line 80 ("(")
---accepting rule at line 112 ("a")
---accepting rule at line 81 (")")
 Lval
 <id,insertsort>
 <(>
 <id,a>
 <)>
-33333333333
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 103 ("while")
---accepting rule at line 114 (" ")
---accepting rule at line 80 ("(")
---accepting rule at line 112 ("i")
---accepting rule at line 114 (" ")
---accepting rule at line 96 ("<")
 Lval
 <;>
 stmt1
@@ -775,43 +281,9 @@ stmt1
 <(>
 <id,i>
 <<>
-33333333333
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("n")
---accepting rule at line 81 (")")
 Lval
 <id,n>
 <)>
-33333333333
---accepting rule at line 114 (" ")
---accepting rule at line 78 ("{")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 100 ("int")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("tmp")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("tmp")
---accepting rule at line 114 (" ")
---accepting rule at line 89 ("=")
 Lval
 <{>
 <int>
@@ -819,80 +291,23 @@ Lval
 <;>
 <id,tmp>
 <=>
-33333333333
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("a")
---accepting rule at line 82 ("[")
---accepting rule at line 112 ("i")
---accepting rule at line 83 ("]")
 Lval
 <id,a>
 <[>
 <id,i>
 <]>
-33333333333
---accepting rule at line 75 (";")
 Lval
 <;>
-33333333333
-22222222222222
---accepting rule at line 115 ("
-")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("putint")
---accepting rule at line 80 ("(")
---accepting rule at line 112 ("tmp")
---accepting rule at line 81 (")")
 Lval
 stmt1
 <id,putint>
 <(>
 <id,tmp>
 <)>
-33333333333
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("tmp")
---accepting rule at line 114 (" ")
---accepting rule at line 89 ("=")
 Lval
 <;>
 <id,tmp>
 <=>
-33333333333
---accepting rule at line 114 (" ")
---accepting rule at line 109 ("10")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("putch")
---accepting rule at line 80 ("(")
---accepting rule at line 112 ("tmp")
---accepting rule at line 81 (")")
 Lval
 <intd>
 ExpNumber:0
@@ -902,61 +317,13 @@ stmt1
 <(>
 <id,tmp>
 <)>
-33333333333
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("i")
---accepting rule at line 114 (" ")
---accepting rule at line 89 ("=")
 Lval
 <;>
 <id,i>
 <=>
-33333333333
---accepting rule at line 114 (" ")
---accepting rule at line 112 ("i")
---accepting rule at line 114 (" ")
---accepting rule at line 84 ("+")
 Lval
 <id,i>
 <+>
-33333333333
---accepting rule at line 114 (" ")
---accepting rule at line 109 ("1")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 79 ("}")
---accepting rule at line 115 ("
-")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 114 (" ")
---accepting rule at line 108 ("return")
---accepting rule at line 114 (" ")
---accepting rule at line 111 ("0")
---accepting rule at line 75 (";")
---accepting rule at line 115 ("
-")
---accepting rule at line 79 ("}")
---accepting rule at line 115 ("
-")
---(end of buffer or a NUL)
---EOF (start condition 0)
 Lval
 <intd>
 ExpNumber:0
@@ -968,497 +335,6 @@ stmt1
 ExpNumber:0
 <;>
 <}>
-CompUnits (1)
-  VarDecl (1)
-    IDENTIFIER n
-  CompUnits (2)
-    FuncDef (2)
-      ArrayFuncFParam (2)
-        ArrayExps (2)
-      Block (4)
-        BlockItems (4)
-          VarDecl (4)
-            IDENTIFIER i
-          BlockItems (5)
-            Lval_Opassign_Stmt (5)
-              LVal (5)
-                IDENTIFIER i
-                ArrayExps (5)
-              IntConst (5)
-                CONSTANTINTD: 1
-            BlockItems (6)
-              While_Stmt (6)
-                Cond (6)
-                  OPLIGHT (6)
-                    LVal_EXP (6)
-                      LVal (6)
-                        IDENTIFIER i
-                        ArrayExps (6)
-                    LVal_EXP (6)
-                      LVal (6)
-                        IDENTIFIER n
-                        ArrayExps (6)
-                Block_Stmt (8)
-                  Block (8)
-                    BlockItems (8)
-                      VarDecl (8)
-                        IDENTIFIER temp
-                      BlockItems (9)
-                        Lval_Opassign_Stmt (9)
-                          LVal (9)
-                            IDENTIFIER temp
-                            ArrayExps (9)
-                          LVal_EXP (9)
-                            LVal (9)
-                              IDENTIFIER a
-                              ArrayExps (9)
-                                LVal_EXP (9)
-                                  LVal (9)
-                                    IDENTIFIER i
-                                    ArrayExps (9)
-                                ArrayExps (9)
-                        BlockItems (10)
-                          VarDecl (10)
-                            IDENTIFIER j
-                          BlockItems (11)
-                            Lval_Opassign_Stmt (11)
-                              LVal (11)
-                                IDENTIFIER j
-                                ArrayExps (11)
-                              MINUSExp (11)
-                                LVal_EXP (11)
-                                  LVal (11)
-                                    IDENTIFIER i
-                                    ArrayExps (11)
-                                IntConst (11)
-                                  CONSTANTINTD: 1
-                            BlockItems (12)
-                              While_Stmt (12)
-                                Cond_And (12)
-                                  Cond (12)
-                                    OPGREAT (12)
-                                      LVal_EXP (12)
-                                        LVal (12)
-                                          IDENTIFIER j
-                                          ArrayExps (12)
-                                      OPMINUS_Exp (12)
-                                        IntConst (12)
-                                          CONSTANTINTD: 1
-                                  Cond (12)
-                                    OPLIGHT (12)
-                                      LVal_EXP (12)
-                                        LVal (12)
-                                          IDENTIFIER temp
-                                          ArrayExps (12)
-                                      LVal_EXP (12)
-                                        LVal (12)
-                                          IDENTIFIER a
-                                          ArrayExps (12)
-                                            LVal_EXP (12)
-                                              LVal (12)
-                                                IDENTIFIER j
-                                                ArrayExps (12)
-                                            ArrayExps (12)
-                                Block_Stmt (14)
-                                  Block (14)
-                                    BlockItems (14)
-                                      Lval_Opassign_Stmt (14)
-                                        LVal (14)
-                                          IDENTIFIER a
-                                          ArrayExps (14)
-                                            PLUSExp (14)
-                                              LVal_EXP (14)
-                                                LVal (14)
-                                                  IDENTIFIER j
-                                                  ArrayExps (14)
-                                              IntConst (14)
-                                                CONSTANTINTD: 1
-                                            ArrayExps (14)
-                                        LVal_EXP (14)
-                                          LVal (14)
-                                            IDENTIFIER a
-                                            ArrayExps (14)
-                                              LVal_EXP (14)
-                                                LVal (14)
-                                                  IDENTIFIER j
-                                                  ArrayExps (14)
-                                              ArrayExps (14)
-                                      BlockItems (15)
-                                        Lval_Opassign_Stmt (15)
-                                          LVal (15)
-                                            IDENTIFIER j
-                                            ArrayExps (15)
-                                          MINUSExp (15)
-                                            LVal_EXP (15)
-                                              LVal (15)
-                                                IDENTIFIER j
-                                                ArrayExps (15)
-                                            IntConst (15)
-                                              CONSTANTINTD: 1
-                              BlockItems (17)
-                                Lval_Opassign_Stmt (17)
-                                  LVal (17)
-                                    IDENTIFIER a
-                                    ArrayExps (17)
-                                      PLUSExp (17)
-                                        LVal_EXP (17)
-                                          LVal (17)
-                                            IDENTIFIER j
-                                            ArrayExps (17)
-                                        IntConst (17)
-                                          CONSTANTINTD: 1
-                                      ArrayExps (17)
-                                  LVal_EXP (17)
-                                    LVal (17)
-                                      IDENTIFIER temp
-                                      ArrayExps (17)
-                                BlockItems (18)
-                                  Lval_Opassign_Stmt (18)
-                                    LVal (18)
-                                      IDENTIFIER i
-                                      ArrayExps (18)
-                                    PLUSExp (18)
-                                      LVal_EXP (18)
-                                        LVal (18)
-                                          IDENTIFIER i
-                                          ArrayExps (18)
-                                      IntConst (18)
-                                        CONSTANTINTD: 1
-              BlockItems (20)
-                Return_Stmt (20)
-                  IntConst (20)
-                    CONSTANTOCT: 0
-    CompUnits (23)
-      FuncDef (23)
-        NOFParam (23)
-        Block (24)
-          BlockItems (24)
-            Lval_Opassign_Stmt (24)
-              LVal (24)
-                IDENTIFIER n
-                ArrayExps (24)
-              IntConst (24)
-                CONSTANTINTD: 10
-            BlockItems (25)
-              VarDecl (25)
-                ArrayDec: demmision=0
-                  IDENTIFIER a
-              BlockItems (26)
-                Lval_Opassign_Stmt (26)
-                  LVal (26)
-                    IDENTIFIER a
-                    ArrayExps (26)
-                      IntConst (26)
-                        CONSTANTOCT: 0
-                      ArrayExps (26)
-                  IntConst (26)
-                    CONSTANTINTD: 4
-                BlockItems (26)
-                  Lval_Opassign_Stmt (26)
-                    LVal (26)
-                      IDENTIFIER a
-                      ArrayExps (26)
-                        IntConst (26)
-                          CONSTANTINTD: 1
-                        ArrayExps (26)
-                    IntConst (26)
-                      CONSTANTINTD: 3
-                  BlockItems (26)
-                    Lval_Opassign_Stmt (26)
-                      LVal (26)
-                        IDENTIFIER a
-                        ArrayExps (26)
-                          IntConst (26)
-                            CONSTANTINTD: 2
-                          ArrayExps (26)
-                      IntConst (26)
-                        CONSTANTINTD: 9
-                    BlockItems (26)
-                      Lval_Opassign_Stmt (26)
-                        LVal (26)
-                          IDENTIFIER a
-                          ArrayExps (26)
-                            IntConst (26)
-                              CONSTANTINTD: 3
-                            ArrayExps (26)
-                        IntConst (26)
-                          CONSTANTINTD: 2
-                      BlockItems (26)
-                        Lval_Opassign_Stmt (26)
-                          LVal (26)
-                            IDENTIFIER a
-                            ArrayExps (26)
-                              IntConst (26)
-                                CONSTANTINTD: 4
-                              ArrayExps (26)
-                          IntConst (26)
-                            CONSTANTOCT: 0
-                        BlockItems (27)
-                          Lval_Opassign_Stmt (27)
-                            LVal (27)
-                              IDENTIFIER a
-                              ArrayExps (27)
-                                IntConst (27)
-                                  CONSTANTINTD: 5
-                                ArrayExps (27)
-                            IntConst (27)
-                              CONSTANTINTD: 1
-                          BlockItems (27)
-                            Lval_Opassign_Stmt (27)
-                              LVal (27)
-                                IDENTIFIER a
-                                ArrayExps (27)
-                                  IntConst (27)
-                                    CONSTANTINTD: 6
-                                  ArrayExps (27)
-                              IntConst (27)
-                                CONSTANTINTD: 6
-                            BlockItems (27)
-                              Lval_Opassign_Stmt (27)
-                                LVal (27)
-                                  IDENTIFIER a
-                                  ArrayExps (27)
-                                    IntConst (27)
-                                      CONSTANTINTD: 7
-                                    ArrayExps (27)
-                                IntConst (27)
-                                  CONSTANTINTD: 5
-                              BlockItems (27)
-                                Lval_Opassign_Stmt (27)
-                                  LVal (27)
-                                    IDENTIFIER a
-                                    ArrayExps (27)
-                                      IntConst (27)
-                                        CONSTANTINTD: 8
-                                      ArrayExps (27)
-                                  IntConst (27)
-                                    CONSTANTINTD: 7
-                                BlockItems (27)
-                                  Lval_Opassign_Stmt (27)
-                                    LVal (27)
-                                      IDENTIFIER a
-                                      ArrayExps (27)
-                                        IntConst (27)
-                                          CONSTANTINTD: 9
-                                        ArrayExps (27)
-                                    IntConst (27)
-                                      CONSTANTINTD: 8
-                                  BlockItems (28)
-                                    VarDecl (28)
-                                      IDENTIFIER i
-                                    BlockItems (29)
-                                      Lval_Opassign_Stmt (29)
-                                        LVal (29)
-                                          IDENTIFIER i
-                                          ArrayExps (29)
-                                        funcall (29)
-                                          IDENTIFIER insertsort
-                                          FuncRParams (29)
-                                            LVal_EXP (29)
-                                              LVal (29)
-                                                IDENTIFIER a
-                                                ArrayExps (29)
-                                      BlockItems (30)
-                                        While_Stmt (30)
-                                          Cond (30)
-                                            OPLIGHT (30)
-                                              LVal_EXP (30)
-                                                LVal (30)
-                                                  IDENTIFIER i
-                                                  ArrayExps (30)
-                                              LVal_EXP (30)
-                                                LVal (30)
-                                                  IDENTIFIER n
-                                                  ArrayExps (30)
-                                          Block_Stmt (31)
-                                            Block (31)
-                                              BlockItems (31)
-                                                VarDecl (31)
-                                                  IDENTIFIER tmp
-                                                BlockItems (32)
-                                                  Lval_Opassign_Stmt (32)
-                                                    LVal (32)
-                                                      IDENTIFIER tmp
-                                                      ArrayExps (32)
-                                                    LVal_EXP (32)
-                                                      LVal (32)
-                                                        IDENTIFIER a
-                                                        ArrayExps (32)
-                                                          LVal_EXP (32)
-                                                            LVal (32)
-                                                              IDENTIFIER i
-                                                              ArrayExps (32)
-                                                          ArrayExps (32)
-                                                  BlockItems (33)
-                                                    Exp_Stmt (33)
-                                                      funcall (33)
-                                                        IDENTIFIER putint
-                                                        FuncRParams (33)
-                                                          LVal_EXP (33)
-                                                            LVal (33)
-                                                              IDENTIFIER tmp
-                                                              ArrayExps (33)
-                                                    BlockItems (34)
-                                                      Lval_Opassign_Stmt (34)
-                                                        LVal (34)
-                                                          IDENTIFIER tmp
-                                                          ArrayExps (34)
-                                                        IntConst (34)
-                                                          CONSTANTINTD: 10
-                                                      BlockItems (35)
-                                                        Exp_Stmt (35)
-                                                          funcall (35)
-                                                            IDENTIFIER putch
-                                                            FuncRParams (35)
-                                                              LVal_EXP (35)
-                                                                LVal (35)
-                                                                  IDENTIFIER tmp
-                                                                  ArrayExps (35)
-                                                        BlockItems (36)
-                                                          Lval_Opassign_Stmt (36)
-                                                            LVal (36)
-                                                              IDENTIFIER i
-                                                              ArrayExps (36)
-                                                            PLUSExp (36)
-                                                              LVal_EXP (36)
-                                                                LVal (36)
-                                                                  IDENTIFIER i
-                                                                  ArrayExps (36)
-                                                              IntConst (36)
-                                                                CONSTANTINTD: 1
-                                        BlockItems (38)
-                                          Return_Stmt (38)
-                                            IntConst (38)
-                                              CONSTANTOCT: 0
-
-
-===========================================================
-Global
-ID             category       type           depictor
-               
-putf           Function       void           NULL           
-putarray       Function       void           NOT NULL       
-putchar        Function       void           NOT NULL       
-putint         Function       void           NOT NULL       
-getarray       Function       int            NOT NULL       
-getchar        Function       int            NOT NULL       
-getint         Function       int            NOT NULL       
-n              Variable       TYPEINTEGER    NULL           
-insertsort     Function       TYPEINTEGER    NOT NULL       
-main           Function       TYPEINTEGER    NOT NULL       
-===========================================================
-===========================================================
-Formal:putarray
-ID             category       type           depictor
-              
-a              Array          int            ----------> dim=1
-a              Variable       int            NULL           
-===========================================================
-===========================================================
-Local:putarray
-ID             category       type           depictor
-              
-scope type is wrong
-               Variable                      NULL           
-===========================================================
-===========================================================
-Formal:putchar
-ID             category       type           depictor
-              
-a              Variable       int            NULL           
-===========================================================
-===========================================================
-Local:putchar
-ID             category       type           depictor
-              
-===========================================================
-===========================================================
-Formal:putint
-ID             category       type           depictor
-              
-a              Variable       int            NULL           
-===========================================================
-===========================================================
-Local:putint
-ID             category       type           depictor
-              
-===========================================================
-===========================================================
-Formal:getarray
-ID             category       type           depictor
-              
-a              Array          int            ----------> dim=1
-===========================================================
-===========================================================
-Local:getarray
-ID             category       type           depictor
-              
-scope type is wrong
-               Variable                      NULL           
-===========================================================
-===========================================================
-Formal:getchar
-ID             category       type           depictor
-              
-               NOParam                       NULL           
-===========================================================
-===========================================================
-Local:getchar
-ID             category       type           depictor
-              
-===========================================================
-===========================================================
-Formal:getint
-ID             category       type           depictor
-              
-               NOParam                       NULL           
-===========================================================
-===========================================================
-Local:getint
-ID             category       type           depictor
-              
-===========================================================
-===========================================================
-Formal:insertsort
-ID             category       type           depictor
-              
-a              Array          TYPEINTEGER    ----------> dim=1
-===========================================================
-===========================================================
-Local:insertsort
-ID             category       type           depictor
-              
-i              Variable       TYPEINTEGER    NULL           
-               Block          BLOCKStmt      NOT NULL       
-===========================================================
-===========================================================
-Local:block
-ID             category       type           depictor
-              
-temp           Variable       TYPEINTEGER    NULL           
-j              Variable       TYPEINTEGER    NULL           
-               Block          BLOCKStmt      NULL           
-===========================================================
-===========================================================
-Formal:main
-ID             category       type           depictor
-              
-               NOParam                       NOT NULL       
-===========================================================
-===========================================================
-Local:main
-ID             category       type           depictor
-              
-a              Array          TYPEINTEGER    ----------> dim=1
-i              Variable       TYPEINTEGER    NULL           
-               Block          BLOCKStmt      NOT NULL       
-===========================================================
-===========================================================
-Local:block
-ID             category       type           depictor
-              
-tmp            Variable       TYPEINTEGER    NULL           
-===========================================================
 456
 789
 456

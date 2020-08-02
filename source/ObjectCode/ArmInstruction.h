@@ -11,7 +11,7 @@ using std::cout;
 using std::endl;
 using std::runtime_error;
 
-#define DEBUG
+
 
 
 typedef enum {R0, R1,R2, R3,R4,R5,R6,  // 这一部分是通用寄存器

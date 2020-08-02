@@ -27,7 +27,7 @@ LEXFLAGS = -d
 # The -v flag writes out a verbose description of the states and conflicts
 # The -t flag turns on debugging capability
 # The -y flag means imitate yacc's output file naming conventions
-YACCFLAGS = -dvty
+YACCFLAGS = -dty
 
 # Link with standard C library, math library, and lex library
 LIBS = -lc -lm -ll -lfl #-ly
@@ -52,7 +52,7 @@ JUNK =  *.o lex.yy.c  y.tab.c y.tab.h
 $(COMPILER) : SysY.l  SysY.y ./GrammarTree/AST.h ./SymbolTable/SymbolTable.h ./SymbolTable/ScopeStack_stl.h ./IntermediateCode/Quadruple.h ./IntermediateCode/QuadrupleOperand.h ./IntermediateCode/TAC.h ./ObjectCode/Arm.h ./ObjectCode/ArmInstruction.h 
 	$(YACC) $(YACCFLAGS) SysY.y 
 	$(LEX) $(LEXFLAGS) SysY.l
-	$(CC)   ./GrammarTree/AST.cpp  ./SymbolTable/SymbolTable.cpp ./SymbolTable/ScopeStack_stl.cpp ./IntermediateCode/TAC.cpp ./ObjectCode/Arm.cpp ./ObjectCode/ArmInstruction.cpp lex.yy.c  y.tab.c   ${CFLAGS} -o $@
+	$(CC)   ./GrammarTree/AST.cpp  ./SymbolTable/SymbolTable.cpp ./SymbolTable/ScopeStack_stl.cpp ./IntermediateCode/TAC.cpp ./IntermediateCode/QuadrupleOperand.cpp ./ObjectCode/Arm.cpp ./ObjectCode/ArmInstruction.cpp lex.yy.c  y.tab.c   ${CFLAGS} -o $@
 
 
 

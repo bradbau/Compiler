@@ -28,13 +28,16 @@
     extern char *yytext;
     extern int yydebug;
     extern int yywrap(void);
+    extern int yy_flex_debug;
+    
     void yyerror(const char* fmt, ...);
 
       extern char *optarg;//参数处理外部变量
       string CodeString;//输出代码字符串
       char outputFileName[256];
       //outputFileName=(char*)malloc(256*sizeof(char));
-   
+      
+      //#define DEBUG
 
     int dim = 0;
     ScopeItem *recordArrayInfo;
@@ -84,11 +87,13 @@ Compiler: CompUnits {
                   ASTTree *asttree = new ASTTree("Compiler", 1, yylineno, $1);
                   $$ = asttree;
                   //打印AST
-                $1->TraverseGrammerTree(0);
-                ScopeItem *arrayInfox = (ScopeItem*)malloc(sizeof(ScopeItem));
-                arrayInfox->dim = 1;
-                arrayInfox->len.push_back(NULL);
-                //加入库函数
+                  #ifdef DEBUG
+                  $1->TraverseGrammerTree(0);
+                  #endif
+                  ScopeItem *arrayInfox = (ScopeItem*)malloc(sizeof(ScopeItem));
+                  arrayInfox->dim = 1;
+                  arrayInfox->len.push_back(NULL);
+                  //加入库函数
                   $$->si= $1->si;
                   $$->si = addIntoScope(Global, $$->si, "getint", Function, "int", NULL);       //getint
                   $$->si->depictor = addIntoScope(Formal, NULL, " ", NOParam, " ", NULL);
@@ -107,22 +112,28 @@ Compiler: CompUnits {
                   arrayInfoy->len.push_back(NULL);
                   $$->si->depictor = addIntoScope(Formal, $$->si->depictor, "a", Array, "int", arrayInfoy);
                   $$->si = addIntoScope(Global, $$->si, "putf" , Function, "void", NULL);
-                // 打印符号表
-                displayGlobal($$->si);
+                  // 打印符号表
+                  #ifdef DEBUG
+                  displayGlobal($$->si);
+                  #endif
                   //ScopeStack* stack = Stack();
                   vector<ScopeItem> stack;
                   ScopeItem scopeItem;
                   unsigned int temp_num = 0;
                   unsigned int label_num = 0;
                   TACCode* entrance = BuildTAC($$ , *($$->si) , stack, temp_num, label_num);
+                  #ifdef DEBUG
                   DisplayTACCode(entrance);
-                  
-
                   displayGlobal($$->si);
+                  #endif
                   ARM* AssemblyCode=new ARM(entrance, $$->si, stack);
+                  #ifdef DEBUG
                   cout<<"tac build complete"<<endl;
+                  #endif
                   string CodeString=AssemblyCode->toString();
+                  #ifdef DEBUG
                   cout<<CodeString<<endl;
+                  #endif
                   //输出文件
       
                   ofstream outstream(outputFileName, ios::out);         
@@ -196,7 +207,7 @@ FuncFParam: TYPEINTEGER IDENTIFIER{ASTTree *asttree = new ASTTree("FuncFParam", 
                 $$->si = addIntoScope(Formal, $$->si, $2->GetID(), Variable, "TYPEINTEGER", NULL);
                 }
           | TYPEINTEGER IDENTIFIER OPLEFTBRACKET OPRIGHTBRACKET ArrayExps{
-                cout << "1111111111111111" << endl; 
+                
                 ASTTree *asttree = new ASTTree("ArrayFuncFParam", 1, yylineno, $5);
                 $$ = asttree;
                 $$->SetFuncPType("array");
@@ -328,14 +339,14 @@ InitValList:{ $$ = NULL;}
 
 /*数组维度*/
 ArrayExps:{ dim = 0;//初始化数组的维数
-            cout << "33333333333" << endl;
+            
             ScopeItem *arrayInfo2 = (ScopeItem*)malloc(sizeof(ScopeItem));
             arrayInfo2->dim = dim;
             recordArrayInfo_param = arrayInfo2;
             ASTTree *asttree = new ASTTree("ArrayExps", 0, yylineno);
             $$ = asttree;}
          | OPLEFTBRACKET Exp OPRIGHTBRACKET ArrayExps{ 
-               cout << "22222222222222" << endl;
+               
                dim++;
                recordArrayInfo_param->dim = dim;
                recordArrayInfo_param->len.insert(recordArrayInfo_param->len.begin(), $2);//将记录数组这一维长度的EXP节点加入到len中
@@ -469,7 +480,8 @@ int main(int argc, char *argv[]){
             //extern int yyparse(void);
         //extern int yylex(void);
 	
-      
+      yydebug=0;
+      yy_flex_debug=0;
       //处理输入参数
        
       char opt;
@@ -478,7 +490,7 @@ int main(int argc, char *argv[]){
 
             switch(opt){
                   case 'S':{
-                        cout<<"arg S"<<endl;
+                        
                         if(optarg){
                               printf("%s", optarg);
                         }
@@ -493,11 +505,11 @@ int main(int argc, char *argv[]){
                               printf("arg o error\n");
                         }
                         strcpy(outputFileName,optarg);
-                        cout<<"outputFileName"<<outputFileName<<endl;
+                        //cout<<"outputFileName"<<outputFileName<<endl;
                         break;
                   }
                   case 'O':{
-                        cout<<"arg O"<<endl;
+                        //cout<<"arg O"<<endl;
                         if(optarg){
                               printf("%s\n", optarg);
                         }
@@ -507,7 +519,7 @@ int main(int argc, char *argv[]){
                         break;
                   }
                   default:{
-                        cout<<"unknown arg"<<endl;
+                        //cout<<"unknown arg"<<endl;
                         break;
                   }
             }

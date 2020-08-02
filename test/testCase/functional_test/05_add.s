@@ -1,4 +1,5 @@
-#armv7 assembly code
+;armv7 assembly code
+.text
 main:
 PUSH {fp}
 ADD  fp, sp, #0
@@ -10,9 +11,7 @@ ADD  r3, r2, #0
 ADD  r4, r1, #0
 ADD  r5, r3, #0
 ADD  r6, r4, r5
-LDR r8, [fp, 0x0]
 ADD  r8, r6, #0
-LDR r9, [fp, 0x0]
 ADD  r9, r8, #0
 ADD  r0, r9, #0
 ADD  sp, fp, #0

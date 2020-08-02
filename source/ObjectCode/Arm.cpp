@@ -65,13 +65,38 @@ ARM::ARM(TACCode* entrance, ScopeItem *GlobalItemHead, vector<ScopeItem> &stack)
                 {
                     if(code.dest.Type==ARRAY){
                         //目标是数组元素的赋值
+                        //任意寄存器为一个没有保存在寄存器中的数组元素赋值；在已经保存数组对应元素的寄存器中赋值。前者不需要加载过程
+                        //然后是否可以延后保存
+                        if(code.firstOp.Type==INTEGERCONST){
+                            //如果是小于255的常量直接用mov，大于255的用ldr伪指令
+                            if(code.firstOp.Data.value>=0&& code.firstOp.Data.value<=255){
+                                CalculateInstruction* InsItem= new CalculateInstruction(INSMOV, GetRegisterNoLoad(code.dest.Data.array_addr),  code.firstOp.Data.value, 1);
+                                InsList.push_back(dynamic_cast<ARMInstruction*>(InsItem));
+                            }
+                            else{
+                                MemoryInstruction* MemItem= new MemoryInstruction(INSLDR, GetRegisterNoLoad(code.dest.Data.array_addr), code.firstOp.Data.value, 1);
+                                InsList.push_back(dynamic_cast<ARMInstruction*>(MemItem));
+                            }
+                        }
+                        else if(code.firstOp.Type==VARIABLE){
+                            CalculateInstruction* InsItem=new CalculateInstruction(INSADD, GetRegisterNoLoad(code.dest.Data.array_addr),GetRegister(code.firstOp.Data.variable), 0, 1 );
+                            InsList.push_back(dynamic_cast<ARMInstruction*>(InsItem));
+                        }
+                        else if(code.firstOp.Type==ARRAY){
+                             CalculateInstruction* InsItem=new CalculateInstruction(INSADD, GetRegisterNoLoad(code.dest.Data.array_addr),GetRegister(code.firstOp.Data.array_addr), 0, 1 );
+                            InsList.push_back(dynamic_cast<ARMInstruction*>(InsItem));
+                        }
+                        else{
+                            //错误处理
+                            throw std::runtime_error("not handled in assign");
+                        }
 
 
                     }
                     else if(code.dest.Type==VARIABLE){
                         if(code.firstOp.Type== VARIABLE){ 
                             //变量赋值
-                            CalculateInstruction* InsItem=new CalculateInstruction(INSADD, GetRegister(code.dest.Data.variable),GetRegister(code.firstOp.Data.variable), 0, 1 );
+                            CalculateInstruction* InsItem=new CalculateInstruction(INSADD, GetRegisterNoLoad(code.dest.Data.variable),GetRegister(code.firstOp.Data.variable), 0, 1 );
                             InsList.push_back(dynamic_cast<ARMInstruction*>(InsItem));
                         }
                         else if(code.firstOp.Type== INTEGERCONST){
@@ -80,11 +105,11 @@ ARM::ARM(TACCode* entrance, ScopeItem *GlobalItemHead, vector<ScopeItem> &stack)
 
                             //如果是小于255的常量直接用mov，大于255的用ldr伪指令
                             if(code.firstOp.Data.value>=0&& code.firstOp.Data.value<=255){
-                                CalculateInstruction* InsItem= new CalculateInstruction(INSMOV, GetRegister(code.dest.Data.variable),  code.firstOp.Data.value, 1);
+                                CalculateInstruction* InsItem= new CalculateInstruction(INSMOV, GetRegisterNoLoad(code.dest.Data.variable),  code.firstOp.Data.value, 1);
                                 InsList.push_back(dynamic_cast<ARMInstruction*>(InsItem));
                             }
                             else{
-                                MemoryInstruction* MemItem= new MemoryInstruction(INSLDR, GetRegister(code.dest.Data.variable), code.firstOp.Data.value, 1);
+                                MemoryInstruction* MemItem= new MemoryInstruction(INSLDR, GetRegisterNoLoad(code.dest.Data.variable), code.firstOp.Data.value, 1);
                                 InsList.push_back(dynamic_cast<ARMInstruction*>(MemItem));
                             }
 
@@ -94,13 +119,15 @@ ARM::ARM(TACCode* entrance, ScopeItem *GlobalItemHead, vector<ScopeItem> &stack)
                         }
                         else if(code.firstOp.Type== ARRAY){
                             //数组元素赋值
-                            //首先要将数组元素加载到寄存器中
-                            //然后寄存器赋值
-                            //然后是否可以延后保存
+                            //读取数组元素到寄存器中，然后寄存器内容相加
+                            CalculateInstruction* CalItem= new CalculateInstruction(INSADD, GetRegisterNoLoad(code.dest.Data.variable), GetRegister(code.firstOp.Data.array_addr), 0,1);
+                            InsList.push_back(dynamic_cast<ARMInstruction*>(CalItem));
+
 
                         }
                         else{
                             //错误处理
+                            throw std::runtime_error("not handled in assign");
                         }
                     }
                     
@@ -117,11 +144,125 @@ ARM::ARM(TACCode* entrance, ScopeItem *GlobalItemHead, vector<ScopeItem> &stack)
                 //变量与常量相加
                 //第一个和第二个操作数的类型固定
                 {
-                    assert(code.dest.Type == VARIABLE);
-                    assert(code.firstOp.Type == VARIABLE);
-                    assert(code.secondOp.Type == VARIABLE);
-                    CalculateInstruction* InsItem=new CalculateInstruction(INSADD, GetRegister(code.dest.Data.variable), GetRegister(code.firstOp.Data.variable), GetRegister(code.secondOp.Data.variable), 0);
-                    InsList.push_back(dynamic_cast<ARMInstruction*>(InsItem));
+
+                    
+                    
+                    if(code.dest.Type == VARIABLE){
+                        if(code.firstOp.Type == VARIABLE){
+                            if(code.secondOp.Type == VARIABLE){
+                                CalculateInstruction* InsItem=new CalculateInstruction(INSADD, GetRegisterNoLoad(code.dest.Data.variable), GetRegister(code.firstOp.Data.variable), GetRegister(code.secondOp.Data.variable), 0);
+                                InsList.push_back(dynamic_cast<ARMInstruction*>(InsItem));
+                            }
+                            else if(code.secondOp.Type == INTEGERCONST){
+                                CalculateInstruction* CalItem =new CalculateInstruction(INSADD, GetRegisterNoLoad(code.dest.Data.variable), GetRegister(code.firstOp.Data.variable), code.secondOp.Data.value, 1);
+                                InsList.push_back(dynamic_cast<ARMInstruction*>(CalItem));
+                            }
+                            else if(code.secondOp.Type == ARRAY){
+
+                                //这里还有简化余地
+                                //CalculateInstruction* CalItem =new CalculateInstruction(INSADD, GetRegisterNoLoad(code.dest.Data.variable), GetRegister(code.firstOp.Data.variable), , 0);
+                                //InsList.push_back(dynamic_cast<ARMInstruction*>(CalItem));
+                            }
+                            else{
+                                //错误处理
+                                throw std::runtime_error("not handled in assign");
+                            }
+                        }
+                        else if(code.firstOp.Type == INTEGERCONST){
+                            if(code.secondOp.Type == VARIABLE){
+                                //调换位置
+                                CalculateInstruction* CalItem =new CalculateInstruction(INSADD, GetRegisterNoLoad(code.dest.Data.variable), GetRegister(code.secondOp.Data.variable), code.firstOp.Data.value, 1);
+                                InsList.push_back(dynamic_cast<ARMInstruction*>(CalItem));
+                            }
+                            else if(code.secondOp.Type == INTEGERCONST){
+                                //不太可能出现的
+                                throw std::runtime_error("not a possible tac");
+                            }
+                            else if(code.secondOp.Type == ARRAY){
+                                //later
+
+                            }
+                            else{
+                                //错误处理
+                                throw std::runtime_error("not handled in assign");
+                            }
+                        }
+                        else if(code.firstOp.Type == ARRAY){
+                            if(code.secondOp.Type == VARIABLE){
+
+                            }
+                            else if(code.secondOp.Type == INTEGERCONST){
+
+                            }
+                            else if(code.secondOp.Type == ARRAY){
+
+                            }
+                            else{
+                                //错误处理
+                                throw std::runtime_error("not handled in assign");
+                            }
+                        }
+                        else{
+                            //错误处理
+                            throw std::runtime_error("not handled in assign");
+                        }
+                    }
+                    else if(code.dest.Type == ARRAY){
+                        if(code.firstOp.Type == VARIABLE){
+                            if(code.secondOp.Type == VARIABLE){
+
+                            }
+                            else if(code.secondOp.Type == INTEGERCONST){
+
+                            }
+                            else if(code.secondOp.Type == ARRAY){
+
+                            }
+                            else{
+                                //错误处理
+                                throw std::runtime_error("not handled in assign");
+                            }
+                        }
+                        else if(code.firstOp.Type == INTEGERCONST){
+                            if(code.secondOp.Type == VARIABLE){
+
+                            }
+                            else if(code.secondOp.Type == INTEGERCONST){
+
+                            }
+                            else if(code.secondOp.Type == ARRAY){
+
+                            }
+                            else{
+                                //错误处理
+                                throw std::runtime_error("not handled in assign");
+                            }
+                        }
+                        else if(code.firstOp.Type == ARRAY){
+                            if(code.secondOp.Type == VARIABLE){
+
+                            }
+                            else if(code.secondOp.Type == INTEGERCONST){
+
+                            }
+                            else if(code.secondOp.Type == ARRAY){
+
+                            }
+                            else{
+                                //错误处理
+                                throw std::runtime_error("not handled in assign");
+                            }
+                        }
+                        else{
+                            //错误处理
+                            throw std::runtime_error("not handled in assign");
+                        }
+                    }
+                    
+                    
+                    
+                    
+                    
                     break;
                 }
                 
@@ -532,69 +673,207 @@ ARM::ARM(TACCode* entrance, ScopeItem *GlobalItemHead, vector<ScopeItem> &stack)
 Register ARM::GetRegister(ScopeItem* variable){
     //分配空余寄存器，可用寄存器有r0-r10 
     
-        int goal;
-        //找到保存有该变量的寄存器
-        if((goal=FinfRegister(variable))!=-1){
-            regs[goal].tag++;
-            return (Register)goal;
-        }
-        //没有变量保存
-        else{
-            //寻找空寄存器
-            for(Register item: userReg){
-                if(regs[item].filled==false){
-                    regs[item].filled=true;
-                    regs[item].tag=1;
-                    regs[item].variable=variable;
-                    
-                    //插入ld指令,加载数据
-                    #ifdef DEBUG
-                    cout<<"findregister: insldr rd="<<item<< ",r1="<<R11<<",r2 offset="<<variable->offset<<",op2type=1, insefft=0"   <<endl;
-                    #endif // DEBUG
+    int goal;
+    //找到保存有该变量的寄存器
+    if((goal=FindRegister(variable))!=-1){
+        regs[goal].tag++;
+        return (Register)goal;
+    }
+    //没有变量保存
+    else{
+        //寻找空寄存器
+        for(Register item: userReg){
+            if(regs[item].filled==false){
+                regs[item].filled=true;
+                regs[item].tag=1;
+                regs[item].variable=variable;
+                
+                //插入ld指令,加载数据
+                #ifdef DEBUG
+                cout<<"findregister: insldr rd="<<item<< ",r1="<<R11<<",r2 offset="<<variable->offset<<",op2type=1, insefft=0"   <<endl;
+                #endif // DEBUG
 
-                    //全局变量
-                    if(variable->stype==Global){
+                //全局变量
+                if(variable->stype==Global){
 
-                        //MemoryInstruction* MemItem=new MemoryInstruction(INSLDR, (Register)item
-                    }
-                    else{
-                        //如果是局部变量或者形参
-                        MemoryInstruction* MemItem=new MemoryInstruction(INSLDR,(Register)item,  R11, variable->offset , 1, 0);
-                        InsList.push_back(dynamic_cast<ARMInstruction*>(MemItem));
-                    }
-                    
-
-                    return item;
+                    //MemoryInstruction* MemItem=new MemoryInstruction(INSLDR, (Register)item
                 }
-            }
-            //没有空寄存器，用lru腾出一个寄存器
-            //这个查找的效率是O(n)
-            int minTag=1000;//无穷大
-            for(Register item: userReg){
-                if(regs[item].tag<minTag){
-                    goal=item;
-                    regs[item].tag=minTag;
+                else{
+                    //如果是局部变量或者形参
+                    MemoryInstruction* MemItem=new MemoryInstruction(INSLDR,(Register)item,  R11, variable->offset , 1, 0);
+                    InsList.push_back(dynamic_cast<ARMInstruction*>(MemItem));
                 }
+                
+
+                return item;
             }
-            //保存这个寄存器中的数据至内存
-            MemoryInstruction* MemItem=new MemoryInstruction(INSSTR, (Register)goal, R11, variable->offset, 1, 0);
-            InsList.push_back(dynamic_cast<ARMInstruction*>(MemItem));
-            //分配寄存器给输入变量
-            regs[goal].tag=1;
-            regs[goal].variable=variable;
-            #ifdef DEBUG
-                    cout<<"findregister: insldr rd="<<goal<< ",r1="<<R11<<",r2 offset="<<variable->offset<<",op2type=1, insefft=0" <<  endl;
-            #endif // DEBUG
-            MemItem=  new MemoryInstruction(INSLDR,(Register)goal,  R11, variable->offset , 1, 0);
-            InsList.push_back(dynamic_cast<ARMInstruction*>(MemItem));
-            return (Register)goal;
         }
+        //没有空寄存器，用lru腾出一个寄存器
+        //这个查找的效率是O(n)
+        int minTag=1000;//无穷大
+        for(Register item: userReg){
+            if(regs[item].tag<minTag){
+                goal=item;
+                regs[item].tag=minTag;
+            }
+        }
+        //保存这个寄存器中的数据至内存
+        MemoryInstruction* MemItem=new MemoryInstruction(INSSTR, (Register)goal, R11, variable->offset, 1, 0);
+        InsList.push_back(dynamic_cast<ARMInstruction*>(MemItem));
+        //分配寄存器给输入变量
+        regs[goal].tag=1;
+        regs[goal].variable=variable;
+        #ifdef DEBUG
+                cout<<"findregister: insldr rd="<<goal<< ",r1="<<R11<<",r2 offset="<<variable->offset<<",op2type=1, insefft=0" <<  endl;
+        #endif // DEBUG
+        MemItem=  new MemoryInstruction(INSLDR,(Register)goal,  R11, variable->offset , 1, 0);
+        InsList.push_back(dynamic_cast<ARMInstruction*>(MemItem));
+        return (Register)goal;
+    }
     
     
 }
 
+Register ARM::GetRegister(ARRAY_ADDR* array_addr){
+    //分配或者获取已经分配的空余寄存器
+    int goal;
+    //找到保存有该变量的寄存器
+    if((goal=FindRegister(array_addr))!=-1){
+        regs[goal].tag++;
+        return (Register)goal;
+    }
+    //没有变量保存
+    else{
+        //寻找空寄存器
+        for(Register item: userReg){
+            if(regs[item].filled==false){
+                regs[item].filled=true;
+                regs[item].tag=1;
+                regs[item].array_addr=array_addr;
+                
+                //插入ld指令,加载数据
+                #ifdef DEBUG
+                //cout<<"findregister: insldr rd="<<item<< ",r1="<<R11<<",r2 offset="<<array_addr->offset<<",op2type=1, insefft=0"   <<endl;
+                #endif // DEBUG
+
+                //全局变量
+                if(array_addr->array_si->stype==Global){
+
+                    //MemoryInstruction* MemItem=new MemoryInstruction(INSLDR, (Register)item
+                }
+                else{
+                    //如果是局部变量或者形参
+                    MemoryInstruction* MemItem=new MemoryInstruction(INSLDR,(Register)item,  GetRegister(array_addr->array_si), GetRegister(array_addr->deviation) , 0, 0);
+                    InsList.push_back(dynamic_cast<ARMInstruction*>(MemItem));
+                }
+                
+
+                return item;
+            }
+        }
+        //没有空寄存器，用lru腾出一个寄存器
+        //这个查找的效率是O(n)
+        int minTag=1000;//无穷大
+        for(Register item: userReg){
+            if(regs[item].tag<minTag){
+                goal=item;
+                regs[item].tag=minTag;
+            }
+        }
+        //保存这个寄存器中的数据至内存
+       StoreRegister(goal);
+        //分配寄存器给输入变量
+        regs[goal].tag=1;
+        regs[goal].array_addr=array_addr;
+        #ifdef DEBUG
+                //cout<<"findregister: insldr rd="<<goal<< ",r1="<<R11<<",r2 offset="<<array_addr->offset<<",op2type=1, insefft=0" <<  endl;
+        #endif // DEBUG
+        MemoryInstruction* MemItem=new MemoryInstruction(INSLDR,(Register)goal,  GetRegister(array_addr->array_si), GetRegister(array_addr->deviation) , 0, 0);
+        InsList.push_back(dynamic_cast<ARMInstruction*>(MemItem));
+        return (Register)goal;
+    }
+
+ }
+Register ARM::GetRegisterNoLoad(ScopeItem* variable){
+    //分配或者获取已经分配的空余寄存器
+    int goal;
+    //找到保存有该变量的寄存器
+    if((goal=FindRegister(variable))!=-1){
+        regs[goal].tag++;
+        return (Register)goal;
+    }
+    //没有变量保存
+    else{
+        //寻找空寄存器
+        for(Register item: userReg){
+            if(regs[item].filled==false){
+                regs[item].filled=true;
+                regs[item].tag=1;
+                regs[item].variable=variable;
+                
+                return item;
+            }
+        }
+        //没有空寄存器，用lru腾出一个寄存器
+        //这个查找的效率是O(n)
+        int minTag=1000;//无穷大
+        for(Register item: userReg){
+            if(regs[item].tag<minTag){
+                goal=item;
+                regs[item].tag=minTag;
+            }
+        }
+        //保存这个寄存器中的数据至内存
+        StoreRegister(goal);
+        //分配寄存器给输入变量
+        regs[goal].tag=1;
+        regs[goal].variable=variable;
+        return (Register)goal;
+    }
+
+
+} 
+Register ARM::GetRegisterNoLoad(ARRAY_ADDR* array_addr){
+     //分配或者获取已经分配的空余寄存器
+    int goal;
+    //找到保存有该变量的寄存器
+    if((goal=FindRegister(array_addr))!=-1){
+        regs[goal].tag++;
+        return (Register)goal;
+    }
+    //没有变量保存
+    else{
+        //寻找空寄存器
+        for(Register item: userReg){
+            if(regs[item].filled==false){
+                regs[item].filled=true;
+                regs[item].tag=1;
+                regs[item].array_addr=array_addr;
+                
+                return item;
+            }
+        }
+        //没有空寄存器，用lru腾出一个寄存器
+        //这个查找的效率是O(n)
+        int minTag=1000;//无穷大
+        for(Register item: userReg){
+            if(regs[item].tag<minTag){
+                goal=item;
+                regs[item].tag=minTag;
+            }
+        }
+        //保存这个寄存器中的数据至内存
+        StoreRegister(goal);
+        //分配寄存器给输入变量
+        regs[goal].tag=1;
+        regs[goal].array_addr=array_addr;
+        return (Register)goal;
+    }
+
+} 
+
 //Register ARM::GetRegister(ScopeItem* variable);//分配空余寄存器
-int  ARM::FinfRegister(ScopeItem* variable){
+int  ARM::FindRegister(ScopeItem* variable){
     //查找存有对应变量的寄存器, 没有则返回-1
     for(Register item: userReg){
         if(  regs[item].variable!=NULL   &&*(regs[item].variable)==*variable){
@@ -603,12 +882,23 @@ int  ARM::FinfRegister(ScopeItem* variable){
     }
     return -1;
 }
+int ARM::FindRegister(ARRAY_ADDR* array_addr){
+    //查找存有对应变量的寄存器
+    for(Register item: userReg){
+        if(  regs[item].array_addr!=NULL   &&*(regs[item].array_addr)==*array_addr){
+            return item;
+        }
+    }
+    return -1;
+
+}
 
 void ARM::EmptyRegister(){
     for(Register item: userReg){
         regs[item].filled=false;
         regs[item].tag=0;
         regs[item].variable=NULL;
+        regs[item].array_addr=NULL;
         
     }
 }
@@ -641,19 +931,28 @@ int ARM::LoadInstantToRegister(int instantNum){
 //对于局部变量的存储, 不能用于数组
 void ARM::StoreRegister(int RegisterNum){
     
-    if(regs[RegisterNum].filled==false || regs[RegisterNum].variable==NULL){
+    if(regs[RegisterNum].filled==false || regs[RegisterNum].variable==NULL || regs[RegisterNum].array_addr==NULL){
         throw std::runtime_error("no variable in this register");
     }
-    //分类型存储
-    if(regs[RegisterNum].variable->stype==Global){
-        //全局变量如何存储
+    if(regs[RegisterNum].variable!=NULL){//普通变量存储
+        //分类型存储
+        if(regs[RegisterNum].variable->stype==Global){
+            //全局变量如何存储
+        }
+        else{
+            //局部变量和形参
+            MemoryInstruction* MemItem=new MemoryInstruction(INSSTR, (Register)RegisterNum, LoadInstantToRegister(regs[RegisterNum].variable->offset), 0);
+            InsList.push_back(dynamic_cast<ARMInstruction*>(MemItem));
+
+        }
     }
-    else{
-        //局部变量和形参
-        MemoryInstruction* MemItem=new MemoryInstruction(INSSTR, (Register)RegisterNum, LoadInstantToRegister(regs[RegisterNum].variable->offset), 0);
+    else {// 数组变量存储
+    
+        MemoryInstruction* MemItem= new MemoryInstruction(INSSTR, (Register)RegisterNum, GetRegister(regs[RegisterNum].array_addr->array_si), GetRegister(regs[RegisterNum].array_addr->deviation), 0, 0);
         InsList.push_back(dynamic_cast<ARMInstruction*>(MemItem));
 
     }
+    
 }
 
 void ARM::AllocateStack(ScopeItem * variable, int &offset){
@@ -678,11 +977,14 @@ string ARM::toString(){
     //生成汇编文本
     //遍历指令序列，依次调用tostring方法然后串联
 
-    string CodeString="#armv7 assembly code\n";
+    string CodeString=";armv7 assembly code\n.text\n";
     int i=0;
     for(auto iter: InsList){
         i++;
+        #ifdef DEBUG
         cout<<"instruction number"<<i<<endl;
+        #endif // DEBUG
+        
         CodeString+=iter->toString();
     }
     return CodeString;

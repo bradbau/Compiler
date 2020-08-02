@@ -1,10 +1,10 @@
-#armv7 assembly code
+;armv7 assembly code
+.text
 MOV r0, #4
 main:
 PUSH {fp}
 ADD  fp, sp, #0
 SUB sp, sp, #0
-LDR r1, [fp, 0x0]
 ADD  r1, r0, #0
 ADD  r0, r1, #0
 ADD  sp, fp, #0

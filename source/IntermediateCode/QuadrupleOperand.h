@@ -16,8 +16,8 @@ typedef enum
 
 typedef struct ARRAY_ADDR            //四元式数组存储：指向数组的指针+偏移地址
 {
-    ScopeItem* array_si;
-    ScopeItem* deviation;
+    ScopeItem* array_si;//指向符号表，代表数组名
+    ScopeItem* deviation;//variable类型保存单元偏移量，代表地址
 } ARRAY_ADDR;
 
 
@@ -27,7 +27,7 @@ typedef union
         int labelvalue;
         ScopeItem* variable;     //
         ScopeItem* function;     //
-        ARRAY_ADDR* array_addr;
+        ARRAY_ADDR* array_addr; //指向数组元素
 
 } TACOperandData;
 
@@ -66,4 +66,9 @@ typedef struct {
     TACOperandData Data; //操作符数据
 
 }QuadrupleOperand;
+
+
+
+bool operator==(ARRAY_ADDR a1, ARRAY_ADDR a2);//重载相等比较运算符
+
 #endif

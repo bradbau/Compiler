@@ -1,1 +1,2 @@
-#armv7 assembly code
+;armv7 assembly code
+.text
