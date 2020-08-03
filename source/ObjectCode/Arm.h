@@ -1,7 +1,7 @@
 #ifndef ARM_H
 #define ARM_H
 
-
+#define DEBUG
 
 #include<stdio.h>
 #include<stdlib.h>
@@ -15,6 +15,7 @@ using std::string;
 using std::list;
 using std::cout;
 using std::endl;
+using std::runtime_error;
 
 #define FUNCSTACKSIZE 64
 

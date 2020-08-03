@@ -8,7 +8,7 @@ MOV r0, #10
 ADD  r1, r0, #0
 ADD  r2, r1, #0
 MOV r3, #0
-CMP r2, r3, (null)
+CMP r2, r3, 
 BGT L0
 B L1
 L0:

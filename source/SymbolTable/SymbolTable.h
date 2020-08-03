@@ -5,11 +5,17 @@
 #include <string>
 #include<stdio.h>
 #include<stdlib.h>
+#include<iostream>
 #include <vector>
 #include "../GrammarTree/AST.h"
 class ASTTree; 
 
-using namespace std;
+using std::string;
+
+using std::vector;
+using std::cout;
+using std::endl;
+
 
 typedef enum SysYCategory
 { 

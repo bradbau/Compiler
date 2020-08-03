@@ -211,6 +211,366 @@ Lval
 ExpNumber:0
 <;>
 <}>
+CompUnits (3)
+  FuncDef (3)
+    FuncFParams (3)
+      ArrayFuncFParam (3)
+        ArrayExps (3)
+      FuncFParam (3)
+    Block (4)
+      BlockItems (4)
+        VarDecl (4)
+          IDENTIFIER inWord
+        BlockItems (5)
+          VarDecl (5)
+            IDENTIFIER i
+          BlockItems (6)
+            VarDecl (6)
+              IDENTIFIER count
+            BlockItems (7)
+              Lval_Opassign_Stmt (7)
+                LVal (7)
+                  IDENTIFIER i
+                  ArrayExps (7)
+                IntConst (7)
+                  CONSTANTOCT: 0
+              BlockItems (8)
+                Lval_Opassign_Stmt (8)
+                  LVal (8)
+                    IDENTIFIER inWord
+                    ArrayExps (8)
+                  IntConst (8)
+                    CONSTANTOCT: 0
+                BlockItems (9)
+                  Lval_Opassign_Stmt (9)
+                    LVal (9)
+                      IDENTIFIER count
+                      ArrayExps (9)
+                    IntConst (9)
+                      CONSTANTOCT: 0
+                  BlockItems (10)
+                    While_Stmt (10)
+                      Cond (10)
+                        OPLIGHT (10)
+                          LVal_EXP (10)
+                            LVal (10)
+                              IDENTIFIER i
+                              ArrayExps (10)
+                          LVal_EXP (10)
+                            LVal (10)
+                              IDENTIFIER n
+                              ArrayExps (10)
+                      Block_Stmt (11)
+                        Block (11)
+                          BlockItems (11)
+                            IF_ELSE_Stmt (11)
+                              Cond (11)
+                                OPNOTEQUAL (11)
+                                  LVal_EXP (11)
+                                    LVal (11)
+                                      IDENTIFIER string
+                                      ArrayExps (11)
+                                        LVal_EXP (11)
+                                          LVal (11)
+                                            IDENTIFIER i
+                                            ArrayExps (11)
+                                        ArrayExps (11)
+                                  IntConst (11)
+                                    CONSTANTINTD: 32
+                              Block_Stmt (12)
+                                Block (12)
+                                  BlockItems (12)
+                                    IF_Stmt (12)
+                                      Cond (12)
+                                        OPEQUAL (12)
+                                          LVal_EXP (12)
+                                            LVal (12)
+                                              IDENTIFIER inWord
+                                              ArrayExps (12)
+                                          IntConst (12)
+                                            CONSTANTOCT: 0
+                                      Block_Stmt (13)
+                                        Block (13)
+                                          BlockItems (13)
+                                            Lval_Opassign_Stmt (13)
+                                              LVal (13)
+                                                IDENTIFIER count
+                                                ArrayExps (13)
+                                              PLUSExp (13)
+                                                LVal_EXP (13)
+                                                  LVal (13)
+                                                    IDENTIFIER count
+                                                    ArrayExps (13)
+                                                IntConst (13)
+                                                  CONSTANTINTD: 1
+                                            BlockItems (14)
+                                              Lval_Opassign_Stmt (14)
+                                                LVal (14)
+                                                  IDENTIFIER inWord
+                                                  ArrayExps (14)
+                                                IntConst (14)
+                                                  CONSTANTINTD: 1
+                              Block_Stmt (17)
+                                Block (17)
+                                  BlockItems (17)
+                                    Lval_Opassign_Stmt (17)
+                                      LVal (17)
+                                        IDENTIFIER inWord
+                                        ArrayExps (17)
+                                      IntConst (17)
+                                        CONSTANTOCT: 0
+                            BlockItems (19)
+                              Lval_Opassign_Stmt (19)
+                                LVal (19)
+                                  IDENTIFIER i
+                                  ArrayExps (19)
+                                PLUSExp (19)
+                                  LVal_EXP (19)
+                                    LVal (19)
+                                      IDENTIFIER i
+                                      ArrayExps (19)
+                                  IntConst (19)
+                                    CONSTANTINTD: 1
+                    BlockItems (21)
+                      Return_Stmt (21)
+                        LVal_EXP (21)
+                          LVal (21)
+                            IDENTIFIER count
+                            ArrayExps (21)
+  CompUnits (24)
+    FuncDef (24)
+      NOFParam (24)
+      Block (25)
+        BlockItems (25)
+          VarDecl (25)
+            ArrayDec: demmision=0
+              IDENTIFIER string
+          BlockItems (26)
+            VarDecl (26)
+              IDENTIFIER temp
+            BlockItems (27)
+              VarDecl (27)
+                IDENTIFIER i
+              BlockItems (28)
+                Lval_Opassign_Stmt (28)
+                  LVal (28)
+                    IDENTIFIER i
+                    ArrayExps (28)
+                  IntConst (28)
+                    CONSTANTOCT: 0
+                BlockItems (29)
+                  Lval_Opassign_Stmt (29)
+                    LVal (29)
+                      IDENTIFIER temp
+                      ArrayExps (29)
+                    IntConst (29)
+                      CONSTANTOCT: 0
+                  BlockItems (30)
+                    While_Stmt (30)
+                      Cond (30)
+                        OPNOTEQUAL (30)
+                          LVal_EXP (30)
+                            LVal (30)
+                              IDENTIFIER temp
+                              ArrayExps (30)
+                          IntConst (30)
+                            CONSTANTINTD: 10
+                      Block_Stmt (31)
+                        Block (31)
+                          BlockItems (31)
+                            Lval_Opassign_Stmt (31)
+                              LVal (31)
+                                IDENTIFIER temp
+                                ArrayExps (31)
+                              funcall (31)
+                                IDENTIFIER getch
+                            BlockItems (32)
+                              Lval_Opassign_Stmt (32)
+                                LVal (32)
+                                  IDENTIFIER string
+                                  ArrayExps (32)
+                                    LVal_EXP (32)
+                                      LVal (32)
+                                        IDENTIFIER i
+                                        ArrayExps (32)
+                                    ArrayExps (32)
+                                LVal_EXP (32)
+                                  LVal (32)
+                                    IDENTIFIER temp
+                                    ArrayExps (32)
+                              BlockItems (33)
+                                Lval_Opassign_Stmt (33)
+                                  LVal (33)
+                                    IDENTIFIER i
+                                    ArrayExps (33)
+                                  PLUSExp (33)
+                                    LVal_EXP (33)
+                                      LVal (33)
+                                        IDENTIFIER i
+                                        ArrayExps (33)
+                                    IntConst (33)
+                                      CONSTANTINTD: 1
+                    BlockItems (35)
+                      Lval_Opassign_Stmt (35)
+                        LVal (35)
+                          IDENTIFIER temp
+                          ArrayExps (35)
+                        funcall (35)
+                          IDENTIFIER wc
+                          FuncRParams (35)
+                            LVal_EXP (35)
+                              LVal (35)
+                                IDENTIFIER string
+                                ArrayExps (35)
+                            Exps (35)
+                              LVal_EXP (35)
+                                LVal (35)
+                                  IDENTIFIER i
+                                  ArrayExps (35)
+                      BlockItems (36)
+                        Exp_Stmt (36)
+                          funcall (36)
+                            IDENTIFIER putint
+                            FuncRParams (36)
+                              LVal_EXP (36)
+                                LVal (36)
+                                  IDENTIFIER temp
+                                  ArrayExps (36)
+                        BlockItems (37)
+                          Return_Stmt (37)
+                            IntConst (37)
+                              CONSTANTOCT: 0
+
+
+===========================================================
+Global
+ID             category       type           depictor
+               
+putf           Function       void           NULL           
+putarray       Function       void           NOT NULL       
+putchar        Function       void           NOT NULL       
+putint         Function       void           NOT NULL       
+getarray       Function       int            NOT NULL       
+getchar        Function       int            NOT NULL       
+getint         Function       int            NOT NULL       
+wc             Function       TYPEINTEGER    NOT NULL       
+main           Function       TYPEINTEGER    NOT NULL       
+===========================================================
+===========================================================
+Formal:putarray
+ID             category       type           depictor
+              
+a              Array          int            ----------> dim=1
+a              Variable       int            NULL           
+===========================================================
+===========================================================
+Local:putarray
+ID             category       type           depictor
+              
+scope type is wrong
+               Variable                      NULL           
+===========================================================
+===========================================================
+Formal:putchar
+ID             category       type           depictor
+              
+a              Variable       int            NULL           
+===========================================================
+===========================================================
+Local:putchar
+ID             category       type           depictor
+              
+===========================================================
+===========================================================
+Formal:putint
+ID             category       type           depictor
+              
+a              Variable       int            NULL           
+===========================================================
+===========================================================
+Local:putint
+ID             category       type           depictor
+              
+===========================================================
+===========================================================
+Formal:getarray
+ID             category       type           depictor
+              
+a              Array          int            ----------> dim=1
+===========================================================
+===========================================================
+Local:getarray
+ID             category       type           depictor
+              
+scope type is wrong
+               Variable                      NULL           
+===========================================================
+===========================================================
+Formal:getchar
+ID             category       type           depictor
+              
+               NOParam                       NULL           
+===========================================================
+===========================================================
+Local:getchar
+ID             category       type           depictor
+              
+===========================================================
+===========================================================
+Formal:getint
+ID             category       type           depictor
+              
+               NOParam                       NULL           
+===========================================================
+===========================================================
+Local:getint
+ID             category       type           depictor
+              
+===========================================================
+===========================================================
+Formal:wc
+ID             category       type           depictor
+              
+string         Array          TYPEINTEGER    ----------> dim=1
+n              Variable       TYPEINTEGER    NOT NULL       
+===========================================================
+===========================================================
+Local:wc
+ID             category       type           depictor
+              
+inWord         Variable       TYPEINTEGER    NULL           
+i              Variable       TYPEINTEGER    NULL           
+count          Variable       TYPEINTEGER    NULL           
+               Block          BLOCKStmt      NOT NULL       
+===========================================================
+===========================================================
+Local:block
+ID             category       type           depictor
+              
+               Block          BLOCKStmt      NOT NULL       
+               Block          BLOCKStmt      NULL           
+===========================================================
+===========================================================
+Local:block
+ID             category       type           depictor
+              
+               Block          BLOCKStmt      NULL           
+===========================================================
+===========================================================
+Formal:main
+ID             category       type           depictor
+              
+               NOParam                       NOT NULL       
+===========================================================
+===========================================================
+Local:main
+ID             category       type           depictor
+              
+string         Array          TYPEINTEGER    ----------> dim=1
+temp           Variable       TYPEINTEGER    NULL           
+i              Variable       TYPEINTEGER    NULL           
+               Block          BLOCKStmt      NULL           
+===========================================================
 789
 456
 789

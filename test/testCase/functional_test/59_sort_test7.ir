@@ -725,6 +725,995 @@ stmt1
 ExpNumber:0
 <;>
 <}>
+CompUnits (1)
+  VarDecl (1)
+    IDENTIFIER n
+  CompUnits (2)
+    FuncDef (2)
+      FuncFParams (2)
+        ArrayFuncFParam (2)
+          ArrayExps (2)
+        FuncFParams (2)
+          FuncFParam (2)
+          FuncFParams (2)
+            FuncFParam (2)
+            FuncFParam (2)
+      Block (4)
+        BlockItems (4)
+          VarDecl (4)
+            IDENTIFIER n1
+          BlockItems (5)
+            Lval_Opassign_Stmt (5)
+              LVal (5)
+                IDENTIFIER n1
+                ArrayExps (5)
+              PLUSExp (5)
+                MINUSExp (5)
+                  LVal_EXP (5)
+                    LVal (5)
+                      IDENTIFIER middle
+                      ArrayExps (5)
+                  LVal_EXP (5)
+                    LVal (5)
+                      IDENTIFIER low
+                      ArrayExps (5)
+                IntConst (5)
+                  CONSTANTINTD: 1
+            BlockItems (6)
+              VarDecl (6)
+                IDENTIFIER n2
+              BlockItems (7)
+                Lval_Opassign_Stmt (7)
+                  LVal (7)
+                    IDENTIFIER n2
+                    ArrayExps (7)
+                  MINUSExp (7)
+                    LVal_EXP (7)
+                      LVal (7)
+                        IDENTIFIER high
+                        ArrayExps (7)
+                    LVal_EXP (7)
+                      LVal (7)
+                        IDENTIFIER middle
+                        ArrayExps (7)
+                BlockItems (8)
+                  VarDecl (8)
+                    ArrayDec: demmision=0
+                      IDENTIFIER L
+                  BlockItems (9)
+                    VarDecl (9)
+                      ArrayDec: demmision=0
+                        IDENTIFIER R
+                    BlockItems (10)
+                      VarDecl (10)
+                        IDENTIFIER i
+                      BlockItems (11)
+                        Lval_Opassign_Stmt (11)
+                          LVal (11)
+                            IDENTIFIER i
+                            ArrayExps (11)
+                          IntConst (11)
+                            CONSTANTOCT: 0
+                        BlockItems (12)
+                          VarDecl (12)
+                            IDENTIFIER j
+                          BlockItems (13)
+                            Lval_Opassign_Stmt (13)
+                              LVal (13)
+                                IDENTIFIER j
+                                ArrayExps (13)
+                              IntConst (13)
+                                CONSTANTOCT: 0
+                            BlockItems (15)
+                              While_Stmt (15)
+                                Cond (15)
+                                  OPLIGHT (15)
+                                    LVal_EXP (15)
+                                      LVal (15)
+                                        IDENTIFIER i
+                                        ArrayExps (15)
+                                    LVal_EXP (15)
+                                      LVal (15)
+                                        IDENTIFIER n1
+                                        ArrayExps (15)
+                                Block_Stmt (16)
+                                  Block (16)
+                                    BlockItems (16)
+                                      Lval_Opassign_Stmt (16)
+                                        LVal (16)
+                                          IDENTIFIER L
+                                          ArrayExps (16)
+                                            LVal_EXP (16)
+                                              LVal (16)
+                                                IDENTIFIER i
+                                                ArrayExps (16)
+                                            ArrayExps (16)
+                                        LVal_EXP (16)
+                                          LVal (16)
+                                            IDENTIFIER array
+                                            ArrayExps (16)
+                                              PLUSExp (16)
+                                                LVal_EXP (16)
+                                                  LVal (16)
+                                                    IDENTIFIER i
+                                                    ArrayExps (16)
+                                                LVal_EXP (16)
+                                                  LVal (16)
+                                                    IDENTIFIER low
+                                                    ArrayExps (16)
+                                              ArrayExps (16)
+                                      BlockItems (17)
+                                        Lval_Opassign_Stmt (17)
+                                          LVal (17)
+                                            IDENTIFIER i
+                                            ArrayExps (17)
+                                          PLUSExp (17)
+                                            LVal_EXP (17)
+                                              LVal (17)
+                                                IDENTIFIER i
+                                                ArrayExps (17)
+                                            IntConst (17)
+                                              CONSTANTINTD: 1
+                              BlockItems (19)
+                                While_Stmt (19)
+                                  Cond (19)
+                                    OPLIGHT (19)
+                                      LVal_EXP (19)
+                                        LVal (19)
+                                          IDENTIFIER j
+                                          ArrayExps (19)
+                                      LVal_EXP (19)
+                                        LVal (19)
+                                          IDENTIFIER n2
+                                          ArrayExps (19)
+                                  Block_Stmt (20)
+                                    Block (20)
+                                      BlockItems (20)
+                                        Lval_Opassign_Stmt (20)
+                                          LVal (20)
+                                            IDENTIFIER R
+                                            ArrayExps (20)
+                                              LVal_EXP (20)
+                                                LVal (20)
+                                                  IDENTIFIER j
+                                                  ArrayExps (20)
+                                              ArrayExps (20)
+                                          LVal_EXP (20)
+                                            LVal (20)
+                                              IDENTIFIER array
+                                              ArrayExps (20)
+                                                PLUSExp (20)
+                                                  PLUSExp (20)
+                                                    LVal_EXP (20)
+                                                      LVal (20)
+                                                        IDENTIFIER j
+                                                        ArrayExps (20)
+                                                    LVal_EXP (20)
+                                                      LVal (20)
+                                                        IDENTIFIER middle
+                                                        ArrayExps (20)
+                                                  IntConst (20)
+                                                    CONSTANTINTD: 1
+                                                ArrayExps (20)
+                                        BlockItems (21)
+                                          Lval_Opassign_Stmt (21)
+                                            LVal (21)
+                                              IDENTIFIER j
+                                              ArrayExps (21)
+                                            PLUSExp (21)
+                                              LVal_EXP (21)
+                                                LVal (21)
+                                                  IDENTIFIER j
+                                                  ArrayExps (21)
+                                              IntConst (21)
+                                                CONSTANTINTD: 1
+                                BlockItems (23)
+                                  Lval_Opassign_Stmt (23)
+                                    LVal (23)
+                                      IDENTIFIER i
+                                      ArrayExps (23)
+                                    IntConst (23)
+                                      CONSTANTOCT: 0
+                                  BlockItems (24)
+                                    Lval_Opassign_Stmt (24)
+                                      LVal (24)
+                                        IDENTIFIER j
+                                        ArrayExps (24)
+                                      IntConst (24)
+                                        CONSTANTOCT: 0
+                                    BlockItems (25)
+                                      VarDecl (25)
+                                        IDENTIFIER k
+                                      BlockItems (26)
+                                        Lval_Opassign_Stmt (26)
+                                          LVal (26)
+                                            IDENTIFIER k
+                                            ArrayExps (26)
+                                          LVal_EXP (26)
+                                            LVal (26)
+                                              IDENTIFIER low
+                                              ArrayExps (26)
+                                        BlockItems (27)
+                                          While_Stmt (27)
+                                            Cond_And (27)
+                                              Cond (27)
+                                                OPNOTEQUAL (27)
+                                                  LVal_EXP (27)
+                                                    LVal (27)
+                                                      IDENTIFIER i
+                                                      ArrayExps (27)
+                                                  LVal_EXP (27)
+                                                    LVal (27)
+                                                      IDENTIFIER n1
+                                                      ArrayExps (27)
+                                              Cond (27)
+                                                OPNOTEQUAL (27)
+                                                  LVal_EXP (27)
+                                                    LVal (27)
+                                                      IDENTIFIER j
+                                                      ArrayExps (27)
+                                                  LVal_EXP (27)
+                                                    LVal (27)
+                                                      IDENTIFIER n2
+                                                      ArrayExps (27)
+                                            Block_Stmt (29)
+                                              Block (29)
+                                                BlockItems (29)
+                                                  IF_ELSE_Stmt (29)
+                                                    Cond (29)
+                                                      OPLIGHT (29)
+                                                        LVal_EXP (29)
+                                                          LVal (29)
+                                                            IDENTIFIER L
+                                                            ArrayExps (29)
+                                                              LVal_EXP (29)
+                                                                LVal (29)
+                                                                  IDENTIFIER i
+                                                                  ArrayExps (29)
+                                                              ArrayExps (29)
+                                                        PLUSExp (29)
+                                                          LVal_EXP (29)
+                                                            LVal (29)
+                                                              IDENTIFIER R
+                                                              ArrayExps (29)
+                                                                LVal_EXP (29)
+                                                                  LVal (29)
+                                                                    IDENTIFIER j
+                                                                    ArrayExps (29)
+                                                                ArrayExps (29)
+                                                          IntConst (29)
+                                                            CONSTANTINTD: 1
+                                                    Block_Stmt (30)
+                                                      Block (30)
+                                                        BlockItems (30)
+                                                          Lval_Opassign_Stmt (30)
+                                                            LVal (30)
+                                                              IDENTIFIER array
+                                                              ArrayExps (30)
+                                                                LVal_EXP (30)
+                                                                  LVal (30)
+                                                                    IDENTIFIER k
+                                                                    ArrayExps (30)
+                                                                ArrayExps (30)
+                                                            LVal_EXP (30)
+                                                              LVal (30)
+                                                                IDENTIFIER L
+                                                                ArrayExps (30)
+                                                                  LVal_EXP (30)
+                                                                    LVal (30)
+                                                                      IDENTIFIER i
+                                                                      ArrayExps (30)
+                                                                  ArrayExps (30)
+                                                          BlockItems (31)
+                                                            Lval_Opassign_Stmt (31)
+                                                              LVal (31)
+                                                                IDENTIFIER k
+                                                                ArrayExps (31)
+                                                              PLUSExp (31)
+                                                                LVal_EXP (31)
+                                                                  LVal (31)
+                                                                    IDENTIFIER k
+                                                                    ArrayExps (31)
+                                                                IntConst (31)
+                                                                  CONSTANTINTD: 1
+                                                            BlockItems (32)
+                                                              Lval_Opassign_Stmt (32)
+                                                                LVal (32)
+                                                                  IDENTIFIER i
+                                                                  ArrayExps (32)
+                                                                PLUSExp (32)
+                                                                  LVal_EXP (32)
+                                                                    LVal (32)
+                                                                      IDENTIFIER i
+                                                                      ArrayExps (32)
+                                                                  IntConst (32)
+                                                                    CONSTANTINTD: 1
+                                                    Block_Stmt (35)
+                                                      Block (35)
+                                                        BlockItems (35)
+                                                          Lval_Opassign_Stmt (35)
+                                                            LVal (35)
+                                                              IDENTIFIER array
+                                                              ArrayExps (35)
+                                                                LVal_EXP (35)
+                                                                  LVal (35)
+                                                                    IDENTIFIER k
+                                                                    ArrayExps (35)
+                                                                ArrayExps (35)
+                                                            LVal_EXP (35)
+                                                              LVal (35)
+                                                                IDENTIFIER R
+                                                                ArrayExps (35)
+                                                                  LVal_EXP (35)
+                                                                    LVal (35)
+                                                                      IDENTIFIER j
+                                                                      ArrayExps (35)
+                                                                  ArrayExps (35)
+                                                          BlockItems (36)
+                                                            Lval_Opassign_Stmt (36)
+                                                              LVal (36)
+                                                                IDENTIFIER k
+                                                                ArrayExps (36)
+                                                              PLUSExp (36)
+                                                                LVal_EXP (36)
+                                                                  LVal (36)
+                                                                    IDENTIFIER k
+                                                                    ArrayExps (36)
+                                                                IntConst (36)
+                                                                  CONSTANTINTD: 1
+                                                            BlockItems (37)
+                                                              Lval_Opassign_Stmt (37)
+                                                                LVal (37)
+                                                                  IDENTIFIER j
+                                                                  ArrayExps (37)
+                                                                PLUSExp (37)
+                                                                  LVal_EXP (37)
+                                                                    LVal (37)
+                                                                      IDENTIFIER j
+                                                                      ArrayExps (37)
+                                                                  IntConst (37)
+                                                                    CONSTANTINTD: 1
+                                          BlockItems (40)
+                                            While_Stmt (40)
+                                              Cond (40)
+                                                OPLIGHT (40)
+                                                  LVal_EXP (40)
+                                                    LVal (40)
+                                                      IDENTIFIER i
+                                                      ArrayExps (40)
+                                                  LVal_EXP (40)
+                                                    LVal (40)
+                                                      IDENTIFIER n1
+                                                      ArrayExps (40)
+                                              Block_Stmt (41)
+                                                Block (41)
+                                                  BlockItems (41)
+                                                    Lval_Opassign_Stmt (41)
+                                                      LVal (41)
+                                                        IDENTIFIER array
+                                                        ArrayExps (41)
+                                                          LVal_EXP (41)
+                                                            LVal (41)
+                                                              IDENTIFIER k
+                                                              ArrayExps (41)
+                                                          ArrayExps (41)
+                                                      LVal_EXP (41)
+                                                        LVal (41)
+                                                          IDENTIFIER L
+                                                          ArrayExps (41)
+                                                            LVal_EXP (41)
+                                                              LVal (41)
+                                                                IDENTIFIER i
+                                                                ArrayExps (41)
+                                                            ArrayExps (41)
+                                                    BlockItems (42)
+                                                      Lval_Opassign_Stmt (42)
+                                                        LVal (42)
+                                                          IDENTIFIER k
+                                                          ArrayExps (42)
+                                                        PLUSExp (42)
+                                                          LVal_EXP (42)
+                                                            LVal (42)
+                                                              IDENTIFIER k
+                                                              ArrayExps (42)
+                                                          IntConst (42)
+                                                            CONSTANTINTD: 1
+                                                      BlockItems (43)
+                                                        Lval_Opassign_Stmt (43)
+                                                          LVal (43)
+                                                            IDENTIFIER i
+                                                            ArrayExps (43)
+                                                          PLUSExp (43)
+                                                            LVal_EXP (43)
+                                                              LVal (43)
+                                                                IDENTIFIER i
+                                                                ArrayExps (43)
+                                                            IntConst (43)
+                                                              CONSTANTINTD: 1
+                                            BlockItems (46)
+                                              While_Stmt (46)
+                                                Cond (46)
+                                                  OPLIGHT (46)
+                                                    LVal_EXP (46)
+                                                      LVal (46)
+                                                        IDENTIFIER j
+                                                        ArrayExps (46)
+                                                    LVal_EXP (46)
+                                                      LVal (46)
+                                                        IDENTIFIER n2
+                                                        ArrayExps (46)
+                                                Block_Stmt (47)
+                                                  Block (47)
+                                                    BlockItems (47)
+                                                      Lval_Opassign_Stmt (47)
+                                                        LVal (47)
+                                                          IDENTIFIER array
+                                                          ArrayExps (47)
+                                                            LVal_EXP (47)
+                                                              LVal (47)
+                                                                IDENTIFIER k
+                                                                ArrayExps (47)
+                                                            ArrayExps (47)
+                                                        LVal_EXP (47)
+                                                          LVal (47)
+                                                            IDENTIFIER R
+                                                            ArrayExps (47)
+                                                              LVal_EXP (47)
+                                                                LVal (47)
+                                                                  IDENTIFIER j
+                                                                  ArrayExps (47)
+                                                              ArrayExps (47)
+                                                      BlockItems (48)
+                                                        Lval_Opassign_Stmt (48)
+                                                          LVal (48)
+                                                            IDENTIFIER k
+                                                            ArrayExps (48)
+                                                          PLUSExp (48)
+                                                            LVal_EXP (48)
+                                                              LVal (48)
+                                                                IDENTIFIER k
+                                                                ArrayExps (48)
+                                                            IntConst (48)
+                                                              CONSTANTINTD: 1
+                                                        BlockItems (49)
+                                                          Lval_Opassign_Stmt (49)
+                                                            LVal (49)
+                                                              IDENTIFIER j
+                                                              ArrayExps (49)
+                                                            PLUSExp (49)
+                                                              LVal_EXP (49)
+                                                                LVal (49)
+                                                                  IDENTIFIER j
+                                                                  ArrayExps (49)
+                                                              IntConst (49)
+                                                                CONSTANTINTD: 1
+                                              BlockItems (51)
+                                                Return_Stmt (51)
+                                                  IntConst (51)
+                                                    CONSTANTOCT: 0
+    CompUnits (54)
+      FuncDef (54)
+        FuncFParams (54)
+          ArrayFuncFParam (54)
+            ArrayExps (54)
+          FuncFParams (54)
+            FuncFParam (54)
+            FuncFParam (54)
+        Block (56)
+          BlockItems (56)
+            IF_Stmt (56)
+              Cond (56)
+                OPLIGHT (56)
+                  LVal_EXP (56)
+                    LVal (56)
+                      IDENTIFIER p
+                      ArrayExps (56)
+                  LVal_EXP (56)
+                    LVal (56)
+                      IDENTIFIER q
+                      ArrayExps (56)
+              Block_Stmt (58)
+                Block (58)
+                  BlockItems (58)
+                    VarDecl (58)
+                      IDENTIFIER mid
+                    BlockItems (59)
+                      Lval_Opassign_Stmt (59)
+                        LVal (59)
+                          IDENTIFIER mid
+                          ArrayExps (59)
+                        DIVIDEExp (59)
+                          (Exp) (59)
+                            PLUSExp (59)
+                              LVal_EXP (59)
+                                LVal (59)
+                                  IDENTIFIER p
+                                  ArrayExps (59)
+                              LVal_EXP (59)
+                                LVal (59)
+                                  IDENTIFIER q
+                                  ArrayExps (59)
+                          IntConst (59)
+                            CONSTANTINTD: 2
+                      BlockItems (60)
+                        VarDecl (60)
+                          IDENTIFIER tmp
+                        BlockItems (61)
+                          Lval_Opassign_Stmt (61)
+                            LVal (61)
+                              IDENTIFIER tmp
+                              ArrayExps (61)
+                            funcall (61)
+                              IDENTIFIER MergeSort
+                              FuncRParams (61)
+                                LVal_EXP (61)
+                                  LVal (61)
+                                    IDENTIFIER array
+                                    ArrayExps (61)
+                                Exps (61)
+                                  LVal_EXP (61)
+                                    LVal (61)
+                                      IDENTIFIER p
+                                      ArrayExps (61)
+                                  Exps (61)
+                                    LVal_EXP (61)
+                                      LVal (61)
+                                        IDENTIFIER mid
+                                        ArrayExps (61)
+                          BlockItems (62)
+                            Lval_Opassign_Stmt (62)
+                              LVal (62)
+                                IDENTIFIER tmp
+                                ArrayExps (62)
+                              PLUSExp (62)
+                                LVal_EXP (62)
+                                  LVal (62)
+                                    IDENTIFIER mid
+                                    ArrayExps (62)
+                                IntConst (62)
+                                  CONSTANTINTD: 1
+                            BlockItems (63)
+                              Lval_Opassign_Stmt (63)
+                                LVal (63)
+                                  IDENTIFIER tmp
+                                  ArrayExps (63)
+                                funcall (63)
+                                  IDENTIFIER MergeSort
+                                  FuncRParams (63)
+                                    LVal_EXP (63)
+                                      LVal (63)
+                                        IDENTIFIER array
+                                        ArrayExps (63)
+                                    Exps (63)
+                                      LVal_EXP (63)
+                                        LVal (63)
+                                          IDENTIFIER tmp
+                                          ArrayExps (63)
+                                      Exps (63)
+                                        LVal_EXP (63)
+                                          LVal (63)
+                                            IDENTIFIER q
+                                            ArrayExps (63)
+                              BlockItems (64)
+                                Lval_Opassign_Stmt (64)
+                                  LVal (64)
+                                    IDENTIFIER tmp
+                                    ArrayExps (64)
+                                  funcall (64)
+                                    IDENTIFIER Merge
+                                    FuncRParams (64)
+                                      LVal_EXP (64)
+                                        LVal (64)
+                                          IDENTIFIER array
+                                          ArrayExps (64)
+                                      Exps (64)
+                                        LVal_EXP (64)
+                                          LVal (64)
+                                            IDENTIFIER p
+                                            ArrayExps (64)
+                                        Exps (64)
+                                          LVal_EXP (64)
+                                            LVal (64)
+                                              IDENTIFIER mid
+                                              ArrayExps (64)
+                                          Exps (64)
+                                            LVal_EXP (64)
+                                              LVal (64)
+                                                IDENTIFIER q
+                                                ArrayExps (64)
+            BlockItems (66)
+              Return_Stmt (66)
+                IntConst (66)
+                  CONSTANTOCT: 0
+      CompUnits (69)
+        FuncDef (69)
+          NOFParam (69)
+          Block (70)
+            BlockItems (70)
+              Lval_Opassign_Stmt (70)
+                LVal (70)
+                  IDENTIFIER n
+                  ArrayExps (70)
+                IntConst (70)
+                  CONSTANTINTD: 10
+              BlockItems (71)
+                VarDecl (71)
+                  ArrayDec: demmision=0
+                    IDENTIFIER a
+                BlockItems (72)
+                  Lval_Opassign_Stmt (72)
+                    LVal (72)
+                      IDENTIFIER a
+                      ArrayExps (72)
+                        IntConst (72)
+                          CONSTANTOCT: 0
+                        ArrayExps (72)
+                    IntConst (72)
+                      CONSTANTINTD: 4
+                  BlockItems (72)
+                    Lval_Opassign_Stmt (72)
+                      LVal (72)
+                        IDENTIFIER a
+                        ArrayExps (72)
+                          IntConst (72)
+                            CONSTANTINTD: 1
+                          ArrayExps (72)
+                      IntConst (72)
+                        CONSTANTINTD: 3
+                    BlockItems (72)
+                      Lval_Opassign_Stmt (72)
+                        LVal (72)
+                          IDENTIFIER a
+                          ArrayExps (72)
+                            IntConst (72)
+                              CONSTANTINTD: 2
+                            ArrayExps (72)
+                        IntConst (72)
+                          CONSTANTINTD: 9
+                      BlockItems (72)
+                        Lval_Opassign_Stmt (72)
+                          LVal (72)
+                            IDENTIFIER a
+                            ArrayExps (72)
+                              IntConst (72)
+                                CONSTANTINTD: 3
+                              ArrayExps (72)
+                          IntConst (72)
+                            CONSTANTINTD: 2
+                        BlockItems (72)
+                          Lval_Opassign_Stmt (72)
+                            LVal (72)
+                              IDENTIFIER a
+                              ArrayExps (72)
+                                IntConst (72)
+                                  CONSTANTINTD: 4
+                                ArrayExps (72)
+                            IntConst (72)
+                              CONSTANTOCT: 0
+                          BlockItems (73)
+                            Lval_Opassign_Stmt (73)
+                              LVal (73)
+                                IDENTIFIER a
+                                ArrayExps (73)
+                                  IntConst (73)
+                                    CONSTANTINTD: 5
+                                  ArrayExps (73)
+                              IntConst (73)
+                                CONSTANTINTD: 1
+                            BlockItems (73)
+                              Lval_Opassign_Stmt (73)
+                                LVal (73)
+                                  IDENTIFIER a
+                                  ArrayExps (73)
+                                    IntConst (73)
+                                      CONSTANTINTD: 6
+                                    ArrayExps (73)
+                                IntConst (73)
+                                  CONSTANTINTD: 6
+                              BlockItems (73)
+                                Lval_Opassign_Stmt (73)
+                                  LVal (73)
+                                    IDENTIFIER a
+                                    ArrayExps (73)
+                                      IntConst (73)
+                                        CONSTANTINTD: 7
+                                      ArrayExps (73)
+                                  IntConst (73)
+                                    CONSTANTINTD: 5
+                                BlockItems (73)
+                                  Lval_Opassign_Stmt (73)
+                                    LVal (73)
+                                      IDENTIFIER a
+                                      ArrayExps (73)
+                                        IntConst (73)
+                                          CONSTANTINTD: 8
+                                        ArrayExps (73)
+                                    IntConst (73)
+                                      CONSTANTINTD: 7
+                                  BlockItems (73)
+                                    Lval_Opassign_Stmt (73)
+                                      LVal (73)
+                                        IDENTIFIER a
+                                        ArrayExps (73)
+                                          IntConst (73)
+                                            CONSTANTINTD: 9
+                                          ArrayExps (73)
+                                      IntConst (73)
+                                        CONSTANTINTD: 8
+                                    BlockItems (74)
+                                      VarDecl (74)
+                                        IDENTIFIER i
+                                      BlockItems (75)
+                                        Lval_Opassign_Stmt (75)
+                                          LVal (75)
+                                            IDENTIFIER i
+                                            ArrayExps (75)
+                                          IntConst (75)
+                                            CONSTANTOCT: 0
+                                        BlockItems (76)
+                                          VarDecl (76)
+                                            IDENTIFIER tmp
+                                          BlockItems (77)
+                                            Lval_Opassign_Stmt (77)
+                                              LVal (77)
+                                                IDENTIFIER tmp
+                                                ArrayExps (77)
+                                              MINUSExp (77)
+                                                LVal_EXP (77)
+                                                  LVal (77)
+                                                    IDENTIFIER n
+                                                    ArrayExps (77)
+                                                IntConst (77)
+                                                  CONSTANTINTD: 1
+                                            BlockItems (78)
+                                              Lval_Opassign_Stmt (78)
+                                                LVal (78)
+                                                  IDENTIFIER i
+                                                  ArrayExps (78)
+                                                funcall (78)
+                                                  IDENTIFIER MergeSort
+                                                  FuncRParams (78)
+                                                    LVal_EXP (78)
+                                                      LVal (78)
+                                                        IDENTIFIER a
+                                                        ArrayExps (78)
+                                                    Exps (78)
+                                                      LVal_EXP (78)
+                                                        LVal (78)
+                                                          IDENTIFIER i
+                                                          ArrayExps (78)
+                                                      Exps (78)
+                                                        LVal_EXP (78)
+                                                          LVal (78)
+                                                            IDENTIFIER tmp
+                                                            ArrayExps (78)
+                                              BlockItems (79)
+                                                While_Stmt (79)
+                                                  Cond (79)
+                                                    OPLIGHT (79)
+                                                      LVal_EXP (79)
+                                                        LVal (79)
+                                                          IDENTIFIER i
+                                                          ArrayExps (79)
+                                                      LVal_EXP (79)
+                                                        LVal (79)
+                                                          IDENTIFIER n
+                                                          ArrayExps (79)
+                                                  Block_Stmt (80)
+                                                    Block (80)
+                                                      BlockItems (80)
+                                                        Lval_Opassign_Stmt (80)
+                                                          LVal (80)
+                                                            IDENTIFIER tmp
+                                                            ArrayExps (80)
+                                                          LVal_EXP (80)
+                                                            LVal (80)
+                                                              IDENTIFIER a
+                                                              ArrayExps (80)
+                                                                LVal_EXP (80)
+                                                                  LVal (80)
+                                                                    IDENTIFIER i
+                                                                    ArrayExps (80)
+                                                                ArrayExps (80)
+                                                        BlockItems (81)
+                                                          Exp_Stmt (81)
+                                                            funcall (81)
+                                                              IDENTIFIER putint
+                                                              FuncRParams (81)
+                                                                LVal_EXP (81)
+                                                                  LVal (81)
+                                                                    IDENTIFIER tmp
+                                                                    ArrayExps (81)
+                                                          BlockItems (82)
+                                                            Lval_Opassign_Stmt (82)
+                                                              LVal (82)
+                                                                IDENTIFIER tmp
+                                                                ArrayExps (82)
+                                                              IntConst (82)
+                                                                CONSTANTINTD: 10
+                                                            BlockItems (83)
+                                                              Exp_Stmt (83)
+                                                                funcall (83)
+                                                                  IDENTIFIER putch
+                                                                  FuncRParams (83)
+                                                                    LVal_EXP (83)
+                                                                      LVal (83)
+                                                                        IDENTIFIER tmp
+                                                                        ArrayExps (83)
+                                                              BlockItems (84)
+                                                                Lval_Opassign_Stmt (84)
+                                                                  LVal (84)
+                                                                    IDENTIFIER i
+                                                                    ArrayExps (84)
+                                                                  PLUSExp (84)
+                                                                    LVal_EXP (84)
+                                                                      LVal (84)
+                                                                        IDENTIFIER i
+                                                                        ArrayExps (84)
+                                                                    IntConst (84)
+                                                                      CONSTANTINTD: 1
+                                                BlockItems (86)
+                                                  Return_Stmt (86)
+                                                    IntConst (86)
+                                                      CONSTANTOCT: 0
+
+
+===========================================================
+Global
+ID             category       type           depictor
+               
+putf           Function       void           NULL           
+putarray       Function       void           NOT NULL       
+putchar        Function       void           NOT NULL       
+putint         Function       void           NOT NULL       
+getarray       Function       int            NOT NULL       
+getchar        Function       int            NOT NULL       
+getint         Function       int            NOT NULL       
+n              Variable       TYPEINTEGER    NULL           
+Merge          Function       TYPEINTEGER    NOT NULL       
+MergeSort      Function       TYPEINTEGER    NOT NULL       
+main           Function       TYPEINTEGER    NOT NULL       
+===========================================================
+===========================================================
+Formal:putarray
+ID             category       type           depictor
+              
+a              Array          int            ----------> dim=1
+a              Variable       int            NULL           
+===========================================================
+===========================================================
+Local:putarray
+ID             category       type           depictor
+              
+scope type is wrong
+               Variable                      NULL           
+===========================================================
+===========================================================
+Formal:putchar
+ID             category       type           depictor
+              
+a              Variable       int            NULL           
+===========================================================
+===========================================================
+Local:putchar
+ID             category       type           depictor
+              
+===========================================================
+===========================================================
+Formal:putint
+ID             category       type           depictor
+              
+a              Variable       int            NULL           
+===========================================================
+===========================================================
+Local:putint
+ID             category       type           depictor
+              
+===========================================================
+===========================================================
+Formal:getarray
+ID             category       type           depictor
+              
+a              Array          int            ----------> dim=1
+===========================================================
+===========================================================
+Local:getarray
+ID             category       type           depictor
+              
+scope type is wrong
+               Variable                      NULL           
+===========================================================
+===========================================================
+Formal:getchar
+ID             category       type           depictor
+              
+               NOParam                       NULL           
+===========================================================
+===========================================================
+Local:getchar
+ID             category       type           depictor
+              
+===========================================================
+===========================================================
+Formal:getint
+ID             category       type           depictor
+              
+               NOParam                       NULL           
+===========================================================
+===========================================================
+Local:getint
+ID             category       type           depictor
+              
+===========================================================
+===========================================================
+Formal:Merge
+ID             category       type           depictor
+              
+array          Array          TYPEINTEGER    ----------> dim=1
+low            Variable       TYPEINTEGER    NOT NULL       
+middle         Variable       TYPEINTEGER    NOT NULL       
+high           Variable       TYPEINTEGER    NOT NULL       
+===========================================================
+===========================================================
+Local:Merge
+ID             category       type           depictor
+              
+n1             Variable       TYPEINTEGER    NULL           
+n2             Variable       TYPEINTEGER    NULL           
+L              Array          TYPEINTEGER    ----------> dim=1
+R              Array          TYPEINTEGER    ----------> dim=1
+i              Variable       TYPEINTEGER    NULL           
+j              Variable       TYPEINTEGER    NULL           
+               Block          BLOCKStmt      NULL           
+               Block          BLOCKStmt      NULL           
+k              Variable       TYPEINTEGER    NULL           
+               Block          BLOCKStmt      NOT NULL       
+               Block          BLOCKStmt      NULL           
+               Block          BLOCKStmt      NULL           
+===========================================================
+===========================================================
+Local:block
+ID             category       type           depictor
+              
+               Block          BLOCKStmt      NULL           
+               Block          BLOCKStmt      NULL           
+===========================================================
+===========================================================
+Formal:MergeSort
+ID             category       type           depictor
+              
+array          Array          TYPEINTEGER    ----------> dim=1
+p              Variable       TYPEINTEGER    NOT NULL       
+q              Variable       TYPEINTEGER    NOT NULL       
+===========================================================
+===========================================================
+Local:MergeSort
+ID             category       type           depictor
+              
+               Block          BLOCKStmt      NOT NULL       
+===========================================================
+===========================================================
+Local:block
+ID             category       type           depictor
+              
+mid            Variable       TYPEINTEGER    NULL           
+tmp            Variable       TYPEINTEGER    NULL           
+===========================================================
+===========================================================
+Formal:main
+ID             category       type           depictor
+              
+               NOParam                       NOT NULL       
+===========================================================
+===========================================================
+Local:main
+ID             category       type           depictor
+              
+a              Array          TYPEINTEGER    ----------> dim=1
+i              Variable       TYPEINTEGER    NULL           
+tmp            Variable       TYPEINTEGER    NULL           
+               Block          BLOCKStmt      NULL           
+===========================================================
 789
 789
 789

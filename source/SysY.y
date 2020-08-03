@@ -37,7 +37,7 @@
       char outputFileName[256];
       //outputFileName=(char*)malloc(256*sizeof(char));
       
-      //#define DEBUG
+      #define DEBUG
 
     int dim = 0;
     ScopeItem *recordArrayInfo;
@@ -125,6 +125,7 @@ Compiler: CompUnits {
                   #ifdef DEBUG
                   DisplayTACCode(entrance);
                   displayGlobal($$->si);
+                  
                   #endif
                   ARM* AssemblyCode=new ARM(entrance, $$->si, stack);
                   #ifdef DEBUG
@@ -481,7 +482,9 @@ int main(int argc, char *argv[]){
         //extern int yylex(void);
 	
       yydebug=0;
+      #ifdef DEBUG
       yy_flex_debug=0;
+      #endif
       //处理输入参数
        
       char opt;

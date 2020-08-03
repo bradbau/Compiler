@@ -203,8 +203,10 @@ TACCode*  TranslateInitVal(ASTTree* tree, ScopeItem &offset, int &layer, ScopeIt
         code4->code.firstOp.Data.variable = new ScopeItem;
         *code4->code.firstOp.Data.variable = offset;                        //new_temp3=offset前
         layer += 1;             //增加级数
-        code5 = TranslateInitVal(tree->lchild, offset, layer, scopeItem, stack, place, temp_num, label_num);
-        code6 = TranslateInitValList(tree->lchild->rchild, offset, layer, scopeItem, stack, place, temp_num, label_num);
+        int temp_layer1=layer;
+        int temp_layer2=layer;
+        code5 = TranslateInitVal(tree->lchild, offset, temp_layer1, scopeItem, stack, place, temp_num, label_num);
+        code6 = TranslateInitValList(tree->lchild->rchild, offset, temp_layer2, scopeItem, stack, place, temp_num, label_num);
         Label label1 = label_num++;
         Label label2 = label_num++;
         code7->code.optype = LABELDF;
@@ -278,7 +280,9 @@ TACCode* TranslateInitValList(ASTTree* tree, ScopeItem& offset, int& layer, Scop
         return NULL;
     }
     else {
-        return MergeTACItem(2, TranslateInitVal(tree->lchild, offset, layer, scopeItem, stack, place, temp_num, label_num), TranslateInitValList(tree->lchild->rchild, offset, layer, scopeItem, stack, place, temp_num, label_num));
+        int layer1=layer;
+        int layer2=layer;
+        return MergeTACItem(2, TranslateInitVal(tree->lchild, offset, layer1, scopeItem, stack, place, temp_num, label_num), TranslateInitValList(tree->lchild->rchild, offset, layer2, scopeItem, stack, place, temp_num, label_num));
     }
 }
 

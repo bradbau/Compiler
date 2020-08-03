@@ -17,7 +17,7 @@ run(){
         touch $irFileNameRoot
 
         $compiler_dir -S -o $outFileName $FilePathRoot > $irFileNameRoot 2>&1
-
+        echo "return value" $?
     fi
 
 }

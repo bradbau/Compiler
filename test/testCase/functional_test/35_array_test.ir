@@ -143,6 +143,251 @@ ExpNumber:0
 <;>
 Lval
 <}>
+CompUnits (2)
+  VarDecl (2)
+    ArrayDec: demmision=0
+      IDENTIFIER field
+  CompUnits (4)
+    FuncDef (4)
+      ArrayFuncFParam (4)
+        ArrayExps (4)
+      Block (5)
+        BlockItems (5)
+          Return_Stmt (5)
+            LVal_EXP (5)
+              LVal (5)
+                IDENTIFIER array
+                ArrayExps (5)
+                  MINUSExp (5)
+                    IntConst (5)
+                      CONSTANTINTD: 3
+                    LVal_EXP (5)
+                      LVal (5)
+                        IDENTIFIER field
+                        ArrayExps (5)
+                          IntConst (5)
+                            CONSTANTOCT: 0
+                          ArrayExps (5)
+                  ArrayExps (5)
+    CompUnits (8)
+      FuncDef (8)
+        NOFParam (8)
+        Block (9)
+          BlockItems (9)
+            VarDecl (9)
+              ArrayDec: demmision=0
+                IDENTIFIER i
+            BlockItems (10)
+              VarDecl (10)
+                ArrayDec: demmision=0
+                  IDENTIFIER j
+              BlockItems (11)
+                VarDecl (11)
+                  IDENTIFIER k
+                BlockItems (13)
+                  Lval_Opassign_Stmt (13)
+                    LVal (13)
+                      IDENTIFIER field
+                      ArrayExps (13)
+                        IntConst (13)
+                          CONSTANTOCT: 0
+                        ArrayExps (13)
+                    IntConst (13)
+                      CONSTANTINTD: 1
+                  BlockItems (14)
+                    Lval_Opassign_Stmt (14)
+                      LVal (14)
+                        IDENTIFIER field
+                        ArrayExps (14)
+                          IntConst (14)
+                            CONSTANTINTD: 1
+                          ArrayExps (14)
+                      IntConst (14)
+                        CONSTANTINTD: 2
+                    BlockItems (17)
+                      Lval_Opassign_Stmt (17)
+                        LVal (17)
+                          IDENTIFIER j
+                          ArrayExps (17)
+                            PLUSExp (17)
+                              IntConst (17)
+                                CONSTANTOCT: 0
+                              IntConst (17)
+                                CONSTANTOCT: 0
+                            ArrayExps (17)
+                        OPMINUS_Exp (17)
+                          IntConst (17)
+                            CONSTANTINTD: 1
+                      BlockItems (18)
+                        Lval_Opassign_Stmt (18)
+                          LVal (18)
+                            IDENTIFIER j
+                            ArrayExps (18)
+                              IntConst (18)
+                                CONSTANTINTD: 1
+                              ArrayExps (18)
+                          MINUSExp (18)
+                            LVal_EXP (18)
+                              LVal (18)
+                                IDENTIFIER j
+                                ArrayExps (18)
+                                  IntConst (18)
+                                    CONSTANTOCT: 0
+                                  ArrayExps (18)
+                            IntConst (18)
+                              CONSTANTINTD: 2
+                        BlockItems (19)
+                          Lval_Opassign_Stmt (19)
+                            LVal (19)
+                              IDENTIFIER k
+                              ArrayExps (19)
+                            LVal_EXP (19)
+                              LVal (19)
+                                IDENTIFIER j
+                                ArrayExps (19)
+                                  IntConst (19)
+                                    CONSTANTINTD: 1
+                                  ArrayExps (19)
+                          BlockItems (20)
+                            Lval_Opassign_Stmt (20)
+                              LVal (20)
+                                IDENTIFIER j
+                                ArrayExps (20)
+                                  IntConst (20)
+                                    CONSTANTINTD: 2
+                                  ArrayExps (20)
+                              IntConst (20)
+                                CONSTANTINTD: 16
+                            BlockItems (22)
+                              Return_Stmt (22)
+                                PLUSExp (22)
+                                  PLUSExp (22)
+                                    funcall (22)
+                                      IDENTIFIER func
+                                      FuncRParams (22)
+                                        LVal_EXP (22)
+                                          LVal (22)
+                                            IDENTIFIER j
+                                            ArrayExps (22)
+                                    IntConst (22)
+                                      CONSTANTINTD: 2
+                                  LVal_EXP (22)
+                                    LVal (22)
+                                      IDENTIFIER k
+                                      ArrayExps (22)
+
+
+===========================================================
+Global
+ID             category       type           depictor
+               
+putf           Function       void           NULL           
+putarray       Function       void           NOT NULL       
+putchar        Function       void           NOT NULL       
+putint         Function       void           NOT NULL       
+getarray       Function       int            NOT NULL       
+getchar        Function       int            NOT NULL       
+getint         Function       int            NOT NULL       
+field          Array          TYPEINTEGER    ----------> dim=1
+func           Function       TYPEINTEGER    NOT NULL       
+main           Function       TYPEINTEGER    NOT NULL       
+===========================================================
+===========================================================
+Formal:putarray
+ID             category       type           depictor
+              
+a              Array          int            ----------> dim=1
+a              Variable       int            NULL           
+===========================================================
+===========================================================
+Local:putarray
+ID             category       type           depictor
+              
+scope type is wrong
+               Variable                      NULL           
+===========================================================
+===========================================================
+Formal:putchar
+ID             category       type           depictor
+              
+a              Variable       int            NULL           
+===========================================================
+===========================================================
+Local:putchar
+ID             category       type           depictor
+              
+===========================================================
+===========================================================
+Formal:putint
+ID             category       type           depictor
+              
+a              Variable       int            NULL           
+===========================================================
+===========================================================
+Local:putint
+ID             category       type           depictor
+              
+===========================================================
+===========================================================
+Formal:getarray
+ID             category       type           depictor
+              
+a              Array          int            ----------> dim=1
+===========================================================
+===========================================================
+Local:getarray
+ID             category       type           depictor
+              
+scope type is wrong
+               Variable                      NULL           
+===========================================================
+===========================================================
+Formal:getchar
+ID             category       type           depictor
+              
+               NOParam                       NULL           
+===========================================================
+===========================================================
+Local:getchar
+ID             category       type           depictor
+              
+===========================================================
+===========================================================
+Formal:getint
+ID             category       type           depictor
+              
+               NOParam                       NULL           
+===========================================================
+===========================================================
+Local:getint
+ID             category       type           depictor
+              
+===========================================================
+===========================================================
+Formal:func
+ID             category       type           depictor
+              
+array          Array          TYPEINTEGER    ----------> dim=1
+===========================================================
+===========================================================
+Local:func
+ID             category       type           depictor
+              
+===========================================================
+===========================================================
+Formal:main
+ID             category       type           depictor
+              
+               NOParam                       NOT NULL       
+===========================================================
+===========================================================
+Local:main
+ID             category       type           depictor
+              
+i              Array          TYPEINTEGER    ----------> dim=1
+j              Array          TYPEINTEGER    ----------> dim=1
+k              Variable       TYPEINTEGER    NULL           
+===========================================================
 789
 456
 789
@@ -765,4 +1010,161 @@ Lval
 789
 789
 456
+
+~~~~TAC~~~~~
+ No  Source Position	TACCode
+_______________________________________
+  0  (at line   0)	CALL main
+
+  1  (at line   4)	FUNCTION func :
+  2  (at line   4)	PARAM array[]
+  3  (at line   5)	_t5 := #3
+  4  (at line   5)	_t9 := #0
+  5  (at line   5)	_t6 := field[_t9]
+  6  (at line   5)	_t4 := _t5 - _t6
+  7  (at line   5)	_t1 := array[_t4]
+  8  (at line   5)	RETURN _t1
+
+  9  (at line   8)	FUNCTION main :
+ 10  (at line  13)	_t12 := #1
+ 11  (at line  13)	_t15 := #0
+ 12  (at line  13)	field[_t15] := _t12
+ 13  (at line  14)	_t17 := #2
+ 14  (at line  14)	_t20 := #1
+ 15  (at line  14)	field[_t20] := _t17
+ 16  (at line  17)	_t23 := #1
+ 17  (at line  17)	_t22 := #0 - _t23
+ 18  (at line  17)	_t27 := #0
+ 19  (at line  17)	_t28 := #0
+ 20  (at line  17)	_t26 := _t27 + _t28
+ 21  (at line  17)	j[_t26] := _t22
+ 22  (at line  18)	_t35 := #0
+ 23  (at line  18)	_t31 := j[_t35]
+ 24  (at line  18)	_t32 := #2
+ 25  (at line  18)	_t30 := _t31 - _t32
+ 26  (at line  18)	_t39 := #1
+ 27  (at line  18)	j[_t39] := _t30
+ 28  (at line  19)	_t44 := #1
+ 29  (at line  19)	_t41 := j[_t44]
+ 30  (at line  19)	k := _t41
+ 31  (at line  20)	_t46 := #16
+ 32  (at line  20)	_t49 := #2
+ 33  (at line  20)	j[_t49] := _t46
+ 34  (at line  10)	_t57 := #3
+ 35  (at line  22)	ARG j[_t57]
+ 36  (at line  22)	_t54 := CALL func
+ 37  (at line  22)	_t55 := #2
+ 38  (at line  22)	_t52 := _t54 + _t55
+ 39  (at line  22)	_t53 := k
+ 40  (at line  22)	_t51 := _t52 + _t53
+ 41  (at line  22)	RETURN _t51
+
+
+===========================================================
+Global
+ID             category       type           depictor
+               
+putf           Function       void           NULL           
+putarray       Function       void           NOT NULL       
+putchar        Function       void           NOT NULL       
+putint         Function       void           NOT NULL       
+getarray       Function       int            NOT NULL       
+getchar        Function       int            NOT NULL       
+getint         Function       int            NOT NULL       
+field          Array          TYPEINTEGER    ----------> dim=1
+func           Function       TYPEINTEGER    NOT NULL       
+main           Function       TYPEINTEGER    NOT NULL       
+===========================================================
+===========================================================
+Formal:putarray
+ID             category       type           depictor
+              
+a              Array          int            ----------> dim=1
+a              Variable       int            NULL           
+===========================================================
+===========================================================
+Local:putarray
+ID             category       type           depictor
+              
+scope type is wrong
+               Variable                      NULL           
+===========================================================
+===========================================================
+Formal:putchar
+ID             category       type           depictor
+              
+a              Variable       int            NULL           
+===========================================================
+===========================================================
+Local:putchar
+ID             category       type           depictor
+              
+===========================================================
+===========================================================
+Formal:putint
+ID             category       type           depictor
+              
+a              Variable       int            NULL           
+===========================================================
+===========================================================
+Local:putint
+ID             category       type           depictor
+              
+===========================================================
+===========================================================
+Formal:getarray
+ID             category       type           depictor
+              
+a              Array          int            ----------> dim=1
+===========================================================
+===========================================================
+Local:getarray
+ID             category       type           depictor
+              
+scope type is wrong
+               Variable                      NULL           
+===========================================================
+===========================================================
+Formal:getchar
+ID             category       type           depictor
+              
+               NOParam                       NULL           
+===========================================================
+===========================================================
+Local:getchar
+ID             category       type           depictor
+              
+===========================================================
+===========================================================
+Formal:getint
+ID             category       type           depictor
+              
+               NOParam                       NULL           
+===========================================================
+===========================================================
+Local:getint
+ID             category       type           depictor
+              
+===========================================================
+===========================================================
+Formal:func
+ID             category       type           depictor
+              
+array          Array          TYPEINTEGER    ----------> dim=1
+===========================================================
+===========================================================
+Local:func
+ID             category       type           depictor
+              
+===========================================================
+===========================================================
+Formal:main
+ID             category       type           depictor
+              
+               NOParam                       NOT NULL       
+scope type is wrong
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+build assembly code
+tac type FUNCTIONDF
+tac type ASSIGN
 Segmentation fault (core dumped)

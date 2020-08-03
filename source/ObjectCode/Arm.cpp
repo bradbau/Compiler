@@ -58,12 +58,15 @@ ARM::ARM(TACCode* entrance, ScopeItem *GlobalItemHead, vector<ScopeItem> &stack)
 
             case ASSIGN: 
             #ifdef DEBUG
-            cout<<"tec type ASSIGN"<<endl;
+            cout<<"tac type ASSIGN"<<endl;
             #endif // DEBUG
                 //赋值，目的操作数可以是变量也可以是内存地址，
                 //code.dest一直是variable类型，没有别的类型
                 {
                     if(code.dest.Type==ARRAY){
+                        #ifdef DEBUG
+                        cout<<"  assign dest type array"<<endl;
+                        #endif // DEBUG
                         //目标是数组元素的赋值
                         //任意寄存器为一个没有保存在寄存器中的数组元素赋值；在已经保存数组对应元素的寄存器中赋值。前者不需要加载过程
                         //然后是否可以延后保存
@@ -79,6 +82,8 @@ ARM::ARM(TACCode* entrance, ScopeItem *GlobalItemHead, vector<ScopeItem> &stack)
                             }
                         }
                         else if(code.firstOp.Type==VARIABLE){
+                            assert(code.dest.Data.array_addr->array_si!=NULL && code.dest.Data.array_addr->deviation!=NULL);
+
                             CalculateInstruction* InsItem=new CalculateInstruction(INSADD, GetRegisterNoLoad(code.dest.Data.array_addr),GetRegister(code.firstOp.Data.variable), 0, 1 );
                             InsList.push_back(dynamic_cast<ARMInstruction*>(InsItem));
                         }
@@ -158,7 +163,9 @@ ARM::ARM(TACCode* entrance, ScopeItem *GlobalItemHead, vector<ScopeItem> &stack)
                                 InsList.push_back(dynamic_cast<ARMInstruction*>(CalItem));
                             }
                             else if(code.secondOp.Type == ARRAY){
-
+                                
+                                CalculateInstruction* CalItem=new CalculateInstruction(INSADD, GetRegisterNoLoad(code.dest.Data.variable), GetRegister(code.firstOp.Data.variable), GetRegister(code.secondOp.Data.array_addr), 0);
+                                InsList.push_back(dynamic_cast<ARMInstruction*>(CalItem));
                                 //这里还有简化余地
                                 //CalculateInstruction* CalItem =new CalculateInstruction(INSADD, GetRegisterNoLoad(code.dest.Data.variable), GetRegister(code.firstOp.Data.variable), , 0);
                                 //InsList.push_back(dynamic_cast<ARMInstruction*>(CalItem));
@@ -180,7 +187,8 @@ ARM::ARM(TACCode* entrance, ScopeItem *GlobalItemHead, vector<ScopeItem> &stack)
                             }
                             else if(code.secondOp.Type == ARRAY){
                                 //later
-
+                                CalculateInstruction* CalItem=new CalculateInstruction(INSADD, GetRegisterNoLoad(code.dest.Data.variable), GetRegister(code.secondOp.Data.array_addr), code.firstOp.Data.value, 1);
+                                InsList.push_back(dynamic_cast<ARMInstruction*>(CalItem));
                             }
                             else{
                                 //错误处理
@@ -189,12 +197,17 @@ ARM::ARM(TACCode* entrance, ScopeItem *GlobalItemHead, vector<ScopeItem> &stack)
                         }
                         else if(code.firstOp.Type == ARRAY){
                             if(code.secondOp.Type == VARIABLE){
-
+                                    CalculateInstruction* CalItem=new CalculateInstruction(INSADD, GetRegisterNoLoad(code.dest.Data.variable), GetRegister(code.firstOp.Data.array_addr), GetRegister(code.secondOp.Data.variable), 0);
+                                    InsList.push_back(dynamic_cast<ARMInstruction*>(CalItem));
+                            
                             }
                             else if(code.secondOp.Type == INTEGERCONST){
-
+                                CalculateInstruction* CalItem=new CalculateInstruction(INSADD, GetRegisterNoLoad(code.dest.Data.variable),GetRegister(code.firstOp.Data.array_addr), code.secondOp.Data.value, 1 );
+                                InsList.push_back(dynamic_cast<ARMInstruction*>(CalItem));
                             }
                             else if(code.secondOp.Type == ARRAY){
+                                CalculateInstruction* CalItem=new CalculateInstruction(INSADD, GetRegisterNoLoad(code.dest.Data.variable),GetRegister(code.firstOp.Data.array_addr), GetRegister(code.secondOp.Data.variable), 0);
+                                InsList.push_back(dynamic_cast<ARMInstruction*>(CalItem));
 
                             }
                             else{
@@ -210,28 +223,35 @@ ARM::ARM(TACCode* entrance, ScopeItem *GlobalItemHead, vector<ScopeItem> &stack)
                     else if(code.dest.Type == ARRAY){
                         if(code.firstOp.Type == VARIABLE){
                             if(code.secondOp.Type == VARIABLE){
-
+                                CalculateInstruction* CalItem=new CalculateInstruction(INSADD, GetRegisterNoLoad(code.dest.Data.array_addr),GetRegister(code.firstOp.Data.variable), GetRegister(code.secondOp.Data.variable), 0 );
+                                InsList.push_back(dynamic_cast<ARMInstruction*>(CalItem));
                             }
                             else if(code.secondOp.Type == INTEGERCONST){
+                                CalculateInstruction* CalItem=new CalculateInstruction(INSADD, GetRegisterNoLoad(code.dest.Data.array_addr),GetRegister(code.firstOp.Data.variable), code.secondOp.Data.value, 1);
+                                InsList.push_back(dynamic_cast<ARMInstruction*>(CalItem));
 
                             }
                             else if(code.secondOp.Type == ARRAY){
-
+                                CalculateInstruction* CalItem=new CalculateInstruction(INSADD, GetRegisterNoLoad(code.dest.Data.array_addr),GetRegister(code.firstOp.Data.variable), GetRegister(code.secondOp.Data.array_addr), 0);
+                                InsList.push_back(dynamic_cast<ARMInstruction*>(CalItem));
                             }
                             else{
                                 //错误处理
-                                throw std::runtime_error("not handled in assign");
+                                throw std::runtime_error("not handled in add");
                             }
                         }
                         else if(code.firstOp.Type == INTEGERCONST){
                             if(code.secondOp.Type == VARIABLE){
-
+                                CalculateInstruction* CalItem =new CalculateInstruction(INSADD, GetRegisterNoLoad(code.dest.Data.array_addr), GetRegister(code.secondOp.Data.variable), code.firstOp.Data.value, 1);
+                                InsList.push_back(dynamic_cast<ARMInstruction*>(CalItem));
                             }
                             else if(code.secondOp.Type == INTEGERCONST){
-
+                                //略过这个
+                                throw std::runtime_error("not handled in add");
                             }
                             else if(code.secondOp.Type == ARRAY){
-
+                                CalculateInstruction* CalItem=new CalculateInstruction(INSADD, GetRegisterNoLoad(code.dest.Data.array_addr),GetRegister(code.secondOp.Data.array_addr), code.firstOp.Data.value, 1);
+                                InsList.push_back(dynamic_cast<ARMInstruction*>(CalItem));
                             }
                             else{
                                 //错误处理
@@ -240,22 +260,25 @@ ARM::ARM(TACCode* entrance, ScopeItem *GlobalItemHead, vector<ScopeItem> &stack)
                         }
                         else if(code.firstOp.Type == ARRAY){
                             if(code.secondOp.Type == VARIABLE){
-
+                                CalculateInstruction* CalItem=new CalculateInstruction(INSADD, GetRegisterNoLoad(code.dest.Data.array_addr),GetRegister(code.firstOp.Data.array_addr), GetRegister(code.secondOp.Data.variable), 0);
+                                InsList.push_back(dynamic_cast<ARMInstruction*>(CalItem));
                             }
                             else if(code.secondOp.Type == INTEGERCONST){
-
+                                CalculateInstruction* CalItem=new CalculateInstruction(INSADD, GetRegisterNoLoad(code.dest.Data.array_addr),GetRegister(code.firstOp.Data.array_addr), code.secondOp.Data.value, 1);
+                                InsList.push_back(dynamic_cast<ARMInstruction*>(CalItem));
                             }
                             else if(code.secondOp.Type == ARRAY){
-
+                                //忽略
+                                 throw std::runtime_error("not handled in add");
                             }
                             else{
                                 //错误处理
-                                throw std::runtime_error("not handled in assign");
+                                throw std::runtime_error("not handled in add");
                             }
                         }
                         else{
                             //错误处理
-                            throw std::runtime_error("not handled in assign");
+                            throw std::runtime_error("not handled in add");
                         }
                     }
                     
@@ -268,37 +291,276 @@ ARM::ARM(TACCode* entrance, ScopeItem *GlobalItemHead, vector<ScopeItem> &stack)
                 
                 
             case SUB:
-            {
-                #ifdef DEBUG
-                cout<<"tac type SUB"<<endl;
-                #endif // DEBUG
-                
-                assert(code.firstOp.Type = VARIABLE);
-                assert(code.secondOp.Type = VARIABLE);
-                if(code.dest.Type == VARIABLE){
-                    CalculateInstruction* InsItem=new CalculateInstruction(INSSUB, GetRegister(code.dest.Data.variable), GetRegister(code.firstOp.Data.variable), GetRegister(code.secondOp.Data.variable), 0);
-                    InsList.push_back(dynamic_cast<ARMInstruction*>(InsItem));
-                }
-                else if(code.dest.Type ==ARRAY){
+            #ifdef DEBUG
+            cout<<"tac type SUB"<<endl;
+            #endif // DEBUG
+               {
+                    if(code.dest.Type == VARIABLE){
+                        if(code.firstOp.Type == VARIABLE){
+                            if(code.secondOp.Type == VARIABLE){
+                                CalculateInstruction* InsItem=new CalculateInstruction(INSSUB, GetRegisterNoLoad(code.dest.Data.variable), GetRegister(code.firstOp.Data.variable), GetRegister(code.secondOp.Data.variable), 0);
+                                InsList.push_back(dynamic_cast<ARMInstruction*>(InsItem));
+                            }
+                            else if(code.secondOp.Type == INTEGERCONST){
+                                CalculateInstruction* CalItem =new CalculateInstruction(INSSUB, GetRegisterNoLoad(code.dest.Data.variable), GetRegister(code.firstOp.Data.variable), code.secondOp.Data.value, 1);
+                                InsList.push_back(dynamic_cast<ARMInstruction*>(CalItem));
+                            }
+                            else if(code.secondOp.Type == ARRAY){
+                                
+                                CalculateInstruction* CalItem=new CalculateInstruction(INSSUB, GetRegisterNoLoad(code.dest.Data.variable), GetRegister(code.firstOp.Data.variable), GetRegister(code.secondOp.Data.array_addr), 0);
+                                InsList.push_back(dynamic_cast<ARMInstruction*>(CalItem));
+                                //这里还有简化余地
+                                //CalculateInstruction* CalItem =new CalculateInstruction(INSSUB, GetRegisterNoLoad(code.dest.Data.variable), GetRegister(code.firstOp.Data.variable), , 0);
+                                //InsList.push_back(dynamic_cast<ARMInstruction*>(CalItem));
+                            }
+                            else{
+                                //错误处理
+                                throw std::runtime_error("not handled in assign");
+                            }
+                        }
+                        else if(code.firstOp.Type == INTEGERCONST){
+                            if(code.secondOp.Type == VARIABLE){
+                                //调换位置
+                                CalculateInstruction* CalItem =new CalculateInstruction(INSSUB, GetRegisterNoLoad(code.dest.Data.variable), GetRegister(code.secondOp.Data.variable), code.firstOp.Data.value, 1);
+                                InsList.push_back(dynamic_cast<ARMInstruction*>(CalItem));
+                            }
+                            else if(code.secondOp.Type == INTEGERCONST){
+                                //不太可能出现的
+                                throw std::runtime_error("not a possible tac");
+                            }
+                            else if(code.secondOp.Type == ARRAY){
+                                //later
+                                CalculateInstruction* CalItem=new CalculateInstruction(INSSUB, GetRegisterNoLoad(code.dest.Data.variable), GetRegister(code.secondOp.Data.array_addr), code.firstOp.Data.value, 1);
+                                InsList.push_back(dynamic_cast<ARMInstruction*>(CalItem));
+                            }
+                            else{
+                                //错误处理
+                                throw std::runtime_error("not handled in assign");
+                            }
+                        }
+                        else if(code.firstOp.Type == ARRAY){
+                            if(code.secondOp.Type == VARIABLE){
+                                    CalculateInstruction* CalItem=new CalculateInstruction(INSSUB, GetRegisterNoLoad(code.dest.Data.variable), GetRegister(code.firstOp.Data.array_addr), GetRegister(code.secondOp.Data.variable), 0);
+                                    InsList.push_back(dynamic_cast<ARMInstruction*>(CalItem));
+                            }
+                            
+                            else if(code.secondOp.Type == INTEGERCONST){
+                                CalculateInstruction* CalItem=new CalculateInstruction(INSSUB, GetRegisterNoLoad(code.dest.Data.variable),GetRegister(code.firstOp.Data.array_addr), code.secondOp.Data.value, 1 );
+                                InsList.push_back(dynamic_cast<ARMInstruction*>(CalItem));
+                            }
+                            else if(code.secondOp.Type == ARRAY){
+                                CalculateInstruction* CalItem=new CalculateInstruction(INSSUB, GetRegisterNoLoad(code.dest.Data.variable),GetRegister(code.firstOp.Data.array_addr), GetRegister(code.secondOp.Data.variable), 0);
+                                InsList.push_back(dynamic_cast<ARMInstruction*>(CalItem));
 
-                }
+                            }
+                            else{
+                                //错误处理
+                                throw std::runtime_error("not handled in assign");
+                            }
+                        }
+                        else{
+                            //错误处理
+                            throw std::runtime_error("not handled in assign");
+                        }
+                    }
+                    else if(code.dest.Type == ARRAY){
+                        if(code.firstOp.Type == VARIABLE){
+                            if(code.secondOp.Type == VARIABLE){
+                                CalculateInstruction* CalItem=new CalculateInstruction(INSSUB, GetRegisterNoLoad(code.dest.Data.array_addr),GetRegister(code.firstOp.Data.variable), GetRegister(code.secondOp.Data.variable), 0 );
+                                InsList.push_back(dynamic_cast<ARMInstruction*>(CalItem));
+                            }
+                            else if(code.secondOp.Type == INTEGERCONST){
+                                CalculateInstruction* CalItem=new CalculateInstruction(INSSUB, GetRegisterNoLoad(code.dest.Data.array_addr),GetRegister(code.firstOp.Data.variable), code.secondOp.Data.value, 1);
+                                InsList.push_back(dynamic_cast<ARMInstruction*>(CalItem));
 
-               
+                            }
+                            else if(code.secondOp.Type == ARRAY){
+                                CalculateInstruction* CalItem=new CalculateInstruction(INSSUB, GetRegisterNoLoad(code.dest.Data.array_addr),GetRegister(code.firstOp.Data.variable), GetRegister(code.secondOp.Data.array_addr), 0);
+                                InsList.push_back(dynamic_cast<ARMInstruction*>(CalItem));
+                            }
+                            else{
+                                //错误处理
+                                throw std::runtime_error("not handled in add");
+                            }
+                        }
+                        else if(code.firstOp.Type == INTEGERCONST){
+                            if(code.secondOp.Type == VARIABLE){
+                                CalculateInstruction* CalItem =new CalculateInstruction(INSSUB, GetRegisterNoLoad(code.dest.Data.array_addr), GetRegister(code.secondOp.Data.variable), code.firstOp.Data.value, 1);
+                                InsList.push_back(dynamic_cast<ARMInstruction*>(CalItem));
+                            }
+                            else if(code.secondOp.Type == INTEGERCONST){
+                                //略过这个
+                                throw std::runtime_error("not handled in add");
+                            }
+                            else if(code.secondOp.Type == ARRAY){
+                                CalculateInstruction* CalItem=new CalculateInstruction(INSSUB, GetRegisterNoLoad(code.dest.Data.array_addr),GetRegister(code.secondOp.Data.array_addr), code.firstOp.Data.value, 1);
+                                InsList.push_back(dynamic_cast<ARMInstruction*>(CalItem));
+                            }
+                            else{
+                                //错误处理
+                                throw std::runtime_error("not handled in assign");
+                            }
+                        }
+                        else if(code.firstOp.Type == ARRAY){
+                            if(code.secondOp.Type == VARIABLE){
+                                CalculateInstruction* CalItem=new CalculateInstruction(INSSUB, GetRegisterNoLoad(code.dest.Data.array_addr),GetRegister(code.firstOp.Data.array_addr), GetRegister(code.secondOp.Data.variable), 0);
+                                InsList.push_back(dynamic_cast<ARMInstruction*>(CalItem));
+                            }
+                            else if(code.secondOp.Type == INTEGERCONST){
+                                CalculateInstruction* CalItem=new CalculateInstruction(INSSUB, GetRegisterNoLoad(code.dest.Data.array_addr),GetRegister(code.firstOp.Data.array_addr), code.secondOp.Data.value, 1);
+                                InsList.push_back(dynamic_cast<ARMInstruction*>(CalItem));
+                            }
+                            else if(code.secondOp.Type == ARRAY){
+                                //忽略
+                                 throw std::runtime_error("not handled in add");
+                            }
+                            else{
+                                //错误处理
+                                throw std::runtime_error("not handled in add");
+                            }
+                        }
+                        else{
+                            //错误处理
+                            throw std::runtime_error("not handled in add");
+                        }
+                    }
 
-
-                break;
+                    break;
             }
             case MUL:
             {
                 #ifdef DEBUG
                 cout<<"tac type MUL"<<endl;
                 #endif // DEBUG
-                assert(code.dest.Type = VARIABLE);
-                assert(code.firstOp.Type = VARIABLE);
-                assert(code.secondOp.Type = VARIABLE);
-                CalculateInstruction* InsItem= new CalculateInstruction(INSMUL, GetRegister(code.dest.Data.variable), GetRegister(code.firstOp.Data.variable), GetRegister(code.secondOp.Data.variable), 0);
-                InsList.push_back(dynamic_cast<ARMInstruction*>(InsItem));
+                 if(code.dest.Type == VARIABLE){
+                        if(code.firstOp.Type == VARIABLE){
+                            if(code.secondOp.Type == VARIABLE){
+                                CalculateInstruction* InsItem=new CalculateInstruction(INSMUL, GetRegisterNoLoad(code.dest.Data.variable), GetRegister(code.firstOp.Data.variable), GetRegister(code.secondOp.Data.variable), 0);
+                                InsList.push_back(dynamic_cast<ARMInstruction*>(InsItem));
+                            }
+                            else if(code.secondOp.Type == INTEGERCONST){
+                                CalculateInstruction* CalItem =new CalculateInstruction(INSMUL, GetRegisterNoLoad(code.dest.Data.variable), GetRegister(code.firstOp.Data.variable), code.secondOp.Data.value, 1);
+                                InsList.push_back(dynamic_cast<ARMInstruction*>(CalItem));
+                            }
+                            else if(code.secondOp.Type == ARRAY){
+                                
+                                CalculateInstruction* CalItem=new CalculateInstruction(INSMUL, GetRegisterNoLoad(code.dest.Data.variable), GetRegister(code.firstOp.Data.variable), GetRegister(code.secondOp.Data.array_addr), 0);
+                                InsList.push_back(dynamic_cast<ARMInstruction*>(CalItem));
+                                //这里还有简化余地
+                                //CalculateInstruction* CalItem =new CalculateInstruction(INSMUL, GetRegisterNoLoad(code.dest.Data.variable), GetRegister(code.firstOp.Data.variable), , 0);
+                                //InsList.push_back(dynamic_cast<ARMInstruction*>(CalItem));
+                            }
+                            else{
+                                //错误处理
+                                throw std::runtime_error("not handled in assign");
+                            }
+                        }
+                        else if(code.firstOp.Type == INTEGERCONST){
+                            if(code.secondOp.Type == VARIABLE){
+                                //调换位置
+                                CalculateInstruction* CalItem =new CalculateInstruction(INSMUL, GetRegisterNoLoad(code.dest.Data.variable), GetRegister(code.secondOp.Data.variable), code.firstOp.Data.value, 1);
+                                InsList.push_back(dynamic_cast<ARMInstruction*>(CalItem));
+                            }
+                            else if(code.secondOp.Type == INTEGERCONST){
+                                //不太可能出现的
+                                throw std::runtime_error("not a possible tac");
+                            }
+                            else if(code.secondOp.Type == ARRAY){
+                                //later
+                                CalculateInstruction* CalItem=new CalculateInstruction(INSMUL, GetRegisterNoLoad(code.dest.Data.variable), GetRegister(code.secondOp.Data.array_addr), code.firstOp.Data.value, 1);
+                                InsList.push_back(dynamic_cast<ARMInstruction*>(CalItem));
+                            }
+                            else{
+                                //错误处理
+                                throw std::runtime_error("not handled in assign");
+                            }
+                        }
+                        else if(code.firstOp.Type == ARRAY){
+                            if(code.secondOp.Type == VARIABLE){
+                                    CalculateInstruction* CalItem=new CalculateInstruction(INSMUL, GetRegisterNoLoad(code.dest.Data.variable), GetRegister(code.firstOp.Data.array_addr), GetRegister(code.secondOp.Data.variable), 0);
+                                    InsList.push_back(dynamic_cast<ARMInstruction*>(CalItem));
+                            }
+                            
+                            else if(code.secondOp.Type == INTEGERCONST){
+                                CalculateInstruction* CalItem=new CalculateInstruction(INSMUL, GetRegisterNoLoad(code.dest.Data.variable),GetRegister(code.firstOp.Data.array_addr), code.secondOp.Data.value, 1 );
+                                InsList.push_back(dynamic_cast<ARMInstruction*>(CalItem));
+                            }
+                            else if(code.secondOp.Type == ARRAY){
+                                CalculateInstruction* CalItem=new CalculateInstruction(INSMUL, GetRegisterNoLoad(code.dest.Data.variable),GetRegister(code.firstOp.Data.array_addr), GetRegister(code.secondOp.Data.variable), 0);
+                                InsList.push_back(dynamic_cast<ARMInstruction*>(CalItem));
 
+                            }
+                            else{
+                                //错误处理
+                                throw std::runtime_error("not handled in assign");
+                            }
+                        }
+                        else{
+                            //错误处理
+                            throw std::runtime_error("not handled in assign");
+                        }
+                    }
+                    else if(code.dest.Type == ARRAY){
+                        if(code.firstOp.Type == VARIABLE){
+                            if(code.secondOp.Type == VARIABLE){
+                                CalculateInstruction* CalItem=new CalculateInstruction(INSMUL, GetRegisterNoLoad(code.dest.Data.array_addr),GetRegister(code.firstOp.Data.variable), GetRegister(code.secondOp.Data.variable), 0 );
+                                InsList.push_back(dynamic_cast<ARMInstruction*>(CalItem));
+                            }
+                            else if(code.secondOp.Type == INTEGERCONST){
+                                CalculateInstruction* CalItem=new CalculateInstruction(INSMUL, GetRegisterNoLoad(code.dest.Data.array_addr),GetRegister(code.firstOp.Data.variable), code.secondOp.Data.value, 1);
+                                InsList.push_back(dynamic_cast<ARMInstruction*>(CalItem));
+
+                            }
+                            else if(code.secondOp.Type == ARRAY){
+                                CalculateInstruction* CalItem=new CalculateInstruction(INSMUL, GetRegisterNoLoad(code.dest.Data.array_addr),GetRegister(code.firstOp.Data.variable), GetRegister(code.secondOp.Data.array_addr), 0);
+                                InsList.push_back(dynamic_cast<ARMInstruction*>(CalItem));
+                            }
+                            else{
+                                //错误处理
+                                throw std::runtime_error("not handled in add");
+                            }
+                        }
+                        else if(code.firstOp.Type == INTEGERCONST){
+                            if(code.secondOp.Type == VARIABLE){
+                                CalculateInstruction* CalItem =new CalculateInstruction(INSMUL, GetRegisterNoLoad(code.dest.Data.array_addr), GetRegister(code.secondOp.Data.variable), code.firstOp.Data.value, 1);
+                                InsList.push_back(dynamic_cast<ARMInstruction*>(CalItem));
+                            }
+                            else if(code.secondOp.Type == INTEGERCONST){
+                                //略过这个
+                                throw std::runtime_error("not handled in add");
+                            }
+                            else if(code.secondOp.Type == ARRAY){
+                                CalculateInstruction* CalItem=new CalculateInstruction(INSMUL, GetRegisterNoLoad(code.dest.Data.array_addr),GetRegister(code.secondOp.Data.array_addr), code.firstOp.Data.value, 1);
+                                InsList.push_back(dynamic_cast<ARMInstruction*>(CalItem));
+                            }
+                            else{
+                                //错误处理
+                                throw std::runtime_error("not handled in mul");
+                            }
+                        }
+                        else if(code.firstOp.Type == ARRAY){
+                            if(code.secondOp.Type == VARIABLE){
+                                CalculateInstruction* CalItem=new CalculateInstruction(INSMUL, GetRegisterNoLoad(code.dest.Data.array_addr),GetRegister(code.firstOp.Data.array_addr), GetRegister(code.secondOp.Data.variable), 0);
+                                InsList.push_back(dynamic_cast<ARMInstruction*>(CalItem));
+                            }
+                            else if(code.secondOp.Type == INTEGERCONST){
+                                CalculateInstruction* CalItem=new CalculateInstruction(INSMUL, GetRegisterNoLoad(code.dest.Data.array_addr),GetRegister(code.firstOp.Data.array_addr), code.secondOp.Data.value, 1);
+                                InsList.push_back(dynamic_cast<ARMInstruction*>(CalItem));
+                            }
+                            else if(code.secondOp.Type == ARRAY){
+                                //忽略
+                                 throw std::runtime_error("not handled in add");
+                            }
+                            else{
+                                //错误处理
+                                throw std::runtime_error("not handled in add");
+                            }
+                        }
+                        else{
+                            //错误处理
+                            throw std::runtime_error("not handled in add");
+                        }
+                    }
                 break;
             }
             case DIV:
@@ -718,15 +980,17 @@ Register ARM::GetRegister(ScopeItem* variable){
             }
         }
         //保存这个寄存器中的数据至内存
-        MemoryInstruction* MemItem=new MemoryInstruction(INSSTR, (Register)goal, R11, variable->offset, 1, 0);
-        InsList.push_back(dynamic_cast<ARMInstruction*>(MemItem));
+        StoreRegister(goal);
+        #ifdef DEBUG
+        cout<<"Store Register in getregister variable"<<endl;
+        #endif // DEBUG
         //分配寄存器给输入变量
         regs[goal].tag=1;
         regs[goal].variable=variable;
         #ifdef DEBUG
                 cout<<"findregister: insldr rd="<<goal<< ",r1="<<R11<<",r2 offset="<<variable->offset<<",op2type=1, insefft=0" <<  endl;
         #endif // DEBUG
-        MemItem=  new MemoryInstruction(INSLDR,(Register)goal,  R11, variable->offset , 1, 0);
+        MemoryInstruction* MemItem=  new MemoryInstruction(INSLDR,(Register)goal,  R11, variable->offset , 1, 0);
         InsList.push_back(dynamic_cast<ARMInstruction*>(MemItem));
         return (Register)goal;
     }
@@ -781,6 +1045,9 @@ Register ARM::GetRegister(ARRAY_ADDR* array_addr){
             }
         }
         //保存这个寄存器中的数据至内存
+        #ifdef DEBUG
+        cout<<"Store Register in getregister array"<<endl;
+        #endif // DEBUG
        StoreRegister(goal);
         //分配寄存器给输入变量
         regs[goal].tag=1;
@@ -824,7 +1091,11 @@ Register ARM::GetRegisterNoLoad(ScopeItem* variable){
             }
         }
         //保存这个寄存器中的数据至内存
+        #ifdef DEBUG
+        cout<<"Store Register in getregisterNoLoad variable"<<endl;
+        #endif // DEBUG
         StoreRegister(goal);
+        
         //分配寄存器给输入变量
         regs[goal].tag=1;
         regs[goal].variable=variable;
@@ -834,6 +1105,10 @@ Register ARM::GetRegisterNoLoad(ScopeItem* variable){
 
 } 
 Register ARM::GetRegisterNoLoad(ARRAY_ADDR* array_addr){
+
+    #ifdef DEBUG
+    cout<<"GetRegisterNoLoad array_addr"<<endl;
+    #endif // DEBUG
      //分配或者获取已经分配的空余寄存器
     int goal;
     //找到保存有该变量的寄存器
@@ -841,8 +1116,12 @@ Register ARM::GetRegisterNoLoad(ARRAY_ADDR* array_addr){
         regs[goal].tag++;
         return (Register)goal;
     }
+    
     //没有变量保存
     else{
+        #ifdef DEBUG
+    cout<<"cannot findregister"<<endl;
+    #endif // DEBUG
         //寻找空寄存器
         for(Register item: userReg){
             if(regs[item].filled==false){
@@ -857,12 +1136,15 @@ Register ARM::GetRegisterNoLoad(ARRAY_ADDR* array_addr){
         //这个查找的效率是O(n)
         int minTag=1000;//无穷大
         for(Register item: userReg){
-            if(regs[item].tag<minTag){
+            if(regs[item].tag<minTag  ){
                 goal=item;
                 regs[item].tag=minTag;
             }
         }
         //保存这个寄存器中的数据至内存
+        #ifdef DEBUG
+        cout<<"Store Register in getregisterNoLoad array"<<endl;
+        #endif // DEBUG
         StoreRegister(goal);
         //分配寄存器给输入变量
         regs[goal].tag=1;
@@ -884,8 +1166,15 @@ int  ARM::FindRegister(ScopeItem* variable){
 }
 int ARM::FindRegister(ARRAY_ADDR* array_addr){
     //查找存有对应变量的寄存器
+    #ifdef DEBUG
+    cout<<"FindRegister ARRAY_ADDR"<<endl;
+    #endif // DEBUG
     for(Register item: userReg){
+        
         if(  regs[item].array_addr!=NULL   &&*(regs[item].array_addr)==*array_addr){
+            #ifdef DEBUG
+            cout<<"return FindRegister ARRAY_ADDR"<<endl;
+            #endif // DEBUG
             return item;
         }
     }
@@ -915,12 +1204,12 @@ int ARM::LoadInstantToRegister(int instantNum){
     //如果没有空寄存器，要腾空一个
     int minTag=1000;//无穷大
     int goal=-1;
-            for(Register item: userReg){
-                if(regs[item].tag<minTag){
-                    goal=item;
-                    regs[item].tag=minTag;
-                }
+        for(Register item: userReg){
+            if(regs[item].tag<minTag){
+                goal=item;
+                regs[item].tag=minTag;
             }
+        }
     StoreRegister(goal);
     CalculateInstruction* CalItem=new CalculateInstruction(INSMOV, (Register)goal, instantNum, 1 );
     InsList.push_back(dynamic_cast<ARMInstruction*>(CalItem));
@@ -931,13 +1220,15 @@ int ARM::LoadInstantToRegister(int instantNum){
 //对于局部变量的存储, 不能用于数组
 void ARM::StoreRegister(int RegisterNum){
     
-    if(regs[RegisterNum].filled==false || regs[RegisterNum].variable==NULL || regs[RegisterNum].array_addr==NULL){
+    if(regs[RegisterNum].filled==false || (regs[RegisterNum].variable==NULL && regs[RegisterNum].array_addr==NULL)){
+        cout<<"register:"<<RegisterNum<<endl;
         throw std::runtime_error("no variable in this register");
     }
     if(regs[RegisterNum].variable!=NULL){//普通变量存储
         //分类型存储
         if(regs[RegisterNum].variable->stype==Global){
             //全局变量如何存储
+            
         }
         else{
             //局部变量和形参

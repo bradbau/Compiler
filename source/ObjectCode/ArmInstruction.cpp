@@ -450,39 +450,51 @@ string MemoryInstruction::toString(){
             if(ARMInstruction::getConditionExe()!=0){//条件执行后缀
                 InsHead=InsHead+ConditionName[ARMInstruction::getConditionExe()];
             }
-            if(ARMInstruction::getOp2Type()==0){
-                    //立即数为偏移量的存储
-                if(ARMInstruction::getOp1Type()==0){
-                    //第一寄存器是寄存器
-                    sprintf(buf," %s, [%s, #%d]\n",  RegName[ARMInstruction::getRd()], RegName[ARMInstruction::getOp1()], ARMInstruction::getOp2());
+
+
+            if(ARMInstruction::getOp1Type()==0){
+                //第一个操作数是寄存器
+                if(ARMInstruction::getOp2Type()==0){
+                    //第二操作数为寄存器的存储
+                    sprintf(buf," %s, [%s, %s]\n",  RegName[ARMInstruction::getRd()], RegName[ARMInstruction::getOp1()], RegName[ARMInstruction::getOp2()]);
                     InsHead=InsHead+buf;
                 }
-                else{
-                        
+                else if(ARMInstruction::getOp2Type()==1){
+                    if(instantEffect==0){
+                        //直接使用的立即数，不对寄存器内数据产生影响
+                        sprintf(buf," %s, [%s, 0x%x]",  RegName[ARMInstruction::getRd()],  RegName[ARMInstruction::getOp1()], ARMInstruction::getOp2());
+                        InsHead=InsHead+buf;
+                    }
+                    else if(instantEffect==1){
+                         //改变第一操作数的偏移量
+                        sprintf(buf," %s, [%s, 0x%x]!",  RegName[ARMInstruction::getRd()],  RegName[ARMInstruction::getOp1()], ARMInstruction::getOp2());
+                        InsHead=InsHead+buf;
+
+                    }
+                    else if(instantEffect==2){
+                        //只改变第一操作数.不影响计算结果
+                        sprintf(buf," %s, [%s], 0x%x",  RegName[ARMInstruction::getRd()],  RegName[ARMInstruction::getOp1()], ARMInstruction::getOp2());
+                        InsHead=InsHead+buf;
+                    }
+                    else{
+                        //错误处理
+                    }
                 }
-
-
-                
+                else{//op2Type==-1
+  
+                }
+            
             }
-            else if(ARMInstruction::getOp2Type()==-1){
+            else if(ARMInstruction::getOp1Type()==1){
+                //第一操作数是立即数
                 //没有第二寄存器
                 sprintf(buf,"%s, [%s]\n", RegName[ARMInstruction::getRd()], RegName[ARMInstruction::getOp1()]);
                 InsHead=InsHead+buf;
             }
-            else{//op2Type==1
-                if(instantEffect==0){
-
-                }
-                else if(instantEffect==1){
-
-                }
-                else if(instantEffect==2){
-
-                }
-                else{
-                    //错误处理
-                }
+            else{
+                //错误处理
             }
+            
             break;
 
         }
@@ -521,7 +533,6 @@ string MemoryInstruction::toString(){
                     }
                     else if(instantEffect==2){
                         //只改变第一操作数.不影响计算结果
-                        
                         sprintf(buf," %s, [%s], 0x%x",  RegName[ARMInstruction::getRd()],  RegName[ARMInstruction::getOp1()], ARMInstruction::getOp2());
                         InsHead=InsHead+buf;
                     }
