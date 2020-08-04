@@ -300,7 +300,15 @@ VarDec:   IDENTIFIER { $$ = $1;
                       //此时是第一次进入此位置，VarDec为Variable类型，需要为其定义新的arrayInfo
                       ScopeItem *arrayInfo = (ScopeItem*)malloc(sizeof(ScopeItem));
                       arrayInfo->dim = dim;
-                      (arrayInfo->len).push_back($3);//将这一维长度的信息的指针添加到变长数组和中
+                      if($3==NULL){
+                            ASTTree* new_node = new ASTTree();
+                              new_node->int_value = -1;
+                              arrayInfo->len.push_back(new_node);
+                      }
+                      else{
+                            arrayInfo->len.push_back($3);//将这一维长度的信息的指针添加到变长数组和中
+                      }
+                      
                       recordArrayInfo = arrayInfo;//recordArrayInfo是全局变量，在这里将指针记录下来方便后面再次使用
                 }else{
                       //此时处理的已经不是数组的第一个维度，arrayInfo在前面也已经定义过，直接通过recordArrayInfo拿来用
