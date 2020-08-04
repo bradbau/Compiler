@@ -1,4 +1,4 @@
--o<int>
+<int>
 <id,defn>
 <(>
 <)>
@@ -286,6 +286,7 @@ scope type is wrong
 build assembly code
 tac type FUNCTIONDF
 tac type ASSIGN
+ assign 4 to tegister0
 tac type RETURN
 tac type ARG
 tac type FUNCTIONDF

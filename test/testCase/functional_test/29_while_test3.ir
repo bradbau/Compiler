@@ -1,4 +1,4 @@
--o<int>
+<int>
 <id,g>
 <;>
 <int>
@@ -3645,18 +3645,23 @@ scope type not local in functiondf
 scopeprev:1
 Variable offset count+4 :_t98
 tac type ASSIGN
+ assign 5 to tegister0
 tac type ASSIGN
 tac type ASSIGN
+ assign 6 to tegister2
 tac type ASSIGN
 tac type ASSIGN
+ assign 7 to tegister4
 tac type ASSIGN
 tac type ASSIGN
+ assign 10 to tegister6
 tac type ASSIGN
 tac type LABELDF
 L0:
 
 tac type ASSIGN
 tac type ASSIGN
+ assign 20 to tegister10
 tac type IFLT
 tac type GOTO
 Goto string B L2
@@ -3667,7 +3672,8 @@ L1:
 tac type ASSIGN
 Store Register in getregisterNoLoad variable
 tac type ASSIGN
-Store Register in getregisterNoLoad variable
+ assign 3 to tegisterStore Register in getregisterNoLoad variable
+10
 tac type ADD
 Store Register in getregisterNoLoad variable
 Store Register in getregister variable
@@ -3683,7 +3689,8 @@ L3:
 tac type ASSIGN
 Store Register in getregisterNoLoad variable
 tac type ASSIGN
-Store Register in getregisterNoLoad variable
+ assign 10 to tegisterStore Register in getregisterNoLoad variable
+10
 tac type IFLT
 Store Register in getregister variable
 findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
@@ -3698,7 +3705,8 @@ L4:
 tac type ASSIGN
 Store Register in getregisterNoLoad variable
 tac type ASSIGN
-Store Register in getregisterNoLoad variable
+ assign 1 to tegisterStore Register in getregisterNoLoad variable
+10
 tac type ADD
 Store Register in getregisterNoLoad variable
 Store Register in getregister variable
@@ -3714,7 +3722,8 @@ L6:
 tac type ASSIGN
 Store Register in getregisterNoLoad variable
 tac type ASSIGN
-Store Register in getregisterNoLoad variable
+ assign 7 to tegisterStore Register in getregisterNoLoad variable
+10
 tac type IFEQ
 Store Register in getregister variable
 findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
@@ -3729,7 +3738,8 @@ L7:
 tac type ASSIGN
 Store Register in getregisterNoLoad variable
 tac type ASSIGN
-Store Register in getregisterNoLoad variable
+ assign 1 to tegisterStore Register in getregisterNoLoad variable
+10
 tac type SUB
 Store Register in getregisterNoLoad variable
 Store Register in getregister variable
@@ -3745,7 +3755,8 @@ L9:
 tac type ASSIGN
 Store Register in getregisterNoLoad variable
 tac type ASSIGN
-Store Register in getregisterNoLoad variable
+ assign 20 to tegisterStore Register in getregisterNoLoad variable
+10
 tac type IFLT
 Store Register in getregister variable
 findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
@@ -3760,7 +3771,8 @@ L10:
 tac type ASSIGN
 Store Register in getregisterNoLoad variable
 tac type ASSIGN
-Store Register in getregisterNoLoad variable
+ assign 3 to tegisterStore Register in getregisterNoLoad variable
+10
 tac type ADD
 Store Register in getregisterNoLoad variable
 Store Register in getregister variable
@@ -3776,12 +3788,13 @@ L12:
 tac type ASSIGN
 Store Register in getregisterNoLoad variable
 Store Register in getregister variable
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
+findregister: insldr rd=10,r1=11,r2 offset=-12,op2type=1, insefft=0
 tac type ASSIGN
-Store Register in getregisterNoLoad variable
+ assign 1 to tegisterStore Register in getregisterNoLoad variable
+10
 tac type IFGT
 Store Register in getregister variable
-findregister: insldr rd=10,r1=11,r2 offset=1886217588,op2type=1, insefft=0
+findregister: insldr rd=10,r1=11,r2 offset=13941784,op2type=1, insefft=0
 Store Register in getregister variable
 findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
 ControlInstruction String:BGT L13
@@ -3795,31 +3808,33 @@ L13:
 tac type ASSIGN
 Store Register in getregisterNoLoad variable
 Store Register in getregister variable
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
+findregister: insldr rd=10,r1=11,r2 offset=-12,op2type=1, insefft=0
 tac type ASSIGN
-Store Register in getregisterNoLoad variable
+ assign 1 to tegisterStore Register in getregisterNoLoad variable
+10
 tac type SUB
 Store Register in getregisterNoLoad variable
 Store Register in getregister variable
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
+findregister: insldr rd=10,r1=11,r2 offset=13942792,op2type=1, insefft=0
 Store Register in getregister variable
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
+findregister: insldr rd=10,r1=11,r2 offset=1886217588,op2type=1, insefft=0
 tac type ASSIGN
 Store Register in getregisterNoLoad variable
 Store Register in getregister variable
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
+findregister: insldr rd=10,r1=11,r2 offset=825390175,op2type=1, insefft=0
 tac type LABELDF
 L15:
 
 tac type ASSIGN
 Store Register in getregisterNoLoad variable
 Store Register in getregister variable
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
+findregister: insldr rd=10,r1=11,r2 offset=-8,op2type=1, insefft=0
 tac type ASSIGN
-Store Register in getregisterNoLoad variable
+ assign 2 to tegisterStore Register in getregisterNoLoad variable
+10
 tac type IFGT
 Store Register in getregister variable
-findregister: insldr rd=10,r1=11,r2 offset=1886217588,op2type=1, insefft=0
+findregister: insldr rd=10,r1=11,r2 offset=13943624,op2type=1, insefft=0
 Store Register in getregister variable
 findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
 ControlInstruction String:BGT L16
@@ -3833,19 +3848,20 @@ L16:
 tac type ASSIGN
 Store Register in getregisterNoLoad variable
 Store Register in getregister variable
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
+findregister: insldr rd=10,r1=11,r2 offset=-8,op2type=1, insefft=0
 tac type ASSIGN
-Store Register in getregisterNoLoad variable
+ assign 2 to tegisterStore Register in getregisterNoLoad variable
+10
 tac type SUB
 Store Register in getregisterNoLoad variable
 Store Register in getregister variable
-findregister: insldr rd=10,r1=11,r2 offset=1886217472,op2type=1, insefft=0
+findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
 Store Register in getregister variable
 findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
 tac type ASSIGN
 Store Register in getregisterNoLoad variable
 Store Register in getregister variable
-findregister: insldr rd=10,r1=11,r2 offset=17075816,op2type=1, insefft=0
+findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
 tac type LABELDF
 L18:
 
@@ -3854,10 +3870,11 @@ Store Register in getregisterNoLoad variable
 Store Register in getregister variable
 findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
 tac type ASSIGN
-Store Register in getregisterNoLoad variable
+ assign 3 to tegisterStore Register in getregisterNoLoad variable
+10
 tac type IFLT
 Store Register in getregister variable
-findregister: insldr rd=10,r1=11,r2 offset=1886217588,op2type=1, insefft=0
+findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
 Store Register in getregister variable
 findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
 tac type GOTO
@@ -3871,29 +3888,31 @@ Store Register in getregisterNoLoad variable
 Store Register in getregister variable
 findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
 tac type ASSIGN
-Store Register in getregisterNoLoad variable
+ assign 10 to tegisterStore Register in getregisterNoLoad variable
+10
 tac type ADD
 Store Register in getregisterNoLoad variable
 Store Register in getregister variable
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
+findregister: insldr rd=10,r1=11,r2 offset=13947768,op2type=1, insefft=0
 Store Register in getregister variable
-findregister: insldr rd=10,r1=11,r2 offset=17098168,op2type=1, insefft=0
+findregister: insldr rd=10,r1=11,r2 offset=1886217588,op2type=1, insefft=0
 tac type ASSIGN
 Store Register in getregisterNoLoad variable
 Store Register in getregister variable
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
+findregister: insldr rd=10,r1=11,r2 offset=825390175,op2type=1, insefft=0
 tac type LABELDF
 L21:
 
 tac type ASSIGN
 Store Register in getregisterNoLoad variable
 Store Register in getregister variable
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
+findregister: insldr rd=10,r1=11,r2 offset=-4,op2type=1, insefft=0
 tac type ASSIGN
-Store Register in getregisterNoLoad variable
+ assign 10 to tegisterStore Register in getregisterNoLoad variable
+10
 tac type IFLT
 Store Register in getregister variable
-findregister: insldr rd=10,r1=11,r2 offset=1886217588,op2type=1, insefft=0
+findregister: insldr rd=10,r1=11,r2 offset=13948600,op2type=1, insefft=0
 Store Register in getregister variable
 findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
 tac type GOTO
@@ -3905,19 +3924,20 @@ L22:
 tac type ASSIGN
 Store Register in getregisterNoLoad variable
 Store Register in getregister variable
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
+findregister: insldr rd=10,r1=11,r2 offset=-4,op2type=1, insefft=0
 tac type ASSIGN
-Store Register in getregisterNoLoad variable
+ assign 8 to tegisterStore Register in getregisterNoLoad variable
+10
 tac type ADD
 Store Register in getregisterNoLoad variable
 Store Register in getregister variable
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
+findregister: insldr rd=10,r1=11,r2 offset=13949608,op2type=1, insefft=0
 Store Register in getregister variable
-findregister: insldr rd=10,r1=11,r2 offset=17101688,op2type=1, insefft=0
+findregister: insldr rd=10,r1=11,r2 offset=1886217588,op2type=1, insefft=0
 tac type ASSIGN
 Store Register in getregisterNoLoad variable
 Store Register in getregister variable
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
+findregister: insldr rd=10,r1=11,r2 offset=825390175,op2type=1, insefft=0
 tac type GOTO
 Goto string B L21
 
@@ -3927,15 +3947,16 @@ L23:
 tac type ASSIGN
 Store Register in getregisterNoLoad variable
 Store Register in getregister variable
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
+findregister: insldr rd=10,r1=11,r2 offset=-4,op2type=1, insefft=0
 tac type ASSIGN
-Store Register in getregisterNoLoad variable
+ assign 1 to tegisterStore Register in getregisterNoLoad variable
+10
 tac type SUB
 Store Register in getregisterNoLoad variable
 Store Register in getregister variable
-findregister: insldr rd=10,r1=11,r2 offset=17103672,op2type=1, insefft=0
+findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
 Store Register in getregister variable
-findregister: insldr rd=10,r1=11,r2 offset=942830687,op2type=1, insefft=0
+findregister: insldr rd=10,r1=11,r2 offset=13950888,op2type=1, insefft=0
 tac type ASSIGN
 Store Register in getregisterNoLoad variable
 Store Register in getregister variable
@@ -3951,13 +3972,14 @@ Store Register in getregisterNoLoad variable
 Store Register in getregister variable
 findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
 tac type ASSIGN
-Store Register in getregisterNoLoad variable
+ assign 8 to tegisterStore Register in getregisterNoLoad variable
+10
 tac type SUB
 Store Register in getregisterNoLoad variable
 Store Register in getregister variable
-findregister: insldr rd=10,r1=11,r2 offset=17105832,op2type=1, insefft=0
+findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
 Store Register in getregister variable
-findregister: insldr rd=10,r1=11,r2 offset=942830687,op2type=1, insefft=0
+findregister: insldr rd=10,r1=11,r2 offset=13951992,op2type=1, insefft=0
 tac type ASSIGN
 Store Register in getregisterNoLoad variable
 Store Register in getregister variable
@@ -3971,15 +3993,16 @@ L17:
 tac type ASSIGN
 Store Register in getregisterNoLoad variable
 Store Register in getregister variable
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
+findregister: insldr rd=10,r1=11,r2 offset=-8,op2type=1, insefft=0
 tac type ASSIGN
-Store Register in getregisterNoLoad variable
+ assign 1 to tegisterStore Register in getregisterNoLoad variable
+10
 tac type ADD
 Store Register in getregisterNoLoad variable
 Store Register in getregister variable
-findregister: insldr rd=10,r1=11,r2 offset=17107992,op2type=1, insefft=0
+findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
 Store Register in getregister variable
-findregister: insldr rd=10,r1=11,r2 offset=942830687,op2type=1, insefft=0
+findregister: insldr rd=10,r1=11,r2 offset=13953096,op2type=1, insefft=0
 tac type ASSIGN
 Store Register in getregisterNoLoad variable
 Store Register in getregister variable
@@ -3993,15 +4016,16 @@ L14:
 tac type ASSIGN
 Store Register in getregisterNoLoad variable
 Store Register in getregister variable
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
+findregister: insldr rd=10,r1=11,r2 offset=-12,op2type=1, insefft=0
 tac type ASSIGN
-Store Register in getregisterNoLoad variable
+ assign 1 to tegisterStore Register in getregisterNoLoad variable
+10
 tac type ADD
 Store Register in getregisterNoLoad variable
 Store Register in getregister variable
-findregister: insldr rd=10,r1=11,r2 offset=17110152,op2type=1, insefft=0
+findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
 Store Register in getregister variable
-findregister: insldr rd=10,r1=11,r2 offset=942830687,op2type=1, insefft=0
+findregister: insldr rd=10,r1=11,r2 offset=13954200,op2type=1, insefft=0
 tac type ASSIGN
 Store Register in getregisterNoLoad variable
 Store Register in getregister variable
@@ -4015,13 +4039,14 @@ L11:
 tac type ASSIGN
 Store Register in getregisterNoLoad variable
 tac type ASSIGN
-Store Register in getregisterNoLoad variable
+ assign 1 to tegisterStore Register in getregisterNoLoad variable
+10
 tac type SUB
 Store Register in getregisterNoLoad variable
 Store Register in getregister variable
-findregister: insldr rd=10,r1=11,r2 offset=17112312,op2type=1, insefft=0
+findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
 Store Register in getregister variable
-findregister: insldr rd=10,r1=11,r2 offset=942830687,op2type=1, insefft=0
+findregister: insldr rd=10,r1=11,r2 offset=13955304,op2type=1, insefft=0
 tac type ASSIGN
 Store Register in getregister variable
 findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
@@ -4034,7 +4059,8 @@ L8:
 tac type ASSIGN
 Store Register in getregisterNoLoad variable
 tac type ASSIGN
-Store Register in getregisterNoLoad variable
+ assign 1 to tegisterStore Register in getregisterNoLoad variable
+10
 tac type ADD
 Store Register in getregisterNoLoad variable
 Store Register in getregister variable
@@ -4053,7 +4079,8 @@ L5:
 tac type ASSIGN
 Store Register in getregisterNoLoad variable
 tac type ASSIGN
-Store Register in getregisterNoLoad variable
+ assign 2 to tegisterStore Register in getregisterNoLoad variable
+10
 tac type SUB
 Store Register in getregisterNoLoad variable
 Store Register in getregister variable
@@ -4106,7 +4133,7 @@ findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
 tac type ASSIGN
 Store Register in getregisterNoLoad variable
 Store Register in getregister variable
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
+findregister: insldr rd=10,r1=11,r2 offset=-12,op2type=1, insefft=0
 tac type ASSIGN
 Store Register in getregisterNoLoad variable
 tac type ADD
@@ -4128,7 +4155,7 @@ findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
 tac type ASSIGN
 Store Register in getregisterNoLoad variable
 Store Register in getregister variable
-findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
+findregister: insldr rd=10,r1=11,r2 offset=-4,op2type=1, insefft=0
 tac type ADD
 Store Register in getregisterNoLoad variable
 Store Register in getregister variable
@@ -4141,7 +4168,4 @@ Store Register in getregister variable
 findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
 tac type SUB
 Store Register in getregisterNoLoad variable
-register:-1
-terminate called after throwing an instance of 'std::runtime_error'
-  what():  no variable in this register
-Aborted (core dumped)
+Segmentation fault (core dumped)

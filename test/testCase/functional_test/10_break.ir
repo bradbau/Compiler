@@ -1,4 +1,4 @@
--o<int>
+<int>
 <id,main>
 <(>
 <)>
@@ -390,11 +390,13 @@ scopeprev:0
 Variable offset count+4 :_t10
 Variable offset count+4 :_t11
 tac type ASSIGN
+ assign 10 to tegister0
 tac type LABELDF
 L0:
 
 tac type ASSIGN
 tac type ASSIGN
+ assign 0 to tegister2
 tac type IFGT
 ControlInstruction String:BGT L1
 
@@ -406,10 +408,12 @@ L1:
 
 tac type ASSIGN
 tac type ASSIGN
+ assign 1 to tegister4
 tac type SUB
 tac type ASSIGN
 tac type ASSIGN
 tac type ASSIGN
+ assign 5 to tegister8
 tac type IFEQ
 tac type GOTO
 Goto string B L4

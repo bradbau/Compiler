@@ -1,4 +1,4 @@
--o<int>
+<int>
 <id,main>
 <(>
 <)>
@@ -286,6 +286,7 @@ scopeprev:0
 Variable offset count+4 :_t1
 Variable offset count+4 :_t2
 tac type ASSIGN
+ assign 12 to tegister0
 tac type ASSIGN
 tac type ASSIGN
 tac type ARG

@@ -1,4 +1,4 @@
--o<int>
+<int>
 <id,whileIf>
 <(>
 <)>
@@ -709,14 +709,17 @@ scope type not local in functiondf
 scopeprev:1
 Variable offset count+4 :_t23
 tac type ASSIGN
+ assign 0 to tegister0
 tac type ASSIGN
 tac type ASSIGN
+ assign 0 to tegister2
 tac type ASSIGN
 tac type LABELDF
 L0:
 
 tac type ASSIGN
 tac type ASSIGN
+ assign 100 to tegister5
 tac type IFLT
 tac type GOTO
 Goto string B L2
@@ -726,6 +729,7 @@ L1:
 
 tac type ASSIGN
 tac type ASSIGN
+ assign 5 to tegister8
 tac type IFEQ
 tac type GOTO
 Goto string B L4
@@ -734,6 +738,7 @@ tac type LABELDF
 L3:
 
 tac type ASSIGN
+ assign 25 to tegister9
 tac type ASSIGN
 tac type GOTO
 Goto string B L5
@@ -743,7 +748,8 @@ L4:
 
 tac type ASSIGN
 tac type ASSIGN
-Store Register in getregisterNoLoad variable
+ assign 10 to tegisterStore Register in getregisterNoLoad variable
+10
 tac type IFEQ
 Store Register in getregister variable
 findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
@@ -756,7 +762,8 @@ tac type LABELDF
 L6:
 
 tac type ASSIGN
-Store Register in getregisterNoLoad variable
+ assign 42 to tegisterStore Register in getregisterNoLoad variable
+10
 tac type ASSIGN
 tac type GOTO
 Goto string B L8
@@ -767,7 +774,8 @@ L7:
 tac type ASSIGN
 Store Register in getregisterNoLoad variable
 tac type ASSIGN
-Store Register in getregisterNoLoad variable
+ assign 2 to tegisterStore Register in getregisterNoLoad variable
+10
 tac type MUL
 Store Register in getregisterNoLoad variable
 Store Register in getregister variable
@@ -786,7 +794,8 @@ L5:
 tac type ASSIGN
 Store Register in getregisterNoLoad variable
 tac type ASSIGN
-Store Register in getregisterNoLoad variable
+ assign 1 to tegisterStore Register in getregisterNoLoad variable
+10
 tac type ADD
 Store Register in getregisterNoLoad variable
 Store Register in getregister variable
@@ -806,7 +815,4 @@ tac type ASSIGN
 Store Register in getregisterNoLoad variable
 tac type ASSIGN
 Store Register in getregisterNoLoad variable
-register:-1
-terminate called after throwing an instance of 'std::runtime_error'
-  what():  no variable in this register
-Aborted (core dumped)
+Segmentation fault (core dumped)

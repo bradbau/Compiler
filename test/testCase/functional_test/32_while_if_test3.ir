@@ -1,4 +1,4 @@
--o<int>
+<int>
 <id,deepWhileBr>
 <(>
 <int>
@@ -851,6 +851,7 @@ L0:
 
 tac type ASSIGN
 tac type ASSIGN
+ assign 75 to tegister8
 tac type IFLT
 tac type GOTO
 Goto string B L2
@@ -859,10 +860,8 @@ tac type LABELDF
 L1:
 
 tac type ASSIGN
+ assign 42 to tegister9
 tac type ASSIGN
 tac type ASSIGN
 Store Register in getregisterNoLoad variable
-register:-1
-terminate called after throwing an instance of 'std::runtime_error'
-  what():  no variable in this register
-Aborted (core dumped)
+Segmentation fault (core dumped)

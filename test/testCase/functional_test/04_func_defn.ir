@@ -1,4 +1,4 @@
--o<int>
+<int>
 <id,a>
 <;>
 <int>
@@ -400,6 +400,7 @@ tac type FUNCTIONDF
 tac type ASSIGN
 findregister: insldr rd=1,r1=11,r2 offset=0,op2type=1, insefft=0
 tac type ASSIGN
+ assign 1 to tegister2
 tac type SUB
 tac type ASSIGN
 tac type ASSIGN
@@ -419,6 +420,7 @@ scopeprev:0
 Variable offset count+4 :_t6
 Variable offset count+4 :_t7
 tac type ASSIGN
+ assign 10 to tegister5
 tac type ASSIGN
 tac type ASSIGN
 tac type ARG
@@ -427,7 +429,4 @@ findregister: insldr rd=9,r1=11,r2 offset=0,op2type=1, insefft=0
 tac type ASSIGN
 tac type ASSIGN
 Store Register in getregisterNoLoad variable
-register:-1
-terminate called after throwing an instance of 'std::runtime_error'
-  what():  no variable in this register
-Aborted (core dumped)
+Segmentation fault (core dumped)

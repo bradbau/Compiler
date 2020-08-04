@@ -1,4 +1,4 @@
--o<const>
+<const>
 <int>
 <id,x>
 <=>
@@ -241,6 +241,7 @@ ID             category       type           depictor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 build assembly code
 tac type ASSIGN
+ assign 4 to tegister0
 tac type FUNCTIONDF
 tac type ASSIGN
 tac type RETURN

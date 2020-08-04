@@ -1,4 +1,4 @@
--o<int>
+<int>
 <id,fib>
 <(>
 <int>
@@ -744,6 +744,7 @@ Variable offset count+4 :_t20
 tac type ASSIGN
 findregister: insldr rd=1,r1=11,r2 offset=0,op2type=1, insefft=0
 tac type ASSIGN
+ assign 0 to tegister2
 tac type IFEQ
 tac type GOTO
 Goto string B L1
@@ -752,6 +753,7 @@ tac type LABELDF
 L0:
 
 tac type ASSIGN
+ assign 0 to tegister3
 tac type RETURN
 tac type ARG
 tac type LABELDF
@@ -759,6 +761,7 @@ L1:
 
 tac type ASSIGN
 tac type ASSIGN
+ assign 1 to tegister5
 tac type IFEQ
 tac type GOTO
 Goto string B L3
@@ -767,6 +770,7 @@ tac type LABELDF
 L2:
 
 tac type ASSIGN
+ assign 1 to tegister6
 tac type RETURN
 tac type ARG
 tac type LABELDF
@@ -774,10 +778,8 @@ L3:
 
 tac type ASSIGN
 tac type ASSIGN
+ assign 1 to tegister9
 tac type SUB
 tac type ASSIGN
 Store Register in getregisterNoLoad variable
-register:-1
-terminate called after throwing an instance of 'std::runtime_error'
-  what():  no variable in this register
-Aborted (core dumped)
+Segmentation fault (core dumped)

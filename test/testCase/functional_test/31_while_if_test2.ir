@@ -1,4 +1,4 @@
--o<int>
+<int>
 <id,ifWhile>
 <(>
 <)>
@@ -763,11 +763,14 @@ scope type not local in functiondf
 scopeprev:1
 Variable offset count+4 :_t27
 tac type ASSIGN
+ assign 0 to tegister0
+tac type ASSIGN
+tac type ASSIGN
+ assign 3 to tegister2
 tac type ASSIGN
 tac type ASSIGN
 tac type ASSIGN
-tac type ASSIGN
-tac type ASSIGN
+ assign 5 to tegister5
 tac type IFEQ
 tac type GOTO
 Goto string B L1
@@ -780,6 +783,7 @@ L2:
 
 tac type ASSIGN
 tac type ASSIGN
+ assign 2 to tegister8
 tac type IFEQ
 tac type GOTO
 Goto string B L4
@@ -789,6 +793,7 @@ L3:
 
 tac type ASSIGN
 tac type ASSIGN
+ assign 2 to tegister10
 tac type ADD
 Store Register in getregisterNoLoad variable
 Store Register in getregister variable
@@ -805,7 +810,8 @@ L4:
 tac type ASSIGN
 Store Register in getregisterNoLoad variable
 tac type ASSIGN
-Store Register in getregisterNoLoad variable
+ assign 25 to tegisterStore Register in getregisterNoLoad variable
+10
 tac type ADD
 Store Register in getregisterNoLoad variable
 Store Register in getregister variable
@@ -827,7 +833,8 @@ L6:
 tac type ASSIGN
 Store Register in getregisterNoLoad variable
 tac type ASSIGN
-Store Register in getregisterNoLoad variable
+ assign 5 to tegisterStore Register in getregisterNoLoad variable
+10
 tac type IFLT
 Store Register in getregister variable
 findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
@@ -842,7 +849,8 @@ L7:
 tac type ASSIGN
 Store Register in getregisterNoLoad variable
 tac type ASSIGN
-Store Register in getregisterNoLoad variable
+ assign 2 to tegisterStore Register in getregisterNoLoad variable
+10
 tac type MUL
 Store Register in getregisterNoLoad variable
 Store Register in getregister variable
@@ -855,7 +863,8 @@ findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
 tac type ASSIGN
 Store Register in getregisterNoLoad variable
 tac type ASSIGN
-Store Register in getregisterNoLoad variable
+ assign 1 to tegisterStore Register in getregisterNoLoad variable
+10
 tac type ADD
 Store Register in getregisterNoLoad variable
 Store Register in getregister variable
@@ -878,7 +887,4 @@ tac type ASSIGN
 Store Register in getregisterNoLoad variable
 tac type ASSIGN
 Store Register in getregisterNoLoad variable
-register:-1
-terminate called after throwing an instance of 'std::runtime_error'
-  what():  no variable in this register
-Aborted (core dumped)
+Segmentation fault (core dumped)

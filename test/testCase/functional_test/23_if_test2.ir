@@ -1,4 +1,4 @@
--o<int>
+<int>
 <id,ifElseElseIf>
 <(>
 <)>
@@ -586,11 +586,14 @@ scope type not local in functiondf
 scopeprev:1
 Variable offset count+4 :_t16
 tac type ASSIGN
+ assign 66 to tegister0
+tac type ASSIGN
+tac type ASSIGN
+ assign 8923 to tegister2
 tac type ASSIGN
 tac type ASSIGN
 tac type ASSIGN
-tac type ASSIGN
-tac type ASSIGN
+ assign 5 to tegister5
 tac type IFEQ
 tac type GOTO
 Goto string B L1
@@ -599,6 +602,7 @@ tac type LABELDF
 L0:
 
 tac type ASSIGN
+ assign 25 to tegister6
 tac type ASSIGN
 tac type GOTO
 Goto string B L2
@@ -608,6 +612,7 @@ L1:
 
 tac type ASSIGN
 tac type ASSIGN
+ assign 10 to tegister9
 tac type IFEQ
 tac type GOTO
 Goto string B L4
@@ -616,6 +621,7 @@ tac type LABELDF
 L3:
 
 tac type ASSIGN
+ assign 42 to tegister10
 tac type ASSIGN
 tac type GOTO
 Goto string B L5
@@ -626,7 +632,8 @@ L4:
 tac type ASSIGN
 Store Register in getregisterNoLoad variable
 tac type ASSIGN
-Store Register in getregisterNoLoad variable
+ assign 2 to tegisterStore Register in getregisterNoLoad variable
+10
 tac type MUL
 Store Register in getregisterNoLoad variable
 Store Register in getregister variable
@@ -646,7 +653,4 @@ tac type ASSIGN
 Store Register in getregisterNoLoad variable
 tac type ASSIGN
 Store Register in getregisterNoLoad variable
-register:-1
-terminate called after throwing an instance of 'std::runtime_error'
-  what():  no variable in this register
-Aborted (core dumped)
+Segmentation fault (core dumped)

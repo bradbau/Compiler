@@ -1,4 +1,4 @@
--o<int>
+<int>
 <id,a>
 <;>
 <int>
@@ -367,11 +367,13 @@ scopeprev:0
 Variable offset count+4 :_t4
 Variable offset count+4 :_t5
 tac type ASSIGN
+ assign 10 to tegister0
 tac type ASSIGN
 tac type ASSIGN
+ assign 3 to tegister2
 tac type ASSIGN
 tac type ASSIGN
 tac type ASSIGN
 tac type MOD
-compiler: ./ObjectCode/Arm.cpp:583: ARM::ARM(TACCode *, ScopeItem *, vector<ScopeItem> &): Assertion `code.dest.Type = VARIABLE' failed.
+compiler: ./ObjectCode/Arm.cpp:585: ARM::ARM(TACCode *, ScopeItem *, vector<ScopeItem> &): Assertion `code.dest.Type = VARIABLE' failed.
 Aborted (core dumped)

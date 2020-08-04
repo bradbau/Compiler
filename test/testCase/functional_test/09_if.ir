@@ -1,4 +1,4 @@
--o<int>
+<int>
 <id,a>
 <;>
 <int>
@@ -300,9 +300,11 @@ Variable offset count+4 :_t4
 Variable offset count+4 :_t5
 Variable offset count+4 :_t6
 tac type ASSIGN
+ assign 10 to tegister0
 tac type ASSIGN
 tac type ASSIGN
 tac type ASSIGN
+ assign 0 to tegister3
 tac type IFGT
 ControlInstruction String:BGT L0
 
@@ -313,12 +315,14 @@ tac type LABELDF
 L0:
 
 tac type ASSIGN
+ assign 1 to tegister4
 tac type RETURN
 tac type ARG
 tac type LABELDF
 L1:
 
 tac type ASSIGN
+ assign 0 to tegister5
 tac type RETURN
 tac type ARG
 tac build complete

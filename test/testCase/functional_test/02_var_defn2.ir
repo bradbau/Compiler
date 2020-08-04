@@ -1,4 +1,4 @@
--o<int>
+<int>
 <id,a>
 <;>
 <int>
@@ -286,10 +286,13 @@ scopeprev:0
 Variable offset count+4 :_t1
 Variable offset count+4 :_t2
 tac type ASSIGN
+ assign 10 to tegister0
 tac type ASSIGN
 tac type ASSIGN
+ assign 10 to tegister2
 tac type ASSIGN
 tac type ASSIGN
+ assign 0 to tegister4
 tac type RETURN
 tac type ARG
 tac build complete

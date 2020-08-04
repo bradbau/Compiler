@@ -1,4 +1,4 @@
--o<int>
+<int>
 <id,main>
 <(>
 <)>
@@ -1659,18 +1659,20 @@ scopeprev:0
 Variable offset count+4 :_t58
 Variable offset count+4 :_t59
 tac type ASSIGN
+ assign 5 to tegister0
 tac type ASSIGN
 tac type ASSIGN
+ assign 5 to tegister2
 tac type ASSIGN
 tac type ASSIGN
+ assign 1 to tegister4
 tac type ASSIGN
 tac type ASSIGN
+ assign 2 to tegister6
 tac type SUB
 tac type ASSIGN
 tac type ASSIGN
+ assign 2 to tegister10
 tac type ASSIGN
 Store Register in getregisterNoLoad variable
-register:-1
-terminate called after throwing an instance of 'std::runtime_error'
-  what():  no variable in this register
-Aborted (core dumped)
+Segmentation fault (core dumped)

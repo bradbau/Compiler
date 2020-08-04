@@ -1,4 +1,4 @@
--o<int>
+<int>
 <id,a>
 <;>
 <int>
@@ -386,5 +386,5 @@ findregister: insldr rd=2,r1=11,r2 offset=0,op2type=1, insefft=0
 tac type ASSIGN
 tac type ASSIGN
 tac type IFNEQ
-compiler: ./ObjectCode/Arm.cpp:796: ARM::ARM(TACCode *, ScopeItem *, vector<ScopeItem> &): Assertion `code.secondOp.Type==VARIABLE' failed.
+compiler: ./ObjectCode/Arm.cpp:987: ARM::ARM(TACCode *, ScopeItem *, vector<ScopeItem> &): Assertion `code.secondOp.Type==VARIABLE' failed.
 Aborted (core dumped)

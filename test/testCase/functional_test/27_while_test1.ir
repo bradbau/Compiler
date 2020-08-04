@@ -1,4 +1,4 @@
--o<int>
+<int>
 <id,doubleWhile>
 <(>
 <)>
@@ -631,14 +631,17 @@ scope type not local in functiondf
 scopeprev:1
 Variable offset count+4 :_t20
 tac type ASSIGN
+ assign 5 to tegister0
 tac type ASSIGN
 tac type ASSIGN
+ assign 7 to tegister2
 tac type ASSIGN
 tac type LABELDF
 L0:
 
 tac type ASSIGN
 tac type ASSIGN
+ assign 100 to tegister5
 tac type IFLT
 tac type GOTO
 Goto string B L2
@@ -648,6 +651,7 @@ L1:
 
 tac type ASSIGN
 tac type ASSIGN
+ assign 30 to tegister8
 tac type ADD
 tac type ASSIGN
 tac type LABELDF
@@ -655,7 +659,8 @@ L3:
 
 tac type ASSIGN
 tac type ASSIGN
-Store Register in getregisterNoLoad variable
+ assign 100 to tegisterStore Register in getregisterNoLoad variable
+10
 tac type IFLT
 Store Register in getregister variable
 findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
@@ -670,7 +675,8 @@ L4:
 tac type ASSIGN
 Store Register in getregisterNoLoad variable
 tac type ASSIGN
-Store Register in getregisterNoLoad variable
+ assign 6 to tegisterStore Register in getregisterNoLoad variable
+10
 tac type ADD
 Store Register in getregisterNoLoad variable
 Store Register in getregister variable
@@ -689,7 +695,8 @@ L5:
 tac type ASSIGN
 Store Register in getregisterNoLoad variable
 tac type ASSIGN
-Store Register in getregisterNoLoad variable
+ assign 100 to tegisterStore Register in getregisterNoLoad variable
+10
 tac type SUB
 Store Register in getregisterNoLoad variable
 Store Register in getregister variable
@@ -709,7 +716,4 @@ tac type ASSIGN
 Store Register in getregisterNoLoad variable
 tac type ASSIGN
 Store Register in getregisterNoLoad variable
-register:-1
-terminate called after throwing an instance of 'std::runtime_error'
-  what():  no variable in this register
-Aborted (core dumped)
+Segmentation fault (core dumped)

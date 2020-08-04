@@ -1,4 +1,4 @@
--o<int>
+<int>
 <id,a>
 <;>
 <int>
@@ -390,6 +390,7 @@ tac type LABELDF
 L0:
 
 tac type ASSIGN
+ assign 1 to tegister6
 tac type RETURN
 tac type ARG
 tac type GOTO
@@ -399,6 +400,7 @@ tac type LABELDF
 L1:
 
 tac type ASSIGN
+ assign 0 to tegister8
 tac type RETURN
 tac type ARG
 tac type LABELDF

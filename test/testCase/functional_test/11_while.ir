@@ -1,4 +1,4 @@
--o<int>
+<int>
 <id,a>
 <;>
 <int>
@@ -494,14 +494,17 @@ scopeprev:0
 Variable offset count+4 :_t11
 Variable offset count+4 :_t12
 tac type ASSIGN
+ assign 0 to tegister0
 tac type ASSIGN
 tac type ASSIGN
+ assign 3 to tegister2
 tac type ASSIGN
 tac type LABELDF
 L0:
 
 tac type ASSIGN
 tac type ASSIGN
+ assign 0 to tegister5
 tac type IFGT
 ControlInstruction String:BGT L1
 
@@ -517,7 +520,8 @@ tac type ADD
 tac type ASSIGN
 tac type ASSIGN
 tac type ASSIGN
-Store Register in getregisterNoLoad variable
+ assign 1 to tegisterStore Register in getregisterNoLoad variable
+10
 tac type SUB
 Store Register in getregisterNoLoad variable
 Store Register in getregister variable

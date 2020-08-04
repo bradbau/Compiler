@@ -1,4 +1,4 @@
--o<int>
+<int>
 <id,main>
 <(>
 <)>
@@ -1548,12 +1548,16 @@ scopeprev:0
 Variable offset count+4 :_t41
 Variable offset count+4 :_t42
 tac type ASSIGN
+ assign 10 to tegister0
 tac type ASSIGN
 tac type ASSIGN
+ assign 6 to tegister2
 tac type ASSIGN
 tac type ASSIGN
+ assign 4 to tegister4
 tac type ASSIGN
 tac type ASSIGN
+ assign 5 to tegister6
 tac type ASSIGN
 tac type ASSIGN
 tac type ASSIGN
@@ -1579,7 +1583,8 @@ Store Register in getregisterNoLoad variable
 tac type ASSIGN
 Store Register in getregisterNoLoad variable
 tac type ASSIGN
-Store Register in getregisterNoLoad variable
+ assign 2 to tegisterStore Register in getregisterNoLoad variable
+10
 tac type DIV
-compiler: ./ObjectCode/Arm.cpp:571: ARM::ARM(TACCode *, ScopeItem *, vector<ScopeItem> &): Assertion `code.dest.Type = VARIABLE' failed.
+compiler: ./ObjectCode/Arm.cpp:573: ARM::ARM(TACCode *, ScopeItem *, vector<ScopeItem> &): Assertion `code.dest.Type = VARIABLE' failed.
 Aborted (core dumped)

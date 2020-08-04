@@ -92,7 +92,9 @@ Compiler: CompUnits {
                   #endif
                   ScopeItem *arrayInfox = (ScopeItem*)malloc(sizeof(ScopeItem));
                   arrayInfox->dim = 1;
-                  arrayInfox->len.push_back(NULL);
+                  ASTTree* new_node1 = new ASTTree();
+                  new_node1->int_value = -1;
+                  arrayInfox->len.push_back(new_node1);
                   //加入库函数
                   $$->si= $1->si;
                   $$->si = addIntoScope(Global, $$->si, "getint", Function, "int", NULL);       //getint
@@ -109,7 +111,9 @@ Compiler: CompUnits {
                   $$->si->depictor = addIntoScope(Formal, NULL, "a", Variable, "int", NULL);
                   ScopeItem *arrayInfoy = (ScopeItem*)malloc(sizeof(ScopeItem));
                   arrayInfoy->dim = 1;
-                  arrayInfoy->len.push_back(NULL);
+                  ASTTree* new_node2 = new ASTTree();
+                  new_node2->int_value = -1;
+                  arrayInfoy->len.push_back(new_node2);
                   $$->si->depictor = addIntoScope(Formal, $$->si->depictor, "a", Array, "int", arrayInfoy);
                   $$->si = addIntoScope(Global, $$->si, "putf" , Function, "void", NULL);
                   // 打印符号表
@@ -215,7 +219,9 @@ FuncFParam: TYPEINTEGER IDENTIFIER{ASTTree *asttree = new ASTTree("FuncFParam", 
                 $$->SetID($2->GetID()); 
                 dim++;
                 recordArrayInfo_param->dim = dim;
-                recordArrayInfo_param->len.insert(recordArrayInfo_param->len.begin(), NULL);//由于数组作函数形参时，第一维都是空的，所以我们设置为NULL
+                ASTTree* new_node = new ASTTree();
+                  new_node->int_value = -1;
+                recordArrayInfo_param->len.insert(recordArrayInfo_param->len.begin(), new_node);//由于数组作函数形参时，第一维都是空的，所以我们设置为int value为-1的节点
                 $$->si = addIntoScope(Formal, $$->si, $2->GetID(), Array, "TYPEINTEGER", recordArrayInfo_param);
                 }
           
@@ -294,7 +300,7 @@ VarDec:   IDENTIFIER { $$ = $1;
                       //此时是第一次进入此位置，VarDec为Variable类型，需要为其定义新的arrayInfo
                       ScopeItem *arrayInfo = (ScopeItem*)malloc(sizeof(ScopeItem));
                       arrayInfo->dim = dim;
-                      arrayInfo->len.push_back($3);//将这一维长度的信息的指针添加到变长数组和中
+                      (arrayInfo->len).push_back($3);//将这一维长度的信息的指针添加到变长数组和中
                       recordArrayInfo = arrayInfo;//recordArrayInfo是全局变量，在这里将指针记录下来方便后面再次使用
                 }else{
                       //此时处理的已经不是数组的第一个维度，arrayInfo在前面也已经定义过，直接通过recordArrayInfo拿来用
@@ -486,9 +492,8 @@ int main(int argc, char *argv[]){
       yy_flex_debug=0;
       #endif
       //处理输入参数
-       
+       /*
       char opt;
-
       while ((opt = getopt(argc, argv, "S:o::O")) != -1){
 
             switch(opt){
@@ -527,6 +532,8 @@ int main(int argc, char *argv[]){
                   }
             }
       }
+      */
+      
       yyin=fopen(argv[4],"r");
 	if (!yyin) return -1;
       strcpy(outputFileName,argv[3]);
