@@ -196,6 +196,8 @@ ID             category       type           depictor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 build assembly code
 tac build complete
+
+EXTERN getint getchar getarray putint putchar putarray
 .text
 .global main
 

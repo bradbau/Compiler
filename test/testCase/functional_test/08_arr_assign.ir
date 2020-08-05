@@ -260,19 +260,87 @@ ID             category       type           depictor
 build assembly code
 tac type FUNCTIONDF
 tac type ASSIGN
- assign 1 to tegister0
+ assign 1 to tegisteruserreg0contains0
+userreg1contains0
+userreg2contains0
+userreg3contains0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+0
+userreg0contains0x6c5ec0
 tac type ASSIGN
- assign 0 to tegister1
+ assign 0 to tegisteruserreg0contains0x6c5ec0
+userreg1contains0
+userreg2contains0
+userreg3contains0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+1
+userreg0contains0x6c5ec0
+userreg1contains0x6c6210
 tac type ASSIGN
   assign dest type array
 GetRegisterNoLoad array_addr
 FindRegister ARRAY_ADDR
-reload == for array
-empty array_addr
-reload == for array
-empty array_addr
 cannot findregister GetRegisterNoLoad ARRAY_ADDR
+userreg0contains0x6c5ec0
 tac type ASSIGN
-terminate called after throwing an instance of 'std::bad_alloc'
-  what():  std::bad_alloc
-Aborted (core dumped)
+ assign 0 to tegisteruserreg0contains0x6c5ec0
+userreg1contains0x6c6210
+userreg2contains0
+userreg3contains0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+3
+userreg0contains0x6c5ec0
+userreg1contains0x6c6210
+userreg2contains0
+userreg3contains0x6c6430
+tac type RETURN
+userreg0contains0x6c5ec0
+userreg1contains0x6c6210
+userreg2contains0
+userreg3contains0x6c6430
+tac type ARG
+tac build complete
+instruction number1
+instruction number2
+instruction number3
+instruction number4
+instruction number5
+instruction number6
+instruction number7
+instruction number8
+instruction number9
+instruction number10
+instruction number11
+instruction number12
+
+EXTERN getint getchar getarray putint putchar putarray
+.text
+.global main
+main:
+PUSH {fp}
+ADD  fp, sp, #0
+SUB sp, sp, #0
+MOV r0, #1
+MOV r1, #0
+ADD  r2, r0, #0
+MOV r3, #0
+ADD  r0, r3, #0
+ADD  sp, fp, #0
+POP {fp}
+BX lr
+

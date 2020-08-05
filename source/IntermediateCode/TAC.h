@@ -39,7 +39,7 @@ typedef struct basic_block {
 */
 
 
-    TACCode* BuildTAC(ASTTree* tree, ScopeItem &scopeItem, vector<ScopeItem> &stack, unsigned int &temp_num, unsigned int &label_num);
+    TACCode* BuildTAC(ASTTree* tree, ScopeItem &scopeItem, vector<ScopeItem> &stack, Label continuevalue, Label breakvalue, unsigned int &temp_num, unsigned int &label_num);
     TACCode* MergeTACItem(int num, ...);
     TACCode* TranslateExp(ASTTree* tree, ScopeItem &scopeItem, vector<ScopeItem> &stack, ScopeItem place, unsigned int &temp_num, unsigned int &label_num);
     TACCode* TranslateLvalAssign(ASTTree* tree, ScopeItem& scopeItem, vector<ScopeItem>& stack, ScopeItem place, unsigned int& temp_num, unsigned int& label_num);

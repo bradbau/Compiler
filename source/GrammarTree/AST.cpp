@@ -159,3 +159,10 @@ string ASTTree::GetString(){
     return this->formatstring;
 };
 //merge dev-cjw(end)
+ASTTree::~ASTTree(){
+
+    if(lchild!=NULL)
+        delete lchild;
+    if(rchild!=NULL)
+        delete rchild;
+}

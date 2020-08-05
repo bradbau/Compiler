@@ -25,10 +25,10 @@ typedef struct RegisterEntry
       bool filled;         // 是否使用
       int tag;           // Tag for LRU algorithm
       
-      union {
+      
             ScopeItem* variable;     // 存储的变量对象
             ARRAY_ADDR* array_addr;//数组对象
-      };
+      
       //int instantNum; 不一定有用，记录寄存器内容的具体值
 } RegisterEntry;
 
@@ -59,6 +59,8 @@ private:
 
 
       void StoreRegister(int RegisterNum);//将这个寄存器内的变量保存到它内部offset指向的内存地址
+      
+      
 
 public:
 
@@ -69,7 +71,8 @@ public:
 
 };
 
-
+      bool operator==(ScopeItem t1, ARRAY_ADDR t2);
+      bool operator==(ARRAY_ADDR t1, ScopeItem t2);
 
 
 #endif

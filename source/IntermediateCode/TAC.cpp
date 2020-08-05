@@ -1,9 +1,6 @@
 #include "TAC.h"
 
 
-
-
-
 TACCode*   MergeTACItem(int num, ...){
     int i = 1;
     va_list codelist;
@@ -566,7 +563,7 @@ TACCode*  TranslateStmt(ASTTree* tree, ScopeItem &scopeItem, vector<ScopeItem> &
         return MergeTACItem(2, code1, code2);
     }
     else if (tree->name == "Block_Stmt") {
-        return BuildTAC(tree->lchild, scopeItem, stack, temp_num, label_num);
+        return BuildTAC(tree->lchild, scopeItem, stack, continuevalue, breakvalue, temp_num, label_num);
     }
 }
 
@@ -978,18 +975,18 @@ TACCode* TranslateRelExp(ASTTree* tree, ScopeItem& scopeItem, vector<ScopeItem>&
     }
 }
 
-TACCode*   BuildTAC(ASTTree* tree, ScopeItem &scopeItem, vector<ScopeItem> &stack,  unsigned int &temp_num, unsigned int &label_num){
+TACCode*   BuildTAC(ASTTree* tree, ScopeItem &scopeItem, vector<ScopeItem> &stack, Label continuevalue, Label breakvalue,  unsigned int &temp_num, unsigned int &label_num){
     if (tree == NULL)
         return NULL;
     if (tree->name == "Compiler")
     {
         //PushScopeStack(stack, *scopeItem);
         stack.push_back(scopeItem);
-        return BuildTAC(tree->lchild, scopeItem, stack, temp_num, label_num);
+        return BuildTAC(tree->lchild, scopeItem, stack, continuevalue, breakvalue, temp_num, label_num);
     }
     else if (tree->name == "CompUnits") {
         if (tree->lchild != NULL) {
-            return MergeTACItem(2, BuildTAC(tree->lchild, scopeItem, stack, temp_num, label_num), BuildTAC(tree->lchild->rchild, scopeItem, stack, temp_num, label_num));
+            return MergeTACItem(2, BuildTAC(tree->lchild, scopeItem, stack, continuevalue, breakvalue,  temp_num, label_num), BuildTAC(tree->lchild->rchild, scopeItem, stack, continuevalue, breakvalue, temp_num, label_num));
         }
         else
             return NULL;
@@ -1029,8 +1026,8 @@ TACCode*   BuildTAC(ASTTree* tree, ScopeItem &scopeItem, vector<ScopeItem> &stac
             stack.push_back(*mergeScope(tree->lchild->si, tree->lchild->si->depictor));
             flag = 1;
         }
-        formalcode = BuildTAC(tree->lchild, scopeItem, stack, temp_num, label_num);                    //形参四元式
-        bodycode = BuildTAC(tree->lchild->rchild, scopeItem, stack, temp_num, label_num);              //函数体四元式
+        formalcode = BuildTAC(tree->lchild, scopeItem, stack, continuevalue, breakvalue, temp_num, label_num);                    //形参四元式
+        bodycode = BuildTAC(tree->lchild->rchild, scopeItem, stack, continuevalue, breakvalue, temp_num, label_num);              //函数体四元式
         if (flag)
             stack.pop_back();
         return MergeTACItem(3, tmp, formalcode, bodycode);  //合并四元式
@@ -1045,7 +1042,7 @@ TACCode*   BuildTAC(ASTTree* tree, ScopeItem &scopeItem, vector<ScopeItem> &stac
         }
         else {
         */
-        return MergeTACItem(2, BuildTAC(tree->lchild, scopeItem, stack, temp_num, label_num), BuildTAC(tree->lchild->rchild, scopeItem, stack, temp_num, label_num));
+        return MergeTACItem(2, BuildTAC(tree->lchild, scopeItem, stack, continuevalue, breakvalue, temp_num, label_num), BuildTAC(tree->lchild->rchild, scopeItem, stack, continuevalue, breakvalue, temp_num, label_num));
         //}
     }
     else if (tree->name == "FuncFParam") { //非数组形参
@@ -1113,20 +1110,20 @@ TACCode*   BuildTAC(ASTTree* tree, ScopeItem &scopeItem, vector<ScopeItem> &stac
         return NULL;
     }
     else if (tree->name == "ConstDecl") {
-        return MergeTACItem(2, BuildTAC(tree->lchild, scopeItem, stack, temp_num, label_num), BuildTAC(tree->lchild->rchild, scopeItem, stack, temp_num, label_num));
+        return MergeTACItem(2, BuildTAC(tree->lchild, scopeItem, stack, continuevalue, breakvalue, temp_num, label_num), BuildTAC(tree->lchild->rchild, scopeItem, stack, continuevalue, breakvalue, temp_num, label_num));
     }
     else if (tree->name == "VarDecl") {//ok
-        return MergeTACItem(2, BuildTAC(tree->lchild, scopeItem, stack, temp_num, label_num), BuildTAC(tree->lchild->rchild, scopeItem, stack, temp_num, label_num));
+        return MergeTACItem(2, BuildTAC(tree->lchild, scopeItem, stack, continuevalue, breakvalue, temp_num, label_num), BuildTAC(tree->lchild->rchild, scopeItem, stack, continuevalue, breakvalue, temp_num, label_num));
     }
     else if (tree->name == "ConstDefs") {
-        return MergeTACItem(2, BuildTAC(tree->lchild, scopeItem, stack, temp_num, label_num), BuildTAC(tree->lchild->rchild, scopeItem, stack, temp_num, label_num));
+        return MergeTACItem(2, BuildTAC(tree->lchild, scopeItem, stack, continuevalue, breakvalue, temp_num, label_num), BuildTAC(tree->lchild->rchild, scopeItem, stack, continuevalue, breakvalue, temp_num, label_num));
     }
     else if (tree->name == "VarDefs") {//ok
-        return MergeTACItem(2, BuildTAC(tree->lchild, scopeItem, stack, temp_num, label_num), BuildTAC(tree->lchild->rchild, scopeItem, stack, temp_num, label_num));
+        return MergeTACItem(2, BuildTAC(tree->lchild, scopeItem, stack, continuevalue, breakvalue, temp_num, label_num), BuildTAC(tree->lchild->rchild, scopeItem, stack, continuevalue, breakvalue, temp_num, label_num));
     }
     else if (tree->name == "ConstOpassign") {
         if (tree->lchild->rchild->name == "ExpInitval") {
-            return  MergeTACItem(2, BuildTAC(tree->lchild, scopeItem, stack, temp_num, label_num), TranslateExp(tree->lchild->rchild->lchild, scopeItem, stack, TraverseScopeStack(stack, tree->lchild->GetID()), temp_num, label_num));
+            return  MergeTACItem(2, BuildTAC(tree->lchild, scopeItem, stack, continuevalue, breakvalue, temp_num, label_num), TranslateExp(tree->lchild->rchild->lchild, scopeItem, stack, TraverseScopeStack(stack, tree->lchild->GetID()), temp_num, label_num));
         }
         else {
             string cache1 = "_t" + to_string(temp_num++);
@@ -1142,13 +1139,13 @@ TACCode*   BuildTAC(ASTTree* tree, ScopeItem &scopeItem, vector<ScopeItem> &stac
             codex->line = tree->line;
             codex->prev = codex;
             int layer = 0;
-            return MergeTACItem(3, BuildTAC(tree->lchild, scopeItem, stack, temp_num, label_num), codex, TranslateInitVal(tree->lchild->rchild, *new_temp1, layer, scopeItem, stack, TraverseScopeStack(stack, tree->lchild->GetID()), temp_num, label_num));
+            return MergeTACItem(3, BuildTAC(tree->lchild, scopeItem, stack, continuevalue, breakvalue, temp_num, label_num), codex, TranslateInitVal(tree->lchild->rchild, *new_temp1, layer, scopeItem, stack, TraverseScopeStack(stack, tree->lchild->GetID()), temp_num, label_num));
         }
     }
     else if (tree->name == "VarOPassign") {     //ok
         if (tree->lchild->rchild->name== "ExpInitval") {
 
-            return  MergeTACItem(2, BuildTAC(tree->lchild, scopeItem, stack, temp_num, label_num), TranslateExp(tree->lchild->rchild->lchild, scopeItem, stack, TraverseScopeStack(stack, tree->lchild->GetID()), temp_num, label_num));
+            return  MergeTACItem(2, BuildTAC(tree->lchild, scopeItem, stack, continuevalue, breakvalue, temp_num, label_num), TranslateExp(tree->lchild->rchild->lchild, scopeItem, stack, TraverseScopeStack(stack, tree->lchild->GetID()), temp_num, label_num));
         }
         else {
             string cache1 = "_t" + to_string(temp_num++);
@@ -1164,7 +1161,7 @@ TACCode*   BuildTAC(ASTTree* tree, ScopeItem &scopeItem, vector<ScopeItem> &stac
             codex->line = tree->line;
             codex->prev = codex;
             int layer = 0;
-            return MergeTACItem(3, BuildTAC(tree->lchild, scopeItem, stack, temp_num, label_num), codex, TranslateInitVal(tree->lchild->rchild, *new_temp1, layer, scopeItem, stack, TraverseScopeStack(stack, tree->lchild->GetID()), temp_num, label_num));
+            return MergeTACItem(3, BuildTAC(tree->lchild, scopeItem, stack, continuevalue, breakvalue, temp_num, label_num), codex, TranslateInitVal(tree->lchild->rchild, *new_temp1, layer, scopeItem, stack, TraverseScopeStack(stack, tree->lchild->GetID()), temp_num, label_num));
         }
     }
     else if (tree->name == "IDENTIFIER") {      //ok
@@ -1187,7 +1184,7 @@ TACCode*   BuildTAC(ASTTree* tree, ScopeItem &scopeItem, vector<ScopeItem> &stac
         }
     }
     else if (tree->name == "BlockItems") {
-        return MergeTACItem(2, BuildTAC(tree->lchild, scopeItem, stack, temp_num, label_num), BuildTAC(tree->lchild->rchild, scopeItem, stack, temp_num, label_num));
+        return MergeTACItem(2, BuildTAC(tree->lchild, scopeItem, stack, continuevalue, breakvalue, temp_num, label_num), BuildTAC(tree->lchild->rchild, scopeItem, stack, continuevalue, breakvalue, temp_num, label_num));
     }
     else if (tree->name == "Exp_Stmt") {
         ScopeItem variable;
@@ -1238,7 +1235,7 @@ TACCode*   BuildTAC(ASTTree* tree, ScopeItem &scopeItem, vector<ScopeItem> &stac
         return MergeTACItem(2, code1, code3);
     }
     else if (tree->name == "Block_Stmt") {
-        return BuildTAC(tree->lchild, scopeItem, stack, temp_num, label_num);
+        return BuildTAC(tree->lchild, scopeItem, stack, continuevalue, breakvalue, temp_num, label_num);
     }
     else if (tree->name == "Block") {
         int flag = 0;
@@ -1249,7 +1246,7 @@ TACCode*   BuildTAC(ASTTree* tree, ScopeItem &scopeItem, vector<ScopeItem> &stac
             stack.push_back(*(tree->si));
         }
         TACCode* BlockItems = (TACCode*)malloc(sizeof(TACCode));
-        BlockItems = BuildTAC(tree->lchild, scopeItem, stack, temp_num, label_num);
+        BlockItems = BuildTAC(tree->lchild, scopeItem, stack, continuevalue, breakvalue, temp_num, label_num);
         ScopeItem top;
         if (flag == 1) {
             //PopScopeStack(stack, &top);
@@ -1275,22 +1272,22 @@ TACCode*   BuildTAC(ASTTree* tree, ScopeItem &scopeItem, vector<ScopeItem> &stac
         return NULL;
     }
     else if (tree->name == "IF_Stmt") {
-        return TranslateStmt(tree, scopeItem, stack, -1, -1, temp_num, label_num);
+        return TranslateStmt(tree, scopeItem, stack, continuevalue, breakvalue, temp_num, label_num);
     }
     else if (tree->name == "IF_ELSE_Stmt") {
-        return TranslateStmt(tree, scopeItem, stack, -1, -1, temp_num, label_num);
+        return TranslateStmt(tree, scopeItem, stack, continuevalue, breakvalue, temp_num, label_num);
     }
     else if (tree->name == "While_Stmt") {
-        return TranslateStmt(tree, scopeItem, stack, -1, -1, temp_num, label_num);
+        return TranslateStmt(tree, scopeItem, stack, continuevalue, breakvalue, temp_num, label_num);
     }
     else if (tree->name == "Break_Stmt") {
-        return TranslateStmt(tree, scopeItem, stack, -1, -1, temp_num, label_num);
+        return TranslateStmt(tree, scopeItem, stack, continuevalue, breakvalue, temp_num, label_num);
     }
     else if (tree->name == "Continue_Stmt") {
-        return TranslateStmt(tree, scopeItem, stack, -1, -1, temp_num, label_num);
+        return TranslateStmt(tree, scopeItem, stack, continuevalue, breakvalue, temp_num, label_num);
     }
     else if (tree->name == "Return_Stmt") {
-        return TranslateStmt(tree, scopeItem, stack, -1, -1, temp_num, label_num);
+        return TranslateStmt(tree, scopeItem, stack, continuevalue, breakvalue, temp_num, label_num);
     }
 }
  

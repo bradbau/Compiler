@@ -116,6 +116,11 @@ Compiler: CompUnits {
                   arrayInfoy->len.push_back(new_node2);
                   $$->si->depictor = addIntoScope(Formal, $$->si->depictor, "a", Array, "int", arrayInfoy);
                   $$->si = addIntoScope(Global, $$->si, "putf" , Function, "void", NULL);
+                  
+                  //回收语法树
+                  //delete asttree;
+                  
+                  
                   // 打印符号表
                   #ifdef DEBUG
                   displayGlobal($$->si);
@@ -125,7 +130,7 @@ Compiler: CompUnits {
                   ScopeItem scopeItem;
                   unsigned int temp_num = 0;
                   unsigned int label_num = 0;
-                  TACCode* entrance = BuildTAC($$ , *($$->si) , stack, temp_num, label_num);
+                  TACCode* entrance = BuildTAC($$ , *($$->si) , stack, -1, -1, temp_num, label_num);
                   #ifdef DEBUG
                   DisplayTACCode(entrance);
                   displayGlobal($$->si);

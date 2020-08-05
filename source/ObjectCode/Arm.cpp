@@ -1,7 +1,12 @@
 #include"Arm.h"
 
 
-
+bool operator==(ScopeItem t1, ARRAY_ADDR t2){
+    return false;
+}
+bool operator==(ARRAY_ADDR t1, ScopeItem t2){
+    return false;
+}
 
 ARM::ARM(TACCode* entrance, ScopeItem *GlobalItemHead, vector<ScopeItem> &stack){
     //根据输入的中间代码和符号表结构完成初始化，生成目标代码, 
@@ -1348,8 +1353,15 @@ Register ARM::GetRegisterNoLoad(ARRAY_ADDR* array_addr){
 //Register ARM::GetRegister(ScopeItem* variable);//分配空余寄存器
 int  ARM::FindRegister(ScopeItem* variable){
     //查找存有对应变量的寄存器, 没有则返回-1
+    if(variable==NULL){
+        cout<<"FindRegister receive NULL"<<endl;
+        return -1;
+    }
     for(Register item: userReg){
-        if(  regs[item].variable!=NULL   &&*(regs[item].variable)==*variable){
+        #ifdef DEBUG
+        cout<<"userreg"<<item<<"contains"<<regs[item].variable<<endl;
+        #endif // DEBUG
+        if(regs[item].filled==true&&  regs[item].variable!=NULL&&   *(regs[item].variable)==*variable){
             return item;
         }
     }
@@ -1362,7 +1374,7 @@ int ARM::FindRegister(ARRAY_ADDR* array_addr){
     #endif // DEBUG
     for(Register item: userReg){
         
-        if(  regs[item].array_addr!=NULL   &&*(regs[item].array_addr)==*array_addr){
+        if( regs[item].filled==true&&  regs[item].array_addr!=NULL   &&*(regs[item].array_addr)==*array_addr){
             #ifdef DEBUG
             cout<<"return FindRegister ARRAY_ADDR"<<endl;
             #endif // DEBUG
@@ -1458,8 +1470,11 @@ void ARM::AllocateStack(ScopeItem * variable, int &offset){
 string ARM::toString(){
     //生成汇编文本
     //遍历指令序列，依次调用tostring方法然后串联
+    string CodeString= "\n";
 
-    string CodeString=".text\n.global main\n";
+    CodeString+="EXTERN getint getchar getarray putint putchar putarray\n";
+
+    CodeString+=".text\n.global main\n";
     int i=0;
     for(auto iter: InsList){
         i++;

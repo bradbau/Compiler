@@ -461,24 +461,209 @@ scopeprev:0
 Variable offset count+4 :_t7
 Variable offset count+4 :_t8
 tac type CALLASSIGN
+userreg0contains0
+userreg1contains0
+userreg2contains0
+userreg3contains0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
 findregister: insldr rd=0,r1=11,r2 offset=0,op2type=1, insefft=0
 tac type ASSIGN
+userreg0contains0x2401310
+userreg1contains0
+userreg2contains0
+userreg3contains0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+userreg0contains0x2401310
 tac type CALLASSIGN
+userreg0contains0x2401310
+userreg1contains0x23fc630
+userreg2contains0
+userreg3contains0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
 findregister: insldr rd=2,r1=11,r2 offset=0,op2type=1, insefft=0
 tac type ASSIGN
+userreg0contains0x2401310
+userreg1contains0x23fc630
+userreg2contains0x2401510
+userreg3contains0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+userreg0contains0x2401310
+userreg1contains0x23fc630
+userreg2contains0x2401510
 tac type CALLASSIGN
+userreg0contains0x2401310
+userreg1contains0x23fc630
+userreg2contains0x2401510
+userreg3contains0x23fc8a0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
 findregister: insldr rd=4,r1=11,r2 offset=0,op2type=1, insefft=0
 tac type ASSIGN
+userreg0contains0x2401310
+userreg1contains0x23fc630
+userreg2contains0x2401510
+userreg3contains0x23fc8a0
+userreg4contains0x2401c20
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+userreg0contains0x2401310
+userreg1contains0x23fc630
+userreg2contains0x2401510
+userreg3contains0x23fc8a0
+userreg4contains0x2401c20
 tac type ASSIGN
+userreg0contains0x2401310
+userreg1contains0x23fc630
+userreg2contains0x2401510
+userreg3contains0x23fc8a0
+userreg4contains0x2401c20
+userreg5contains0x23fcb10
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+userreg0contains0x2401310
+userreg1contains0x23fc630
 tac type ASSIGN
+userreg0contains0x2401310
+userreg1contains0x23fc630
+userreg2contains0x2401510
+userreg3contains0x23fc8a0
+userreg4contains0x2401c20
+userreg5contains0x23fcb10
+userreg6contains0x2401e40
+userreg8contains0
+userreg9contains0
+userreg10contains0
+userreg0contains0x2401310
+userreg1contains0x23fc630
+userreg2contains0x2401510
+userreg3contains0x23fc8a0
 tac type ASSIGN
+userreg0contains0x2401310
+userreg1contains0x23fc630
+userreg2contains0x2401510
+userreg3contains0x23fc8a0
+userreg4contains0x2401c20
+userreg5contains0x23fcb10
+userreg6contains0x2401e40
+userreg8contains0x2402000
+userreg9contains0
+userreg10contains0
+userreg0contains0x2401310
+userreg1contains0x23fc630
+userreg2contains0x2401510
+userreg3contains0x23fc8a0
+userreg4contains0x2401c20
+userreg5contains0x23fcb10
 tac type MUL
+userreg0contains0x2401310
+userreg1contains0x23fc630
+userreg2contains0x2401510
+userreg3contains0x23fc8a0
+userreg4contains0x2401c20
+userreg5contains0x23fcb10
+userreg6contains0x2401e40
+userreg8contains0x2402000
+userreg9contains0x24020b0
+userreg10contains0
+userreg0contains0x2401310
+userreg1contains0x23fc630
+userreg2contains0x2401510
+userreg3contains0x23fc8a0
+userreg4contains0x2401c20
+userreg5contains0x23fcb10
+userreg6contains0x2401e40
+userreg8contains0x2402000
+userreg0contains0x2401310
+userreg1contains0x23fc630
+userreg2contains0x2401510
+userreg3contains0x23fc8a0
+userreg4contains0x2401c20
+userreg5contains0x23fcb10
+userreg6contains0x2401e40
+userreg8contains0x2402000
+userreg9contains0x24020b0
 tac type ADD
+userreg0contains0x2401310
+userreg1contains0x23fc630
+userreg2contains0x2401510
+userreg3contains0x23fc8a0
+userreg4contains0x2401c20
+userreg5contains0x23fcb10
+userreg6contains0x2401e40
+userreg8contains0x2402000
+userreg9contains0x24020b0
+userreg10contains0x2401ef0
 Store Register in getregisterNoLoad variable
+userreg0contains0x2401310
+userreg1contains0x23fc630
+userreg2contains0x2401510
+userreg3contains0x23fc8a0
+userreg4contains0x2401c20
+userreg5contains0x23fcb10
+userreg6contains0x2401e40
+userreg0contains0x2401310
+userreg1contains0x23fc630
+userreg2contains0x2401510
+userreg3contains0x23fc8a0
+userreg4contains0x2401c20
+userreg5contains0x23fcb10
+userreg6contains0x2401e40
+userreg8contains0x2402000
+userreg9contains0x24020b0
+userreg10contains0x2401d90
 Store Register in getregister variable
 findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
 tac type ASSIGN
+userreg0contains0x2401310
+userreg1contains0x23fc630
+userreg2contains0x2401510
+userreg3contains0x23fc8a0
+userreg4contains0x2401c20
+userreg5contains0x23fcb10
+userreg6contains0x2401e40
+userreg8contains0x2402000
+userreg9contains0x24020b0
+userreg10contains0x2401ef0
 Store Register in getregisterNoLoad variable
+userreg0contains0x2401310
+userreg1contains0x23fc630
+userreg2contains0x2401510
+userreg3contains0x23fc8a0
+userreg4contains0x2401c20
+userreg5contains0x23fcb10
+userreg6contains0x2401e40
+userreg8contains0x2402000
+userreg9contains0x24020b0
+userreg10contains0x23fe1f0
 register:-1
 terminate called after throwing an instance of 'std::runtime_error'
   what():  no variable in this register

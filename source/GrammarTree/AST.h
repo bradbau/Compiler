@@ -39,6 +39,7 @@ class ASTTree{
 
     ScopeItem *si;  //  符号表指针
     ASTTree();
+    ~ASTTree();
     ASTTree(string name,int num,int pos,...);
    
     //遍历当前语法树

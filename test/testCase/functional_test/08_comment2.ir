@@ -223,8 +223,20 @@ ID             category       type           depictor
 build assembly code
 tac type FUNCTIONDF
 tac type ASSIGN
- assign 0 to tegister0
+ assign 0 to tegisteruserreg0contains0
+userreg1contains0
+userreg2contains0
+userreg3contains0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+0
+userreg0contains0x1890e50
 tac type RETURN
+userreg0contains0x1890e50
 tac type ARG
 tac build complete
 instruction number1
@@ -236,6 +248,8 @@ instruction number6
 instruction number7
 instruction number8
 instruction number9
+
+EXTERN getint getchar getarray putint putchar putarray
 .text
 .global main
 main:

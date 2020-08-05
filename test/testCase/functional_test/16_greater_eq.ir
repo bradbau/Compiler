@@ -519,29 +519,550 @@ scope type is wrong
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 build assembly code
 tac type ASSIGN
- assign 5 to tegister0
+ assign 5 to tegisteruserreg0contains0
+userreg1contains0
+userreg2contains0
+userreg3contains0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+0
+userreg0contains0xf73630
 tac type ASSIGN
- assign 0 to tegister1
+ assign 0 to tegisteruserreg0contains0xf73630
+userreg1contains0
+userreg2contains0
+userreg3contains0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+1
+userreg0contains0xf73630
+userreg1contains0xf7a2c0
 tac type ASSIGN
- assign 10 to tegister2
+ assign 10 to tegisteruserreg0contains0xf73630
+userreg1contains0xf7a2c0
+userreg2contains0
+userreg3contains0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+2
+userreg0contains0xf73630
+userreg1contains0xf7a2c0
+userreg2contains0xf7a480
 tac type ASSIGN
+userreg0contains0xf73630
+userreg1contains0xf7a2c0
+userreg2contains0xf7a480
+userreg3contains0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+userreg0contains0xf73630
+userreg1contains0xf7a2c0
 tac type ASSIGN
- assign 9 to tegister4
+ assign 9 to tegisteruserreg0contains0xf73630
+userreg1contains0xf7a2c0
+userreg2contains0xf7a480
+userreg3contains0xf7a890
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+4
+userreg0contains0xf73630
+userreg1contains0xf7a2c0
+userreg2contains0xf7a480
+userreg3contains0xf7a890
+userreg4contains0xf7a9a0
+tac type ASSIGN
+  assign dest type array
+GetRegisterNoLoad array_addr
+FindRegister ARRAY_ADDR
+cannot findregister GetRegisterNoLoad ARRAY_ADDR
+userreg0contains0xf73630
+userreg1contains0xf7a2c0
+userreg2contains0xf7a480
+userreg3contains0xf7a890
+userreg4contains0xf7a9a0
+tac type ADD
+userreg0contains0xf73630
+userreg1contains0xf7a2c0
+userreg0contains0xf73630
+userreg1contains0xf7a2c0
+tac type ASSIGN
+ assign 8 to tegisteruserreg0contains0xf73630
+userreg1contains0xf7a2c0
+userreg2contains0xf7a480
+userreg3contains0xf7a890
+userreg4contains0xf7a9a0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+6
+userreg0contains0xf73630
+userreg1contains0xf7a2c0
+userreg2contains0xf7a480
+userreg3contains0xf7a890
+userreg4contains0xf7a9a0
+userreg5contains0
+userreg6contains0xf7ab90
 tac type ASSIGN
   assign dest type array
 GetRegisterNoLoad array_addr
 FindRegister ARRAY_ADDR
 reload == for array
-empty array_addr
-reload == for array
-empty array_addr
-reload == for array
-empty array_addr
-reload == for array
-empty array_addr
-reload == for array
-empty array_addr
-cannot findregister GetRegisterNoLoad ARRAY_ADDR
+return FindRegister ARRAY_ADDR
+userreg0contains0xf73630
+userreg1contains0xf7a2c0
+userreg2contains0xf7a480
+userreg3contains0xf7a890
+userreg4contains0xf7a9a0
+userreg5contains0
+userreg6contains0xf7ab90
 tac type ADD
+userreg0contains0xf73630
+userreg1contains0xf7a2c0
+userreg0contains0xf73630
+userreg1contains0xf7a2c0
 tac type ASSIGN
-Segmentation fault (core dumped)
+ assign 7 to tegisteruserreg0contains0xf73630
+userreg1contains0xf7a2c0
+userreg2contains0xf7a480
+userreg3contains0xf7a890
+userreg4contains0xf7a9a0
+userreg5contains0
+userreg6contains0xf7ab90
+userreg8contains0
+userreg9contains0
+userreg10contains0
+8
+userreg0contains0xf73630
+userreg1contains0xf7a2c0
+userreg2contains0xf7a480
+userreg3contains0xf7a890
+userreg4contains0xf7a9a0
+userreg5contains0
+userreg6contains0xf7ab90
+userreg8contains0xf7ad80
+tac type ASSIGN
+  assign dest type array
+GetRegisterNoLoad array_addr
+FindRegister ARRAY_ADDR
+reload == for array
+return FindRegister ARRAY_ADDR
+userreg0contains0xf73630
+userreg1contains0xf7a2c0
+userreg2contains0xf7a480
+userreg3contains0xf7a890
+userreg4contains0xf7a9a0
+userreg5contains0
+userreg6contains0xf7ab90
+userreg8contains0xf7ad80
+tac type ADD
+userreg0contains0xf73630
+userreg1contains0xf7a2c0
+userreg0contains0xf73630
+userreg1contains0xf7a2c0
+tac type ASSIGN
+ assign 6 to tegisteruserreg0contains0xf73630
+userreg1contains0xf7a2c0
+userreg2contains0xf7a480
+userreg3contains0xf7a890
+userreg4contains0xf7a9a0
+userreg5contains0
+userreg6contains0xf7ab90
+userreg8contains0xf7ad80
+userreg9contains0
+userreg10contains0
+9
+userreg0contains0xf73630
+userreg1contains0xf7a2c0
+userreg2contains0xf7a480
+userreg3contains0xf7a890
+userreg4contains0xf7a9a0
+userreg5contains0
+userreg6contains0xf7ab90
+userreg8contains0xf7ad80
+userreg9contains0xf7af70
+tac type ASSIGN
+  assign dest type array
+GetRegisterNoLoad array_addr
+FindRegister ARRAY_ADDR
+reload == for array
+return FindRegister ARRAY_ADDR
+userreg0contains0xf73630
+userreg1contains0xf7a2c0
+userreg2contains0xf7a480
+userreg3contains0xf7a890
+userreg4contains0xf7a9a0
+userreg5contains0
+userreg6contains0xf7ab90
+userreg8contains0xf7ad80
+userreg9contains0xf7af70
+tac type ADD
+userreg0contains0xf73630
+userreg1contains0xf7a2c0
+userreg0contains0xf73630
+userreg1contains0xf7a2c0
+tac type ASSIGN
+ assign 5 to tegisteruserreg0contains0xf73630
+userreg1contains0xf7a2c0
+userreg2contains0xf7a480
+userreg3contains0xf7a890
+userreg4contains0xf7a9a0
+userreg5contains0
+userreg6contains0xf7ab90
+userreg8contains0xf7ad80
+userreg9contains0xf7af70
+userreg10contains0
+10
+userreg0contains0xf73630
+userreg1contains0xf7a2c0
+userreg2contains0xf7a480
+userreg3contains0xf7a890
+userreg4contains0xf7a9a0
+userreg5contains0
+userreg6contains0xf7ab90
+userreg8contains0xf7ad80
+userreg9contains0xf7af70
+userreg10contains0xf7b160
+tac type ASSIGN
+  assign dest type array
+GetRegisterNoLoad array_addr
+FindRegister ARRAY_ADDR
+reload == for array
+return FindRegister ARRAY_ADDR
+userreg0contains0xf73630
+userreg1contains0xf7a2c0
+userreg2contains0xf7a480
+userreg3contains0xf7a890
+userreg4contains0xf7a9a0
+userreg5contains0
+userreg6contains0xf7ab90
+userreg8contains0xf7ad80
+userreg9contains0xf7af70
+userreg10contains0xf7b160
+tac type ADD
+userreg0contains0xf73630
+userreg1contains0xf7a2c0
+userreg0contains0xf73630
+userreg1contains0xf7a2c0
+tac type ASSIGN
+ assign 4 to tegisteruserreg0contains0xf73630
+userreg1contains0xf7a2c0
+userreg2contains0xf7a480
+userreg3contains0xf7a890
+userreg4contains0xf7a9a0
+userreg5contains0
+userreg6contains0xf7ab90
+userreg8contains0xf7ad80
+userreg9contains0xf7af70
+userreg10contains0xf7b160
+Store Register in getregisterNoLoad variable
+10
+userreg0contains0xf73630
+userreg1contains0xf7a2c0
+userreg2contains0xf7a480
+userreg3contains0xf7a890
+userreg4contains0xf7a9a0
+userreg5contains0
+userreg6contains0xf7ab90
+userreg8contains0xf7ad80
+userreg9contains0xf7af70
+userreg10contains0xf7b350
+tac type ASSIGN
+  assign dest type array
+GetRegisterNoLoad array_addr
+FindRegister ARRAY_ADDR
+reload == for array
+return FindRegister ARRAY_ADDR
+userreg0contains0xf73630
+userreg1contains0xf7a2c0
+userreg2contains0xf7a480
+userreg3contains0xf7a890
+userreg4contains0xf7a9a0
+userreg5contains0
+userreg6contains0xf7ab90
+userreg8contains0xf7ad80
+userreg9contains0xf7af70
+userreg10contains0xf7b350
+tac type ADD
+userreg0contains0xf73630
+userreg1contains0xf7a2c0
+userreg0contains0xf73630
+userreg1contains0xf7a2c0
+tac type ASSIGN
+ assign 3 to tegisteruserreg0contains0xf73630
+userreg1contains0xf7a2c0
+userreg2contains0xf7a480
+userreg3contains0xf7a890
+userreg4contains0xf7a9a0
+userreg5contains0
+userreg6contains0xf7ab90
+userreg8contains0xf7ad80
+userreg9contains0xf7af70
+userreg10contains0xf7b350
+Store Register in getregisterNoLoad variable
+10
+userreg0contains0xf73630
+userreg1contains0xf7a2c0
+userreg2contains0xf7a480
+userreg3contains0xf7a890
+userreg4contains0xf7a9a0
+userreg5contains0
+userreg6contains0xf7ab90
+userreg8contains0xf7ad80
+userreg9contains0xf7af70
+userreg10contains0xf7b540
+tac type ASSIGN
+  assign dest type array
+GetRegisterNoLoad array_addr
+FindRegister ARRAY_ADDR
+reload == for array
+return FindRegister ARRAY_ADDR
+userreg0contains0xf73630
+userreg1contains0xf7a2c0
+userreg2contains0xf7a480
+userreg3contains0xf7a890
+userreg4contains0xf7a9a0
+userreg5contains0
+userreg6contains0xf7ab90
+userreg8contains0xf7ad80
+userreg9contains0xf7af70
+userreg10contains0xf7b540
+tac type ADD
+userreg0contains0xf73630
+userreg1contains0xf7a2c0
+userreg0contains0xf73630
+userreg1contains0xf7a2c0
+tac type ASSIGN
+ assign 2 to tegisteruserreg0contains0xf73630
+userreg1contains0xf7a2c0
+userreg2contains0xf7a480
+userreg3contains0xf7a890
+userreg4contains0xf7a9a0
+userreg5contains0
+userreg6contains0xf7ab90
+userreg8contains0xf7ad80
+userreg9contains0xf7af70
+userreg10contains0xf7b540
+Store Register in getregisterNoLoad variable
+10
+userreg0contains0xf73630
+userreg1contains0xf7a2c0
+userreg2contains0xf7a480
+userreg3contains0xf7a890
+userreg4contains0xf7a9a0
+userreg5contains0
+userreg6contains0xf7ab90
+userreg8contains0xf7ad80
+userreg9contains0xf7af70
+userreg10contains0xf7b730
+tac type ASSIGN
+  assign dest type array
+GetRegisterNoLoad array_addr
+FindRegister ARRAY_ADDR
+reload == for array
+return FindRegister ARRAY_ADDR
+userreg0contains0xf73630
+userreg1contains0xf7a2c0
+userreg2contains0xf7a480
+userreg3contains0xf7a890
+userreg4contains0xf7a9a0
+userreg5contains0
+userreg6contains0xf7ab90
+userreg8contains0xf7ad80
+userreg9contains0xf7af70
+userreg10contains0xf7b730
+tac type ADD
+userreg0contains0xf73630
+userreg1contains0xf7a2c0
+userreg0contains0xf73630
+userreg1contains0xf7a2c0
+tac type ASSIGN
+ assign 1 to tegisteruserreg0contains0xf73630
+userreg1contains0xf7a2c0
+userreg2contains0xf7a480
+userreg3contains0xf7a890
+userreg4contains0xf7a9a0
+userreg5contains0
+userreg6contains0xf7ab90
+userreg8contains0xf7ad80
+userreg9contains0xf7af70
+userreg10contains0xf7b730
+Store Register in getregisterNoLoad variable
+10
+userreg0contains0xf73630
+userreg1contains0xf7a2c0
+userreg2contains0xf7a480
+userreg3contains0xf7a890
+userreg4contains0xf7a9a0
+userreg5contains0
+userreg6contains0xf7ab90
+userreg8contains0xf7ad80
+userreg9contains0xf7af70
+userreg10contains0xf7b920
+tac type ASSIGN
+  assign dest type array
+GetRegisterNoLoad array_addr
+FindRegister ARRAY_ADDR
+reload == for array
+return FindRegister ARRAY_ADDR
+userreg0contains0xf73630
+userreg1contains0xf7a2c0
+userreg2contains0xf7a480
+userreg3contains0xf7a890
+userreg4contains0xf7a9a0
+userreg5contains0
+userreg6contains0xf7ab90
+userreg8contains0xf7ad80
+userreg9contains0xf7af70
+userreg10contains0xf7b920
+tac type ADD
+userreg0contains0xf73630
+userreg1contains0xf7a2c0
+userreg0contains0xf73630
+userreg1contains0xf7a2c0
+tac type LABELDF
+L0:
+
+tac type SUB
+userreg0contains0xf73630
+userreg1contains0xf7a2c0
+userreg2contains0xf7a480
+userreg3contains0xf7a890
+userreg4contains0xf7a9a0
+userreg5contains0
+userreg6contains0xf7ab90
+userreg8contains0xf7ad80
+userreg9contains0xf7af70
+userreg10contains0xf7b920
+Store Register in getregisterNoLoad variable
+userreg0contains0xf73630
+userreg1contains0xf7a2c0
+userreg0contains0xf73630
+userreg1contains0xf7a2c0
+userreg2contains0xf7a480
+userreg3contains0xf7a890
+tac type IFEQ
+userreg0contains0xf73630
+userreg1contains0xf7a2c0
+userreg2contains0xf7a480
+userreg3contains0xf7a890
+userreg4contains0xf7a9a0
+userreg5contains0
+userreg6contains0xf7ab90
+userreg8contains0xf7ad80
+userreg9contains0xf7af70
+userreg10contains0xf7bab0
+userreg0contains0xf73630
+userreg1contains0xf7a2c0
+userreg2contains0xf7a480
+tac type ASSIGN
+  assign dest type array
+GetRegisterNoLoad array_addr
+FindRegister ARRAY_ADDR
+reload == for array
+return FindRegister ARRAY_ADDR
+tac type ADD
+userreg0contains0xf73630
+userreg1contains0xf7a2c0
+userreg0contains0xf73630
+userreg1contains0xf7a2c0
+tac type GOTO
+Goto string B L0
+
+tac type LABELDF
+L1:
+
+tac type FUNCTIONDF
+Variable offset count+4 :i
+Variable offset count+4 :i
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t13
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t16
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t17
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t18
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t19
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t20
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t21
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t22
+scope type not local in functiondf
+scopeprev:0
+Variable offset count+4 :_t23
+Variable offset count+4 :_t24
+tac type ASSIGN
+ assign 0 to tegisteruserreg0contains0xf73630
+userreg1contains0xf7a2c0
+userreg2contains0xf7a480
+userreg3contains0xf7a890
+userreg4contains0xf7a9a0
+userreg5contains0
+userreg6contains0xf7ab90
+userreg8contains0xf7ad80
+userreg9contains0xf7af70
+userreg10contains0xf7bab0
+Store Register in getregisterNoLoad variable
+10
+userreg0contains0xf73630
+userreg1contains0xf7a2c0
+userreg2contains0xf7a480
+userreg3contains0xf7a890
+userreg4contains0xf7a9a0
+userreg5contains0
+userreg6contains0xf7ab90
+userreg8contains0xf7ad80
+userreg9contains0xf7af70
+userreg10contains0xf76440
+tac type LABELDF
+L2:
+
+tac type ASSIGN
+userreg0contains0xf73630
+userreg1contains0xf7a2c0
+userreg2contains0xf7a480
+userreg3contains0xf7a890
+userreg4contains0xf7a9a0
+userreg5contains0
+userreg6contains0xf7ab90
+userreg8contains0xf7ad80
+userreg9contains0xf7af70
+userreg10contains0xf76440
+Store Register in getregisterNoLoad variable
+register:-1
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  no variable in this register
+Aborted (core dumped)

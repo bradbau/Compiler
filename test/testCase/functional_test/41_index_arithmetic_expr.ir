@@ -976,20 +976,182 @@ scopeprev:0
 Variable offset count+4 :_t31
 Variable offset count+4 :_t32
 tac type ASSIGN
- assign 56 to tegister0
+ assign 56 to tegisteruserreg0contains0
+userreg1contains0
+userreg2contains0
+userreg3contains0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+0
+userreg0contains0x1e1ac30
 tac type ASSIGN
+userreg0contains0x1e1ac30
+userreg1contains0
+userreg2contains0
+userreg3contains0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+userreg0contains0x1e1ac30
 tac type ASSIGN
- assign 12 to tegister2
+ assign 12 to tegisteruserreg0contains0x1e1ac30
+userreg1contains0x1e138a0
+userreg2contains0
+userreg3contains0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+2
+userreg0contains0x1e1ac30
+userreg1contains0x1e138a0
+userreg2contains0x1e1ae30
 tac type ASSIGN
+userreg0contains0x1e1ac30
+userreg1contains0x1e138a0
+userreg2contains0x1e1ae30
+userreg3contains0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+userreg0contains0x1e1ac30
+userreg1contains0x1e138a0
+userreg2contains0x1e1ae30
 tac type ASSIGN
- assign 1 to tegister4
+ assign 1 to tegisteruserreg0contains0x1e1ac30
+userreg1contains0x1e138a0
+userreg2contains0x1e1ae30
+userreg3contains0x1e13b10
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+4
+userreg0contains0x1e1ac30
+userreg1contains0x1e138a0
+userreg2contains0x1e1ae30
+userreg3contains0x1e13b10
+userreg4contains0x1e1b540
 tac type ASSIGN
- assign 0 to tegister5
+ assign 0 to tegisteruserreg0contains0x1e1ac30
+userreg1contains0x1e138a0
+userreg2contains0x1e1ae30
+userreg3contains0x1e13b10
+userreg4contains0x1e1b540
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+5
+userreg0contains0x1e1ac30
+userreg1contains0x1e138a0
+userreg2contains0x1e1ae30
+userreg3contains0x1e13b10
+userreg4contains0x1e1b540
+userreg5contains0x1e1b830
+tac type ASSIGN
+  assign dest type array
+GetRegisterNoLoad array_addr
+FindRegister ARRAY_ADDR
+cannot findregister GetRegisterNoLoad ARRAY_ADDR
+userreg0contains0x1e1ac30
+userreg1contains0x1e138a0
+userreg2contains0x1e1ae30
+userreg3contains0x1e13b10
+userreg4contains0x1e1b540
+tac type ASSIGN
+ assign 2 to tegisteruserreg0contains0x1e1ac30
+userreg1contains0x1e138a0
+userreg2contains0x1e1ae30
+userreg3contains0x1e13b10
+userreg4contains0x1e1b540
+userreg5contains0x1e1b830
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+8
+userreg0contains0x1e1ac30
+userreg1contains0x1e138a0
+userreg2contains0x1e1ae30
+userreg3contains0x1e13b10
+userreg4contains0x1e1b540
+userreg5contains0x1e1b830
+userreg6contains0
+userreg8contains0x1e1b9f0
+tac type ASSIGN
+ assign 1 to tegisteruserreg0contains0x1e1ac30
+userreg1contains0x1e138a0
+userreg2contains0x1e1ae30
+userreg3contains0x1e13b10
+userreg4contains0x1e1b540
+userreg5contains0x1e1b830
+userreg6contains0
+userreg8contains0x1e1b9f0
+userreg9contains0
+userreg10contains0
+9
+userreg0contains0x1e1ac30
+userreg1contains0x1e138a0
+userreg2contains0x1e1ae30
+userreg3contains0x1e13b10
+userreg4contains0x1e1b540
+userreg5contains0x1e1b830
+userreg6contains0
+userreg8contains0x1e1b9f0
+userreg9contains0x1e1bce0
 tac type ASSIGN
   assign dest type array
 GetRegisterNoLoad array_addr
 FindRegister ARRAY_ADDR
 reload == for array
-empty array_addr
-reload == for array
-Segmentation fault (core dumped)
+cannot findregister GetRegisterNoLoad ARRAY_ADDR
+userreg0contains0x1e1ac30
+userreg1contains0x1e138a0
+userreg2contains0x1e1ae30
+userreg3contains0x1e13b10
+userreg4contains0x1e1b540
+userreg5contains0x1e1b830
+userreg6contains0
+userreg8contains0x1e1b9f0
+tac type ASSIGN
+ assign 3 to tegisteruserreg0contains0x1e1ac30
+userreg1contains0x1e138a0
+userreg2contains0x1e1ae30
+userreg3contains0x1e13b10
+userreg4contains0x1e1b540
+userreg5contains0x1e1b830
+userreg6contains0
+userreg8contains0x1e1b9f0
+userreg9contains0x1e1bce0
+userreg10contains0
+Store Register in getregisterNoLoad variable
+userreg0contains0x1e1ac30
+userreg1contains0x1e138a0
+userreg2contains0x1e1ae30
+userreg3contains0x1e13b10
+userreg4contains0x1e1b540
+userreg5contains0x1e1b830
+userreg6contains0
+userreg8contains0x1e1b9f0
+userreg9contains0x1e1bce0
+userreg10contains0
+register:-1
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  no variable in this register
+Aborted (core dumped)

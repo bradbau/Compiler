@@ -1,3 +1,5 @@
+
+EXTERN getint getchar getarray putint putchar putarray
 .text
 .global main
 main:
@@ -22,7 +24,7 @@ CMP r6, r8
 BEQ L3
 B L4
 L3:
-B L-1
+B L2
 L4:
 B L0
 L2:

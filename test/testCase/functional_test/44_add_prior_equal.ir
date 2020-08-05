@@ -1094,19 +1094,183 @@ scopeprev:0
 Variable offset count+4 :_t25
 Variable offset count+4 :_t26
 tac type ASSIGN
- assign 1 to tegister0
+ assign 1 to tegisteruserreg0contains0
+userreg1contains0
+userreg2contains0
+userreg3contains0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+0
+userreg0contains0x7ec4b0
 tac type ASSIGN
+userreg0contains0x7ec4b0
+userreg1contains0
+userreg2contains0
+userreg3contains0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+userreg0contains0x7ec4b0
 tac type ASSIGN
- assign 4 to tegister2
+ assign 4 to tegisteruserreg0contains0x7ec4b0
+userreg1contains0x7e38a0
+userreg2contains0
+userreg3contains0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+2
+userreg0contains0x7ec4b0
+userreg1contains0x7e38a0
+userreg2contains0x7ec6b0
 tac type ASSIGN
+userreg0contains0x7ec4b0
+userreg1contains0x7e38a0
+userreg2contains0x7ec6b0
+userreg3contains0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+userreg0contains0x7ec4b0
+userreg1contains0x7e38a0
+userreg2contains0x7ec6b0
 tac type ASSIGN
- assign 28 to tegister4
+ assign 28 to tegisteruserreg0contains0x7ec4b0
+userreg1contains0x7e38a0
+userreg2contains0x7ec6b0
+userreg3contains0x7e3b10
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+4
+userreg0contains0x7ec4b0
+userreg1contains0x7e38a0
+userreg2contains0x7ec6b0
+userreg3contains0x7e3b10
+userreg4contains0x7ecdc0
 tac type ASSIGN
+userreg0contains0x7ec4b0
+userreg1contains0x7e38a0
+userreg2contains0x7ec6b0
+userreg3contains0x7e3b10
+userreg4contains0x7ecdc0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+userreg0contains0x7ec4b0
+userreg1contains0x7e38a0
+userreg2contains0x7ec6b0
+userreg3contains0x7e3b10
+userreg4contains0x7ecdc0
 tac type ASSIGN
+userreg0contains0x7ec4b0
+userreg1contains0x7e38a0
+userreg2contains0x7ec6b0
+userreg3contains0x7e3b10
+userreg4contains0x7ecdc0
+userreg5contains0x7e3d80
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+userreg0contains0x7ec4b0
+userreg1contains0x7e38a0
+userreg2contains0x7ec6b0
+userreg3contains0x7e3b10
+userreg4contains0x7ecdc0
+userreg5contains0x7e3d80
 tac type ASSIGN
+userreg0contains0x7ec4b0
+userreg1contains0x7e38a0
+userreg2contains0x7ec6b0
+userreg3contains0x7e3b10
+userreg4contains0x7ecdc0
+userreg5contains0x7e3d80
+userreg6contains0x7ecfe0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+userreg0contains0x7ec4b0
+userreg1contains0x7e38a0
 tac type ADD
+userreg0contains0x7ec4b0
+userreg1contains0x7e38a0
+userreg2contains0x7ec6b0
+userreg3contains0x7e3b10
+userreg4contains0x7ecdc0
+userreg5contains0x7e3d80
+userreg6contains0x7ecfe0
+userreg8contains0x7ed090
+userreg9contains0
+userreg10contains0
+userreg0contains0x7ec4b0
+userreg1contains0x7e38a0
+userreg2contains0x7ec6b0
+userreg3contains0x7e3b10
+userreg4contains0x7ecdc0
+userreg5contains0x7e3d80
+userreg6contains0x7ecfe0
+userreg0contains0x7ec4b0
+userreg1contains0x7e38a0
+userreg2contains0x7ec6b0
+userreg3contains0x7e3b10
+userreg4contains0x7ecdc0
+userreg5contains0x7e3d80
+userreg6contains0x7ecfe0
+userreg8contains0x7ed090
 tac type ASSIGN
+userreg0contains0x7ec4b0
+userreg1contains0x7e38a0
+userreg2contains0x7ec6b0
+userreg3contains0x7e3b10
+userreg4contains0x7ecdc0
+userreg5contains0x7e3d80
+userreg6contains0x7ecfe0
+userreg8contains0x7ed090
+userreg9contains0x7ecf30
+userreg10contains0
+userreg0contains0x7ec4b0
+userreg1contains0x7e38a0
+userreg2contains0x7ec6b0
+userreg3contains0x7e3b10
 tac type IFNEQ
+userreg0contains0x7ec4b0
+userreg1contains0x7e38a0
+userreg2contains0x7ec6b0
+userreg3contains0x7e3b10
+userreg4contains0x7ecdc0
+userreg5contains0x7e3d80
+userreg6contains0x7ecfe0
+userreg8contains0x7ed090
+userreg9contains0x7ecf30
+userreg0contains0x7ec4b0
+userreg1contains0x7e38a0
+userreg2contains0x7ec6b0
+userreg3contains0x7e3b10
+userreg4contains0x7ecdc0
+userreg5contains0x7e3d80
+userreg6contains0x7ecfe0
+userreg8contains0x7ed090
+userreg9contains0x7ecf30
+userreg10contains0x7ed260
 tac type GOTO
 Goto string B L1
 
@@ -1114,10 +1278,50 @@ tac type LABELDF
 L0:
 
 tac type ASSIGN
+userreg0contains0x7ec4b0
+userreg1contains0x7e38a0
+userreg2contains0x7ec6b0
+userreg3contains0x7e3b10
+userreg4contains0x7ecdc0
+userreg5contains0x7e3d80
+userreg6contains0x7ecfe0
+userreg8contains0x7ed090
+userreg9contains0x7ecf30
+userreg10contains0x7ed260
 Store Register in getregisterNoLoad variable
+userreg0contains0x7ec4b0
+userreg1contains0x7e38a0
+userreg2contains0x7ec6b0
+userreg3contains0x7e3b10
+userreg4contains0x7ecdc0
+userreg5contains0x7e3d80
 tac type ASSIGN
+userreg0contains0x7ec4b0
+userreg1contains0x7e38a0
+userreg2contains0x7ec6b0
+userreg3contains0x7e3b10
+userreg4contains0x7ecdc0
+userreg5contains0x7e3d80
+userreg6contains0x7ecfe0
+userreg8contains0x7ed090
+userreg9contains0x7ecf30
+userreg10contains0x7ed540
 Store Register in getregisterNoLoad variable
+userreg0contains0x7ec4b0
+userreg1contains0x7e38a0
+userreg2contains0x7ec6b0
+userreg3contains0x7e3b10
 tac type SUB
+userreg0contains0x7ec4b0
+userreg1contains0x7e38a0
+userreg2contains0x7ec6b0
+userreg3contains0x7e3b10
+userreg4contains0x7ecdc0
+userreg5contains0x7e3d80
+userreg6contains0x7ecfe0
+userreg8contains0x7ed090
+userreg9contains0x7ecf30
+userreg10contains0x7ed700
 Store Register in getregisterNoLoad variable
 register:-1
 terminate called after throwing an instance of 'std::runtime_error'

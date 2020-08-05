@@ -1,3 +1,5 @@
+
+EXTERN getint getchar getarray putint putchar putarray
 .text
 .global main
 main:
@@ -22,7 +24,7 @@ ADD  r5, r0, #0
 MOV r6, #1
 SUB r8, r5, r6
 ADD  r0, r8, #0
-B L-1
+B L0
 L4:
 ADD  r9, r0, #0
 ADD  r0, r9, #0

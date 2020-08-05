@@ -367,17 +367,156 @@ scopeprev:0
 Variable offset count+4 :_t4
 Variable offset count+4 :_t5
 tac type ASSIGN
- assign 10 to tegister0
+ assign 10 to tegisteruserreg0contains0
+userreg1contains0
+userreg2contains0
+userreg3contains0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+0
+userreg0contains0x12853e0
 tac type ASSIGN
+userreg0contains0x12853e0
+userreg1contains0
+userreg2contains0
+userreg3contains0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+userreg0contains0x12853e0
 tac type ASSIGN
- assign 20 to tegister2
+ assign 20 to tegisteruserreg0contains0x12853e0
+userreg1contains0x1281630
+userreg2contains0
+userreg3contains0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+2
+userreg0contains0x12853e0
+userreg1contains0x1281630
+userreg2contains0x12855e0
 tac type ASSIGN
+userreg0contains0x12853e0
+userreg1contains0x1281630
+userreg2contains0x12855e0
+userreg3contains0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+userreg0contains0x12853e0
+userreg1contains0x1281630
+userreg2contains0x12855e0
 tac type ASSIGN
+userreg0contains0x12853e0
+userreg1contains0x1281630
+userreg2contains0x12855e0
+userreg3contains0x12818a0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+userreg0contains0x12853e0
+userreg1contains0x1281630
 tac type ASSIGN
+userreg0contains0x12853e0
+userreg1contains0x1281630
+userreg2contains0x12855e0
+userreg3contains0x12818a0
+userreg4contains0x1285da0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+userreg0contains0x12853e0
+userreg1contains0x1281630
+userreg2contains0x12855e0
+userreg3contains0x12818a0
 tac type ADD
+userreg0contains0x12853e0
+userreg1contains0x1281630
+userreg2contains0x12855e0
+userreg3contains0x12818a0
+userreg4contains0x1285da0
+userreg5contains0x1285e50
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+userreg0contains0x12853e0
+userreg1contains0x1281630
+userreg2contains0x12855e0
+userreg3contains0x12818a0
+userreg4contains0x1285da0
+userreg0contains0x12853e0
+userreg1contains0x1281630
+userreg2contains0x12855e0
+userreg3contains0x12818a0
+userreg4contains0x1285da0
+userreg5contains0x1285e50
 tac type ASSIGN
+userreg0contains0x12853e0
+userreg1contains0x1281630
+userreg2contains0x12855e0
+userreg3contains0x12818a0
+userreg4contains0x1285da0
+userreg5contains0x1285e50
+userreg6contains0x1285cf0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+userreg0contains0x12853e0
+userreg1contains0x1281630
+userreg2contains0x12855e0
+userreg3contains0x12818a0
+userreg4contains0x1285da0
+userreg5contains0x1285e50
+userreg6contains0x1285cf0
 tac type ASSIGN
+userreg0contains0x12853e0
+userreg1contains0x1281630
+userreg2contains0x12855e0
+userreg3contains0x12818a0
+userreg4contains0x1285da0
+userreg5contains0x1285e50
+userreg6contains0x1285cf0
+userreg8contains0x1282940
+userreg9contains0
+userreg10contains0
+userreg0contains0x12853e0
+userreg1contains0x1281630
+userreg2contains0x12855e0
+userreg3contains0x12818a0
+userreg4contains0x1285da0
+userreg5contains0x1285e50
+userreg6contains0x1285cf0
+userreg8contains0x1282940
 tac type RETURN
+userreg0contains0x12853e0
+userreg1contains0x1281630
+userreg2contains0x12855e0
+userreg3contains0x12818a0
+userreg4contains0x1285da0
+userreg5contains0x1285e50
+userreg6contains0x1285cf0
+userreg8contains0x1282940
+userreg9contains0x12860e0
 tac type ARG
 tac build complete
 instruction number1
@@ -397,6 +536,8 @@ instruction number14
 instruction number15
 instruction number16
 instruction number17
+
+EXTERN getint getchar getarray putint putchar putarray
 .text
 .global main
 main:

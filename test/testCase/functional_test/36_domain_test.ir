@@ -781,6 +781,140 @@ scope type is wrong
 build assembly code
 tac type FUNCTIONDF
 tac type ASSIGN
-terminate called after throwing an instance of 'std::bad_alloc'
-  what():  std::bad_alloc
+ assign 1 to tegisteruserreg0contains0xaf4720
+userreg1contains0
+userreg2contains0
+userreg3contains0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+0
+userreg0contains0xaf4590
+tac type ASSIGN
+ assign 0 to tegisteruserreg0contains0xaf4590
+userreg1contains0
+userreg2contains0
+userreg3contains0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+1
+userreg0contains0xaf4590
+userreg1contains0xaf4b30
+tac type ASSIGN
+  assign dest type array
+GetRegisterNoLoad array_addr
+FindRegister ARRAY_ADDR
+cannot findregister GetRegisterNoLoad ARRAY_ADDR
+userreg0contains0xaf4590
+tac type ASSIGN
+ assign 3 to tegisteruserreg0contains0xaf4590
+userreg1contains0xaf4b30
+userreg2contains0
+userreg3contains0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+3
+userreg0contains0xaf4590
+userreg1contains0xaf4b30
+userreg2contains0
+userreg3contains0xaf5090
+tac type ASSIGN
+ assign 0 to tegisteruserreg0contains0xaf4590
+userreg1contains0xaf4b30
+userreg2contains0
+userreg3contains0xaf5090
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+4
+userreg0contains0xaf4590
+userreg1contains0xaf4b30
+userreg2contains0
+userreg3contains0xaf5090
+userreg4contains0xaf5430
+tac type ASSIGN
+userreg0contains0xaf4590
+userreg1contains0xaf4b30
+userreg2contains0
+userreg3contains0xaf5090
+userreg4contains0xaf5430
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+FindRegister ARRAY_ADDR
+reload == for array
+tac type SUB
+userreg0contains0xaf4590
+userreg1contains0xaf4b30
+userreg2contains0
+userreg3contains0xaf5090
+userreg4contains0xaf5430
+userreg5contains0xaf5140
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+userreg0contains0xaf4590
+userreg1contains0xaf4b30
+userreg2contains0
+userreg3contains0xaf5090
+userreg0contains0xaf4590
+userreg1contains0xaf4b30
+userreg2contains0
+userreg3contains0xaf5090
+userreg4contains0xaf5430
+userreg5contains0xaf5140
+tac type ASSIGN
+userreg0contains0xaf4590
+userreg1contains0xaf4b30
+userreg2contains0
+userreg3contains0xaf5090
+userreg4contains0xaf5430
+userreg5contains0xaf5140
+userreg6contains0
+userreg8contains0xaf4fe0
+userreg9contains0
+userreg10contains0
+FindRegister ARRAY_ADDR
+reload == for array
+reload == for array
+userreg0contains0xaf4590
+userreg1contains0xaf4b30
+userreg2contains0
+userreg3contains0xaf5090
+userreg4contains0xaf5430
+userreg5contains0xaf5140
+userreg6contains0
+userreg8contains0xaf4fe0
+userreg9contains0xaf4d50
+userreg10contains0
+userreg0contains0xaf4590
+userreg1contains0xaf4b30
+userreg2contains0
+userreg3contains0xaf5090
+userreg4contains0xaf5430
+userreg5contains0xaf5140
+userreg6contains0
+userreg8contains0xaf4fe0
+userreg9contains0xaf4d50
+userreg10contains0
+register:-1
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  no variable in this register
 Aborted (core dumped)

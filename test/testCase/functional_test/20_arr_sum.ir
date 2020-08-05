@@ -1336,19 +1336,282 @@ scopeprev:0
 Variable offset count+4 :_t40
 Variable offset count+4 :_t41
 tac type CALLASSIGN
+userreg0contains0
+userreg1contains0
+userreg2contains0
+userreg3contains0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
 findregister: insldr rd=0,r1=11,r2 offset=0,op2type=1, insefft=0
 tac type ASSIGN
- assign 0 to tegister1
+ assign 0 to tegisteruserreg0contains0x13cb280
+userreg1contains0
+userreg2contains0
+userreg3contains0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+1
+userreg0contains0x13cb280
+userreg1contains0x13cbba0
+tac type ASSIGN
+  assign dest type array
+GetRegisterNoLoad array_addr
+FindRegister ARRAY_ADDR
+cannot findregister GetRegisterNoLoad ARRAY_ADDR
+userreg0contains0x13cb280
+tac type CALLASSIGN
+userreg0contains0x13cb280
+userreg1contains0x13cbba0
+userreg2contains0
+userreg3contains0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+findregister: insldr rd=3,r1=11,r2 offset=0,op2type=1, insefft=0
+tac type ASSIGN
+ assign 1 to tegisteruserreg0contains0x13cb280
+userreg1contains0x13cbba0
+userreg2contains0
+userreg3contains0x13cbd60
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+4
+userreg0contains0x13cb280
+userreg1contains0x13cbba0
+userreg2contains0
+userreg3contains0x13cbd60
+userreg4contains0x13cc050
 tac type ASSIGN
   assign dest type array
 GetRegisterNoLoad array_addr
 FindRegister ARRAY_ADDR
 reload == for array
-empty array_addr
-reload == for array
-empty array_addr
 cannot findregister GetRegisterNoLoad ARRAY_ADDR
+userreg0contains0x13cb280
+userreg1contains0x13cbba0
+userreg2contains0
+userreg3contains0x13cbd60
 tac type CALLASSIGN
-terminate called after throwing an instance of 'std::bad_alloc'
-  what():  std::bad_alloc
+userreg0contains0x13cb280
+userreg1contains0x13cbba0
+userreg2contains0
+userreg3contains0x13cbd60
+userreg4contains0x13cc050
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+findregister: insldr rd=6,r1=11,r2 offset=0,op2type=1, insefft=0
+tac type ASSIGN
+ assign 2 to tegisteruserreg0contains0x13cb280
+userreg1contains0x13cbba0
+userreg2contains0
+userreg3contains0x13cbd60
+userreg4contains0x13cc050
+userreg5contains0
+userreg6contains0x13cc210
+userreg8contains0
+userreg9contains0
+userreg10contains0
+8
+userreg0contains0x13cb280
+userreg1contains0x13cbba0
+userreg2contains0
+userreg3contains0x13cbd60
+userreg4contains0x13cc050
+userreg5contains0
+userreg6contains0x13cc210
+userreg8contains0x13cc500
+tac type ASSIGN
+  assign dest type array
+GetRegisterNoLoad array_addr
+FindRegister ARRAY_ADDR
+reload == for array
+reload == for array
+cannot findregister GetRegisterNoLoad ARRAY_ADDR
+userreg0contains0x13cb280
+userreg1contains0x13cbba0
+userreg2contains0
+userreg3contains0x13cbd60
+userreg4contains0x13cc050
+userreg5contains0
+userreg6contains0x13cc210
+tac type CALLASSIGN
+userreg0contains0x13cb280
+userreg1contains0x13cbba0
+userreg2contains0
+userreg3contains0x13cbd60
+userreg4contains0x13cc050
+userreg5contains0
+userreg6contains0x13cc210
+userreg8contains0x13cc500
+userreg9contains0
+userreg10contains0
+findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
+tac type ASSIGN
+ assign 3 to tegisteruserreg0contains0x13cb280
+userreg1contains0x13cbba0
+userreg2contains0
+userreg3contains0x13cbd60
+userreg4contains0x13cc050
+userreg5contains0
+userreg6contains0x13cc210
+userreg8contains0x13cc500
+userreg9contains0
+userreg10contains0x13cc6c0
+Store Register in getregisterNoLoad variable
+10
+userreg0contains0x13cb280
+userreg1contains0x13cbba0
+userreg2contains0
+userreg3contains0x13cbd60
+userreg4contains0x13cc050
+userreg5contains0
+userreg6contains0x13cc210
+userreg8contains0x13cc500
+userreg9contains0
+userreg10contains0x13cc9b0
+tac type ASSIGN
+  assign dest type array
+GetRegisterNoLoad array_addr
+FindRegister ARRAY_ADDR
+reload == for array
+reload == for array
+reload == for array
+cannot findregister GetRegisterNoLoad ARRAY_ADDR
+Store Register in getregisterNoLoad array
+userreg0contains0x13cb280
+userreg1contains0x13cbba0
+userreg2contains0
+userreg3contains0x13cbd60
+userreg4contains0x13cc050
+userreg5contains0
+userreg6contains0x13cc210
+userreg8contains0x13cc500
+userreg9contains0
+userreg10contains0x13cc9b0
+Store Register in getregister variable
+findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
+tac type CALLASSIGN
+userreg0contains0x13cb280
+userreg1contains0x13cbba0
+userreg2contains0
+userreg3contains0x13cbd60
+userreg4contains0x13cc050
+userreg5contains0
+userreg6contains0x13cc210
+userreg8contains0x13cc500
+userreg9contains0
+userreg10contains0x13cc6c0
+Store Register in getregister variable
+findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
+tac type ASSIGN
+ assign 4 to tegisteruserreg0contains0x13cb280
+userreg1contains0x13cbba0
+userreg2contains0
+userreg3contains0x13cbd60
+userreg4contains0x13cc050
+userreg5contains0
+userreg6contains0x13cc210
+userreg8contains0x13cc500
+userreg9contains0
+userreg10contains0x13ccb70
+Store Register in getregisterNoLoad variable
+10
+userreg0contains0x13cb280
+userreg1contains0x13cbba0
+userreg2contains0
+userreg3contains0x13cbd60
+userreg4contains0x13cc050
+userreg5contains0
+userreg6contains0x13cc210
+userreg8contains0x13cc500
+userreg9contains0
+userreg10contains0x13cce60
+tac type ASSIGN
+  assign dest type array
+GetRegisterNoLoad array_addr
+FindRegister ARRAY_ADDR
+reload == for array
+reload == for array
+reload == for array
+reload == for array
+cannot findregister GetRegisterNoLoad ARRAY_ADDR
+Store Register in getregisterNoLoad array
+userreg0contains0x13cb280
+userreg1contains0x13cbba0
+userreg2contains0
+userreg3contains0x13cbd60
+userreg4contains0x13cc050
+userreg5contains0
+userreg6contains0x13cc210
+userreg8contains0x13cc500
+userreg9contains0
+userreg10contains0x13cce60
+Store Register in getregister variable
+findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
+tac type ASSIGN
+ assign 4 to tegisteruserreg0contains0x13cb280
+userreg1contains0x13cbba0
+userreg2contains0
+userreg3contains0x13cbd60
+userreg4contains0x13cc050
+userreg5contains0
+userreg6contains0x13cc210
+userreg8contains0x13cc500
+userreg9contains0
+userreg10contains0x13ccb70
+Store Register in getregisterNoLoad variable
+10
+userreg0contains0x13cb280
+userreg1contains0x13cbba0
+userreg2contains0
+userreg3contains0x13cbd60
+userreg4contains0x13cc050
+userreg5contains0
+userreg6contains0x13cc210
+userreg8contains0x13cc500
+userreg9contains0
+userreg10contains0x13cd020
+tac type ASSIGN
+userreg0contains0x13cb280
+userreg1contains0x13cbba0
+userreg2contains0
+userreg3contains0x13cbd60
+userreg4contains0x13cc050
+userreg5contains0
+userreg6contains0x13cc210
+userreg8contains0x13cc500
+userreg9contains0
+userreg10contains0x13cd020
+Store Register in getregisterNoLoad variable
+userreg0contains0x13cb280
+userreg1contains0x13cbba0
+userreg2contains0
+userreg3contains0x13cbd60
+userreg4contains0x13cc050
+userreg5contains0
+userreg6contains0x13cc210
+userreg8contains0x13cc500
+userreg9contains0
+userreg10contains0x13c59d0
+register:-1
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  no variable in this register
 Aborted (core dumped)

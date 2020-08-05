@@ -311,25 +311,299 @@ ID             category       type           depictor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 build assembly code
 tac type ASSIGN
- assign 0 to tegister0
+ assign 0 to tegisteruserreg0contains0
+userreg1contains0
+userreg2contains0
+userreg3contains0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+0
+userreg0contains0xbdac50
 tac type ASSIGN
- assign 5 to tegister1
+ assign 5 to tegisteruserreg0contains0xbdac50
+userreg1contains0
+userreg2contains0
+userreg3contains0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+1
+userreg0contains0xbdac50
+userreg1contains0xbdadb0
 tac type ASSIGN
+userreg0contains0xbdac50
+userreg1contains0xbdadb0
+userreg2contains0
+userreg3contains0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+userreg0contains0xbdac50
 tac type ASSIGN
- assign 0 to tegister3
+ assign 0 to tegisteruserreg0contains0xbdac50
+userreg1contains0xbdadb0
+userreg2contains0xbdb1c0
+userreg3contains0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+3
+userreg0contains0xbdac50
+userreg1contains0xbdadb0
+userreg2contains0xbdb1c0
+userreg3contains0xbdb2d0
+tac type ASSIGN
+  assign dest type array
+GetRegisterNoLoad array_addr
+FindRegister ARRAY_ADDR
+cannot findregister GetRegisterNoLoad ARRAY_ADDR
+userreg0contains0xbdac50
+userreg1contains0xbdadb0
+userreg2contains0xbdb1c0
+userreg3contains0xbdb2d0
+tac type ADD
+userreg0contains0xbdac50
+userreg0contains0xbdac50
+tac type ASSIGN
+ assign 1 to tegisteruserreg0contains0xbdac50
+userreg1contains0xbdadb0
+userreg2contains0xbdb1c0
+userreg3contains0xbdb2d0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+5
+userreg0contains0xbdac50
+userreg1contains0xbdadb0
+userreg2contains0xbdb1c0
+userreg3contains0xbdb2d0
+userreg4contains0
+userreg5contains0xbdb4c0
 tac type ASSIGN
   assign dest type array
 GetRegisterNoLoad array_addr
 FindRegister ARRAY_ADDR
 reload == for array
-empty array_addr
-reload == for array
-empty array_addr
-reload == for array
-empty array_addr
-reload == for array
-empty array_addr
-cannot findregister GetRegisterNoLoad ARRAY_ADDR
+return FindRegister ARRAY_ADDR
+userreg0contains0xbdac50
+userreg1contains0xbdadb0
+userreg2contains0xbdb1c0
+userreg3contains0xbdb2d0
+userreg4contains0
+userreg5contains0xbdb4c0
 tac type ADD
+userreg0contains0xbdac50
+userreg0contains0xbdac50
 tac type ASSIGN
-Segmentation fault (core dumped)
+ assign 2 to tegisteruserreg0contains0xbdac50
+userreg1contains0xbdadb0
+userreg2contains0xbdb1c0
+userreg3contains0xbdb2d0
+userreg4contains0
+userreg5contains0xbdb4c0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+6
+userreg0contains0xbdac50
+userreg1contains0xbdadb0
+userreg2contains0xbdb1c0
+userreg3contains0xbdb2d0
+userreg4contains0
+userreg5contains0xbdb4c0
+userreg6contains0xbdb6b0
+tac type ASSIGN
+  assign dest type array
+GetRegisterNoLoad array_addr
+FindRegister ARRAY_ADDR
+reload == for array
+return FindRegister ARRAY_ADDR
+userreg0contains0xbdac50
+userreg1contains0xbdadb0
+userreg2contains0xbdb1c0
+userreg3contains0xbdb2d0
+userreg4contains0
+userreg5contains0xbdb4c0
+userreg6contains0xbdb6b0
+tac type ADD
+userreg0contains0xbdac50
+userreg0contains0xbdac50
+tac type ASSIGN
+ assign 3 to tegisteruserreg0contains0xbdac50
+userreg1contains0xbdadb0
+userreg2contains0xbdb1c0
+userreg3contains0xbdb2d0
+userreg4contains0
+userreg5contains0xbdb4c0
+userreg6contains0xbdb6b0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+8
+userreg0contains0xbdac50
+userreg1contains0xbdadb0
+userreg2contains0xbdb1c0
+userreg3contains0xbdb2d0
+userreg4contains0
+userreg5contains0xbdb4c0
+userreg6contains0xbdb6b0
+userreg8contains0xbdb8a0
+tac type ASSIGN
+  assign dest type array
+GetRegisterNoLoad array_addr
+FindRegister ARRAY_ADDR
+reload == for array
+return FindRegister ARRAY_ADDR
+userreg0contains0xbdac50
+userreg1contains0xbdadb0
+userreg2contains0xbdb1c0
+userreg3contains0xbdb2d0
+userreg4contains0
+userreg5contains0xbdb4c0
+userreg6contains0xbdb6b0
+userreg8contains0xbdb8a0
+tac type ADD
+userreg0contains0xbdac50
+userreg0contains0xbdac50
+tac type ASSIGN
+ assign 4 to tegisteruserreg0contains0xbdac50
+userreg1contains0xbdadb0
+userreg2contains0xbdb1c0
+userreg3contains0xbdb2d0
+userreg4contains0
+userreg5contains0xbdb4c0
+userreg6contains0xbdb6b0
+userreg8contains0xbdb8a0
+userreg9contains0
+userreg10contains0
+9
+userreg0contains0xbdac50
+userreg1contains0xbdadb0
+userreg2contains0xbdb1c0
+userreg3contains0xbdb2d0
+userreg4contains0
+userreg5contains0xbdb4c0
+userreg6contains0xbdb6b0
+userreg8contains0xbdb8a0
+userreg9contains0xbdba90
+tac type ASSIGN
+  assign dest type array
+GetRegisterNoLoad array_addr
+FindRegister ARRAY_ADDR
+reload == for array
+return FindRegister ARRAY_ADDR
+userreg0contains0xbdac50
+userreg1contains0xbdadb0
+userreg2contains0xbdb1c0
+userreg3contains0xbdb2d0
+userreg4contains0
+userreg5contains0xbdb4c0
+userreg6contains0xbdb6b0
+userreg8contains0xbdb8a0
+userreg9contains0xbdba90
+tac type ADD
+userreg0contains0xbdac50
+userreg0contains0xbdac50
+tac type LABELDF
+L0:
+
+tac type SUB
+userreg0contains0xbdac50
+userreg1contains0xbdadb0
+userreg2contains0xbdb1c0
+userreg3contains0xbdb2d0
+userreg4contains0
+userreg5contains0xbdb4c0
+userreg6contains0xbdb6b0
+userreg8contains0xbdb8a0
+userreg9contains0xbdba90
+userreg10contains0
+userreg0contains0xbdac50
+userreg0contains0xbdac50
+userreg1contains0xbdadb0
+userreg2contains0xbdb1c0
+tac type IFEQ
+userreg0contains0xbdac50
+userreg1contains0xbdadb0
+userreg2contains0xbdb1c0
+userreg3contains0xbdb2d0
+userreg4contains0
+userreg5contains0xbdb4c0
+userreg6contains0xbdb6b0
+userreg8contains0xbdb8a0
+userreg9contains0xbdba90
+userreg10contains0xbdbc20
+userreg0contains0xbdac50
+userreg1contains0xbdadb0
+tac type ASSIGN
+  assign dest type array
+GetRegisterNoLoad array_addr
+FindRegister ARRAY_ADDR
+reload == for array
+return FindRegister ARRAY_ADDR
+tac type ADD
+userreg0contains0xbdac50
+userreg0contains0xbdac50
+tac type GOTO
+Goto string B L0
+
+tac type LABELDF
+L1:
+
+tac type FUNCTIONDF
+tac type ASSIGN
+ assign 4 to tegisteruserreg0contains0xbdac50
+userreg1contains0xbdadb0
+userreg2contains0xbdb1c0
+userreg3contains0xbdb2d0
+userreg4contains0
+userreg5contains0xbdb4c0
+userreg6contains0xbdb6b0
+userreg8contains0xbdb8a0
+userreg9contains0xbdba90
+userreg10contains0xbdbc20
+Store Register in getregisterNoLoad variable
+10
+userreg0contains0xbdac50
+userreg1contains0xbdadb0
+userreg2contains0xbdb1c0
+userreg3contains0xbdb2d0
+userreg4contains0
+userreg5contains0xbdb4c0
+userreg6contains0xbdb6b0
+userreg8contains0xbdb8a0
+userreg9contains0xbdba90
+userreg10contains0xbdbff0
+tac type ASSIGN
+userreg0contains0xbdac50
+userreg1contains0xbdadb0
+userreg2contains0xbdb1c0
+userreg3contains0xbdb2d0
+userreg4contains0
+userreg5contains0xbdb4c0
+userreg6contains0xbdb6b0
+userreg8contains0xbdb8a0
+userreg9contains0xbdba90
+userreg10contains0xbdbff0
+Store Register in getregisterNoLoad variable
+register:-1
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  no variable in this register
+Aborted (core dumped)

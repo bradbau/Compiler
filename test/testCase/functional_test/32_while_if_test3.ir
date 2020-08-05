@@ -841,18 +841,136 @@ scope type not local in functiondf
 scopeprev:1
 Variable offset count+4 :_t30
 tac type ASSIGN
+userreg0contains0xf687f0
+userreg1contains0xf68a60
+userreg2contains0
+userreg3contains0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+userreg0contains0xf730e0
+userreg1contains0xf68a60
+userreg2contains0
+userreg3contains0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
 findregister: insldr rd=1,r1=11,r2 offset=0,op2type=1, insefft=0
 tac type ASSIGN
+userreg0contains0xf730e0
+userreg1contains0xf687f0
+userreg2contains0
+userreg3contains0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+userreg0contains0xf730e0
+userreg1contains0xf687f0
+userreg2contains0xf73540
+userreg3contains0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
 findregister: insldr rd=3,r1=11,r2 offset=0,op2type=1, insefft=0
 tac type ADD
+userreg0contains0xf730e0
+userreg1contains0xf687f0
+userreg2contains0xf73540
+userreg3contains0xf68a60
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+userreg0contains0xf730e0
+userreg0contains0xf730e0
+userreg1contains0xf687f0
+userreg2contains0xf73540
 tac type ASSIGN
+userreg0contains0xf730e0
+userreg1contains0xf687f0
+userreg2contains0xf73540
+userreg3contains0xf68a60
+userreg4contains0xf72e80
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+userreg0contains0xf730e0
+userreg1contains0xf687f0
+userreg2contains0xf73540
+userreg3contains0xf68a60
+userreg4contains0xf72e80
 tac type LABELDF
 L0:
 
 tac type ASSIGN
+userreg0contains0xf730e0
+userreg1contains0xf687f0
+userreg2contains0xf73540
+userreg3contains0xf68a60
+userreg4contains0xf72e80
+userreg5contains0xf68cd0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+userreg0contains0xf730e0
+userreg1contains0xf687f0
+userreg2contains0xf73540
+userreg3contains0xf68a60
+userreg4contains0xf72e80
+userreg5contains0xf68cd0
 tac type ASSIGN
- assign 75 to tegister8
+ assign 75 to tegisteruserreg0contains0xf730e0
+userreg1contains0xf687f0
+userreg2contains0xf73540
+userreg3contains0xf68a60
+userreg4contains0xf72e80
+userreg5contains0xf68cd0
+userreg6contains0xf739c0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+8
+userreg0contains0xf730e0
+userreg1contains0xf687f0
+userreg2contains0xf73540
+userreg3contains0xf68a60
+userreg4contains0xf72e80
+userreg5contains0xf68cd0
+userreg6contains0xf739c0
+userreg8contains0xf73ad0
 tac type IFLT
+userreg0contains0xf730e0
+userreg1contains0xf687f0
+userreg2contains0xf73540
+userreg3contains0xf68a60
+userreg4contains0xf72e80
+userreg5contains0xf68cd0
+userreg6contains0xf739c0
+userreg0contains0xf730e0
+userreg1contains0xf687f0
+userreg2contains0xf73540
+userreg3contains0xf68a60
+userreg4contains0xf72e80
+userreg5contains0xf68cd0
+userreg6contains0xf739c0
+userreg8contains0xf73ad0
 tac type GOTO
 Goto string B L2
 
@@ -860,9 +978,57 @@ tac type LABELDF
 L1:
 
 tac type ASSIGN
- assign 42 to tegister9
+ assign 42 to tegisteruserreg0contains0xf730e0
+userreg1contains0xf687f0
+userreg2contains0xf73540
+userreg3contains0xf68a60
+userreg4contains0xf72e80
+userreg5contains0xf68cd0
+userreg6contains0xf739c0
+userreg8contains0xf73ad0
+userreg9contains0
+userreg10contains0
+9
+userreg0contains0xf730e0
+userreg1contains0xf687f0
+userreg2contains0xf73540
+userreg3contains0xf68a60
+userreg4contains0xf72e80
+userreg5contains0xf68cd0
+userreg6contains0xf739c0
+userreg8contains0xf73ad0
+userreg9contains0xf73d60
 tac type ASSIGN
+userreg0contains0xf730e0
+userreg1contains0xf687f0
+userreg2contains0xf73540
+userreg3contains0xf68a60
+userreg4contains0xf72e80
+userreg5contains0xf68cd0
+userreg6contains0xf739c0
+userreg8contains0xf73ad0
+userreg9contains0xf73d60
+userreg10contains0
+userreg0contains0xf730e0
+userreg1contains0xf687f0
+userreg2contains0xf73540
+userreg3contains0xf68a60
+userreg4contains0xf72e80
+userreg5contains0xf68cd0
+userreg6contains0xf739c0
+userreg8contains0xf73ad0
+userreg9contains0xf73d60
 tac type ASSIGN
+userreg0contains0xf730e0
+userreg1contains0xf687f0
+userreg2contains0xf73540
+userreg3contains0xf68a60
+userreg4contains0xf72e80
+userreg5contains0xf68cd0
+userreg6contains0xf739c0
+userreg8contains0xf73ad0
+userreg9contains0xf73d60
+userreg10contains0xf6a3c0
 Store Register in getregisterNoLoad variable
 register:-1
 terminate called after throwing an instance of 'std::runtime_error'

@@ -631,18 +631,105 @@ scope type not local in functiondf
 scopeprev:1
 Variable offset count+4 :_t20
 tac type ASSIGN
- assign 5 to tegister0
+ assign 5 to tegisteruserreg0contains0
+userreg1contains0
+userreg2contains0
+userreg3contains0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+0
+userreg0contains0xc64590
 tac type ASSIGN
+userreg0contains0xc64590
+userreg1contains0
+userreg2contains0
+userreg3contains0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+userreg0contains0xc64590
 tac type ASSIGN
- assign 7 to tegister2
+ assign 7 to tegisteruserreg0contains0xc64590
+userreg1contains0xc5d8a0
+userreg2contains0
+userreg3contains0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+2
+userreg0contains0xc64590
+userreg1contains0xc5d8a0
+userreg2contains0xc64790
 tac type ASSIGN
+userreg0contains0xc64590
+userreg1contains0xc5d8a0
+userreg2contains0xc64790
+userreg3contains0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+userreg0contains0xc64590
+userreg1contains0xc5d8a0
+userreg2contains0xc64790
 tac type LABELDF
 L0:
 
 tac type ASSIGN
+userreg0contains0xc64590
+userreg1contains0xc5d8a0
+userreg2contains0xc64790
+userreg3contains0xc5e0f0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+userreg0contains0xc64590
+userreg1contains0xc5d8a0
 tac type ASSIGN
- assign 100 to tegister5
+ assign 100 to tegisteruserreg0contains0xc64590
+userreg1contains0xc5d8a0
+userreg2contains0xc64790
+userreg3contains0xc5e0f0
+userreg4contains0xc64f00
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+5
+userreg0contains0xc64590
+userreg1contains0xc5d8a0
+userreg2contains0xc64790
+userreg3contains0xc5e0f0
+userreg4contains0xc64f00
+userreg5contains0xc65010
 tac type IFLT
+userreg0contains0xc64590
+userreg1contains0xc5d8a0
+userreg2contains0xc64790
+userreg3contains0xc5e0f0
+userreg4contains0xc64f00
+userreg0contains0xc64590
+userreg1contains0xc5d8a0
+userreg2contains0xc64790
+userreg3contains0xc5e0f0
+userreg4contains0xc64f00
+userreg5contains0xc65010
 tac type GOTO
 Goto string B L2
 
@@ -650,20 +737,140 @@ tac type LABELDF
 L1:
 
 tac type ASSIGN
+userreg0contains0xc64590
+userreg1contains0xc5d8a0
+userreg2contains0xc64790
+userreg3contains0xc5e0f0
+userreg4contains0xc64f00
+userreg5contains0xc65010
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+userreg0contains0xc64590
+userreg1contains0xc5d8a0
 tac type ASSIGN
- assign 30 to tegister8
+ assign 30 to tegisteruserreg0contains0xc64590
+userreg1contains0xc5d8a0
+userreg2contains0xc64790
+userreg3contains0xc5e0f0
+userreg4contains0xc64f00
+userreg5contains0xc65010
+userreg6contains0xc65350
+userreg8contains0
+userreg9contains0
+userreg10contains0
+8
+userreg0contains0xc64590
+userreg1contains0xc5d8a0
+userreg2contains0xc64790
+userreg3contains0xc5e0f0
+userreg4contains0xc64f00
+userreg5contains0xc65010
+userreg6contains0xc65350
+userreg8contains0xc65400
 tac type ADD
+userreg0contains0xc64590
+userreg1contains0xc5d8a0
+userreg2contains0xc64790
+userreg3contains0xc5e0f0
+userreg4contains0xc64f00
+userreg5contains0xc65010
+userreg6contains0xc65350
+userreg8contains0xc65400
+userreg9contains0
+userreg10contains0
+userreg0contains0xc64590
+userreg1contains0xc5d8a0
+userreg2contains0xc64790
+userreg3contains0xc5e0f0
+userreg4contains0xc64f00
+userreg5contains0xc65010
+userreg6contains0xc65350
+userreg0contains0xc64590
+userreg1contains0xc5d8a0
+userreg2contains0xc64790
+userreg3contains0xc5e0f0
+userreg4contains0xc64f00
+userreg5contains0xc65010
+userreg6contains0xc65350
+userreg8contains0xc65400
 tac type ASSIGN
+userreg0contains0xc64590
+userreg1contains0xc5d8a0
+userreg0contains0xc64590
+userreg1contains0xc5d8a0
+userreg2contains0xc64790
+userreg3contains0xc5e0f0
+userreg4contains0xc64f00
+userreg5contains0xc65010
+userreg6contains0xc65350
+userreg8contains0xc65400
+userreg9contains0xc652a0
 tac type LABELDF
 L3:
 
 tac type ASSIGN
+userreg0contains0xc64590
+userreg1contains0xc5d8a0
+userreg2contains0xc64790
+userreg3contains0xc5e0f0
+userreg4contains0xc64f00
+userreg5contains0xc65010
+userreg6contains0xc65350
+userreg8contains0xc65400
+userreg9contains0xc652a0
+userreg10contains0
+userreg0contains0xc64590
+userreg1contains0xc5d8a0
+userreg2contains0xc64790
+userreg3contains0xc5e0f0
 tac type ASSIGN
- assign 100 to tegisterStore Register in getregisterNoLoad variable
+ assign 100 to tegisteruserreg0contains0xc64590
+userreg1contains0xc5d8a0
+userreg2contains0xc64790
+userreg3contains0xc5e0f0
+userreg4contains0xc64f00
+userreg5contains0xc65010
+userreg6contains0xc65350
+userreg8contains0xc65400
+userreg9contains0xc652a0
+userreg10contains0xc65920
+Store Register in getregisterNoLoad variable
 10
+userreg0contains0xc64590
+userreg1contains0xc5d8a0
+userreg2contains0xc64790
+userreg3contains0xc5e0f0
+userreg4contains0xc64f00
+userreg5contains0xc65010
+userreg6contains0xc65350
+userreg8contains0xc65400
+userreg9contains0xc652a0
+userreg10contains0xc65a30
 tac type IFLT
+userreg0contains0xc64590
+userreg1contains0xc5d8a0
+userreg2contains0xc64790
+userreg3contains0xc5e0f0
+userreg4contains0xc64f00
+userreg5contains0xc65010
+userreg6contains0xc65350
+userreg8contains0xc65400
+userreg9contains0xc652a0
+userreg10contains0xc65a30
 Store Register in getregister variable
 findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
+userreg0contains0xc64590
+userreg1contains0xc5d8a0
+userreg2contains0xc64790
+userreg3contains0xc5e0f0
+userreg4contains0xc64f00
+userreg5contains0xc65010
+userreg6contains0xc65350
+userreg8contains0xc65400
+userreg9contains0xc652a0
+userreg10contains0xc65920
 Store Register in getregister variable
 findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
 tac type GOTO
@@ -673,17 +880,95 @@ tac type LABELDF
 L4:
 
 tac type ASSIGN
+userreg0contains0xc64590
+userreg1contains0xc5d8a0
+userreg2contains0xc64790
+userreg3contains0xc5e0f0
+userreg4contains0xc64f00
+userreg5contains0xc65010
+userreg6contains0xc65350
+userreg8contains0xc65400
+userreg9contains0xc652a0
+userreg10contains0xc65a30
 Store Register in getregisterNoLoad variable
+userreg0contains0xc64590
+userreg1contains0xc5d8a0
+userreg2contains0xc64790
+userreg3contains0xc5e0f0
 tac type ASSIGN
- assign 6 to tegisterStore Register in getregisterNoLoad variable
+ assign 6 to tegisteruserreg0contains0xc64590
+userreg1contains0xc5d8a0
+userreg2contains0xc64790
+userreg3contains0xc5e0f0
+userreg4contains0xc64f00
+userreg5contains0xc65010
+userreg6contains0xc65350
+userreg8contains0xc65400
+userreg9contains0xc652a0
+userreg10contains0xc65d70
+Store Register in getregisterNoLoad variable
 10
+userreg0contains0xc64590
+userreg1contains0xc5d8a0
+userreg2contains0xc64790
+userreg3contains0xc5e0f0
+userreg4contains0xc64f00
+userreg5contains0xc65010
+userreg6contains0xc65350
+userreg8contains0xc65400
+userreg9contains0xc652a0
+userreg10contains0xc65e20
 tac type ADD
+userreg0contains0xc64590
+userreg1contains0xc5d8a0
+userreg2contains0xc64790
+userreg3contains0xc5e0f0
+userreg4contains0xc64f00
+userreg5contains0xc65010
+userreg6contains0xc65350
+userreg8contains0xc65400
+userreg9contains0xc652a0
+userreg10contains0xc65e20
 Store Register in getregisterNoLoad variable
+userreg0contains0xc64590
+userreg1contains0xc5d8a0
+userreg2contains0xc64790
+userreg3contains0xc5e0f0
+userreg4contains0xc64f00
+userreg5contains0xc65010
+userreg6contains0xc65350
+userreg8contains0xc65400
+userreg9contains0xc652a0
+userreg10contains0xc65cc0
 Store Register in getregister variable
 findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
+userreg0contains0xc64590
+userreg1contains0xc5d8a0
+userreg2contains0xc64790
+userreg3contains0xc5e0f0
+userreg4contains0xc64f00
+userreg5contains0xc65010
+userreg6contains0xc65350
+userreg8contains0xc65400
+userreg9contains0xc652a0
+userreg10contains0xc65d70
 Store Register in getregister variable
 findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
 tac type ASSIGN
+userreg0contains0xc64590
+userreg1contains0xc5d8a0
+userreg2contains0xc64790
+userreg3contains0xc5e0f0
+userreg0contains0xc64590
+userreg1contains0xc5d8a0
+userreg2contains0xc64790
+userreg3contains0xc5e0f0
+userreg4contains0xc64f00
+userreg5contains0xc65010
+userreg6contains0xc65350
+userreg8contains0xc65400
+userreg9contains0xc652a0
+userreg10contains0xc65e20
 Store Register in getregister variable
 findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
 tac type GOTO
@@ -693,17 +978,95 @@ tac type LABELDF
 L5:
 
 tac type ASSIGN
+userreg0contains0xc64590
+userreg1contains0xc5d8a0
+userreg2contains0xc64790
+userreg3contains0xc5e0f0
+userreg4contains0xc64f00
+userreg5contains0xc65010
+userreg6contains0xc65350
+userreg8contains0xc65400
+userreg9contains0xc652a0
+userreg10contains0xc65cc0
 Store Register in getregisterNoLoad variable
+userreg0contains0xc64590
+userreg1contains0xc5d8a0
+userreg2contains0xc64790
+userreg3contains0xc5e0f0
 tac type ASSIGN
- assign 100 to tegisterStore Register in getregisterNoLoad variable
+ assign 100 to tegisteruserreg0contains0xc64590
+userreg1contains0xc5d8a0
+userreg2contains0xc64790
+userreg3contains0xc5e0f0
+userreg4contains0xc64f00
+userreg5contains0xc65010
+userreg6contains0xc65350
+userreg8contains0xc65400
+userreg9contains0xc652a0
+userreg10contains0xc661c0
+Store Register in getregisterNoLoad variable
 10
+userreg0contains0xc64590
+userreg1contains0xc5d8a0
+userreg2contains0xc64790
+userreg3contains0xc5e0f0
+userreg4contains0xc64f00
+userreg5contains0xc65010
+userreg6contains0xc65350
+userreg8contains0xc65400
+userreg9contains0xc652a0
+userreg10contains0xc66270
 tac type SUB
+userreg0contains0xc64590
+userreg1contains0xc5d8a0
+userreg2contains0xc64790
+userreg3contains0xc5e0f0
+userreg4contains0xc64f00
+userreg5contains0xc65010
+userreg6contains0xc65350
+userreg8contains0xc65400
+userreg9contains0xc652a0
+userreg10contains0xc66270
 Store Register in getregisterNoLoad variable
+userreg0contains0xc64590
+userreg1contains0xc5d8a0
+userreg2contains0xc64790
+userreg3contains0xc5e0f0
+userreg4contains0xc64f00
+userreg5contains0xc65010
+userreg6contains0xc65350
+userreg8contains0xc65400
+userreg9contains0xc652a0
+userreg10contains0xc66110
 Store Register in getregister variable
 findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
+userreg0contains0xc64590
+userreg1contains0xc5d8a0
+userreg2contains0xc64790
+userreg3contains0xc5e0f0
+userreg4contains0xc64f00
+userreg5contains0xc65010
+userreg6contains0xc65350
+userreg8contains0xc65400
+userreg9contains0xc652a0
+userreg10contains0xc661c0
 Store Register in getregister variable
 findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
 tac type ASSIGN
+userreg0contains0xc64590
+userreg1contains0xc5d8a0
+userreg2contains0xc64790
+userreg3contains0xc5e0f0
+userreg0contains0xc64590
+userreg1contains0xc5d8a0
+userreg2contains0xc64790
+userreg3contains0xc5e0f0
+userreg4contains0xc64f00
+userreg5contains0xc65010
+userreg6contains0xc65350
+userreg8contains0xc65400
+userreg9contains0xc652a0
+userreg10contains0xc66270
 Store Register in getregister variable
 findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
 tac type GOTO
@@ -713,9 +1076,43 @@ tac type LABELDF
 L2:
 
 tac type ASSIGN
+userreg0contains0xc64590
+userreg1contains0xc5d8a0
+userreg2contains0xc64790
+userreg3contains0xc5e0f0
+userreg4contains0xc64f00
+userreg5contains0xc65010
+userreg6contains0xc65350
+userreg8contains0xc65400
+userreg9contains0xc652a0
+userreg10contains0xc66110
 Store Register in getregisterNoLoad variable
+userreg0contains0xc64590
+userreg1contains0xc5d8a0
+userreg2contains0xc64790
+userreg3contains0xc5e0f0
 tac type ASSIGN
+userreg0contains0xc64590
+userreg1contains0xc5d8a0
+userreg2contains0xc64790
+userreg3contains0xc5e0f0
+userreg4contains0xc64f00
+userreg5contains0xc65010
+userreg6contains0xc65350
+userreg8contains0xc65400
+userreg9contains0xc652a0
+userreg10contains0xc66670
 Store Register in getregisterNoLoad variable
+userreg0contains0xc64590
+userreg1contains0xc5d8a0
+userreg2contains0xc64790
+userreg3contains0xc5e0f0
+userreg4contains0xc64f00
+userreg5contains0xc65010
+userreg6contains0xc65350
+userreg8contains0xc65400
+userreg9contains0xc652a0
+userreg10contains0xc665c0
 register:-1
 terminate called after throwing an instance of 'std::runtime_error'
   what():  no variable in this register

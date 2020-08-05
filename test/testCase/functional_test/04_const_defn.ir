@@ -241,10 +241,34 @@ ID             category       type           depictor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 build assembly code
 tac type ASSIGN
- assign 4 to tegister0
+ assign 4 to tegisteruserreg0contains0
+userreg1contains0
+userreg2contains0
+userreg3contains0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+0
+userreg0contains0x1149630
 tac type FUNCTIONDF
 tac type ASSIGN
+userreg0contains0x1149630
+userreg1contains0
+userreg2contains0
+userreg3contains0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+userreg0contains0x1149630
 tac type RETURN
+userreg0contains0x1149630
+userreg1contains0x114b740
 tac type ARG
 tac build complete
 instruction number1
@@ -257,6 +281,8 @@ instruction number7
 instruction number8
 instruction number9
 instruction number10
+
+EXTERN getint getchar getarray putint putchar putarray
 .text
 .global main
 MOV r0, #4

@@ -76003,6 +76003,401 @@ scopeprev:0
 Variable offset count+4 :_t7
 Variable offset count+4 :_t60
 tac type ASSIGN
-terminate called after throwing an instance of 'std::bad_alloc'
-  what():  std::bad_alloc
+ assign 0 to tegisteruserreg0contains0x18e47b0
+userreg1contains0
+userreg2contains0
+userreg3contains0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+0
+userreg0contains0x18e4620
+tac type ASSIGN
+userreg0contains0x18e4620
+userreg1contains0
+userreg2contains0
+userreg3contains0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+userreg0contains0x18e4620
+tac type LABELDF
+L0:
+
+tac type ASSIGN
+userreg0contains0x18e4620
+userreg1contains0x1847e70
+userreg2contains0
+userreg3contains0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+userreg0contains0x18e4620
+userreg1contains0x1847e70
+tac type ASSIGN
+userreg0contains0x18e4620
+userreg1contains0x1847e70
+userreg2contains0x18e4b40
+userreg3contains0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+userreg0contains0x18e4620
+userreg1contains0x1847e70
+userreg2contains0x18e4b40
+userreg3contains0x18e4d00
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+findregister: insldr rd=4,r1=11,r2 offset=0,op2type=1, insefft=0
+tac type ASSIGN
+ assign 1 to tegisteruserreg0contains0x18e4620
+userreg1contains0x1847e70
+userreg2contains0x18e4b40
+userreg3contains0x18e4d00
+userreg4contains0x1847630
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+5
+userreg0contains0x18e4620
+userreg1contains0x1847e70
+userreg2contains0x18e4b40
+userreg3contains0x18e4d00
+userreg4contains0x1847630
+userreg5contains0x18e4db0
+tac type SUB
+userreg0contains0x18e4620
+userreg1contains0x1847e70
+userreg2contains0x18e4b40
+userreg3contains0x18e4d00
+userreg4contains0x1847630
+userreg5contains0x18e4db0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+userreg0contains0x18e4620
+userreg1contains0x1847e70
+userreg2contains0x18e4b40
+userreg3contains0x18e4d00
+userreg0contains0x18e4620
+userreg1contains0x1847e70
+userreg2contains0x18e4b40
+userreg3contains0x18e4d00
+userreg4contains0x1847630
+userreg5contains0x18e4db0
+tac type IFLT
+userreg0contains0x18e4620
+userreg1contains0x1847e70
+userreg2contains0x18e4b40
+userreg0contains0x18e4620
+userreg1contains0x1847e70
+userreg2contains0x18e4b40
+userreg3contains0x18e4d00
+userreg4contains0x1847630
+userreg5contains0x18e4db0
+userreg6contains0x18e4c50
+tac type GOTO
+Goto string B L2
+
+tac type LABELDF
+L1:
+
+tac type ASSIGN
+ assign 0 to tegisteruserreg0contains0x18e4620
+userreg1contains0x1847e70
+userreg2contains0x18e4b40
+userreg3contains0x18e4d00
+userreg4contains0x1847630
+userreg5contains0x18e4db0
+userreg6contains0x18e4c50
+userreg8contains0
+userreg9contains0
+userreg10contains0
+8
+userreg0contains0x18e4620
+userreg1contains0x1847e70
+userreg2contains0x18e4b40
+userreg3contains0x18e4d00
+userreg4contains0x1847630
+userreg5contains0x18e4db0
+userreg6contains0x18e4c50
+userreg8contains0x18e5100
+tac type ASSIGN
+userreg0contains0x18e4620
+userreg1contains0x1847e70
+userreg2contains0x18e4b40
+userreg3contains0x18e4d00
+userreg4contains0x1847630
+userreg5contains0x18e4db0
+userreg6contains0x18e4c50
+userreg8contains0x18e5100
+userreg9contains0
+userreg10contains0
+userreg0contains0x18e4620
+userreg1contains0x1847e70
+userreg2contains0x18e4b40
+userreg3contains0x18e4d00
+userreg4contains0x1847630
+userreg5contains0x18e4db0
+userreg6contains0x18e4c50
+userreg8contains0x18e5100
+tac type LABELDF
+L3:
+
+tac type ASSIGN
+userreg0contains0x18e4620
+userreg1contains0x1847e70
+userreg2contains0x18e4b40
+userreg3contains0x18e4d00
+userreg4contains0x1847630
+userreg5contains0x18e4db0
+userreg6contains0x18e4c50
+userreg8contains0x18e5100
+userreg9contains0x18480e0
+userreg10contains0
+userreg0contains0x18e4620
+userreg1contains0x1847e70
+userreg2contains0x18e4b40
+userreg3contains0x18e4d00
+userreg4contains0x1847630
+userreg5contains0x18e4db0
+userreg6contains0x18e4c50
+userreg8contains0x18e5100
+userreg9contains0x18480e0
+tac type ASSIGN
+userreg0contains0x18e4620
+userreg1contains0x1847e70
+userreg2contains0x18e4b40
+userreg3contains0x18e4d00
+userreg4contains0x1847630
+userreg5contains0x18e4db0
+userreg6contains0x18e4c50
+userreg8contains0x18e5100
+userreg9contains0x18480e0
+userreg10contains0x18e5560
+Store Register in getregisterNoLoad variable
+userreg0contains0x18e4620
+userreg1contains0x1847e70
+userreg2contains0x18e4b40
+userreg3contains0x18e4d00
+userreg4contains0x1847630
+tac type ASSIGN
+userreg0contains0x18e4620
+userreg1contains0x1847e70
+userreg2contains0x18e4b40
+userreg3contains0x18e4d00
+userreg4contains0x1847630
+userreg5contains0x18e4db0
+userreg6contains0x18e4c50
+userreg8contains0x18e5100
+userreg9contains0x18480e0
+userreg10contains0x18e5880
+Store Register in getregisterNoLoad variable
+userreg0contains0x18e4620
+userreg1contains0x1847e70
+tac type SUB
+userreg0contains0x18e4620
+userreg1contains0x1847e70
+userreg2contains0x18e4b40
+userreg3contains0x18e4d00
+userreg4contains0x1847630
+userreg5contains0x18e4db0
+userreg6contains0x18e4c50
+userreg8contains0x18e5100
+userreg9contains0x18480e0
+userreg10contains0x18e5930
+Store Register in getregisterNoLoad variable
+userreg0contains0x18e4620
+userreg1contains0x1847e70
+userreg2contains0x18e4b40
+userreg3contains0x18e4d00
+userreg4contains0x1847630
+userreg5contains0x18e4db0
+userreg6contains0x18e4c50
+userreg8contains0x18e5100
+userreg9contains0x18480e0
+userreg10contains0x18e5720
+Store Register in getregister variable
+findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
+userreg0contains0x18e4620
+userreg1contains0x1847e70
+userreg2contains0x18e4b40
+userreg3contains0x18e4d00
+userreg4contains0x1847630
+userreg5contains0x18e4db0
+userreg6contains0x18e4c50
+userreg8contains0x18e5100
+userreg9contains0x18480e0
+userreg10contains0x18e5880
+Store Register in getregister variable
+findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
+tac type ASSIGN
+ assign 1 to tegisteruserreg0contains0x18e4620
+userreg1contains0x1847e70
+userreg2contains0x18e4b40
+userreg3contains0x18e4d00
+userreg4contains0x1847630
+userreg5contains0x18e4db0
+userreg6contains0x18e4c50
+userreg8contains0x18e5100
+userreg9contains0x18480e0
+userreg10contains0x18e5930
+Store Register in getregisterNoLoad variable
+10
+userreg0contains0x18e4620
+userreg1contains0x1847e70
+userreg2contains0x18e4b40
+userreg3contains0x18e4d00
+userreg4contains0x1847630
+userreg5contains0x18e4db0
+userreg6contains0x18e4c50
+userreg8contains0x18e5100
+userreg9contains0x18480e0
+userreg10contains0x18e57d0
+tac type SUB
+userreg0contains0x18e4620
+userreg1contains0x1847e70
+userreg2contains0x18e4b40
+userreg3contains0x18e4d00
+userreg4contains0x1847630
+userreg5contains0x18e4db0
+userreg6contains0x18e4c50
+userreg8contains0x18e5100
+userreg9contains0x18480e0
+userreg10contains0x18e57d0
+Store Register in getregisterNoLoad variable
+userreg0contains0x18e4620
+userreg1contains0x1847e70
+userreg2contains0x18e4b40
+userreg3contains0x18e4d00
+userreg4contains0x1847630
+userreg5contains0x18e4db0
+userreg6contains0x18e4c50
+userreg8contains0x18e5100
+userreg9contains0x18480e0
+userreg10contains0x18e5670
+Store Register in getregister variable
+findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
+userreg0contains0x18e4620
+userreg1contains0x1847e70
+userreg2contains0x18e4b40
+userreg3contains0x18e4d00
+userreg4contains0x1847630
+userreg5contains0x18e4db0
+userreg6contains0x18e4c50
+userreg8contains0x18e5100
+userreg9contains0x18480e0
+userreg10contains0x18e5720
+Store Register in getregister variable
+findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
+tac type IFLT
+userreg0contains0x18e4620
+userreg1contains0x1847e70
+userreg2contains0x18e4b40
+userreg3contains0x18e4d00
+userreg4contains0x1847630
+userreg5contains0x18e4db0
+userreg6contains0x18e4c50
+userreg8contains0x18e5100
+userreg9contains0x18480e0
+userreg10contains0x18e57d0
+Store Register in getregister variable
+findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
+userreg0contains0x18e4620
+userreg1contains0x1847e70
+userreg2contains0x18e4b40
+userreg3contains0x18e4d00
+userreg4contains0x1847630
+userreg5contains0x18e4db0
+userreg6contains0x18e4c50
+userreg8contains0x18e5100
+userreg9contains0x18480e0
+userreg10contains0x18e5560
+Store Register in getregister variable
+findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
+tac type GOTO
+Goto string B L5
+
+tac type LABELDF
+L4:
+
+tac type ASSIGN
+userreg0contains0x18e4620
+userreg1contains0x1847e70
+userreg2contains0x18e4b40
+userreg3contains0x18e4d00
+userreg4contains0x1847630
+userreg5contains0x18e4db0
+userreg6contains0x18e4c50
+userreg8contains0x18e5100
+userreg9contains0x18480e0
+userreg10contains0x18e5670
+Store Register in getregisterNoLoad variable
+userreg0contains0x18e4620
+userreg1contains0x1847e70
+userreg2contains0x18e4b40
+userreg3contains0x18e4d00
+userreg4contains0x1847630
+userreg5contains0x18e4db0
+userreg6contains0x18e4c50
+userreg8contains0x18e5100
+userreg9contains0x18480e0
+tac type ASSIGN
+userreg0contains0x18e4620
+userreg1contains0x1847e70
+userreg2contains0x18e4b40
+userreg3contains0x18e4d00
+userreg4contains0x1847630
+userreg5contains0x18e4db0
+userreg6contains0x18e4c50
+userreg8contains0x18e5100
+userreg9contains0x18480e0
+userreg10contains0x18e6810
+Store Register in getregisterNoLoad variable
+FindRegister ARRAY_ADDR
+Store Register in getregister array
+userreg0contains0x18e4620
+userreg1contains0x1847e70
+userreg2contains0x18e4b40
+userreg3contains0x18e4d00
+userreg4contains0x1847630
+userreg5contains0x18e4db0
+userreg6contains0x18e4c50
+userreg8contains0x18e5100
+userreg9contains0x18480e0
+userreg10contains0x18e6250
+Store Register in getregister variable
+findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
+userreg0contains0x18e4620
+userreg1contains0x1847e70
+userreg2contains0x18e4b40
+userreg3contains0x18e4d00
+userreg4contains0x1847630
+userreg5contains0x18e4db0
+userreg6contains0x18e4c50
+userreg8contains0x18e5100
+userreg9contains0x18480e0
+userreg10contains0x1847cd0
+register:-1
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  no variable in this register
 Aborted (core dumped)

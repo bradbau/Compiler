@@ -291,7 +291,7 @@ _______________________________________
  15  (at line   5)	_t10 := #1
  16  (at line   5)	_t8 := _t9 - _t10
  17  (at line   5)	a := _t8
- 18  (at line   0)	GOTO label-1
+ 18  (at line   0)	GOTO label0
  19  (at line   4)	LABEL label4 :
  20  (at line   8)	_t11 := a
  21  (at line   8)	RETURN _t11
@@ -404,14 +404,54 @@ scopeprev:0
 Variable offset count+4 :_t3
 Variable offset count+4 :_t12
 tac type ASSIGN
- assign 10 to tegister0
+ assign 10 to tegisteruserreg0contains0
+userreg1contains0
+userreg2contains0
+userreg3contains0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+0
+userreg0contains0x21248a0
 tac type LABELDF
 L0:
 
 tac type ASSIGN
+userreg0contains0x21248a0
+userreg1contains0
+userreg2contains0
+userreg3contains0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+userreg0contains0x21248a0
 tac type ASSIGN
- assign 0 to tegister2
+ assign 0 to tegisteruserreg0contains0x21248a0
+userreg1contains0x2128ea0
+userreg2contains0
+userreg3contains0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+2
+userreg0contains0x21248a0
+userreg1contains0x2128ea0
+userreg2contains0x21290a0
 tac type IFGT
+userreg0contains0x21248a0
+userreg1contains0x2128ea0
+userreg0contains0x21248a0
+userreg1contains0x2128ea0
+userreg2contains0x21290a0
 ControlInstruction String:BGT L1
 
 tac type GOTO
@@ -421,9 +461,44 @@ tac type LABELDF
 L1:
 
 tac type ASSIGN
+userreg0contains0x21248a0
+userreg1contains0x2128ea0
+userreg2contains0x21290a0
+userreg3contains0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+userreg0contains0x21248a0
 tac type ASSIGN
- assign 5 to tegister4
+ assign 5 to tegisteruserreg0contains0x21248a0
+userreg1contains0x2128ea0
+userreg2contains0x21290a0
+userreg3contains0x2129930
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+4
+userreg0contains0x21248a0
+userreg1contains0x2128ea0
+userreg2contains0x21290a0
+userreg3contains0x2129930
+userreg4contains0x2129cd0
 tac type IFGT
+userreg0contains0x21248a0
+userreg1contains0x2128ea0
+userreg2contains0x21290a0
+userreg3contains0x2129930
+userreg0contains0x21248a0
+userreg1contains0x2128ea0
+userreg2contains0x21290a0
+userreg3contains0x2129930
+userreg4contains0x2129cd0
 ControlInstruction String:BGT L3
 
 tac type GOTO
@@ -433,18 +508,98 @@ tac type LABELDF
 L3:
 
 tac type ASSIGN
+userreg0contains0x21248a0
+userreg1contains0x2128ea0
+userreg2contains0x21290a0
+userreg3contains0x2129930
+userreg4contains0x2129cd0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+userreg0contains0x21248a0
 tac type ASSIGN
- assign 1 to tegister6
+ assign 1 to tegisteruserreg0contains0x21248a0
+userreg1contains0x2128ea0
+userreg2contains0x21290a0
+userreg3contains0x2129930
+userreg4contains0x2129cd0
+userreg5contains0x2129fb0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+6
+userreg0contains0x21248a0
+userreg1contains0x2128ea0
+userreg2contains0x21290a0
+userreg3contains0x2129930
+userreg4contains0x2129cd0
+userreg5contains0x2129fb0
+userreg6contains0x212a060
 tac type SUB
+userreg0contains0x21248a0
+userreg1contains0x2128ea0
+userreg2contains0x21290a0
+userreg3contains0x2129930
+userreg4contains0x2129cd0
+userreg5contains0x2129fb0
+userreg6contains0x212a060
+userreg8contains0
+userreg9contains0
+userreg10contains0
+userreg0contains0x21248a0
+userreg1contains0x2128ea0
+userreg2contains0x21290a0
+userreg3contains0x2129930
+userreg4contains0x2129cd0
+userreg5contains0x2129fb0
+userreg0contains0x21248a0
+userreg1contains0x2128ea0
+userreg2contains0x21290a0
+userreg3contains0x2129930
+userreg4contains0x2129cd0
+userreg5contains0x2129fb0
+userreg6contains0x212a060
 tac type ASSIGN
+userreg0contains0x21248a0
+userreg0contains0x21248a0
+userreg1contains0x2128ea0
+userreg2contains0x21290a0
+userreg3contains0x2129930
+userreg4contains0x2129cd0
+userreg5contains0x2129fb0
+userreg6contains0x212a060
+userreg8contains0x2129f00
 tac type GOTO
-Goto string B L-1
+Goto string B L0
 
 tac type LABELDF
 L4:
 
 tac type ASSIGN
+userreg0contains0x21248a0
+userreg1contains0x2128ea0
+userreg2contains0x21290a0
+userreg3contains0x2129930
+userreg4contains0x2129cd0
+userreg5contains0x2129fb0
+userreg6contains0x212a060
+userreg8contains0x2129f00
+userreg9contains0
+userreg10contains0
+userreg0contains0x21248a0
 tac type RETURN
+userreg0contains0x21248a0
+userreg1contains0x2128ea0
+userreg2contains0x21290a0
+userreg3contains0x2129930
+userreg4contains0x2129cd0
+userreg5contains0x2129fb0
+userreg6contains0x212a060
+userreg8contains0x2129f00
+userreg9contains0x212a410
 tac type ARG
 tac type GOTO
 Goto string B L0
@@ -453,7 +608,28 @@ tac type LABELDF
 L2:
 
 tac type ASSIGN
+userreg0contains0x21248a0
+userreg1contains0x2128ea0
+userreg2contains0x21290a0
+userreg3contains0x2129930
+userreg4contains0x2129cd0
+userreg5contains0x2129fb0
+userreg6contains0x212a060
+userreg8contains0x2129f00
+userreg9contains0x212a410
+userreg10contains0
+userreg0contains0x21248a0
 tac type RETURN
+userreg0contains0x21248a0
+userreg1contains0x2128ea0
+userreg2contains0x21290a0
+userreg3contains0x2129930
+userreg4contains0x2129cd0
+userreg5contains0x2129fb0
+userreg6contains0x212a060
+userreg8contains0x2129f00
+userreg9contains0x212a410
+userreg10contains0x212a640
 tac type ARG
 tac build complete
 instruction number1
@@ -492,6 +668,8 @@ instruction number33
 instruction number34
 instruction number35
 instruction number36
+
+EXTERN getint getchar getarray putint putchar putarray
 .text
 .global main
 main:
@@ -516,7 +694,7 @@ ADD  r5, r0, #0
 MOV r6, #1
 SUB r8, r5, r6
 ADD  r0, r8, #0
-B L-1
+B L0
 L4:
 ADD  r9, r0, #0
 ADD  r0, r9, #0

@@ -314,12 +314,67 @@ Variable offset count+4 :_t4
 Variable offset count+4 :_t5
 Variable offset count+4 :_t6
 tac type ASSIGN
- assign 10 to tegister0
+ assign 10 to tegisteruserreg0contains0
+userreg1contains0
+userreg2contains0
+userreg3contains0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+0
+userreg0contains0x1e64710
 tac type ASSIGN
+userreg0contains0x1e64710
+userreg1contains0
+userreg2contains0
+userreg3contains0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+userreg0contains0x1e64710
 tac type ASSIGN
+userreg0contains0x1e64710
+userreg1contains0x1e61630
+userreg2contains0
+userreg3contains0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+userreg0contains0x1e64710
+userreg1contains0x1e61630
 tac type ASSIGN
- assign 0 to tegister3
+ assign 0 to tegisteruserreg0contains0x1e64710
+userreg1contains0x1e61630
+userreg2contains0x1e64910
+userreg3contains0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+3
+userreg0contains0x1e64710
+userreg1contains0x1e61630
+userreg2contains0x1e64910
+userreg3contains0x1e64fc0
 tac type IFGT
+userreg0contains0x1e64710
+userreg1contains0x1e61630
+userreg2contains0x1e64910
+userreg0contains0x1e64710
+userreg1contains0x1e61630
+userreg2contains0x1e64910
+userreg3contains0x1e64fc0
 ControlInstruction String:BGT L0
 
 tac type GOTO
@@ -329,8 +384,28 @@ tac type LABELDF
 L0:
 
 tac type ASSIGN
- assign 1 to tegister4
+ assign 1 to tegisteruserreg0contains0x1e64710
+userreg1contains0x1e61630
+userreg2contains0x1e64910
+userreg3contains0x1e64fc0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+4
+userreg0contains0x1e64710
+userreg1contains0x1e61630
+userreg2contains0x1e64910
+userreg3contains0x1e64fc0
+userreg4contains0x1e65250
 tac type RETURN
+userreg0contains0x1e64710
+userreg1contains0x1e61630
+userreg2contains0x1e64910
+userreg3contains0x1e64fc0
+userreg4contains0x1e65250
 tac type ARG
 tac type GOTO
 Goto string B L2
@@ -339,8 +414,30 @@ tac type LABELDF
 L1:
 
 tac type ASSIGN
- assign 0 to tegister5
+ assign 0 to tegisteruserreg0contains0x1e64710
+userreg1contains0x1e61630
+userreg2contains0x1e64910
+userreg3contains0x1e64fc0
+userreg4contains0x1e65250
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+5
+userreg0contains0x1e64710
+userreg1contains0x1e61630
+userreg2contains0x1e64910
+userreg3contains0x1e64fc0
+userreg4contains0x1e65250
+userreg5contains0x1e654e0
 tac type RETURN
+userreg0contains0x1e64710
+userreg1contains0x1e61630
+userreg2contains0x1e64910
+userreg3contains0x1e64fc0
+userreg4contains0x1e65250
+userreg5contains0x1e654e0
 tac type ARG
 tac type LABELDF
 L2:
@@ -371,6 +468,8 @@ instruction number22
 instruction number23
 instruction number24
 instruction number25
+
+EXTERN getint getchar getarray putint putchar putarray
 .text
 .global main
 main:

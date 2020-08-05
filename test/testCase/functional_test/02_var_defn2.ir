@@ -286,14 +286,82 @@ scopeprev:0
 Variable offset count+4 :_t1
 Variable offset count+4 :_t2
 tac type ASSIGN
- assign 10 to tegister0
+ assign 10 to tegisteruserreg0contains0
+userreg1contains0
+userreg2contains0
+userreg3contains0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+0
+userreg0contains0xdf3370
 tac type ASSIGN
+userreg0contains0xdf3370
+userreg1contains0
+userreg2contains0
+userreg3contains0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+userreg0contains0xdf3370
 tac type ASSIGN
- assign 10 to tegister2
+ assign 10 to tegisteruserreg0contains0xdf3370
+userreg1contains0xdf0630
+userreg2contains0
+userreg3contains0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+2
+userreg0contains0xdf3370
+userreg1contains0xdf0630
+userreg2contains0xdf3570
 tac type ASSIGN
+userreg0contains0xdf3370
+userreg1contains0xdf0630
+userreg2contains0xdf3570
+userreg3contains0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+userreg0contains0xdf3370
+userreg1contains0xdf0630
+userreg2contains0xdf3570
 tac type ASSIGN
- assign 0 to tegister4
+ assign 0 to tegisteruserreg0contains0xdf3370
+userreg1contains0xdf0630
+userreg2contains0xdf3570
+userreg3contains0xdf1360
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+4
+userreg0contains0xdf3370
+userreg1contains0xdf0630
+userreg2contains0xdf3570
+userreg3contains0xdf1360
+userreg4contains0xdf3ce0
 tac type RETURN
+userreg0contains0xdf3370
+userreg1contains0xdf0630
+userreg2contains0xdf3570
+userreg3contains0xdf1360
+userreg4contains0xdf3ce0
 tac type ARG
 tac build complete
 instruction number1
@@ -309,6 +377,8 @@ instruction number10
 instruction number11
 instruction number12
 instruction number13
+
+EXTERN getint getchar getarray putint putchar putarray
 .text
 .global main
 main:

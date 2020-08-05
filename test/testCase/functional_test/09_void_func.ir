@@ -402,29 +402,228 @@ ID             category       type           depictor
 build assembly code
 tac type FUNCTIONDF
 tac type ASSIGN
+userreg0contains0x1ae3f40
+userreg1contains0x1ae41b0
+userreg2contains0
+userreg3contains0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+userreg0contains0x1ae8cc0
+userreg1contains0x1ae41b0
+userreg2contains0
+userreg3contains0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
 findregister: insldr rd=1,r1=11,r2 offset=0,op2type=1, insefft=0
 tac type ASSIGN
+userreg0contains0x1ae8cc0
+userreg1contains0x1ae3f40
+userreg2contains0
+userreg3contains0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+userreg0contains0x1ae8cc0
+userreg1contains0x1ae3f40
+userreg2contains0x1ae8e90
+userreg3contains0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
 findregister: insldr rd=3,r1=11,r2 offset=0,op2type=1, insefft=0
 tac type ADD
+userreg0contains0x1ae8cc0
+userreg1contains0x1ae3f40
+userreg2contains0x1ae8e90
+userreg3contains0x1ae41b0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+userreg0contains0x1ae8cc0
+userreg0contains0x1ae8cc0
+userreg1contains0x1ae3f40
+userreg2contains0x1ae8e90
 tac type ASSIGN
+userreg0contains0x1ae8cc0
+userreg1contains0x1ae3f40
+userreg2contains0x1ae8e90
+userreg3contains0x1ae41b0
+userreg4contains0x1ae8ac0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+userreg0contains0x1ae8cc0
+userreg1contains0x1ae3f40
+userreg2contains0x1ae8e90
+userreg3contains0x1ae41b0
+userreg4contains0x1ae8ac0
 tac type FUNCTIONDF
 tac type ASSIGN
- assign 3 to tegister6
+ assign 3 to tegisteruserreg0contains0x1ae8cc0
+userreg1contains0x1ae3f40
+userreg2contains0x1ae8e90
+userreg3contains0x1ae41b0
+userreg4contains0x1ae8ac0
+userreg5contains0x1ae3970
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+6
+userreg0contains0x1ae8cc0
+userreg1contains0x1ae3f40
+userreg2contains0x1ae8e90
+userreg3contains0x1ae41b0
+userreg4contains0x1ae8ac0
+userreg5contains0x1ae3970
+userreg6contains0x1ae9270
 tac type ASSIGN
+userreg0contains0x1ae8cc0
+userreg1contains0x1ae3f40
+userreg2contains0x1ae8e90
+userreg3contains0x1ae41b0
+userreg4contains0x1ae8ac0
+userreg5contains0x1ae3970
+userreg6contains0x1ae9270
+userreg8contains0
+userreg9contains0
+userreg10contains0
+userreg0contains0x1ae8cc0
+userreg1contains0x1ae3f40
+userreg2contains0x1ae8e90
+userreg3contains0x1ae41b0
+userreg4contains0x1ae8ac0
+userreg5contains0x1ae3970
+userreg6contains0x1ae9270
 tac type ASSIGN
- assign 2 to tegister9
+ assign 2 to tegisteruserreg0contains0x1ae8cc0
+userreg1contains0x1ae3f40
+userreg2contains0x1ae8e90
+userreg3contains0x1ae41b0
+userreg4contains0x1ae8ac0
+userreg5contains0x1ae3970
+userreg6contains0x1ae9270
+userreg8contains0x1ae3630
+userreg9contains0
+userreg10contains0
+9
+userreg0contains0x1ae8cc0
+userreg1contains0x1ae3f40
+userreg2contains0x1ae8e90
+userreg3contains0x1ae41b0
+userreg4contains0x1ae8ac0
+userreg5contains0x1ae3970
+userreg6contains0x1ae9270
+userreg8contains0x1ae3630
+userreg9contains0x1ae9440
 tac type ASSIGN
+userreg0contains0x1ae8cc0
+userreg1contains0x1ae3f40
+userreg2contains0x1ae8e90
+userreg3contains0x1ae41b0
+userreg4contains0x1ae8ac0
+userreg5contains0x1ae3970
+userreg6contains0x1ae9270
+userreg8contains0x1ae3630
+userreg9contains0x1ae9440
+userreg10contains0
+userreg0contains0x1ae8cc0
+userreg1contains0x1ae3f40
+userreg2contains0x1ae8e90
+userreg3contains0x1ae41b0
+userreg4contains0x1ae8ac0
+userreg5contains0x1ae3970
+userreg6contains0x1ae9270
+userreg8contains0x1ae3630
+userreg9contains0x1ae9440
 tac type ASSIGN
+userreg0contains0x1ae8cc0
+userreg1contains0x1ae3f40
+userreg2contains0x1ae8e90
+userreg3contains0x1ae41b0
+userreg4contains0x1ae8ac0
+userreg5contains0x1ae3970
+userreg6contains0x1ae9270
+userreg8contains0x1ae3630
+userreg9contains0x1ae9440
+userreg10contains0x1ae37d0
 Store Register in getregisterNoLoad variable
+userreg0contains0x1ae8cc0
+userreg1contains0x1ae3f40
+userreg2contains0x1ae8e90
+userreg3contains0x1ae41b0
+userreg4contains0x1ae8ac0
+userreg5contains0x1ae3970
+userreg6contains0x1ae9270
+userreg8contains0x1ae3630
 tac type ASSIGN
+userreg0contains0x1ae8cc0
+userreg1contains0x1ae3f40
+userreg2contains0x1ae8e90
+userreg3contains0x1ae41b0
+userreg4contains0x1ae8ac0
+userreg5contains0x1ae3970
+userreg6contains0x1ae9270
+userreg8contains0x1ae3630
+userreg9contains0x1ae9440
+userreg10contains0x1ae95b0
 Store Register in getregisterNoLoad variable
+userreg0contains0x1ae8cc0
+userreg1contains0x1ae3f40
+userreg2contains0x1ae8e90
+userreg3contains0x1ae41b0
+userreg4contains0x1ae8ac0
+userreg5contains0x1ae3970
+userreg6contains0x1ae9270
+userreg8contains0x1ae3630
+userreg9contains0x1ae9440
+userreg10contains0x1ae9720
 Store Register in getregister variable
 findregister: insldr rd=10,r1=11,r2 offset=-4,op2type=1, insefft=0
 tac type ARG
 tac type ARG
 tac type CALL
+userreg0contains0x1ae8cc0
+userreg1contains0x1ae3f40
+userreg2contains0x1ae8e90
+userreg3contains0x1ae41b0
+userreg4contains0x1ae8ac0
+userreg5contains0x1ae3970
+userreg6contains0x1ae9270
+userreg8contains0x1ae3630
+userreg9contains0x1ae9440
+userreg10contains0x1ae37d0
 Store Register in getregister variable
 findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
+userreg0contains0x1ae8cc0
+userreg1contains0x1ae3f40
+userreg2contains0x1ae8e90
+userreg3contains0x1ae41b0
+userreg4contains0x1ae8ac0
+userreg5contains0x1ae3970
+userreg6contains0x1ae9270
+userreg8contains0x1ae3630
+userreg9contains0x1ae9440
+userreg10contains0x1ae95b0
 Store Register in getregister variable
 findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
 Segmentation fault (core dumped)

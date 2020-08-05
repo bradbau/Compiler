@@ -1101,33 +1101,258 @@ scopeprev:0
 Variable offset count+4 :_t34
 Variable offset count+4 :_t35
 tac type ASSIGN
- assign 3 to tegister0
+ assign 3 to tegisteruserreg0contains0
+userreg1contains0
+userreg2contains0
+userreg3contains0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+0
+userreg0contains0xa604b0
 tac type ASSIGN
+userreg0contains0xa604b0
+userreg1contains0
+userreg2contains0
+userreg3contains0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+userreg0contains0xa604b0
 tac type ASSIGN
- assign 8 to tegister2
+ assign 8 to tegisteruserreg0contains0xa604b0
+userreg1contains0xa578a0
+userreg2contains0
+userreg3contains0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+2
+userreg0contains0xa604b0
+userreg1contains0xa578a0
+userreg2contains0xa606b0
 tac type ASSIGN
+userreg0contains0xa604b0
+userreg1contains0xa578a0
+userreg2contains0xa606b0
+userreg3contains0
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+userreg0contains0xa604b0
+userreg1contains0xa578a0
+userreg2contains0xa606b0
 tac type ASSIGN
- assign 4 to tegister4
+ assign 4 to tegisteruserreg0contains0xa604b0
+userreg1contains0xa578a0
+userreg2contains0xa606b0
+userreg3contains0xa57b10
+userreg4contains0
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+4
+userreg0contains0xa604b0
+userreg1contains0xa578a0
+userreg2contains0xa606b0
+userreg3contains0xa57b10
+userreg4contains0xa60e70
 tac type SUB
+userreg0contains0xa604b0
+userreg1contains0xa578a0
+userreg2contains0xa606b0
+userreg3contains0xa57b10
+userreg4contains0xa60e70
+userreg5contains0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+userreg0contains0xa604b0
+userreg1contains0xa578a0
+userreg2contains0xa606b0
+userreg3contains0xa57b10
+userreg4contains0xa60e70
 tac type ASSIGN
+userreg0contains0xa604b0
+userreg1contains0xa578a0
+userreg2contains0xa606b0
+userreg3contains0xa57b10
+userreg4contains0xa60e70
+userreg5contains0xa60dc0
+userreg6contains0
+userreg8contains0
+userreg9contains0
+userreg10contains0
+userreg0contains0xa604b0
+userreg1contains0xa578a0
+userreg2contains0xa606b0
+userreg3contains0xa57b10
+userreg4contains0xa60e70
+userreg5contains0xa60dc0
 tac type ASSIGN
- assign 15 to tegister8
+ assign 15 to tegisteruserreg0contains0xa604b0
+userreg1contains0xa578a0
+userreg2contains0xa606b0
+userreg3contains0xa57b10
+userreg4contains0xa60e70
+userreg5contains0xa60dc0
+userreg6contains0xa57d80
+userreg8contains0
+userreg9contains0
+userreg10contains0
+8
+userreg0contains0xa604b0
+userreg1contains0xa578a0
+userreg2contains0xa606b0
+userreg3contains0xa57b10
+userreg4contains0xa60e70
+userreg5contains0xa60dc0
+userreg6contains0xa57d80
+userreg8contains0xa61040
 tac type ASSIGN
+userreg0contains0xa604b0
+userreg1contains0xa578a0
+userreg2contains0xa606b0
+userreg3contains0xa57b10
+userreg4contains0xa60e70
+userreg5contains0xa60dc0
+userreg6contains0xa57d80
+userreg8contains0xa61040
+userreg9contains0
+userreg10contains0
+userreg0contains0xa604b0
+userreg1contains0xa578a0
+userreg2contains0xa606b0
+userreg3contains0xa57b10
+userreg4contains0xa60e70
+userreg5contains0xa60dc0
+userreg6contains0xa57d80
+userreg8contains0xa61040
 tac type ASSIGN
+userreg0contains0xa604b0
+userreg1contains0xa578a0
+userreg2contains0xa606b0
+userreg3contains0xa57b10
+userreg4contains0xa60e70
+userreg5contains0xa60dc0
+userreg6contains0xa57d80
+userreg8contains0xa61040
+userreg9contains0xa57ff0
+userreg10contains0
+userreg0contains0xa604b0
+userreg1contains0xa578a0
+userreg2contains0xa606b0
+userreg3contains0xa57b10
+userreg4contains0xa60e70
+userreg5contains0xa60dc0
+userreg6contains0xa57d80
+userreg8contains0xa61040
+userreg9contains0xa57ff0
 tac type ASSIGN
+userreg0contains0xa604b0
+userreg1contains0xa578a0
+userreg2contains0xa606b0
+userreg3contains0xa57b10
+userreg4contains0xa60e70
+userreg5contains0xa60dc0
+userreg6contains0xa57d80
+userreg8contains0xa61040
+userreg9contains0xa57ff0
+userreg10contains0xa61260
 Store Register in getregisterNoLoad variable
+userreg0contains0xa604b0
+userreg1contains0xa578a0
+userreg2contains0xa606b0
+userreg3contains0xa57b10
 tac type ASSIGN
+userreg0contains0xa604b0
+userreg1contains0xa578a0
+userreg2contains0xa606b0
+userreg3contains0xa57b10
+userreg4contains0xa60e70
+userreg5contains0xa60dc0
+userreg6contains0xa57d80
+userreg8contains0xa61040
+userreg9contains0xa57ff0
+userreg10contains0xa61530
 Store Register in getregisterNoLoad variable
+userreg0contains0xa604b0
+userreg1contains0xa578a0
 tac type SUB
+userreg0contains0xa604b0
+userreg1contains0xa578a0
+userreg2contains0xa606b0
+userreg3contains0xa57b10
+userreg4contains0xa60e70
+userreg5contains0xa60dc0
+userreg6contains0xa57d80
+userreg8contains0xa61040
+userreg9contains0xa57ff0
+userreg10contains0xa615e0
 Store Register in getregisterNoLoad variable
+userreg0contains0xa604b0
+userreg1contains0xa578a0
+userreg2contains0xa606b0
+userreg3contains0xa57b10
+userreg4contains0xa60e70
+userreg5contains0xa60dc0
+userreg6contains0xa57d80
+userreg8contains0xa61040
+userreg9contains0xa57ff0
+userreg10contains0xa61420
 Store Register in getregister variable
 findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
+userreg0contains0xa604b0
+userreg1contains0xa578a0
+userreg2contains0xa606b0
+userreg3contains0xa57b10
+userreg4contains0xa60e70
+userreg5contains0xa60dc0
+userreg6contains0xa57d80
+userreg8contains0xa61040
+userreg9contains0xa57ff0
+userreg10contains0xa61530
 Store Register in getregister variable
 findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
 tac type ASSIGN
+userreg0contains0xa604b0
+userreg1contains0xa578a0
+userreg2contains0xa606b0
+userreg3contains0xa57b10
+userreg4contains0xa60e70
+userreg5contains0xa60dc0
+userreg6contains0xa57d80
+userreg8contains0xa61040
+userreg9contains0xa57ff0
+userreg10contains0xa615e0
 Store Register in getregisterNoLoad variable
+userreg0contains0xa604b0
+userreg1contains0xa578a0
+userreg2contains0xa606b0
+userreg3contains0xa57b10
+userreg4contains0xa60e70
+userreg5contains0xa60dc0
+userreg6contains0xa57d80
+userreg8contains0xa61040
+userreg9contains0xa57ff0
+userreg10contains0xa61310
 Store Register in getregister variable
 findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
 tac type MOD
-compiler: ./ObjectCode/Arm.cpp:585: ARM::ARM(TACCode *, ScopeItem *, vector<ScopeItem> &): Assertion `code.dest.Type = VARIABLE' failed.
+compiler: ./ObjectCode/Arm.cpp:590: ARM::ARM(TACCode *, ScopeItem *, vector<ScopeItem> &): Assertion `code.dest.Type = VARIABLE' failed.
 Aborted (core dumped)
