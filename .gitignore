@@ -30,3 +30,12 @@
 *.exe
 *.out
 *.app
+
+
+*.tab.c
+*.tab.h
+compiler
+*.yy.c
+*.output
+*.log
+

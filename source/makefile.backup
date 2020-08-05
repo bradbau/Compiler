@@ -1,0 +1,15 @@
+# targets 以下编译方式没有生成obj，直接编译链接生成可执行文件
+
+## 中间中间代码生成
+
+y.tab.h y.tab.c: SysY.y
+	$(YACC) $(YACCFLAGS) SysY.y 
+
+lex.yy.c: SysY.l  SysY.y y.tab.h 
+	$(LEX) $(LEXFLAGS) SysY.l
+
+
+## 目标编译器编译
+$(COMPILER) : lex.yy.c  y.tab.c  $(SRCS)
+	echo $(SRCS)
+	$(CC)   $(SRCS)  ${CFLAGS} -o $@  $(LIBS) 

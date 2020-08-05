@@ -1,0 +1,293 @@
+<int>
+<id,if_ifElse_>
+<(>
+<)>
+<{>
+<int>
+<id,a>
+<;>
+<id,a>
+<=>
+Lval
+<intd>
+ExpNumber:0
+<;>
+stmt1
+<int>
+<id,b>
+<;>
+<id,b>
+<=>
+Lval
+<intd>
+ExpNumber:0
+<;>
+stmt1
+<if>
+<(>
+<id,a>
+<==>
+Lval
+<intd>
+ExpNumber:0
+<)>
+<{>
+<if>
+<(>
+<id,b>
+<==>
+Lval
+<intd>
+ExpNumber:0
+<)>
+<id,a>
+<=>
+Lval
+<intd>
+ExpNumber:0
+<;>
+stmt1
+<else>
+<id,a>
+<=>
+Lval
+<id,a>
+<+>
+Lval
+<intd>
+ExpNumber:0
+<;>
+stmt1
+<}>
+<return>
+<(>
+<id,a>
+<)>
+Lval
+<;>
+<}>
+<int>
+<id,main>
+<(>
+<)>
+<{>
+<return>
+<(>
+<id,if_ifElse_>
+<(>
+<)>
+<)>
+<;>
+<}>
+CompUnits (2)
+  FuncDef (2)
+    NOFParam (2)
+    Block (3)
+      BlockItems (3)
+        VarDecl (3)
+          IDENTIFIER a
+        BlockItems (4)
+          Lval_Opassign_Stmt (4)
+            LVal (4)
+              IDENTIFIER a
+              ArrayExps (4)
+            IntConst (4)
+              CONSTANTINTD: 5
+          BlockItems (5)
+            VarDecl (5)
+              IDENTIFIER b
+            BlockItems (6)
+              Lval_Opassign_Stmt (6)
+                LVal (6)
+                  IDENTIFIER b
+                  ArrayExps (6)
+                IntConst (6)
+                  CONSTANTINTD: 10
+              BlockItems (7)
+                IF_Stmt (7)
+                  Cond (7)
+                    OPEQUAL (7)
+                      LVal_EXP (7)
+                        LVal (7)
+                          IDENTIFIER a
+                          ArrayExps (7)
+                      IntConst (7)
+                        CONSTANTINTD: 5
+                  Block_Stmt (8)
+                    Block (8)
+                      BlockItems (8)
+                        IF_ELSE_Stmt (8)
+                          Cond (8)
+                            OPEQUAL (8)
+                              LVal_EXP (8)
+                                LVal (8)
+                                  IDENTIFIER b
+                                  ArrayExps (8)
+                              IntConst (8)
+                                CONSTANTINTD: 10
+                          Lval_Opassign_Stmt (9)
+                            LVal (9)
+                              IDENTIFIER a
+                              ArrayExps (9)
+                            IntConst (9)
+                              CONSTANTINTD: 25
+                          Lval_Opassign_Stmt (11)
+                            LVal (11)
+                              IDENTIFIER a
+                              ArrayExps (11)
+                            PLUSExp (11)
+                              LVal_EXP (11)
+                                LVal (11)
+                                  IDENTIFIER a
+                                  ArrayExps (11)
+                              IntConst (11)
+                                CONSTANTINTD: 15
+                BlockItems (13)
+                  Return_Stmt (13)
+                    (Exp) (13)
+                      LVal_EXP (13)
+                        LVal (13)
+                          IDENTIFIER a
+                          ArrayExps (13)
+  CompUnits (16)
+    FuncDef (16)
+      NOFParam (16)
+      Block (17)
+        BlockItems (17)
+          Return_Stmt (17)
+            (Exp) (17)
+              funcall (17)
+                IDENTIFIER if_ifElse_
+
+
+===========================================================
+Global
+ID             category       type           depictor
+               
+putf           Function       void           NULL           
+putarray       Function       void           NOT NULL       
+putchar        Function       void           NOT NULL       
+putint         Function       void           NOT NULL       
+getarray       Function       int            NOT NULL       
+getchar        Function       int            NOT NULL       
+getint         Function       int            NOT NULL       
+if_ifElse_     Function       TYPEINTEGER    NOT NULL       
+main           Function       TYPEINTEGER    NOT NULL       
+===========================================================
+===========================================================
+Formal:putarray
+ID             category       type           depictor
+              
+a              Array          int            ----------> dim=1
+a              Variable       int            NULL           
+===========================================================
+===========================================================
+Local:putarray
+ID             category       type           depictor
+              
+scope type is wrong
+               Variable                      NULL           
+===========================================================
+===========================================================
+Formal:putchar
+ID             category       type           depictor
+              
+a              Variable       int            NULL           
+===========================================================
+===========================================================
+Local:putchar
+ID             category       type           depictor
+              
+===========================================================
+===========================================================
+Formal:putint
+ID             category       type           depictor
+              
+a              Variable       int            NULL           
+===========================================================
+===========================================================
+Local:putint
+ID             category       type           depictor
+              
+===========================================================
+===========================================================
+Formal:getarray
+ID             category       type           depictor
+              
+a              Array          int            ----------> dim=1
+===========================================================
+===========================================================
+Local:getarray
+ID             category       type           depictor
+              
+===========================================================
+===========================================================
+Formal:getchar
+ID             category       type           depictor
+              
+               NOParam                       NULL           
+===========================================================
+===========================================================
+Local:getchar
+ID             category       type           depictor
+              
+===========================================================
+===========================================================
+Formal:getint
+ID             category       type           depictor
+              
+               NOParam                       NULL           
+===========================================================
+===========================================================
+Local:getint
+ID             category       type           depictor
+              
+===========================================================
+===========================================================
+Formal:if_ifElse_
+ID             category       type           depictor
+              
+               NOParam                       NOT NULL       
+===========================================================
+===========================================================
+Local:if_ifElse_
+ID             category       type           depictor
+              
+a              Variable       TYPEINTEGER    NULL           
+b              Variable       TYPEINTEGER    NULL           
+               Block          BLOCKStmt      NULL           
+===========================================================
+===========================================================
+Formal:main
+ID             category       type           depictor
+              
+               NOParam                       NULL           
+===========================================================
+===========================================================
+Local:main
+ID             category       type           depictor
+              
+===========================================================
+456
+789
+789
+456
+789
+789
+456
+789
+789
+456
+789
+789
+789
+789
+789
+456
+789
+789
+789
+789
+789
+456
+Illegal instruction (core dumped)

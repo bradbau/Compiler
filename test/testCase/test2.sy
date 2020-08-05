@@ -1,0 +1,17 @@
+// Add is prior than equal and not equal
+int main (int test[][3]) {
+    int a;
+    int b;
+    int c;
+    a = 1;
+    b = 4;
+    c = 28;
+    int t;
+    if (c + a != b) {
+        t = c % -b;
+    }
+    if (b - c == a) {
+        t = c%b+b;
+    }
+    return 0;
+}
