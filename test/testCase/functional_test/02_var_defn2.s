@@ -1,5 +1,5 @@
-;armv7 assembly code
 .text
+.global main
 main:
 PUSH {fp}
 ADD  fp, sp, #0

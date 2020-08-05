@@ -1071,4 +1071,7 @@ scopeprev:1
 Variable offset count+4 :_t28
 tac type ASSIGN
  assign 32 to tegisterStore Register in getregisterNoLoad variable
-Segmentation fault (core dumped)
+register:-1
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  no variable in this register
+Aborted (core dumped)

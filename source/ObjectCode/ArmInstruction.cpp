@@ -181,7 +181,7 @@ string CalculateInstruction::toString(){
             if(ARMInstruction::getConditionExe()!=0){//条件执行后缀
                 InsHead=InsHead+ConditionName[ARMInstruction::getConditionExe()];
             }
-            sprintf(buf, " %s, %s, %s", RegName[ARMInstruction::getRd()], RegName[ARMInstruction::getOp1()]);
+            sprintf(buf, " %s, %s", RegName[ARMInstruction::getRd()], RegName[ARMInstruction::getOp1()]);
             InsHead=InsHead+buf;
             InsHead=InsHead+"\n";
             return InsHead;
@@ -523,17 +523,17 @@ string MemoryInstruction::toString(){
                     #endif // DEBUG
                     if(instantEffect==0){
                         //直接使用的立即数，不对寄存器内数据产生影响
-                        sprintf(buf," %s, [%s, 0x%x]",  RegName[ARMInstruction::getRd()],  RegName[ARMInstruction::getOp1()], ARMInstruction::getOp2());
+                        sprintf(buf," %s, [%s, #0x%x]",  RegName[ARMInstruction::getRd()],  RegName[ARMInstruction::getOp1()], ARMInstruction::getOp2());
                         InsHead=InsHead+buf;
                     }
                     else if(instantEffect==1){
                         //改变第一操作数的偏移量
-                        sprintf(buf," %s, [%s, 0x%x]!",  RegName[ARMInstruction::getRd()],  RegName[ARMInstruction::getOp1()], ARMInstruction::getOp2());
+                        sprintf(buf," %s, [%s, #0x%x]!",  RegName[ARMInstruction::getRd()],  RegName[ARMInstruction::getOp1()], ARMInstruction::getOp2());
                         InsHead=InsHead+buf;
                     }
                     else if(instantEffect==2){
                         //只改变第一操作数.不影响计算结果
-                        sprintf(buf," %s, [%s], 0x%x",  RegName[ARMInstruction::getRd()],  RegName[ARMInstruction::getOp1()], ARMInstruction::getOp2());
+                        sprintf(buf," %s, [%s], #0x%x",  RegName[ARMInstruction::getRd()],  RegName[ARMInstruction::getOp1()], ARMInstruction::getOp2());
                         InsHead=InsHead+buf;
                     }
                     else{

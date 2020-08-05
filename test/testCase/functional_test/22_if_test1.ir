@@ -487,4 +487,7 @@ tac type RETURN
 tac type ARG
 tac type FUNCTIONDF
 tac type CALLASSIGN
-Segmentation fault (core dumped)
+register:-1
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  no variable in this register
+Aborted (core dumped)

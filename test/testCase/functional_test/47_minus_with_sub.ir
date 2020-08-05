@@ -743,4 +743,7 @@ Store Register in getregister variable
 findregister: insldr rd=10,r1=11,r2 offset=0,op2type=1, insefft=0
 tac type ASSIGN
 Store Register in getregisterNoLoad variable
-Segmentation fault (core dumped)
+register:-1
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  no variable in this register
+Aborted (core dumped)

@@ -298,7 +298,7 @@ VarDec:   IDENTIFIER { $$ = $1;
                 dim++;
                 if(dim == 1){
                       //此时是第一次进入此位置，VarDec为Variable类型，需要为其定义新的arrayInfo
-                      ScopeItem *arrayInfo = (ScopeItem*)malloc(sizeof(ScopeItem));
+                      ScopeItem *arrayInfo = new ScopeItem;
                       arrayInfo->dim = dim;
                       if($3==NULL){
                             ASTTree* new_node = new ASTTree();

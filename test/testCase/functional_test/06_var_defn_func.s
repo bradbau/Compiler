@@ -1,5 +1,5 @@
-;armv7 assembly code
 .text
+.global main
 defn:
 PUSH {fp}
 ADD  fp, sp, #0
@@ -14,7 +14,7 @@ PUSH {fp}
 ADD  fp, sp, #0
 SUB sp, sp, #0
 BL defn
-LDR r1, [fp, 0x0]
+LDR r1, [fp, #0x0]
 MOV r1, r0
 ADD  r2, r1, #0
 ADD  r0, r2, #0

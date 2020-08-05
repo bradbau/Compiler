@@ -1459,7 +1459,7 @@ string ARM::toString(){
     //生成汇编文本
     //遍历指令序列，依次调用tostring方法然后串联
 
-    string CodeString=";armv7 assembly code\n.text\n";
+    string CodeString=".text\n.global main\n";
     int i=0;
     for(auto iter: InsList){
         i++;
@@ -1469,6 +1469,7 @@ string ARM::toString(){
         
         CodeString+=iter->toString();
     }
+    //CodeString+="\nEND\n";
     return CodeString;
 
 

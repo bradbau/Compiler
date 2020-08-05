@@ -196,6 +196,6 @@ ID             category       type           depictor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 build assembly code
 tac build complete
-;armv7 assembly code
 .text
+.global main
 

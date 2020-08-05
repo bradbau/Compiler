@@ -236,8 +236,8 @@ instruction number6
 instruction number7
 instruction number8
 instruction number9
-;armv7 assembly code
 .text
+.global main
 main:
 PUSH {fp}
 ADD  fp, sp, #0

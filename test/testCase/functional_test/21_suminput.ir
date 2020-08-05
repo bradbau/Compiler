@@ -1,1 +1,913 @@
-Illegal instruction (core dumped)
+<int>
+<id,n>
+<;>
+<int>
+<id,a>
+<[>
+<intd>
+ExpNumber:0
+<]>
+<;>
+<int>
+<id,main>
+<(>
+<)>
+<{>
+<id,n>
+<=>
+Lval
+<id,getint>
+<(>
+<)>
+<;>
+stmt1
+<if>
+<(>
+<id,n>
+<>>
+Lval
+<intd>
+ExpNumber:0
+<)>
+<return>
+<intd>
+ExpNumber:0
+<;>
+<int>
+<id,s>
+<;>
+<int>
+<id,i>
+<;>
+<id,i>
+<=>
+Lval
+<into>
+ExpNumber:0
+<;>
+stmt1
+<id,s>
+<=>
+Lval
+<id,i>
+<;>
+Lval
+stmt1
+<while>
+<(>
+<id,i>
+<<>
+Lval
+<id,n>
+<)>
+Lval
+<{>
+<id,a>
+<[>
+<id,i>
+<]>
+Lval
+<=>
+Lval
+<id,getint>
+<(>
+<)>
+<;>
+stmt1
+<id,s>
+<=>
+Lval
+<id,s>
+<+>
+Lval
+<id,a>
+<[>
+<id,i>
+<]>
+Lval
+<;>
+Lval
+stmt1
+<id,i>
+<=>
+Lval
+<id,i>
+<+>
+Lval
+<intd>
+ExpNumber:0
+<;>
+stmt1
+<}>
+<id,putint>
+<(>
+<id,s>
+<)>
+Lval
+<;>
+<int>
+<id,newline>
+<;>
+<id,newline>
+<=>
+Lval
+<intd>
+ExpNumber:0
+<;>
+stmt1
+<id,putch>
+<(>
+<id,newline>
+<)>
+Lval
+<;>
+<return>
+<id,s>
+<;>
+Lval
+<}>
+CompUnits (2)
+  VarDecl (2)
+    IDENTIFIER n
+  CompUnits (3)
+    VarDecl (3)
+      ArrayDec: demmision=0
+        IDENTIFIER a
+    CompUnits (4)
+      FuncDef (4)
+        NOFParam (4)
+        Block (6)
+          BlockItems (6)
+            Lval_Opassign_Stmt (6)
+              LVal (6)
+                IDENTIFIER n
+                ArrayExps (6)
+              funcall (6)
+                IDENTIFIER getint
+            BlockItems (7)
+              IF_Stmt (7)
+                Cond (7)
+                  OPGREAT (7)
+                    LVal_EXP (7)
+                      LVal (7)
+                        IDENTIFIER n
+                        ArrayExps (7)
+                    IntConst (7)
+                      CONSTANTINTD: 10
+                Return_Stmt (8)
+                  IntConst (8)
+                    CONSTANTINTD: 1
+              BlockItems (9)
+                VarDecl (9)
+                  IDENTIFIER s
+                BlockItems (10)
+                  VarDecl (10)
+                    IDENTIFIER i
+                  BlockItems (11)
+                    Lval_Opassign_Stmt (11)
+                      LVal (11)
+                        IDENTIFIER i
+                        ArrayExps (11)
+                      IntConst (11)
+                        CONSTANTOCT: 0
+                    BlockItems (12)
+                      Lval_Opassign_Stmt (12)
+                        LVal (12)
+                          IDENTIFIER s
+                          ArrayExps (12)
+                        LVal_EXP (12)
+                          LVal (12)
+                            IDENTIFIER i
+                            ArrayExps (12)
+                      BlockItems (13)
+                        While_Stmt (13)
+                          Cond (13)
+                            OPLIGHT (13)
+                              LVal_EXP (13)
+                                LVal (13)
+                                  IDENTIFIER i
+                                  ArrayExps (13)
+                              LVal_EXP (13)
+                                LVal (13)
+                                  IDENTIFIER n
+                                  ArrayExps (13)
+                          Block_Stmt (14)
+                            Block (14)
+                              BlockItems (14)
+                                Lval_Opassign_Stmt (14)
+                                  LVal (14)
+                                    IDENTIFIER a
+                                    ArrayExps (14)
+                                      LVal_EXP (14)
+                                        LVal (14)
+                                          IDENTIFIER i
+                                          ArrayExps (14)
+                                      ArrayExps (14)
+                                  funcall (14)
+                                    IDENTIFIER getint
+                                BlockItems (15)
+                                  Lval_Opassign_Stmt (15)
+                                    LVal (15)
+                                      IDENTIFIER s
+                                      ArrayExps (15)
+                                    PLUSExp (15)
+                                      LVal_EXP (15)
+                                        LVal (15)
+                                          IDENTIFIER s
+                                          ArrayExps (15)
+                                      LVal_EXP (15)
+                                        LVal (15)
+                                          IDENTIFIER a
+                                          ArrayExps (15)
+                                            LVal_EXP (15)
+                                              LVal (15)
+                                                IDENTIFIER i
+                                                ArrayExps (15)
+                                            ArrayExps (15)
+                                  BlockItems (16)
+                                    Lval_Opassign_Stmt (16)
+                                      LVal (16)
+                                        IDENTIFIER i
+                                        ArrayExps (16)
+                                      PLUSExp (16)
+                                        LVal_EXP (16)
+                                          LVal (16)
+                                            IDENTIFIER i
+                                            ArrayExps (16)
+                                        IntConst (16)
+                                          CONSTANTINTD: 1
+                        BlockItems (18)
+                          Exp_Stmt (18)
+                            funcall (18)
+                              IDENTIFIER putint
+                              FuncRParams (18)
+                                LVal_EXP (18)
+                                  LVal (18)
+                                    IDENTIFIER s
+                                    ArrayExps (18)
+                          BlockItems (19)
+                            VarDecl (19)
+                              IDENTIFIER newline
+                            BlockItems (20)
+                              Lval_Opassign_Stmt (20)
+                                LVal (20)
+                                  IDENTIFIER newline
+                                  ArrayExps (20)
+                                IntConst (20)
+                                  CONSTANTINTD: 10
+                              BlockItems (21)
+                                Exp_Stmt (21)
+                                  funcall (21)
+                                    IDENTIFIER putch
+                                    FuncRParams (21)
+                                      LVal_EXP (21)
+                                        LVal (21)
+                                          IDENTIFIER newline
+                                          ArrayExps (21)
+                                BlockItems (22)
+                                  Return_Stmt (22)
+                                    LVal_EXP (22)
+                                      LVal (22)
+                                        IDENTIFIER s
+                                        ArrayExps (22)
+
+
+===========================================================
+Global
+ID             category       type           depictor
+               
+putf           Function       void           NULL           
+putarray       Function       void           NOT NULL       
+putchar        Function       void           NOT NULL       
+putint         Function       void           NOT NULL       
+getarray       Function       int            NOT NULL       
+getchar        Function       int            NOT NULL       
+getint         Function       int            NOT NULL       
+n              Variable       TYPEINTEGER    NULL           
+a              Array          TYPEINTEGER    ----------> dim=1
+main           Function       TYPEINTEGER    NOT NULL       
+===========================================================
+===========================================================
+Formal:putarray
+ID             category       type           depictor
+              
+a              Array          int            ----------> dim=1
+a              Variable       int            NULL           
+===========================================================
+===========================================================
+Local:putarray
+ID             category       type           depictor
+              
+scope type is wrong
+               Variable                      NULL           
+===========================================================
+===========================================================
+Formal:putchar
+ID             category       type           depictor
+              
+a              Variable       int            NULL           
+===========================================================
+===========================================================
+Local:putchar
+ID             category       type           depictor
+              
+===========================================================
+===========================================================
+Formal:putint
+ID             category       type           depictor
+              
+a              Variable       int            NULL           
+===========================================================
+===========================================================
+Local:putint
+ID             category       type           depictor
+              
+===========================================================
+===========================================================
+Formal:getarray
+ID             category       type           depictor
+              
+a              Array          int            ----------> dim=1
+===========================================================
+===========================================================
+Local:getarray
+ID             category       type           depictor
+              
+scope type is wrong
+               Variable                      NULL           
+===========================================================
+===========================================================
+Formal:getchar
+ID             category       type           depictor
+              
+               NOParam                       NULL           
+===========================================================
+===========================================================
+Local:getchar
+ID             category       type           depictor
+              
+===========================================================
+===========================================================
+Formal:getint
+ID             category       type           depictor
+              
+               NOParam                       NULL           
+===========================================================
+===========================================================
+Local:getint
+ID             category       type           depictor
+              
+===========================================================
+===========================================================
+Formal:main
+ID             category       type           depictor
+              
+               NOParam                       NOT NULL       
+===========================================================
+===========================================================
+Local:main
+ID             category       type           depictor
+              
+s              Variable       TYPEINTEGER    NULL           
+i              Variable       TYPEINTEGER    NULL           
+               Block          BLOCKStmt      NULL           
+newline        Variable       TYPEINTEGER    NULL           
+===========================================================
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+456
+789
+789
+789
+789
+789
+789
+456
+789
+789
+789
+789
+789
+789
+456
+789
+789
+789
+789
+789
+456
+789
+789
+789
+789
+789
+789
+789
+456
+789
+789
+789
+789
+789
+789
+789
+456
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+456
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+456
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+456
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+456
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+456
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+456
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+456
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+456
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+456
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+456
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+456
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+456
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+456
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+456
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+789
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  TraverseScopeStack no result
+Aborted (core dumped)

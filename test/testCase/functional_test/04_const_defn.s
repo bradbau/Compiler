@@ -1,5 +1,5 @@
-;armv7 assembly code
 .text
+.global main
 MOV r0, #4
 main:
 PUSH {fp}

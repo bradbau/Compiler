@@ -1,5 +1,5 @@
-;armv7 assembly code
 .text
+.global main
 main:
 PUSH {fp}
 ADD  fp, sp, #0
@@ -11,7 +11,7 @@ ADD  r3, r2, #0
 L0:
 ADD  r4, r3, #0
 MOV r5, #0
-CMP r4, r5, 
+CMP r4, r5
 BGT L1
 B L2
 L1:
@@ -21,10 +21,10 @@ ADD  r9, r6, r8
 ADD  r1, r9, #0
 ADD  r10, r3, #0
 MOV r10, #1
-LDR r10, [fp, 0x0]
-LDR r10, [fp, 0x0]
+LDR r10, [fp, #0x0]
+LDR r10, [fp, #0x0]
 SUB r10, r10, r10
-LDR r10, [fp, 0x0]
+LDR r10, [fp, #0x0]
 ADD  r3, r10, #0
 B L0
 L2:

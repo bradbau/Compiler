@@ -257,8 +257,8 @@ instruction number7
 instruction number8
 instruction number9
 instruction number10
-;armv7 assembly code
 .text
+.global main
 MOV r0, #4
 main:
 PUSH {fp}
