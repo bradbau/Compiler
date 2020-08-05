@@ -103,6 +103,9 @@ Compiler: CompUnits {
                   $$->si->depictor = addIntoScope(Formal, NULL, " ", NOParam, " ", NULL);
                   $$->si = addIntoScope(Global, $$->si, "getarray", Function, "int", NULL);     //getarray
                   $$->si->depictor = addIntoScope(Formal, NULL, "a", Array, "int", arrayInfox);
+                  $$->si->depictor->depictor = NULL;
+
+                  
                   $$->si = addIntoScope(Global, $$->si, "putint", Function, "void", NULL);      //putint
                   $$->si->depictor = addIntoScope(Formal, NULL, "a", Variable, "int", NULL);
                   $$->si = addIntoScope(Global, $$->si, "putchar", Function, "void", NULL);     //putchar
@@ -116,9 +119,6 @@ Compiler: CompUnits {
                   arrayInfoy->len.push_back(new_node2);
                   $$->si->depictor = addIntoScope(Formal, $$->si->depictor, "a", Array, "int", arrayInfoy);
                   $$->si = addIntoScope(Global, $$->si, "putf" , Function, "void", NULL);
-                  
-                  //回收语法树
-                  delete asttree;
                   
                   
                   // 打印符号表
@@ -135,8 +135,14 @@ Compiler: CompUnits {
                   DisplayTACCode(entrance);
                   displayGlobal($$->si);
                   
+
+                  //回收语法树
+                  ScopeItem *GlobalItemHead= $$->si;
+                  //delete asttree;
+
+
                   #endif
-                  ARM* AssemblyCode=new ARM(entrance, $$->si, stack);
+                  ARM* AssemblyCode=new ARM(entrance, GlobalItemHead, stack);
                   #ifdef DEBUG
                   cout<<"tac build complete"<<endl;
                   #endif

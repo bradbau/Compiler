@@ -151,8 +151,6 @@ a              Array          int            ----------> dim=1
 Local:getarray
 ID             category       type           depictor
               
-scope type is wrong
-               Variable                      NULL           
 ===========================================================
 ===========================================================
 Formal:getchar
@@ -314,8 +312,6 @@ a              Array          int            ----------> dim=1
 Local:getarray
 ID             category       type           depictor
               
-scope type is wrong
-               Variable                      NULL           
 ===========================================================
 ===========================================================
 Formal:getchar
@@ -367,7 +363,7 @@ scopeprev:0
 Variable offset count+4 :_t4
 Variable offset count+4 :_t5
 tac type ASSIGN
- assign 10 to tegisteruserreg0contains0
+ assign 10 to registeruserreg0contains0
 userreg1contains0
 userreg2contains0
 userreg3contains0
@@ -378,9 +374,9 @@ userreg8contains0
 userreg9contains0
 userreg10contains0
 0
-userreg0contains0x196f3e0
+userreg0contains0x250c3e0
 tac type ASSIGN
-userreg0contains0x196f3e0
+userreg0contains0x250c3e0
 userreg1contains0
 userreg2contains0
 userreg3contains0
@@ -390,10 +386,10 @@ userreg6contains0
 userreg8contains0
 userreg9contains0
 userreg10contains0
-userreg0contains0x196f3e0
+userreg0contains0x250c3e0
 tac type ASSIGN
- assign 3 to tegisteruserreg0contains0x196f3e0
-userreg1contains0x196b630
+ assign 3 to registeruserreg0contains0x250c3e0
+userreg1contains0x2508630
 userreg2contains0
 userreg3contains0
 userreg4contains0
@@ -403,13 +399,13 @@ userreg8contains0
 userreg9contains0
 userreg10contains0
 2
-userreg0contains0x196f3e0
-userreg1contains0x196b630
-userreg2contains0x196f5e0
+userreg0contains0x250c3e0
+userreg1contains0x2508630
+userreg2contains0x250c5e0
 tac type ASSIGN
-userreg0contains0x196f3e0
-userreg1contains0x196b630
-userreg2contains0x196f5e0
+userreg0contains0x250c3e0
+userreg1contains0x2508630
+userreg2contains0x250c5e0
 userreg3contains0
 userreg4contains0
 userreg5contains0
@@ -417,37 +413,37 @@ userreg6contains0
 userreg8contains0
 userreg9contains0
 userreg10contains0
-userreg0contains0x196f3e0
-userreg1contains0x196b630
-userreg2contains0x196f5e0
+userreg0contains0x250c3e0
+userreg1contains0x2508630
+userreg2contains0x250c5e0
 tac type ASSIGN
-userreg0contains0x196f3e0
-userreg1contains0x196b630
-userreg2contains0x196f5e0
-userreg3contains0x196b8a0
+userreg0contains0x250c3e0
+userreg1contains0x2508630
+userreg2contains0x250c5e0
+userreg3contains0x25088a0
 userreg4contains0
 userreg5contains0
 userreg6contains0
 userreg8contains0
 userreg9contains0
 userreg10contains0
-userreg0contains0x196f3e0
-userreg1contains0x196b630
+userreg0contains0x250c3e0
+userreg1contains0x2508630
 tac type ASSIGN
-userreg0contains0x196f3e0
-userreg1contains0x196b630
-userreg2contains0x196f5e0
-userreg3contains0x196b8a0
-userreg4contains0x196fda0
+userreg0contains0x250c3e0
+userreg1contains0x2508630
+userreg2contains0x250c5e0
+userreg3contains0x25088a0
+userreg4contains0x250cda0
 userreg5contains0
 userreg6contains0
 userreg8contains0
 userreg9contains0
 userreg10contains0
-userreg0contains0x196f3e0
-userreg1contains0x196b630
-userreg2contains0x196f5e0
-userreg3contains0x196b8a0
+userreg0contains0x250c3e0
+userreg1contains0x2508630
+userreg2contains0x250c5e0
+userreg3contains0x25088a0
 tac type MOD
-compiler: ./ObjectCode/Arm.cpp:590: ARM::ARM(TACCode *, ScopeItem *, vector<ScopeItem> &): Assertion `code.dest.Type = VARIABLE' failed.
+compiler: ./ObjectCode/Arm.cpp:591: ARM::ARM(TACCode *, ScopeItem *, vector<ScopeItem> &): Assertion `code.dest.Type = VARIABLE' failed.
 Aborted (core dumped)

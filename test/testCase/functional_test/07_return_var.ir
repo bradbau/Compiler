@@ -100,8 +100,6 @@ a              Array          int            ----------> dim=1
 Local:getarray
 ID             category       type           depictor
               
-scope type is wrong
-               Variable                      NULL           
 ===========================================================
 ===========================================================
 Formal:getchar
@@ -209,8 +207,6 @@ a              Array          int            ----------> dim=1
 Local:getarray
 ID             category       type           depictor
               
-scope type is wrong
-               Variable                      NULL           
 ===========================================================
 ===========================================================
 Formal:getchar
@@ -249,7 +245,7 @@ ID             category       type           depictor
 build assembly code
 tac type FUNCTIONDF
 tac type ASSIGN
- assign 10 to tegisteruserreg0contains0
+ assign 10 to registeruserreg0contains0
 userreg1contains0
 userreg2contains0
 userreg3contains0
@@ -260,9 +256,9 @@ userreg8contains0
 userreg9contains0
 userreg10contains0
 0
-userreg0contains0x1ecfab0
+userreg0contains0x18f8ab0
 tac type ASSIGN
-userreg0contains0x1ecfab0
+userreg0contains0x18f8ab0
 userreg1contains0
 userreg2contains0
 userreg3contains0
@@ -272,10 +268,10 @@ userreg6contains0
 userreg8contains0
 userreg9contains0
 userreg10contains0
-userreg0contains0x1ecfab0
+userreg0contains0x18f8ab0
 tac type ASSIGN
-userreg0contains0x1ecfab0
-userreg1contains0x1ecd630
+userreg0contains0x18f8ab0
+userreg1contains0x18f6630
 userreg2contains0
 userreg3contains0
 userreg4contains0
@@ -284,12 +280,12 @@ userreg6contains0
 userreg8contains0
 userreg9contains0
 userreg10contains0
-userreg0contains0x1ecfab0
-userreg1contains0x1ecd630
+userreg0contains0x18f8ab0
+userreg1contains0x18f6630
 tac type RETURN
-userreg0contains0x1ecfab0
-userreg1contains0x1ecd630
-userreg2contains0x1ecfc80
+userreg0contains0x18f8ab0
+userreg1contains0x18f6630
+userreg2contains0x18f8c80
 tac type ARG
 tac build complete
 instruction number1

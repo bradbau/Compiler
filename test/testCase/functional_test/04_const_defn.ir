@@ -94,8 +94,6 @@ a              Array          int            ----------> dim=1
 Local:getarray
 ID             category       type           depictor
               
-scope type is wrong
-               Variable                      NULL           
 ===========================================================
 ===========================================================
 Formal:getchar
@@ -202,8 +200,6 @@ a              Array          int            ----------> dim=1
 Local:getarray
 ID             category       type           depictor
               
-scope type is wrong
-               Variable                      NULL           
 ===========================================================
 ===========================================================
 Formal:getchar
@@ -241,7 +237,7 @@ ID             category       type           depictor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 build assembly code
 tac type ASSIGN
- assign 4 to tegisteruserreg0contains0
+ assign 4 to registeruserreg0contains0
 userreg1contains0
 userreg2contains0
 userreg3contains0
@@ -252,10 +248,10 @@ userreg8contains0
 userreg9contains0
 userreg10contains0
 0
-userreg0contains0x1149630
+userreg0contains0xd42630
 tac type FUNCTIONDF
 tac type ASSIGN
-userreg0contains0x1149630
+userreg0contains0xd42630
 userreg1contains0
 userreg2contains0
 userreg3contains0
@@ -265,10 +261,10 @@ userreg6contains0
 userreg8contains0
 userreg9contains0
 userreg10contains0
-userreg0contains0x1149630
+userreg0contains0xd42630
 tac type RETURN
-userreg0contains0x1149630
-userreg1contains0x114b740
+userreg0contains0xd42630
+userreg1contains0xd44740
 tac type ARG
 tac build complete
 instruction number1

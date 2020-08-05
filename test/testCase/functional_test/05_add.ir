@@ -151,8 +151,6 @@ a              Array          int            ----------> dim=1
 Local:getarray
 ID             category       type           depictor
               
-scope type is wrong
-               Variable                      NULL           
 ===========================================================
 ===========================================================
 Formal:getchar
@@ -314,8 +312,6 @@ a              Array          int            ----------> dim=1
 Local:getarray
 ID             category       type           depictor
               
-scope type is wrong
-               Variable                      NULL           
 ===========================================================
 ===========================================================
 Formal:getchar
@@ -367,7 +363,7 @@ scopeprev:0
 Variable offset count+4 :_t4
 Variable offset count+4 :_t5
 tac type ASSIGN
- assign 10 to tegisteruserreg0contains0
+ assign 10 to registeruserreg0contains0
 userreg1contains0
 userreg2contains0
 userreg3contains0
@@ -378,9 +374,9 @@ userreg8contains0
 userreg9contains0
 userreg10contains0
 0
-userreg0contains0x12853e0
+userreg0contains0xeb23e0
 tac type ASSIGN
-userreg0contains0x12853e0
+userreg0contains0xeb23e0
 userreg1contains0
 userreg2contains0
 userreg3contains0
@@ -390,10 +386,10 @@ userreg6contains0
 userreg8contains0
 userreg9contains0
 userreg10contains0
-userreg0contains0x12853e0
+userreg0contains0xeb23e0
 tac type ASSIGN
- assign 20 to tegisteruserreg0contains0x12853e0
-userreg1contains0x1281630
+ assign 20 to registeruserreg0contains0xeb23e0
+userreg1contains0xeae630
 userreg2contains0
 userreg3contains0
 userreg4contains0
@@ -403,13 +399,13 @@ userreg8contains0
 userreg9contains0
 userreg10contains0
 2
-userreg0contains0x12853e0
-userreg1contains0x1281630
-userreg2contains0x12855e0
+userreg0contains0xeb23e0
+userreg1contains0xeae630
+userreg2contains0xeb25e0
 tac type ASSIGN
-userreg0contains0x12853e0
-userreg1contains0x1281630
-userreg2contains0x12855e0
+userreg0contains0xeb23e0
+userreg1contains0xeae630
+userreg2contains0xeb25e0
 userreg3contains0
 userreg4contains0
 userreg5contains0
@@ -417,106 +413,106 @@ userreg6contains0
 userreg8contains0
 userreg9contains0
 userreg10contains0
-userreg0contains0x12853e0
-userreg1contains0x1281630
-userreg2contains0x12855e0
+userreg0contains0xeb23e0
+userreg1contains0xeae630
+userreg2contains0xeb25e0
 tac type ASSIGN
-userreg0contains0x12853e0
-userreg1contains0x1281630
-userreg2contains0x12855e0
-userreg3contains0x12818a0
+userreg0contains0xeb23e0
+userreg1contains0xeae630
+userreg2contains0xeb25e0
+userreg3contains0xeae8a0
 userreg4contains0
 userreg5contains0
 userreg6contains0
 userreg8contains0
 userreg9contains0
 userreg10contains0
-userreg0contains0x12853e0
-userreg1contains0x1281630
+userreg0contains0xeb23e0
+userreg1contains0xeae630
 tac type ASSIGN
-userreg0contains0x12853e0
-userreg1contains0x1281630
-userreg2contains0x12855e0
-userreg3contains0x12818a0
-userreg4contains0x1285da0
+userreg0contains0xeb23e0
+userreg1contains0xeae630
+userreg2contains0xeb25e0
+userreg3contains0xeae8a0
+userreg4contains0xeb2da0
 userreg5contains0
 userreg6contains0
 userreg8contains0
 userreg9contains0
 userreg10contains0
-userreg0contains0x12853e0
-userreg1contains0x1281630
-userreg2contains0x12855e0
-userreg3contains0x12818a0
+userreg0contains0xeb23e0
+userreg1contains0xeae630
+userreg2contains0xeb25e0
+userreg3contains0xeae8a0
 tac type ADD
-userreg0contains0x12853e0
-userreg1contains0x1281630
-userreg2contains0x12855e0
-userreg3contains0x12818a0
-userreg4contains0x1285da0
-userreg5contains0x1285e50
+userreg0contains0xeb23e0
+userreg1contains0xeae630
+userreg2contains0xeb25e0
+userreg3contains0xeae8a0
+userreg4contains0xeb2da0
+userreg5contains0xeb2e50
 userreg6contains0
 userreg8contains0
 userreg9contains0
 userreg10contains0
-userreg0contains0x12853e0
-userreg1contains0x1281630
-userreg2contains0x12855e0
-userreg3contains0x12818a0
-userreg4contains0x1285da0
-userreg0contains0x12853e0
-userreg1contains0x1281630
-userreg2contains0x12855e0
-userreg3contains0x12818a0
-userreg4contains0x1285da0
-userreg5contains0x1285e50
+userreg0contains0xeb23e0
+userreg1contains0xeae630
+userreg2contains0xeb25e0
+userreg3contains0xeae8a0
+userreg4contains0xeb2da0
+userreg0contains0xeb23e0
+userreg1contains0xeae630
+userreg2contains0xeb25e0
+userreg3contains0xeae8a0
+userreg4contains0xeb2da0
+userreg5contains0xeb2e50
 tac type ASSIGN
-userreg0contains0x12853e0
-userreg1contains0x1281630
-userreg2contains0x12855e0
-userreg3contains0x12818a0
-userreg4contains0x1285da0
-userreg5contains0x1285e50
-userreg6contains0x1285cf0
+userreg0contains0xeb23e0
+userreg1contains0xeae630
+userreg2contains0xeb25e0
+userreg3contains0xeae8a0
+userreg4contains0xeb2da0
+userreg5contains0xeb2e50
+userreg6contains0xeb2cf0
 userreg8contains0
 userreg9contains0
 userreg10contains0
-userreg0contains0x12853e0
-userreg1contains0x1281630
-userreg2contains0x12855e0
-userreg3contains0x12818a0
-userreg4contains0x1285da0
-userreg5contains0x1285e50
-userreg6contains0x1285cf0
+userreg0contains0xeb23e0
+userreg1contains0xeae630
+userreg2contains0xeb25e0
+userreg3contains0xeae8a0
+userreg4contains0xeb2da0
+userreg5contains0xeb2e50
+userreg6contains0xeb2cf0
 tac type ASSIGN
-userreg0contains0x12853e0
-userreg1contains0x1281630
-userreg2contains0x12855e0
-userreg3contains0x12818a0
-userreg4contains0x1285da0
-userreg5contains0x1285e50
-userreg6contains0x1285cf0
-userreg8contains0x1282940
+userreg0contains0xeb23e0
+userreg1contains0xeae630
+userreg2contains0xeb25e0
+userreg3contains0xeae8a0
+userreg4contains0xeb2da0
+userreg5contains0xeb2e50
+userreg6contains0xeb2cf0
+userreg8contains0xeaf940
 userreg9contains0
 userreg10contains0
-userreg0contains0x12853e0
-userreg1contains0x1281630
-userreg2contains0x12855e0
-userreg3contains0x12818a0
-userreg4contains0x1285da0
-userreg5contains0x1285e50
-userreg6contains0x1285cf0
-userreg8contains0x1282940
+userreg0contains0xeb23e0
+userreg1contains0xeae630
+userreg2contains0xeb25e0
+userreg3contains0xeae8a0
+userreg4contains0xeb2da0
+userreg5contains0xeb2e50
+userreg6contains0xeb2cf0
+userreg8contains0xeaf940
 tac type RETURN
-userreg0contains0x12853e0
-userreg1contains0x1281630
-userreg2contains0x12855e0
-userreg3contains0x12818a0
-userreg4contains0x1285da0
-userreg5contains0x1285e50
-userreg6contains0x1285cf0
-userreg8contains0x1282940
-userreg9contains0x12860e0
+userreg0contains0xeb23e0
+userreg1contains0xeae630
+userreg2contains0xeb25e0
+userreg3contains0xeae8a0
+userreg4contains0xeb2da0
+userreg5contains0xeb2e50
+userreg6contains0xeb2cf0
+userreg8contains0xeaf940
+userreg9contains0xeb30e0
 tac type ARG
 tac build complete
 instruction number1

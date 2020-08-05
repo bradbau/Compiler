@@ -100,8 +100,6 @@ a              Array          int            ----------> dim=1
 Local:getarray
 ID             category       type           depictor
               
-scope type is wrong
-               Variable                      NULL           
 ===========================================================
 ===========================================================
 Formal:getchar
@@ -216,8 +214,6 @@ a              Array          int            ----------> dim=1
 Local:getarray
 ID             category       type           depictor
               
-scope type is wrong
-               Variable                      NULL           
 ===========================================================
 ===========================================================
 Formal:getchar
@@ -269,7 +265,7 @@ userreg9contains0
 userreg10contains0
 findregister: insldr rd=0,r1=11,r2 offset=0,op2type=1, insefft=0
 tac type ASSIGN
-userreg0contains0x11558d0
+userreg0contains0xcc98d0
 userreg1contains0
 userreg2contains0
 userreg3contains0
@@ -279,10 +275,10 @@ userreg6contains0
 userreg8contains0
 userreg9contains0
 userreg10contains0
-userreg0contains0x11558d0
+userreg0contains0xcc98d0
 tac type ASSIGN
-userreg0contains0x11558d0
-userreg1contains0x11538a0
+userreg0contains0xcc98d0
+userreg1contains0xcc78a0
 userreg2contains0
 userreg3contains0
 userreg4contains0
@@ -291,12 +287,12 @@ userreg6contains0
 userreg8contains0
 userreg9contains0
 userreg10contains0
-userreg0contains0x11558d0
-userreg1contains0x11538a0
+userreg0contains0xcc98d0
+userreg1contains0xcc78a0
 tac type RETURN
-userreg0contains0x11558d0
-userreg1contains0x11538a0
-userreg2contains0x1155ad0
+userreg0contains0xcc98d0
+userreg1contains0xcc78a0
+userreg2contains0xcc9ad0
 tac type ARG
 tac build complete
 instruction number1

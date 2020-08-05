@@ -110,8 +110,6 @@ a              Array          int            ----------> dim=1
 Local:getarray
 ID             category       type           depictor
               
-scope type is wrong
-               Variable                      NULL           
 ===========================================================
 ===========================================================
 Formal:getchar
@@ -220,8 +218,6 @@ a              Array          int            ----------> dim=1
 Local:getarray
 ID             category       type           depictor
               
-scope type is wrong
-               Variable                      NULL           
 ===========================================================
 ===========================================================
 Formal:getchar
@@ -260,7 +256,7 @@ ID             category       type           depictor
 build assembly code
 tac type FUNCTIONDF
 tac type ASSIGN
- assign 1 to tegisteruserreg0contains0
+ assign 1 to registeruserreg0contains0
 userreg1contains0
 userreg2contains0
 userreg3contains0
@@ -271,9 +267,9 @@ userreg8contains0
 userreg9contains0
 userreg10contains0
 0
-userreg0contains0x6c5ec0
+userreg0contains0x1272ec0
 tac type ASSIGN
- assign 0 to tegisteruserreg0contains0x6c5ec0
+ assign 0 to registeruserreg0contains0x1272ec0
 userreg1contains0
 userreg2contains0
 userreg3contains0
@@ -284,17 +280,17 @@ userreg8contains0
 userreg9contains0
 userreg10contains0
 1
-userreg0contains0x6c5ec0
-userreg1contains0x6c6210
+userreg0contains0x1272ec0
+userreg1contains0x1273210
 tac type ASSIGN
   assign dest type array
 GetRegisterNoLoad array_addr
 FindRegister ARRAY_ADDR
 cannot findregister GetRegisterNoLoad ARRAY_ADDR
-userreg0contains0x6c5ec0
+userreg0contains0x1272ec0
 tac type ASSIGN
- assign 0 to tegisteruserreg0contains0x6c5ec0
-userreg1contains0x6c6210
+ assign 0 to registeruserreg0contains0x1272ec0
+userreg1contains0x1273210
 userreg2contains0
 userreg3contains0
 userreg4contains0
@@ -304,15 +300,15 @@ userreg8contains0
 userreg9contains0
 userreg10contains0
 3
-userreg0contains0x6c5ec0
-userreg1contains0x6c6210
+userreg0contains0x1272ec0
+userreg1contains0x1273210
 userreg2contains0
-userreg3contains0x6c6430
+userreg3contains0x1273430
 tac type RETURN
-userreg0contains0x6c5ec0
-userreg1contains0x6c6210
+userreg0contains0x1272ec0
+userreg1contains0x1273210
 userreg2contains0
-userreg3contains0x6c6430
+userreg3contains0x1273430
 tac type ARG
 tac build complete
 instruction number1

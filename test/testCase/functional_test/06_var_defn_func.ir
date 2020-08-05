@@ -112,8 +112,6 @@ a              Array          int            ----------> dim=1
 Local:getarray
 ID             category       type           depictor
               
-scope type is wrong
-               Variable                      NULL           
 ===========================================================
 ===========================================================
 Formal:getchar
@@ -240,8 +238,6 @@ a              Array          int            ----------> dim=1
 Local:getarray
 ID             category       type           depictor
               
-scope type is wrong
-               Variable                      NULL           
 ===========================================================
 ===========================================================
 Formal:getchar
@@ -286,7 +282,7 @@ scope type is wrong
 build assembly code
 tac type FUNCTIONDF
 tac type ASSIGN
- assign 4 to tegisteruserreg0contains0
+ assign 4 to registeruserreg0contains0
 userreg1contains0
 userreg2contains0
 userreg3contains0
@@ -297,16 +293,16 @@ userreg8contains0
 userreg9contains0
 userreg10contains0
 0
-userreg0contains0x76f030
+userreg0contains0x96a030
 tac type RETURN
-userreg0contains0x76f030
+userreg0contains0x96a030
 tac type ARG
 tac type FUNCTIONDF
 Variable offset count+4 :a
 Variable offset count+4 :a
 Variable offset count+4 :_t1
 tac type CALLASSIGN
-userreg0contains0x76f030
+userreg0contains0x96a030
 userreg1contains0
 userreg2contains0
 userreg3contains0
@@ -318,8 +314,8 @@ userreg9contains0
 userreg10contains0
 findregister: insldr rd=1,r1=11,r2 offset=0,op2type=1, insefft=0
 tac type ASSIGN
-userreg0contains0x76f030
-userreg1contains0x76d0a0
+userreg0contains0x96a030
+userreg1contains0x9680a0
 userreg2contains0
 userreg3contains0
 userreg4contains0
@@ -328,12 +324,12 @@ userreg6contains0
 userreg8contains0
 userreg9contains0
 userreg10contains0
-userreg0contains0x76f030
-userreg1contains0x76d0a0
+userreg0contains0x96a030
+userreg1contains0x9680a0
 tac type RETURN
-userreg0contains0x76f030
-userreg1contains0x76d0a0
-userreg2contains0x76ee30
+userreg0contains0x96a030
+userreg1contains0x9680a0
+userreg2contains0x969e30
 tac type ARG
 tac build complete
 instruction number1

@@ -159,8 +159,6 @@ a              Array          int            ----------> dim=1
 Local:getarray
 ID             category       type           depictor
               
-scope type is wrong
-               Variable                      NULL           
 ===========================================================
 ===========================================================
 Formal:getchar
@@ -330,8 +328,6 @@ a              Array          int            ----------> dim=1
 Local:getarray
 ID             category       type           depictor
               
-scope type is wrong
-               Variable                      NULL           
 ===========================================================
 ===========================================================
 Formal:getchar
@@ -391,7 +387,7 @@ userreg9contains0
 userreg10contains0
 findregister: insldr rd=0,r1=11,r2 offset=0,op2type=1, insefft=0
 tac type ASSIGN
-userreg0contains0x24fa480
+userreg0contains0x23c0480
 userreg1contains0
 userreg2contains0
 userreg3contains0
@@ -401,10 +397,10 @@ userreg6contains0
 userreg8contains0
 userreg9contains0
 userreg10contains0
-userreg0contains0x24fa480
+userreg0contains0x23c0480
 tac type CALLASSIGN
-userreg0contains0x24fa480
-userreg1contains0x24f6630
+userreg0contains0x23c0480
+userreg1contains0x23bc630
 userreg2contains0
 userreg3contains0
 userreg4contains0
@@ -415,9 +411,9 @@ userreg9contains0
 userreg10contains0
 findregister: insldr rd=2,r1=11,r2 offset=0,op2type=1, insefft=0
 tac type ASSIGN
-userreg0contains0x24fa480
-userreg1contains0x24f6630
-userreg2contains0x24fa680
+userreg0contains0x23c0480
+userreg1contains0x23bc630
+userreg2contains0x23c0680
 userreg3contains0
 userreg4contains0
 userreg5contains0
@@ -425,22 +421,22 @@ userreg6contains0
 userreg8contains0
 userreg9contains0
 userreg10contains0
-userreg0contains0x24fa480
-userreg1contains0x24f6630
-userreg2contains0x24fa680
+userreg0contains0x23c0480
+userreg1contains0x23bc630
+userreg2contains0x23c0680
 tac type ASSIGN
-userreg0contains0x24fa480
-userreg1contains0x24f6630
-userreg2contains0x24fa680
-userreg3contains0x24f68a0
+userreg0contains0x23c0480
+userreg1contains0x23bc630
+userreg2contains0x23c0680
+userreg3contains0x23bc8a0
 userreg4contains0
 userreg5contains0
 userreg6contains0
 userreg8contains0
 userreg9contains0
 userreg10contains0
-userreg0contains0x24fa480
-userreg1contains0x24f6630
+userreg0contains0x23c0480
+userreg1contains0x23bc630
 tac type IFNEQ
-compiler: ./ObjectCode/Arm.cpp:992: ARM::ARM(TACCode *, ScopeItem *, vector<ScopeItem> &): Assertion `code.secondOp.Type==VARIABLE' failed.
+compiler: ./ObjectCode/Arm.cpp:1008: ARM::ARM(TACCode *, ScopeItem *, vector<ScopeItem> &): Assertion `code.secondOp.Type==VARIABLE' failed.
 Aborted (core dumped)

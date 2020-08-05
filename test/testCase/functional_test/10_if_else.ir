@@ -133,8 +133,6 @@ a              Array          int            ----------> dim=1
 Local:getarray
 ID             category       type           depictor
               
-scope type is wrong
-               Variable                      NULL           
 ===========================================================
 ===========================================================
 Formal:getchar
@@ -268,8 +266,6 @@ a              Array          int            ----------> dim=1
 Local:getarray
 ID             category       type           depictor
               
-scope type is wrong
-               Variable                      NULL           
 ===========================================================
 ===========================================================
 Formal:getchar
@@ -314,7 +310,7 @@ Variable offset count+4 :_t4
 Variable offset count+4 :_t5
 Variable offset count+4 :_t6
 tac type ASSIGN
- assign 10 to tegisteruserreg0contains0
+ assign 10 to registeruserreg0contains0
 userreg1contains0
 userreg2contains0
 userreg3contains0
@@ -325,9 +321,9 @@ userreg8contains0
 userreg9contains0
 userreg10contains0
 0
-userreg0contains0x1e64710
+userreg0contains0x23d0710
 tac type ASSIGN
-userreg0contains0x1e64710
+userreg0contains0x23d0710
 userreg1contains0
 userreg2contains0
 userreg3contains0
@@ -337,10 +333,10 @@ userreg6contains0
 userreg8contains0
 userreg9contains0
 userreg10contains0
-userreg0contains0x1e64710
+userreg0contains0x23d0710
 tac type ASSIGN
-userreg0contains0x1e64710
-userreg1contains0x1e61630
+userreg0contains0x23d0710
+userreg1contains0x23cd630
 userreg2contains0
 userreg3contains0
 userreg4contains0
@@ -349,12 +345,12 @@ userreg6contains0
 userreg8contains0
 userreg9contains0
 userreg10contains0
-userreg0contains0x1e64710
-userreg1contains0x1e61630
+userreg0contains0x23d0710
+userreg1contains0x23cd630
 tac type ASSIGN
- assign 0 to tegisteruserreg0contains0x1e64710
-userreg1contains0x1e61630
-userreg2contains0x1e64910
+ assign 0 to registeruserreg0contains0x23d0710
+userreg1contains0x23cd630
+userreg2contains0x23d0910
 userreg3contains0
 userreg4contains0
 userreg5contains0
@@ -363,18 +359,18 @@ userreg8contains0
 userreg9contains0
 userreg10contains0
 3
-userreg0contains0x1e64710
-userreg1contains0x1e61630
-userreg2contains0x1e64910
-userreg3contains0x1e64fc0
+userreg0contains0x23d0710
+userreg1contains0x23cd630
+userreg2contains0x23d0910
+userreg3contains0x23d0fc0
 tac type IFGT
-userreg0contains0x1e64710
-userreg1contains0x1e61630
-userreg2contains0x1e64910
-userreg0contains0x1e64710
-userreg1contains0x1e61630
-userreg2contains0x1e64910
-userreg3contains0x1e64fc0
+userreg0contains0x23d0710
+userreg1contains0x23cd630
+userreg2contains0x23d0910
+userreg0contains0x23d0710
+userreg1contains0x23cd630
+userreg2contains0x23d0910
+userreg3contains0x23d0fc0
 ControlInstruction String:BGT L0
 
 tac type GOTO
@@ -384,10 +380,10 @@ tac type LABELDF
 L0:
 
 tac type ASSIGN
- assign 1 to tegisteruserreg0contains0x1e64710
-userreg1contains0x1e61630
-userreg2contains0x1e64910
-userreg3contains0x1e64fc0
+ assign 1 to registeruserreg0contains0x23d0710
+userreg1contains0x23cd630
+userreg2contains0x23d0910
+userreg3contains0x23d0fc0
 userreg4contains0
 userreg5contains0
 userreg6contains0
@@ -395,17 +391,17 @@ userreg8contains0
 userreg9contains0
 userreg10contains0
 4
-userreg0contains0x1e64710
-userreg1contains0x1e61630
-userreg2contains0x1e64910
-userreg3contains0x1e64fc0
-userreg4contains0x1e65250
+userreg0contains0x23d0710
+userreg1contains0x23cd630
+userreg2contains0x23d0910
+userreg3contains0x23d0fc0
+userreg4contains0x23d1250
 tac type RETURN
-userreg0contains0x1e64710
-userreg1contains0x1e61630
-userreg2contains0x1e64910
-userreg3contains0x1e64fc0
-userreg4contains0x1e65250
+userreg0contains0x23d0710
+userreg1contains0x23cd630
+userreg2contains0x23d0910
+userreg3contains0x23d0fc0
+userreg4contains0x23d1250
 tac type ARG
 tac type GOTO
 Goto string B L2
@@ -414,30 +410,30 @@ tac type LABELDF
 L1:
 
 tac type ASSIGN
- assign 0 to tegisteruserreg0contains0x1e64710
-userreg1contains0x1e61630
-userreg2contains0x1e64910
-userreg3contains0x1e64fc0
-userreg4contains0x1e65250
+ assign 0 to registeruserreg0contains0x23d0710
+userreg1contains0x23cd630
+userreg2contains0x23d0910
+userreg3contains0x23d0fc0
+userreg4contains0x23d1250
 userreg5contains0
 userreg6contains0
 userreg8contains0
 userreg9contains0
 userreg10contains0
 5
-userreg0contains0x1e64710
-userreg1contains0x1e61630
-userreg2contains0x1e64910
-userreg3contains0x1e64fc0
-userreg4contains0x1e65250
-userreg5contains0x1e654e0
+userreg0contains0x23d0710
+userreg1contains0x23cd630
+userreg2contains0x23d0910
+userreg3contains0x23d0fc0
+userreg4contains0x23d1250
+userreg5contains0x23d14e0
 tac type RETURN
-userreg0contains0x1e64710
-userreg1contains0x1e61630
-userreg2contains0x1e64910
-userreg3contains0x1e64fc0
-userreg4contains0x1e65250
-userreg5contains0x1e654e0
+userreg0contains0x23d0710
+userreg1contains0x23cd630
+userreg2contains0x23d0910
+userreg3contains0x23d0fc0
+userreg4contains0x23d1250
+userreg5contains0x23d14e0
 tac type ARG
 tac type LABELDF
 L2:

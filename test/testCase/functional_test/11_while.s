@@ -23,15 +23,14 @@ ADD  r9, r6, r8
 ADD  r1, r9, #0
 ADD  r10, r3, #0
 MOV r10, #1
-LDR r10, [fp, #0x0]
-LDR r10, [fp, #0x0]
-SUB r10, r10, r10
-LDR r10, [fp, #0x0]
-ADD  r3, r10, #0
+LDR r4, [fp, #0x0]
+SUB r4, r4, r10
+LDR r4, [fp, #0x0]
+ADD  r3, r4, #0
 B L0
 L2:
-ADD  r10, r1, #0
-ADD  r0, r10, #0
+ADD  r4, r1, #0
+ADD  r0, r4, #0
 ADD  sp, fp, #0
 POP {fp}
 BX lr

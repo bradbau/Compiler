@@ -28,7 +28,8 @@ typedef struct RegisterEntry
       
             ScopeItem* variable;     // 存储的变量对象
             ARRAY_ADDR* array_addr;//数组对象
-      
+      bool instantFlag=0;//表示有没有存储立即数
+
       //int instantNum; 不一定有用，记录寄存器内容的具体值
 } RegisterEntry;
 
@@ -60,6 +61,8 @@ private:
 
       void StoreRegister(int RegisterNum);//将这个寄存器内的变量保存到它内部offset指向的内存地址
       
+      void instantLock();
+      void instantUnlock();//对一个寄存器中立即数存放周期的限制
       
 
 public:

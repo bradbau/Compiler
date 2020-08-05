@@ -17,6 +17,7 @@ ARM::ARM(TACCode* entrance, ScopeItem *GlobalItemHead, vector<ScopeItem> &stack)
     #endif // DEBUG
 
     //初始化代码
+    EmptyRegister();
 
 
     StackSubHandler=NULL;
@@ -113,7 +114,7 @@ ARM::ARM(TACCode* entrance, ScopeItem *GlobalItemHead, vector<ScopeItem> &stack)
                             //常量赋值
                             //这个常量赋值可能是
                             #ifdef DEBUG
-                            cout<<" assign "<<code.firstOp.Data.value<<" to tegister"<<GetRegisterNoLoad(code.dest.Data.variable)<<endl;
+                            cout<<" assign "<<code.firstOp.Data.value<<" to register"<<GetRegisterNoLoad(code.dest.Data.variable)<<endl;
                             #endif // DEBUG
                             //如果是小于255的常量直接用mov，大于255的用ldr伪指令
                             if(code.firstOp.Data.value>=0&& code.firstOp.Data.value<=255){
@@ -630,11 +631,13 @@ ARM::ARM(TACCode* entrance, ScopeItem *GlobalItemHead, vector<ScopeItem> &stack)
                             
 
                             if(code.secondOp.Type == VARIABLE){
-
+                                
+                                instantLock();
                                 CalculateInstruction* InsItem=new CalculateInstruction(INSSDIV, GetRegister(code.dest.Data.variable), LoadInstantToRegister(code.firstOp.Data.value), GetRegister(code.secondOp.Data.variable), 0);
                                 InsList.push_back(dynamic_cast<ARMInstruction*>(InsItem));
                                 InsItem=new CalculateInstruction(INSMUL,  GetRegister(code.dest.Data.variable),  GetRegister(code.dest.Data.variable), GetRegister(code.secondOp.Data.variable), 0);
                                 InsList.push_back(dynamic_cast<ARMInstruction*>(InsItem));
+                                instantLock();
                                 InsItem=new CalculateInstruction(INSSUB, GetRegister(code.dest.Data.variable),  LoadInstantToRegister(code.firstOp.Data.value), GetRegister(code.dest.Data.variable), 0);
                                 InsList.push_back(dynamic_cast<ARMInstruction*>(InsItem));
                             }
@@ -644,10 +647,12 @@ ARM::ARM(TACCode* entrance, ScopeItem *GlobalItemHead, vector<ScopeItem> &stack)
                             }
                             else if(code.secondOp.Type == ARRAY){
 
+                                instantLock();
                                 CalculateInstruction* InsItem=new CalculateInstruction(INSSDIV, GetRegister(code.dest.Data.variable), LoadInstantToRegister(code.firstOp.Data.value), GetRegister(code.secondOp.Data.array_addr), 0);
                                 InsList.push_back(dynamic_cast<ARMInstruction*>(InsItem));
                                 InsItem=new CalculateInstruction(INSMUL,  GetRegister(code.dest.Data.variable),  GetRegister(code.dest.Data.variable), GetRegister(code.secondOp.Data.array_addr), 0);
                                 InsList.push_back(dynamic_cast<ARMInstruction*>(InsItem));
+                                instantLock();
                                 InsItem=new CalculateInstruction(INSSUB, GetRegister(code.dest.Data.variable),  LoadInstantToRegister(code.firstOp.Data.value), GetRegister(code.dest.Data.variable), 0);
                                 InsList.push_back(dynamic_cast<ARMInstruction*>(InsItem));
                             }
@@ -670,10 +675,13 @@ ARM::ARM(TACCode* entrance, ScopeItem *GlobalItemHead, vector<ScopeItem> &stack)
                             }
                             
                             else if(code.secondOp.Type == INTEGERCONST){
+                                    instantLock();
                                     CalculateInstruction* InsItem=new CalculateInstruction(INSSDIV, GetRegisterNoLoad(code.dest.Data.variable), GetRegister(code.firstOp.Data.array_addr), LoadInstantToRegister(code.secondOp.Data.value), 0);
                                     InsList.push_back(dynamic_cast<ARMInstruction*>(InsItem));
+                                    instantLock();
                                     InsItem=new CalculateInstruction(INSMUL,  GetRegisterNoLoad(code.dest.Data.variable),  GetRegister(code.dest.Data.variable), LoadInstantToRegister(code.secondOp.Data.value), 0);
                                     InsList.push_back(dynamic_cast<ARMInstruction*>(InsItem));
+                                    
                                     InsItem=new CalculateInstruction(INSSUB, GetRegisterNoLoad(code.dest.Data.variable),  GetRegister(code.firstOp.Data.array_addr), GetRegister(code.dest.Data.variable), 0);
                                     InsList.push_back(dynamic_cast<ARMInstruction*>(InsItem));
                             }
@@ -709,8 +717,10 @@ ARM::ARM(TACCode* entrance, ScopeItem *GlobalItemHead, vector<ScopeItem> &stack)
                                 InsList.push_back(dynamic_cast<ARMInstruction*>(InsItem));
                         }
                             else if(code.secondOp.Type == INTEGERCONST){
+                                instantLock();
                                 CalculateInstruction* InsItem=new CalculateInstruction(INSSDIV, GetRegisterNoLoad(code.dest.Data.array_addr), GetRegister(code.firstOp.Data.variable), LoadInstantToRegister(code.secondOp.Data.value), 0);
                                 InsList.push_back(dynamic_cast<ARMInstruction*>(InsItem));
+                                instantLock();
                                 InsItem=new CalculateInstruction(INSMUL,  GetRegisterNoLoad(code.dest.Data.array_addr),  GetRegister(code.dest.Data.array_addr), LoadInstantToRegister(code.secondOp.Data.value), 0);
                                 InsList.push_back(dynamic_cast<ARMInstruction*>(InsItem));
                                 InsItem=new CalculateInstruction(INSSUB, GetRegisterNoLoad(code.dest.Data.array_addr),  GetRegister(code.firstOp.Data.variable), GetRegister(code.dest.Data.variable), 0);
@@ -732,26 +742,33 @@ ARM::ARM(TACCode* entrance, ScopeItem *GlobalItemHead, vector<ScopeItem> &stack)
                         }
                         else if(code.firstOp.Type == INTEGERCONST){
                             if(code.secondOp.Type == VARIABLE){
+                                instantLock();
                                 CalculateInstruction* InsItem=new CalculateInstruction(INSSDIV, GetRegisterNoLoad(code.dest.Data.array_addr), LoadInstantToRegister(code.firstOp.Data.value), GetRegister(code.secondOp.Data.variable), 0);
                                 InsList.push_back(dynamic_cast<ARMInstruction*>(InsItem));
                                 InsItem=new CalculateInstruction(INSMUL,  GetRegisterNoLoad(code.dest.Data.array_addr),  GetRegister(code.dest.Data.array_addr), GetRegister(code.secondOp.Data.variable), 0);
                                 InsList.push_back(dynamic_cast<ARMInstruction*>(InsItem));
+                                instantLock();
                                 InsItem=new CalculateInstruction(INSSUB, GetRegisterNoLoad(code.dest.Data.array_addr),  LoadInstantToRegister(code.firstOp.Data.value), GetRegister(code.dest.Data.variable), 0);
                                 InsList.push_back(dynamic_cast<ARMInstruction*>(InsItem));
                             }
                             else if(code.secondOp.Type == INTEGERCONST){
+                                instantLock();
                                 CalculateInstruction* InsItem=new CalculateInstruction(INSSDIV, GetRegisterNoLoad(code.dest.Data.array_addr), LoadInstantToRegister(code.firstOp.Data.value), LoadInstantToRegister(code.secondOp.Data.value), 0);
                                 InsList.push_back(dynamic_cast<ARMInstruction*>(InsItem));
+                                instantLock();
                                 InsItem=new CalculateInstruction(INSMUL,  GetRegisterNoLoad(code.dest.Data.array_addr),  GetRegister(code.dest.Data.array_addr), LoadInstantToRegister(code.secondOp.Data.value), 0);
                                 InsList.push_back(dynamic_cast<ARMInstruction*>(InsItem));
+                                instantLock();
                                 InsItem=new CalculateInstruction(INSSUB, GetRegisterNoLoad(code.dest.Data.array_addr),  LoadInstantToRegister(code.firstOp.Data.value), GetRegister(code.dest.Data.variable), 0);
                                 InsList.push_back(dynamic_cast<ARMInstruction*>(InsItem));
                             }
                             else if(code.secondOp.Type == ARRAY){
+                                instantLock();
                                 CalculateInstruction* InsItem=new CalculateInstruction(INSSDIV, GetRegisterNoLoad(code.dest.Data.array_addr), LoadInstantToRegister(code.firstOp.Data.value), GetRegister(code.secondOp.Data.array_addr), 0);
                                 InsList.push_back(dynamic_cast<ARMInstruction*>(InsItem));
                                 InsItem=new CalculateInstruction(INSMUL,  GetRegisterNoLoad(code.dest.Data.array_addr),  GetRegister(code.dest.Data.array_addr), GetRegister(code.secondOp.Data.array_addr), 0);
                                 InsList.push_back(dynamic_cast<ARMInstruction*>(InsItem));
+                                instantLock();
                                 InsItem=new CalculateInstruction(INSSUB, GetRegisterNoLoad(code.dest.Data.array_addr),  LoadInstantToRegister(code.firstOp.Data.value), GetRegister(code.dest.Data.variable), 0);
                                 InsList.push_back(dynamic_cast<ARMInstruction*>(InsItem));
                             }
@@ -1172,7 +1189,7 @@ Register ARM::GetRegister(ScopeItem* variable){
         for(Register item: userReg){
             if(regs[item].tag<minTag){
                 goal=item;
-                regs[item].tag=minTag;
+                minTag=regs[item].tag;
             }
         }
         //保存这个寄存器中的数据至内存
@@ -1237,7 +1254,7 @@ Register ARM::GetRegister(ARRAY_ADDR* array_addr){
         for(Register item: userReg){
             if(regs[item].tag<minTag){
                 goal=item;
-                regs[item].tag=minTag;
+                minTag=regs[item].tag;
             }
         }
         //保存这个寄存器中的数据至内存
@@ -1283,7 +1300,8 @@ Register ARM::GetRegisterNoLoad(ScopeItem* variable){
         for(Register item: userReg){
             if(regs[item].tag<minTag){
                 goal=item;
-                regs[item].tag=minTag;
+                minTag=regs[item].tag;
+                
             }
         }
         //保存这个寄存器中的数据至内存
@@ -1334,7 +1352,8 @@ Register ARM::GetRegisterNoLoad(ARRAY_ADDR* array_addr){
         for(Register item: userReg){
             if(regs[item].tag<minTag  ){
                 goal=item;
-                regs[item].tag=minTag;
+                minTag=regs[item].tag;
+                
             }
         }
         //保存这个寄存器中的数据至内存
@@ -1362,6 +1381,7 @@ int  ARM::FindRegister(ScopeItem* variable){
         cout<<"userreg"<<item<<"contains"<<regs[item].variable<<endl;
         #endif // DEBUG
         if(regs[item].filled==true&&  regs[item].variable!=NULL&&   *(regs[item].variable)==*variable){
+            regs[item].tag++;
             return item;
         }
     }
@@ -1378,6 +1398,7 @@ int ARM::FindRegister(ARRAY_ADDR* array_addr){
             #ifdef DEBUG
             cout<<"return FindRegister ARRAY_ADDR"<<endl;
             #endif // DEBUG
+            regs[item].tag++;
             return item;
         }
     }
@@ -1397,23 +1418,39 @@ void ARM::EmptyRegister(){
 int ARM::LoadInstantToRegister(int instantNum){
     //加载一个一次性的立即数到空寄存器中，不统计内容
     for(Register item: userReg){
-        if(regs[item].filled==false){
+        if(regs[item].filled==false && regs[item].instantFlag==false){
             CalculateInstruction* CalItem=new CalculateInstruction(INSMOV, (Register)item, instantNum, 1 );
             InsList.push_back(dynamic_cast<ARMInstruction*>(CalItem));
+            regs[item].tag=0;
+            regs[item].instantFlag=true;
             return item;
         }
+        
     }
 
     //如果没有空寄存器，要腾空一个
     int minTag=1000;//无穷大
     int goal=-1;
         for(Register item: userReg){
-            if(regs[item].tag<minTag){
+            #ifdef DEBUG
+            cout<<"regs[item].tag="<<regs[item].tag<<endl;
+            #endif // DEBUG
+            if(regs[item].tag<minTag && regs[item].instantFlag==false ){
                 goal=item;
-                regs[item].tag=minTag;
+                minTag=regs[item].tag;
+                
             }
         }
+    
+    #ifdef DEBUG
+        cout<<"Store Register"<< goal<<" in LoadInstantToRegister"<<endl;
+        #endif // DEBUG
     StoreRegister(goal);
+    regs[goal].instantFlag=true;
+    regs[goal].tag=0;
+    regs[goal].filled=false;
+    regs[goal].variable=NULL;
+    regs[goal].array_addr=NULL;
     CalculateInstruction* CalItem=new CalculateInstruction(INSMOV, (Register)goal, instantNum, 1 );
     InsList.push_back(dynamic_cast<ARMInstruction*>(CalItem));
 }
@@ -1466,6 +1503,20 @@ void ARM::AllocateStack(ScopeItem * variable, int &offset){
         variable=variable->next;
     }
 }
+    void ARM::instantLock(){
+        for(Register item:userReg){
+            if(regs[item].filled==false ){
+                regs[item].instantFlag=0;
+            }
+        }
+    }
+      void ARM::instantUnlock(){
+          for(Register item:userReg){
+            if(regs[item].filled==false ){
+                regs[item].instantFlag=0;
+            }
+        }
+      }
 
 string ARM::toString(){
     //生成汇编文本
