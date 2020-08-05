@@ -118,7 +118,7 @@ Compiler: CompUnits {
                   $$->si = addIntoScope(Global, $$->si, "putf" , Function, "void", NULL);
                   
                   //回收语法树
-                  //delete asttree;
+                  delete asttree;
                   
                   
                   // 打印符号表
